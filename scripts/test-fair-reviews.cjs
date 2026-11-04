@@ -4,6 +4,9 @@ const root = path.resolve(__dirname,'..'), handler = require('../api/saved-fairs
 const { events } = require('../api/_fiere');
 const sample = events.find(e=>e.id==='lombardia-brescia-fiera-dei-santi-faustino-e-giovita');
 const other = events.find(e=>e.id!==sample.id);
+const Editions=require('../js/fair-review-editions');
+const multi=events.find(e=>e.id==='sardegna-cagliari-festa-della-madonna-di-bonaria');
+const unknown=events.find(e=>!e.editions.length);
 const uidA='aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa', uidB='bbbbbbbb-1111-4111-8111-bbbbbbbbbbbb';
 const managed={id:'cccccccc-1111-4111-8111-cccccccccccc',organizer_id:uidB,title:'Fiera QA organizzata',city:'Milano',province:'Milano',region:'Lombardia',category:'mercatino',start_date:'2025-06-01',end_date:'2025-06-01',sectors:['artigianato'],goods:'Artigianato',description:'Evento simulato',places:[],status:'published'};
 const nativeFetch=global.fetch;
@@ -24,8 +27,9 @@ global.fetch=async(url,options={})=>{
         if(delaySave)await new Promise(r=>setTimeout(r,delaySave));
         if(failSave)return response({code:'XX000'},503);
         const d=data.p_data;
-        if(rows.some(r=>r.user_id===uid&&r.fair_id===d.fair_id&&r.visit_month.slice(0,4)===d.visit_month.slice(0,4)))return response({code:'23505'},400);
-        const row={...d,id:'review-'+writes,user_id:uid,author:'Mario',created_at:new Date().toISOString()};rows.unshift(row);return response({id:row.id});
+        if(rows.some(r=>r.user_id===uid&&r.fair_id===d.fair_id&&r.edition_key===d.edition_key))return response({code:'23505'},400);
+        const selected=Editions.resolve(d.kind==='organizer'?[{start:managed.start_date,end:managed.end_date}]:events.find(e=>e.id===d.fair_id)?.editions||[],d.edition_key);
+        const row={...d,visit_year:selected?.year,visit_start:selected?.start,visit_end:selected?.end,id:'review-'+writes,user_id:uid,author:'Mario',created_at:new Date().toISOString()};rows.unshift(row);return response({id:row.id});
     }
     return response([]);
 };
@@ -49,22 +53,29 @@ const server=http.createServer(async(req,res)=>{
     }catch(e){console.error(e);res.writeHead(500).end()}
 });
 async function apiChecks(){
-    const valid={kind:'catalog',fair_id:sample.id,visit_month:'2025-06-01',sector:'artigianato',rating:4,organization:null,turnout:null,value:null,body:'Esperienza di prova sul banco per verificare il flusso completo delle recensioni.',recommend:'yes',confirmed:true};
+    assert.equal(Editions.resolve([], 'year:1995').start,null);
+    assert.equal(Editions.choices(multi.editions,2026,'2026-06-01').length,1);
+    assert.equal(Editions.choices(multi.editions,2026,'2026-11-04').length,2);
+    assert.equal(Editions.resolve(sample.editions,'date:2027-02-15:2027-02-15','2026-11-04'),null);
+    assert.equal(Editions.normalize([{start:'2026-02-30',end:'2026-02-30'}]).length,0);
+    assert.equal(Editions.yearAllowed([{start:'2026-12-01',end:'2026-12-01'}],2026,'2026-11-04'),false);
+    const valid={kind:'catalog',fair_id:sample.id,edition_key:'date:2026-02-15:2026-02-15',rating:4,body:'',confirmed:true};
     const post=async(body,token='qa-'+uidA)=>invoke(handler,{method:'POST',headers:token?{authorization:'Bearer '+token}:{},query:{reviews:'1'},body});
-    assert.equal((await post(valid,null)).status,401);
-    assert.equal((await post(valid,'invalid')).status,401);
+    assert.equal((await post(valid,null)).status,401);assert.equal((await post(valid,'invalid')).status,401);
     assert.equal((await post({...valid,rating:8})).status,400);
-    assert.equal((await post({...valid,visit_month:'2099-01-01'})).status,400);
-    assert.equal((await post({...valid,confirmed:false})).status,400);
-    assert.equal((await post({...valid,body:'short'})).status,400);
-    assert.equal((await post({...valid,fair_id:'missing'})).status,404);
-    assert.equal((await post('{invalid')).status,400);
-    assert.equal((await post({...valid,user_id:uidB})).status,201);assert.equal(rows[0].user_id,uidA);
+    assert.equal((await post({...valid,edition_key:'date:2027-02-15:2027-02-15'})).status,400);
+    assert.equal((await post({...valid,edition_key:'date:2026-02-16:2026-02-16'})).status,400);
+    assert.equal((await post({...valid,confirmed:false})).status,400);assert.equal((await post({...valid,body:'a'.repeat(2001)})).status,400);
+    assert.equal((await post({...valid,fair_id:'missing'})).status,404);assert.equal((await post('{invalid')).status,400);
+    assert.equal((await post({...valid,user_id:uidB})).status,201);assert.equal(rows[0].user_id,uidA);assert.equal(rows[0].recommend,null);
     assert.equal((await post(valid)).status,409);
+    assert.equal((await post({...valid,fair_id:multi.id,edition_key:'date:2026-04-24:2026-04-24'})).status,201);
+    assert.equal((await post({...valid,fair_id:multi.id,edition_key:'date:2026-07-05:2026-07-05'})).status,201);
+    assert.equal((await post({...valid,fair_id:unknown.id,edition_key:'year:1995'})).status,201);assert.equal(rows[0].visit_start,null);
     const get=await invoke(handler,{method:'GET',headers:{},query:{reviews:'1',kind:'catalog',id:sample.id}});assert.equal(get.status,200);assert(!get.body.includes(uidA));assert(!get.body.includes('telefono'));
     assert.equal((await invoke(handler,{method:'GET',query:{reviews:'1',kind:'catalog',id:sample.id,offset:'-1'}})).status,400);
     assert.equal((await invoke(handler,{method:'DELETE',query:{reviews:'1'}})).status,405);
-    rows=[];writes=0;console.log('PASS API: auth, validation, canonical fair, owner, duplicates, public privacy, methods');
+    rows=[];writes=0;console.log('PASS editions/API: multiple dates, unknown year without invented date, future/fake dates denied, optional fields, auth/owner, duplicates, privacy');
 }
 async function browserChecks(engine,name,width,height,base){
     rows=[];writes=0;failSave=false;failRead=false;delayRead=0;delaySave=0;
@@ -85,48 +96,47 @@ async function browserChecks(engine,name,width,height,base){
         });
         const page=await context.newPage();page.setDefaultTimeout(12000);page.on('pageerror',e=>errors.push(e.message));
         let section=page.locator('#fair-reviews');
-        const overflow=async()=>{assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),name+width+' page overflow');const b=await section.boundingBox();assert(b.x>=0&&b.x+b.width<=width+1,name+width+' section overflow')};
-        const screenshot=async(label)=>{fs.mkdirSync(path.join(root,'.local/verifiche/recensioni-fiere'),{recursive:true});await section.scrollIntoViewIfNeeded();if(await section.evaluate(el=>Boolean(el.closest('dialog')))){await page.screenshot({path:path.join(root,`.local/verifiche/recensioni-fiere/${name}-${width}-${label}-viewport.png`)});await section.locator('[type=submit]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(root,`.local/verifiche/recensioni-fiere/${name}-${width}-${label}-azioni.png`)});}else await section.screenshot({path:path.join(root,`.local/verifiche/recensioni-fiere/${name}-${width}-${label}.png`)});};
+        const overflow=async()=>{assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),name+width+' overflow');const b=await section.boundingBox();assert(b.x>=0&&b.x+b.width<=width+1)};
+        const screenshot=async(label)=>{fs.mkdirSync(path.join(root,'.local/verifiche/recensioni-semplici'),{recursive:true});await section.scrollIntoViewIfNeeded();if(await section.evaluate(el=>Boolean(el.closest('dialog')))){await page.screenshot({path:path.join(root,`.local/verifiche/recensioni-semplici/${name}-${width}-${label}.png`)});}else await section.screenshot({path:path.join(root,`.local/verifiche/recensioni-semplici/${name}-${width}-${label}.png`)});};
         const next=async()=>section.locator('[type=submit]').click();
-        const step=async(n)=>{await page.waitForFunction(n=>document.querySelector('.fr-progress')?.getAttribute('aria-valuenow')===String(n),n);assert.equal(await page.locator('#authOverlay').isVisible(),false);};
-        await page.goto(base+'/fiere/'+sample.id);await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).click();await step(1);
-        await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});
-        await section.locator('[name=visit_month]').fill('2025-02');await section.locator('[name=sector]').selectOption('artigianato');await next();await step(2);
-        await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});
-        await section.locator('[name=rating][value="4"]').check();await section.locator('[name=organization][value="5"]').check();await screenshot('valutazioni');await overflow();await next();await step(3);
-        const body='Buona organizzazione e pubblico interessato ai prodotti del mio banco. Tornerei per una prossima edizione. <img src=x onerror="window.qaXss=true">';
-        await section.locator('[name=body]').fill(body);await section.locator('[name=recommend][value=yes]').check();await next();await step(4);assert.equal(writes,0);await screenshot('riepilogo-guest');await overflow();
-        await page.reload();await section.getByRole('button',{name:'Riprendi la recensione'}).click();await step(4);assert.equal(await section.locator('.fr-review-body').textContent(),body);assert.equal(await page.evaluate(()=>window.qaXss),undefined);
+        const step=async(n)=>{await page.waitForFunction(n=>document.querySelector('.fr-progress')?.getAttribute('aria-valuenow')===String(n),n);assert.equal(await page.locator('#authOverlay').isVisible(),false)};
+        await page.goto(base+'/fiere/'+sample.id);await section.locator('[data-fr-action=write]').click();await step(1);
+        assert.equal(await section.locator('[type=month]').count(),0);assert.equal(await section.locator('[data-fr-action=choose-year]').count(),2);await screenshot('edizioni');
+        await section.locator('[data-fr-action=choose-year]').first().click();await step(2);await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});
+        await section.locator('[name=rating][value="4"]').check();await section.locator('[name=organization][value="5"]').check();
+        assert.equal(await section.locator('.fr-rating').first().locator('.fas').count(),4);
+        const selectedStyle=await section.locator('[name=rating]:checked+span').evaluate(el=>({border:getComputedStyle(el).borderTopWidth,background:getComputedStyle(el).backgroundColor}));assert.equal(selectedStyle.border,'0px');assert.equal(selectedStyle.background,'rgba(0, 0, 0, 0)');
+        assert(!(await section.textContent()).includes('Non valutabile'));assert(!(await section.textContent()).includes('facoltative'));assert(!(await section.textContent()).includes('Bozza salvata'));
+        await screenshot('stelle');await overflow();await next();await step(3);
+        const body='Organizzazione buona. Tornerei con il mio banco. <img src=x onerror="window.qaXss=true">';
+        await section.locator('[name=body]').fill(body);assert.equal(await page.locator('#authOverlay').isVisible(),false);assert.equal(writes,0);await screenshot('finale');
+        await page.reload();await section.locator('[data-fr-action=write]').click();await step(3);assert.equal(await section.locator('[name=body]').inputValue(),body);assert.equal(await page.evaluate(()=>window.qaXss),undefined);
         await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});assert.equal(await page.locator('#authOverlay').isVisible(),false);
         await section.locator('[name=confirmed]').check();await next();await page.locator('#registerForm').waitFor({state:'visible'});assert.equal(writes,0);
-        assert((await page.locator('#authContextMsg').textContent()).includes('recensione'));assert.equal(await page.locator('#regTelefono').getAttribute('required'),'');assert.equal(await page.locator('#regPromoOptIn').getAttribute('required'),null);await page.locator('#regPromoOptIn').uncheck();
-        await page.keyboard.press('Escape');await section.locator('.fr-form').waitFor({state:'visible'});assert.equal(await section.locator('.fr-review-body').textContent(),body);
-        await next();await page.locator('#tabLogin').click();await page.locator('#loginEmail').fill('qa@example.invalid');await page.locator('#loginPassword').fill('qa-password');await page.locator('#loginBtn').click();
-        await section.getByRole('button',{name:'Pubblica la recensione',exact:true}).waitFor();assert.equal(writes,0);assert.equal(await section.locator('.fr-review-body').textContent(),body);
-        failSave=true;await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});assert.equal(rows.length,0);failSave=false;
-        await next();await section.locator('.fr-success').waitFor();assert.equal(rows.length,1);assert.equal(rows[0].user_id,uidA);assert.equal(await section.locator('.fr-review-body').textContent(),body);await screenshot('pubblicata');await overflow();
+        await page.keyboard.press('Escape');await section.locator('.fr-form').waitFor({state:'visible'});assert.equal(await section.locator('[name=body]').inputValue(),body);
+        await next();await page.locator('#tabLogin').click();await page.locator('#loginEmail').fill('qa@example.invalid');await page.locator('#loginPassword').fill('qa-password');await page.locator('#loginBtn').click();await section.getByRole('button',{name:'Pubblica',exact:true}).waitFor();assert.equal(writes,0);
+        failSave=true;await next();await section.locator('[data-fr-error]').waitFor({state:'visible'});failSave=false;await next();await section.locator('.fr-success').waitFor();assert.equal(rows.length,1);assert.equal(rows[0].visit_start,'2026-02-15');assert.equal(rows[0].user_id,uidA);assert.equal(await section.locator('.fr-review-body').textContent(),body);await screenshot('pubblicata');await overflow();
         assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('fair_review_v1:')).length),0);
-        await page.evaluate(()=>qaIdentity(null));await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).click();await step(1);
-        await section.locator('[name=visit_month]').fill('2024-02');await section.locator('[name=sector]').selectOption('alimentare');await next();await step(2);
-        await page.evaluate(id=>qaIdentity(id),uidB);await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).click();await step(1);assert.equal(await section.locator('[name=sector]').inputValue(),'');
-        await page.evaluate(()=>qaIdentity(null));await section.getByRole('button',{name:'Riprendi la recensione'}).click();await step(2);
-        await page.goto(base+'/fiere/'+other.id);await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).click();await step(1);assert.equal(await section.locator('[name=sector]').inputValue(),'');
-        await page.goto(base+'/evento?id='+managed.id);await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).click();await step(1);assert((await section.locator('.fr-context').textContent()).includes(managed.title));
-        await page.goto(base+'/fiere?q=Faustino');await page.locator('.fiere-card[data-event-id="'+sample.id+'"] .fiere-card-button').click();section=page.locator('#detail-reviews');
-        await section.getByRole('button',{name:'Riprendi la recensione'}).click();await step(2);await screenshot('calendario');await overflow();
-        await section.locator('[name=rating][value="3"]').check();await next();await step(3);await section.locator('[name=body]').fill('Esperienza per verificare la registrazione alla fine del percorso, con bozza conservata.');await section.locator('[name=recommend][value=maybe]').check();await next();await step(4);await section.locator('[name=confirmed]').check();await next();await page.locator('#registerForm').waitFor({state:'visible'});assert.equal(await page.locator('#fair-dialog').isVisible(),false);
+        await page.evaluate(()=>qaIdentity(null));
+        // The previous four-step draft remains recoverable without losing its text.
+        await page.evaluate(id=>localStorage.setItem('fair_review_v1:guest:catalog:'+id,JSON.stringify({version:1,savedAt:Date.now(),data:{step:4,visit_month:'2024-02-01',sector:'artigianato',rating:4,body:'Testo della precedente bozza conservato.',recommend:'yes'}})),sample.id);
+        await page.reload();await section.locator('[data-fr-action=write]').click();await step(3);assert.equal(await section.locator('[name=body]').inputValue(),'Testo della precedente bozza conservato.');
+        await page.evaluate(id=>qaIdentity(id),uidB);await section.locator('[data-fr-action=write]').click();await step(1);assert.equal(await section.locator('[name=body]').count(),0);
+        await page.evaluate(()=>qaIdentity(null));await section.locator('[data-fr-action=write]').click();await step(3);
+        await page.goto(base+'/fiere/'+multi.id);await section.locator('[data-fr-action=write]').click();await section.locator('[data-fr-action=choose-year]').first().click();await step(1);assert.equal(await section.locator('[data-fr-action=choose-edition][data-edition-key^="date:"]').count(),2);await screenshot('piu-edizioni');await section.locator('[data-fr-action=choose-edition][data-edition-key^="date:"]').last().click();await step(2);
+        await page.goto(base+'/fiere/'+unknown.id);await section.locator('[data-fr-action=write]').click();await section.locator('[data-fr-action=other-edition]').click();await section.locator('[name=visit_year]').selectOption('1995');await step(2);
+        const draft=await page.evaluate(id=>JSON.parse(localStorage.getItem('fair_review_v1:guest:catalog:'+id)).data,unknown.id);assert.equal(draft.edition_key,'year:1995');assert.equal(draft.visit_month,'');
+        await page.goto(base+'/evento?id='+managed.id);await section.locator('[data-fr-action=write]').click();await step(1);assert.equal(await section.locator('[data-fr-action=choose-year]').count(),1);await section.locator('[data-fr-action=choose-year]').click();await step(2);
+        await page.goto(base+'/fiere?q=Faustino');await page.locator('.fiere-card[data-event-id="'+sample.id+'"] .fiere-card-button').click();section=page.locator('#detail-reviews');await section.locator('[data-fr-action=write]').click();await step(3);
+        await section.locator('[data-fr-action=back]').click();await step(2);await section.locator('[data-fr-action=back]').click();await step(1);await section.locator('[data-fr-action=choose-year]').last().click();await step(2);await section.locator('[name=rating][value="3"]').check();await next();await step(3);
+        await section.locator('[name=body]').fill('');await section.locator('[name=confirmed]').check();await next();await page.locator('#registerForm').waitFor({state:'visible'});assert.equal(await page.locator('#fair-dialog').isVisible(),false);
         await page.locator('#regNome').fill('Mario');await page.locator('#regCognome').fill('QA');await page.locator('#regEmail').fill('qa@example.invalid');await page.locator('#regTelefono').fill('3471234567');await page.locator('#regPassword').fill('QaTest-pass123!');await page.locator('#regTermsAccepted').check();await page.waitForTimeout(2700);await page.locator('#registerBtn').click();
-        await page.locator('#authOverlay').waitFor({state:'hidden'});await page.locator('#fair-dialog').waitFor({state:'visible'});await section.getByRole('button',{name:'Pubblica la recensione',exact:true}).waitFor();assert.equal(rows.length,1);
+        await page.locator('#authOverlay').waitFor({state:'hidden'});await page.locator('#fair-dialog').waitFor({state:'visible'});await section.getByRole('button',{name:'Pubblica',exact:true}).waitFor();assert.equal(rows.length,1);
         await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));await screenshot('dark');await overflow();
-        // An in-flight write must never leave another account's draft visible.
-        delaySave=350;const sent=page.waitForRequest(r=>r.url().includes('/api/saved-fairs?reviews=1')&&r.method()==='POST');await next();await sent;await page.evaluate(()=>qaIdentity(null));
-        await section.getByRole('button',{name:'Scrivi una recensione',exact:true}).waitFor();assert.equal(await section.locator('.fr-form').count(),0);
-        await page.waitForTimeout(450);assert.equal(await section.locator('.fr-success').count(),0);delaySave=0;
-        // Public retry and pagination use real API validation over isolated fixtures.
+        delaySave=350;const sent=page.waitForRequest(r=>r.url().includes('/api/saved-fairs?reviews=1')&&r.method()==='POST');await next();await sent;await page.evaluate(()=>qaIdentity(null));await section.locator('[data-fr-action=write]').waitFor();assert.equal(await section.locator('.fr-form').count(),0);await page.waitForTimeout(450);assert.equal(await section.locator('.fr-success').count(),0);delaySave=0;
         failRead=true;await page.goto(base+'/fiere/'+sample.id);section=page.locator('#fair-reviews');await section.getByRole('button',{name:'Riprova a caricare',exact:true}).waitFor();failRead=false;
-        rows=Array.from({length:12},(_,i)=>({id:'public-'+i,kind:'catalog',fair_id:sample.id,author:'Ambulante QA',visit_month:'2025-02-01',sector:'artigianato',rating:4,body:'Esperienza pubblica simulata per verificare la paginazione delle recensioni.',recommend:'yes',created_at:'2026-11-04'}));
-        await section.getByRole('button',{name:'Riprova a caricare',exact:true}).click();await section.locator('.fr-review').nth(9).waitFor();assert.equal(await section.locator('.fr-review').count(),10);await section.getByRole('button',{name:'Mostra altre recensioni'}).click();await section.locator('.fr-review').nth(11).waitFor();assert.equal(await section.locator('.fr-review').count(),12);
-        assert.deepEqual(errors,[]);console.log('PASS browser '+name+' '+width+': steps, validation, reload, auth cancellation/login/registration, retry, publication, XSS, identity/fair isolation, organizer, calendar, dark, overflow');
+        rows=Array.from({length:12},(_,i)=>({id:'public-'+i,kind:'catalog',fair_id:sample.id,author:'Ambulante QA',visit_month:'2025-02-01',sector:'artigianato',rating:4,body:'Esperienza pubblica simulata.',recommend:'yes',created_at:'2026-11-04'}));await section.getByRole('button',{name:'Riprova a caricare',exact:true}).click();await section.locator('.fr-review').nth(9).waitFor();await section.getByRole('button',{name:'Mostra altre recensioni'}).click();await section.locator('.fr-review').nth(11).waitFor();assert.equal(await section.locator('.fr-review').count(),12);
+        assert.deepEqual(errors,[]);console.log('PASS browser '+name+' '+width+': 3 minimal steps, automatic/manual/multiple editions, stars without boxes, optional text, legacy draft, auth at end, retry, privacy/XSS, account isolation, calendar, dark, pagination');
     }finally{await browser.close()}
 }
 (async()=>{

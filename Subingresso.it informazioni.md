@@ -52,7 +52,9 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
   `data/THEME_PREFERENCES.md`. Logo testuale e menu mobile rimosso su richiesta.
 - Registrazione: telefono e termini obbligatori; consenso promozionale separato
   e facoltativo. Non ripristinare vecchie ipotesi di raccolta progressiva.
-- Recensioni fiere: quattro passaggi liberi e account solo alla fine;
+- Moduli: pochissime parole e scelte, adatti ad anziani e non madrelingua;
+  niente spiegazioni ordinarie, conferme o messaggi sulle bozze superflui.
+- Recensioni fiere: tre schermate essenziali e account solo alla fine;
   bozza locale per 30 giorni, recensioni pubbliche nelle schede e nel calendario.
   Contratto e sincronizzazione dei nuovi ID: `data/FIERE_RECENSIONI.md`.
 - Vetrine: giorni acquistati conservati, selezione esplicita fino a 10 posteggi,

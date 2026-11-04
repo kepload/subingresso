@@ -908,7 +908,7 @@
         $('detail-calendar-source').hidden = !event.calendarSource || event.calendarSource.url === event.source.url;
         if (event.calendarSource) { $('detail-calendar-source').href = event.calendarSource.url; $('detail-calendar-source').textContent = event.calendarSource.label + ' ↗'; }
         $('detail-annunci').href = '/annunci?regione=' + encodeURIComponent(event.region);
-        global.FairReviews?.mount($('detail-reviews'), { kind: event.managedEventId ? 'organizer' : 'catalog', id: event.managedEventId || event.id, name: event.name, city: event.city });
+        global.FairReviews?.mount($('detail-reviews'), { kind: event.managedEventId ? 'organizer' : 'catalog', id: event.managedEventId || event.id, name: event.name, city: event.city, editions: event.editions });
         prepareSources($('fair-dialog'), event);
         $('fair-dialog').showModal();
     }

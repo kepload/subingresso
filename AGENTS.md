@@ -8,6 +8,9 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
 
 - Risposte italiane, brevi e semplici; spiegare il risultato per l'utente.
   Dashboard con pochi numeri utili e dettagli apribili.
+- Moduli per persone anziane e non madrelingua: poche scelte, parole minime e
+  chiarissime, istruzioni rese graficamente. Niente spiegazioni ripetute,
+  messaggi ordinari sulle bozze o passaggi di conferma superflui.
 - Agire nel perimetro richiesto. Vecchi TODO, cron e autorizzazioni di altre
   attività non autorizzano nuovi interventi, invii o contatti a terzi.
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
