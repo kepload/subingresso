@@ -77,3 +77,6 @@ Affinamento successivo: focus e scorrimento alle recensioni dopo l’apertura
 del dialogo, nel frame seguente. Evita che Safari riporti la vista al pulsante
 di chiusura. Test esplicito di intestazione in viewport e focus della sezione
 in tutti e quattro i formati/browser.
+Pubblicato `0c29326`, Vercel success/Ready; asset online identici, tre
+controlli reali Chromium 1440/320 e WebKit 390 ripassati con intestazione
+delle recensioni effettivamente dentro la viewport.
