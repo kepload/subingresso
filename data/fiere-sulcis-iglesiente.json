@@ -1,0 +1,717 @@
+{
+  "province": "Sulcis Iglesiente",
+  "checkedAt": "2026-11-04",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "privateArchive": ".local/ricerche/fiere-sulcis-iglesiente-20261104",
+    "methodology": "Ricognizione web nominale e in gruppi dei 24 comuni della mappa regionale e del progetto, seguita dalla lettura delle fonti comunali, regionali e degli organizzatori selezionate. Incluse fiere, sagre con componente gastronomica documentata e mercatini specialistici; esclusi mercati ordinari settimanali. Nessun censimento integrale di albi e social. Edizioni, frequenze e periodi tradizionali mantenuti distinti.",
+    "municipalityCoverage": [
+      {
+        "city": "Buggerru",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Calasetta",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Carbonia",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Carloforte",
+        "eventCount": 4,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Domusnovas",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Fluminimaggiore",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Giba",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Gonnesa",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Iglesias",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Masainas",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Musei",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Narcao",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Nuxis",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Perdaxius",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Piscinas",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Portoscuso",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "San Giovanni Suergiu",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Santadi",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Sant'Anna Arresi",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Sant'Antioco",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Tratalias",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Villamassargia",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      },
+      {
+        "city": "Villaperuccio",
+        "eventCount": 0,
+        "outcome": "Ricerca nominale e per gruppi di comuni; nessuna scheda con fonte primaria sufficientemente documentata selezionata. Non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Teulada",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; copertura documentale limitata, non censimento."
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Sardegna",
+      "city": "Buggerru",
+      "name": "Cultura e Tradizioni della Sardegna",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comunebuggerru.it/it/novita/novita/Comunicazione-importante-in-riferimento-ai-posteggi-per-la-manifestazione-Cultura-e-Tradizioni-della-Sardegna-del-22-Agosto-2026/",
+        "label": "www.comunebuggerru.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione di tradizioni sarde con postazioni per espositori, hobbisti e attività commerciali.",
+      "sectors": "Artigianato, hobbistica e prodotti ammessi dal Comune",
+      "participation": {
+        "type": "selected",
+        "note": "Domande 2026 entro il 3 agosto o il diverso termine comunicato a esaurimento spazi. Postazioni assegnate dagli uffici; nessun accesso libero al banco. Tariffe non indicate nella pagina."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comunebuggerru.it/it/novita/novita/Comunicazione-importante-in-riferimento-ai-posteggi-per-la-manifestazione-Cultura-e-Tradizioni-della-Sardegna-del-22-Agosto-2026/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Calasetta",
+      "name": "Pilau International Fest - Sagra del Pilau",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolococalasetta.it/pilau-food-experience-2026/",
+        "label": "prolococalasetta.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna dedicata al pilau e alla cucina tabarchina, con vendita gastronomica sul lungomare e aree espositive.",
+      "sectors": "Gastronomia e produzioni locali",
+      "participation": {
+        "type": "selected",
+        "note": "La vendita del pilau è affidata alle associazioni indicate nel programma. Per eventuali altri spazi occorre verificare selezione, autorizzazioni e condizioni con gli organizzatori; il programma non è un bando."
+      },
+      "venue": "Lungomare Cristoforo Colombo e Piazza Belly",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-15",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prolococalasetta.it/pilau-food-experience-2026/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carbonia",
+      "name": "Il Sulcis Iglesiente Espone",
+      "months": "6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://consorziofieristicosulcitano.it/2026/05/23/il-sulcis-iglesiente-espone-2026/",
+        "label": "consorziofieristicosulcitano.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Fiera delle produzioni artigiane e agroalimentari sarde con esposizioni, vendita e aree gastronomiche.",
+      "sectors": "Artigianato e agroalimentare",
+      "participation": {
+        "type": "selected",
+        "note": "Il Consorzio raccoglie le richieste degli espositori. Contattare l’organizzazione per ammissione, costi e spazio; nessuna disponibilità attuale dedotta dal programma."
+      },
+      "venue": "Centro cittadino",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://consorziofieristicosulcitano.it/2026/05/23/il-sulcis-iglesiente-espone-2026/"
+        }
+      ],
+      "organizer": "Consorzio Fieristico Sulcitano",
+      "contacts": {
+        "phone": "+39 327 4597829"
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carbonia",
+      "name": "Mercatino delle Pulci",
+      "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.carbonia.su.it/amministrazione-trasparente/attivita-e-procedimenti/tipologie-di-procedimento/concessione-suolo-pubblico-in-occasione-del-mercatino-delle-pulci/",
+        "label": "www.comune.carbonia.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Fiera locale dedicata alla cessione di oggetti usati: seconda e ultima domenica in via Manno, primo e quarto sabato in Piazza Rinascita, salvo esigenze comunali.",
+      "sectors": "Usato e oggettistica",
+      "participation": {
+        "type": "selected",
+        "note": "Massimo 30 posteggi, domande dal 1 gennaio in ordine cronologico e concessione comunale. Bollo e canone secondo regolamento; importi non documentati nella pagina. Frequenza ordinaria da verificare prima dello spostamento."
+      },
+      "venue": "Via Manno e Piazza Rinascita"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carloforte",
+      "name": "Gùa Fest",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.carloforte.su.it/it/news/avviso-pubblico-manifestazione-di-interesse-operatori-economici-del-settore-street-food-per-partecipare-in-qualita-di-espositori-alla-terza-edizione-della-manifestazione-gua-fest",
+        "label": "www.comune.carloforte.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna del cibo di strada con food truck, birrifici, cantine e spettacoli.",
+      "sectors": "Street food, birre artigianali e vino",
+      "participation": {
+        "type": "selected",
+        "note": "Linee guida 2026: domanda entro il 10 marzo ore 10, tardive solo con spazi residui; selezione e accettazione delle condizioni. Quota tre giorni: 500 euro per 3×3 m, 650 euro per spazi superiori. Condizioni dell’edizione 2026, da non estendere alle successive."
+      },
+      "venue": "Calata Mamma Mahon",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.carloforte.su.it/it/news/avviso-pubblico-manifestazione-di-interesse-operatori-economici-del-settore-street-food-per-partecipare-in-qualita-di-espositori-alla-terza-edizione-della-manifestazione-gua-fest"
+        }
+      ],
+      "sourceRecordIds": [
+        "https://www.comune.carloforte.su.it/it/news/avviso-pubblico-manifestazione-di-interesse-operatori-economici-del-settore-street-food-per-partecipare-in-qualita-di-espositori-alla-terza-edizione-della-manifestazione-gua-fest",
+        "https://carloforte-api.municipiumapp.it/s3/1388/allegati/allegato-a-linee-guida-gua-fest-2026.pdf"
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carloforte",
+      "name": "Girotonno - Tuna Expo Village",
+      "months": "5,6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://girotonno.it/programma/",
+        "label": "girotonno.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Mostra mercato dell’agroalimentare e dell’artigianato nel programma del Girotonno; il periodo espositivo è distinto dalle iniziative preliminari del 23–28 maggio.",
+      "sectors": "Agroalimentare e artigianato sardo",
+      "participation": {
+        "type": "selected",
+        "note": "L’ingresso gratuito del pubblico alla mostra non costituisce gratuità per gli espositori. Verificare con gli organizzatori ammissione e condizioni del banco."
+      },
+      "venue": "Piazza Carlo Emanuele III, Piazza Repubblica e aree del programma",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-29",
+          "end": "2026-06-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://girotonno.it/programma/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carloforte",
+      "name": "Ortoforte - Il Mercato della Terra",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.carloforte.su.it/it/news/torna-a-carloforte-ortoforte-il-mercato-della-terra-aperte-le-adesioni-per-gli-espositori",
+        "label": "www.comune.carloforte.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Mercato dedicato a biodiversità, produzioni alimentari e artigianato del territorio.",
+      "sectors": "Agroalimentare, artigianato e opere dell’ingegno",
+      "participation": {
+        "type": "selected",
+        "note": "Domanda 2026 entro il 28 agosto ore 12. Selezione per coerenza dei prodotti, non per ordine di arrivo. Soci Comunità del Cibo Incomunis gratuiti; altri espositori 100 euro per due giorni con stallo e gazebo 3×3 m."
+      },
+      "venue": "Piazza Pegli",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.carloforte.su.it/it/news/torna-a-carloforte-ortoforte-il-mercato-della-terra-aperte-le-adesioni-per-gli-espositori"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Carloforte",
+      "name": "Dérè ai furni",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://carloforte-api.municipiumapp.it/s3/1388/allegati/avviso-pubblico-5.pdf",
+        "label": "Comune di Carloforte — avviso integrale",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna della cucina marinara con operatori di street food, food truck e produttori vinicoli.",
+      "sectors": "Street food di pesce e prodotti vitivinicoli",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso 2026: partecipazione su ammissione per entrambe le giornate con proprie strutture. Quota per l’intero evento: 200 euro street food o food truck, 150 euro settore vitivinicolo; pagamento dopo ammissione. Restano gli oneri direttamente connessi all’attività."
+      },
+      "venue": "Diga Sud",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-12",
+          "end": "2026-08-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.carloforte.su.it/it/news/avviso-pubblico-per-la-manifestazione-di-interesse-per-la-partecipazione-alla-manifestazione-dere-ai-furni-che-si-terra-presso-la-diga-sud-nelle-giornate-del-12-e-13-agosto-2026"
+        }
+      ],
+      "sourceRecordIds": [
+        "https://www.comune.carloforte.su.it/it/news/avviso-pubblico-per-la-manifestazione-di-interesse-per-la-partecipazione-alla-manifestazione-dere-ai-furni-che-si-terra-presso-la-diga-sud-nelle-giornate-del-12-e-13-agosto-2026",
+        "https://carloforte-api.municipiumapp.it/s3/1388/allegati/avviso-pubblico-5.pdf"
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Iglesias",
+      "name": "Notteggiando - Mercatino espositivo",
+      "months": "7,8,9",
+      "category": "artigianato",
+      "source": {
+        "url": "https://www.comune.iglesias.ca.it/it/community/notizie/notizia/Notteggiando-2026-Bando-per-lassegnazione-di-12-stalli-su-area-pubblica/",
+        "label": "www.comune.iglesias.ca.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Postazioni espositive e di vendita all’interno della rassegna estiva. Gli stalli sono utilizzabili dal 3 luglio, mentre la manifestazione inizia il 26 giugno.",
+      "sectors": "Artigianato, hobbistica, opere dell’ingegno e prodotti alimentari ammessi",
+      "participation": {
+        "type": "selected",
+        "note": "Bando per 12 stalli: domande 19–24 giugno 2026, modulo e bollo da 16 euro. Vendita soggetta a canone del suolo; importo non indicato. Giorni effettivi richiesti nella domanda, non attività quotidiana continua."
+      },
+      "venue": "Via Gramsci e Piazza Sella",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-03",
+          "end": "2026-09-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.iglesias.ca.it/it/community/notizie/notizia/Notteggiando-2026-Bando-per-lassegnazione-di-12-stalli-su-area-pubblica/",
+          "periodOnly": true
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Iglesias",
+      "name": "Mercatino dell’Hobbistica",
+      "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+      "category": "artigianato",
+      "source": {
+        "url": "https://www.comune.iglesias.ca.it/it/community/notizie/notizia/Assegnazione-n.-23-stalli-mercatino-dellhobbistica-Piazza-Sella-Scorrimento-graduatoria-definitiva/",
+        "label": "www.comune.iglesias.ca.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Mercatino tematico del sabato mattina, previsto dal Comune per tutte le settimane del 2026.",
+      "sectors": "Hobbistica e prodotti ammessi dal regolamento",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso per 23 stalli: domande dal 16 al 30 gennaio 2026 ore 12. Pubblicati graduatoria definitiva e scorrimento del 24 marzo. Occorre concessione; non è un mercato aperto a nuovi banchi senza assegnazione."
+      },
+      "venue": "Piazza Quintino Sella"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Masainas",
+      "name": "Sagra del Carciofo",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sagradelcarciofomasainas.it/",
+        "label": "www.sagradelcarciofomasainas.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna del carciofo spinoso con stand agricoli, artigiani, hobbisti e degustazioni.",
+      "sectors": "Agroalimentare, artigianato e hobbistica",
+      "participation": {
+        "type": "selected",
+        "note": "Il programma documenta gli espositori, ma non condizioni economiche o disponibilità di nuovi spazi. Verificare requisiti e assegnazione con la Pro Loco. I prezzi delle degustazioni non sono tariffe per il banco."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-11",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagradelcarciofomasainas.it/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Villamassargia",
+      "name": "Sagra delle Olive - Villamassargia Experience",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sagradelleolive.com/",
+        "label": "www.sagradelleolive.com",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna dedicata a olive, olio, sapori e artigianato con stand e attività nel parco degli ulivi.",
+      "sectors": "Olive, olio, prodotti alimentari e artigianato",
+      "participation": {
+        "type": "selected",
+        "note": "Il programma 2026 documenta la rassegna e gli stand, ma non un bando per nuovi espositori o le relative tariffe. Verificare condizioni e assegnazione con gli organizzatori."
+      },
+      "venue": "S’Ortu Mannu",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-16",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagradelleolive.com/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Giba",
+      "name": "Sagra del Pane",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/giba",
+        "label": "www.sardegnaturismo.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione gastronomica del pane locale, tradizionalmente a inizio agosto.",
+      "sectors": "Pane e prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "Il portale regionale documenta il periodo tradizionale, senza confermare giorni 2026 o accesso a nuovi espositori. Verificare programma e condizioni prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gonnesa",
+      "name": "Sagra del Pane Tradizionale",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gonnesa",
+        "label": "www.sardegnaturismo.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna gastronomica del pane tradizionale indicata nel mese di agosto dal portale turistico regionale.",
+      "sectors": "Pane e prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "Periodo tradizionale; nessuna data puntuale 2026 o disponibilità di posteggi attestata. Per eventuali banchi verificare organizzazione, autorizzazioni e condizioni."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sant'Anna Arresi",
+      "name": "Sagra del Pesce",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/node/15067",
+        "label": "www.sardegnaturismo.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Appuntamento gastronomico del paese, descritto dal portale regionale nel mese di agosto.",
+      "sectors": "Prodotti alimentari e cucina di pesce",
+      "participation": {
+        "type": "selected",
+        "note": "La fonte documenta la tradizione e il mese, non il calendario puntuale 2026 né condizioni per venditori esterni. Verificare con l’organizzazione prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Santadi",
+      "name": "Matrimonio Mauritano - Spazi espositivi",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.old.comune.santadi.su.it/santadi/pages/it/homepage/servizi/modulistica_area_finanz/",
+        "label": "www.old.comune.santadi.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Spazi per esposizione e vendita collegati alla manifestazione tradizionale del Matrimonio Mauritano, celebrata in agosto.",
+      "sectors": "Prodotti e attività ammessi dal Comune",
+      "participation": {
+        "type": "selected",
+        "note": "Modulistica comunale specifica per esposizione e vendita; il rito è tradizionalmente la prima domenica di agosto. Giorni e condizioni della rassegna commerciale 2026 non verificati: nessuna data puntuale aggiunta."
+      },
+      "sourceRecordIds": [
+        "https://www.old.comune.santadi.su.it/santadi/pages/it/homepage/servizi/modulistica_area_finanz/",
+        "https://prolocosantadi.it/"
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Santadi",
+      "name": "Pane e Olio in Frantoio",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.santadi.su.it/santadi/resources/cms/documents/AVVISO_AGLI_ESPOSITORI_PER_SITO_PANE_OLIO_2025_.pdf",
+        "label": "www.comune.santadi.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna delle produzioni locali con esposizione e vendita in occasione dell’edizione documentata del 2025.",
+      "sectors": "Agroalimentare e produzioni ammesse dal Comune",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso storico 2025: domanda entro il 21 novembre e assegnazione comunale. Canone 1,80 euro/m² al giorno e due bolli da 16 euro. Importi e date non valgono come conferma del 2026."
+      },
+      "venue": "Piazza Marconi",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-29",
+          "end": "2025-11-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.santadi.su.it/santadi/resources/cms/documents/AVVISO_AGLI_ESPOSITORI_PER_SITO_PANE_OLIO_2025_.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Portoscuso",
+      "name": "Arrusteddara",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/portoscuso",
+        "label": "www.sardegnaturismo.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione gastronomica dedicata alle grigliate di pesce, indicata a metà agosto dal portale regionale.",
+      "sectors": "Gastronomia di pesce",
+      "participation": {
+        "type": "selected",
+        "note": "Periodo tradizionale senza data puntuale 2026 verificata. Nessuna apertura a operatori esterni o tariffa attestata dalla fonte: verificare condizioni con l’organizzazione."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Portoscuso",
+      "name": "Sagra del Granchio",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/portoscuso",
+        "label": "www.sardegnaturismo.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Appuntamento gastronomico dedicato al granchio, indicato a giugno nella presentazione turistica regionale.",
+      "sectors": "Gastronomia di pesce",
+      "participation": {
+        "type": "selected",
+        "note": "Il mese è tradizionale e non conferma un’edizione 2026. Occorre verificare programma, gestione degli stand e possibilità di partecipazione con gli organizzatori."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Teulada",
+      "name": "Sagra della Focaccia",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitteulada.it/evento/17-sagra-della-focaccia/",
+        "label": "www.visitteulada.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sagra della focaccia con vendita dalla mattina e degustazione serale, organizzata dall’Associazione Volontari Tarv Teulada.",
+      "sectors": "Prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "Il calendario comunale documenta la manifestazione, ma non bando, tariffe o ammissione di venditori esterni. Verificare con l’organizzazione; nessuna disponibilità dedotta."
+      },
+      "venue": "Piazza Berlinguer",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitteulada.it/evento/17-sagra-della-focaccia/"
+        }
+      ],
+      "sourceRecordIds": [
+        "https://www.visitteulada.it/evento/17-sagra-della-focaccia/",
+        "https://www.visitteulada.it/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-30-at-13.25.38.jpeg"
+      ],
+      "organizer": "Associazione Volontari Tarv Teulada"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sant'Antioco",
+      "name": "Gruttas Obertas",
+      "months": "7",
+      "category": "artigianato",
+      "source": {
+        "url": "https://parcostoricoarcheologicosantantioco.it/gruttas-obertas-2/",
+        "label": "parcostoricoarcheologicosantantioco.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Percorso nel villaggio ipogeo con espositori di artigianato, produzioni locali ed enogastronomia.",
+      "sectors": "Artigianato e prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "L’ingresso libero del pubblico non attesta gratuità o accesso libero per gli espositori. La fonte non pubblica tariffe né procedura di assegnazione; verificare con l’organizzazione."
+      },
+      "venue": "Via Necropoli, Via Foscolo e Via Cavallotti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-30",
+          "end": "2026-07-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://parcostoricoarcheologicosantantioco.it/gruttas-obertas-2/"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sant'Antioco",
+      "name": "Festa di Sant’Antioco Martire - Fiera commerciale",
+      "months": "4",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://albo.comune.santantioco.su.it/AttiVisualizzatore/download/delibera/2232928?fId=2237566",
+        "label": "albo.comune.santantioco.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Aree commerciali e di somministrazione previste dal Comune per i festeggiamenti del patrono.",
+      "sectors": "Commercio su area pubblica e somministrazione",
+      "participation": {
+        "type": "selected",
+        "note": "L’atto comunale distingue aree del commercio e della somministrazione. Servono istanza e autorizzazione per occupazione; verificare condizioni applicabili. Le giornate commerciali documentate sono il 18–20 aprile, distinte dal programma culturale più lungo."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://albo.comune.santantioco.su.it/AttiVisualizzatore/download/delibera/2232928?fId=2237566"
+        }
+      ]
+    },
+    {
+      "region": "Sardegna",
+      "city": "San Giovanni Suergiu",
+      "name": "Sagra della Cipolla",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.sangiovannisuergiu.ci.it/2026-06-11-ordinanza-dirigenziale-p-l-n-11-2026-istituzione-del-divieto-temporaneo-di-circolazione-e-di-sosta-per-lo-svolgimento-della-sagra-della-cipolla-2026-in-san-giovanni-suergiu/",
+        "label": "Comune di San Giovanni Suergiu",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione dedicata alla cipolla del territorio, con edizione 2026 attestata dall’ordinanza comunale.",
+      "sectors": "Prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "L’ordinanza documenta svolgimento e viabilità, non disponibilità o assegnazione di posteggi. Per eventuali spazi di vendita verificare requisiti, organizzazione e condizioni."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.sangiovannisuergiu.ci.it/2026-06-11-ordinanza-dirigenziale-p-l-n-11-2026-istituzione-del-divieto-temporaneo-di-circolazione-e-di-sosta-per-lo-svolgimento-della-sagra-della-cipolla-2026-in-san-giovanni-suergiu/"
+        }
+      ]
+    }
+  ]
+}

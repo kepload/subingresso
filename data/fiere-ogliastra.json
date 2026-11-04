@@ -1,0 +1,749 @@
+{
+  "province": "Ogliastra",
+  "checkedAt": "2026-11-04",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "privateArchive": ".local/ricerche/fiere-ogliastra-20261104",
+    "methodology": "Ricerca web nominale dei 23 comuni, lettura dei programmi ufficiali ASPEN/CCIAA 2026, fonti comunali e organizzatori e portale GAL Ogliastra. Ricognizione delle fonti accessibili, non censimento integrale degli albi o dei social. Periodi e storico non promossi a date correnti. Nessun contatto a terzi.",
+    "municipalityCoverage": [
+      {
+        "city": "Arzana",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Bari Sardo",
+        "eventCount": 4,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Baunei",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Cardedu",
+        "eventCount": 0,
+        "outcome": "Esaminate segnalazioni di mercatini estivi e sagre; calendario STS non usato per confermare il 2026 per incongruenze tra giorni della settimana e date. Nessuna conclusione di assenza."
+      },
+      {
+        "city": "Elini",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Gairo",
+        "eventCount": 0,
+        "outcome": "Esaminati Su Marti Perra (carnevale) e segnalazioni di sagre; escluse date 2026 sostenute soltanto da aggregatori e la scheda GAL della carne di pecora con riferimenti a due comuni e periodo non univoco."
+      },
+      {
+        "city": "Girasole",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Ilbono",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Jerzu",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Lanusei",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Loceri",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Lotzorai",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Osini",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Perdasdefogu",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Seui",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Talana",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Tertenia",
+        "eventCount": 0,
+        "outcome": "Individuati Su Biginau Antigu e sagra di culurgioni e pecora in fonti editoriali; nessuna fonte primaria leggibile sufficiente selezionata in questa ricognizione. Non equivale ad assenza."
+      },
+      {
+        "city": "Tortolì",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Triei",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Ulassai",
+        "eventCount": 0,
+        "outcome": "Esaminati calendario turistico e festival sportivo/culturale: non selezionata prova sufficiente di una manifestazione commerciale autonoma per espositori."
+      },
+      {
+        "city": "Urzulei",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Ussassai",
+        "eventCount": 1,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      },
+      {
+        "city": "Villagrande Strisaili",
+        "eventCount": 2,
+        "outcome": "Fonti primarie selezionate nell’audit; date e limiti specificati nelle schede."
+      }
+    ],
+    "limitations": [
+      "Pubblicazione e verifiche browser centralizzate affidate al coordinatore; nessuna casella provinciale chiusa da questa sessione.",
+      "Non verificata integralmente ogni iniziativa religiosa, ogni albo comunale o i social.",
+      "Bari Sardo e Lanusei distinguono la durata culturale generale dai giorni delle esposizioni indicati nel dossier.",
+      "Nessuna affluenza, notorietà, disponibilità o tariffa banco stimata.",
+      "Le sagre con gestione gastronomica interna non provano l’accesso di ambulanti esterni."
+    ]
+  },
+  "events": [
+    {
+      "region": "Sardegna",
+      "city": "Girasole",
+      "name": "Primavera nel Cuore della Sardegna a Girasole",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/girasole_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Percorso tra le produzioni gastronomiche del paese, dimostrazioni artigianali e iniziative nelle vie del centro.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/girasole_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tortolì",
+      "name": "Primavera nel Cuore della Sardegna a Tortolì",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/tortoli_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Le corti del centro storico ospitano produzioni artigianali, stand degli hobbisti e dimostrazioni dei saperi locali.",
+      "sectors": "Artigianato e hobbistica",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-02",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/tortoli_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Perdasdefogu",
+      "name": "Foghesu in Beranu",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/perdasdefogu_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Percorso tra stand di artigiani e associazioni, lavorazioni tradizionali e produzioni gastronomiche locali.",
+      "sectors": "Artigianato e prodotti alimentari",
+      "venue": "Piazza Longevità e centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-09",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/perdasdefogu_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Triei",
+      "name": "Primavera nel Cuore della Sardegna a Triei",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/triei_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La Via dei Sapori accompagna le degustazioni dei piatti locali con esposizioni artigianali e attività nel paese.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Centro abitato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-16",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/triei_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Loceri",
+      "name": "Loceri Art-Festival",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/loceri_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna con stand degli espositori, artigianato e punti di ristoro di aziende e produttori locali, accanto alle iniziative artistiche.",
+      "sectors": "Artigianato e prodotti alimentari",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-23",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/loceri_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Lotzorai",
+      "name": "Primavera nel Cuore della Sardegna a Lotzorai",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/lotzorai_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Itinerario gastronomico tra corti e artigiani, accompagnato da dimostrazioni delle lavorazioni del territorio.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-30",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/lotzorai_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Baunei",
+      "name": "Sa Coua Baunesa – Sa die e sa festa",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/baunei_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Le case antiche e le vie del paese ospitano un percorso dedicato ai sapori e ai mestieri, insieme alla rievocazione del matrimonio baunese.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/baunei_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Osini",
+      "name": "Sagra delle Ciliegie di Osini",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/osini_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sagra con espositori di prodotti locali, artigianato, percorsi gastronomici e attività dedicate alla ciliegia.",
+      "sectors": "Ciliegie, prodotti alimentari, artigianato e hobbistica",
+      "venue": "Centro abitato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/osini_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso comunale 2026: fino a cinque artigiani o hobbisti selezionati, con priorità ai residenti. Richiesta entro il 10 maggio 2026; previsto un rimborso a fronte di fattura o collaborazione occasionale, senza importo indicato. Non equivale a disponibilità attuale di un banco."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Villagrande Strisaili",
+      "name": "Beranu Antigu",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/villagrande_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Tappa primaverile dedicata ai saperi locali, con esposizioni di coltelli, costume, pelli e legno e dimostrazioni casearie.",
+      "sectors": "Artigianato e produzioni locali",
+      "venue": "Centro abitato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/villagrande_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il programma descrive esposizioni e dimostrazioni artigianali; non è un bando per posteggi ambulanti e non prova la disponibilità di spazi per la vendita. Verificare l’eventuale ammissione della propria attività con gli organizzatori."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bari Sardo",
+      "name": "Primavera nel Cuore della Sardegna a Bari Sardo",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/barisardo_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Le corti e le case del paese aprono per un itinerario tra produzioni locali, artigianato, degustazioni e tradizioni.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Corti e centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/barisardo_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Lanusei",
+      "name": "Fiera delle Ciliegie di Lanusei",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/lanusei_broch_2026.pdf",
+        "label": "www.cuoredellasardegna.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Fiera con ciliegie e prodotti agricoli, artigianato, hobbisti e percorsi gastronomici nelle vie della città.",
+      "sectors": "Ciliegie, prodotti agricoli, alimentari e artigianato",
+      "venue": "Via Roma e centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-25",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/lanusei_broch_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Arzana",
+      "name": "Porcino d’Oro",
+      "months": "10,11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.porcinodoro.it/",
+        "label": "www.porcinodoro.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione dedicata al fungo porcino, con cantine e proposte gastronomiche, incontri e tradizioni del territorio.",
+      "sectors": "Funghi e prodotti alimentari",
+      "venue": "Centro abitato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.porcinodoro.it/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Talana",
+      "name": "Sagra del Prosciutto di Talana",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sagraprosciuttotalana.it/home/",
+        "label": "www.sagraprosciuttotalana.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna dedicata al prosciutto locale, con degustazioni e iniziative nel centro del paese.",
+      "sectors": "Prosciutto e prodotti alimentari",
+      "venue": "Centro abitato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagraprosciuttotalana.it/home/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "L’organizzatore rinvia al Comune di Talana per la domanda di assegnazione del suolo pubblico. Il programma non pubblica tariffe o disponibilità residue; il 9 agosto è indicata un’escursione e non una seconda giornata di fiera."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Jerzu",
+      "name": "Calici di Stelle a Jerzu",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.calicidistellejerzu.it/",
+        "label": "www.calicidistellejerzu.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Percorso gastronomico nel centro storico con piatti locali e vini della Cantina Antichi Poderi di Jerzu.",
+      "sectors": "Vino e prodotti alimentari",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.calicidistellejerzu.it/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il pass di 25 euro pubblicato per il 2026 è destinato al percorso dei visitatori: non è una tariffa espositore. Le sei cantinette del programma non costituiscono un’offerta aperta di posteggi per venditori esterni."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Seui",
+      "name": "Su Prugadoriu",
+      "months": "10,11",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.seui.su.it/it/vivere-il-comune/su-prugadoriu-2026/",
+        "label": "comune.seui.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Le vie del paese e is mangasinus ospitano gastronomia, antichi mestieri, laboratori e iniziative legate alla tradizione delle anime.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-30",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.seui.su.it/it/vivere-il-comune/su-prugadoriu-2026/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bari Sardo",
+      "name": "Sa Cogina Antiga",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sa-cogina-antiga-3edizione-22-e-23-agosto-nelle-vie-del-centro-storico-di-bari-sardo/",
+        "label": "www.comune.barisardo.og.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Percorso dedicato alla cucina e alle tradizioni locali nelle vie del paese, organizzato dall’associazione Is Cortes de Bari.",
+      "sectors": "Prodotti alimentari",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sa-cogina-antiga-3edizione-22-e-23-agosto-nelle-vie-del-centro-storico-di-bari-sardo/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bari Sardo",
+      "name": "Sagra dei Culurgioni – Piazza Repubblica",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sagra-dei-culurgioni-domenica-30-agosto-bari-sardo-piazza-repubblica-nota-piazza-mercato-dalle-ore-1830/",
+        "label": "www.comune.barisardo.og.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Serata gastronomica dedicata ai culurgioni, con degustazioni nella piazza conosciuta come Piazza Mercato.",
+      "sectors": "Pasta fresca e prodotti alimentari",
+      "venue": "Piazza Repubblica, detta Piazza Mercato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-30",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sagra-dei-culurgioni-domenica-30-agosto-bari-sardo-piazza-repubblica-nota-piazza-mercato-dalle-ore-1830/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bari Sardo",
+      "name": "Sagra dei Culurgioni – La Torre",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sagra-dei-culurgioni/",
+        "label": "www.comune.barisardo.og.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Appuntamento gastronomico dedicato ai culurgioni nella località costiera La Torre.",
+      "sectors": "Pasta fresca e prodotti alimentari",
+      "venue": "Località La Torre",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barisardo.og.it/vivere-il-comune/eventi/sagra-dei-culurgioni/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Le fonti descrivono la manifestazione, ma non pubblicano qui requisiti, tariffe o assegnazioni per nuovi espositori. Verificare con l’organizzazione le condizioni della propria categoria prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Elini",
+      "name": "Sagra de S’Anguli e Cibudda",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.elini.nu.it/call_plugin/x3allegati/2/file/1547/ordinanza-n-13-del-26-07-2024-istituzione-divieto-di-sosta-e-transito-piazza-stazione-signed-pdf/ordinanza-n.13-del-26-07-2024-istituzione-divieto-di-sosta-e-transito-piazza-stazione-signed.pdf.dwd",
+        "label": "www.elini.nu.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sagra della focaccia locale con spazi per artigiani e hobbisti documentati dall’ordinanza comunale dell’edizione 2024.",
+      "sectors": "Prodotti alimentari, artigianato e hobbistica",
+      "venue": "Piazza Stazione e tratto della SP 23",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-03",
+          "end": "2024-08-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.elini.nu.it/call_plugin/x3allegati/2/file/1547/ordinanza-n-13-del-26-07-2024-istituzione-divieto-di-sosta-e-transito-piazza-stazione-signed-pdf/ordinanza-n.13-del-26-07-2024-istituzione-divieto-di-sosta-e-transito-piazza-stazione-signed.pdf.dwd"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il documento riguarda il 3 agosto 2024 e disciplina la viabilità e gli spazi degli artigiani: non è un bando vigente e non conferma una data 2026. Condizioni e costi per gli espositori non sono indicati."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ussassai",
+      "name": "Sagra della Mela di Ussassai",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://giornatanazionale.borghiautenticiditalia.it/edizione-2025/ussassai-nu-25-26-ottobre/",
+        "label": "giornatanazionale.borghiautenticiditalia.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sagra dedicata alle varietà di mele del territorio, con degustazioni e tradizioni del borgo.",
+      "sectors": "Mele e prodotti alimentari",
+      "venue": "Borgo di Ussassai",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-18",
+          "end": "2025-10-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://giornatanazionale.borghiautenticiditalia.it/edizione-2025/ussassai-nu-25-26-ottobre/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "La fonte della rete Borghi Autentici conferma l’edizione del 18 e 19 ottobre 2025. Il percorso dell’URL conserva date differenti, ma prevale il titolo e il testo della pagina. Nessuna data 2026 è dedotta da questo documento."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Urzulei",
+      "name": "Sagra della Carne di Caprone e del Caglio di Capretto",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://visit-ogliastra.it/evento/sagra-carne-di-caprone-e-del-caglio-di-capretto/",
+        "label": "visit-ogliastra.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sagra dei prodotti della tradizione pastorale, con carne di caprone e caglio di capretto.",
+      "sectors": "Prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "Il portale del GAL Ogliastra documenta la manifestazione nel periodo di luglio senza una data annuale confermata qui. L’evento non implica l’apertura di posteggi a venditori esterni; verificare condizioni e calendario con l’organizzazione."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Villagrande Strisaili",
+      "name": "Sagra dei Gathulis",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://visit-ogliastra.it/evento/sagra-dei-gathulis/",
+        "label": "visit-ogliastra.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Manifestazione gastronomica dedicata ai gathulis, anelli di patate e formaggio della cucina locale.",
+      "sectors": "Prodotti alimentari",
+      "participation": {
+        "type": "selected",
+        "note": "La fonte del GAL descrive la ricorrenza estiva; il periodo di agosto non equivale alla conferma di un’edizione 2026. Non sono pubblicate qui tariffe o procedure per nuovi espositori."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ilbono",
+      "name": "Pane e Olio",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://visit-ogliastra.it/evento/pane-e-olio/",
+        "label": "visit-ogliastra.it",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Rassegna dedicata al pane e all’olio locali, con degustazioni, laboratori e artigianato.",
+      "sectors": "Pane, olio e artigianato",
+      "participation": {
+        "type": "selected",
+        "note": "Il Comune documenta le riunioni preparatorie dell’edizione 2026. La data della riunione non è la data della manifestazione. Il programma GAL collegato è del 2025; resta solo il periodo di novembre, senza dedurre date o tariffe 2026 dagli aggregatori."
+      }
+    }
+  ]
+}

@@ -24,6 +24,31 @@
           "basilicata-rotondella-sagra-dell-albicocca"
         ],
         "method": "Tre riscontri mirati della ricerca provinciale; altri record conservati senza nuova verifica. Anni 2025 e 2026 distinti."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "eventId": "sardegna-carloforte-gua-fest",
+        "method": "Ricerca provinciale Sulcis Iglesiente: avviso primario e allegati letti; importi, anno e limiti documentati nel dossier 121."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "eventId": "sardegna-carloforte-ortoforte-il-mercato-della-terra",
+        "method": "Ricerca provinciale Sulcis Iglesiente: avviso primario e allegati letti; importi, anno e limiti documentati nel dossier 121."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "eventId": "sardegna-carloforte-dere-ai-furni",
+        "method": "Ricerca provinciale Sulcis Iglesiente: avviso primario e allegati letti; importi, anno e limiti documentati nel dossier 121."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "eventId": "sardegna-santadi-pane-e-olio-in-frantoio",
+        "method": "Ricerca provinciale Sulcis Iglesiente: avviso primario e allegati letti; importi, anno e limiti documentati nel dossier 121."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "eventId": "sardegna-iglesias-notteggiando-mercatino-espositivo",
+        "method": "Ricerca provinciale Sulcis Iglesiente: avviso primario e allegati letti; importi, anno e limiti documentati nel dossier 121."
       }
     ]
   },
@@ -3644,6 +3669,51 @@
       "period": "2025",
       "details": "L’avviso per la XXVII Sagra del 28–29 giugno 2025 offriva agli ammessi stand 3×3 m, punto luce e SCIA per cibo e bevande senza quota per queste dotazioni. Candidature entro le 12 del 6 giugno 2025, ammesse anche aziende esterne al Comune. La scheda conserva separatamente le date 2026; queste condizioni economiche non sono confermate per il 2026.",
       "sourceUrl": "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "sardegna-carloforte-gua-fest": {
+      "label": "3×3 m: 500 €; spazi maggiori: 650 € / tre giorni",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Quota per l’intero Gùa Fest 24–26 aprile 2026: 500 euro per 3×3 m, 650 euro per spazi superiori (max 6 posti). Le linee guida prevedono allacci elettrici, guardiania e massimo due posti letto per espositore. IVA non esplicitata: non dichiarata inclusa né aggiunta. Accettazione e autorizzazioni necessarie.",
+      "sourceUrl": "https://carloforte-api.municipiumapp.it/s3/1388/allegati/allegato-a-linee-guida-gua-fest-2026.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "sardegna-carloforte-ortoforte-il-mercato-della-terra": {
+      "label": "100 € per due giorni; soci Incomunis gratuiti",
+      "kind": "fee",
+      "period": "2026",
+      "details": "11–12 settembre 2026: soci/membri riconosciuti Comunità del Cibo Incomunis gratuiti; altri espositori 50 euro al giorno, 100 euro complessivi per le due giornate. Compresi stallo e gazebo 3×3 m. Ammissione per coerenza merceologica; IVA non specificata.",
+      "sourceUrl": "https://carloforte-api.municipiumapp.it/s3/1388/allegati/avviso-pubblico-6.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "sardegna-carloforte-dere-ai-furni": {
+      "label": "200 € street food; 150 € vino / intero evento",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Quota 12–13 agosto 2026: street food e food truck 200 euro; settore vitivinicolo 150 euro, per l’intera manifestazione. Strutture proprie. Pagamento successivo all’ammissione; rimangono a carico degli operatori gli oneri direttamente legati all’esercizio dell’attività e ai titoli necessari. IVA non specificata.",
+      "sourceUrl": "https://carloforte-api.municipiumapp.it/s3/1388/allegati/avviso-pubblico-5.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "sardegna-santadi-pane-e-olio-in-frantoio": {
+      "label": "Storico 2025: 1,80 €/m²/giorno + due bolli da 16 €",
+      "kind": "unit",
+      "period": "2025",
+      "details": "Edizione 29–30 novembre 2025: canone giornaliero di occupazione 1,80 euro per metro quadrato e due marche da bollo da 16 euro. Non è un preventivo complessivo e non conferma tariffe 2026; domanda entro il 21 novembre 2025, assegnazione discrezionale comunale.",
+      "sourceUrl": "https://www.comune.santadi.su.it/santadi/resources/cms/documents/AVVISO_AGLI_ESPOSITORI_PER_SITO_PANE_OLIO_2025_.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "sardegna-iglesias-notteggiando-mercatino-espositivo": {
+      "label": "Bollo 16 €; canone suolo da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Bando 2026: allegare marca da bollo da 16 euro. La vendita è soggetta al pagamento del suolo pubblico, di cui la pagina non indica l’importo; il bollo non è il prezzo totale del banco.",
+      "sourceUrl": "https://www.comune.iglesias.ca.it/it/community/notizie/notizia/Notteggiando-2026-Bando-per-lassegnazione-di-12-stalli-su-area-pubblica/",
       "checkedAt": "2026-11-04",
       "review": "live-source-review"
     }

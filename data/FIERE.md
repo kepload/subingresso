@@ -28,6 +28,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Ogliastra — ricerca documentale, 4 novembre 2026](fiere-dossier/120-ogliastra-20261104.md)
+- [Sulcis Iglesiente — ricerca documentale, 4 novembre 2026](fiere-dossier/121-sulcis-iglesiente-20261104.md)
 - [Matera — ricerca documentale, 4 novembre 2026](fiere-dossier/118-matera-ricerca-documentale-4-novembre-2026.md)
 - [Benevento — ricerca documentale, 1 novembre 2026](fiere-dossier/001-benevento-ricerca-documentale-1-novembre-2026.md)
 - [Foggia — ricerca documentale, 31 ottobre 2026](fiere-dossier/002-foggia-ricerca-documentale-31-ottobre-2026.md)
