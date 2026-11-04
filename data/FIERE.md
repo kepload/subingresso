@@ -146,3 +146,5 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 - [Savona — ricerca documentale del 21 ottobre 2026](fiere-dossier/115-savona-ricerca-documentale-del-21-ottobre-2026.md)
 - [La Spezia — ricerca provinciale del 22 ottobre 2026](fiere-dossier/116-la-spezia-ricerca-provinciale-del-22-ottobre-2026.md)
 - [Teramo — ricerca provinciale del 26 ottobre 2026](fiere-dossier/117-teramo-ricerca-provinciale-del-26-ottobre-2026.md)
+
+- [Medio Campidano ? 4 novembre 2026](fiere-dossier/119-medio-campidano-20261104.md)

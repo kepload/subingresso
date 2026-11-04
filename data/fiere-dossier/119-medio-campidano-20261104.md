@@ -1,0 +1,9 @@
+# Medio Campidano ? 4 novembre 2026
+
+Ricognizione web in gruppi dei 28 comuni; nove schede in nove comuni, tutte con date 2026 da fonti comunali o organizzatori. Catalogo 9.538; 9.529 schede precedenti identiche. Ricerca accessibile con copertura limitata, non censimento. Nessuna conclusione di assenza per i comuni senza schede. Audit `data/fiere-medio-campidano.json`; nove originali HTML e SHA256 in `.local/ricerche/fiere-medio-campidano-20261104`.
+
+Sanluri: sola giornata espositiva del 27 settembre. Gonnosfanadiga: 20?22 novembre da avviso comunale, esclusa stima 14?16 degli aggregatori; domanda 13 novembre, prelazione 31 ottobre. Siddi: avviso aggiornato il 20 ottobre con scadenza 21 ottobre ed esito 22, prevalente sul PDF precedente (11/16 ottobre). Regolamento: spazio gratuito, materiali e trasporto propri, assegnazione discrezionale; riferimenti incongrui a tre giorni non estesi al calendario. San Gavino: raccolta proposte senza garanzia di posteggio. Tuili: modulo ZIP non letto dal browser, nessuna tariffa dedotta. Villanovaforru: sagre gastronomiche mantenute nella rassegna unica.
+
+Esclusi mercati settimanali, programmi culturali senza prova commerciale e calendario storico 2008; Festival delle erbe esaminato ma non equiparato a mercato per espositori. Nessuna affluenza, notoriet? o tariffa stimata. Albi e social non esplorati integralmente. Nuove edizioni e approfondimenti comunali restano manutenzione distinta.
+
+Build iniziale fermata: comuni.json conserva Sud Sardegna. Corretto il confronto provinciale del builder con la mappa sarda gi? usata dal catalogo; dataset comuni invariato. Build, settori, SEO e pagine SSR verificati. Pubblicazione da verificare prima di spuntare la checklist.

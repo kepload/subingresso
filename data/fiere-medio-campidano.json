@@ -1,0 +1,405 @@
+{
+  "province": "Medio Campidano",
+  "checkedAt": "2026-11-04",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "privateArchive": ".local/ricerche/fiere-medio-campidano-20261104",
+    "methodology": "Ricerca web nominale in gruppi di comuni e lettura mirata di nove fonti ufficiali o degli organizzatori. Nessun censimento integrale degli albi. Esclusi mercati settimanali e manifestazioni senza componente commerciale verificata. Copertura limitata ai risultati accessibili.",
+    "municipalityCoverage": [
+      {
+        "city": "Arbus",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Barumini",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Collinas",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Furtei",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Genuri",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Gesturi",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Gonnosfanadiga",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Guspini",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Las Plassas",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Lunamatrona",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Pabillonis",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Pauli Arbarei",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Samassi",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "San Gavino Monreale",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Sanluri",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Sardara",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Segariu",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Serramanna",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Serrenti",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Setzu",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Siddi",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Tuili",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Turri",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Ussaramanna",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Villacidro",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Villamar",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      },
+      {
+        "city": "Villanovaforru",
+        "eventCount": 1,
+        "outcome": "Fonti selezionate in audit"
+      },
+      {
+        "city": "Villanovafranca",
+        "eventCount": 0,
+        "outcome": "Ricerca in gruppi di comuni senza prova commerciale sufficiente selezionata; non equivale ad assenza di eventi."
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Sardegna",
+      "city": "Sanluri",
+      "name": "Festa del Borgo e Sagra del Civraxu",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.sanluri.su.it/novita/il-27-settembre-la-29esima-festa-del-borgo-e-la-sagra-del-civraxu/",
+        "label": "www.comune.sanluri.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sanluri.su.it/novita/il-27-settembre-la-29esima-festa-del-borgo-e-la-sagra-del-civraxu/"
+        }
+      ],
+      "summary": "Percorso nel borgo dedicato a mestieri tradizionali, artigianato e pane civraxu. Le iniziative culturali dei giorni precedenti non estendono la giornata espositiva.",
+      "sectors": "Artigianato e prodotti alimentari",
+      "venue": "Centro storico",
+      "participation": {
+        "type": "selected",
+        "note": "Adesioni 2026 entro il 12 settembre alla Pro Loco, con moduli distinti per espositori e hobbisti e per somministrazione. Tariffe e assegnazioni da verificare nel regolamento."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Las Plassas",
+      "name": "Sagra dei Legumi",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.lasplassas.su.it/Dettaglionews?IDNews=415040",
+        "label": "www.comune.lasplassas.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.lasplassas.su.it/Dettaglionews?IDNews=415040"
+        }
+      ],
+      "summary": "Manifestazione dedicata ai legumi con partecipazione degli espositori su richiesta. La documentazione distingue spazi privati, comunali e iniziative di enti o associazioni.",
+      "sectors": "Prodotti alimentari",
+      "venue": "",
+      "participation": {
+        "type": "selected",
+        "note": "Domande 2026 entro il 30 settembre ore 12. Modelli distinti secondo lo spazio e il soggetto; consultare il disciplinare prima di richiedere una postazione."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Villanovaforru",
+      "name": "Mestieri, Saperi e Sapori del Passato",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocovillanovaforru.it/moduli-espositori",
+        "label": "prolocovillanovaforru.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prolocovillanovaforru.it/moduli-espositori"
+        }
+      ],
+      "summary": "Rassegna con espositori e tradizioni gastronomiche locali, comprendente le sagre della simbua frita cun satitzu e dei cixiri cun peis de procu.",
+      "sectors": "Prodotti alimentari",
+      "venue": "",
+      "participation": {
+        "type": "selected",
+        "note": "La Pro Loco pubblica il modulo espositori 2026, da trasmettere al Comune entro il 29 agosto. La pagina non certifica costi o disponibilità attuale degli spazi."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Samassi",
+      "name": "Sagra del Carciofo",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sagradelcarciofosamassi.it/",
+        "label": "www.sagradelcarciofosamassi.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagradelcarciofosamassi.it/"
+        }
+      ],
+      "summary": "Manifestazione dedicata al carciofo e ai prodotti del territorio, con degustazioni, laboratori e percorsi nelle case campidanesi.",
+      "sectors": "Prodotti alimentari",
+      "venue": "",
+      "participation": {
+        "type": "selected",
+        "note": "Per esporre occorre verificare con l’organizzazione requisiti, selezione e condizioni dello spazio. La pagina dell’edizione documenta le date ma non un preventivo per il banco."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gonnosfanadiga",
+      "name": "Sagra delle Olive",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.gonnosfanadiga.su.it/novita/avvisi/xxxix-sagra-delle-olive-avviso-per-gli-espositori",
+        "label": "comune.gonnosfanadiga.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-20",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.gonnosfanadiga.su.it/novita/avvisi/xxxix-sagra-delle-olive-avviso-per-gli-espositori"
+        }
+      ],
+      "summary": "Rassegna delle olive con postazioni per espositori nelle vie Porru Bonelli e Roma e nell’area Fiera Mercato, secondo l’avviso comunale della trentanovesima edizione.",
+      "sectors": "Olive e olio, prodotti alimentari",
+      "venue": "Via Porru Bonelli, via Roma e Fiera Mercato",
+      "participation": {
+        "type": "selected",
+        "note": "Domanda alla Pro Loco entro il 13 novembre 2026. Prelazione di un solo stallo per gli esercizi delle vie interessate, da esercitare entro il 31 ottobre. Costi da verificare negli allegati."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Guspini",
+      "name": "Sagra del Miele di Montevecchio",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.guspini.su.it/srd/eventi/sagra-del-miele-723964",
+        "label": "www.comune.guspini.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.guspini.su.it/srd/eventi/sagra-del-miele-723964"
+        }
+      ],
+      "summary": "Manifestazione dedicata al miele a Montevecchio, con incontri tecnici di apicoltura, concorso regionale e attività della Pro Loco.",
+      "sectors": "Miele e prodotti alimentari",
+      "venue": "Montevecchio",
+      "participation": {
+        "type": "selected",
+        "note": "La partecipazione al concorso dei mieli non equivale all’assegnazione di uno spazio di vendita. Per il banco verificare con l’organizzazione requisiti e condizioni dell’edizione."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "San Gavino Monreale",
+      "name": "Festival Strade dello Zafferano di Sardegna DOP",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.sangavinomonreale.su.it/novita/raccontaci-la-tua-proposta-e-partecipa-al-festival-strade-dello-zafferano-di-sardegna-dop-2026/",
+        "label": "www.comune.sangavinomonreale.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sangavinomonreale.su.it/novita/raccontaci-la-tua-proposta-e-partecipa-al-festival-strade-dello-zafferano-di-sardegna-dop-2026/"
+        }
+      ],
+      "summary": "Giornata dedicata allo zafferano e alle produzioni locali, aperta a proposte di produttori, artigiani, hobbisti e attività del territorio.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "",
+      "participation": {
+        "type": "selected",
+        "note": "Il modulo 2026 raccoglie proposte: non costituisce iscrizione ufficiale e non garantisce spazi. Le occupazioni pubbliche e le attività soggette ad autorizzazione richiedono procedure specifiche."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tuili",
+      "name": "Sagra de su Pani Arrubiu",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://fondazionegiara.org/sagra-pani-arrubiu-tuili-2026-aderisci-evento/",
+        "label": "fondazionegiara.org",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://fondazionegiara.org/sagra-pani-arrubiu-tuili-2026-aderisci-evento/"
+        }
+      ],
+      "summary": "Tappa di Primavera in Marmilla dedicata al pane locale con uvetta e zafferano, accompagnata dalla valorizzazione del paese e delle sue tradizioni.",
+      "sectors": "Pane e prodotti alimentari",
+      "venue": "",
+      "participation": {
+        "type": "selected",
+        "note": "La Fondazione Giara pubblica un archivio ZIP con il modulo di adesione espositori. La pagina non indica tariffe: verificare condizioni e assegnazione prima di partecipare."
+      }
+    },
+    {
+      "region": "Sardegna",
+      "city": "Siddi",
+      "name": "Fiera mercato Appetitosamente",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.siddi.su.it/novita/avviso-pubblico-per-manifestazione-di-interesse-fiera-mercato-festival-appetitosamente-2026/",
+        "label": "www.comune.siddi.su.it",
+        "checkedAt": "2026-11-04"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.siddi.su.it/novita/avviso-pubblico-per-manifestazione-di-interesse-fiera-mercato-festival-appetitosamente-2026/"
+        }
+      ],
+      "summary": "Mostra mercato tematica del Festival del Buon Cibo, dedicata a produttori, artigiani e produzioni coerenti con i principi della manifestazione.",
+      "sectors": "Agroalimentare, artigianato, oggettistica e editoria",
+      "venue": "Piazza Leonardo da Vinci e vie adiacenti",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso aggiornato il 20 ottobre: domanda online con SPID o CIE entro il 21 ottobre 2026, esito entro il 22. Il PDF conserva i termini precedenti. Spazio gratuito, attrezzature e trasporto a carico dell’espositore; selezione discrezionale."
+      }
+    }
+  ]
+}
