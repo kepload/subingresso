@@ -61,10 +61,22 @@ if ($LASTEXITCODE -eq 0) {
 }
 
 # Cleanup: tieni solo gli ultimi 30 backup tag locali (i remoti restano per sempre)
-$oldTags = git tag -l "backup/session-*" | Sort-Object -Descending | Select-Object -Skip 30
+$oldTags = @(git tag -l "backup/session-*" | Sort-Object -Descending | Select-Object -Skip 30)
 if ($oldTags) {
-    foreach ($t in $oldTags) { try { git tag -d $t -ErrorAction Stop | Out-Null } catch {} }
-    Write-Host "Cleanup: rimossi $($oldTags.Count) tag locali vecchi (sopra i 30)." -ForegroundColor Gray
+    # -ErrorAction e un parametro PowerShell, non di git: causava un errore
+    # ripetuto per ogni tag. Batch piccoli evitano anche migliaia di processi.
+    $tagCleanupCount = 0
+    for ($tagOffset = 0; $tagOffset -lt $oldTags.Count; $tagOffset += 50) {
+        $tagLast = [Math]::Min($tagOffset + 49, $oldTags.Count - 1)
+        $tagBatch = @($oldTags[$tagOffset..$tagLast])
+        git tag -d -- @tagBatch | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            Write-Warning "Cleanup locale interrotto; il backup remoto resta separato da questa operazione."
+            break
+        }
+        $tagCleanupCount += $tagBatch.Count
+    }
+    Write-Host "Cleanup: rimossi $tagCleanupCount tag locali vecchi (sopra i 30); remoti conservati." -ForegroundColor Gray
 }
 
 Write-Host ""

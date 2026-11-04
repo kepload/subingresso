@@ -1,0 +1,18 @@
+
+## 📣 Blog Promo Inline
+
+- **Selezione contestuale,18/10/2026:** `blog_listing_ads(p_slug,p_limit=3)` sostituisce nel solo blog il pool24 + `_featuredFirst`; patch `PATCH_BLOG_LISTING_ADS_20261018.sql` applicata prima del template. Titolo/slug pubblicati → regioni/zone/città riconoscibili; Vetrine locali prima, poi gratuiti locali; generici nazionali. Fra pari pertinenza geografica/tema e sorteggio nuovo; tutti gli annunci idonei partecipano. Pubblici massimo3 e soli campi sicuri, helper/indice anagrafica privati. Esclusi scaduti/non-active/demo, niente cache della scelta e niente timer durante la lettura; cache browser ripristinata rilegge. Anteprime compatte e tracciamenti conservati, regione click anche nelle guide; risposte tardive protette. Test SQL60 Vetrine/800 estrazioni e browser32 casi passati;90 articoli/48 regionali controllati. Zero Vetrine attive reali al controllo. Dettagli/limiti `data/BLOG_ADS.md`, prove `Documents/blog-ads-20261018`; pubblicato63ec124, Vercel riuscito Ar3Ndb2RKVstVZ9zcRkJtTXbW8NU; template/SQL verificati identici, dodici casi online con annunci reali passati Chromium1440/320 e WebKit390 su fiere Lombardia, prezzi, Garda e bandi Lombardia (scritture intercettate). Correlati annunci/fiere/Stripe non modificati.
+
+- `_insertBlogPromo(html)` in `blog-template.html`: dopo il 3° paragrafo, avvisi con account sui bandi; anteprime annunci sugli altri articoli. Consultabili anche da autenticati; con meno di tre paragrafi richiamo in coda.
+- 17 ottobre 2026: `_blogListingPreview` sostituisce `buildCard` solo nei richiami blog. Foto 56×56, titolo su massimo due righe, località, vendita/affitto e prezzo; tre colonne da 768 px, tre righe da 82 px sotto. Titolo sezione piccolo, senza introduzione promozionale né spazi superiori eccessivi. CSS confinato a `.blog-listings`; nessuna variazione alle schede nella ricerca annunci. Profilo venditore non caricato nel richiamo.
+- Priorità Vetrina con indicazione, foto a rotazione, filtro regione, link dettaglio/“Vedi tutti”, `data-listing-id` per impression e `box_listing_click` conservati. Test dedicati su articoli Umbria e bandi Lombardia, Chromium 1440/768/390/320×568 e WebKit390: riquadro 140 px su computer/tablet, 320–338 telefono; testo seguente visibile a 320×568, link/prezzi/foto/fallback/escaping/tracciamenti corretti. Prove fuori repo `Documents/verifica-blog-promo-compatta-20261017.cjs` e cartella omonima; annunci simulati, nessuna scrittura reale. Il primo test click era bloccato correttamente da `navigator.webdriver`: adattata solo la fixture. Backup remoto pre-modifica valido; noto errore cleanup tag.
+- Pubblicato `f0e8572`, Vercel riuscito `AWztUNie2PFThoB37ngoXvtND1cF`; template online identico. Tutti i dieci casi ripetuti sull'HTML pubblicato passati; ulteriori controlli con annunci reali a 1440/390 confermano tre anteprime, 140/320 px e testo seguente visibile. Screenshot e risultati `live.json`/`live-real.json` nella cartella prove. Schede complete della ricerca annunci conservate.
+
+## 🏠 Home Page Sezioni
+
+- Ripristino21/10: restyling esteso rifiutato, grafica9ffd1c1 e vecchio slogan
+  senza sottotitolo aggiuntivo. Preferire semplicità, niente copy decorativo.
+  UI14/design-system2: solo feedback pulsanti e barra smartphone74/72px con menu.
+- Ordine originale: Hero/ricerca/contatori → Ultimi Annunci (12 card) → banner mobile calcolatore → fiere → 3 passi → città → FAQ.
+- `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
+- Ripristinati banner e sezioni originali; dettagli/storico in `data/STORICO_GRAFICA_20261021.md`.

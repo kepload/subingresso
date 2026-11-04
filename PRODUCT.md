@@ -14,11 +14,11 @@ Mettere in contatto diretto acquirenti e venditori di posteggi; offrire ricerca 
 
 ## Capabilities and Constraints
 
-Sorgenti esistenti HTML, CSS Tailwind precompilato e JavaScript senza framework. Produzione Vercel, autenticazione e dati Supabase. Conservare URL, ricerca e suggerimenti, dati e contatori esistenti, preferiti, autenticazione, accessi ai venditori, wizard e pagamenti. Nessuna modifica ai dati o ai sistemi di invio. Non inventare testimonianze, offerte o verifiche.
+Sorgenti esistenti HTML, CSS Tailwind precompilato e JavaScript senza framework. Produzione Vercel, autenticazione e dati Supabase. Conservare URL, ricerca e suggerimenti, dati e contatori esistenti, preferiti, autenticazione, accessi ai venditori, wizard e pagamenti. Interventi su dati o invii richiedono una richiesta corrente pertinente. Non inventare testimonianze, offerte o verifiche.
 
 ## Brand Commitments
 
-Nome Subingresso.it e logo solo testuale. Blu riconoscibile, testi italiani essenziali. Slogan corrente «La tua licenza venduta in un click.». Pulsanti telefono e assenza di menu mobile derivano dalle richieste del 21 ottobre. La richiesta corrente autorizza un redesign e richiede una copia per tornare indietro.
+Nome Subingresso.it e logo solo testuale. Blu riconoscibile, testi italiani essenziali. Slogan corrente «La tua licenza venduta in un click.». Pulsanti telefono e assenza di menu mobile derivano dalle richieste del 21 ottobre.
 
 ## Evidence on Hand
 
@@ -30,4 +30,4 @@ Ricerca utilizzabile subito. Offerte leggibili e contatto diretto. Nessun fatto 
 
 ## Open Decisions
 
-Priorità di conversione chiesta all’utente in questa sessione; in assenza di risposta si assume la ricerca e vendita dei posteggi come attività primaria, in base ai documenti e ai percorsi esistenti. Nessun nuovo default del metodo di lavoro è stato salvato.
+La priorità primaria è la ricerca e vendita dei posteggi, in base ai percorsi esistenti. Le autorizzazioni a interventi grafici appartengono alle rispettive richieste; questo documento descrive il prodotto. Decisioni e attività correnti: `Subingresso.it informazioni.md`.

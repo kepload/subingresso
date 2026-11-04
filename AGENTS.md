@@ -20,21 +20,25 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
 
 ## Letture mirate e memoria
 
-Non leggere integralmente manuale, registro o dossier fiere
-all'avvio di ogni attività. Dopo queste regole, cercare con `rg` il tema e
-leggere soltanto codice, sezioni e contratti pertinenti.
+Non leggere integralmente manuale, registro o dossier fiere all'avvio.
+`Subingresso.it informazioni.md` contiene lo stato breve; `istruzioni.md` e
+`data/FIERE.md` sono indici. Aprire solo i riferimenti pertinenti alla richiesta.
+Per trovare un tema usare `node scripts/project-context.cjs "tema"` (output
+limitato) o `rg -n` sui file pertinenti. `--storico` include gli snapshot:
+le autorizzazioni archiviate non si riattivano. Metodo: `docs/CONTESTO.md`,
+da leggere solo per gestione del contesto/ripresa, non a ogni attività.
 
 | Serve capire | Fonte da consultare quando pertinente |
 |---|---|
-| Architettura, flussi, bug e motivazioni tecniche | `istruzioni.md` |
-| Decisioni dell'utente, attività aperte e pubblicazioni | `Subingresso.it informazioni.md` |
-| Fiere, fonti, copertura e limiti provinciali | `data/FIERE.md`, audit `data/fiere-*.json` e checklist nel registro |
+| Architettura, flussi, bug e motivazioni tecniche | `istruzioni.md` → singolo file `docs/manuale/` |
+| Decisioni e stato; attività da rivalidare | `Subingresso.it informazioni.md`; `docs/attivita.md` |
+| Fiere, fonti, copertura e limiti provinciali | `data/FIERE.md` → dossier; audit `data/fiere-*.json`; checklist unica `docs/fiere-province.md` |
 | Organizzatori ed eventi | `data/ORGANIZZATORI_EVENTI.md` |
 | SEO, traffico Google e risultati del blog | `data/SEARCH_CONSOLE.md`: verificare `node scripts/search-console.cjs status`; se configurato aggiornare con `report` prima dell'analisi, altrimenti segnalare che manca il collegamento Google. Non confondere referrer o ricerche pubbliche con posizioni certificate. |
 | Vetrine e pacchetti | `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md` |
 | Offerte email, consensi e misura | `data/VETRINA_EMAIL.md`, `data/EMAIL_CONVERSION_ANALYTICS.md` |
 | Tema, immagini, luoghi e fiere salvate | Rispettivi contratti `data/THEME_PREFERENCES.md`, `data/IMAGE_PREVIEWS.md`, `data/LOCALITA.md`, `data/FIERE_SALVATE.md` |
-| Annunci preferiti | Sezione «Saved Listings» del manuale e helper in `js/data.js` |
+| Annunci preferiti | Cercare «Saved Listings» in `docs/manuale/`; helper in `js/data.js` |
 | Interfaccia e prodotto | `DESIGN.md`, `PRODUCT.md` |
 
 Codice e configurazioni effettive descrivono l'implementazione. Schema e servizi
@@ -42,6 +46,10 @@ live vanno verificati prima di interventi che li coinvolgono. Date, numeri e
 versioni nei registri sono snapshot, non prova dello stato corrente.
 Aggiornare il documento interessato quando cambiano una regola o un contratto;
 registrare gli esiti significativi in poche righe, senza copiarli in tutti i file.
+Il riepilogo corrente resta indicativamente entro 10 KB: archiviare esiti
+conclusi in snapshot datati con rimando, conservando vincoli e problemi aperti.
+I riferimenti tecnici e provinciali sono ora nei singoli dossier: aggiornarli
+senza ricreare il vecchio documento monolitico. Non leggere lo storico intero.
 A fine sessione, se l'utente chiede di salvare/chiudere, conservare solo novità
 utili e non duplicate. Le regole comuni si aggiornano soltanto qui.
 
