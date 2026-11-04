@@ -153,6 +153,7 @@
             if (!response.ok) throw Error(result.error || 'Impossibile pubblicare. Riprova.');
             try { localStorage.removeItem(key(s)); } catch (_) {}
             s.editing = false; s.draft = emptyDraft(); s.success = true;
+            document.dispatchEvent(new CustomEvent('fair-review-published',{detail:{kind:s.kind,id:s.id}}));
             await load(s);
         } catch (error) {
             if (version === authVersion && instances.get(s.root) === s) { render(s); message(s, error.name === 'TimeoutError' ? 'Connessione lenta. Riprova.' : error.message); }

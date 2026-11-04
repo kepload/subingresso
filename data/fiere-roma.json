@@ -9384,6 +9384,34 @@
         "checkedAt": "2026-10-16",
         "period": "2026"
       }
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "TCG Nexus Convention",
+      "months": "12",
+      "category": "espositiva",
+      "source": {
+        "url": "https://tcgnexus.it/",
+        "label": "tcgnexus.it",
+        "checkedAt": "2026-11-04"
+      },
+      "venue": "Rome Marriott Park Hotel",
+      "sectors": "Carte collezionabili Pokémon e carte sportive; espositori e trading card game",
+      "summary": "Convention dedicata alle carte collezionabili Pokémon e sportive, con area commerciale, tornei e attività per collezionisti al Rome Marriott Park Hotel.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tcgnexus.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Spazi per espositori tramite organizzatore. Verificare ammissione del proprio assortimento, disponibilità, requisiti e preventivo; il biglietto visitatori non è il costo dello stand."
+      }
     }
   ]
 }

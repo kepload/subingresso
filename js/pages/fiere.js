@@ -665,6 +665,38 @@
         button.addEventListener('click', () => openArticleAffinity(event));
         return button;
     }
+    const reviewSummaries = new Map();
+    const pendingReviewSummaries = new Set();
+    async function loadReviewSummaries(events) {
+        const missing = events.map(event => ({kind:event.managedEventId ? 'organizer' : 'catalog', id:event.managedEventId || event.id})).filter(f => !reviewSummaries.has(f.kind + ':' + f.id) && !pendingReviewSummaries.has(f.kind + ':' + f.id));
+        for (let i = 0; i < missing.length; i += 50) {
+            const batch = missing.slice(i,i + 50);
+            batch.forEach(f => pendingReviewSummaries.add(f.kind + ':' + f.id));
+            try {
+                const response = await fetch('/api/saved-fairs?reviews=1&summary=1&fairs=' + encodeURIComponent(JSON.stringify(batch)), {signal:AbortSignal.timeout(12000),cache:'no-store'});
+                if (!response.ok) throw Error('Recensioni non disponibili');
+                const results = await response.json();
+                if (!Array.isArray(results)) throw Error('Risposta non valida');
+                for (const row of results) if (batch.some(f => f.kind === row.kind && f.id === row.id)) reviewSummaries.set(row.kind + ':' + row.id,row);
+                updateReviewSummaries();
+            } catch (_) { /* Keep a working reviews link on temporary failure. */ }
+            finally { batch.forEach(f => pendingReviewSummaries.delete(f.kind + ':' + f.id)); }
+        }
+    }
+    function updateReviewSummaries() {
+        for (const button of document.querySelectorAll('[data-review-summary]')) {
+            const result = reviewSummaries.get(button.dataset.reviewSummary);
+            button.replaceChildren();
+            if (result?.count > 0 && Number.isFinite(Number(result.average))) {
+                const icon = node('i','fas fa-star'); icon.setAttribute('aria-hidden','true');
+                button.append(icon, document.createTextNode(' ' + Number(result.average).toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1}) + '/5 · ' + result.count + (result.count === 1 ? ' recensione' : ' recensioni')));
+            } else button.textContent = result?.count === 0 ? 'Scrivi la prima recensione' : 'Recensioni';
+        }
+    }
+    document.addEventListener('fair-review-published', e => {
+        reviewSummaries.delete(e.detail.kind + ':' + e.detail.id);
+        loadReviewSummaries(state.events.filter(event => (event.managedEventId || event.id) === e.detail.id));
+    });
     function renderList(events) {
         const fragment = document.createDocumentFragment();
         for (const event of events.slice(0, state.visible)) {
@@ -703,6 +735,10 @@
             const affinity = articleAffinityBadge(event);
             if (affinity) side.append(affinity);
             content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
+            const reviews = node('button','fiere-card-reviews','Recensioni'); reviews.type = 'button';
+            reviews.dataset.reviewSummary = (event.managedEventId ? 'organizer:' : 'catalog:') + (event.managedEventId || event.id);
+            reviews.addEventListener('click', () => { openDetail(event); $('detail-reviews').scrollIntoView({block:'start'}); });
+            content.append(reviews);
             const fee = feeLabel(event);
             if (fee) {
                 const cost = node('p', 'fiere-card-cost', fee);
@@ -725,6 +761,8 @@
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
+        updateReviewSummaries();
+        loadReviewSummaries(events.slice(0,state.visible));
         global.SavedFairs?.refresh();
         hoveredCard = null; focusedCard = null;
         updateMapHighlight();
@@ -981,7 +1019,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=116');
+            const data = await fetchJSON('/data/fiere.json?v=117');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)

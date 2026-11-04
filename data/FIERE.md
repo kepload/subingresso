@@ -32,6 +32,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Card show e anteprime recensioni — 4 novembre 2026](fiere-dossier/122-carte-collezionabili-20261104.md): tre nuove fiere, CardFest già presente, ricerca mirata senza riavvio delle automazioni.
+
 - [Ogliastra — ricerca documentale, 4 novembre 2026](fiere-dossier/120-ogliastra-20261104.md)
 - [Sulcis Iglesiente — ricerca documentale, 4 novembre 2026](fiere-dossier/121-sulcis-iglesiente-20261104.md)
 - [Matera — ricerca documentale, 4 novembre 2026](fiere-dossier/118-matera-ricerca-documentale-4-novembre-2026.md)

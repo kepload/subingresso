@@ -106,6 +106,15 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **4 novembre 2026 — anteprime recensioni e card show:** aggiunti media /5,
+  conteggio e accesso diretto alle recensioni nelle anteprime del calendario.
+  Tre nuove fiere da fonti organizzatore: Card Expo Italia, Florence Cards
+  Show e TCG Nexus; CardFest Napoli già presente. Catalogo 9.587, precedenti
+  9.584 schede invariate, ID recensioni sincronizzati. RPC riepiloghi installata;
+  recensioni esistenti invariate (conteggio/impronta), test SQL in ROLLBACK e
+  browser desktop/mobile passati. [Fonti e prove](data/fiere-dossier/122-carte-collezionabili-20261104.md).
+  Ricerca mirata; nessun monitoraggio automatico o riavvio dei loop.
+
 - **4 novembre 2026 — recensioni fiere:** versione iniziale `ce50ce9`, poi
   semplificata su richiesta con `e7cff2a`, produzione Ready e file verificati.
   Tre schermate, edizione rapida/anno manuale, più date nello stesso anno,

@@ -6248,6 +6248,34 @@
         "phone": "055 8468165",
         "email": "informazioni@prolocoscarperia.it"
       }
+    },
+    {
+      "region": "Toscana",
+      "city": "Firenze",
+      "name": "Florence Cards Show",
+      "months": "11",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.fumettiedintorni.it/florence-cards-show-novembre-2026/",
+        "label": "fumettiedintorni.it",
+        "checkedAt": "2026-11-04"
+      },
+      "venue": "Hilton Garden Inn Florence Novoli, Via Sandro Pertini 2/9",
+      "sectors": "Carte collezionabili Pokémon, One Piece, Dragon Ball, Yu-Gi-Oh!, Magic e carte sportive; album, box e carte singole",
+      "summary": "Nuovo appuntamento di Fumetti e Dintorni per acquisto, vendita, scambio e valutazione di carte collezionabili.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.fumettiedintorni.it/florence-cards-show-novembre-2026/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Spazi per espositori tramite organizzatore. Verificare ammissione del proprio assortimento, disponibilità, requisiti e preventivo; il biglietto visitatori non è il costo dello stand."
+      }
     }
   ]
 }

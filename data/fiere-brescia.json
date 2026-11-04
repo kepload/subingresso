@@ -7845,6 +7845,34 @@
       },
       "venue": "Piazza Del Mercato",
       "summary": "Manifestazione con fiera o mercatino indicati nel calendario comunale depositato in Regione."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Corte Franca",
+      "name": "Card Expo Italia",
+      "months": "9",
+      "category": "espositiva",
+      "source": {
+        "url": "https://cardexpoitalia.com/",
+        "label": "cardexpoitalia.com",
+        "checkedAt": "2026-11-04"
+      },
+      "venue": "Number One, Via Provinciale 1/B",
+      "sectors": "Carte collezionabili Pokémon, One Piece, Yu-Gi-Oh!, Magic, Disney Lorcana, Dragon Ball, Naruto e Gundam; acquisto, vendita e scambio",
+      "summary": "Prima edizione dedicata alle carte collezionabili, con espositori, scambi, grading e tornei. Edizione 2026 conclusa; prossima data non ancora annunciata.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://cardexpoitalia.com/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Spazi per espositori tramite organizzatore. Verificare ammissione del proprio assortimento, disponibilità, requisiti e preventivo; il biglietto visitatori non è il costo dello stand."
+      }
     }
   ]
 }

@@ -60,6 +60,16 @@ La partecipazione è dichiarata dall'autore, non certificata dalla piattaforma.
 
 ## Implementazione e manutenzione
 
+Anteprime del calendario: voto medio /5 e numero dei contributi pubblici;
+con zero recensioni «Scrivi la prima recensione». Il clic apre il dettaglio
+direttamente alle recensioni. Riepiloghi da `read_fair_review_summaries`,
+massimo 50 fiere a richiesta, solo tipo/ID/conteggio/media; RPC anonima,
+tabelle sempre private, eventi organizzatore solo pubblicati. API esistente
+`saved-fairs?reviews=1&summary=1`; errori non diventano falsi conteggi zero.
+Cache in memoria della pagina, invalidata dopo pubblicazione della recensione.
+Migrazione `PATCH_FIERE_RECENSIONI_ANTEPRIME_20261104.sql`;
+test `scripts/test-fair-review-previews.cjs`. Catalogo sincronizzato a 9.587 ID.
+
 - `js/fair-reviews.js`, `css/fair-reviews.css`: componente condiviso, tema
   personale, tastiera e movimento ridotto. Testo utente sempre escapato.
 - `js/fair-review-editions.js`: stesso modello di date e anni in browser/API.
