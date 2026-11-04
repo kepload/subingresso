@@ -72,6 +72,10 @@ tabelle sempre private, eventi organizzatore solo pubblicati. API esistente
 Cache in memoria della pagina, invalidata dopo pubblicazione della recensione.
 Migrazione `PATCH_FIERE_RECENSIONI_ANTEPRIME_20261104.sql`;
 test `scripts/test-fair-review-previews.cjs`. Catalogo sincronizzato a 9.587 ID.
+Versione grafica pubblicata `719bb95`, Vercel Ready: asset online identici,
+prove 4,0 (quattro piene/una vuota) e 4,5 (ultima mezza) sui file di produzione
+in Chromium 1440/768/320 e WebKit 390, chiaro/scuro; risposte simulate soltanto
+nei test visivi, senza creare recensioni. API reale invariata.
 
 - `js/fair-reviews.js`, `css/fair-reviews.css`: componente condiviso, tema
   personale, tastiera e movimento ridotto. Testo utente sempre escapato.
