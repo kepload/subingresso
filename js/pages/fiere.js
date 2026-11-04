@@ -737,7 +737,16 @@
             content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const reviews = node('button','fiere-card-reviews','Recensioni'); reviews.type = 'button';
             reviews.dataset.reviewSummary = (event.managedEventId ? 'organizer:' : 'catalog:') + (event.managedEventId || event.id);
-            reviews.addEventListener('click', () => { openDetail(event); $('detail-reviews').scrollIntoView({block:'start'}); });
+            reviews.addEventListener('click', () => {
+                openDetail(event);
+                const section = $('detail-reviews');
+                section.tabIndex = -1;
+                requestAnimationFrame(() => {
+                    if (!$('fair-dialog').open) return;
+                    section.focus({preventScroll:true});
+                    section.scrollIntoView({block:'start'});
+                });
+            });
             content.append(reviews);
             const fee = feeLabel(event);
             if (fee) {

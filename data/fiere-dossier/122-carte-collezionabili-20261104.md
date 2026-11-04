@@ -72,3 +72,8 @@ il calendario alle regole delle pagine promozionali. Revisione visiva delle
 anteprime chiara/scura passata; contrasto link scuro verificato sul colore
 finale, dopo la transizione. Il test conserva il riferimento esplicito al
 catalogo precedente `31f225d`, così resta ripetibile dopo il commit.
+
+Affinamento successivo: focus e scorrimento alle recensioni dopo l’apertura
+del dialogo, nel frame seguente. Evita che Safari riporti la vista al pulsante
+di chiusura. Test esplicito di intestazione in viewport e focus della sezione
+in tutti e quattro i formati/browser.

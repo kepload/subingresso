@@ -56,6 +56,8 @@ const server=http.createServer(async(req,res)=>{
    const card=page.locator('.fiere-card').filter({hasText:'Card Expo Italia'});await card.waitFor();
    const reviews=card.locator('[data-review-summary]');await reviews.filter({hasText:'4,5/5 · 2 recensioni'}).waitFor();
    await reviews.click();await page.locator('#detail-reviews').waitFor({state:'visible'});assert(await page.locator('#fair-dialog').evaluate(e=>e.open));
+   await page.waitForFunction(()=>{const r=document.querySelector('#detail-reviews h2').getBoundingClientRect();return r.top>=0&&r.bottom<innerHeight;});
+   assert.equal(await page.locator('#detail-reviews').evaluate(e=>document.activeElement===e),true);
    await page.keyboard.press('Escape');
    await page.locator('#fair-search').fill('Florence Cards');
    const empty=page.locator('.fiere-card').filter({hasText:'Florence Cards Show'});await empty.locator('[data-review-summary]').filter({hasText:'Scrivi la prima recensione'}).waitFor();
