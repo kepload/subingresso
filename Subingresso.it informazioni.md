@@ -106,6 +106,14 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **4 novembre 2026 — verifica clic ADS:** totale 80 ricostruito dalle righe;
+  passaggio 9→80 dovuto a 71 richieste con forte evidenza di automazione,
+  abbinate singolarmente ai log. Solo 3 clic con sessione e impressione
+  precedente; altre 6 richieste non verificabili. Difetto di misurazione aperto,
+  nessuna modifica a codice pubblicato o storico. Nessun indizio di intrusione
+  nei controlli disponibili, origine finale non identificata. Prove private:
+  `.local/verifiche/audit-clic-ads-20261104/rapporto.md`.
+
 - **4 novembre 2026 — anteprime recensioni e card show:** aggiunti media /5,
   conteggio e accesso diretto alle recensioni nelle anteprime del calendario.
   Preferenza successiva: cinque stelle proporzionali, voto «4,0» e conteggio
