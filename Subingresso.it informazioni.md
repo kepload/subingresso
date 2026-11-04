@@ -112,7 +112,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
   205 eventi originali invariati e recuperabili, backup verificato. Migrazione
   applicata: firme server, ricevuta dell'impressione, deduplica e limiti;
   vecchie RPC chiuse, GET senza scritture. Prove SQL in ROLLBACK e browser
-  Chromium/WebKit passate; pubblicazione codice in verifica. Contratto e
+  Chromium/WebKit passate; codice `073f292` online Ready, asset e API reali
+  verificati senza nuovi eventi di prova. Contratto e
   limiti per future campagne: `data/PERSONAL_AD_INTEGRITY.md`. Prove private
   in `.local/verifiche/ads-counter-20261104`; audit iniziale nella cartella
   `audit-clic-ads-20261104`. Nessun indizio di intrusione nei controlli svolti.
