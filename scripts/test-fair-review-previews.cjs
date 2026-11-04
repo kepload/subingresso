@@ -54,7 +54,9 @@ const server=http.createServer(async(req,res)=>{
    await page.locator('#extra-filters > summary').click();
    await page.locator('#fair-search').fill('Card Expo');
    const card=page.locator('.fiere-card').filter({hasText:'Card Expo Italia'});await card.waitFor();
-   const reviews=card.locator('[data-review-summary]');await reviews.filter({hasText:'4,5/5 · 2 recensioni'}).waitFor();
+   const reviews=card.locator('[data-review-summary]');await reviews.locator('.fiere-review-average').filter({hasText:'4,5'}).waitFor();
+   assert.equal(await reviews.locator('.fiere-review-star').count(),5);
+   assert.deepEqual(await reviews.locator('.fiere-review-star-fill').evaluateAll(nodes=>nodes.map(e=>e.style.width)),['100%','100%','100%','100%','50%']);
    await reviews.click();await page.locator('#detail-reviews').waitFor({state:'visible'});assert(await page.locator('#fair-dialog').evaluate(e=>e.open));
    await page.waitForFunction(()=>{const r=document.querySelector('#detail-reviews h2').getBoundingClientRect();return r.top>=0&&r.bottom<innerHeight;});
    assert.equal(await page.locator('#detail-reviews').evaluate(e=>document.activeElement===e),true);
@@ -64,8 +66,15 @@ const server=http.createServer(async(req,res)=>{
    assert.equal(await empty.locator('.fa-star').count(),0);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    await page.locator('#fair-search').fill('pokemon');await card.waitFor();
-   await card.locator('[data-review-summary]').filter({hasText:'4,5/5'}).waitFor();
-   await page.locator('#fair-search').blur();await page.evaluate(()=>scrollTo(0,0));await page.evaluate(()=>document.fonts.ready);
+   await card.locator('.fiere-review-average').filter({hasText:'4,5'}).waitFor();
+   await page.route('**/api/saved-fairs?reviews=1&summary=1&fairs=*',async route=>{
+    const fairs=JSON.parse(new URL(route.request().url()).searchParams.get('fairs'));
+    return route.fulfill({json:fairs.map(f=>({...f,count:1,average:4}))});
+   });
+   await page.reload();await card.locator('.fiere-review-average').filter({hasText:'4,0'}).waitFor();
+   assert.deepEqual(await card.locator('.fiere-review-star-fill').evaluateAll(nodes=>nodes.map(e=>e.style.width)),['100%','100%','100%','100%','0%']);
+   assert.equal(await card.locator('.fiere-review-count').textContent(),'1 recensione');
+   await page.evaluate(()=>scrollTo(0,0));await page.evaluate(()=>document.fonts.ready);
    await page.screenshot({path:path.join(out,engine+'-'+width+'.png'),fullPage:true});
    await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));
    await page.waitForFunction(()=>getComputedStyle(document.querySelector('[data-review-summary]')).color==='rgb(147, 197, 253)');

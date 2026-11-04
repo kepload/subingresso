@@ -60,7 +60,10 @@ La partecipazione è dichiarata dall'autore, non certificata dalla piattaforma.
 
 ## Implementazione e manutenzione
 
-Anteprime del calendario: voto medio /5 e numero dei contributi pubblici;
+Anteprime del calendario: cinque stelle con riempimento proporzionale alla
+media (4,0 = quattro piene e una vuota), voto numerico senza /5 e conteggio
+delle recensioni più piccolo a fianco. Stelle blu coerenti con il tema,
+numero accessibile completo sul pulsante. Numero dei contributi pubblici;
 con zero recensioni «Scrivi la prima recensione». Il clic apre il dettaglio
 direttamente alle recensioni. Riepiloghi da `read_fair_review_summaries`,
 massimo 50 fiere a richiesta, solo tipo/ID/conteggio/media; RPC anonima,

@@ -687,9 +687,21 @@
         for (const button of document.querySelectorAll('[data-review-summary]')) {
             const result = reviewSummaries.get(button.dataset.reviewSummary);
             button.replaceChildren();
+            button.removeAttribute('aria-label');
             if (result?.count > 0 && Number.isFinite(Number(result.average))) {
-                const icon = node('i','fas fa-star'); icon.setAttribute('aria-hidden','true');
-                button.append(icon, document.createTextNode(' ' + Number(result.average).toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1}) + '/5 · ' + result.count + (result.count === 1 ? ' recensione' : ' recensioni')));
+                const average = Math.max(0,Math.min(5,Number(result.average)));
+                const value = average.toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1});
+                const count = result.count + (result.count === 1 ? ' recensione' : ' recensioni');
+                const stars = node('span','fiere-review-stars'); stars.setAttribute('aria-hidden','true');
+                for (let i = 0; i < 5; i++) {
+                    const star = node('span','fiere-review-star');
+                    const fill = node('span','fiere-review-star-fill');
+                    fill.style.width = Math.max(0,Math.min(1,average-i))*100 + '%';
+                    fill.append(node('i','fas fa-star'));
+                    star.append(node('i','far fa-star'),fill); stars.append(star);
+                }
+                button.setAttribute('aria-label',value + ' su 5, ' + count + '. Leggi le recensioni');
+                button.append(stars,node('strong','fiere-review-average',value),node('small','fiere-review-count',count));
             } else button.textContent = result?.count === 0 ? 'Scrivi la prima recensione' : 'Recensioni';
         }
     }
