@@ -57,3 +57,18 @@ Prove private in `.local/verifiche/anteprime-tcg/`.
 Conservata l’identità visiva esistente. Detector grafico: segnala soprattutto
 stili preesistenti; 14px dei metadati e focus con angolo 3px sono coerenti
 con i controlli compatti già presenti. Nessun ridisegno o nuova immagine UI.
+
+Pubblicato `92d69a8`, stato Vercel success/Ready. Quattro asset online
+identici ai sorgenti; tre pagine autonome 200 con date canoniche; API
+riepiloghi anonima 200, conteggi zero reali sulle tre nuove fiere.
+Ulteriore verifica senza fixture su produzione Chromium 1440/320 e WebKit
+390: SDK reale, filtri, riepiloghi, apertura diretta recensioni, nessun
+errore browser o overflow. Nessun account, recensione o invio reale di test.
+
+Inspector generale eseguito ai tre formati: segnala proprietà già presenti
+nel calendario (titolo nascosto, dimensioni compatte, bordi, sfumature,
+assenza di foto e animazioni). Nessun ridisegno fuori richiesta per adeguare
+il calendario alle regole delle pagine promozionali. Revisione visiva delle
+anteprime chiara/scura passata; contrasto link scuro verificato sul colore
+finale, dopo la transizione. Il test conserva il riferimento esplicito al
+catalogo precedente `31f225d`, così resta ripetibile dopo il commit.

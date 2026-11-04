@@ -28,7 +28,7 @@ const server=http.createServer(async(req,res)=>{
  for(const fairs of [[],null,Array(51).fill({kind:'catalog',id:sample.id}),[{kind:'catalog',id:'missing'}],[{kind:'organizer',id:'invalid'}],[{kind:'catalog',id:{}}]])assert.equal((await get(fairs)).status,400);
  assert.equal((await invoke({reviews:'1',summary:'1',fairs:'{'})).status,400);
  fail=true;assert.equal((await get([{kind:'catalog',id:sample.id}])).status,503);fail=false;
- const old=JSON.parse(require('node:child_process').execFileSync('git',['show','HEAD:data/fiere.json'],{cwd:root,encoding:'utf8',maxBuffer:30e6}));
+ const old=JSON.parse(require('node:child_process').execFileSync('git',['show','31f225d:data/fiere.json'],{cwd:root,encoding:'utf8',maxBuffer:30e6}));
  const current=JSON.parse(fs.readFileSync(path.join(root,'data/fiere.json'),'utf8'));
  const oldEvents=old.events,now=new Map(current.events.map(e=>[e.id,e]));
  for(const event of oldEvents)assert.deepEqual(now.get(event.id),event,'Existing fair changed: '+event.id);

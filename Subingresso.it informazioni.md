@@ -113,6 +113,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
   9.584 schede invariate, ID recensioni sincronizzati. RPC riepiloghi installata;
   recensioni esistenti invariate (conteggio/impronta), test SQL in ROLLBACK e
   browser desktop/mobile passati. [Fonti e prove](data/fiere-dossier/122-carte-collezionabili-20261104.md).
+  Pubblicato `92d69a8`, Vercel Ready; asset, API e browser reali online verificati.
   Ricerca mirata; nessun monitoraggio automatico o riavvio dei loop.
 
 - **4 novembre 2026 — recensioni fiere:** versione iniziale `ce50ce9`, poi
