@@ -27,6 +27,7 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Matera — ricerca documentale, 4 novembre 2026](fiere-dossier/118-matera-ricerca-documentale-4-novembre-2026.md)
 - [Benevento — ricerca documentale, 1 novembre 2026](fiere-dossier/001-benevento-ricerca-documentale-1-novembre-2026.md)
 - [Foggia — ricerca documentale, 31 ottobre 2026](fiere-dossier/002-foggia-ricerca-documentale-31-ottobre-2026.md)
 - [Avellino — ricerca documentale, 31 ottobre 2026](fiere-dossier/003-avellino-ricerca-documentale-31-ottobre-2026.md)

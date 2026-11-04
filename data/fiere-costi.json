@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-04",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -14,6 +14,16 @@
         "checkedAt": "2026-10-16",
         "eventId": "lombardia-pisogne-mostra-mercato-di-pisogne",
         "method": "Sito organizzatore renderizzato e modulo Google pubblico; PDF del regolamento collegato da entrambi, scaricato e letto anche visivamente. Il modulo etichetta il documento XXVII, ma il PDF è XXVIII edizione e contiene le date 12–16 agosto 2026."
+      },
+      {
+        "checkedAt": "2026-11-04",
+        "province": "Matera",
+        "eventIds": [
+          "basilicata-colobraro-asparagus-sagra-dell-asparago-selvatico",
+          "basilicata-montalbano-jonico-mercato-sotto-le-stelle",
+          "basilicata-rotondella-sagra-dell-albicocca"
+        ],
+        "method": "Tre riscontri mirati della ricerca provinciale; altri record conservati senza nuova verifica. Anni 2025 e 2026 distinti."
       }
     ]
   },
@@ -3609,6 +3619,33 @@
       "sourceUrl": "https://www.comune.sanlorenzello.bn.it/it/eventi/fiera-del-mercantico-2022",
       "checkedAt": "2026-10-31",
       "period": null
+    },
+    "basilicata-colobraro-asparagus-sagra-dell-asparago-selvatico": {
+      "label": "Contributo 80 €; istruttoria SUAP 20 € se dovuta",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Disposizioni Asparagus 2026, artt. 10.1–10.2: contributo di 80 € per spese e servizi generali, in particolare affitto della casetta 2×2 m. Aggiunti 20 € di istruttoria soltanto per gli operatori tenuti alla pratica SUAP. Il testo menziona anche il canone di concessione senza chiarire un totale distinto o inclusivo: nessun prezzo complessivo, IVA o ulteriori servizi presunti.",
+      "sourceUrl": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "basilicata-montalbano-jonico-mercato-sotto-le-stelle": {
+      "label": "CUP non dovuto nella rassegna estiva 2025",
+      "kind": "conditional",
+      "period": "2025",
+      "details": "Avviso 2025: i titolari settimanali utilizzano il proprio posteggio senza costi aggiuntivi; per chi usa il suolo temporaneo, titolari e spuntisti, CUP non dovuto. La clausola riguarda soltanto le tre date 2025. Non certifica identiche condizioni per una nuova edizione né l’assenza di ogni altro costo amministrativo o servizio.",
+      "sourceUrl": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
+    },
+    "basilicata-rotondella-sagra-dell-albicocca": {
+      "label": "Stand 3×3 e punto luce gratuiti: avviso 2025",
+      "kind": "conditional",
+      "period": "2025",
+      "details": "L’avviso per la XXVII Sagra del 28–29 giugno 2025 offriva agli ammessi stand 3×3 m, punto luce e SCIA per cibo e bevande senza quota per queste dotazioni. Candidature entro le 12 del 6 giugno 2025, ammesse anche aziende esterne al Comune. La scheda conserva separatamente le date 2026; queste condizioni economiche non sono confermate per il 2026.",
+      "sourceUrl": "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/",
+      "checkedAt": "2026-11-04",
+      "review": "live-source-review"
     }
   }
 }

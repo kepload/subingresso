@@ -1,0 +1,2576 @@
+{
+  "province": "Matera",
+  "checkedAt": "2026-11-04",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "c1d5a14f157c0a54881db30151ec3ab09802c9f9",
+    "privateArchive": ".local/ricerche/fiere-matera-20261104",
+    "scope": "Una sola provincia scelta tra le aperte su richiesta corrente dell’utente. Nessuna automazione avviata; Pavia riservata. Nessun invio, candidatura o contatto a terzi.",
+    "methodology": "Ricognizione nominale dei 31 comuni, seguita da lettura mirata di pagine comunali, regolamenti Pisticci e Nova Siri, bandi e programmi. Guide APT estate e Natale 2025 usate come storico, con campioni visivi; guida 2020 e GAL come piste e riscontri di periodo, senza proiezioni. Programmi e articoli locali qualificati quando non recuperato il bando originale. Il numero di download non è il numero di documenti letti integralmente.",
+    "statistics": {
+      "events": 55,
+      "municipalitiesCovered": 31,
+      "municipalitiesWithEvents": 20,
+      "baselineEvents": 0,
+      "addedEvents": 55,
+      "pricingSummaries": 3,
+      "eventsWithEditions": 33,
+      "otherEventsPreserved": 9474
+    },
+    "municipalityCoverage": [
+      {
+        "city": "Accettura",
+        "eventCount": 1,
+        "events": [
+          "basilicata-accettura-fiera-di-ottobre"
+        ],
+        "sources": [
+          "https://www.accetturaonline.it/la-fiera-dei-ricordi/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Aliano",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Letti indice comunale e ricerca APT; festa della paesologia e carnevale non equiparati automaticamente a fiera. Bruschetta soltanto da aggregatori; mercatino del Festival Radici 2017 troppo remoto, escluso.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Bernalda",
+        "eventCount": 1,
+        "events": [
+          "basilicata-bernalda-fiera-di-san-bernardino"
+        ],
+        "sources": [
+          "https://prolocobernalda.it/cenni-storici.html"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Calciano",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Ricerca comunale e APT: fonti gastronomiche e vecchie indicazioni di sagre senza programma commerciale recente. Nessun evento aggiunto sulla base del solo nome del prodotto.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Cirigliano",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Pagina comunale Tradizioni ed eventi letta: San Giacomo e carnevale descritti come feste; nessuna componente mercatale operativa verificata. Mercatino degli antichi mestieri da testo 2012 non riproposto.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Colobraro",
+        "eventCount": 1,
+        "events": [
+          "basilicata-colobraro-asparagus-sagra-dell-asparago-selvatico"
+        ],
+        "sources": [
+          "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf",
+          "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-2-Domanda-di-partecipazione_ASPARAGUS.pdf"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Craco",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Sagra Melone e Grano presente in aggregatori e vecchie guide; non recuperato programma recente primario con area commerciale. Non aggiunta.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Ferrandina",
+        "eventCount": 3,
+        "events": [
+          "basilicata-ferrandina-fiera-di-maggio",
+          "basilicata-ferrandina-fiera-di-settembre",
+          "basilicata-ferrandina-sagra-del-marretto-e-del-sospiro"
+        ],
+        "sources": [
+          "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/",
+          "https://www.discoverferrandina.it/eventi/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Garaguso",
+        "eventCount": 1,
+        "events": [
+          "basilicata-garaguso-giornata-del-pastoralismo-il-pastore-connesso"
+        ],
+        "sources": [
+          "https://www.arabasilicata.it/news/giornata-del-pastoralismo-a-garaguso-tradizione-e-innovazione-con-garaguso-4-0-il-pastore-connesso/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Gorgoglione",
+        "eventCount": 2,
+        "events": [
+          "basilicata-gorgoglione-sagra-del-pezzente",
+          "basilicata-gorgoglione-sagra-dell-involtino-notte-bianca"
+        ],
+        "sources": [
+          "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Grassano",
+        "eventCount": 1,
+        "events": [
+          "basilicata-grassano-mercato-straordinario-di-aprile"
+        ],
+        "sources": [
+          "https://egov.hseweb.it/grassano/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVMEE5WT0-H"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Grottole",
+        "eventCount": 1,
+        "events": [
+          "basilicata-grottole-fiera-di-san-luca"
+        ],
+        "sources": [
+          "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRnd0q5az0-H",
+          "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/3/atto/GTVRjd061VT0-H"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Irsina",
+        "eventCount": 1,
+        "events": [
+          "basilicata-irsina-sagra-dell-olio-di-oliva"
+        ],
+        "sources": [
+          "https://giornalemio.it/ambiente/il-14-agosto-1-sagra-dellolio-di-oliva-a-irsina/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Matera",
+        "eventCount": 6,
+        "events": [
+          "basilicata-matera-mercatino-degli-scambi",
+          "basilicata-matera-fiera-della-bruna-piccianello",
+          "basilicata-matera-fiera-della-bruna-via-rosselli",
+          "basilicata-matera-mercatino-di-natale",
+          "basilicata-matera-mercatini-tematici-nei-quartieri",
+          "basilicata-matera-mercatino-dell-artigianato-locale"
+        ],
+        "sources": [
+          "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+          "https://events.materawelcome.it/events/view/arte-classica/8475/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+          "https://events.materawelcome.it/events/view/arte-classica/8699/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+          "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/",
+          "https://www.comune.matera.it/wp-content/uploads/2023/11/Determinazione-Dirigenziale-n.-2343_2025-del-08.08.2025.pdf"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Miglionico",
+        "eventCount": 1,
+        "events": [
+          "basilicata-miglionico-sagra-dei-fichi-secchi-e-dei-sapori-d-autunno"
+        ],
+        "sources": [
+          "https://portaleventi.it/evento/sagra-dei-fichi-secchi-e-dei-sapori-dautunno-a-miglionico",
+          "https://www.basilicataturistica.it/eventi-in-basilicata/a-miglionico-lomaggio-alla-lucanita-di-dino-paradiso/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Montalbano Jonico",
+        "eventCount": 2,
+        "events": [
+          "basilicata-montalbano-jonico-fiera-di-settembre",
+          "basilicata-montalbano-jonico-mercato-sotto-le-stelle"
+        ],
+        "sources": [
+          "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf",
+          "https://www.ceaicalanchi.com/punti-di-interesse/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Montescaglioso",
+        "eventCount": 2,
+        "events": [
+          "basilicata-montescaglioso-fiera-di-san-rocco",
+          "basilicata-montescaglioso-sagra-della-pettola"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+          "https://www.lecronachelucane.it/2026/08/16/montescaglioso-in-festa-il-17-agosto-torna-la-fiera-di-san-rocco/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Nova Siri",
+        "eventCount": 11,
+        "events": [
+          "basilicata-nova-siri-fiera-di-san-giuseppe-nova-siri-centro",
+          "basilicata-nova-siri-fiera-della-madonna-del-carmine-nova-siri-centro",
+          "basilicata-nova-siri-fiera-della-madonna-della-sulla-nova-siri-centro",
+          "basilicata-nova-siri-fiera-della-madonna-della-sulla-santuario",
+          "basilicata-nova-siri-fiera-di-sant-antonio-da-padova-marina-di-nova-siri",
+          "basilicata-nova-siri-fiera-della-madonna-del-carmine-marina-di-nova-siri",
+          "basilicata-nova-siri-fiera-del-21-agosto-santuario-della-sulla",
+          "basilicata-nova-siri-mercatino-dell-antiquariato-artigianato-e-collezionismo",
+          "basilicata-nova-siri-mercato-natalizio",
+          "basilicata-nova-siri-mercato-dei-fiori-per-la-commemorazione-dei-defunti",
+          "basilicata-nova-siri-mercato-turistico-balneare"
+        ],
+        "sources": [
+          "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+          "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Oliveto Lucano",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Portale comunale e repertori sul Maggio consultati; rito arboreo non automaticamente fiera. Naturarte e mercatini a km0 solo in programmi remoti non proiettati.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Pisticci",
+        "eventCount": 4,
+        "events": [
+          "basilicata-pisticci-fiera-di-pisticci-centro",
+          "basilicata-pisticci-fiera-di-marconia",
+          "basilicata-pisticci-mercatino-degli-scambi-di-marconia",
+          "basilicata-pisticci-i-mercatini-della-pacchiana"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+          "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf",
+          "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Policoro",
+        "eventCount": 7,
+        "events": [
+          "basilicata-policoro-fragola-expo-basilicata",
+          "basilicata-policoro-fiera-della-madonna-del-ponte",
+          "basilicata-policoro-fiera-della-madonna-del-carmine",
+          "basilicata-policoro-fiera-dei-santi-medici",
+          "basilicata-policoro-mercato-della-notte-di-heraclea",
+          "basilicata-policoro-international-street-food-festival",
+          "basilicata-policoro-gusto-italia"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "https://www.policoro.basilicata.it/05/05/2026/festeggiamenti-del-15-16-e-17-maggio-2026-in-devozione-della-madonna-del-ponte-graduatoria-esercenti-il-commercio-su-aree-pubbliche-redatta-ai-sensi-dellart-40-del-vigente-regolamento-co/",
+          "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf",
+          "https://www.policoro.basilicata.it/wp-content/uploads/2026/09/Allegato_1.pdf",
+          "https://www.policoroturismo.basilicata.it/evento/fragola-expo-basilicata-2026/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Pomarico",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Pista Fiera settembre 2026 da aggregatore generato con IA; pagina comunale restituisce una pagina di protezione, ordinanza originale non acquisita. Nessuna data certificata né scheda basata soltanto sull’aggregatore.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Rotondella",
+        "eventCount": 6,
+        "events": [
+          "basilicata-rotondella-fiera-ra-murtedd",
+          "basilicata-rotondella-sagra-dell-albicocca",
+          "basilicata-rotondella-sagra-u-pastizz-r-tunnar",
+          "basilicata-rotondella-sagra-della-focaccia",
+          "basilicata-rotondella-stippl-a-vutt-percorso-divino",
+          "basilicata-rotondella-mercatini-di-natale"
+        ],
+        "sources": [
+          "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/",
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+          "https://www.halleyweb.com/c077023/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G1XpJekTBPT0-A",
+          "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Salandra",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Ricerca nominale e APT senza programma commerciale specifico verificato. Toponimi, aziende fuori provincia e feste dei dintorni esclusi; esito negativo non prova assenza di eventi.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "San Giorgio Lucano",
+        "eventCount": 2,
+        "events": [
+          "basilicata-san-giorgio-lucano-mercatini-di-natale",
+          "basilicata-san-giorgio-lucano-sagra-dei-crispi"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "San Mauro Forte",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Sagra del Campanaccio descritta da APT come rito e corteo; non attribuita automaticamente a mercato. Nessun banco dedotto dalla sola parola sagra.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Scanzano Jonico",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Expo fragola 2026 collocata a Policoro dal portale ufficiale; nessuna seconda scheda duplicata a Scanzano. Calendario comunale non espone un programma autonomo verificato.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Stigliano",
+        "eventCount": 1,
+        "events": [
+          "basilicata-stigliano-a-suon-d-skrpedd-sagra-della-skerpedd"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Tricarico",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Ricerca Comune, fiere e sagre; carnevale e maschere non trasformati in mercatini. Non ricostruite antiche nundine o fiere storiche da fonti bibliografiche.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Tursi",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "Letta pagina comunale Fiera di Anglona: pubblicazione 16 settembre 2004, evento 4–8 settembre; altri riscontri storici discordanti. Nessuna manifestazione recente confermata: esclusa la riproiezione del vecchio evento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      },
+      {
+        "city": "Valsinni",
+        "eventCount": 1,
+        "events": [
+          "basilicata-valsinni-stippa-vutt"
+        ],
+        "sources": [
+          "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        ],
+        "outcome": "Fonti commerciali e programmi selezionati nell’audit; edizioni puntuali, periodi regolamentari e storico distinti. Domande e tariffe non estese oltre il documento.",
+        "searchScope": "Ricerca nominale di fiere, mercati, sagre e/o manifestazioni locali; alcune interrogazioni comprendevano più comuni. Albi e social non censiti integralmente."
+      }
+    ],
+    "decisions": [
+      "Scambi Matera: solo 25–26 aprile e 14–15 novembre 2026, da due schede originali; non continuo agosto–novembre. Scambi Marconia: undici intervalli 2026–2027 distinti, non apertura continua.",
+      "Gorgoglione: contenuto Estate 2025 resta 2025 anche se aggiornato nel 2026. Mercatini Natale e Quartieri Matera: periodo dell’avviso organizzatori, non calendario giornaliero definitivo né bando per singoli banchi.",
+      "Bruna: due aree commerciali distinte nell’ordinanza riprodotta; Piccianello 29 giugno–3 luglio e Rosselli fino al 5 luglio; non confondere tutte le giornate dei festeggiamenti con la fiera.",
+      "Policoro: date presumibili del bando non calcolate; Ponte riscontrata 15–17 maggio da graduatoria 2026. Una sola domanda può indicare le tre feste; non confondere con domande separate di Nova Siri.",
+      "Rotondella Natale: elenco guida e locandina discordanti e riferimenti d’anno precedenti, conservato solo dicembre. Valsinni Stippa Vutt: data concorde 7 dicembre 2025, orario 19/20 discordante.",
+      "Ferrandina: “gratuito” nel servizio generico non trasferito al banco. Asparagus: 80 € e 20 € condizionati, canone non chiarito; nessun totale inventato. Albicocca e Montalbano costi solo 2025.",
+      "Nova Siri: termini e contingentamenti sono regolamentari, non posti disponibili; esclusione produttori agricoli dalla procedura fiere, istanze per località; discrepanza 15/16 aprile mercato turistico esplicita."
+    ],
+    "limitations": [
+      "Ricerca documentale accessibile conclusa, non censimento certificato. Undici comuni senza schede non dichiarati privi di eventi. Social, archivi e albi non letti integralmente; alcune pagine protette o con TLS non valido.",
+      "Accettura e Bernalda con soli periodi documentati, senza nuova edizione; eventi dei programmi 2025 esplicitamente storici. Tursi, Aliano e altre piste troppo remote senza riscontro recente non aggiunte.",
+      "Fonti secondarie e riproduzioni di programmi identificate. Il recupero HTTP 200 può restituire un guscio JavaScript o un errore applicativo: non considerato prova del documento.",
+      "Nuovi bandi, tariffe, date definitive e rinvii richiedono manutenzione futura. Affluenza, notorietà e disponibilità non stimate; nessun nuovo bollino."
+    ],
+    "sourceReceipts": [
+      {
+        "receiptId": "src-24957d9c2d2160688a52",
+        "url": "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-97c7b6eedeb7b9946982",
+        "url": "https://egov.hseweb.it/grassano/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVMEE5WT0-H",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": false
+      },
+      {
+        "receiptId": "src-c4fe920dab221080d610",
+        "url": "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-d8a48cb1056a00b85582",
+        "url": "https://www.policoroturismo.basilicata.it/evento/fragola-expo-basilicata-2026/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-d9827165744d4d32fa69",
+        "url": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-7db249adb43260b4ded0",
+        "url": "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-194db518ac36ecea0647",
+        "url": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-43a2c57bc1e8b6c7a970",
+        "url": "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-19b77f1fb46527c273dc",
+        "url": "https://prolocobernalda.it/cenni-storici.html",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-847ad8ed8f62117a39d8",
+        "url": "https://www.ceaicalanchi.com/punti-di-interesse/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-e3ceb93158bd8b18e49b",
+        "url": "https://www.halleyweb.com/c077023/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G1XpJekTBPT0-A",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-cbe7daa0cdce9b668159",
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": false
+      },
+      {
+        "receiptId": "src-39ee91793c5d4e450828",
+        "url": "https://events.materawelcome.it/events/view/arte-classica/8699/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-d71ddf9abd0c4aa7b216",
+        "url": "https://events.materawelcome.it/events/view/arte-classica/8475/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-1d246df416b7f7e9e75b",
+        "url": "https://www.comune.matera.it/wp-content/uploads/2023/11/Determinazione-Dirigenziale-n.-2343_2025-del-08.08.2025.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-f146968695d96b37defd",
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-6c1852734378b89e4dff",
+        "url": "https://www.arabasilicata.it/news/giornata-del-pastoralismo-a-garaguso-tradizione-e-innovazione-con-garaguso-4-0-il-pastore-connesso/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-260961f74d4691435818",
+        "url": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-2d7e28c60fa794fdcfc1",
+        "url": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-2-Domanda-di-partecipazione_ASPARAGUS.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-a72de0d93f8392f3c6e7",
+        "url": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/3/atto/GTVRjd061VT0-H",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-d37e37a0b6f053a47b19",
+        "url": "https://giornalemio.it/ambiente/il-14-agosto-1-sagra-dellolio-di-oliva-a-irsina/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-a88b594b642122952568",
+        "url": "https://www.policoro.basilicata.it/05/05/2026/festeggiamenti-del-15-16-e-17-maggio-2026-in-devozione-della-madonna-del-ponte-graduatoria-esercenti-il-commercio-su-aree-pubbliche-redatta-ai-sensi-dellart-40-del-vigente-regolamento-co/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-e402fc723f297e066ea6",
+        "url": "https://www.discoverferrandina.it/eventi/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-e3900797cb85eebb0b92",
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-2cb21aa9716d0ee16802",
+        "url": "https://www.lecronachelucane.it/2026/08/16/montescaglioso-in-festa-il-17-agosto-torna-la-fiera-di-san-rocco/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-a6e26e3b3349d5c9af82",
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-eb66205acfe0553fb9f9",
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2026/09/Allegato_1.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-bcac0f17eabd017d6ee3",
+        "url": "https://www.accetturaonline.it/la-fiera-dei-ricordi/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-736b61760a8749aceab6",
+        "url": "https://www.basilicataturistica.it/eventi-in-basilicata/a-miglionico-lomaggio-alla-lucanita-di-dino-paradiso/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": false
+      },
+      {
+        "receiptId": "src-68b3c09ce2f2e1808e64",
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": false
+      },
+      {
+        "receiptId": "src-8c83493a0c3b1c717099",
+        "url": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-06f946a2ed059229234d",
+        "url": "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-a1321eeb3255ac28d8e6",
+        "url": "https://portaleventi.it/evento/sagra-dei-fichi-secchi-e-dei-sapori-dautunno-a-miglionico",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-d3f480390bac389f283f",
+        "url": "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      },
+      {
+        "receiptId": "src-e3c25ca451f28e2e9781",
+        "url": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRnd0q5az0-H",
+        "status": 200,
+        "reading": "source-sections-reviewed",
+        "tlsVerified": true
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Basilicata",
+      "city": "Accettura",
+      "name": "Fiera di ottobre",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.accetturaonline.it/la-fiera-dei-ricordi/",
+        "label": "AccetturaOnline — documentazione locale 2010–2018",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Fiera di merci varie e bestiame documentata dalla comunità di Accettura in ottobre. La testimonianza locale conserva fotografie e ricordi di edizioni passate: non costituisce un calendario operativo recente.",
+      "venue": "Accettura; collocazione attuale dei banchi da confermare",
+      "sectors": "Merci varie; componente zootecnica storica da riconfermare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte è un articolo del 2018 con materiali 2010–2017. Gli aggregatori indicano 1–2 ottobre 2026, ma l’ordinanza originale non è stata recuperata: nessuna edizione 2026 aggiunta. Richiedere al SUAP il programma, l’area e i requisiti per il proprio banco."
+      },
+      "sourceRecordIds": [
+        "https://www.accetturaonline.it/la-fiera-dei-ricordi/"
+      ],
+      "frequencyNote": "Ricorrenza storica di inizio ottobre; giorni e attività zootecnica attuali da verificare.",
+      "seo": {
+        "noindex": true,
+        "reason": "Documentazione storica o programmazione preliminare da arricchire prima dell’indicizzazione; nessuna nuova edizione confermata."
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Bernalda",
+      "name": "Fiera di San Bernardino",
+      "months": [
+        5,
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://prolocobernalda.it/cenni-storici.html",
+        "label": "Pro Loco Bernalda — storia e ricorrenze",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La Pro Loco documenta la Fiera di San Bernardino sia a maggio sia ad agosto. Le ricorrenze commerciali sono distinte dalle sole celebrazioni del patrono e dal corteo storico.",
+      "venue": "Bernalda; vie e assegnazioni da verificare nel programma comunale",
+      "sectors": "Merci e categorie ammesse da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il repertorio della Pro Loco indica i due mesi, senza un bando annuale per gli ambulanti. Non si ricavano giorni di fiera dalle date della festa religiosa, né dal decreto storico del 1819. Verificare posteggio, graduatoria, canone e servizi con l’Ufficio Commercio."
+      },
+      "sourceRecordIds": [
+        "https://prolocobernalda.it/cenni-storici.html"
+      ],
+      "frequencyNote": "Maggio e agosto secondo la Pro Loco; nessuna data annuale proiettata."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Colobraro",
+      "name": "Asparagus — Sagra dell’asparago selvatico",
+      "months": [
+        5
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf",
+        "label": "Comune di Colobraro — disposizioni Asparagus 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La seconda edizione di Asparagus prevede dieci casette in legno di 2×2 metri e una selezione di prodotti territoriali legati all’asparago. La manifestazione 2026 interessa Via degli Emigranti, Via Lotta dei Contadini e Largo Convento.",
+      "venue": "Via degli Emigranti, Via Lotta dei Contadini e Largo Convento",
+      "sectors": "Prodotti tipici alimentari e artigianali legati al territorio e all’asparago",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-02",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Edizione 2–3 maggio 2026. Domanda entro il 22 aprile via PEC o consegna al Comune, con prodotti, prezzi e documento. Priorità alle realtà locali e alle proposte attinenti; ammissione soggetta a selezione. Merci ordinarie da mercato settimanale ed elettronica escluse. Il modulo è per le casette, non per una libera collocazione del banco.",
+        "url": "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-2-Domanda-di-partecipazione_ASPARAGUS.pdf",
+        "deadline": "2026-04-22"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-1-Disposizioni-Organizzative_ASPARAGUS.pdf",
+        "https://www.comune.colobraro.mt.it/wp-content/uploads/2026/04/All.-2-Domanda-di-partecipazione_ASPARAGUS.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Ferrandina",
+      "name": "Fiera di maggio",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/",
+        "label": "Comune di Ferrandina — fiere e mercati",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il servizio comunale Fiere e Mercati distingue questa fiera dai mercati del primo e terzo lunedì. La periodicità pubblicata è: primo venerdì ricadente tra la prima e la seconda domenica di maggio.",
+      "venue": "Ferrandina; area e posteggio da confermare all’Ufficio Commercio",
+      "sectors": "Categorie merceologiche non dettagliate nella pagina del servizio",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "L’Ufficio Commercio è il riferimento per informazioni e partecipazione. Il campo “Gratuito” della pagina generale non certifica l’esenzione del banco da canone o altri oneri. Il periodo regolamentare non diventa automaticamente un’edizione 2026 o 2027."
+      },
+      "sourceRecordIds": [
+        "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/"
+      ],
+      "contacts": {
+        "phone": "0835756307"
+      },
+      "frequencyNote": "Periodo del servizio comunale: primo venerdì ricadente tra la prima e la seconda domenica di maggio."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Ferrandina",
+      "name": "Fiera di settembre",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/",
+        "label": "Comune di Ferrandina — fiere e mercati",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il servizio comunale Fiere e Mercati distingue questa fiera dai mercati del primo e terzo lunedì. La periodicità pubblicata è: 7 settembre.",
+      "venue": "Ferrandina; area e posteggio da confermare all’Ufficio Commercio",
+      "sectors": "Categorie merceologiche non dettagliate nella pagina del servizio",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "L’Ufficio Commercio è il riferimento per informazioni e partecipazione. Il campo “Gratuito” della pagina generale non certifica l’esenzione del banco da canone o altri oneri. Il periodo regolamentare non diventa automaticamente un’edizione 2026 o 2027."
+      },
+      "sourceRecordIds": [
+        "https://comune.ferrandina.mt.it/servizio/fiere-e-mercati/"
+      ],
+      "contacts": {
+        "phone": "0835756307"
+      },
+      "frequencyNote": "Periodo del servizio comunale: 7 settembre."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Ferrandina",
+      "name": "Sagra del marretto e del sospiro",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.discoverferrandina.it/eventi/",
+        "label": "Discover Ferrandina — calendario estivo 2025",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il cartellone estivo di Ferrandina associa il marretto e il sospiro in una sagra organizzata dalla Pro Loco in Piazza Plebiscito. La pagina comprende eventi del 2025, tra cui il concerto indicato esplicitamente come Arezzo Wave 2025.",
+      "venue": "Piazza Plebiscito",
+      "sectors": "Gastronomia locale; marretto e dolci tipici",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-30",
+          "end": "2025-07-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverferrandina.it/eventi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma storico del 30 luglio 2025, ore 19. L’inserimento nel portale turistico non apre una selezione di ambulanti. Per un’eventuale nuova edizione chiedere alla Pro Loco se siano ammessi espositori esterni e quali siano i costi."
+      },
+      "sourceRecordIds": [
+        "https://www.discoverferrandina.it/eventi/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Garaguso",
+      "name": "Giornata del Pastoralismo — Il Pastore connesso",
+      "months": [
+        11
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.arabasilicata.it/news/giornata-del-pastoralismo-a-garaguso-tradizione-e-innovazione-con-garaguso-4-0-il-pastore-connesso/",
+        "label": "ARA Basilicata — programma Garaguso 7 novembre 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "ARA Basilicata pubblica il programma del 7 novembre 2026 a Garaguso: animali esposti, artigianato tradizionale, caseificazione, miele, lana e stand gastronomici. L’incontro tecnico si svolge nella sala polifunzionale di Piazza Europa.",
+      "venue": "Piazza Europa e sala polifunzionale",
+      "sectors": "Prodotti agroalimentari, artigianato tradizionale e zootecnia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arabasilicata.it/news/giornata-del-pastoralismo-a-garaguso-tradizione-e-innovazione-con-garaguso-4-0-il-pastore-connesso/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Apertura della manifestazione alle 10:30; area food, artigianato e laboratori dalle 11, stand gastronomici alle 12:30 e 19:30. Il programma non pubblica una domanda generale per espositori o un listino. Contattare ARA Basilicata e Pro Loco per l’eventuale selezione, senza presumere posti liberi."
+      },
+      "sourceRecordIds": [
+        "https://www.arabasilicata.it/news/giornata-del-pastoralismo-a-garaguso-tradizione-e-innovazione-con-garaguso-4-0-il-pastore-connesso/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Gorgoglione",
+      "name": "Sagra del Pezzente",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/",
+        "label": "Comune di Gorgoglione — Estate 2025",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il programma comunale Estate a Gorgoglione 2025 colloca sagra del pezzente in Piazza Zanardelli, con apertura degli stand e intrattenimento serale.",
+      "venue": "Piazza Zanardelli",
+      "sectors": "Salumi e gastronomia locale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-11",
+          "end": "2025-08-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il contenuto e il titolo del programma sono del 2025, anche se la pagina riporta un aggiornamento del luglio 2026. Si conserva l’edizione effettiva del testo; nessuna conferma 2026 dedotta dal timestamp. Accesso dei commercianti esterni e quote non verificati."
+      },
+      "sourceRecordIds": [
+        "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/"
+      ],
+      "frequencyNote": "Programma comunale 2025; calendario della nuova edizione da verificare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Gorgoglione",
+      "name": "Sagra dell’Involtino — Notte Bianca",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/",
+        "label": "Comune di Gorgoglione — Estate 2025",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il programma comunale Estate a Gorgoglione 2025 colloca sagra dell’involtino — notte bianca in Piazza Zanardelli, con apertura degli stand e intrattenimento serale.",
+      "venue": "Piazza Zanardelli",
+      "sectors": "Involtini e gastronomia locale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-17",
+          "end": "2025-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il contenuto e il titolo del programma sono del 2025, anche se la pagina riporta un aggiornamento del luglio 2026. Si conserva l’edizione effettiva del testo; nessuna conferma 2026 dedotta dal timestamp. Accesso dei commercianti esterni e quote non verificati."
+      },
+      "sourceRecordIds": [
+        "https://comune.gorgoglione.mt.it/novita/estate-a-gorgoglione/"
+      ],
+      "frequencyNote": "Programma comunale 2025; calendario della nuova edizione da verificare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Grassano",
+      "name": "Mercato straordinario di aprile",
+      "months": [
+        4
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://egov.hseweb.it/grassano/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVMEE5WT0-H",
+        "label": "Comune di Grassano — ordinanza 14 del 2 aprile 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’ordinanza comunale n. 14 del 2 aprile 2026 disciplina transito e sosta in Via Meridionale per il mercato straordinario del giorno successivo. È un appuntamento commerciale puntuale, senza una ricorrenza annuale accertata.",
+      "venue": "Via Meridionale",
+      "sectors": "Categorie ammesse da verificare con il Comune",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-03",
+          "end": "2026-04-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://egov.hseweb.it/grassano/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVMEE5WT0-H"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Data documentata: 3 aprile 2026. L’ordinanza di viabilità non assegna un posteggio e non dimostra che la partecipazione fosse libera. Per repliche e ammissione richiedere l’avviso commerciale al SUAP; costi e servizi non verificati."
+      },
+      "sourceRecordIds": [
+        "https://egov.hseweb.it/grassano/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVMEE5WT0-H"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Grottole",
+      "name": "Fiera di San Luca",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRnd0q5az0-H",
+        "label": "Comune di Grottole — ordinanza Fiera San Luca 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’albo comunale documenta la Fiera di San Luca attraverso le ordinanze di viabilità per il 13 e 14 ottobre del 2025 e del 2026. I provvedimenti identificano espressamente le giornate della fiera.",
+      "venue": "Grottole; vie e perimetro nell’ordinanza comunale",
+      "sectors": "Merci e categorie ammesse da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-13",
+          "end": "2025-10-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/3/atto/GTVRjd061VT0-H"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-13",
+          "end": "2026-10-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRnd0q5az0-H"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il 13–14 ottobre 2026 è verificato nell’albo aggiornato, separatamente dal precedente 2025. Per partecipare servono i provvedimenti commerciali e le assegnazioni dell’edizione interessata. L’ordinanza di traffico non certifica disponibilità o costo del banco."
+      },
+      "sourceRecordIds": [
+        "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRnd0q5az0-H",
+        "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/3/atto/GTVRjd061VT0-H"
+      ],
+      "calendarSource": {
+        "url": "https://halleyweb.com/grottole/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/3/atto/GTVRjd061VT0-H",
+        "label": "Comune di Grottole — ordinanza Fiera San Luca 2025"
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Irsina",
+      "name": "Sagra dell’Olio di Oliva",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://giornalemio.it/ambiente/il-14-agosto-1-sagra-dellolio-di-oliva-a-irsina/",
+        "label": "Giornalemio — programma Pro Loco Irsina ripreso il 10 agosto 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La prima Sagra dell’Olio di Oliva di Irsina è annunciata per il 14 agosto 2026, con la Pro Loco, il Comune e operatori locali. Il resoconto elenca frantoio, caseificio, birrificio, vino e altre produzioni del territorio.",
+      "venue": "Area della Concattedrale di Irsina; collocazione degli stand da verificare",
+      "sectors": "Olio d’oliva, prodotti tipici e bevande",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-14",
+          "dateType": "calendar",
+          "sourceUrl": "https://giornalemio.it/ambiente/il-14-agosto-1-sagra-dellolio-di-oliva-a-irsina/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Data ricavata da un articolo locale del 10 agosto 2026 che riprende il programma della Pro Loco; non è un bando di posteggi. Il sito non documenta ammissione di ulteriori ambulanti o quota espositiva. Nessuna disponibilità inferita dall’elenco dei partecipanti."
+      },
+      "sourceRecordIds": [
+        "https://giornalemio.it/ambiente/il-14-agosto-1-sagra-dellolio-di-oliva-a-irsina/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Mercatino degli Scambi",
+      "months": [
+        4,
+        11
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://events.materawelcome.it/events/view/arte-classica/8699/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+        "label": "Matera Welcome Events — programma del Circolo Paladino",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il Circolo Filatelico Numismatico Materano “Raffaele Paladino” presenta antiquariato, collezionismo e piccolo artigianato artistico. Matera Welcome pubblica l’appuntamento del 14–15 novembre 2026 in Piazza Vittorio Veneto e un diverso appuntamento di aprile alla Camera di Commercio.",
+      "venue": "Piazza Vittorio Veneto a novembre; Camera di Commercio, Via Lucana, ad aprile",
+      "sectors": "Antiquariato, vintage, filatelia, numismatica e artigianato artistico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://events.materawelcome.it/events/view/arte-classica/8475/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://events.materawelcome.it/events/view/arte-classica/8699/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il 14 e 15 novembre 2026 sono indicati dalle 9 alle 23. Il 25–26 aprile 2026 risulta alla Camera di Commercio. Sono date discrete: non un mercato continuativo da agosto a novembre. La gratuità pubblicata riguarda i visitatori; quota e ammissione degli espositori da chiedere al Circolo."
+      },
+      "sourceRecordIds": [
+        "https://events.materawelcome.it/events/view/arte-classica/8699/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+        "https://events.materawelcome.it/events/view/arte-classica/8475/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche"
+      ],
+      "contacts": {
+        "phone": "3343839857",
+        "email": "paladinopaolo@gmail.com"
+      },
+      "calendarSource": {
+        "url": "https://events.materawelcome.it/events/view/arte-classica/8475/mercatino_degli_scambi_collezionismo_antiquariato_e_manifatture_artistiche",
+        "label": "Matera Welcome Events — appuntamento 25–26 aprile 2026"
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Fiera della Bruna — Piccianello",
+      "months": [
+        6,
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/",
+        "label": "Giornalemio — testo dell’ordinanza comunale Bruna 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La disciplina di viabilità della Bruna 2026, ripresa dalla stampa locale, distingue la fiera nel rione Piccianello da quella di Via Rosselli. Questa scheda riguarda Rione Piccianello.",
+      "venue": "Rione Piccianello",
+      "sectors": "Merci varie e attività alimentari secondo i posteggi e le autorizzazioni",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-29",
+          "end": "2026-07-03",
+          "dateType": "calendar",
+          "sourceUrl": "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Il testo dell’ordinanza indica le due fiere dal 29 giugno al 3 luglio 2026; il 4–5 luglio l’ottavario interessa la sola Via Rosselli. Non si estendono al mercato tutti i giorni dei festeggiamenti. L’originale comunale collegato restituisce una risposta senza PDF: conservata la riproduzione giornalistica, da confermare con gli uffici per assegnazioni e oneri."
+      },
+      "sourceRecordIds": [
+        "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Fiera della Bruna — Via Rosselli",
+      "months": [
+        6,
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/",
+        "label": "Giornalemio — testo dell’ordinanza comunale Bruna 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La disciplina di viabilità della Bruna 2026, ripresa dalla stampa locale, distingue la fiera nel rione Piccianello da quella di Via Rosselli. Questa scheda riguarda Via Rosselli.",
+      "venue": "Via Rosselli",
+      "sectors": "Merci varie e attività alimentari secondo i posteggi e le autorizzazioni",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-29",
+          "end": "2026-07-05",
+          "dateType": "calendar",
+          "sourceUrl": "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Il testo dell’ordinanza indica le due fiere dal 29 giugno al 3 luglio 2026; il 4–5 luglio l’ottavario interessa la sola Via Rosselli. Non si estendono al mercato tutti i giorni dei festeggiamenti. L’originale comunale collegato restituisce una risposta senza PDF: conservata la riproduzione giornalistica, da confermare con gli uffici per assegnazioni e oneri."
+      },
+      "sourceRecordIds": [
+        "https://giornalemio.it/cronaca/festa-del-2-luglio-disciplina-traffico-divieti-obblighi-e-rimozione-forzata/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Mercatino di Natale",
+      "months": [
+        1,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+        "label": "Comune di Matera — avviso iniziative natalizie 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’avviso comunale per il Natale 2026 prevede mercatino di natale dal 4 dicembre 2026 al 7 gennaio 2027. Nel centro è prevista soltanto vendita di alimenti preconfezionati all’origine, con le degustazioni ammesse dall’avviso; interruzione 29 dicembre–2 gennaio, esclusa Via Don Minzoni.",
+      "venue": "Piazza Vittorio Veneto, Via La Vista e Via Don Minzoni",
+      "sectors": "Artigianato, produzioni creative, prodotti tipici e oggettistica natalizia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-04",
+          "end": "2027-01-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+          "periodOnly": true,
+          "label": "Periodo previsto dall’avviso per organizzatori; programma da confermare"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "La procedura scaduta il 2 novembre 2026 alle 23:59 seleziona gli organizzatori, non i singoli banchi. Il periodo è quello dell’avviso: programma e affidamento finali non verificati. Gli espositori devono rivolgersi al soggetto selezionato per ammissione e preventivo. Nessuna gratuità o continuità quotidiana dedotta."
+      },
+      "sourceRecordIds": [
+        "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf"
+      ],
+      "seo": {
+        "noindex": true,
+        "reason": "Documentazione storica o programmazione preliminare da arricchire prima dell’indicizzazione; nessuna nuova edizione confermata."
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Mercatini tematici nei Quartieri",
+      "months": [
+        1,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+        "label": "Comune di Matera — avviso iniziative natalizie 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’avviso comunale per il Natale 2026 prevede mercatini tematici nei quartieri dal 4 dicembre 2026 al 7 gennaio 2027. La programmazione deve essere articolata tra quartieri e borghi; l’avviso ammette produzioni artigianali, creative, agroalimentari e somministrazione nei limiti prescritti.",
+      "venue": "Piazza Montegrappa a La Martella, Piazza San Giovanni XXIII, Piazza Sant’Agnese e Via Meucci",
+      "sectors": "Artigianato, produzioni creative, prodotti tipici e oggettistica natalizia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-04",
+          "end": "2027-01-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf",
+          "periodOnly": true,
+          "label": "Periodo previsto dall’avviso per organizzatori; programma da confermare"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "La procedura scaduta il 2 novembre 2026 alle 23:59 seleziona gli organizzatori, non i singoli banchi. Il periodo è quello dell’avviso: programma e affidamento finali non verificati. Gli espositori devono rivolgersi al soggetto selezionato per ammissione e preventivo. Nessuna gratuità o continuità quotidiana dedotta."
+      },
+      "sourceRecordIds": [
+        "https://comune.matera.it/wp-content/uploads/2026/10/Avviso_Natale.pdf"
+      ],
+      "seo": {
+        "noindex": true,
+        "reason": "Documentazione storica o programmazione preliminare da arricchire prima dell’indicizzazione; nessuna nuova edizione confermata."
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Matera",
+      "name": "Mercatino dell’artigianato locale",
+      "months": [
+        10,
+        11
+      ],
+      "category": "artigianato",
+      "source": {
+        "url": "https://www.comune.matera.it/wp-content/uploads/2023/11/Determinazione-Dirigenziale-n.-2343_2025-del-08.08.2025.pdf",
+        "label": "Comune di Matera — istruttoria preliminare 2343/2025",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’istruttoria comunale del 2025 distingue il mercatino dell’artigianato locale dal Mercatino degli Scambi. Il proponente è il Circolo Filatelico Numismatico Materano; sono previsti Piazza Vittorio Veneto e possibili spostamenti.",
+      "venue": "Piazza Vittorio Veneto; localizzazione alternativa da verificare",
+      "sectors": "Artigianato locale",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "La determina 2343/2025 considera teoricamente accoglibili le proposte di ottobre e novembre e rimette date e luoghi definitivi alla Giunta. Le date non sono quindi pubblicate come edizioni confermate. Il programma natalizio dello stesso Circolo presenta sovrapposizioni non risolte in questo atto: escluso il raddoppio delle schede."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.matera.it/wp-content/uploads/2023/11/Determinazione-Dirigenziale-n.-2343_2025-del-08.08.2025.pdf"
+      ],
+      "frequencyNote": "Proposte ottobre–novembre 2025; nuova edizione e autorizzazione finale da verificare.",
+      "seo": {
+        "noindex": true,
+        "reason": "Documentazione storica o programmazione preliminare da arricchire prima dell’indicizzazione; nessuna nuova edizione confermata."
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Miglionico",
+      "name": "Sagra dei Fichi Secchi e dei Sapori d’Autunno",
+      "months": [
+        9,
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/eventi-in-basilicata/a-miglionico-lomaggio-alla-lucanita-di-dino-paradiso/",
+        "label": "APT Basilicata — riscontro del 20 settembre 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La Pro Loco dedica la sagra ai fichi secchi e alle produzioni locali nell’area del Castello del Malconsiglio. APT Basilicata riscontra la XIX edizione con lo spettacolo del 20 settembre 2026; il programma ripreso da PortaleEventi indica il 18–20 settembre.",
+      "venue": "Corte del Castello del Malconsiglio e Piazza Castello",
+      "sectors": "Fichi secchi, prodotti tipici e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-18",
+          "end": "2026-09-20",
+          "dateType": "calendar",
+          "sourceUrl": "https://portaleventi.it/evento/sagra-dei-fichi-secchi-e-dei-sapori-dautunno-a-miglionico"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Intervallo 18–20 settembre 2026 da fonte secondaria che riprende il programma della Pro Loco, con riscontro APT del giorno 20. Le vecchie indicazioni di ottobre riguardano altre edizioni. Pranzi e spettacoli non sono quote espositive; domanda, disponibilità e costi del banco non verificati."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/eventi-in-basilicata/a-miglionico-lomaggio-alla-lucanita-di-dino-paradiso/",
+        "https://portaleventi.it/evento/sagra-dei-fichi-secchi-e-dei-sapori-dautunno-a-miglionico"
+      ],
+      "calendarSource": {
+        "url": "https://portaleventi.it/evento/sagra-dei-fichi-secchi-e-dei-sapori-dautunno-a-miglionico",
+        "label": "PortaleEventi — programma della Pro Loco ripreso"
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Montalbano Jonico",
+      "name": "Fiera di settembre",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.ceaicalanchi.com/punti-di-interesse/",
+        "label": "CEA I Calanchi — ricorrenze di Montalbano Jonico",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il Centro di Educazione Ambientale I Calanchi elenca la fiera del 20 settembre tra gli appuntamenti di Montalbano Jonico. La distingue dal mercato mensile del 19 e dal mercatino settimanale del sabato.",
+      "venue": "Montalbano Jonico; area della fiera da verificare",
+      "sectors": "Categorie merceologiche da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il repertorio locale documenta il periodo, senza un’edizione o un bando datati. Nessuna data 2026 è calcolata dalla ricorrenza. Gli ambulanti devono verificare con il SUAP collocazione, autorizzazione, assegnazione e oneri per la manifestazione interessata."
+      },
+      "sourceRecordIds": [
+        "https://www.ceaicalanchi.com/punti-di-interesse/"
+      ],
+      "frequencyNote": "20 settembre nel repertorio del CEA; edizione da riconfermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Montalbano Jonico",
+      "name": "Mercato sotto le stelle",
+      "months": [
+        6,
+        7,
+        8
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf",
+        "label": "Comune di Montalbano Jonico — avviso mercati serali 2025",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il Comune ha istituito tre mercati serali nel 2025 tra Corso Carlo Alberto e Via Eraclea, con un massimo di venti posteggi. L’avviso disciplina priorità e assegnazione anche per chi non ha un posteggio settimanale.",
+      "venue": "Corso Carlo Alberto e Via Eraclea",
+      "sectors": "Commercio su area pubblica; categorie da verificare con il SUAP",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-06-24",
+          "end": "2025-06-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf"
+        },
+        {
+          "year": 2025,
+          "start": "2025-07-24",
+          "end": "2025-07-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf"
+        },
+        {
+          "year": 2025,
+          "start": "2025-08-13",
+          "end": "2025-08-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Edizioni 24 giugno, 24 luglio e 13 agosto 2025, dalle 17 alle 23. Domanda via PEC entro il 22 giugno 2025; priorità agli assegnatari settimanali, poi ordine cronologico. Esenzione CUP prevista per quella rassegna; non trasferita al 2026. Nuovo programma non verificato.",
+        "deadline": "2025-06-22"
+      },
+      "sourceRecordIds": [
+        "https://comune.montalbano.mt.it/wp-content/uploads/2025/06/11469_AVVISO_X_MERCATO_SERALE_2025-signed_Marcato.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Montescaglioso",
+      "name": "Fiera di San Rocco",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.lecronachelucane.it/2026/08/16/montescaglioso-in-festa-il-17-agosto-torna-la-fiera-di-san-rocco/",
+        "label": "Documento o programma della manifestazione",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La Fiera di San Rocco è descritta dalla stampa locale come appuntamento commerciale del 17 agosto 2026. Si inserisce nei festeggiamenti patronali, con bancarelle e acquisti nelle vie cittadine.",
+      "venue": "Montescaglioso; perimetro commerciale da verificare",
+      "sectors": "Merci varie e prodotti da verificare secondo il bando",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-17",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.lecronachelucane.it/2026/08/16/montescaglioso-in-festa-il-17-agosto-torna-la-fiera-di-san-rocco/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Data del 17 agosto 2026 da articolo del 16 agosto, non da graduatoria commerciale. Non si trasferisce alla fiera l’intero calendario religioso fino al 20 agosto. Requisiti, disponibilità e canone del posteggio vanno richiesti all’Ufficio Commercio."
+      },
+      "sourceRecordIds": [
+        "https://www.lecronachelucane.it/2026/08/16/montescaglioso-in-festa-il-17-agosto-torna-la-fiera-di-san-rocco/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera di San Giuseppe — Nova Siri Centro",
+      "months": [
+        3
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Otto posteggi complessivi dell’area per le fiere del centro; categorie ripartite dall’art. 32. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Via Roma, Via dei Caduti e Piazza Plebiscito",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 10 gennaio. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Festa di marzo; calendario commerciale annuale non recuperato."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera della Madonna del Carmine — Nova Siri Centro",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Otto posteggi complessivi dell’area; la località Centro deve essere distinta da Marina. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Via Roma, Via dei Caduti e Piazza Plebiscito",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 10 maggio; specificare Nova Siri Centro. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Ricorrenza di luglio; nessun giorno annuale ricostruito."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera della Madonna della Sulla — Nova Siri Centro",
+      "months": [
+        4,
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Area del centro distinta dalla fiera presso il Santuario; il calendario religioso è mobile. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Via Roma, Via dei Caduti e Piazza Plebiscito",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 1 marzo; indicare la località Centro. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Tra aprile e maggio nel ciclo religioso del repertorio GAL; giornate mercatali da verificare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera della Madonna della Sulla — Santuario",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il regolamento individua venti posteggi per i festeggiamenti della Sulla presso il Santuario. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Area antistante il Santuario della Madonna della Sulla e strada verso Nova Siri",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 1 marzo; indicare espressamente l’area Santuario. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Feste della Sulla a maggio; calendario distinto dalla fiera del 21 agosto."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera di Sant’Antonio da Padova — Marina di Nova Siri",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il regolamento individua settantaquattro posteggi per la manifestazione di Marina. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Centro cittadino di Marina di Nova Siri",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 5 aprile. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Giugno nel repertorio delle ricorrenze; non dedotto un giorno 2026."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera della Madonna del Carmine — Marina di Nova Siri",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il regolamento individua trentasei posteggi, distinti dall’omologa fiera del centro storico. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Centro cittadino di Marina di Nova Siri",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 10 maggio; specificare Marina. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://start2020.it/wp-content/uploads/2020/12/mappa-delle-emozioni.pdf",
+        "label": "GAL Start 2020 — Mappa delle emozioni, pagina 56"
+      },
+      "frequencyNote": "Ricorrenza di luglio; calendario commerciale annuale da confermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Fiera del 21 agosto — Santuario della Sulla",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Trenta posteggi previsti dal regolamento; attività dalle 7 alle 14. La manifestazione è individuata autonomamente nel regolamento comunale delle aree pubbliche.",
+      "venue": "Area antistante il Santuario della Madonna della Sulla e strada verso Nova Siri",
+      "sectors": "Alimentari e non alimentari secondo le categorie del singolo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Termine regolamentare 10 giugno. Indicazioni del regolamento, non un nuovo bando né una scadenza annuale verificata. L’art. 48 richiede domande separate per manifestazione e località; operatori agricoli esclusi da questa procedura. Verificare avviso vigente, concessione, canone e servizi con il SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+      ],
+      "frequencyNote": "Ricorrenza regolamentare del 21 agosto; nessuna edizione annuale confermata."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Mercatino dell’antiquariato, artigianato e collezionismo",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Gli artt. 18–20 prevedono quattro posteggi e cadenza domenicale, dalle 19 alle 24; concessioni secondo bando.",
+      "venue": "Piazza 11 Settembre",
+      "sectors": "Antiquariato, modernariato, collezionismo e artigianato tipico",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Calendario e consistenza dal regolamento, senza avviso annuale verificato. Nessuna domenica o stagione trasformata in date 2026. Per l’ammissione chiedere al SUAP procedura vigente e conferma dei termini; per il mercato turistico segnalata la discordanza 15/16 aprile. Canone e servizi non sono quantificati nel documento."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+      ],
+      "frequencyNote": "Periodicità prevista dal regolamento; svolgimento e disponibilità attuali da confermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Mercato natalizio",
+      "months": [
+        1,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Gli artt. 21–23 prevedono sei posteggi, periodo 8 dicembre–6 gennaio e istanze anche per singole giornate; termine regolamentare 8 ottobre.",
+      "venue": "Piazza Troisi",
+      "sectors": "Articoli natalizi alimentari e non alimentari",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Calendario e consistenza dal regolamento, senza avviso annuale verificato. Nessuna domenica o stagione trasformata in date 2026. Per l’ammissione chiedere al SUAP procedura vigente e conferma dei termini; per il mercato turistico segnalata la discordanza 15/16 aprile. Canone e servizi non sono quantificati nel documento."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+      ],
+      "frequencyNote": "Periodicità prevista dal regolamento; svolgimento e disponibilità attuali da confermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Mercato dei fiori per la commemorazione dei defunti",
+      "months": [
+        10,
+        11
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Gli artt. 24–26 prevedono tre posteggi per il 31 ottobre e l’1–2 novembre, dalle 7 alle 17; termine regolamentare 1 settembre.",
+      "venue": "Piazzale all’ingresso laterale del Cimitero comunale",
+      "sectors": "Fiori, piante e articoli funebri",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Calendario e consistenza dal regolamento, senza avviso annuale verificato. Nessuna domenica o stagione trasformata in date 2026. Per l’ammissione chiedere al SUAP procedura vigente e conferma dei termini; per il mercato turistico segnalata la discordanza 15/16 aprile. Canone e servizi non sono quantificati nel documento."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+      ],
+      "frequencyNote": "Periodicità prevista dal regolamento; svolgimento e disponibilità attuali da confermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Nova Siri",
+      "name": "Mercato turistico-balneare",
+      "months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106",
+        "label": "Comune di Nova Siri — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Gli artt. 27–29 prevedono venti piazzole dal 15 giugno al 15 settembre, dalle 19 all’1; dieci alimentari e dieci non alimentari. Necessario il nulla osta marittimo; termini 15/16 aprile discordanti tra artt. 29 e 48.",
+      "venue": "Via La Strada, tra Villaggio Sira Resort ed ex Guardia medica",
+      "sectors": "Alimentari, somministrazione e artigianato, bigiotteria e souvenir secondo posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Calendario e consistenza dal regolamento, senza avviso annuale verificato. Nessuna domenica o stagione trasformata in date 2026. Per l’ammissione chiedere al SUAP procedura vigente e conferma dei termini; per il mercato turistico segnalata la discordanza 15/16 aprile. Canone e servizi non sono quantificati nel documento."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/novasiri/zf/index.php/atti-generali/index/download-file/voce/106"
+      ],
+      "frequencyNote": "Periodicità prevista dal regolamento; svolgimento e disponibilità attuali da confermare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Pisticci",
+      "name": "Fiera di Pisticci Centro",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf",
+        "label": "Comune di Pisticci — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Quaranta posteggi previsti dagli artt. 23–25. Il regolamento ammette operatori commerciali e una riserva per produttori agricoli non superiore al 10% dei posti.",
+      "venue": "Corso Metaponto e Via Paisiello",
+      "sectors": "Alimentari e non alimentari, nel rispetto dei requisiti igienico-sanitari",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Vendita prevista dalle 7 alle 14; occupazione dalle 5 e sgombero entro le 15. Il numero dei posteggi descrive il regolamento e non posti liberi. La periodicità non è una conferma del calendario 2026. Richiedere al SUAP avviso, assegnazione, canone e servizi applicabili."
+      },
+      "sourceRecordIds": [
+        "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf"
+      ],
+      "frequencyNote": "12 agosto secondo il regolamento; edizione da verificare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Pisticci",
+      "name": "Fiera di Marconia",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf",
+        "label": "Comune di Pisticci — regolamento commercio su aree pubbliche",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Sessantasei posteggi previsti dagli artt. 23–25. Il regolamento ammette operatori commerciali e una riserva per produttori agricoli non superiore al 10% dei posti.",
+      "venue": "Piazza della Vittoria a Marconia",
+      "sectors": "Alimentari e non alimentari, nel rispetto dei requisiti igienico-sanitari",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Vendita prevista dalle 7 alle 14; occupazione dalle 5 e sgombero entro le 15. Il numero dei posteggi descrive il regolamento e non posti liberi. La periodicità non è una conferma del calendario 2026. Richiedere al SUAP avviso, assegnazione, canone e servizi applicabili."
+      },
+      "sourceRecordIds": [
+        "https://www.comunedipisticci.it/repository/sviluppo_economico/regolamento_commercio_aree_pubbliche.pdf"
+      ],
+      "frequencyNote": "Primo sabato di settembre secondo il regolamento; edizione da verificare."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Pisticci",
+      "name": "Mercatino degli Scambi di Marconia",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html",
+        "label": "Pisticci.com — calendario del Circolo Paladino ripreso",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il Circolo Paladino porta in Piazza Bologna a Marconia antiquariato, modernariato, collezionismo e artigianato creativo. Il calendario ripreso da Pisticci.com distingue undici appuntamenti tra settembre 2026 e agosto 2027.",
+      "venue": "Piazza Bologna, Marconia",
+      "sectors": "Antiquariato, modernariato, collezionismo, vintage e artigianato creativo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-03",
+          "end": "2026-09-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-02-06",
+          "end": "2027-02-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-03-06",
+          "end": "2027-03-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-04-03",
+          "end": "2027-04-04",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-05-08",
+          "end": "2027-05-09",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-06-05",
+          "end": "2027-06-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-07-03",
+          "end": "2027-07-04",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        },
+        {
+          "year": 2027,
+          "start": "2027-07-31",
+          "end": "2027-08-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Date discrete dal programma ripreso dalla stampa, non apertura continua dal 3 settembre all’1 agosto. Per partecipare occorre verificare con il Circolo selezione, prodotti e quota dello spazio. Le date possono variare; nessuna disponibilità garantita."
+      },
+      "sourceRecordIds": [
+        "https://www.pisticci.com/index.php/interventi-e-appuntamenti/item/14972-a-marconia-arriva-mercatino-degli-scambi.html"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Fragola Expo Basilicata",
+      "months": [
+        4
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.policoroturismo.basilicata.it/evento/fragola-expo-basilicata-2026/",
+        "label": "Portale turistico di Policoro — Fragola Expo 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il portale turistico di Policoro pubblica il programma 2026 di Fragola Expo Basilicata in Piazza Aldo Moro e Piazza Segni. Sono previsti stand, intrattenimento e un incontro sulla filiera della fragola.",
+      "venue": "Piazza Aldo Moro e Piazza Segni",
+      "sectors": "Fragole, prodotti agroalimentari e filiera agricola",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.policoroturismo.basilicata.it/evento/fragola-expo-basilicata-2026/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Edizione 25–26 aprile 2026 a Policoro, con apertura stand alle 16 e chiusura alle 24. Non è una seconda manifestazione da replicare a Scanzano solo perché alcuni aggregatori conservano quella località. Ammissione e preventivo da richiedere all’organizzazione."
+      },
+      "sourceRecordIds": [
+        "https://www.policoroturismo.basilicata.it/evento/fragola-expo-basilicata-2026/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Fiera della Madonna del Ponte",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.policoro.basilicata.it/05/05/2026/festeggiamenti-del-15-16-e-17-maggio-2026-in-devozione-della-madonna-del-ponte-graduatoria-esercenti-il-commercio-su-aree-pubbliche-redatta-ai-sensi-dellart-40-del-vigente-regolamento-co/",
+        "label": "Comune di Policoro — graduatoria Madonna del Ponte 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Contingente massimo di 190 posteggi; graduatoria specifica comunale del 5 maggio 2026. L’avviso unico 2026 disciplina i posteggi commerciali delle tre feste.",
+      "venue": "Aree patronali individuate dal Comune",
+      "sectors": "Alimentari e non alimentari secondo il posteggio",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-15",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.policoro.basilicata.it/05/05/2026/festeggiamenti-del-15-16-e-17-maggio-2026-in-devozione-della-madonna-del-ponte-graduatoria-esercenti-il-commercio-su-aree-pubbliche-redatta-ai-sensi-dellart-40-del-vigente-regolamento-co/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Avviso 2026: istanza telematica SUAP con bollo almeno 60 giorni prima. Una sola istanza può indicare più feste. Graduatoria per presenze, residenza regionale, anzianità d’impresa e ordine di arrivo. Altre categorie seguono distinta richiesta di occupazione. Le istanze tardive restano subordinate a posti effettivamente disponibili; importo completo non verificato.",
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      },
+      "sourceRecordIds": [
+        "https://www.policoro.basilicata.it/05/05/2026/festeggiamenti-del-15-16-e-17-maggio-2026-in-devozione-della-madonna-del-ponte-graduatoria-esercenti-il-commercio-su-aree-pubbliche-redatta-ai-sensi-dellart-40-del-vigente-regolamento-co/",
+        "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf",
+        "label": "Comune di Policoro — avviso festa patronale e rionali 2026"
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Fiera della Madonna del Carmine",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf",
+        "label": "Comune di Policoro — avviso festa patronale e rionali 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Contingente massimo di 90 posteggi; il bando parla di ultimo sabato e domenica di luglio presumibili, non di date definitive. L’avviso unico 2026 disciplina i posteggi commerciali delle tre feste.",
+      "venue": "Secondo e terzo piano di zona",
+      "sectors": "Alimentari e non alimentari secondo il posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Avviso 2026: istanza telematica SUAP con bollo almeno 60 giorni prima. Una sola istanza può indicare più feste. Graduatoria per presenze, residenza regionale, anzianità d’impresa e ordine di arrivo. Altre categorie seguono distinta richiesta di occupazione. Le istanze tardive restano subordinate a posti effettivamente disponibili; importo completo non verificato.",
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      },
+      "sourceRecordIds": [
+        "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      ],
+      "frequencyNote": "Periodo presumibile del bando 2026; giornate non calcolate dalla ricorrenza."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Fiera dei Santi Medici",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf",
+        "label": "Comune di Policoro — avviso festa patronale e rionali 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Contingente massimo di 60 posteggi; il bando parla di ultimo sabato e domenica di settembre presumibili, non di date definitive. L’avviso unico 2026 disciplina i posteggi commerciali delle tre feste.",
+      "venue": "Centro storico di Policoro",
+      "sectors": "Alimentari e non alimentari secondo il posteggio",
+      "editions": [],
+      "participation": {
+        "type": "public",
+        "note": "Avviso 2026: istanza telematica SUAP con bollo almeno 60 giorni prima. Una sola istanza può indicare più feste. Graduatoria per presenze, residenza regionale, anzianità d’impresa e ordine di arrivo. Altre categorie seguono distinta richiesta di occupazione. Le istanze tardive restano subordinate a posti effettivamente disponibili; importo completo non verificato.",
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      },
+      "sourceRecordIds": [
+        "https://www.policoro.basilicata.it/wp-content/uploads/2025/12/Avviso.pdf"
+      ],
+      "frequencyNote": "Periodo presumibile del bando 2026; giornate non calcolate dalla ricorrenza."
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Mercato della Notte di Heraclea",
+      "months": [
+        9
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.policoro.basilicata.it/wp-content/uploads/2026/09/Allegato_1.pdf",
+        "label": "Comune di Policoro — avviso Notte di Heraclea 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Per la Notte di Heraclea 2026 il Comune ha previsto otto operatori alimentari con somministrazione e due non alimentari. Gli spazi sono nell’area di Piazza Dante e dintorni definita dal piano di sicurezza.",
+      "venue": "Piazza Dante e dintorni",
+      "sectors": "Alimentari con somministrazione e prodotti non alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.policoro.basilicata.it/wp-content/uploads/2026/09/Allegato_1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Evento 12 settembre 2026, attività dalle 19 fino alla conclusione. Domanda esclusivamente SUAP entro le 12 dell’8 settembre; ordine cronologico. Per il food sono richiesti mezzi mobili idonei, escluse strutture fisse. Selezione, concessione e rispetto del piano di sicurezza necessari; quota non verificata.",
+        "deadline": "2026-09-08"
+      },
+      "sourceRecordIds": [
+        "https://www.policoro.basilicata.it/wp-content/uploads/2026/09/Allegato_1.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "International Street Food Festival",
+      "months": [
+        7
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+        "label": "APT Basilicata — guida estate 2025, pagina 9",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida APT Estate 2025 riporta la rassegna in Piazza Aldo Moro dalle ore 18.",
+      "venue": "Piazza Aldo Moro",
+      "sectors": "Street food, alimenti e bevande",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-18",
+          "end": "2025-07-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte riferita al 2025. Nessuna data 2026 proiettata dal calendario estivo precedente. Per una nuova edizione contattare Comune o organizzatore per categorie ammesse, selezione e costo dello stand; l’accesso del pubblico non abilita automaticamente alla vendita."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Policoro",
+      "name": "Gusto Italia",
+      "months": [
+        7,
+        8
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+        "label": "APT Basilicata — guida estate 2025, pagina 9",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida APT Estate 2025 distingue questa tappa sul lungomare dall’International Street Food Festival di luglio.",
+      "venue": "Lungomare sinistro",
+      "sectors": "Prodotti tipici e gastronomia",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-31",
+          "end": "2025-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte riferita al 2025. Nessuna data 2026 proiettata dal calendario estivo precedente. Per una nuova edizione contattare Comune o organizzatore per categorie ammesse, selezione e costo dello stand; l’accesso del pubblico non abilita automaticamente alla vendita."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Fiera ra’ Murtedd",
+      "months": [
+        8
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+        "label": "APT Basilicata — guida estate 2025, pagina 9",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida APT Estate 2025 descrive stand di prodotti tipici e dell’artigianato locale nel Rione Mortella, dalle 20.",
+      "venue": "Rione Mortella",
+      "sectors": "Prodotti tipici e artigianato locale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-01",
+          "end": "2025-08-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte riferita al 2025. Nessuna data 2026 proiettata dal calendario estivo precedente. Per una nuova edizione contattare Comune o organizzatore per categorie ammesse, selezione e costo dello stand; l’accesso del pubblico non abilita automaticamente alla vendita."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Stigliano",
+      "name": "A suon d’skrpedd — Sagra della Skérpedd",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+        "label": "APT Basilicata — guida estate 2025, pagina 9",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida APT Estate 2025 riporta la rassegna gastronomica del 9 agosto dalle 20.",
+      "venue": "Piazza Monumento e Corso Umberto",
+      "sectors": "Gastronomia locale e frittelle tradizionali",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-09",
+          "end": "2025-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte riferita al 2025. Nessuna data 2026 proiettata dal calendario estivo precedente. Per una nuova edizione contattare Comune o organizzatore per categorie ammesse, selezione e costo dello stand; l’accesso del pubblico non abilita automaticamente alla vendita."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Sagra dell’Albicocca",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.halleyweb.com/c077023/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G1XpJekTBPT0-A",
+        "label": "Comune di Rotondella — ordinanza 40/2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "L’ordinanza comunale n. 40 del 29 giugno 2026 disciplina la circolazione per la Sagra dell’Albicocca del 4–5 luglio. Il cartellone regionale ne conferma lo svolgimento e la presenza di espositori.",
+      "venue": "Piazza della Repubblica",
+      "sectors": "Albicocche, prodotti frutticoli e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-04",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.halleyweb.com/c077023/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G1XpJekTBPT0-A"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Edizione 4–5 luglio 2026. L’avviso che offriva gratuitamente stand 3×3, punto luce e SCIA appartiene invece al 2025 e non dimostra identiche condizioni nel 2026. Per nuove edizioni verificare la selezione e i servizi con il Comune.",
+        "url": "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/"
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/c077023/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G1XpJekTBPT0-A",
+        "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/",
+        "https://agr.regione.basilicata.it/post/rotondella-un-avviso-per-la-sagra-dellalbicocca/"
+      ],
+      "calendarSource": {
+        "url": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/",
+        "label": "Regione Basilicata — cartellone Rotondella estate 2026"
+      }
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Sagra u Pastizz R’tunnar",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/",
+        "label": "Regione Basilicata — cartellone Rotondella estate 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il cartellone comunale ripreso dalla Regione dedica due serate 2026 al pastizz: la prima in Piazza della Repubblica, la seconda in Piazza Risorgimento con stand espositivi e l’iniziativa dal tramonto all’alba.",
+      "venue": "Piazza della Repubblica il 5 agosto; Piazza Risorgimento il 19 agosto",
+      "sectors": "Pastizz e gastronomia tradizionale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-05",
+          "end": "2026-08-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-19",
+          "end": "2026-08-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Due appuntamenti distinti, 5 e 19 agosto 2026: non apertura continuativa tra le due date. Il primo prevede laboratori e stand dalle 19; selezione di ulteriori operatori e tariffe non risultano dal cartellone. Concerti gratuiti e accesso pubblico non sono un’esenzione del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Sagra della Focaccia",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/",
+        "label": "Regione Basilicata — cartellone Rotondella estate 2026",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il calendario estivo 2026 indica la Sagra della Focaccia il primo agosto, a cura di Sapori e Tradizioni rotondellesi. È un appuntamento gastronomico distinto dal programma storico della Fiera ra’ Murtedd.",
+      "venue": "Rotondella; sede esatta da verificare con l’organizzatore",
+      "sectors": "Focaccia e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Data 1 agosto 2026 dal cartellone ripreso dalla Regione. Non sono pubblicati nel testo numero di banchi, procedura o quota. Per la partecipazione commerciale verificare con l’organizzatore se siano ammesse attività esterne e con quali requisiti."
+      },
+      "sourceRecordIds": [
+        "https://www.regione.basilicata.it/rotondella-unestate-piena-di-eventi/"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Pisticci",
+      "name": "I Mercatini della Pacchiana",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Mercatini con balli e canti dei gruppi folkloristici; la guida riproduce anche la locandina della Pro Loco.",
+      "venue": "Corso Regina Margherita e Piazza Sant’Antonio Abate",
+      "sectors": "Prodotti del mercatino natalizio; categorie da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-07",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "San Giorgio Lucano",
+      "name": "Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "Il programma distingue i mercatini sul Corso dal Santa Claus Village in Piazza San Rocco e dalle attività dell’oratorio.",
+      "venue": "Corso Vittorio Emanuele II",
+      "sectors": "Prodotti del mercatino natalizio; categorie da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-20",
+          "end": "2025-12-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "San Giorgio Lucano",
+      "name": "Sagra dei Crispi",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida colloca la sagra alle 20:30 in Piazza Umberto I, distinta da laboratori e degustazioni di altre giornate.",
+      "venue": "Piazza Umberto I",
+      "sectors": "Crispi e gastronomia tradizionale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-28",
+          "end": "2025-12-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Montescaglioso",
+      "name": "Sagra della Pettola",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida indica la trentanovesima edizione del 21 dicembre 2025 alle 20 in Piazza Roma.",
+      "venue": "Piazza Roma",
+      "sectors": "Pettole e gastronomia tradizionale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-21",
+          "end": "2025-12-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Valsinni",
+      "name": "Stippa Vutt",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La locandina 2025 riprodotta dalla guida comprende stand enogastronomici, mercatini e musica; l’elenco indica le 20, il manifesto le 19.",
+      "venue": "Centro storico; Piazza Marconi nella locandina",
+      "sectors": "Vino, prodotti tipici, gastronomia e mercatini natalizi",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-07",
+          "end": "2025-12-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando. Per Stippa Vutt restano discordanti l’orario dell’elenco e quello del manifesto, senza sceglierne uno per la nuova edizione."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Stippl’a Vutt — Percorso diVino",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida Natale 2025 indica il percorso diVino l’8 dicembre dalle 19, distinto dai mercatini di Natale.",
+      "venue": "Da Piazza della Repubblica a Piazza De André",
+      "sectors": "Vino e gastronomia locale",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-08",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma storico Natale 2025, non conferma del Natale 2026. Accesso di banchi esterni, requisiti e tariffe da verificare con Comune o organizzatore. La guida non costituisce un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ]
+    },
+    {
+      "region": "Basilicata",
+      "city": "Rotondella",
+      "name": "Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf",
+        "label": "APT Basilicata — Natale 2025, pagine 25–26 e 32–33",
+        "checkedAt": "2026-11-04"
+      },
+      "summary": "La guida APT Natale 2025 elenca mercatini in Piazza Plebiscito. Nella stessa pagina compare però una locandina che riporta giorni e riferimenti d’anno differenti: il calendario puntuale non viene certificato.",
+      "venue": "Piazza Plebiscito",
+      "sectors": "Prodotti del mercatino natalizio; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Pagina 26: elenco 20, 22 e 23 dicembre; locandina 21, 22 e 23 con riferimenti a un’edizione precedente. Si conserva soltanto il mese, senza creare date 2025 o 2026 arbitrarie. Per il nuovo programma e l’ammissione degli espositori verificare la comunicazione del Comune."
+      },
+      "sourceRecordIds": [
+        "https://www.basilicataturistica.it/wp-content/uploads/2022/06/Speciale-Eventi-Natale-web.pdf"
+      ],
+      "frequencyNote": "Dicembre, da guida storica con discordanza interna; giorni da verificare.",
+      "seo": {
+        "noindex": true,
+        "reason": "Documentazione storica o programmazione preliminare da arricchire prima dell’indicizzazione; nessuna nuova edizione confermata."
+      }
+    }
+  ]
+}
