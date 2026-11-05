@@ -1,0 +1,2013 @@
+{
+  "schemaVersion": 1,
+  "province": "Reggio Calabria",
+  "checkedAt": "2026-11-05",
+  "status": "consegna-documentale-con-limiti-non-integrata",
+  "privateArchive": ".local/ricerche/fiere-reggio-calabria-20261105",
+  "municipalityCoverage": [
+    {
+      "city": "Africo",
+      "istat": "080001",
+      "query": "\"Africo\" fiera sagra mercatino comune",
+      "queryEvidence": "web-q01.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Feste del SS. Salvatore e degustazioni segnalate; nessuna fonte primaria commerciale sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Agnana Calabra",
+      "istat": "080002",
+      "query": "\"Agnana Calabra\" fiera sagra mercatino comune",
+      "queryEvidence": "web-q01.json",
+      "eventIds": [
+        "calabria-agnana-calabra-festa-di-san-basilio-magno",
+        "calabria-agnana-calabra-festa-della-madonna-della-misericordia"
+      ],
+      "eventCount": 2,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Anoia",
+      "istat": "080003",
+      "query": "\"Anoia\" fiera sagra mercatino comune",
+      "queryEvidence": "web-q01.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Calendario comunale: festa di San Nicola; nessuna prova commerciale sufficiente. Omonimia con la comarca catalana esclusa.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Antonimina",
+      "istat": "080004",
+      "query": "\"Antonimina\" fiera sagra mercatino comune",
+      "queryEvidence": "web-q01.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mangiandu e scojandu e San Martino individuati da fonti secondarie; programma comunale leggibile non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Ardore",
+      "istat": "080005",
+      "query": "\"Ardore\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q2.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "San Martino Ardorese 13–15 novembre 2026 segnalato da portali; non elevato a conferma primaria in questa consegna.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bagaladi",
+      "istat": "080006",
+      "query": "\"Bagaladi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q2.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale e progetto olio grecanico individuati; nessun evento commerciale con periodo preciso selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bagnara Calabra",
+      "istat": "080007",
+      "query": "\"Bagnara Calabra\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q2.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Gran Galà del Pescespada e Sagra del Pane di Grano documentati da guida UNPLI e piano comunale. Solo estate, nessun mese certo adottato: candidati conservati, non forzati in schede.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Benestare",
+      "istat": "080008",
+      "query": "\"Benestare\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q2.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "SUAP e riferimenti istituzionali individuati; nessuna fonte evento sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bianco",
+      "istat": "080009",
+      "query": "\"Bianco\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q3.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Segnalazioni storiche di fiere nella bibliografia, senza nuovo bando o programma primario selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bivongi",
+      "istat": "080010",
+      "query": "\"Bivongi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q3.json",
+      "eventIds": [
+        "calabria-bivongi-mercato-della-badia",
+        "calabria-bivongi-san-martino-sapori-e-profumi-d-autunno"
+      ],
+      "eventCount": 2,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bova",
+      "istat": "080011",
+      "query": "\"Bova\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q3.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra del Cinghiale segnalata da aggregatori; mancano in questa ricerca programma e condizioni primarie.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bovalino",
+      "istat": "080012",
+      "query": "\"Bovalino\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q4.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Individuato portale comunale; fiere antiche in bibliografia non trattate come eventi attuali.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bova Marina",
+      "istat": "080013",
+      "query": "\"Bova Marina\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q3.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa Madonna del Mare nel calendario comunale; Oktoberfest da aggregatori. Sito Pala Bova con eventi generici e contesto non corroborato: nessuna scheda fieristica adottata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Brancaleone",
+      "istat": "080014",
+      "query": "\"Brancaleone\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q4.json",
+      "eventIds": [
+        "calabria-brancaleone-brancaleone-in-fiera"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Bruzzano Zeffirio",
+      "istat": "080015",
+      "query": "\"Bruzzano Zeffirio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q4.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa della Catena e iniziative paesaggistiche; nessuna prova commerciale primaria sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Calanna",
+      "istat": "080016",
+      "query": "\"Calanna\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q4.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Pro Loco e Comune individuati; Bria Fest e spettacolo musicale esclusi senza prova di mercato autonomo.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Camini",
+      "istat": "080017",
+      "query": "\"Camini\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q5.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mercato settimanale e laboratori artigiani, senza fiera autonoma documentata selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Campo Calabro",
+      "istat": "080018",
+      "query": "\"Campo Calabro\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q5.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Feste di Musalà e Sagra dei Buongustai da fonti secondarie; non acquisito programma primario pertinente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Candidoni",
+      "istat": "080019",
+      "query": "\"Candidoni\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q5.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fonte comunale per San Nicola, senza prova commerciale; nessuna nuova scheda.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Canolo",
+      "istat": "080020",
+      "query": "\"Canolo\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q5.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Albo e portale comunale individuati; fiera antica di Sant’Antonio non promossa a manifestazione corrente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Caraffa del Bianco",
+      "istat": "080021",
+      "query": "\"Caraffa del Bianco\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q6.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "U Casu i Carraffa, fiera artigianale e Profumi e Sapori da Ruga individuati; contributi regionali e resoconti non bastano a confermare calendario o ammissione.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Cardeto",
+      "istat": "080022",
+      "query": "\"Cardeto\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q6.json",
+      "eventIds": [
+        "calabria-cardeto-sagra-della-castagna"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Careri",
+      "istat": "080023",
+      "query": "\"Careri\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q6.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Pro Loco K e calendario comunale individuati, senza scheda commerciale sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Casignana",
+      "istat": "080024",
+      "query": "\"Casignana\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q6.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera Artigianale 16–17 agosto 2026 segnalata con fonte dichiarata Pro Loco su Eventi e Sagre. Post primario non acquisito: candidato escluso dal delta.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Caulonia",
+      "istat": "080025",
+      "query": "\"Caulonia\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q7.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra del Tartufo e cartelloni estivi segnalati; non confusi con KTF. Programma primario puntuale non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Ciminà",
+      "istat": "080026",
+      "query": "\"Ciminà\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q7.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Pro Loco e produzioni casearie individuate, senza evento datato primario selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Cinquefrondi",
+      "istat": "080027",
+      "query": "\"Cinquefrondi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q7.json",
+      "eventIds": [
+        "calabria-cinquefrondi-mercatino-dell-usato-viviamo-cinquefrondi"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Cittanova",
+      "istat": "080028",
+      "query": "\"Cittanova\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q7.json",
+      "eventIds": [
+        "calabria-cittanova-fiera-nel-solco-delle-tradizioni-di-san-rocco",
+        "calabria-cittanova-fiera-di-san-girolamo",
+        "calabria-cittanova-fiera-maria-ss-del-rosario"
+      ],
+      "eventCount": 3,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Condofuri",
+      "istat": "080029",
+      "query": "\"Condofuri\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q8.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa della Vendemmia primaria 17 ottobre 2026 con degustazione ma non prova di mercato esterno; Festa del Vino e Mercatino Notturno da aggregatori non consolidati in questa consegna.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Cosoleto",
+      "istat": "080030",
+      "query": "\"Cosoleto\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q8.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Nessuna fonte evento commerciale sufficiente nei risultati nominali; non è prova di assenza.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Delianuova",
+      "istat": "080031",
+      "query": "\"Delianuova\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q8.json",
+      "eventIds": [
+        "calabria-delianuova-fiera-di-sant-arcangelo"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Feroleto della Chiesa",
+      "istat": "080032",
+      "query": "\"Feroleto della Chiesa\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q8.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale e informativa privacy manifestazioni; informativa esclusa perché non calendario di eventi.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Ferruzzano",
+      "istat": "080033",
+      "query": "\"Ferruzzano\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q9.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Segnalazioni di sagre in progetti turistici storici; nessun programma commerciale recente primario selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Fiumara",
+      "istat": "080034",
+      "query": "\"Fiumara\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q9.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Risultati nominali poco pertinenti e omonimie; non completata consultazione integrale dell’albo.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Galatro",
+      "istat": "080035",
+      "query": "\"Galatro\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q9.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sito Pro Loco e guida UNPLI consultati; Biennale di Roma esclusa perché fuori provincia e senza fiera locale documentata selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Gerace",
+      "istat": "080036",
+      "query": "\"Gerace\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q9.json",
+      "eventIds": [
+        "calabria-gerace-fiera-della-madonna-del-carmine"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Giffone",
+      "istat": "080037",
+      "query": "\"Giffone\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q10.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra del Fungo 9–11 ottobre 2026 individuata; pagina SagraMap dichiara gestione organizzatore, ma primaria autonoma non acquisita. Non importata per prudenza.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Gioia Tauro",
+      "istat": "080038",
+      "query": "\"Gioia Tauro\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q10.json",
+      "eventIds": [
+        "calabria-gioia-tauro-fiera-mare-e-terra"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Gioiosa Ionica",
+      "istat": "080039",
+      "query": "\"Gioiosa Ionica\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q10.json",
+      "eventIds": [
+        "calabria-gioiosa-ionica-sagra-del-pezzo-duro"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente. Festa San Rocco preesistente invariata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Grotteria",
+      "istat": "080040",
+      "query": "\"Grotteria\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q10.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Risultati nominali prevalentemente territoriali; nessuna fonte evento sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Laganadi",
+      "istat": "080041",
+      "query": "\"Laganadi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q11.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sito Pro Loco individuato; attività associative senza evento commerciale documentato sufficiente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Laureana di Borrello",
+      "istat": "080042",
+      "query": "\"Laureana di Borrello\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q11.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera San Gregorio da resoconto 2024; determine estate 2026 generiche. Programma primario specifico non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Locri",
+      "istat": "080043",
+      "query": "\"Locri\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q11.json",
+      "eventIds": [
+        "calabria-locri-locri-festival-agrifest"
+      ],
+      "eventCount": 1,
+      "outcome": "Avviso comunale Agrifest 2024 acquisito e letto visivamente, scheda storica inclusa. San Martino resta solo titolo in contributo regionale.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Mammola",
+      "istat": "080044",
+      "query": "\"Mammola\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q11.json",
+      "eventIds": [
+        "calabria-mammola-sagra-dello-stocco"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Marina di Gioiosa Ionica",
+      "istat": "080045",
+      "query": "\"Marina di Gioiosa Ionica\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q12.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra del Pesce, fiera artigianato e San Martino individuati; atto di finanziamento non equivale al programma. Nessuna nuova scheda confermata selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Maropati",
+      "istat": "080046",
+      "query": "\"Maropati\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q12.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Calendario comunale con commemorazioni, senza evento commerciale sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Martone",
+      "istat": "080047",
+      "query": "\"Martone\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q12.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra Castagna segnalata con date stimate dagli aggregatori; nessuna conferma primaria acquisita.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Melicuccà",
+      "istat": "080048",
+      "query": "\"Melicuccà\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q12.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fonti territoriali comunali, senza programma commerciale specifico selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Melicucco",
+      "istat": "080049",
+      "query": "\"Melicucco\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q13.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fonti storiche e attività musicali, senza scheda commerciale documentata sufficiente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Melito di Porto Salvo",
+      "istat": "080050",
+      "query": "\"Melito di Porto Salvo\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q13.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Campagna Amica ordinario escluso; Mercatini di Primavera segnalati da aggregatore; Infiorata esclusa senza mercato documentato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Molochio",
+      "istat": "080051",
+      "query": "\"Molochio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q13.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale e Pro Loco individuati; Fiera Maddalena da bibliografia storica, non attuale.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Monasterace",
+      "istat": "080052",
+      "query": "\"Monasterace\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q13.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa del Mare storica e mercato settimanale; programma primario puntuale non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Montebello Jonico",
+      "istat": "080053",
+      "query": "\"Montebello Ionico\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q14.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Ricerca anche con grafia Montebello Ionico; mercato ordinario e fonti territoriali, nessun evento commerciale selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Motta San Giovanni",
+      "istat": "080054",
+      "query": "\"Motta San Giovanni\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q14.json",
+      "eventIds": [
+        "calabria-motta-san-giovanni-mercatini-di-natale"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Oppido Mamertina",
+      "istat": "080055",
+      "query": "\"Oppido Mamertina\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q14.json",
+      "eventIds": [
+        "calabria-oppido-mamertina-sagra-degli-arrosticini-e-prodotti-tipici-mamertini"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Palizzi",
+      "istat": "080056",
+      "query": "\"Palizzi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q14.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "San Martino segnalato da aggregatore e Pro Loco individuata; programma primario non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Palmi",
+      "istat": "080057",
+      "query": "\"Palmi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q15.json",
+      "eventIds": [
+        "calabria-palmi-fiera-di-san-rocco"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Pazzano",
+      "istat": "080058",
+      "query": "\"Pazzano\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q15.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mercato settimanale escluso; nessuna nuova fonte primaria fieristica sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Placanica",
+      "istat": "080059",
+      "query": "\"Placanica\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q15.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa Addolorata e programma turistico, senza prova di mercato commerciale autonomo sufficiente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Platì",
+      "istat": "080060",
+      "query": "\"Platì\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q15.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera di Santa Barbara a Cirella in bibliografia storica; nessuna conferma corrente acquisita.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Polistena",
+      "istat": "080061",
+      "query": "\"Polistena\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q16.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Regolamento commercio consultato come pista; Ognissanti e Caciobab segnalati. Mancano in questa consegna avviso evento primario e relativi allegati verificati.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Portigliola",
+      "istat": "080062",
+      "query": "\"Portigliola\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q16.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera San Rocco attestata in bibliografia; nessuna edizione corrente primaria selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Reggio di Calabria",
+      "istat": "080063",
+      "query": "\"Reggio Calabria\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q16.json",
+      "eventIds": [
+        "calabria-reggio-di-calabria-fiera-delle-feste-mariane",
+        "calabria-reggio-di-calabria-reggio-calabria-comics",
+        "calabria-reggio-di-calabria-bergare"
+      ],
+      "eventCount": 3,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Riace",
+      "istat": "080064",
+      "query": "\"Riace\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q16.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera Santi Medici in documentazione storica del Santuario; nessun nuovo bando commerciale verificato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Rizziconi",
+      "istat": "080065",
+      "query": "\"Rizziconi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q17.json",
+      "eventIds": [
+        "calabria-rizziconi-fiera-dell-agricoltura-eccellenze-in-comune",
+        "calabria-rizziconi-mercatini-di-natale"
+      ],
+      "eventCount": 2,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Roccaforte del Greco",
+      "istat": "080066",
+      "query": "\"Roccaforte del Greco\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q17.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale individuato; nessun programma commerciale primario sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Roccella Ionica",
+      "istat": "080067",
+      "query": "\"Roccella Ionica\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q17.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Settimana Cultura e mercato Campagna Amica, senza nuova fiera autonoma primaria selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Roghudi",
+      "istat": "080068",
+      "query": "\"Roghudi\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q17.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra olio in dossier regionale 2018; fonte troppo generica per calendario corrente, conservata come pista.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Rosarno",
+      "istat": "080069",
+      "query": "\"Rosarno\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q18.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Modulo comunale Madonna Patmos acquisito nei risultati, senza periodo leggibile sufficiente; fiere e sagre da fonti secondarie non trasferite.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Samo",
+      "istat": "080070",
+      "query": "\"Samo\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q18.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Estate Samese 2023 e sagra porchetta da fonti secondarie; nessuna nuova scheda primaria sufficiente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Giorgio Morgeto",
+      "istat": "080071",
+      "query": "\"San Giorgio Morgeto\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q18.json",
+      "eventIds": [
+        "calabria-san-giorgio-morgeto-festa-medioevale-mercatino"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Giovanni di Gerace",
+      "istat": "080072",
+      "query": "\"San Giovanni di Gerace\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q18.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale individuato, senza programma commerciale specifico sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Lorenzo",
+      "istat": "080073",
+      "query": "\"San Lorenzo\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q19.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Festa patronale 2026 su fonte comunale senza prova commerciale; escluse fiere omonime di Catanzaro.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Luca",
+      "istat": "080074",
+      "query": "\"San Luca\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q19.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera Madonna della Montagna già presente: conservata identica. Vendita fiori cimiteriali segnalata non inserita come nuova fiera.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Pietro di Caridà",
+      "istat": "080075",
+      "query": "\"San Pietro di Caridà\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q19.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Risultati territoriali e San Pier Fedele; nessuna fonte evento sufficiente selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Procopio",
+      "istat": "080076",
+      "query": "\"San Procopio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q19.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale individuato, senza evento commerciale primario sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Roberto",
+      "istat": "080077",
+      "query": "\"San Roberto\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q20.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Regolamento San Roberto in Fiera individuato; allegato dinamico non acquisito e periodo non verificato. Nessuna scheda senza mese documentato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Santa Cristina d'Aspromonte",
+      "istat": "080078",
+      "query": "\"Santa Cristina d'Aspromonte\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q20.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale consultabile; nessun programma commerciale sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Sant'Agata del Bianco",
+      "istat": "080079",
+      "query": "\"Sant'Agata del Bianco\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q20.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Calendario estate 2025 e festa Sant’Agata; castagnata da aggregatore, non elevata a conferma primaria.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Sant'Alessio in Aspromonte",
+      "istat": "080080",
+      "query": "\"Sant'Alessio in Aspromonte\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q20.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sapori d’Autunno: fonte Regione per 9 novembre 2025; aggregatori per 7–8 novembre 2026. Edizione corrente non confermata primariamente, candidato conservato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Sant'Eufemia d'Aspromonte",
+      "istat": "080081",
+      "query": "\"Sant'Eufemia d'Aspromonte\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q21.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra Patata e festa patronale segnalate; determine di rimborso mercato non provano date di una fiera.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Sant'Ilario dello Ionio",
+      "istat": "080082",
+      "query": "\"Sant'Ilario dello Ionio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q21.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mercato fiori commemorazione defunti da aggregatore, avviso primario non acquisito.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Santo Stefano in Aspromonte",
+      "istat": "080083",
+      "query": "\"Santo Stefano in Aspromonte\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q21.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Sagra Funghi e Festa Autunno individuate nel portale e calendario 2024 ospitato dalla stampa; fonte originaria puntuale non consolidata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Scido",
+      "istat": "080084",
+      "query": "\"Scido\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q21.json",
+      "eventIds": [
+        "calabria-scido-sagra-della-carne-di-capra-e-pappaluni"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Scilla",
+      "istat": "080085",
+      "query": "\"Scilla\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q22.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Pro Loco e Comune; Pesce Spada in Festa da aggregatori. Mostra sulla pesca esclusa perché non mercato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Seminara",
+      "istat": "080086",
+      "query": "\"Seminara\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q22.json",
+      "eventIds": [
+        "calabria-seminara-sagra-dell-olio"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Serrata",
+      "istat": "080087",
+      "query": "\"Serrata\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q22.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mercato settimanale escluso; portale comunale senza fiera documentata selezionata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Siderno",
+      "istat": "080088",
+      "query": "\"Siderno\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q22.json",
+      "eventIds": [
+        "calabria-siderno-fiera-di-portosalvo"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Sinopoli",
+      "istat": "080089",
+      "query": "\"Sinopoli\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q23.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Ricerca nominale senza fonte evento commerciale sufficiente; non consultato intero albo storico.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Staiti",
+      "istat": "080090",
+      "query": "\"Staiti\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q23.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Mercanti di Natale storico da fonti secondarie; calendario comunale senza date commerciali attuali, Bria Fest escluso senza mercato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Stignano",
+      "istat": "080091",
+      "query": "\"Stignano\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q23.json",
+      "eventIds": [
+        "calabria-stignano-a-fera-da-mpetrata"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Stilo",
+      "istat": "080092",
+      "query": "\"Stilo\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q23.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Palio Ribusa documentato da Comune e finanziamenti regionali ma richiamo a fiera storica non prova autonomamente mercato odierno; nessuna scheda commerciale forzata.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Taurianova",
+      "istat": "080093",
+      "query": "\"Taurianova\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q24.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Fiera d’Umbitu 2026 da resoconto; agricoltura 2021 da indice comunale; Infiorata Pro Loco esclusa senza prova commerciale sufficiente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Terranova Sappo Minulio",
+      "istat": "080094",
+      "query": "\"Terranova Sappo Minulio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q24.json",
+      "eventIds": [
+        "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Varapodio",
+      "istat": "080095",
+      "query": "\"Varapodio\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q24.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Food&Folk e sagra pizza in fonti secondarie/contributi storici; nessun programma primario sufficiente selezionato.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "Villa San Giovanni",
+      "istat": "080096",
+      "query": "\"Villa San Giovanni\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q24.json",
+      "eventIds": [],
+      "eventCount": 0,
+      "outcome": "Portale comunale individuato; nessuna manifestazione commerciale primaria sufficiente nei risultati nominali.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    },
+    {
+      "city": "San Ferdinando",
+      "istat": "080097",
+      "query": "\"San Ferdinando\" Calabria fiera sagra mercatino comune proloco",
+      "queryEvidence": "web-q25.json",
+      "eventIds": [
+        "calabria-san-ferdinando-fiera-di-san-ferdinando-re"
+      ],
+      "eventCount": 1,
+      "outcome": "Schede documentate nel delta; fonti, periodo e limiti descritti individualmente.",
+      "limit": "Ricerca web nominale e approfondimenti selezionati; non inventario integrale di albo, social o manifestazioni. Nessuna scheda non significa nessun evento."
+    }
+  ],
+  "eventEvidence": [
+    {
+      "eventId": "calabria-agnana-calabra-festa-di-san-basilio-magno",
+      "temporalStatus": "periodo-ricorrente",
+      "periodEvidence": "14 giugno ricorrente; nessuna edizione 2026 confermata",
+      "sourceKeys": [
+        "agnana"
+      ]
+    },
+    {
+      "eventId": "calabria-agnana-calabra-festa-della-madonna-della-misericordia",
+      "temporalStatus": "periodo-ricorrente",
+      "periodEvidence": "18 agosto ricorrente; nessuna edizione 2026 confermata",
+      "sourceKeys": [
+        "agnana"
+      ]
+    },
+    {
+      "eventId": "calabria-bivongi-mercato-della-badia",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "17–18 agosto 2026",
+      "sourceKeys": [
+        "bivongi"
+      ]
+    },
+    {
+      "eventId": "calabria-bivongi-san-martino-sapori-e-profumi-d-autunno",
+      "temporalStatus": "storico",
+      "periodEvidence": "11–15 novembre 2025, storico",
+      "sourceKeys": [
+        "san_martino_bivongi"
+      ]
+    },
+    {
+      "eventId": "calabria-brancaleone-brancaleone-in-fiera",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "24 gennaio 2026",
+      "sourceKeys": [
+        "brancaleone"
+      ]
+    },
+    {
+      "eventId": "calabria-cardeto-sagra-della-castagna",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "31 ottobre 2026, confermato dall’avviso comunale di fornitura",
+      "sourceKeys": [
+        "cardeto_avviso",
+        "cardeto_gal"
+      ]
+    },
+    {
+      "eventId": "calabria-cinquefrondi-mercatino-dell-usato-viviamo-cinquefrondi",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "19 luglio 2026 alle 18:00 nel programma comunale",
+      "sourceKeys": [
+        "cinquefrondi"
+      ]
+    },
+    {
+      "eventId": "calabria-cittanova-fiera-nel-solco-delle-tradizioni-di-san-rocco",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "19–21 settembre 2026, avviso PDF letto visivamente",
+      "sourceKeys": [
+        "cittanova_rocco_pdf",
+        "cittanova_rocco"
+      ]
+    },
+    {
+      "eventId": "calabria-cittanova-fiera-di-san-girolamo",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "29–30 settembre 2026 da pagina comunale indicizzata; download 410 Gone",
+      "sourceKeys": [
+        "cittanova_girolamo"
+      ]
+    },
+    {
+      "eventId": "calabria-cittanova-fiera-maria-ss-del-rosario",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "10–11 ottobre 2026 da titolo e testo comunali; URL conserva San Rocco",
+      "sourceKeys": [
+        "cittanova_rosario"
+      ]
+    },
+    {
+      "eventId": "calabria-delianuova-fiera-di-sant-arcangelo",
+      "temporalStatus": "storico",
+      "periodEvidence": "31 ottobre 2021, ordinanza n.7 del 29 ottobre 2021",
+      "sourceKeys": [
+        "delianuova"
+      ]
+    },
+    {
+      "eventId": "calabria-gerace-fiera-della-madonna-del-carmine",
+      "temporalStatus": "storico",
+      "periodEvidence": "22–23 luglio 2023, campi date della pagina comunale",
+      "sourceKeys": [
+        "gerace"
+      ]
+    },
+    {
+      "eventId": "calabria-gioia-tauro-fiera-mare-e-terra",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "17–19 luglio 2026 dalla Regione Calabria",
+      "sourceKeys": [
+        "mare_terra"
+      ]
+    },
+    {
+      "eventId": "calabria-gioiosa-ionica-sagra-del-pezzo-duro",
+      "temporalStatus": "periodo-ricorrente",
+      "periodEvidence": "8 agosto ricorrente nella guida UNPLI 2025, p.125",
+      "sourceKeys": [
+        "unpli_gioiosa"
+      ]
+    },
+    {
+      "eventId": "calabria-mammola-sagra-dello-stocco",
+      "temporalStatus": "periodo-ricorrente",
+      "periodEvidence": "9 agosto ricorrente; pagina con intestazione 9–10 agosto 2026, URL 2024 e aggiornamento 2025 non usata come programma corrente",
+      "sourceKeys": [
+        "mammola_sagra"
+      ]
+    },
+    {
+      "eventId": "calabria-motta-san-giovanni-mercatini-di-natale",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "12–13 dicembre 2026 espliciti nella pagina comunale del 16 ottobre 2026",
+      "sourceKeys": [
+        "motta_natale",
+        "motta_bando"
+      ]
+    },
+    {
+      "eventId": "calabria-oppido-mamertina-sagra-degli-arrosticini-e-prodotti-tipici-mamertini",
+      "temporalStatus": "storico",
+      "periodEvidence": "11 agosto 2023 dalla Regione Calabria",
+      "sourceKeys": [
+        "oppido"
+      ]
+    },
+    {
+      "eventId": "calabria-palmi-fiera-di-san-rocco",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "12–17 agosto 2026: art.1 del bando; richiamo 2025 nel preambolo segnalato",
+      "sourceKeys": [
+        "palmi_bando",
+        "palmi"
+      ]
+    },
+    {
+      "eventId": "calabria-reggio-di-calabria-fiera-delle-feste-mariane",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "10–20 settembre 2026, avviso comunale e rettifica smontaggio",
+      "sourceKeys": [
+        "reggio_mariana",
+        "reggio_bando",
+        "reggio_tariffe"
+      ]
+    },
+    {
+      "eventId": "calabria-reggio-di-calabria-reggio-calabria-comics",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "16–18 ottobre 2026 dall’organizzatore",
+      "sourceKeys": [
+        "comics",
+        "comics_partecipa"
+      ]
+    },
+    {
+      "eventId": "calabria-reggio-di-calabria-bergare",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "22–25 ottobre 2026, sito dell’organizzatore",
+      "sourceKeys": [
+        "bergare"
+      ]
+    },
+    {
+      "eventId": "calabria-rizziconi-fiera-dell-agricoltura-eccellenze-in-comune",
+      "temporalStatus": "storico",
+      "periodEvidence": "17–18 dicembre 2024 dalla Regione Calabria",
+      "sourceKeys": [
+        "rizziconi_agri"
+      ]
+    },
+    {
+      "eventId": "calabria-rizziconi-mercatini-di-natale",
+      "temporalStatus": "storico",
+      "periodEvidence": "16–21 dicembre 2025, avviso comunale",
+      "sourceKeys": [
+        "rizziconi_natale"
+      ]
+    },
+    {
+      "eventId": "calabria-san-ferdinando-fiera-di-san-ferdinando-re",
+      "temporalStatus": "storico",
+      "periodEvidence": "30 maggio 2025 ore 15:00 – 1 giugno 2025 ore 07:00, finestra autorizzata dal Comune",
+      "sourceKeys": [
+        "san_ferdinando"
+      ]
+    },
+    {
+      "eventId": "calabria-san-giorgio-morgeto-festa-medioevale-mercatino",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "12–13 agosto 2026, regolamento organizzatore",
+      "sourceKeys": [
+        "san_giorgio"
+      ]
+    },
+    {
+      "eventId": "calabria-scido-sagra-della-carne-di-capra-e-pappaluni",
+      "temporalStatus": "storico",
+      "periodEvidence": "17 agosto 2024 nei campi data della pagina comunale",
+      "sourceKeys": [
+        "scido_sagra"
+      ]
+    },
+    {
+      "eventId": "calabria-seminara-sagra-dell-olio",
+      "temporalStatus": "periodo-ricorrente",
+      "periodEvidence": "Prima decade di agosto, cadenza NON annuale dichiarata dal Comune",
+      "sourceKeys": [
+        "seminara"
+      ]
+    },
+    {
+      "eventId": "calabria-siderno-fiera-di-portosalvo",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "3–8 settembre 2026, comunicato comunale del 31 agosto",
+      "sourceKeys": [
+        "siderno"
+      ]
+    },
+    {
+      "eventId": "calabria-stignano-a-fera-da-mpetrata",
+      "temporalStatus": "storico",
+      "periodEvidence": "11–12 agosto 2024, pagina comunale",
+      "sourceKeys": [
+        "stignano"
+      ]
+    },
+    {
+      "eventId": "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso",
+      "temporalStatus": "edizione-2026-documentata",
+      "periodEvidence": "3 maggio 2026, avviso SUAP",
+      "sourceKeys": [
+        "terranova_pdf",
+        "terranova_bando"
+      ]
+    },
+    {
+      "eventId": "calabria-locri-locri-festival-agrifest",
+      "temporalStatus": "storico",
+      "periodEvidence": "16–18 agosto 2024, avviso comunale del 29 luglio 2024 letto visivamente",
+      "sourceKeys": [
+        "locri"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "key": "agnana",
+      "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-agnana.html",
+      "sha256": "2cbb0b9cb41e100463a95cffb5e6abd88c001daab8b3d4296fae7efe241476b0",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "bergare",
+      "url": "https://www.bergare.it/",
+      "label": "Camera di Commercio di Reggio Calabria · Bergarè",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-bergare.html",
+      "sha256": "8091e7589573ce89714b923a4ab8be25c8d062c5508a1a3a6a063b2a869396c2",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "bivongi",
+      "url": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-bivongi.html",
+      "sha256": "2f420d4a67d05c799266e481fbbcb65a2111715a9d235eb646c1b936478313b3",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "brancaleone",
+      "url": "https://calabriastraordinaria.it/en/events/brancaleone-fair",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web; download HTTP200 senza contenuto utile",
+      "privateFile": "originale-brancaleone.html",
+      "sha256": "e688a0dfab271f68074b41097692ef43a9d377d01405e06f0e496a8061d21a25",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "cardeto_avviso",
+      "url": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-cardeto_avviso.html",
+      "sha256": "163ed6a054aca562574689dd8dc888c9d8bf5965daa076814aac4d7e2555c18a",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "cardeto_gal",
+      "url": "https://www.galareagrecanica.it/index.php/territorio/comuni/item/567-comune-di-cardeto",
+      "label": "GAL Area Grecanica",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-cardeto_gal.html",
+      "sha256": "b171254bb92954fd7b35dc2f569a2b6a503f58e3c610f1bd54105edb7bc28a9a",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "cinquefrondi",
+      "url": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-cinquefrondi.html",
+      "sha256": "7fbc2a034f7ffa43fb34d6c253975af57a96127ae08559a5d048fe68c3dee7f5",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "cittanova_girolamo",
+      "url": "https://www.comune.cittanova.rc.it/it/news/2044946",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web",
+      "privateFile": null,
+      "sha256": null,
+      "httpStatus": 410,
+      "limit": "Conservato errore di accesso diretto; usare estratto indicizzato, non originale"
+    },
+    {
+      "key": "cittanova_rocco",
+      "url": "https://www.comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web",
+      "privateFile": null,
+      "sha256": null,
+      "httpStatus": 410,
+      "limit": "Conservato errore di accesso diretto; usare estratto indicizzato, non originale"
+    },
+    {
+      "key": "cittanova_rocco_pdf",
+      "url": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-cittanova_rocco_pdf.pdf",
+      "sha256": "208b89c1e73dc5b6ca76b5b8f613cfdb731b4c3b0a42c9d37d5efc4062073a45",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "cittanova_rosario",
+      "url": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web",
+      "privateFile": null,
+      "sha256": null,
+      "httpStatus": 410,
+      "limit": "Conservato errore di accesso diretto; usare estratto indicizzato, non originale"
+    },
+    {
+      "key": "comics",
+      "url": "https://www.reggiocalabriacomics.it/",
+      "label": "Organizzatore · Reggio Calabria Comics",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-comics.html",
+      "sha256": "bd7db98ce9a715f88acb52e151df191a2398a64a4391dedb40d83c4ae7e908e0",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "comics_partecipa",
+      "url": "https://www.reggiocalabriacomics.it/partecipa/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-comics_partecipa.html",
+      "sha256": "bc6ed10678693d735ce0f9bd10aae8533e2a8c3a13ba9616f067eac42bd907f2",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "delianuova",
+      "url": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-delianuova.pdf",
+      "sha256": "9234606d64d030903a70f37ab21d8546c3ec24dce7455dae842e829972a83545",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "gerace",
+      "url": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-gerace.html",
+      "sha256": "51116002576823dd3c6f9654b52562c7ab1dde37bdc704992a214184306ee409",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "locri",
+      "url": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-locri.pdf",
+      "sha256": "fdd4f4248d0d7710e9ddacb9569daca9ef2c69f68b084a964ff6ce94ddc8a0db",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "mammola_sagra",
+      "url": "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-mammola_sagra.html",
+      "sha256": "90cbcedd01aa8c20e0eabddf42e7fc3cc452cebd1c3622fc667ce4319e617c13",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "mare_terra",
+      "url": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web; download HTTP200 senza contenuto utile",
+      "privateFile": "originale-mare_terra.html",
+      "sha256": "db9552acab9cbfdbe53564a0547c0f12ed6d8508d2e69e8b62ad67448a25357a",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "motta_bando",
+      "url": "https://motta-san-giovanni-api.municipiumapp.it/s3/4533/allegati/bando-mercatini-di-natale-2026.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-motta_bando.pdf",
+      "sha256": "28981605278573214f7ba072c7dae566d061b1b8cf611f70349131e696ae9b7a",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "motta_natale",
+      "url": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-motta_natale.html",
+      "sha256": "355707b32d22803ca286cdbc1b2312fe8b76e651211edb81378a1ef20ce3c396",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "oppido",
+      "url": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web; download HTTP200 senza contenuto utile",
+      "privateFile": "originale-oppido.html",
+      "sha256": "6d7ecb664b9b487043bf66612d46c65ecceb97970bd11aecacd88cf9ab31d63e",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "palmi",
+      "url": "https://www.comune.palmi.rc.it/novita/fiera-di-san-rocco-2026-avviso-pubblico-per-lassegnazione-dei-posteggi-destinati-agli-operatori-commerciali/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-palmi.html",
+      "sha256": "c60f0412b1c64577b6a5c0ecd23193e1fb5d0d4231b1bfbee8c075974ac71d89",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "palmi_bando",
+      "url": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-palmi_bando.pdf",
+      "sha256": "1f47182a4a200a46156752d3836dd7b1a08a6717259357efc560884ac87d88e7",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "reggio_bando",
+      "url": "https://comune.reggio-calabria.it/Allegati/10863-Avviso_fiera_Festa_Mariana_2026-signed-signed_timbrato_per_stampa-fea6ea8d-5ad8-4b04-b6f8-92884066e146.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-reggio_bando.pdf",
+      "sha256": "65d75d6aabb87df097e0048a1fa4231268773f616a070a6025c31a146933da22",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "reggio_mariana",
+      "url": "https://comune.reggio-calabria.it/Notizie/Details/8350",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-reggio_mariana.html",
+      "sha256": "433d918c798f99360e88842314c7ce1bdb211ee26356ce7d2e8d8e67313203a9",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "reggio_tariffe",
+      "url": "https://comune.reggio-calabria.it/Allegati/10861-Tariffe_2026-b311e274-e0bb-46b3-bc8b-8e7456a33aa6.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-reggio_tariffe.pdf",
+      "sha256": "9fc936d842ddd5eb7a55ec2bc3bb259171fc52daaf57c549ff80b23ffa4193be",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "rizziconi_agri",
+      "url": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web; download HTTP200 senza contenuto utile",
+      "privateFile": "originale-rizziconi_agri.html",
+      "sha256": "a03ef7a9e4d0c0d1fd369c7045a231528c7a4aea6a659b4019727d07356ca526",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "rizziconi_natale",
+      "url": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-rizziconi_natale.pdf",
+      "sha256": "42b54a34bf0f8bc09fff3499788525faae4a4c75002bc43067ed3c06de3ad7d1",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "san_ferdinando",
+      "url": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-san_ferdinando.html",
+      "sha256": "0614055e7294f2e7c0506bcefe5a1f2dbf449ca73fe96941bf8191b3730f6e82",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "san_giorgio",
+      "url": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+      "label": "Associazione Nuovo Mondo ETS",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-san_giorgio.html",
+      "sha256": "7b2938112e583832edd82994bbd7dba13ec1d9f3e8f3e878727b7347b966d3aa",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "san_martino_bivongi",
+      "url": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "testo-indicizzato-motore-web; download HTTP200 senza contenuto utile",
+      "privateFile": "originale-san_martino_bivongi.html",
+      "sha256": "6ab2ebd4bb03f17fb4dedea70aa5b054123847a983caba897d663cb39e5995ce",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "scido_sagra",
+      "url": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-scido_sagra.html",
+      "sha256": "3dcd497ff686ed4fea4be7c0d606a3cf26c4370ac371d08e4f6cee31bab06f06",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "seminara",
+      "url": "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-seminara.html",
+      "sha256": "97f9706438651c21e0dab89507ba5c3905baf7c03ed88d0e2bfd8b640716914b",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "siderno",
+      "url": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-siderno.html",
+      "sha256": "36d61b17ef07ceb6ce27e3e478e04434d1bdad9600dcd2f2e5077da1b13f3034",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "stignano",
+      "url": "https://comune.stignano.rc.it/it/eventi/647313",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-stignano.html",
+      "sha256": "90b246e4d4bb9834f40f91460667dd9c733c70ae401dd4c3f589e72e1aefb2b4",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "terranova_bando",
+      "url": "https://comune.terranovasappominulio.rc.it/it/news/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-terranova_bando.html",
+      "sha256": "e370a5b9b8ff1ed342f47bd8a97937e01b3ab9aef3269b4ccd4f3a8e9db226e6",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "terranova_pdf",
+      "url": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-terranova_pdf.pdf",
+      "sha256": "dd41b50c69c883d53c21df96adb709f1835fcf06cc11b6521578c695b0333785",
+      "httpStatus": 200,
+      "limit": null
+    },
+    {
+      "key": "unpli_gioiosa",
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125",
+      "label": "UNPLI Calabria · guida 2025, contributo Pro Loco Gioiosa Ionica",
+      "checkedAt": "2026-11-05",
+      "evidenceMode": "originale-scaricato",
+      "privateFile": "originale-unpli.pdf",
+      "sha256": "5889ce90da4ee1ed9410a0322cba75490894719531b600e8b4e4031795a8cbea",
+      "httpStatus": 200,
+      "limit": null
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "city": "Africo",
+      "reason": "Feste del SS. Salvatore e degustazioni segnalate; nessuna fonte primaria commerciale sufficiente selezionata."
+    },
+    {
+      "city": "Anoia",
+      "reason": "Calendario comunale: festa di San Nicola; nessuna prova commerciale sufficiente. Omonimia con la comarca catalana esclusa."
+    },
+    {
+      "city": "Antonimina",
+      "reason": "Mangiandu e scojandu e San Martino individuati da fonti secondarie; programma comunale leggibile non acquisito."
+    },
+    {
+      "city": "Ardore",
+      "reason": "San Martino Ardorese 13–15 novembre 2026 segnalato da portali; non elevato a conferma primaria in questa consegna."
+    },
+    {
+      "city": "Bagaladi",
+      "reason": "Portale comunale e progetto olio grecanico individuati; nessun evento commerciale con periodo preciso selezionato."
+    },
+    {
+      "city": "Bagnara Calabra",
+      "reason": "Gran Galà del Pescespada e Sagra del Pane di Grano documentati da guida UNPLI e piano comunale. Solo estate, nessun mese certo adottato: candidati conservati, non forzati in schede."
+    },
+    {
+      "city": "Benestare",
+      "reason": "SUAP e riferimenti istituzionali individuati; nessuna fonte evento sufficiente selezionata."
+    },
+    {
+      "city": "Bianco",
+      "reason": "Segnalazioni storiche di fiere nella bibliografia, senza nuovo bando o programma primario selezionato."
+    },
+    {
+      "city": "Bova",
+      "reason": "Sagra del Cinghiale segnalata da aggregatori; mancano in questa ricerca programma e condizioni primarie."
+    },
+    {
+      "city": "Bova Marina",
+      "reason": "Festa Madonna del Mare nel calendario comunale; Oktoberfest da aggregatori. Sito Pala Bova con eventi generici e contesto non corroborato: nessuna scheda fieristica adottata."
+    },
+    {
+      "city": "Bovalino",
+      "reason": "Individuato portale comunale; fiere antiche in bibliografia non trattate come eventi attuali."
+    },
+    {
+      "city": "Bruzzano Zeffirio",
+      "reason": "Festa della Catena e iniziative paesaggistiche; nessuna prova commerciale primaria sufficiente selezionata."
+    },
+    {
+      "city": "Calanna",
+      "reason": "Pro Loco e Comune individuati; Bria Fest e spettacolo musicale esclusi senza prova di mercato autonomo."
+    },
+    {
+      "city": "Camini",
+      "reason": "Mercato settimanale e laboratori artigiani, senza fiera autonoma documentata selezionata."
+    },
+    {
+      "city": "Campo Calabro",
+      "reason": "Feste di Musalà e Sagra dei Buongustai da fonti secondarie; non acquisito programma primario pertinente."
+    },
+    {
+      "city": "Candidoni",
+      "reason": "Fonte comunale per San Nicola, senza prova commerciale; nessuna nuova scheda."
+    },
+    {
+      "city": "Canolo",
+      "reason": "Albo e portale comunale individuati; fiera antica di Sant’Antonio non promossa a manifestazione corrente."
+    },
+    {
+      "city": "Caraffa del Bianco",
+      "reason": "U Casu i Carraffa, fiera artigianale e Profumi e Sapori da Ruga individuati; contributi regionali e resoconti non bastano a confermare calendario o ammissione."
+    },
+    {
+      "city": "Careri",
+      "reason": "Pro Loco K e calendario comunale individuati, senza scheda commerciale sufficiente selezionata."
+    },
+    {
+      "city": "Casignana",
+      "reason": "Fiera Artigianale 16–17 agosto 2026 segnalata con fonte dichiarata Pro Loco su Eventi e Sagre. Post primario non acquisito: candidato escluso dal delta."
+    },
+    {
+      "city": "Caulonia",
+      "reason": "Sagra del Tartufo e cartelloni estivi segnalati; non confusi con KTF. Programma primario puntuale non acquisito."
+    },
+    {
+      "city": "Ciminà",
+      "reason": "Pro Loco e produzioni casearie individuate, senza evento datato primario selezionato."
+    },
+    {
+      "city": "Condofuri",
+      "reason": "Festa della Vendemmia primaria 17 ottobre 2026 con degustazione ma non prova di mercato esterno; Festa del Vino e Mercatino Notturno da aggregatori non consolidati in questa consegna."
+    },
+    {
+      "city": "Cosoleto",
+      "reason": "Nessuna fonte evento commerciale sufficiente nei risultati nominali; non è prova di assenza."
+    },
+    {
+      "city": "Feroleto della Chiesa",
+      "reason": "Portale comunale e informativa privacy manifestazioni; informativa esclusa perché non calendario di eventi."
+    },
+    {
+      "city": "Ferruzzano",
+      "reason": "Segnalazioni di sagre in progetti turistici storici; nessun programma commerciale recente primario selezionato."
+    },
+    {
+      "city": "Fiumara",
+      "reason": "Risultati nominali poco pertinenti e omonimie; non completata consultazione integrale dell’albo."
+    },
+    {
+      "city": "Galatro",
+      "reason": "Sito Pro Loco e guida UNPLI consultati; Biennale di Roma esclusa perché fuori provincia e senza fiera locale documentata selezionata."
+    },
+    {
+      "city": "Giffone",
+      "reason": "Sagra del Fungo 9–11 ottobre 2026 individuata; pagina SagraMap dichiara gestione organizzatore, ma primaria autonoma non acquisita. Non importata per prudenza."
+    },
+    {
+      "city": "Grotteria",
+      "reason": "Risultati nominali prevalentemente territoriali; nessuna fonte evento sufficiente selezionata."
+    },
+    {
+      "city": "Laganadi",
+      "reason": "Sito Pro Loco individuato; attività associative senza evento commerciale documentato sufficiente."
+    },
+    {
+      "city": "Laureana di Borrello",
+      "reason": "Fiera San Gregorio da resoconto 2024; determine estate 2026 generiche. Programma primario specifico non acquisito."
+    },
+    {
+      "city": "Marina di Gioiosa Ionica",
+      "reason": "Sagra del Pesce, fiera artigianato e San Martino individuati; atto di finanziamento non equivale al programma. Nessuna nuova scheda confermata selezionata."
+    },
+    {
+      "city": "Maropati",
+      "reason": "Calendario comunale con commemorazioni, senza evento commerciale sufficiente selezionato."
+    },
+    {
+      "city": "Martone",
+      "reason": "Sagra Castagna segnalata con date stimate dagli aggregatori; nessuna conferma primaria acquisita."
+    },
+    {
+      "city": "Melicuccà",
+      "reason": "Fonti territoriali comunali, senza programma commerciale specifico selezionato."
+    },
+    {
+      "city": "Melicucco",
+      "reason": "Fonti storiche e attività musicali, senza scheda commerciale documentata sufficiente."
+    },
+    {
+      "city": "Melito di Porto Salvo",
+      "reason": "Campagna Amica ordinario escluso; Mercatini di Primavera segnalati da aggregatore; Infiorata esclusa senza mercato documentato."
+    },
+    {
+      "city": "Molochio",
+      "reason": "Portale e Pro Loco individuati; Fiera Maddalena da bibliografia storica, non attuale."
+    },
+    {
+      "city": "Monasterace",
+      "reason": "Festa del Mare storica e mercato settimanale; programma primario puntuale non acquisito."
+    },
+    {
+      "city": "Montebello Jonico",
+      "reason": "Ricerca anche con grafia Montebello Ionico; mercato ordinario e fonti territoriali, nessun evento commerciale selezionato."
+    },
+    {
+      "city": "Palizzi",
+      "reason": "San Martino segnalato da aggregatore e Pro Loco individuata; programma primario non acquisito."
+    },
+    {
+      "city": "Pazzano",
+      "reason": "Mercato settimanale escluso; nessuna nuova fonte primaria fieristica sufficiente selezionata."
+    },
+    {
+      "city": "Placanica",
+      "reason": "Festa Addolorata e programma turistico, senza prova di mercato commerciale autonomo sufficiente."
+    },
+    {
+      "city": "Platì",
+      "reason": "Fiera di Santa Barbara a Cirella in bibliografia storica; nessuna conferma corrente acquisita."
+    },
+    {
+      "city": "Polistena",
+      "reason": "Regolamento commercio consultato come pista; Ognissanti e Caciobab segnalati. Mancano in questa consegna avviso evento primario e relativi allegati verificati."
+    },
+    {
+      "city": "Portigliola",
+      "reason": "Fiera San Rocco attestata in bibliografia; nessuna edizione corrente primaria selezionata."
+    },
+    {
+      "city": "Riace",
+      "reason": "Fiera Santi Medici in documentazione storica del Santuario; nessun nuovo bando commerciale verificato."
+    },
+    {
+      "city": "Roccaforte del Greco",
+      "reason": "Portale comunale individuato; nessun programma commerciale primario sufficiente selezionato."
+    },
+    {
+      "city": "Roccella Ionica",
+      "reason": "Settimana Cultura e mercato Campagna Amica, senza nuova fiera autonoma primaria selezionata."
+    },
+    {
+      "city": "Roghudi",
+      "reason": "Sagra olio in dossier regionale 2018; fonte troppo generica per calendario corrente, conservata come pista."
+    },
+    {
+      "city": "Rosarno",
+      "reason": "Modulo comunale Madonna Patmos acquisito nei risultati, senza periodo leggibile sufficiente; fiere e sagre da fonti secondarie non trasferite."
+    },
+    {
+      "city": "Samo",
+      "reason": "Estate Samese 2023 e sagra porchetta da fonti secondarie; nessuna nuova scheda primaria sufficiente."
+    },
+    {
+      "city": "San Giovanni di Gerace",
+      "reason": "Portale comunale individuato, senza programma commerciale specifico sufficiente selezionato."
+    },
+    {
+      "city": "San Lorenzo",
+      "reason": "Festa patronale 2026 su fonte comunale senza prova commerciale; escluse fiere omonime di Catanzaro."
+    },
+    {
+      "city": "San Luca",
+      "reason": "Fiera Madonna della Montagna già presente: conservata identica. Vendita fiori cimiteriali segnalata non inserita come nuova fiera."
+    },
+    {
+      "city": "San Pietro di Caridà",
+      "reason": "Risultati territoriali e San Pier Fedele; nessuna fonte evento sufficiente selezionata."
+    },
+    {
+      "city": "San Procopio",
+      "reason": "Portale comunale individuato, senza evento commerciale primario sufficiente selezionato."
+    },
+    {
+      "city": "San Roberto",
+      "reason": "Regolamento San Roberto in Fiera individuato; allegato dinamico non acquisito e periodo non verificato. Nessuna scheda senza mese documentato."
+    },
+    {
+      "city": "Santa Cristina d'Aspromonte",
+      "reason": "Portale comunale consultabile; nessun programma commerciale sufficiente selezionato."
+    },
+    {
+      "city": "Sant'Agata del Bianco",
+      "reason": "Calendario estate 2025 e festa Sant’Agata; castagnata da aggregatore, non elevata a conferma primaria."
+    },
+    {
+      "city": "Sant'Alessio in Aspromonte",
+      "reason": "Sapori d’Autunno: fonte Regione per 9 novembre 2025; aggregatori per 7–8 novembre 2026. Edizione corrente non confermata primariamente, candidato conservato."
+    },
+    {
+      "city": "Sant'Eufemia d'Aspromonte",
+      "reason": "Sagra Patata e festa patronale segnalate; determine di rimborso mercato non provano date di una fiera."
+    },
+    {
+      "city": "Sant'Ilario dello Ionio",
+      "reason": "Mercato fiori commemorazione defunti da aggregatore, avviso primario non acquisito."
+    },
+    {
+      "city": "Santo Stefano in Aspromonte",
+      "reason": "Sagra Funghi e Festa Autunno individuate nel portale e calendario 2024 ospitato dalla stampa; fonte originaria puntuale non consolidata."
+    },
+    {
+      "city": "Scilla",
+      "reason": "Pro Loco e Comune; Pesce Spada in Festa da aggregatori. Mostra sulla pesca esclusa perché non mercato."
+    },
+    {
+      "city": "Serrata",
+      "reason": "Mercato settimanale escluso; portale comunale senza fiera documentata selezionata."
+    },
+    {
+      "city": "Sinopoli",
+      "reason": "Ricerca nominale senza fonte evento commerciale sufficiente; non consultato intero albo storico."
+    },
+    {
+      "city": "Staiti",
+      "reason": "Mercanti di Natale storico da fonti secondarie; calendario comunale senza date commerciali attuali, Bria Fest escluso senza mercato."
+    },
+    {
+      "city": "Stilo",
+      "reason": "Palio Ribusa documentato da Comune e finanziamenti regionali ma richiamo a fiera storica non prova autonomamente mercato odierno; nessuna scheda commerciale forzata."
+    },
+    {
+      "city": "Taurianova",
+      "reason": "Fiera d’Umbitu 2026 da resoconto; agricoltura 2021 da indice comunale; Infiorata Pro Loco esclusa senza prova commerciale sufficiente."
+    },
+    {
+      "city": "Varapodio",
+      "reason": "Food&Folk e sagra pizza in fonti secondarie/contributi storici; nessun programma primario sufficiente selezionato."
+    },
+    {
+      "city": "Villa San Giovanni",
+      "reason": "Portale comunale individuato; nessuna manifestazione commerciale primaria sufficiente nei risultati nominali."
+    }
+  ],
+  "limits": [
+    "Nessuna verifica di disponibilità attuale, affluenza, notorietà o opportunità economica.",
+    "Catalogo nazionale, builder, checklist e database invariati.",
+    "Ricerche su 97 nomi, con approfondimenti selettivi: non censimento certificato.",
+    "Le conferme documentali delle date non dimostrano l’effettivo svolgimento.",
+    "Portali regionali spesso restituiscono HTTP200 vuoto; fonti lette dal motore web distinte dagli originali."
+  ]
+}

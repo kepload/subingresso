@@ -1,0 +1,1305 @@
+{
+  "schemaVersion": 1,
+  "province": "Reggio Calabria",
+  "checkedAt": "2026-11-05",
+  "mode": "append-only",
+  "baseCommit": "358d781",
+  "baseCatalogSha256": "c10d80e2cb4713ac50af583eebdf5fcbe7b0ac81c73cc3a8b980e9ee9785adb7",
+  "baseCount": 9587,
+  "existingProvinceIds": [
+    "calabria-gioiosa-ionica-festa-di-san-rocco",
+    "calabria-san-luca-fiera-della-madonna-della-montagna"
+  ],
+  "events": [
+    {
+      "id": "calabria-agnana-calabra-festa-di-san-basilio-magno",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Agnana Calabra",
+      "name": "Festa di San Basilio Magno",
+      "category": "tradizionale",
+      "months": [
+        6
+      ],
+      "lat": 38.30235892,
+      "lng": 16.22514898,
+      "venue": "Vie del paese",
+      "organizer": "Comune / organizzazione locale",
+      "sectors": "Dolci locali e souvenir",
+      "source": {
+        "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+      ],
+      "summary": "Il Comune documenta bancarelle durante la ricorrenza patronale. Solo periodo tradizionale.",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-agnana-calabra-festa-della-madonna-della-misericordia",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Agnana Calabra",
+      "name": "Festa della Madonna della Misericordia",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "lat": 38.30235892,
+      "lng": 16.22514898,
+      "venue": "Vie del paese",
+      "organizer": "Comune / organizzazione locale",
+      "sectors": "Dolci locali e souvenir",
+      "source": {
+        "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+      ],
+      "summary": "Bancarelle documentate nella pagina comunale sulle tradizioni; manca un bando per una nuova edizione.",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-bivongi-mercato-della-badia",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Bivongi",
+      "name": "Mercato della Badia",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "lat": 38.48167294,
+      "lng": 16.4533908,
+      "venue": "Borgo di Bivongi",
+      "organizer": "Comune di Bivongi",
+      "sectors": "Artigianato e prodotti agroalimentari tipici",
+      "source": {
+        "url": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html"
+      ],
+      "summary": "Mercato di artigianato e produzioni agroalimentari. Edizione 2026 trascorsa; non è un avviso attualmente aperto.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Domanda al protocollo o via PEC entro il 3 agosto 2026 con ricevuta della quota. Esenzione solo per ETS senza scopo di lucro. Tariffario collegato tramite funzione dinamica, importi non acquisiti. Edizione conclusa.",
+        "url": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+        "deadline": "2026-08-03"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-bivongi-san-martino-sapori-e-profumi-d-autunno",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Bivongi",
+      "name": "San Martino · Sapori e Profumi d’Autunno",
+      "category": "sagra",
+      "months": [
+        11
+      ],
+      "lat": 38.48167294,
+      "lng": 16.4533908,
+      "venue": "Cantine, musei e piazze del borgo",
+      "organizer": "Pro Loco Bivongi",
+      "sectors": "Vino e prodotti tipici",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno",
+        "label": "Regione Calabria · Calabria Straordinaria",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+      ],
+      "summary": "Rassegna tra cantine, piazze e musei con degustazioni e prodotti tipici. Conservata solo l’edizione 2025.",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-11",
+          "end": "2025-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-brancaleone-brancaleone-in-fiera",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Brancaleone",
+      "name": "Brancaleone in Fiera",
+      "category": "mercatino",
+      "months": [
+        1
+      ],
+      "lat": 37.96702175,
+      "lng": 16.10305034,
+      "venue": "Piazza Stazione, Brancaleone Marina",
+      "organizer": "Pro Loco Brancaleone",
+      "sectors": "Gastronomia, artigianato e attività commerciali",
+      "source": {
+        "url": "https://calabriastraordinaria.it/en/events/brancaleone-fair",
+        "label": "Regione Calabria · Calabria Straordinaria",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+      ],
+      "summary": "Manifestazione con stand gastronomici, artigianato e attività commerciali. Edizione trascorsa.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-24",
+          "end": "2026-01-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-cardeto-sagra-della-castagna",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Cardeto",
+      "name": "Sagra della Castagna",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "lat": 38.08440345,
+      "lng": 15.76576886,
+      "venue": "Centro di Cardeto",
+      "organizer": "Comune di Cardeto",
+      "sectors": "Prodotti tipici e artigianato",
+      "source": {
+        "url": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026",
+        "https://www.galareagrecanica.it/index.php/territorio/comuni/item/567-comune-di-cardeto"
+      ],
+      "summary": "Il Comune conferma la giornata della sagra. Il GAL documenta anche esposizioni di prodotti locali e oggetti; non è un bando per ambulanti.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-cinquefrondi-mercatino-dell-usato-viviamo-cinquefrondi",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Cinquefrondi",
+      "name": "Mercatino dell’usato · Viviamo Cinquefrondi",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "lat": 38.41618816,
+      "lng": 16.09663388,
+      "venue": "Piazzale Stadio comunale",
+      "organizer": "Progetto Viviamo Cinquefrondi / Comune",
+      "sectors": "Usato",
+      "source": {
+        "url": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+      ],
+      "summary": "Mercatino dell’usato e laboratori, appuntamento specifico del progetto Viviamo Cinquefrondi.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+      },
+      "merchandiseSectors": [
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-cittanova-fiera-nel-solco-delle-tradizioni-di-san-rocco",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Cittanova",
+      "name": "Fiera Nel solco delle tradizioni di San Rocco",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "lat": 38.35538079,
+      "lng": 16.08037793,
+      "venue": "Territorio comunale; assegnazione in Via Dante",
+      "organizer": "Comune di Cittanova",
+      "sectors": "Commercio ambulante; categorie non precisate nell’avviso",
+      "source": {
+        "url": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf",
+        "https://www.comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026"
+      ],
+      "summary": "Fiera commerciale documentata dall’avviso comunale. Assegnazione dei posteggi distinta dai giorni della fiera.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "L’avviso fissa l’assegnazione in Via Dante il 17 e 18 settembre, 15:30–19:30, per occupare il 19–21. Non è prova di una spunta senza requisiti. Edizione conclusa.",
+        "url": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-cittanova-fiera-di-san-girolamo",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Cittanova",
+      "name": "Fiera di San Girolamo",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "lat": 38.35538079,
+      "lng": 16.08037793,
+      "venue": "Comune di Cittanova; vie non verificate",
+      "organizer": "Comune di Cittanova",
+      "sectors": "Commercio ambulante; categorie da verificare",
+      "source": {
+        "url": "https://www.comune.cittanova.rc.it/it/news/2044946",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.cittanova.rc.it/it/news/2044946"
+      ],
+      "summary": "Avviso comunale per l’assegnazione dei posteggi. Testo indicizzato conservato; allegato non acquisito.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-29",
+          "end": "2026-09-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cittanova.rc.it/it/news/2044946"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Avviso del 23 settembre 2026 per le occupazioni 29–30 settembre. La pagina restituisce 410 nel recupero diretto: non ricostruite procedure o tariffe mancanti.",
+        "url": "https://www.comune.cittanova.rc.it/it/news/2044946"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-cittanova-fiera-maria-ss-del-rosario",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Cittanova",
+      "name": "Fiera Maria SS. del Rosario",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "lat": 38.35538079,
+      "lng": 16.08037793,
+      "venue": "Comune di Cittanova; vie non verificate",
+      "organizer": "Comune di Cittanova",
+      "sectors": "Commercio ambulante; categorie da verificare",
+      "source": {
+        "url": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+      ],
+      "summary": "Avviso comunale riferito esplicitamente al Rosario. Il percorso URL riutilizza un titolo diverso; non conta come una seconda fiera di San Rocco.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Fonte comunale indicizzata, avviso dell’8 ottobre 2026. Recupero diretto 410; non acquisito l’allegato. Edizione conclusa.",
+        "url": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-delianuova-fiera-di-sant-arcangelo",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Delianuova",
+      "name": "Fiera di Sant’Arcangelo",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "lat": 38.24038051,
+      "lng": 15.9181632,
+      "venue": "Quartiere Paracorio, Piazza Regina Elena e vie indicate nell’ordinanza",
+      "organizer": "Comune di Delianuova",
+      "sectors": "Commercio ambulante; merceologie non precisate",
+      "source": {
+        "url": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+      ],
+      "summary": "Edizione storica con bancarelle e venditori ambulanti nel quartiere Paracorio. Nessuna data 2026 dedotta dall’ultima domenica di ottobre.",
+      "editions": [
+        {
+          "year": 2021,
+          "start": "2021-10-31",
+          "end": "2021-10-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-gerace-fiera-della-madonna-del-carmine",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Gerace",
+      "name": "Fiera della Madonna del Carmine",
+      "category": "tradizionale",
+      "months": [
+        7
+      ],
+      "lat": 38.27160155,
+      "lng": 16.2181618,
+      "venue": "Gerace",
+      "organizer": "Confraternita della Madonna del Carmine",
+      "sectors": "Fiera; merceologie non documentate",
+      "source": {
+        "url": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+      ],
+      "summary": "Il Comune descrive una fiera accanto ai festeggiamenti. La pagina aggiornata nel 2026 conserva date 2023.",
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-07-22",
+          "end": "2023-07-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-gioia-tauro-fiera-mare-e-terra",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Gioia Tauro",
+      "name": "Fiera Mare e Terra",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "lat": 38.42988045,
+      "lng": 15.89729676,
+      "venue": "Lungomare di Gioia Tauro",
+      "organizer": "Organizzazione locale; avviso operatori non acquisito",
+      "sectors": "Artigianato e commercio ambulante",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra",
+        "label": "Regione Calabria · Calabria Straordinaria",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+      ],
+      "summary": "Percorso espositivo con artigianato e commercio ambulante sul lungomare. Nessuna disponibilità o affluenza certificata in questa scheda.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-17",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+      },
+      "merchandiseSectors": [
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-gioiosa-ionica-sagra-del-pezzo-duro",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Gioiosa Ionica",
+      "name": "Sagra del Pezzo Duro",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.33631823,
+      "lng": 16.30252468,
+      "venue": "Gioiosa Ionica",
+      "organizer": "Pro Loco Gioiosa Ionica e maestri gelatai locali",
+      "sectors": "Gelato e dolci",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125",
+        "label": "UNPLI Calabria · guida 2025, contributo Pro Loco Gioiosa Ionica",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125"
+      ],
+      "summary": "Sagra del gelato gioiosano organizzata dalla Pro Loco con i gelatai locali. Nessuna edizione 2026 ricavata dalla ricorrenza.",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-mammola-sagra-dello-stocco",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Mammola",
+      "name": "Sagra dello Stocco",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.3620735,
+      "lng": 16.24051878,
+      "venue": "Largo Magenta; intrattenimento in Piazza Ferrari",
+      "organizer": "Comune / Pro Loco Mammola",
+      "sectors": "Gastronomia e prodotti tipici",
+      "source": {
+        "url": "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/"
+      ],
+      "summary": "Stand di distribuzione dello stocco in Largo Magenta. Conservato il periodo tradizionale: il testo non prova due giornate di vendita.",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-motta-san-giovanni-mercatini-di-natale",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Motta San Giovanni",
+      "name": "Mercatini di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "lat": 38.00175728,
+      "lng": 15.6973174,
+      "venue": "Piazza della Municipalità e Piazza del Borgo, Motta Centro",
+      "organizer": "Comune di Motta San Giovanni",
+      "sectors": "Prodotti alimentari e non alimentari, artigianato della tradizione calabrese",
+      "source": {
+        "url": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+        "https://motta-san-giovanni-api.municipiumapp.it/s3/4533/allegati/bando-mercatini-di-natale-2026.pdf"
+      ],
+      "summary": "Rassegna di prodotti calabresi con assegnazione gratuita dello stand, subordinata a selezione. L’avviso PDF conserva alcuni richiami al 2025.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda su modello entro il 7 novembre 2026 ore 12:00, via PEC, email o protocollo. Ammessi prodotti della tradizione; requisiti diversi per hobbisti e imprese. Nessuna garanzia di posto. Pagina 2026 esplicita, ma art.3 e art.5 del PDF conservano 2025: verificare prima della domanda.",
+        "url": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+        "deadline": "2026-11-07"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-oppido-mamertina-sagra-degli-arrosticini-e-prodotti-tipici-mamertini",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Oppido Mamertina",
+      "name": "Sagra degli Arrosticini e Prodotti Tipici Mamertini",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.29261123,
+      "lng": 15.98559889,
+      "venue": "Piazza Rocco Mammone",
+      "organizer": "Organizzazione locale; partecipazione esterna non verificata",
+      "sectors": "Gastronomia e prodotti tipici",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini",
+        "label": "Regione Calabria · Calabria Straordinaria",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+      ],
+      "summary": "Edizione storica dedicata agli arrosticini di agnello e ai prodotti tipici. Non trasferita al 2026.",
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-08-11",
+          "end": "2023-08-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-palmi-fiera-di-san-rocco",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Palmi",
+      "name": "Fiera di San Rocco",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "lat": 38.35738161,
+      "lng": 15.84981529,
+      "venue": "Aree individuate dal Comune con deliberazione 108/2026",
+      "organizer": "Comune di Palmi",
+      "sectors": "Alimentare e non alimentare",
+      "source": {
+        "url": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+        "https://www.comune.palmi.rc.it/novita/fiera-di-san-rocco-2026-avviso-pubblico-per-lassegnazione-dei-posteggi-destinati-agli-operatori-commerciali/"
+      ],
+      "summary": "Selezione per posteggi alimentari e non alimentari. L’articolo sulla durata specifica il 2026; nel preambolo resta un richiamo al 2025.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-12",
+          "end": "2026-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Scadenza 24 luglio 2026 ore 12:00. Per ambulanti autorizzati modello A via PEC; altre attività alimentari e spettacoli viaggianti seguono il SUAP come indicato nel bando. Edizione conclusa.",
+        "url": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+        "deadline": "2026-07-24"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-reggio-di-calabria-fiera-delle-feste-mariane",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Reggio di Calabria",
+      "name": "Fiera delle Feste Mariane",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "lat": 38.10922766,
+      "lng": 15.64345359,
+      "venue": "Pentimele e postazioni previste in centro dal bando",
+      "organizer": "Comune di Reggio Calabria",
+      "sectors": "Alimentare e non alimentare; casalinghi e dimostratori",
+      "source": {
+        "url": "https://comune.reggio-calabria.it/Notizie/Details/8350",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.reggio-calabria.it/Notizie/Details/8350",
+        "https://comune.reggio-calabria.it/Allegati/10863-Avviso_fiera_Festa_Mariana_2026-signed-signed_timbrato_per_stampa-fea6ea8d-5ad8-4b04-b6f8-92884066e146.pdf",
+        "https://comune.reggio-calabria.it/Allegati/10861-Tariffe_2026-b311e274-e0bb-46b3-bc8b-8e7456a33aa6.pdf"
+      ],
+      "summary": "Fiera delle festività patronali con posteggi commerciali. Smontaggio entro mezzogiorno del 21 settembre: non è un’ulteriore giornata di vendita.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-10",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.reggio-calabria.it/Notizie/Details/8350"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Modello A via PEC entro il 25 agosto ore 12:00. Graduatorie definitive pubblicate il 4 settembre. Canoni in tabella per 10 giorni benché il periodo sia 10–20: discrepanza da chiarire, senza ricalcolare il listino.",
+        "url": "https://comune.reggio-calabria.it/Notizie/Details/8350",
+        "deadline": "2026-08-25"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-reggio-di-calabria-reggio-calabria-comics",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Reggio di Calabria",
+      "name": "Reggio Calabria Comics",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "lat": 38.10922766,
+      "lng": 15.64345359,
+      "venue": "Castello Aragonese",
+      "organizer": "Reggio Calabria Comics",
+      "sectors": "Fumetti e prodotti della cultura pop",
+      "source": {
+        "url": "https://www.reggiocalabriacomics.it/",
+        "label": "Organizzatore · Reggio Calabria Comics",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.reggiocalabriacomics.it/",
+        "https://www.reggiocalabriacomics.it/partecipa/"
+      ],
+      "summary": "Fiera del fumetto e della cultura pop al Castello Aragonese. Le date del 2025 ancora presenti nel sito riguardano contenuti storici.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-16",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.reggiocalabriacomics.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Il modulo distingue venditori professionali, hobbisti e illustratori. Domanda soggetta a risposta dell’organizzazione; nessun prezzo o spazio disponibile verificato. Edizione conclusa.",
+        "url": "https://www.reggiocalabriacomics.it/"
+      },
+      "merchandiseSectors": [
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-reggio-di-calabria-bergare",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Reggio di Calabria",
+      "name": "Bergarè",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "lat": 38.10922766,
+      "lng": 15.64345359,
+      "venue": "Piazza e Castello Aragonese",
+      "organizer": "Camera di Commercio di Reggio Calabria",
+      "sectors": "Agroalimentare, bergamotto, artigianato e street food",
+      "source": {
+        "url": "https://www.bergare.it/",
+        "label": "Camera di Commercio di Reggio Calabria · Bergarè",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.bergare.it/"
+      ],
+      "summary": "Villaggio di imprese del bergamotto e artigianato, street food e incontri B2B. Non è un mercato con ammissione automatica per ambulanti.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-22",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.bergare.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.bergare.it/"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-rizziconi-fiera-dell-agricoltura-eccellenze-in-comune",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Rizziconi",
+      "name": "Fiera dell’Agricoltura · Eccellenze in Comune",
+      "category": "espositiva",
+      "months": [
+        12
+      ],
+      "lat": 38.41185425,
+      "lng": 15.95875839,
+      "venue": "Via Palmiro Togliatti, area adiacente alla scuola media",
+      "organizer": "Comune di Rizziconi",
+      "sectors": "Prodotti agroalimentari e street food",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura",
+        "label": "Regione Calabria · Calabria Straordinaria",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+      ],
+      "summary": "Edizione storica con aziende locali, degustazioni, street food e sagra dell’olio. Nessuna replica 2026 dedotta.",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-12-17",
+          "end": "2024-12-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-rizziconi-mercatini-di-natale",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Rizziconi",
+      "name": "Mercatini di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "lat": 38.41185425,
+      "lng": 15.95875839,
+      "venue": "Piazza Marconi",
+      "organizer": "Comune di Rizziconi",
+      "sectors": "Alimentari, prodotti tipici, artigianato e articoli natalizi",
+      "source": {
+        "url": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf"
+      ],
+      "summary": "Casette per artigianato, commercio e prodotti alimentari. Il documento contiene importi discordanti: nessun prezzo univoco adottato.",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-16",
+          "end": "2025-12-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Scadenza storica 1 dicembre 2025. Assegnazione per ordine cronologico e bilanciamento merceologico. Il prezzo dell’art.9 contrasta con il modello di domanda: occorre chiarimento; edizione conclusa.",
+        "url": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+        "deadline": "2025-12-01"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-san-ferdinando-fiera-di-san-ferdinando-re",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "San Ferdinando",
+      "name": "Fiera di San Ferdinando Re",
+      "category": "tradizionale",
+      "months": [
+        5,
+        6
+      ],
+      "lat": 38.48384424,
+      "lng": 15.91565813,
+      "venue": "Piazza Nunziante e strade adiacenti",
+      "organizer": "Comune di San Ferdinando",
+      "sectors": "Alimentare e non alimentare",
+      "source": {
+        "url": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+      ],
+      "summary": "Posteggi alimentari e non alimentari nella piazza e nelle strade adiacenti durante la festa patronale 2025. Il termine al mattino del 1 giugno non prova una fiera diurna quel giorno.",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-05-30",
+          "end": "2025-06-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-san-giorgio-morgeto-festa-medioevale-mercatino",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "San Giorgio Morgeto",
+      "name": "Festa Medioevale · Mercatino",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "lat": 38.38702256,
+      "lng": 16.10355491,
+      "venue": "Centro storico",
+      "organizer": "Associazione Nuovo Mondo ETS",
+      "sectors": "Artigianato, alimentari confezionati e non alimentari ammessi dal regolamento",
+      "source": {
+        "url": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+        "label": "Associazione Nuovo Mondo ETS",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.sangiorgiomedievale.it/regolamento-espositori"
+      ],
+      "summary": "Mercatino a tema medievale con prodotti artigianali e alimentari confezionati. Non ammessi abbigliamento e prodotti industriali fuori tema.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-12",
+          "end": "2026-08-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sangiorgiomedievale.it/regolamento-espositori"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Adesioni entro il 10 agosto 2026, previo accordo e scheda stand. Banco e abiti coerenti con il tema; solo illuminazione, non corrente per altri usi. Edizione conclusa. Il numero d’edizione non è univoco tra fonti e non viene riportato.",
+        "url": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+        "deadline": "2026-08-10"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    },
+    {
+      "id": "calabria-scido-sagra-della-carne-di-capra-e-pappaluni",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Scido",
+      "name": "Sagra della Carne di Capra e Pappaluni",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.24385347,
+      "lng": 15.93202,
+      "venue": "Piazza Municipio",
+      "organizer": "Comune e associazioni locali",
+      "sectors": "Gastronomia e prodotti tipici",
+      "source": {
+        "url": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+      ],
+      "summary": "Edizione storica della sagra di carne di capra e fagioli. Il periodo ricorrente del 17 agosto non conferma il 2026.",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-17",
+          "end": "2024-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-seminara-sagra-dell-olio",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Seminara",
+      "name": "Sagra dell’Olio",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.33609976,
+      "lng": 15.87049687,
+      "venue": "Seminara",
+      "organizer": "Organizzazione locale; bando non acquisito",
+      "sectors": "Gastronomia e olio locale",
+      "source": {
+        "url": "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio"
+      ],
+      "summary": "Evento gastronomico dedicato all’olio locale. La fonte comunale precisa che la cadenza non è annuale: nessuna edizione 2026 confermata.",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-siderno-fiera-di-portosalvo",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Siderno",
+      "name": "Fiera di Portosalvo",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "lat": 38.26870019,
+      "lng": 16.29758961,
+      "venue": "Centro di Siderno",
+      "organizer": "Comune di Siderno",
+      "sectors": "Commercio fieristico; settori ammessi da verificare nel bando",
+      "source": {
+        "url": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+      ],
+      "summary": "Fiera patronale 2026 anticipata al 3 settembre rispetto al consueto periodo. Conservato il calendario dell’edizione documentata.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-03",
+          "end": "2026-09-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+      },
+      "merchandiseSectors": []
+    },
+    {
+      "id": "calabria-stignano-a-fera-da-mpetrata",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Stignano",
+      "name": "A Fera da Mpetrata",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "lat": 38.41820448,
+      "lng": 16.47047933,
+      "venue": "Borgo di Stignano",
+      "organizer": "Comune / organizzazione locale",
+      "sectors": "Gastronomia e prodotti tipici",
+      "source": {
+        "url": "https://comune.stignano.rc.it/it/eventi/647313",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.stignano.rc.it/it/eventi/647313"
+      ],
+      "summary": "Manifestazione del borgo dedicata alle tradizioni culinarie. La qualificazione di sagra non prova posteggi aperti a venditori esterni.",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-11",
+          "end": "2024-08-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.stignano.rc.it/it/eventi/647313"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+        "url": "https://comune.stignano.rc.it/it/eventi/647313"
+      },
+      "merchandiseSectors": [
+        "alimentare"
+      ]
+    },
+    {
+      "id": "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Terranova Sappo Minulio",
+      "name": "Fiera Patronale del SS. Crocifisso",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "lat": 38.32174864,
+      "lng": 16.00746647,
+      "venue": "Strade del centro cittadino",
+      "organizer": "Comune di Terranova Sappo Minulio",
+      "sectors": "Commercio ambulante alimentare e non alimentare",
+      "source": {
+        "url": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+        "https://comune.terranovasappominulio.rc.it/it/news/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026"
+      ],
+      "summary": "Manifestazione commerciale nelle strade del centro in occasione della festa del SS. Crocifisso.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Istanza entro il 28 aprile 2026, via PEC o protocollo; superficie dichiarata e ricevuta del canone. Tardive solo con residui secondo avviso, non prova di disponibilità. Edizione conclusa.",
+        "url": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+        "deadline": "2026-04-28"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare"
+      ]
+    },
+    {
+      "id": "calabria-locri-locri-festival-agrifest",
+      "region": "Calabria",
+      "province": "Reggio Calabria",
+      "city": "Locri",
+      "name": "Locri Festival · Agrifest",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "lat": 38.2367479,
+      "lng": 16.26402974,
+      "venue": "Piazza dei Martiri e Via Margherita di Savoia",
+      "organizer": "Comune di Locri",
+      "sectors": "Prodotti agroalimentari e artigianato",
+      "source": {
+        "url": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceRecordIds": [
+        "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf"
+      ],
+      "summary": "Mercatini artigianali e prodotti tipici nel Locri Festival 2024. Ammessi anche hobbisti, aziende agricole, associazioni e ambulanti previa selezione.",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-16",
+          "end": "2024-08-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domande storiche entro il 5 agosto 2024 via PEC, protocollo o posta sul modello comunale. Scelta per differenziazione dei prodotti e anzianità CCIAA in caso di richieste simili eccedenti i posti. Costi non verificati; edizione conclusa.",
+        "url": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf",
+        "deadline": "2024-08-05"
+      },
+      "merchandiseSectors": [
+        "alimentare",
+        "non-alimentare",
+        "artigianato"
+      ]
+    }
+  ]
+}

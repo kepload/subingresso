@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "province": "Reggio Calabria",
+  "checkedAt": "2026-11-05",
+  "events": {
+    "calabria-bivongi-mercato-della-badia": {
+      "kind": "conditional",
+      "label": "Esenzione quota soltanto per ETS senza scopo di lucro",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+      "checkedAt": "2026-11-05",
+      "details": "Quota obbligatoria con ricevuta allegata alla domanda; esentati esclusivamente ETS senza scopo di lucro. Tariffario 2026 collegato tramite funzione dinamica, importi non acquisiti. Non equivale a costo complessivo nullo."
+    },
+    "calabria-palmi-fiera-di-san-rocco": {
+      "kind": "partial",
+      "label": "Diritti 10 € + bollo 16 €; canone e assicurazione separati",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Il bando richiede 10 € di istruttoria e una marca da bollo da 16 €. Canone secondo tariffario comunale e polizza RCT da pagare a parte: il massimale di 500.000 € non è il premio. Nessun totale posteggio verificato.",
+      "components": [
+        {
+          "type": "istruttoria",
+          "amount": 10,
+          "currency": "EUR"
+        },
+        {
+          "type": "bollo-domanda",
+          "amount": 16,
+          "currency": "EUR"
+        }
+      ]
+    },
+    "calabria-reggio-di-calabria-fiera-delle-feste-mariane": {
+      "kind": "partial",
+      "label": "Canone Pentimele 321,60 € per 12 m² / 10 giorni",
+      "period": "2026",
+      "sourceUrl": "https://comune.reggio-calabria.it/Allegati/10861-Tariffe_2026-b311e274-e0bb-46b3-bc8b-8e7456a33aa6.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Tabella 2026: Pentimele 2,68 €/m² per 10 giorni, moduli 12/24/36/48 m²: 321,60/643,20/964,80/1.286,40 €. Duomo-centro 3,35 €/m² per 10 giorni: 9 m² 301,50 €, 18 m² 603 €, 24 m² 804 €. Durata tariffaria 10 giorni contro periodo 10–20 settembre: non ricalcolata. Bando: istruttoria 10 €, bollo domanda 16 €, bollo autorizzazione e assicurazione separati. Importi non preventivo completo; IVA non precisata.",
+      "relatedSourceUrls": [
+        "https://comune.reggio-calabria.it/Allegati/10863-Avviso_fiera_Festa_Mariana_2026-signed-signed_timbrato_per_stampa-fea6ea8d-5ad8-4b04-b6f8-92884066e146.pdf"
+      ],
+      "rateDays": 10,
+      "components": [
+        {
+          "type": "canone",
+          "area": "Pentimele",
+          "sqm": 12,
+          "amount": 321.6,
+          "currency": "EUR"
+        },
+        {
+          "type": "istruttoria",
+          "amount": 10,
+          "currency": "EUR"
+        },
+        {
+          "type": "bollo-domanda",
+          "amount": 16,
+          "currency": "EUR"
+        }
+      ]
+    },
+    "calabria-motta-san-giovanni-mercatini-di-natale": {
+      "kind": "conditional",
+      "label": "Assegnazione gratuita dello stand, previa selezione",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "checkedAt": "2026-11-05",
+      "details": "Pagina comunale e bando prevedono assegnazione gratuita delle casette. Non certificati gratuiti acquisti, dotazioni, adempimenti o tutti i servizi. Bando con richiami 2025 agli art.3 e 5; pagina aggiornata specifica 12–13 dicembre 2026.",
+      "relatedSourceUrls": [
+        "https://motta-san-giovanni-api.municipiumapp.it/s3/4533/allegati/bando-mercatini-di-natale-2026.pdf"
+      ]
+    },
+    "calabria-rizziconi-mercatini-di-natale": {
+      "kind": "conditional",
+      "label": "Importi discordanti nel documento: tariffa da chiarire",
+      "period": "2025",
+      "sourceUrl": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Art.9 p.6: 420 € per sei giorni o 210 € per tre, con noleggio, promozione ed energia nei limiti dell’impianto. Modello p.12: 4.000 € per tre giorni e 200 € per sei. Non corretto per ipotesi, nessun prezzo sintetico certo; IVA non precisata.",
+      "conflict": true
+    },
+    "calabria-san-giorgio-morgeto-festa-medioevale-mercatino": {
+      "kind": "conditional",
+      "label": "Due giorni: agroalimentari 250 € / altri prodotti 150 €",
+      "period": "2026",
+      "sourceUrl": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+      "checkedAt": "2026-11-05",
+      "details": "Regolamento, art.8: 250 € agroalimentari con eventuale degustazione/vendita; 150 € non agroalimentari. Quote per entrambe le giornate con banco fornito; punto luce, esclusa corrente per altri usi. IVA non precisata. I 75 € per costume danneggiato/smarrito sono risarcimento, non costo ordinario."
+    },
+    "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso": {
+      "kind": "unit",
+      "label": "Canone base 0,60 €/m²/giorno, riduzioni da verificare",
+      "period": "2026",
+      "sourceUrl": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Avviso SUAP p.2: tariffa 0,60 €/m²/giorno per fiere e sagre, con riduzioni secondo regolamento comunale. Non quantificate le riduzioni né calcolato un totale per banco; superficie da dichiarare e canone da allegare alla domanda.",
+      "rate": 0.6,
+      "unit": "EUR/m2/day"
+    }
+  }
+}
