@@ -1,0 +1,605 @@
+{
+  "province": "Vibo Valentia",
+  "checkedAt": "2026-11-05",
+  "method": "50 query nominali distinte eseguite in gruppi di quattro, seguite da ricerche mirate e letture selettive di pagine e allegati comunali e organizzatori. Non censimento certificato o lettura integrale di tutti gli albi/social.",
+  "municipalityListSource": "https://www.impresainungiorno.gov.it/comune?codCatastale=F537&prov=VV&provlg=VIBO+VALENTIA",
+  "limitations": [
+    "Nessuna assenza di eventi certificata per i comuni senza aggiunte.",
+    "HTTP 403 Regione e Limbadi on the Road; certificato TLS scaduto Maierato. Allegati dinamici Ricadi e Spilinga: HTTP 200 con HTML di errore, non PDF.",
+    "Ricorrenze automatiche Vivi Drapia non equivalgono a conferma delle annualita future.",
+    "Costi storici o senza anno distinti dal costo corrente; nessuna disponibilita, affluenza o notorieta dedotta."
+  ],
+  "existingEventUpdateProposals": [
+    {
+      "id": "calabria-serra-san-bruno-fiera-di-ferragosto",
+      "applied": false,
+      "sourceUrl": "https://www.comune.serrasanbruno.vv.it/novita/fiera-di-ferragosto-2/",
+      "proposal": "Avviso 11 giugno 2026: date numeriche 14-15 agosto 2026, domanda SUAP entro 15 luglio, bollo e TOSAP senza importo. La fonte chiama erroneamente sabato/domenica le due date numeriche: chiarire prima di integrare le date. Scheda preesistente invariata."
+    }
+  ],
+  "municipalities": [
+    {
+      "city": "Acquaro",
+      "query": "\"Acquaro\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-0.json",
+      "sourceUrls": [
+        "https://www.comune.acquaro.vv.it/home/vivere.html"
+      ],
+      "note": "Portale comunale consultato: Festa di San Rocco, pagina 2024 di carattere religioso. L’elenco storico Pro Loco indica pannocchie e Curuijacchia; mancano edizioni e condizioni operative recenti verificate. Nessuna nuova scheda selezionata.",
+      "newIds": []
+    },
+    {
+      "city": "Arena",
+      "query": "\"Arena\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-0.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Piste storiche: zeppola/pannocchia in luglio nell’elenco Pro Loco e fiera del bestiame in una guida privata. La ricerca 2026 non ha fornito un programma primario datato sufficiente; non convertite in date correnti.",
+      "newIds": []
+    },
+    {
+      "city": "Briatico",
+      "query": "\"Briatico\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-0.json",
+      "sourceUrls": [
+        "https://www.comune.briatico.vv.it/vivere_il_comune/eventi/eventi.html"
+      ],
+      "note": "Calendario comunale consultato: San Nicola 6 dicembre 2024. Notizia secondaria sul Natale 2026 riguarda un avviso da predisporre e un budget organizzativo, non un mercato già confermato né un costo espositore.",
+      "newIds": []
+    },
+    {
+      "city": "Brognaturo",
+      "query": "\"Brognaturo\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-0.json",
+      "sourceUrls": [
+        "https://brognaturonelcuore.wordpress.com/2026/09/01/17-sagra-paesana/"
+      ],
+      "note": "Sagra Paesana inserita dal sito dell’associazione e dalla locandina del 2026; 10 € è menu visitatori. Non duplicata la generica Sagra dei prodotti tipici dell’elenco storico.",
+      "newIds": [
+        "calabria-brognaturo-sagra-paesana"
+      ]
+    },
+    {
+      "city": "Capistrano",
+      "query": "\"Capistrano\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-4.json",
+      "sourceUrls": [
+        "https://www.comune.capistrano.vv.it/index.php/it/eventi/fiera-capistranarte"
+      ],
+      "note": "Capistranarte inserita come edizione 2022 da pagina comunale. La pista fiera del bestiame del secondo giovedì di agosto rimane da fonte privata, esclusa senza ulteriore prova primaria.",
+      "newIds": [
+        "calabria-capistrano-fiera-capistranarte"
+      ]
+    },
+    {
+      "city": "Cessaniti",
+      "query": "\"Cessaniti\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-4.json",
+      "sourceUrls": [
+        "https://www.comune.cessaniti.vv.it/"
+      ],
+      "note": "Homepage comunale consultata; le ricerche restituiscono murales e turismo. Elenco Pro Loco storico: filej e ceci a Pannaconi, San Basilio e sagra paesana; nessun avviso primario corrente verificato.",
+      "newIds": []
+    },
+    {
+      "city": "Dasà",
+      "query": "\"Dasà\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-4.json",
+      "sourceUrls": [
+        "https://www.dasafoodfest.it/info"
+      ],
+      "note": "Sito Dasà Food Fest consultato: date in arrivo e biglietti non disponibili. Portale terzo indica 19 agosto 2026; non adottato per sostituire l’assenza di date sul sito organizzatore. Fiera Immacolata 2026 trovata su aggregatore automatico, non confermata da fonte comunale letta.",
+      "newIds": []
+    },
+    {
+      "city": "Dinami",
+      "query": "\"Dinami\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-4.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Pista della Gara del dolce 2026 su stampa locale, senza fonte primaria acquisita. Elenco storico Pro Loco: maccheroni a Melicuccà e prodotti dinamesi. Non aggiunti come eventi correnti.",
+      "newIds": []
+    },
+    {
+      "city": "Drapia",
+      "query": "\"Drapia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-8.json",
+      "sourceUrls": [
+        "https://vividrapia.it/events/"
+      ],
+      "note": "Cinque identità selezionate. Avviso originale Santi Medici 2024 con canone; portale turistico comunale con ricorrenze automatiche per Santa Croce e tre sagre. Esclusa Fiera Monte Carmelo: intervallo anomalo maggio–ottobre. Nessuna annualità futura del plugin confermata.",
+      "newIds": [
+        "calabria-drapia-fiera-dei-santi-cosma-e-damiano",
+        "calabria-drapia-fiera-della-santa-croce",
+        "calabria-drapia-sagra-da-sujaca",
+        "calabria-drapia-sagra-del-vino",
+        "calabria-drapia-sagra-del-dolce"
+      ]
+    },
+    {
+      "city": "Fabrizia",
+      "query": "\"Fabrizia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-8.json",
+      "sourceUrls": [
+        "https://www.comune.fabrizia.vv.it/home/vivere/eventi.html"
+      ],
+      "note": "Calendario eventi comunale consultato. Fiera Sant’Antonio di giugno trovata in cronaca e sito storico locale; programma primario recente non recuperato. Sagra zeppola/castagna nell’elenco storico di agosto, non edizione corrente verificata.",
+      "newIds": []
+    },
+    {
+      "city": "Filadelfia",
+      "query": "\"Filadelfia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-8.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Pagina comunale Eventi e Manifestazioni consultata, URL legacy anomalo conservato nel manifest. Fiera Sant’Antonio 12–13 giugno e sagre fave/prodotti locali emergono da calendari privati/storici; nessuna nuova edizione primaria verificata.",
+      "newIds": []
+    },
+    {
+      "city": "Filandari",
+      "query": "\"Filandari\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-8.json",
+      "sourceUrls": [
+        "https://servizi.comune.filandari.vv.it/zf/index.php/atti-generali"
+      ],
+      "note": "Consultato repertorio comunale atti generali. Fileja, dolce di Mesiano, tagliatelle di Scaliti e birra di Arzona compaiono nell’elenco storico; ricerche 2026 restituiscono calendario privato. Identità non aggiunte senza approfondimento primario operativo.",
+      "newIds": []
+    },
+    {
+      "city": "Filogaso",
+      "query": "\"Filogaso\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-12.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Pista dolci/frittelle di agosto dall’elenco storico Pro Loco; risultati 2026 suggeriscono anche eventi di Spilinga nei dintorni: non attribuiti a Filogaso. Nessun programma primario corrente selezionato.",
+      "newIds": []
+    },
+    {
+      "city": "Francavilla Angitola",
+      "query": "\"Francavilla Angitola\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-12.json",
+      "sourceUrls": [
+        "https://www.comune.francavillaangitola.vv.it/"
+      ],
+      "note": "Homepage comunale consultata, calendario senza eventi al recupero. Festa Emigrante 16–18 ottobre 2026 riscontrata in istituto scolastico; non verificati banchi/stand dal testo disponibile. Fiera San Foca da memoria storica, non nuova edizione.",
+      "newIds": []
+    },
+    {
+      "city": "Francica",
+      "query": "\"Francica\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-12.json",
+      "sourceUrls": [
+        "https://www.vibonesiamo.it/wordpress/entroterra-del-poro/francica-il-paese-dellolio/"
+      ],
+      "note": "Sagra Olio: fonti terze divergono tra dicembre e agosto e citano edizioni diverse. Elenco storico Pro Loco riporta invece sagra del pesce. Nessun prezzo o data corrente ricavato da questi riscontri.",
+      "newIds": []
+    },
+    {
+      "city": "Gerocarne",
+      "query": "\"Gerocarne\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-12.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Piste Pro Loco: trippa, stocco e prodotti tipici in agosto. Ricerca nominale e ricerca mirata 2026 senza programma primario datato selezionabile. Non certificata assenza di eventi.",
+      "newIds": []
+    },
+    {
+      "city": "Ionadi",
+      "query": "\"Ionadi\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-16.json",
+      "sourceUrls": [
+        "https://www.mimit.gov.it/it/eventi-2026/ionadi-giovani-competenze-e-creativit-nel-made-in-italy-per-il-sistema-pro-loco"
+      ],
+      "note": "Ricercata anche la forma Jonadi presente nelle fonti storiche. Riscontro MIMIT su evento formativo Made in Italy 2026: non fiera commerciale. Sagra dei prodotti paesani a Nao da elenco storico, non nuova edizione verificata.",
+      "newIds": []
+    },
+    {
+      "city": "Joppolo",
+      "query": "\"Joppolo\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-16.json",
+      "sourceUrls": [
+        "https://www.comune.joppolo.vv.it/home/vivere/eventi.html"
+      ],
+      "note": "Pagina comunale eventi consultata. Risultati di Joppolo Giancaxio scartati perché comune siciliano diverso. Formaggio a Caroniti e fichi d’India a Coccorino nell’elenco storico, senza programma corrente primario acquisito.",
+      "newIds": []
+    },
+    {
+      "city": "Limbadi",
+      "query": "\"Limbadi\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-16.json",
+      "sourceUrls": [
+        "https://www.limbadiontheroad.it/festa-di-san-martino-2026-a-limbadi-vino-novello-tagliere-e-discomaniac-band/"
+      ],
+      "note": "Piste San Martino 7 novembre 2026 e Maiale di San Nicola de Legistis dalla stampa/portale turistico locale. Due recuperi Limbadi on the Road restituiscono 403: testo indicizzato salvato ma non pagina integralmente letta. Non selezionate come fonte organizzatore.",
+      "newIds": []
+    },
+    {
+      "city": "Maierato",
+      "query": "\"Maierato\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-16.json",
+      "sourceUrls": [
+        "https://www.comune.maierato.vv.it/amministrazione/enti_e_fondazioni/ente_13.html"
+      ],
+      "note": "Pagina comunale Pro Loco non acquisita per certificato TLS scaduto, errore conservato. Salsiccia 2026 su aggregatore, senza bando primario. Cronaca su Giornata Aratura annullata annotata come pista, non evento confermato né aggiunta.",
+      "newIds": []
+    },
+    {
+      "city": "Mileto",
+      "query": "\"Mileto\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-20.json",
+      "sourceUrls": [
+        "https://www.comune.mileto.vv.it/dam/jcr:94c8fe2d-aa53-44f4-9dfe-ce5941765b6f/AVVISO%20(2).pdf"
+      ],
+      "note": "Inserito mercato legato al pellegrinaggio del 10 maggio 2026 a Paravati: avviso originale di quattro pagine, lettura visiva perché scansione. Altre piste Trippa/Fileja dalla cronaca non importate senza fonte primaria recente.",
+      "newIds": [
+        "calabria-mileto-commercio-ambulante-per-la-festa-della-mamma-a-paravati"
+      ]
+    },
+    {
+      "city": "Mongiana",
+      "query": "\"Mongiana\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-20.json",
+      "sourceUrls": [
+        "https://www.comune.mongiana.vv.it/home/vivere.html"
+      ],
+      "note": "Portale comunale Vivere consultato. Risultato Vico II Sagra è nome stradale/fotografia, non prova di una sagra 2026. Festa emigranti da elenco storico priva di specifica componente mercatale documentata.",
+      "newIds": []
+    },
+    {
+      "city": "Monterosso Calabro",
+      "query": "\"Monterosso Calabro\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-20.json",
+      "sourceUrls": [
+        "https://www.comune.monterossocalabro.vv.it/it/eventi"
+      ],
+      "note": "Portale comunale eventi consultato; Sagra Sapori XIII del 22 agosto 2026 su aggregatore e programma estivo in portale terzo, senza originale organizzatore recuperato. Non attribuito anno 2026 all’elenco storico gastronomico di luglio.",
+      "newIds": []
+    },
+    {
+      "city": "Nardodipace",
+      "query": "\"Nardodipace\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-20.json",
+      "sourceUrls": [
+        "https://www.comune.nardodipace.vv.it/"
+      ],
+      "note": "Homepage comunale consultata: nessun evento nel calendario visualizzato. Seconda ricerca nominale sagra/pro loco 2026 senza programma primario selezionabile. L’esito non prova assenza di feste o mercati.",
+      "newIds": []
+    },
+    {
+      "city": "Nicotera",
+      "query": "\"Nicotera\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-24.json",
+      "sourceUrls": [
+        "https://www.comune.nicotera.vv.it/wp-content/uploads/2024/06/Regolamento-Mercatino-delle-pulci.pdf"
+      ],
+      "note": "Inserito Mercatino Sette Porte dal regolamento originale, con vincolo privati non professionali e fase sperimentale. Quota 5 € verificata visivamente. Mercatino antiquariato del terzo sabato su portale privato non duplicato con identità incerta.",
+      "newIds": [
+        "calabria-nicotera-mercatino-delle-sette-porte"
+      ]
+    },
+    {
+      "city": "Parghelia",
+      "query": "\"Parghelia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-24.json",
+      "sourceUrls": [
+        "https://www.comune.parghelia.vv.it/eventi/"
+      ],
+      "note": "Repertorio comunale consultato: programma estate 2026 e iniziative mobilità. Natale regionale rinvia alla Pro Loco; singoli giorni mercatino non verificati. Pesce/zeppole da elenco storico non assunti come edizioni attuali.",
+      "newIds": []
+    },
+    {
+      "city": "Pizzo",
+      "query": "\"Pizzo\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-24.json",
+      "sourceUrls": [
+        "https://pizzo.comuneweb.it/servizionline/albopretorio/albopretorio"
+      ],
+      "note": "U Mercatu i na vota 1 novembre 2026 dalla cronaca, con attribuzione Pro Loco ma originale non acquisito. Albo indicizzato cita Sagra Pesce; non letto integralmente né usato per date/prezzi. Nessuna aggiunta basata solo su tali estratti.",
+      "newIds": []
+    },
+    {
+      "city": "Pizzoni",
+      "query": "\"Pizzoni\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-24.json",
+      "sourceUrls": [
+        "https://portaleventi.it/evento/festival-della-castagna-a-pizzoni"
+      ],
+      "note": "Festival Castagna XXII 24 ottobre 2026 su portali terzi; altro aggregatore estende al 31 ottobre. Originale Pro Loco social non letto integralmente, nessuna annualità selezionata. Elenco storico indica ottobre.",
+      "newIds": []
+    },
+    {
+      "city": "Polia",
+      "query": "\"Polia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-28.json",
+      "sourceUrls": [
+        "https://www.comune.polia.vv.it/it/eventi"
+      ],
+      "note": "Pagina comunale eventi consultata. Posa minuta in settembre nell’elenco Pro Loco, patata senza mese: nessuna data annuale ricavata. Ricerca mirata 2026 non restituisce un programma primario selezionato.",
+      "newIds": []
+    },
+    {
+      "city": "Ricadi",
+      "query": "\"Ricadi\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-28.json",
+      "sourceUrls": [
+        "https://www.comune.ricadi.vv.it/novita/notizie/novita_213.html"
+      ],
+      "note": "Avviso comunale 8 luglio 2026 conferma Birra 30 luglio e Cipolla 13 agosto. Allegati dinamici restituiscono HTML di errore pur con HTTP 200: nessuna tariffa dedotta. Non creata seconda identità Cipolla rossa di Tropea.",
+      "newIds": [
+        "calabria-ricadi-festa-della-birra",
+        "calabria-ricadi-sagra-della-cipolla"
+      ]
+    },
+    {
+      "city": "Rombiolo",
+      "query": "\"Rombiolo\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-28.json",
+      "sourceUrls": [
+        "https://poro.it/rombiolo/index.htm"
+      ],
+      "note": "Piste storiche patata a Pernocari, pecorino, ceci, fungo e maiale a Presinaci. Guida Poro.it e calendari turistici non sostituiscono un programma organizzatore attuale; nessuna nuova edizione selezionata.",
+      "newIds": []
+    },
+    {
+      "city": "San Calogero",
+      "query": "\"San Calogero\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-28.json",
+      "sourceUrls": [
+        "https://www.comune.sancalogero.vv.it/home/vivere/eventi.html"
+      ],
+      "note": "Repertorio eventi comunale consultato: pista seconda Sagra prodotti tipici. Risultati Fiera San Calogero di Agrigento e Cesarò esclusi per provincia diversa; nessuna tariffa siciliana importata.",
+      "newIds": []
+    },
+    {
+      "city": "San Costantino Calabro",
+      "query": "\"San Costantino Calabro\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-32.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Pitta China e San Martino trovati su fonti turistiche e stampa; elenco storico Pro Loco indica agosto per Pitta China. Mancano avviso primario e condizioni espositore recenti; nessuna edizione corrente inserita.",
+      "newIds": []
+    },
+    {
+      "city": "San Gregorio d'Ippona",
+      "query": "\"San Gregorio d'Ippona\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-32.json",
+      "sourceUrls": [
+        "https://www.comune.sangregoriodippona.vv.it/eventi/Festa-di-San-Biagio---Zammar-10.html"
+      ],
+      "note": "Inserita Fiera 25 aprile 2024 dalla pagina comunale dettagliata. Etichetta religioso del CMS e gratuità cittadini non usate come prova di accesso gratuito del banco.",
+      "newIds": [
+        "calabria-san-gregorio-d-ippona-fiera-del-25-aprile"
+      ]
+    },
+    {
+      "city": "San Nicola da Crissa",
+      "query": "\"San Nicola da Crissa\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-32.json",
+      "sourceUrls": [
+        "https://www.sscrocifisso.vv.it/art2007/art230107/a230107.htm"
+      ],
+      "note": "Riscontro storico del gennaio 2007 annuncia una fiera campionaria futura a maggio: intenzione, non svolgimento attuale confermato. Elenco Pro Loco parla di festa emigranti. Nessuna aggiunta.",
+      "newIds": []
+    },
+    {
+      "city": "Sant'Onofrio",
+      "query": "\"Sant'Onofrio\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-32.json",
+      "sourceUrls": [
+        "https://www.comune.santonofrio.vv.it/it/vecchi-eventi"
+      ],
+      "note": "Archivio comunale vecchi eventi consultato. Salsiccia e sapori locali nell’elenco storico Pro Loco, senza fonte primaria di edizione corrente e requisiti. Nessuna assenza certificata.",
+      "newIds": []
+    },
+    {
+      "city": "Serra San Bruno",
+      "query": "\"Serra San Bruno\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-36.json",
+      "sourceUrls": [
+        "https://www.comune.serrasanbruno.vv.it/novita/fiera-di-ferragosto-2/"
+      ],
+      "note": "Ferragosto preesistente invariata; proposta aggiornamento separata. Ognissanti 2026 da aggregatore automatico non acquisita da atto originale, esclusa. Regolamento Angolo tradizioni e sito demo Sagr non assunti come calendario corrente.",
+      "newIds": []
+    },
+    {
+      "city": "Simbario",
+      "query": "\"Simbario\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-36.json",
+      "sourceUrls": [
+        "https://comune.simbario.vv.it/"
+      ],
+      "note": "Homepage comunale consultata: calendario vuoto al recupero. Risultati patronale Sette Dolori e Tombolata da aggregatore non documentano stand mercatali; seconda query mirata senza fonte selezionabile.",
+      "newIds": []
+    },
+    {
+      "city": "Sorianello",
+      "query": "\"Sorianello\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-36.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Elenco storico Pro Loco: antipasto calabrese ed emigranti in agosto. Non confuso con Soriano Calabro né Soriano nel Cimino. Nessun programma primario recente selezionato dalla query nominale.",
+      "newIds": []
+    },
+    {
+      "city": "Soriano Calabro",
+      "query": "\"Soriano Calabro\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-36.json",
+      "sourceUrls": [
+        "https://www.comune.sorianocalabro.vv.it/home/vivere.html"
+      ],
+      "note": "Portale comunale e scheda Pro Loco consultati. Festival Arte Sapori Musica su cronaca senza originale acquisito; risultati Sagra Castagne di Soriano nel Cimino esclusi per comune diverso.",
+      "newIds": []
+    },
+    {
+      "city": "Spadola",
+      "query": "\"Spadola\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-40.json",
+      "sourceUrls": [
+        "https://www.tropea.biz/events/festa-del-dolce-a-spadola-e-20-sagra-spadolese/"
+      ],
+      "note": "Sagra Spadolese/Festa Dolce trovata in guida turistica con testo Programma 2025 e widget date 2026: incoerenza, annualità non importata. Prezzi 5/10 € sono consumazioni, non stand. Seconda ricerca mirata eseguita.",
+      "newIds": []
+    },
+    {
+      "city": "Spilinga",
+      "query": "\"Spilinga\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-40.json",
+      "sourceUrls": [
+        "https://www.comune.spilinga.vv.it/novita/avvisi/novita_75.html"
+      ],
+      "note": "Avviso comunale selezionato per sola edizione 2025 della Nduja. Edizione 2026 compare in aggregatori, non adottata senza originale verificato. Allegato dinamico non è un PDF recuperato.",
+      "newIds": [
+        "calabria-spilinga-sagra-della-nduja"
+      ]
+    },
+    {
+      "city": "Stefanaconi",
+      "query": "\"Stefanaconi\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-40.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Sagra Pane 2026 da portali e cronaca, originale Pro Loco non acquisito. Le due voci pane e pane/prodotti tipici dell’elenco storico non diventano due nuove identità.",
+      "newIds": []
+    },
+    {
+      "city": "Tropea",
+      "query": "\"Tropea\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-40.json",
+      "sourceUrls": [
+        "https://www.comune.tropea.vv.it/notizie/borgo-incantato-2025.html"
+      ],
+      "note": "Pagina comunale Borgo Incantato 2025 consultata: accensione luminarie non prova mercato quotidiano. CSV riporta denuncia annullamento mercatini tradizionali 2024 e sostituzione con Coldiretti: non trasferita al 2026, nessuna scheda corrente dedotta.",
+      "newIds": []
+    },
+    {
+      "city": "Vallelonga",
+      "query": "\"Vallelonga\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-44.json",
+      "sourceUrls": [
+        "https://prolocovibomarina.wordpress.com/eventi/"
+      ],
+      "note": "Pista zeppola di agosto nell’elenco storico. Query mirata 2026 restituisce anche gara Vallelonga di Castelgomberto: esclusa perché omonimia fuori Calabria. Nessun programma primario attuale selezionato.",
+      "newIds": []
+    },
+    {
+      "city": "Vazzano",
+      "query": "\"Vazzano\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-44.json",
+      "sourceUrls": [
+        "https://www.prolocovazzano.it/chisiamo.html"
+      ],
+      "note": "Sito Pro Loco Chi siamo consultato: attività associative e zeppolata senza calendario. Pipi e patati da cronaca/elenco storico non promossa a edizione 2026 senza originale datato.",
+      "newIds": []
+    },
+    {
+      "city": "Vibo Valentia",
+      "query": "\"Vibo Valentia\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-44.json",
+      "sourceUrls": [
+        "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf"
+      ],
+      "note": "Sette fiere da art. 29 regolamento, senza annualità. Longobardi/Porto Salvo lasciati fuori per denominazione/occasioni da chiarire. Vibo in Fermento 2026 da testo indicizzato regionale, diretto 403. Patata Zungri attribuita al capoluogo nell’elenco storico scartata per discordanza geografica.",
+      "newIds": [
+        "calabria-vibo-valentia-fiera-del-rosario",
+        "calabria-vibo-valentia-fiera-di-sant-anna-alla-madonnella",
+        "calabria-vibo-valentia-fiera-di-sant-antonio",
+        "calabria-vibo-valentia-fiera-del-carmine",
+        "calabria-vibo-valentia-fiera-di-vibo-marina",
+        "calabria-vibo-valentia-fiera-di-bivona",
+        "calabria-vibo-valentia-fiera-di-piscopio",
+        "calabria-vibo-valentia-vibo-in-fermento"
+      ]
+    },
+    {
+      "city": "Zaccanopoli",
+      "query": "\"Zaccanopoli\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-44.json",
+      "sourceUrls": [
+        "https://www.unpli.info/2018/05/09/linfiorata-di-zaccanopoli-vv/"
+      ],
+      "note": "Riscontro UNPLI Infiorata 2018, non dimostra posteggi commerciali. Prodotti tipici di agosto nell’elenco storico, fiera maggio solo da guida privata; nessuna edizione attuale selezionata.",
+      "newIds": []
+    },
+    {
+      "city": "Zambrone",
+      "query": "\"Zambrone\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-48.json",
+      "sourceUrls": [
+        "https://www.comune.zambrone.vv.it/wp-content/uploads/2024/02/Regolamento-mercatino-estivo.pdf"
+      ],
+      "note": "Due identità distinte: mercatino generale del regolamento 2016 e artigianato lungomare da Aramoni senza anno. Esenzione occupazione storica separata dal prezzo completo. Programma Kermesse 2025 consultato, non trattato come mercato continuo.",
+      "newIds": [
+        "calabria-zambrone-mercatino-estivo",
+        "calabria-zambrone-mercato-dell-artigianato-sul-lungomare"
+      ]
+    },
+    {
+      "city": "Zungri",
+      "query": "\"Zungri\" sagra fiera mercatini Comune Pro Loco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/vibo-valentia-20261105/web-nominale-48.json",
+      "sourceUrls": [
+        "https://comune.zungri.vv.it/index.php/it/vecchi-eventi"
+      ],
+      "note": "Archivio comunale eventi consultato; patata 2025 da cronaca e 2026 da aggregatore, senza originale organizzatore acquisito. Non duplicata nel capoluogo per l’errore dell’elenco storico.",
+      "newIds": []
+    }
+  ]
+}

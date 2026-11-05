@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "province": "Vibo Valentia",
+  "checkedAt": "2026-11-05",
+  "mode": "append-only",
+  "events": {
+    "calabria-drapia-fiera-dei-santi-cosma-e-damiano": {
+      "label": "Canone 2024: 40 o 60 € per l’intera fiera",
+      "kind": "partial",
+      "period": "2024",
+      "details": "25–27 settembre 2024: canone di occupazione 40 € fino a 25 m²; 60 € oltre 25 e fino a 80 m². Non è un prezzo totale di servizi, IVA o altri oneri e non conferma condizioni 2026.",
+      "sourceUrl": "https://www.comune.drapia.vv.it/wp-content/uploads/2024/02/AVVISO-ESERCENTI-FESTIVITA-SANTI-MEDICI-COSMA-E-DAMIANO.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "provincial-original-review"
+    },
+    "calabria-nicotera-mercatino-delle-sette-porte": {
+      "label": "Regolamento: 5 € per domenica, vigenza da verificare",
+      "kind": "fee",
+      "period": null,
+      "details": "Art. 7, pagina 5 verificata anche visivamente: 5 € per singola domenica, comprensivi di occupazione del suolo, gestione e vigilanza; anticipo per il mese. Solo privati/associazioni non professionali. Regolamento sperimentale senza anno di edizione: applicazione corrente non accertata; IVA e altri servizi non specificati.",
+      "sourceUrl": "https://www.comune.nicotera.vv.it/wp-content/uploads/2024/06/Regolamento-Mercatino-delle-pulci.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "provincial-original-review"
+    },
+    "calabria-mileto-commercio-ambulante-per-la-festa-della-mamma-a-paravati": {
+      "label": "2026: bollo 16 €; canone CUP da calcolare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Avviso del 22 aprile 2026, pagina 3 letta visivamente: una marca da bollo di 16 € e ricevuta PagoPA del dovuto secondo tariffe CUP. Il bollo non è il costo del banco; nessun importo CUP totale esposto, IVA e servizi non quantificati. Edizione 10 maggio 2026 e domanda scaduta.",
+      "sourceUrl": "https://www.comune.mileto.vv.it/dam/jcr:94c8fe2d-aa53-44f4-9dfe-ce5941765b6f/AVVISO%20(2).pdf",
+      "checkedAt": "2026-11-05",
+      "review": "provincial-original-review"
+    },
+    "calabria-zambrone-mercatino-estivo": {
+      "label": "2016: esenzione occupazione, non prezzo totale",
+      "kind": "conditional",
+      "period": "2016",
+      "details": "Regolamento e delibera del giugno 2016 prevedono l’esenzione dalla tassa di occupazione per incentivare la partecipazione al mercatino estivo. Non prova gratuità di ogni servizio né l’applicazione dell’esenzione nel 2026; IVA e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.zambrone.vv.it/wp-content/uploads/2024/02/Regolamento-mercatino-estivo.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "provincial-original-review"
+    }
+  }
+}
