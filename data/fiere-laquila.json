@@ -1,0 +1,1636 @@
+{
+  "province": "L'Aquila",
+  "checkedAt": "2026-11-05",
+  "research": {
+    "status": "ricognizione-documentale-con-limiti-consegnata-non-pubblicata",
+    "privateArchive": ".local/ricerche/fiere-laquila-20261105",
+    "methodology": "Ricerca web nominale dei 108 comuni in 27 richieste da quattro query, lettura delle pagine comunali/organizzatori selezionate, ricognizione delle 163 schede UNPLI aquilane e calendario regionale. Ricevute di ricerca non equivalgono a lettura integrale di tutti gli albi o siti. Solo prove commerciali selezionate; nessuna assenza certificata. Nessun contatto a terzi.",
+    "municipalityCoverage": [
+      {
+        "city": "Acciano",
+        "eventCount": 1,
+        "searchQuery": "\"Acciano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-00.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Aielli",
+        "eventCount": 0,
+        "searchQuery": "\"Aielli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-00.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Alfedena",
+        "eventCount": 0,
+        "searchQuery": "\"Alfedena\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-00.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Anversa degli Abruzzi",
+        "eventCount": 0,
+        "searchQuery": "\"Anversa degli Abruzzi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-00.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Ateleta",
+        "eventCount": 0,
+        "searchQuery": "\"Ateleta\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-01.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Avezzano",
+        "eventCount": 2,
+        "searchQuery": "\"Avezzano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-01.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Balsorano",
+        "eventCount": 0,
+        "searchQuery": "\"Balsorano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-01.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Barete",
+        "eventCount": 0,
+        "searchQuery": "\"Barete\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-01.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Barisciano",
+        "eventCount": 0,
+        "searchQuery": "\"Barisciano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-02.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Barrea",
+        "eventCount": 0,
+        "searchQuery": "\"Barrea\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-02.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Bisegna",
+        "eventCount": 0,
+        "searchQuery": "\"Bisegna\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-02.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Bugnara",
+        "eventCount": 0,
+        "searchQuery": "\"Bugnara\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-02.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Cagnano Amiterno",
+        "eventCount": 0,
+        "searchQuery": "\"Cagnano Amiterno\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-03.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Calascio",
+        "eventCount": 0,
+        "searchQuery": "\"Calascio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-03.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Campo di Giove",
+        "eventCount": 1,
+        "searchQuery": "\"Campo di Giove\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-03.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Campotosto",
+        "eventCount": 0,
+        "searchQuery": "\"Campotosto\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-03.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Canistro",
+        "eventCount": 0,
+        "searchQuery": "\"Canistro\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-04.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Cansano",
+        "eventCount": 0,
+        "searchQuery": "\"Cansano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-04.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Capestrano",
+        "eventCount": 0,
+        "searchQuery": "\"Capestrano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-04.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Capistrello",
+        "eventCount": 0,
+        "searchQuery": "\"Capistrello\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-04.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Capitignano",
+        "eventCount": 0,
+        "searchQuery": "\"Capitignano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-05.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Caporciano",
+        "eventCount": 0,
+        "searchQuery": "\"Caporciano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-05.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Cappadocia",
+        "eventCount": 0,
+        "searchQuery": "\"Cappadocia\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-05.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Carapelle Calvisio",
+        "eventCount": 0,
+        "searchQuery": "\"Carapelle Calvisio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-05.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Carsoli",
+        "eventCount": 1,
+        "searchQuery": "\"Carsoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-06.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Castel del Monte",
+        "eventCount": 0,
+        "searchQuery": "\"Castel del Monte\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-06.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Castel di Ieri",
+        "eventCount": 0,
+        "searchQuery": "\"Castel di Ieri\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-06.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Castel di Sangro",
+        "eventCount": 1,
+        "searchQuery": "\"Castel di Sangro\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-06.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Castellafiume",
+        "eventCount": 1,
+        "searchQuery": "\"Castellafiume\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-07.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Castelvecchio Calvisio",
+        "eventCount": 0,
+        "searchQuery": "\"Castelvecchio Calvisio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-07.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Castelvecchio Subequo",
+        "eventCount": 0,
+        "searchQuery": "\"Castelvecchio Subequo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-07.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Celano",
+        "eventCount": 0,
+        "searchQuery": "\"Celano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-07.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Cerchio",
+        "eventCount": 1,
+        "searchQuery": "\"Cerchio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-08.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Civita d'Antino",
+        "eventCount": 0,
+        "searchQuery": "\"Civita d'Antino\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-08.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Civitella Alfedena",
+        "eventCount": 0,
+        "searchQuery": "\"Civitella Alfedena\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-08.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Civitella Roveto",
+        "eventCount": 0,
+        "searchQuery": "\"Civitella Roveto\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-08.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Cocullo",
+        "eventCount": 0,
+        "searchQuery": "\"Cocullo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-09.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Collarmele",
+        "eventCount": 0,
+        "searchQuery": "\"Collarmele\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-09.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Collelongo",
+        "eventCount": 0,
+        "searchQuery": "\"Collelongo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-09.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Collepietro",
+        "eventCount": 0,
+        "searchQuery": "\"Collepietro\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-09.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Corfinio",
+        "eventCount": 0,
+        "searchQuery": "\"Corfinio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-10.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Fagnano Alto",
+        "eventCount": 0,
+        "searchQuery": "\"Fagnano Alto\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-10.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Fontecchio",
+        "eventCount": 0,
+        "searchQuery": "\"Fontecchio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-10.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Fossa",
+        "eventCount": 0,
+        "searchQuery": "\"Fossa\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-10.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Gagliano Aterno",
+        "eventCount": 0,
+        "searchQuery": "\"Gagliano Aterno\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-11.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Gioia dei Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"Gioia dei Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-11.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Goriano Sicoli",
+        "eventCount": 0,
+        "searchQuery": "\"Goriano Sicoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-11.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Introdacqua",
+        "eventCount": 0,
+        "searchQuery": "\"Introdacqua\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-11.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "L'Aquila",
+        "eventCount": 6,
+        "searchQuery": "\"L'Aquila\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-12.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Lecce nei Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"Lecce nei Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-12.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Luco dei Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"Luco dei Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-12.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Lucoli",
+        "eventCount": 0,
+        "searchQuery": "\"Lucoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-12.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Magliano de' Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"Magliano de' Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-13.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Massa d'Albe",
+        "eventCount": 1,
+        "searchQuery": "\"Massa d'Albe\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-13.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Molina Aterno",
+        "eventCount": 0,
+        "searchQuery": "\"Molina Aterno\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-13.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Montereale",
+        "eventCount": 2,
+        "searchQuery": "\"Montereale\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-13.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Morino",
+        "eventCount": 0,
+        "searchQuery": "\"Morino\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-14.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Navelli",
+        "eventCount": 1,
+        "searchQuery": "\"Navelli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-14.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Ocre",
+        "eventCount": 0,
+        "searchQuery": "\"Ocre\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-14.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Ofena",
+        "eventCount": 0,
+        "searchQuery": "\"Ofena\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-14.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Opi",
+        "eventCount": 0,
+        "searchQuery": "\"Opi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-15.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Oricola",
+        "eventCount": 1,
+        "searchQuery": "\"Oricola\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-15.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Ortona dei Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"Ortona dei Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-15.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Ortucchio",
+        "eventCount": 0,
+        "searchQuery": "\"Ortucchio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-15.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Ovindoli",
+        "eventCount": 0,
+        "searchQuery": "\"Ovindoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-16.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pacentro",
+        "eventCount": 0,
+        "searchQuery": "\"Pacentro\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-16.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pereto",
+        "eventCount": 0,
+        "searchQuery": "\"Pereto\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-16.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pescasseroli",
+        "eventCount": 0,
+        "searchQuery": "\"Pescasseroli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-16.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pescina",
+        "eventCount": 1,
+        "searchQuery": "\"Pescina\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-17.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Pescocostanzo",
+        "eventCount": 0,
+        "searchQuery": "\"Pescocostanzo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-17.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pettorano sul Gizio",
+        "eventCount": 0,
+        "searchQuery": "\"Pettorano sul Gizio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-17.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pizzoli",
+        "eventCount": 0,
+        "searchQuery": "\"Pizzoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-17.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Poggio Picenze",
+        "eventCount": 1,
+        "searchQuery": "\"Poggio Picenze\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-18.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Prata d'Ansidonia",
+        "eventCount": 0,
+        "searchQuery": "\"Prata d'Ansidonia\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-18.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Pratola Peligna",
+        "eventCount": 1,
+        "searchQuery": "\"Pratola Peligna\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-18.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Prezza",
+        "eventCount": 1,
+        "searchQuery": "\"Prezza\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-18.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Raiano",
+        "eventCount": 1,
+        "searchQuery": "\"Raiano\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-19.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Rivisondoli",
+        "eventCount": 0,
+        "searchQuery": "\"Rivisondoli\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-19.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Rocca di Botte",
+        "eventCount": 0,
+        "searchQuery": "\"Rocca di Botte\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-19.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Rocca di Cambio",
+        "eventCount": 0,
+        "searchQuery": "\"Rocca di Cambio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-19.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Rocca di Mezzo",
+        "eventCount": 0,
+        "searchQuery": "\"Rocca di Mezzo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-20.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Rocca Pia",
+        "eventCount": 0,
+        "searchQuery": "\"Rocca Pia\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-20.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Roccacasale",
+        "eventCount": 0,
+        "searchQuery": "\"Roccacasale\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-20.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Roccaraso",
+        "eventCount": 0,
+        "searchQuery": "\"Roccaraso\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-20.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "San Benedetto dei Marsi",
+        "eventCount": 0,
+        "searchQuery": "\"San Benedetto dei Marsi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-21.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "San Benedetto in Perillis",
+        "eventCount": 0,
+        "searchQuery": "\"San Benedetto in Perillis\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-21.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "San Demetrio ne' Vestini",
+        "eventCount": 1,
+        "searchQuery": "\"San Demetrio ne' Vestini\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-21.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "San Pio delle Camere",
+        "eventCount": 0,
+        "searchQuery": "\"San Pio delle Camere\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-21.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "San Vincenzo Valle Roveto",
+        "eventCount": 0,
+        "searchQuery": "\"San Vincenzo Valle Roveto\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-22.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Sant'Eusanio Forconese",
+        "eventCount": 1,
+        "searchQuery": "\"Sant'Eusanio Forconese\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-22.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Sante Marie",
+        "eventCount": 1,
+        "searchQuery": "\"Sante Marie\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-22.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Santo Stefano di Sessanio",
+        "eventCount": 0,
+        "searchQuery": "\"Santo Stefano di Sessanio\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-22.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Scanno",
+        "eventCount": 0,
+        "searchQuery": "\"Scanno\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-23.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Scontrone",
+        "eventCount": 0,
+        "searchQuery": "\"Scontrone\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-23.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Scoppito",
+        "eventCount": 0,
+        "searchQuery": "\"Scoppito\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-23.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Scurcola Marsicana",
+        "eventCount": 0,
+        "searchQuery": "\"Scurcola Marsicana\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-23.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Secinaro",
+        "eventCount": 0,
+        "searchQuery": "\"Secinaro\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-24.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Sulmona",
+        "eventCount": 1,
+        "searchQuery": "\"Sulmona\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-24.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Tagliacozzo",
+        "eventCount": 2,
+        "searchQuery": "\"Tagliacozzo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-24.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Tione degli Abruzzi",
+        "eventCount": 0,
+        "searchQuery": "\"Tione degli Abruzzi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-24.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Tornimparte",
+        "eventCount": 1,
+        "searchQuery": "\"Tornimparte\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-25.txt",
+        "outcome": "Schede selezionate da fonti primarie, con date, periodo e limiti indicati negli eventi."
+      },
+      {
+        "city": "Trasacco",
+        "eventCount": 0,
+        "searchQuery": "\"Trasacco\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-25.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Villa Sant'Angelo",
+        "eventCount": 0,
+        "searchQuery": "\"Villa Sant'Angelo\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-25.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Villa Santa Lucia degli Abruzzi",
+        "eventCount": 0,
+        "searchQuery": "\"Villa Santa Lucia degli Abruzzi\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-25.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Villalago",
+        "eventCount": 0,
+        "searchQuery": "\"Villalago\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-26.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Villavallelonga",
+        "eventCount": 0,
+        "searchQuery": "\"Villavallelonga\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-26.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Villetta Barrea",
+        "eventCount": 0,
+        "searchQuery": "\"Villetta Barrea\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-26.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      },
+      {
+        "city": "Vittorito",
+        "eventCount": 0,
+        "searchQuery": "\"Vittorito\" fiera mercatino sagra comune 2026",
+        "privateReceipt": "web/nominale-26.txt",
+        "outcome": "Ricerca nominale web e confronto con la raccolta UNPLI aquilana: nessuna scheda con riscontro commerciale primario sufficiente selezionata. Non attesta assenza di eventi; albi, archivi e social non integralmente esaminati."
+      }
+    ],
+    "pending": [
+      {
+        "city": "Poggio Picenze",
+        "topic": "San Salvatore 2026",
+        "sourceUrl": "https://eventilaquila.it/evento/fiera-di-san-salvatore-2026-a-poggio-picenze-fiera-campionaria-calici-eroici-e-mostre/",
+        "outcome": "8 novembre 2026 segnalato da stampa/aggregatore. La fonte comunale leggibile resta 9 novembre 2025: nessuna promozione automatica."
+      },
+      {
+        "city": "L'Aquila",
+        "topic": "Tartufi 2026",
+        "sourceUrl": "https://www.fieratartufidabruzzo.it/",
+        "outcome": "Header e locandina indicano 27–29 novembre 2026, footer ancora 2025 e testo estraneo di gioco online: adottata solo la fonte Regione dell’edizione 2025. Contenuto estraneo non seguito."
+      },
+      {
+        "city": "Ovindoli",
+        "topic": "Mercatino usato, antiquariato e collezionismo",
+        "sourceUrl": "https://www.comune.ovindoli.aq.it/novita/individuazione-date-svolgimento-del-mercatino-ai-sensi-dellart-4-del-regolamento-comunale-per-lo-svolgimento-del-mercatino-dellusato-dellantiquariato-e-del-collezionismo/",
+        "outcome": "Calendario allegato esplicitamente 2019, aggiornamento pagina 2024: esclusa generazione di un calendario 2026."
+      },
+      {
+        "city": "Rocca di Mezzo",
+        "topic": "Avviso mercatini antiquariato/artigianato 2024",
+        "sourceUrl": "https://comune.roccadimezzo.aq.it/wp-content/uploads/2024/08/Avviso-pubblico-mercatini-antiquariato-ed-artigianato-signed.pdf",
+        "outcome": "PDF restituisce 404: non dedotti contenuti o date."
+      },
+      {
+        "city": "Roccaraso",
+        "topic": "Mercatini di Natale",
+        "sourceUrl": "https://web.roccarasoturismo.it/mercatini-di-natale-a-roccaraso/",
+        "outcome": "Pagina turistica 2016 e notizie 2019, non adottate come conferma 2026. Le date del treno Fondazione FS non provano le aperture di tutti i mercatini."
+      },
+      {
+        "city": "Balsorano",
+        "topic": "Fiere tradizionali e infiorata",
+        "outcome": "PIAO storico ricorda fiere; scheda UNPLI infiorata 2026 categorizzata fiere ma senza vendita. Esclusa importazione automatica dalla categoria."
+      },
+      {
+        "city": "Civitella Roveto",
+        "topic": "Lungo le Antiche Rue 2026",
+        "outcome": "Date 16–18 ottobre da aggregatori e rimandi social; originale organizzatore/comunale attuale non recuperato in questa ricerca. Nessuna conferma da sola reputazione della festa."
+      },
+      {
+        "city": "L'Aquila",
+        "topic": "Gusto Italia 2026 e fiere Perdonanza",
+        "outcome": "Gusto Italia individuato nella stampa, non recuperato avviso primario; programmi Perdonanza reperiti con edizioni storiche non univoche: non usati per conferme correnti."
+      },
+      {
+        "city": "Avezzano",
+        "topic": "Santo Stefano",
+        "outcome": "26 dicembre 2025 in stampa; non recuperata fonte primaria sufficiente, nessuna proiezione al 2026."
+      }
+    ],
+    "exclusions": [
+      "Mercati settimanali ordinari e loro rinvii; esercizi di usato in sede fissa.",
+      "Infiorate, carnevali, concerti e feste religiose privi di prova commerciale autonoma.",
+      "Sagre con solo menù o ristoro interno, senza riscontro selezionato di mercato o vendita; nessuna deduzione di spazio per esterni.",
+      "Affluenze promozionali UNPLI, numeri di banchi e biglietti del pubblico non trasformati in notorietà, disponibilità o costi espositore."
+    ],
+    "limits": [
+      "Siti comunali non sempre indicizzati, endpoint JavaScript, allegati mancanti, errori 404/410 e certificati: registrati nelle prove private.",
+      "Ricerca delle fonti accessibili, non censimento certificato. Le lacune dei comuni senza scheda e le piste pendenti rimangono esplicite.",
+      "Scheda Epifania preesistente conservata integralmente; programma Natale comunale 2025/26 ne riscontra il 5 gennaio 2026, senza alterarla.",
+      "Fonte PDF L’Aquila letta tramite estrazione del browser; download diretto e screenshot hanno restituito pagina di involucro: non dichiarato originale PDF acquisito."
+    ]
+  },
+  "events": [
+    {
+      "region": "Abruzzo",
+      "name": "Fiera dell'Epifania",
+      "city": "L'Aquila",
+      "months": "1",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laquila.it/archivio3_notizie_0_11215.html",
+        "label": "comune.laquila.it"
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "L'Aquila",
+      "name": "Fiera di Pasqua a Paganica",
+      "months": "3,4",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laquila.it/moduli/output_immagine.php?id=16129",
+        "label": "www.comune.laquila.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera annuale di merci nel centro di Paganica, tradizionalmente il lunedì e il martedì dopo Pasqua.",
+      "sectors": "Alimentare e non alimentare",
+      "venue": "Centro storico di Paganica",
+      "participation": {
+        "type": "check",
+        "note": "Il bando 2025–2027 descrive la ricorrenza e le categorie ammesse, senza confermare qui le singole giornate operative del 2026. Assegnazione per graduatoria; canone, rifiuti e quota organizzativa da verificare. Il bando è per il gestore, non una domanda aperta per il singolo banco."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "L'Aquila",
+      "name": "Fiera di San Massimo",
+      "months": "6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laquila.it/moduli/output_immagine.php?id=16129",
+        "label": "www.comune.laquila.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera annuale nel centro storico, prevista dal regolamento la domenica successiva al 10 giugno.",
+      "sectors": "Alimentare e non alimentare",
+      "venue": "Centro storico",
+      "participation": {
+        "type": "check",
+        "note": "Il bando 2025–2027 descrive la ricorrenza e le categorie ammesse, senza confermare qui le singole giornate operative del 2026. Assegnazione per graduatoria; canone, rifiuti e quota organizzativa da verificare. Il bando è per il gestore, non una domanda aperta per il singolo banco."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "L'Aquila",
+      "name": "Fiera di Ognissanti a Paganica",
+      "months": "10,11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laquila.it/moduli/output_immagine.php?id=16129",
+        "label": "www.comune.laquila.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Ricorrenza fieristica di Paganica indicata il 31 ottobre e il 1° novembre nel bando di gestione 2025–2027.",
+      "sectors": "Alimentare e non alimentare",
+      "venue": "Paganica",
+      "participation": {
+        "type": "check",
+        "note": "Il bando 2025–2027 descrive la ricorrenza e le categorie ammesse, senza confermare qui le singole giornate operative del 2026. Assegnazione per graduatoria; canone, rifiuti e quota organizzativa da verificare. Il bando è per il gestore, non una domanda aperta per il singolo banco."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "L'Aquila",
+      "name": "Fiera di Ottobre ad Arischia",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://associazioneabruzzofiera.it/fiera-di-ottobre/",
+        "label": "associazioneabruzzofiera.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera legata alla cultura contadina e all’allevamento, con mostre, iniziative equestri e attività per le famiglie.",
+      "sectors": "Alimentare e non alimentare",
+      "venue": "Arischia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://associazioneabruzzofiera.it/fiera-di-ottobre/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La locandina dell’organizzatore conferma il 10–11 ottobre 2026; il bando comunale documenta i settori della fiera. Verificare con Abruzzo Fiera spazi commerciali, selezione e costi, distinti dalle attività equestri e cinofile."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Acciano",
+      "name": "Fiera di Beffi - Fiera della Capra",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.acciano.aq.it/novita/fiera-della-capra-2026-invito-agli-espositori/",
+        "label": "www.comune.acciano.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera nel borgo di Beffi con prodotti tipici, street food e artigianato locale.",
+      "sectors": "Prodotti tipici, street food e artigianato",
+      "venue": "Beffi, Chiesa di San Michele Arcangelo e Castello medievale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.acciano.aq.it/novita/fiera-della-capra-2026-invito-agli-espositori/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026 per commercianti e hobbisti locali: domanda agli uffici comunali, PEC o email; in caso di richieste superiori agli spazi, assegnazione secondo l’ordine delle domande. Esenzione del canone di occupazione indicata dal Comune; non equivale a gratuità di ogni servizio o costo accessorio."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Avezzano",
+      "name": "Fiera del 25 Aprile",
+      "months": "4",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.avezzano.aq.it/archiviositoistituzionale/torna-la-fiera-del-25-aprile-di-avezzano-160-commercianti-affolleranno-le-strade-del-centro-citta-area-food-ed-eventi-collaterali-da-non-perdere/",
+        "label": "comune.avezzano.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera cittadina con banchi di merci, artigianato, prodotti tipici e aree gastronomiche dedicate.",
+      "sectors": "Alimentari, oggettistica e artigianato",
+      "venue": "Centro, Piazza della Repubblica e vie limitrofe",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.avezzano.aq.it/archiviositoistituzionale/torna-la-fiera-del-25-aprile-di-avezzano-160-commercianti-affolleranno-le-strade-del-centro-citta-area-food-ed-eventi-collaterali-da-non-perdere/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Orario pubblico 8–20; ingresso operatori non prima delle 7 e uscita entro le 22. Cottura e bombole consentite solo nell’area food indicata e nell’eventuale area street food autorizzata. Le aree collaterali hanno gestori distinti; tariffe non pubblicate nella notizia."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Avezzano",
+      "name": "Marsicaland - Mercato della Terra",
+      "months": "9",
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.avezzano.aq.it/novita/marsicaland-2026-cresce-il-mercato-della-terra-il-corteo-dei-marsi-racconta-nuove-pagine-dellidentita-marsicana/",
+        "label": "comune.avezzano.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Festival diffuso dell’agroalimentare marsicano con un mercato diretto dei produttori, esposizioni e incontri.",
+      "sectors": "Prodotti agricoli e agroalimentari",
+      "venue": "Avezzano",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-18",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.avezzano.aq.it/novita/marsicaland-2026-cresce-il-mercato-della-terra-il-corteo-dei-marsi-racconta-nuove-pagine-dellidentita-marsicana/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Partecipazione di produttori documentata dal Comune; non dedotta un’ammissione generalizzata per ambulanti o food truck. Le condizioni dei bandi 2025 non sono trasferite al 2026; preventivo e contratto da verificare con l’organizzazione."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Tagliacozzo",
+      "name": "Fiera di Sant’Anna",
+      "months": "7",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.tagliacozzo.aq.it/notizie/3611742/assegnazione-posteggi-fiera-sant-anna-26-luglio",
+        "label": "comune.tagliacozzo.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera cittadina con assegnazione dei posteggi agli operatori su graduatoria.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.tagliacozzo.aq.it/notizie/3611742/assegnazione-posteggi-fiera-sant-anna-26-luglio"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026: scelta dei posteggi il 16 luglio alle 14:30 in sala consiliare, riservata ai richiedenti in regola con DURC e CUP comunale. Domande tardive solo su eventuali posti residui; nessuna disponibilità attuale attestata e nessuna tariffa totale ricavata."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Tagliacozzo",
+      "name": "Fiera di San Rocco",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.tagliacozzo.aq.it/notizie/3620244/assegnazione-posteggi-fiera-sant-anna-26-luglio",
+        "label": "comune.tagliacozzo.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera cittadina con assegnazione dei posteggi agli operatori su graduatoria.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.tagliacozzo.aq.it/notizie/3620244/assegnazione-posteggi-fiera-sant-anna-26-luglio"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026: scelta dei posteggi il 30 luglio alle 14:30 in sala consiliare, riservata ai richiedenti in regola con DURC e CUP comunale. Domande tardive solo su eventuali posti residui; nessuna disponibilità attuale attestata e nessuna tariffa totale ricavata."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Tornimparte",
+      "name": "Antica Fiera di Tornimparte",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.tornimparte.aq.it/index.php/it/eventi/699822",
+        "label": "www.comune.tornimparte.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera rurale di Villagrande con produzioni locali, animali, oggetti in legno, abbigliamento e merci varie.",
+      "sectors": "Alimentare, abbigliamento, calzature, giocattoli e artigianato in legno",
+      "venue": "Villagrande",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.tornimparte.aq.it/index.php/it/eventi/699822"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Dal 2026 il Comune indica la terza domenica di ottobre. Modulo aggiornato 2026: domanda almeno 45 giorni prima, originale e pagamento 30 giorni prima, priorità alle presenze e massimo 100 posteggi complessivi (non posti liberi). Bollo 16 euro e canone separato; formula e sconto 2026 richiedono chiarimento prima del pagamento."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Montereale",
+      "name": "Fiera di Ognissanti",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.montereale.it/vivere_il_comune/territorio/territorio_3.html",
+        "label": "www.comune.montereale.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera di merci e bestiame ricordata dal Comune tra le tradizioni ancora presenti, il 1° novembre.",
+      "sectors": "Merci varie e bestiame",
+      "venue": "Montereale",
+      "participation": {
+        "type": "check",
+        "note": "Pagina comunale sulle tradizioni: il 1° novembre è la ricorrenza abituale, non una conferma dell’edizione 2026. Verificare programma operativo, ammissione e costi."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Montereale",
+      "name": "Fiera dell’Ottavario",
+      "months": "3,4,5",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.montereale.it/vivere_il_comune/territorio/territorio_3.html",
+        "label": "www.comune.montereale.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera tradizionale di merci e bestiame la domenica successiva alla Pasqua.",
+      "sectors": "Merci varie e bestiame",
+      "venue": "Montereale",
+      "participation": {
+        "type": "check",
+        "note": "Ricorrenza descritta dal Comune; nessuna data 2026 calcolata automaticamente. Mesi primaverili indicativi, da confermare con il programma e con l’ufficio competente."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Poggio Picenze",
+      "name": "Fiera di San Salvatore",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.poggiopicenze.aq.it/eventi/3332704/fiera-san-salvatore",
+        "label": "comune.poggiopicenze.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera nelle vie del paese con prodotti tipici, oggettistica, abbigliamento, giocattoli e casalinghi.",
+      "sectors": "Prodotti tipici, abbigliamento, giocattoli e casalinghi",
+      "venue": "Vie del paese",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-09",
+          "end": "2025-11-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.poggiopicenze.aq.it/eventi/3332704/fiera-san-salvatore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale consultata documenta il 9 novembre 2025. La data 8 novembre 2026 compare in fonti secondarie, non adottate qui come conferma primaria. Il costo gratuito della pagina riguarda l’accesso del pubblico, non il banco. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Pescina",
+      "name": "Fiera del Tre Novembre",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.pescina.aq.it/notizie/3673703/fiera-3-novembre-2026-mercato-martedi",
+        "label": "comune.pescina.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera annuale svolta insieme al mercato del martedì in Borgo Unrra Casas.",
+      "venue": "Borgo Unrra Casas",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.pescina.aq.it/notizie/3673703/fiera-3-novembre-2026-mercato-martedi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Notizia comunale del 30 ottobre 2026 recuperata dal browser di ricerca; download diretto non disponibile. Un’unica scheda per la fiera: il mercato settimanale concomitante non genera una seconda manifestazione. Settori, assegnazioni e tariffe non specificati nel testo recuperato."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Cerchio",
+      "name": "Fiera di Maria",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.cerchio.aq.it/vivere-il-comune/eventi/392-edizione-della-fiera-di-maria/",
+        "label": "comune.cerchio.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera dedicata alla Madonna di Piedimonte, con espositori, commercianti e artigiani.",
+      "sectors": "Artigianato",
+      "venue": "Cerchio",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-09-14",
+          "end": "2025-09-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cerchio.aq.it/vivere-il-comune/eventi/392-edizione-della-fiera-di-maria/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione. Requisiti, ammissione della propria merce, domanda e costi del banco restano da verificare con Comune o organizzatore; nessun posto disponibile attestato. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "San Demetrio ne' Vestini",
+      "name": "Fiera delle Bucalette",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.sandemetrionevestini.aq.it/novita/fiera-delle-bucalette-2025/",
+        "label": "www.comune.sandemetrionevestini.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera tradizionale per operatori economici, con avviso comunale sul canone di occupazione del suolo.",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-21",
+          "end": "2025-11-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sandemetrionevestini.aq.it/novita/fiera-delle-bucalette-2025/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2025: regolare domanda di partecipazione e canone di suolo simbolico di 1 euro; modalità di versamento da comunicare ai richiedenti. Il provvedimento non certifica costo totale, altri oneri o condizioni 2026. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Oricola",
+      "name": "Fiera del Cavaliere",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oricola.aq.it/c066062/po/mostra_news.php?area=H&id=850",
+        "label": "comune.oricola.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera rivolta agli operatori economici ambulanti, organizzata dall’associazione Una Piazza per Curiosare.",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.oricola.aq.it/c066062/po/mostra_news.php?area=H&id=850"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso comunale 2026: necessaria regolare licenza; l’associazione Una Piazza per Curiosare gestisce organizzazione e informazioni per gli operatori. Non dedotti posti liberi né prezzi dai mercatini antiquari omonimi."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Sulmona",
+      "name": "Caccia all’Affare - mercatino vintage",
+      "months": "8",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.mercatiniantiquari.com/cacciaallaffaresulmona.html",
+        "label": "www.mercatiniantiquari.com",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatino del vintage e dell’antiquariato nei giardini della Villa Comunale.",
+      "sectors": "Antiquariato, collezionismo, vintage, libri e vinili",
+      "venue": "Giardini della Villa Comunale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.mercatiniantiquari.com/cacciaallaffaresulmona.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "L’organizzatore ammette commercianti e hobbisti con tesserino della Regione Abruzzo per antiquariato, collezionismo e vintage. Domanda attraverso il sito dell’organizzatore; ingresso libero del pubblico distinto da costo e assegnazione dello spazio."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Campo di Giove",
+      "name": "Mercatini di Natale - Il Borgo Incantato",
+      "months": "11,12,1",
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.campodigiove.aq.it/it/news/mercatini-di-natale-campo-di-giove-2025-26?type=2",
+        "label": "comune.campodigiove.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Casette e fondaci con artigianato locale, prodotti tipici, dolci e idee regalo.",
+      "sectors": "Artigianato, prodotti tipici e articoli da regalo",
+      "venue": "Vie del borgo",
+      "editions": [
+        {
+          "year": 2025,
+          "label": "Stagione 22 novembre 2025–6 gennaio 2026; singole aperture da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.campodigiove.aq.it/it/news/mercatini-di-natale-campo-di-giove-2025-26?type=2",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale del 28 novembre 2025 descrive il periodo della stagione 2025/26. Non prova apertura quotidiana né le date di novembre/dicembre 2026. Richiedere calendario puntuale e condizioni per gli espositori."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "L'Aquila",
+      "name": "Fiera internazionale dei Tartufi d’Abruzzo",
+      "months": "11",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.regione.abruzzo.it/notizie/fiera-internazionale-dei-tartufi-d-abruzzo-imprudente-presenta-l-edizione-2025-tra-nuove",
+        "label": "www.regione.abruzzo.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Rassegna del tartufo e dell’agroalimentare abruzzese, con produttori, degustazioni e attività di settore.",
+      "sectors": "Tartufo e prodotti agroalimentari",
+      "venue": "Piazza Duomo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-28",
+          "end": "2025-11-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.regione.abruzzo.it/notizie/fiera-internazionale-dei-tartufi-d-abruzzo-imprudente-presenta-l-edizione-2025-tra-nuove"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte regionale dell’edizione 2025, organizzata con ARAP. Le date 27–29 novembre 2026 del sito della fiera restano da riscontrare su una fonte istituzionale indipendente: la pagina contiene anche testo estraneo all’evento e residui 2025. Nessuna tariffa ricavata da ingressi o degustazioni. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Raiano",
+      "name": "Andar per Frantoi e Mercatini",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cittadellolio.it/raiano-celebra-lolio-nuovo-con-andar-per-frantoi-e-mercatini/",
+        "label": "www.cittadellolio.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Giornata dedicata all’olio nuovo peligno e alla cultura olivicola del territorio.",
+      "sectors": "Olio e prodotti tipici",
+      "venue": "Raiano",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cittadellolio.it/raiano-celebra-lolio-nuovo-con-andar-per-frantoi-e-mercatini/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La rete Città dell’Olio conferma domenica 15 novembre 2026 dalle 10 circa. Il programma non dettaglia qui i singoli banchi, categorie ammesse o quote: partecipazione commerciale da verificare con Comune e organizzazione."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Sant'Eusanio Forconese",
+      "name": "Fiera delle Forche",
+      "months": "8",
+      "category": "artigianato",
+      "source": {
+        "url": "https://comune.santeusanio.aq.it/vivere-il-comune/eventi/fiera-delle-forche/",
+        "label": "comune.santeusanio.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mostra e vendita di opere dell’artigianato locale, attrezzi agricoli e stand gastronomici.",
+      "sectors": "Artigianato in legno e vimini, prodotti alimentari",
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-08-17",
+          "end": "2023-08-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.santeusanio.aq.it/vivere-il-comune/eventi/fiera-delle-forche/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale riporta l’edizione 2023 e descrive vendita artigianale e ristoro. Le date 2026 di aggregatori non sono promosse a conferma. La voce nessun costo per il pubblico non determina il prezzo del banco. Edizione documentata 2023: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Sante Marie",
+      "name": "Sagra della Castagna",
+      "months": "10,11",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2026/07/05/sagra-della-castagna-sante-marie-31-ottobre-e-1-novembre-2026/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici, artigianato e prodotti a base di castagne nel centro storico.",
+      "sectors": "Prodotti tipici, castagne e artigianato",
+      "venue": "Centro storico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2026/07/05/sagra-della-castagna-sante-marie-31-ottobre-e-1-novembre-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Navelli",
+      "name": "Sagra dei Ceci e dello Zafferano",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2026/05/24/sagra-dei-ceci-e-dello-zafferano-navelli-22-23-agosto-2026/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dei prodotti del territorio con mercato dell’artigianato e iniziative nel borgo.",
+      "sectors": "Ceci, zafferano e artigianato",
+      "venue": "Piazza San Pelino e borgo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2026/05/24/sagra-dei-ceci-e-dello-zafferano-navelli-22-23-agosto-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Prezza",
+      "name": "Sagra dell’Aglio Rosso di Sulmona",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2026/05/23/sagra-dellaglio-rosso-di-sulmona-campo-di-fano-prezza-aq-10-e-11-luglio-2026/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici e vendita dell’aglio rosso di Sulmona a Campo di Fano.",
+      "sectors": "Aglio e prodotti tipici",
+      "venue": "Campo di Fano, Piazza Peppino Impastato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-10",
+          "end": "2026-07-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2026/05/23/sagra-dellaglio-rosso-di-sulmona-campo-di-fano-prezza-aq-10-e-11-luglio-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Massa d'Albe",
+      "name": "Mercatini di Natale ad Alba Fucens",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2024/08/15/mercatini-di-natale-alba-fucens-alba-fucens-6-8-dicembre-2025/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Esposizione di prodotti natalizi e gastronomici, food truck e iniziative nel borgo.",
+      "sectors": "Prodotti tipici e articoli natalizi",
+      "venue": "Alba Fucens, centro storico",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-06",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2024/08/15/mercatini-di-natale-alba-fucens-alba-fucens-6-8-dicembre-2025/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Castel di Sangro",
+      "name": "Arte e Mestieri - Street Food",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2024/07/28/arte-e-mestieri-street-food-castel-di-sangro-22-23-agosto-2025/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatini, degustazioni e musica nel centro cittadino.",
+      "sectors": "Prodotti alimentari",
+      "venue": "Viale degli Alpini, Piazza Plebiscito e centro storico",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-22",
+          "end": "2025-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2024/07/28/arte-e-mestieri-street-food-castel-di-sangro-22-23-agosto-2025/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026. Edizione documentata 2025: non conferma le date del 2026."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Carsoli",
+      "name": "Tufo sotto le Stelle",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2024/07/28/tufo-sotto-le-stelle-tufo-di-carsoli-9-agosto-2025/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Percorso gastronomico e cantine con mercatino di artigianato e prodotti tipici.",
+      "sectors": "Artigianato e prodotti tipici",
+      "venue": "Tufo di Carsoli, centro storico",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-09",
+          "end": "2025-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2024/07/28/tufo-sotto-le-stelle-tufo-di-carsoli-9-agosto-2025/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026. Edizione documentata 2025: non conferma le date del 2026. Esiste una scheda gastronomica 2026 della stessa manifestazione, ma non conferma esplicitamente il mercatino: mantenuto il riscontro commerciale 2025."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Castellafiume",
+      "name": "Birriamo Castellafiume",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://abruzzoconleproloco.it/2024/07/25/birriamo-castellafiume-castellafiume-5-6-luglio-2025/",
+        "label": "UNPLI Abruzzo - Abruzzo con le Pro Loco",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione con street food, mercatini e intrattenimento.",
+      "sectors": "Street food",
+      "venue": "Piazza Matteotti e Via Napoli",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-05",
+          "end": "2025-07-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://abruzzoconleproloco.it/2024/07/25/birriamo-castellafiume-castellafiume-5-6-luglio-2025/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda della rete UNPLI documenta banchi, vendita o mercatini. Non attesta ammissione automatica di venditori esterni; requisiti, selezione e costi da verificare con la Pro Loco. Per le edizioni storiche non trasferire le date al 2026. Edizione documentata 2025: non conferma le date del 2026. Esiste una scheda gastronomica 2026 della stessa manifestazione, ma non conferma esplicitamente il mercatino: mantenuto il riscontro commerciale 2025."
+      }
+    },
+    {
+      "region": "Abruzzo",
+      "city": "Pratola Peligna",
+      "name": "Fiera della Madonna della Libera",
+      "months": "5",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.pratolapeligna.aq.it/novita/avvisi/novita_1092.html",
+        "label": "www.comune.pratolapeligna.aq.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera di merci nelle giornate dei festeggiamenti della Madonna della Libera, programmata in due fine settimana distinti.",
+      "sectors": "Artigianato e merci varie",
+      "venue": "Pratola Peligna",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-02",
+          "end": "2026-05-03",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.pratolapeligna.aq.it/novita/avvisi/novita_1092.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-09",
+          "end": "2026-05-10",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.pratolapeligna.aq.it/novita/avvisi/novita_1092.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso e schema di convenzione 2026: giornate 2–3 e 9–10 maggio, senza continuità dal 4 all’8. Selezione del gestore distinta dalle domande dei singoli commercianti. Operatori autorizzati e artigiani per produzione propria; CUP comunale e rimborso giornaliero al gestore separati, importi non ricavati dall’offerta assente. Il termine 27 febbraio ore 10 riguarda la gestione, non il banco."
+      }
+    }
+  ]
+}

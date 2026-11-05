@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "province": "L'Aquila",
+  "baseCommit": "358d781",
+  "baseCatalogCount": 9587,
+  "baseCatalogSha256": "c10d80e2cb4713ac50af583eebdf5fcbe7b0ac81c73cc3a8b980e9ee9785adb7",
+  "auditFile": "data/fiere-laquila.json",
+  "preservedEvents": [
+    {
+      "region": "Abruzzo",
+      "name": "Fiera dell'Epifania",
+      "city": "L'Aquila",
+      "months": [
+        1
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laquila.it/archivio3_notizie_0_11215.html",
+        "label": "comune.laquila.it"
+      },
+      "id": "abruzzo-l-aquila-fiera-dell-epifania",
+      "province": "L'Aquila",
+      "lat": 42.35122195,
+      "lng": 13.39843828,
+      "merchandiseSectors": [],
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Non è ancora disponibile una scheda operativa verificata. Consulta la fonte e chiedi al Comune o all’organizzatore se sono previsti posteggi per il tuo settore, come presentare domanda e quali sono i costi."
+      }
+    }
+  ],
+  "addedIds": [
+    "abruzzo-l-aquila-fiera-di-pasqua-a-paganica",
+    "abruzzo-l-aquila-fiera-di-san-massimo",
+    "abruzzo-l-aquila-fiera-di-ognissanti-a-paganica",
+    "abruzzo-l-aquila-fiera-di-ottobre-ad-arischia",
+    "abruzzo-acciano-fiera-di-beffi-fiera-della-capra",
+    "abruzzo-avezzano-fiera-del-25-aprile",
+    "abruzzo-avezzano-marsicaland-mercato-della-terra",
+    "abruzzo-tagliacozzo-fiera-di-sant-anna",
+    "abruzzo-tagliacozzo-fiera-di-san-rocco",
+    "abruzzo-tornimparte-antica-fiera-di-tornimparte",
+    "abruzzo-montereale-fiera-di-ognissanti",
+    "abruzzo-montereale-fiera-dell-ottavario",
+    "abruzzo-poggio-picenze-fiera-di-san-salvatore",
+    "abruzzo-pescina-fiera-del-tre-novembre",
+    "abruzzo-cerchio-fiera-di-maria",
+    "abruzzo-san-demetrio-ne-vestini-fiera-delle-bucalette",
+    "abruzzo-oricola-fiera-del-cavaliere",
+    "abruzzo-sulmona-caccia-all-affare-mercatino-vintage",
+    "abruzzo-campo-di-giove-mercatini-di-natale-il-borgo-incantato",
+    "abruzzo-l-aquila-fiera-internazionale-dei-tartufi-d-abruzzo",
+    "abruzzo-raiano-andar-per-frantoi-e-mercatini",
+    "abruzzo-sant-eusanio-forconese-fiera-delle-forche",
+    "abruzzo-sante-marie-sagra-della-castagna",
+    "abruzzo-navelli-sagra-dei-ceci-e-dello-zafferano",
+    "abruzzo-prezza-sagra-dell-aglio-rosso-di-sulmona",
+    "abruzzo-massa-d-albe-mercatini-di-natale-ad-alba-fucens",
+    "abruzzo-castel-di-sangro-arte-e-mestieri-street-food",
+    "abruzzo-carsoli-tufo-sotto-le-stelle",
+    "abruzzo-castellafiume-birriamo-castellafiume",
+    "abruzzo-pratola-peligna-fiera-della-madonna-della-libera"
+  ],
+  "pricingRecords": [
+    {
+      "eventId": "abruzzo-acciano-fiera-di-beffi-fiera-della-capra",
+      "kind": "partial",
+      "label": "Canone di occupazione esente (2026)",
+      "details": "Avviso comunale 2026: nessun canone per le occupazioni della Fiera di Beffi per commercianti e hobbisti locali. Altri servizi e oneri non quantificati; nessun prezzo totale del banco attestato.",
+      "sourceUrl": "https://www.comune.acciano.aq.it/novita/fiera-della-capra-2026-invito-agli-espositori/",
+      "checkedAt": "2026-11-05",
+      "period": "2026"
+    },
+    {
+      "eventId": "abruzzo-tornimparte-antica-fiera-di-tornimparte",
+      "kind": "partial",
+      "label": "Bollo 16 €; canone separato (2026)",
+      "details": "Modulo comunale aggiornato 2026: bollo 16 euro, oltre al canone. Il modulo scrive 0,50 euro × mq totali e subito dopo uno sconto del 50% per il 2026: non chiarisce se la cifra sia già ridotta. Nessun totale né aliquota netta dedotta. Nessuna indicazione IVA o altri servizi.",
+      "sourceUrl": "https://www.comune.tornimparte.aq.it/s3/7299/allegati/modulistica/modulistica-fiera-agg-to2026.pdf",
+      "checkedAt": "2026-11-05",
+      "period": "2026"
+    },
+    {
+      "eventId": "abruzzo-san-demetrio-ne-vestini-fiera-delle-bucalette",
+      "kind": "partial",
+      "label": "Canone di suolo 1 € (2025)",
+      "details": "Delibera comunale 81 del 24 settembre 2025, richiamata dall’avviso: canone di occupazione ridotto a 1 euro per l’edizione 21 novembre 2025. Domanda regolare necessaria; altri oneri non quantificati. Non trasferibile al 2026 e non prezzo totale del banco.",
+      "sourceUrl": "https://www.comune.sandemetrionevestini.aq.it/novita/fiera-delle-bucalette-2025/",
+      "checkedAt": "2026-11-05",
+      "period": "2025"
+    }
+  ],
+  "integration": {
+    "builderTuple": [
+      "L'Aquila",
+      "fiere-laquila.json"
+    ],
+    "catalogDateMinimum": "2026-11-05",
+    "policy": "Inserire la tupla nell’elenco provinciale del builder; aggiungere i tre riscontri a fiere-costi.json senza sostituire il file centrale. Rigenerare dal checkout di integrazione aggiornato e confrontare per ID. Non copiare il catalogo completo della fixture sopra quello corrente. Recensioni/database e pubblicazione esclusi da questa consegna."
+  }
+}
