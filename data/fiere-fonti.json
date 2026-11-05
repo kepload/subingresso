@@ -41050,5 +41050,429 @@
       "type": "check",
       "note": "Fonte regionale: agosto senza anno; nessuna data 2026 confermata."
     }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caltanissetta",
+    "name": "Fiera di San Michele",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://caltanissetta-api.municipiumapp.it/s3/1099/allegati/bando-fiera-di-s-michele-2026.pdf",
+      "label": "Comune di Caltanissetta, bando 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera merceologica di via Rochester con aree alimentari, artigianali e commerciali.",
+    "sectors": "Alimentare, non alimentare, artigianato e hobbisti",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://caltanissetta-api.municipiumapp.it/s3/1099/allegati/bando-fiera-di-s-michele-2026.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Edizione 2026: 151 posteggi complessivi, con aree distinte. Domanda PEC scaduta il 6 agosto 2026 alle 12. Bando e graduatoria non provano disponibilità attuale; verificare il prossimo avviso."
+    },
+    "id": "sicilia-caltanissetta-fiera-di-san-michele"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caltanissetta",
+    "name": "Mercatini di Natale",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://caltanissetta-api.municipiumapp.it/s3/1099/allegati/avviso-pubblico-mercatini-di-natale-2025.pdf",
+      "label": "Comune di Caltanissetta, avviso organizzazione 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Gazebo natalizi in Corso Umberto I previsti dall’avviso comunale 2025.",
+    "sectors": "Prodotti alimentari e non alimentari natalizi, artigianato",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-07",
+        "end": "2025-12-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://caltanissetta-api.municipiumapp.it/s3/1099/allegati/avviso-pubblico-mercatini-di-natale-2025.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma previsto nell’avviso per affidare la gestione: 7–29 dicembre 2025, apertura dalle 18. Minimo 15 spazi espositivi e 5 di degustazione/vendita. Non è un bando corrente per il singolo banco; nessuna edizione 2026 dedotta."
+    },
+    "id": "sicilia-caltanissetta-mercatini-di-natale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caltanissetta",
+    "name": "Sicily Mineral Show — Borsa-scambio del minerale e del fossile",
+    "months": "11",
+    "category": "espositiva",
+    "source": {
+      "url": "https://new.geologidisicilia.it/wp-content/uploads/2026/10/Pieghevole-48%C2%B0-Sicily-Mineral-Show.pdf",
+      "label": "Associazione Mineralogica, programma presso Ordine Geologi Sicilia",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Borsa-scambio mineralogica nelle sale Borsellino e Livatino dell’Hotel San Michele, via Fasci Siciliani 6.",
+    "sectors": "Minerali, gemme, fossili e libri di settore; collezionismo",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://new.geologidisicilia.it/wp-content/uploads/2026/10/Pieghevole-48%C2%B0-Sicily-Mineral-Show.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "48ª edizione: borsa-scambio sabato 7 novembre 10–21 e domenica 8 novembre 9–21. Il 6 novembre è giornata di studi, esclusa dalle date della borsa. Selezione e condizioni dello stand da concordare con l’organizzatore."
+    },
+    "id": "sicilia-caltanissetta-sicily-mineral-show-borsa-scambio-del-minerale-e-del-fossile"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caltanissetta",
+    "name": "Caltanissetta Vinyl Market",
+    "months": "9",
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.caltanissetta.it/index.php/it/news/il-fascino-a-33-giri-conquista-caltanissetta-arriva-il-vinyl-market-2026",
+      "label": "Comune di Caltanissetta",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mostra-mercato del disco al Centro Culturale Polivalente Michele Abbate, organizzata da Decibel Record Store.",
+    "sectors": "Dischi nuovi e usati, vinili, collezionismo, artigianato",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.caltanissetta.it/index.php/it/news/il-fascino-a-33-giri-conquista-caltanissetta-arriva-il-vinyl-market-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Prima edizione documentata 18–19 settembre 2026, dalle 10:30 alle 24. Spazi per negozi, etichette indipendenti e realtà artigianali; quota e disponibilità degli stand non pubblicate nella fonte."
+    },
+    "id": "sicilia-caltanissetta-caltanissetta-vinyl-market"
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Cataldo",
+    "name": "Fiera di Ottobre",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.san-cataldo.cl.it/en-us/download/bando-fiera-487928-4-1787-47791a09defc80273212bceb01f00d5c",
+      "label": "Comune di San Cataldo, bando 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera del SS. Crocifisso nel quartiere Santa Germana, tra via Firenze, viale dei Tigli e viale dei Platani.",
+    "sectors": "Alimentare, non alimentare, artigianato e hobbisti",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.san-cataldo.cl.it/en-us/download/bando-fiera-487928-4-1787-47791a09defc80273212bceb01f00d5c"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il bando indica 9–13 ottobre 2026, con 115 posteggi non alimentari e 28 alimentari. Domande scadute il 28 settembre. Il punto sul montaggio cita anche il 10 ottobre: orari effettivi da ricontrollare; nessuna disponibilità attuale dedotta."
+    },
+    "id": "sicilia-san-cataldo-fiera-di-ottobre"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Butera",
+    "name": "Butera a Tavola",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.provincia.caltanissetta.it/albopretorioonline_2017/2025-0763-06-DIR.pdf",
+      "label": "Libero Consorzio Comunale di Caltanissetta, determina 763/2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione enogastronomica dedicata alle produzioni di Butera.",
+    "sectors": "Prodotti enogastronomici e alimentari tipici",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-03",
+        "end": "2025-10-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.provincia.caltanissetta.it/albopretorioonline_2017/2025-0763-06-DIR.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Date 3–5 ottobre 2025 previste nell’atto di contributo provinciale. Il contributo all’organizzazione non è una quota per espositori. Non sono documentati un avviso corrente per banchi o le condizioni dell’edizione 2026."
+    },
+    "id": "sicilia-butera-butera-a-tavola"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Marianopoli",
+    "name": "Mercatini di Natale",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.marianopoli.cl.it/vivere-il-comune/territorio/gli-eventi/",
+      "label": "Comune di Marianopoli, territorio e tradizioni",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatini inseriti dal Comune tra le iniziative del periodo natalizio di Marianopoli.",
+    "sectors": "Merceologie da verificare nell’avviso espositore",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Fonte territoriale comunale aggiornata nel 2024: documenta la tradizione natalizia, senza giorni di apertura o un’edizione annuale. Non si deducono posteggi disponibili, merceologie ammesse o costi."
+    },
+    "id": "sicilia-marianopoli-mercatini-di-natale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Marianopoli",
+    "name": "Sagra della Ricotta",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.marianopoli.cl.it/vivere-il-comune/territorio/gli-eventi/",
+      "label": "Comune di Marianopoli, territorio e tradizioni",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Degustazioni di ricotta e prodotti della cucina manchese in Piazza Garibaldi nel periodo natalizio.",
+    "sectors": "Ricotta e prodotti alimentari tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza natalizia descritta nella pagina comunale, senza calendario annuale. Verificare con l’organizzazione se sono ammessi produttori esterni e quali requisiti e condizioni si applicano."
+    },
+    "id": "sicilia-marianopoli-sagra-della-ricotta"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Niscemi",
+    "name": "Sagra del Carciofo Violetto",
+    "months": "3,4",
+    "category": "sagra",
+    "source": {
+      "url": "https://proloconiscemi.altervista.org/sagra-del-carciofo-festa_bosco/",
+      "label": "Pro Loco Niscemi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione dedicata al carciofo violetto, con degustazioni di preparazioni locali nel centro di Niscemi.",
+    "sectors": "Carciofi e prodotti enogastronomici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La Pro Loco descrive il periodo marzo–aprile, senza calendario corrente utilizzabile. Il portale comunale indicizzato documenta gli stand della 44ª edizione 2026, ma il recupero diretto è bloccato da reindirizzamenti: non sono pubblicate date annuali o tariffe dedotte."
+    },
+    "id": "sicilia-niscemi-sagra-del-carciofo-violetto"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Mussomeli",
+    "name": "Sagra della Ricotta e del Cannolo",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comunedimussomeli.it/mussomeli/de/attachment.php?mosdoc=0&serialDocumento=011O0X020264S",
+      "label": "Comune di Mussomeli, ordinanza 29/2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Gazebo gastronomici in Piazza Caltanissetta e Piazza della Repubblica per la festa di San Pasquale.",
+    "sectors": "Ricotta, cannoli e prodotti alimentari",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-02",
+        "end": "2026-05-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comunedimussomeli.it/mussomeli/de/attachment.php?mosdoc=0&serialDocumento=011O0X020264S"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "8ª edizione prevista dall’ordinanza per il 2 e 3 maggio 2026 su richiesta della Pro Loco. Non estendere le date al 30 aprile riportato da altri portali. Quote e ammissione di nuovi espositori non specificate."
+    },
+    "id": "sicilia-mussomeli-sagra-della-ricotta-e-del-cannolo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Mussomeli",
+    "name": "Sagra della Guasteddra con Mercatini di Natale",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomussomeli.com/programma-della-ix-sagra-della-guasteddra/",
+      "label": "Pro Loco Mussomeli, programma Natale 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand e mercatini in Piazza Umberto I con guastedde, bevande calde e vino cotto.",
+    "sectors": "Guastedde, bevande e prodotti natalizi",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-07",
+        "end": "2025-12-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://prolocomussomeli.com/programma-della-ix-sagra-della-guasteddra/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "9ª edizione: stand espositivi il 7 e 8 dicembre 2025, 10:30–13:30 e 17:30–23. Il convegno del 6 non diventa giornata di banco. Contattare la Pro Loco per condizioni e selezione; nessuna data 2026 proiettata."
+    },
+    "id": "sicilia-mussomeli-sagra-della-guasteddra-con-mercatini-di-natale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Resuttano",
+    "name": "Sagra per la valorizzazione di produzioni tipiche locali",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/system/files/2026-02/Decreto%20liquidazione%20Comune%20di%20Resuttano%202024.pdf",
+      "label": "Regione Siciliana, decreto di liquidazione 1160/2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Iniziativa promozionale delle produzioni locali documentata nella rendicontazione comunale del 2024.",
+    "sectors": "Prodotti alimentari e produzioni tipiche locali",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-09-08",
+        "end": "2024-09-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/system/files/2026-02/Decreto%20liquidazione%20Comune%20di%20Resuttano%202024.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Svolgimento documentato l’8 settembre 2024, dopo il rinvio dal 7. La liquidazione regionale del 2026 riguarda l’edizione 2024 e non conferma un nuovo evento. Prodotti specifici, accesso ai banchi e quote da verificare."
+    },
+    "id": "sicilia-resuttano-sagra-per-la-valorizzazione-di-produzioni-tipiche-locali"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Milena",
+    "name": "Sagra della ’Mbriulata",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/system/files/2025-11/Decreto%20liquidazione%20Comune%20Milena.pdf",
+      "label": "Regione Siciliana, liquidazione Comune di Milena",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra gastronomica in Piazza Garibaldi e via Nazionale, dedicata alla ’mbriulata.",
+    "sectors": "’Mbriulata e prodotti alimentari locali",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-09",
+        "end": "2024-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/system/files/2025-11/Decreto%20liquidazione%20Comune%20Milena.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il decreto del 14 novembre 2025 rendiconta la 27ª edizione del 9 agosto 2024. Non usare la data del decreto come data della sagra. Costi e selezione degli espositori non documentati; nessuna data 2026 dedotta."
+    },
+    "id": "sicilia-milena-sagra-della-mbriulata"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sommatino",
+    "name": "Fiera del Cavallo del Centro Sicilia",
+    "months": "5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.regione.sicilia.it/system/files/2024-06/definitivo%20Decreto%20comune%20di%20Sommatino%20Iniziativa%20Diretta%202024.pdf",
+      "label": "Regione Siciliana, decreto di impegno 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione promozionale equestre di Sommatino documentata dal decreto regionale 2024.",
+    "sectors": "Cavalli e settore equestre; altre merceologie da verificare",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-05-10",
+        "end": "2024-05-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.regione.sicilia.it/system/files/2024-06/definitivo%20Decreto%20comune%20di%20Sommatino%20Iniziativa%20Diretta%202024.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Prima edizione prevista il 10–12 maggio 2024. Fonte di finanziamento, senza attestazione di disponibilità dei posteggi o calendario 2026. Per esporre occorre verificare organizzazione, requisiti e condizioni specifiche."
+    },
+    "id": "sicilia-sommatino-fiera-del-cavallo-del-centro-sicilia"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sutera",
+    "name": "Sagra del Pitirri",
+    "months": "4",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocosutera.it/",
+      "label": "Pro Loco Sutera",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra del piatto tradizionale pitirri in Piazza Sant’Agata, promossa dalla Pro Loco.",
+    "sectors": "Pitirri e gastronomia locale",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-11",
+        "end": "2026-04-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://prolocosutera.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Seconda edizione documentata l’11 aprile 2026. È un’iniziativa gastronomica organizzata dalla Pro Loco: apertura a operatori esterni e costi del banco non specificati. Il Presepe Vivente resta fuori da questa scheda."
+    },
+    "id": "sicilia-sutera-sagra-del-pitirri"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Serradifalco",
+    "name": "Sagra dei Grani Antichi e della Pizza Tradizionale",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/system/files/2026-08/Decreto%20liquidazione%20Comune%20Serradifalco_signed.pdf",
+      "label": "Regione Siciliana, DRS 5375/2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione dedicata ai grani antichi e alla pizza tradizionale di Serradifalco.",
+    "sectors": "Grani antichi, pizza e prodotti alimentari",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-10",
+        "end": "2025-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/system/files/2026-08/Decreto%20liquidazione%20Comune%20Serradifalco_signed.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il decreto di liquidazione riguarda la quinta edizione svoltasi il 10–11 agosto 2025. La pubblicazione regionale nel 2026 non è conferma di un’edizione 2026. Partecipazione commerciale e costi da verificare."
+    },
+    "id": "sicilia-serradifalco-sagra-dei-grani-antichi-e-della-pizza-tradizionale"
   }
 ]

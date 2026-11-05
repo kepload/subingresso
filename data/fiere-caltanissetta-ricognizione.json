@@ -1,0 +1,188 @@
+{
+  "province": "Caltanissetta",
+  "checkedAt": "2026-11-06",
+  "method": "Ricerca nominale per comune e approfondimenti selettivi; non lettura integrale di albi/social, non censimento certificato.",
+  "municipalities": [
+    {
+      "city": "Acquaviva Platani",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-3.txt",
+      "newIds": [],
+      "outcome": "Porchetta: soltanto portale con edizione non confermata, nessuna fonte primaria di edizione recuperata."
+    },
+    {
+      "city": "Bompensiere",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-3.txt",
+      "newIds": [],
+      "outcome": "Guastedda Nadurisa: resoconto stampa con dichiarazioni del sindaco; manca programma originale."
+    },
+    {
+      "city": "Butera",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-3.txt",
+      "newIds": [
+        "sicilia-butera-butera-a-tavola"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Caltanissetta",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-18.txt",
+      "newIds": [
+        "sicilia-caltanissetta-fiera-di-san-michele",
+        "sicilia-caltanissetta-mercatini-di-natale",
+        "sicilia-caltanissetta-sicily-mineral-show-borsa-scambio-del-minerale-e-del-fossile",
+        "sicilia-caltanissetta-caltanissetta-vinyl-market"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Campofranco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-18.txt",
+      "newIds": [],
+      "outcome": "Pupi di Pane: piste documentali e programma estivo comunale; non recuperato un originale di edizione sufficientemente specifico. Guide storiche non usate per proiettare il 2026."
+    },
+    {
+      "city": "Delia",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-13.txt",
+      "newIds": [],
+      "outcome": "Cuddrireddra e Pesca: portali discordanti su 29–30 o 29–31 agosto; il regolamento comunale non prova le date. Esclusa."
+    },
+    {
+      "city": "Gela",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-13.txt",
+      "newIds": [],
+      "outcome": "Piste Pane e mercatini; risultati confondono anche Santa Cristina Gela. Nessuna fonte originale specifica confermata."
+    },
+    {
+      "city": "Marianopoli",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-4.txt",
+      "newIds": [
+        "sicilia-marianopoli-mercatini-di-natale",
+        "sicilia-marianopoli-sagra-della-ricotta"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Mazzarino",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-7.txt",
+      "newIds": [],
+      "outcome": "Olio: prima edizione 2025 sulla stampa; date 2026 da aggregatori, senza originale corrente recuperato."
+    },
+    {
+      "city": "Milena",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-16.txt",
+      "newIds": [
+        "sicilia-milena-sagra-della-mbriulata"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Montedoro",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-5.txt",
+      "newIds": [],
+      "outcome": "Guastedda: stampa sul 14 novembre 2026 e sul 15 novembre 2025; programma originale non recuperato."
+    },
+    {
+      "city": "Mussomeli",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-15.txt",
+      "newIds": [
+        "sicilia-mussomeli-sagra-della-ricotta-e-del-cannolo",
+        "sicilia-mussomeli-sagra-della-guasteddra-con-mercatini-di-natale"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Niscemi",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-8.txt",
+      "newIds": [
+        "sicilia-niscemi-sagra-del-carciofo-violetto"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Resuttano",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-5.txt",
+      "newIds": [
+        "sicilia-resuttano-sagra-per-la-valorizzazione-di-produzioni-tipiche-locali"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Riesi",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-5.txt",
+      "newIds": [],
+      "outcome": "Prodotti tipici riesini: piste incomplete; esclusi risultati omonimi di Rio Marina."
+    },
+    {
+      "city": "San Cataldo",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-10.txt",
+      "newIds": [
+        "sicilia-san-cataldo-fiera-di-ottobre"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Santa Caterina Villarmosa",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-6.txt",
+      "newIds": [],
+      "outcome": "Muffoletto e fiera estiva da portali/stampa, senza originale di edizione recuperato."
+    },
+    {
+      "city": "Serradifalco",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-20.txt",
+      "newIds": [
+        "sicilia-serradifalco-sagra-dei-grani-antichi-e-della-pizza-tradizionale"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sommatino",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-6.txt",
+      "newIds": [
+        "sicilia-sommatino-fiera-del-cavallo-del-centro-sicilia"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sutera",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-8.txt",
+      "newIds": [
+        "sicilia-sutera-sagra-del-pitirri"
+      ],
+      "outcome": "Aggiunte soltanto identità con fonte primaria; date storiche e condizioni specificate nel delta. Nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Vallelunga Pratameno",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-17.txt",
+      "newIds": [],
+      "outcome": "Uva: guide storiche discordanti settembre/ottobre; nessun calendario originale corrente."
+    },
+    {
+      "city": "Villalba",
+      "queryExecuted": true,
+      "evidenceFile": ".local/ricerche/caltanissetta-20261106/web-18.txt",
+      "newIds": [],
+      "outcome": "Pomodoro/lenticchia: stampa 2025 e portali 2026, senza programma originale recuperato."
+    }
+  ]
+}
