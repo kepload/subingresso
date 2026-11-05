@@ -1,6 +1,6 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **5 novembre 2026**: **101 concluse, 9 aperte su 110**.
+Stato aggiornato il **5 novembre 2026**: **102 concluse, 8 aperte su 110**.
 L'Aquila, Cosenza, Catanzaro e Reggio Calabria verificati online il 5 novembre;
 le altre caselle conservano gli esiti precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
@@ -128,7 +128,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [ ] **92. Agrigento**
 - [ ] **93. Oristano**
 - [ ] **94. Nuoro**
-- [ ] **95. Vibo Valentia**
+- [x] **95. Vibo Valentia**
 - [x] **96. Crotone**
 - [ ] **97. Caltanissetta**
 - [x] **98. Enna**
@@ -144,3 +144,5 @@ Ogliastra e Sulcis Iglesiente: 23 schede ciascuna verificate online; fonti e lim
 L'Aquila, Cosenza, Catanzaro e Reggio Calabria: 153 aggiunte pubblicate il 5 novembre 2026, catalogo 9.740; tutte le 9.587 schede precedenti invariate. Ricerca con limiti nei rispettivi dossier; Pavia riservata e automazioni ferme.
 
 Crotone: 11 nuove schede in 9 comuni verificate online il 5 novembre 2026; tutte le 9.740 precedenti invariate. [Fonti e limiti](../data/fiere-dossier/crotone-20261105.md).
+
+Vibo Valentia: 23 nuove schede in 10 comuni, ricognizione dei 50 comuni e quattro note economiche; verificate online il 5 novembre 2026. [Fonti e limiti](../data/fiere-dossier/vibo-valentia-20261105.md). Rieti conserva il proprio stato.

@@ -2,8 +2,9 @@
 
 Proposta append-only sulla base `da5ff17`: **23 nuove identità in 10 comuni**,
 ricognizione nominale dei **50 comuni**, quattro note economiche separate.
-Ricerca conclusa con limiti; integrazione e pubblicazione ancora da eseguire.
-Nessuna modifica al catalogo nazionale, alle sue fonti, ai costi nazionali o al DB.
+Ricerca conclusa con limiti; delta integrato e verificato online su autorizzazione
+esplicita. Catalogo, fonti e costi nazionali aggiornati solo con le aggiunte;
+registro ID recensioni sincronizzato senza modificare recensioni.
 
 ## File e prove
 
@@ -11,7 +12,8 @@ Nessuna modifica al catalogo nazionale, alle sue fonti, ai costi nazionali o al 
   [ricognizione comune per comune](../fiere-vibo-valentia-ricognizione.json),
   [costi](../fiere-vibo-valentia-costi.json).
 - Originali, testi estratti, risposte HTTP, locandina e query effettive:
-  `.local/ricerche/vibo-valentia-20261105/` di questo worktree.
+  `.local/worktrees/vibo-valentia-20261105/.local/ricerche/vibo-valentia-20261105/`
+  della root principale; ricerca privata esclusa dal deploy.
 - [Verificatore provinciale](../../scripts/verify-fiere-vibo-valentia.py);
   esito e fixture in `.local/verifiche/vibo-valentia-20261105/`.
 - Backup preventivo già verificato dal coordinatore:
@@ -80,7 +82,7 @@ nessuna cancellazione estesa al 2026. Calendario Spadola con testo 2025 e widget
 
 ## Verifiche
 
-`python scripts/verify-fiere-vibo-valentia.py` usa il builder effettivo copiato
+Nel worktree di ricerca, `python scripts/verify-fiere-vibo-valentia.py` usa il builder effettivo copiato
 in fixture privata: riproduce prima la base, aggiunge soltanto delta e costi
 provinciali nelle copie, esegue due build e confronta tutti i record.
 
@@ -88,5 +90,19 @@ Esito: **9.751 → 9.774** nella sola fixture; tutti i 9.751 record e le 448 not
 economiche precedenti invariati, 23 nuovi ID coerenti col builder e con la
 provincia, quattro nuovi riscontri economici, due build identiche. Impronte
 dei quattro file protetti nazionali verificate invariate. Nessun test con
-scritture reali o invio di email, nessuna checklist chiusa o pubblicazione
-dichiarata. Prima di integrare servirà il backup aggiornato del coordinatore.
+scritture reali o invio di email; questo primo esito riguarda la fixture di ricerca.
+Backup aggiornato eseguito e verificato nella fase di pubblicazione sotto.
+
+## Pubblicazione verificata
+
+Commit `c5bc603635676a5596482a6d9b3cca30473e8390`, Vercel Ready `dpl_3qJBmC1F71cZvVzME7SPANjWNKf7`.
+Dominio https://subingresso.it: catalogo completo semanticamente identico alla build,
+9.774 schede; tutti i 9.751 record precedenti e le 448 note economiche invariati.
+Backup aggiornato `backup/session-20261105-195303-pubblica-vibo-valentia-20261105`
+e ramo `backup/pre-pubblica-vibo-valentia-20261105` verificati prima delle modifiche.
+Due build identiche, settori e SEO passati; filtro, dettagli e tutte le 24 pagine
+provinciali verificati in Chromium 1440/320 e WebKit 390, locali e online.
+9.774 ID recensioni sincronizzati; 23 letture API pubbliche riuscite, nessun dato
+reale di collaudo creato. Prove in `.local/verifiche/vibo-valentia-pubblica-20261105/`.
+Casella chiusa solo dopo verifica live; stato 102 concluse/8 aperte.
+Rieti conserva la propria sessione e il proprio stato; nessuna prosecuzione.

@@ -21,10 +21,10 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **5 novembre 2026**: **101 province concluse e 9 aperte su 110**,
+Ultimo esito **5 novembre 2026**: **102 province concluse e 8 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **9.751** dopo Crotone (+11 in 9 comuni); tutte le 9.740 schede precedenti invariate.
+Catalogo **9.774** dopo Vibo Valentia (+23 in 10 comuni); tutte le 9.751 schede precedenti invariate.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -105,6 +105,14 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **5 novembre 2026 — Vibo Valentia:** +23 schede in 10 comuni e quattro note
+  economiche; ricognizione dei 50 comuni con limiti. Pubblicato `c5bc603`,
+  Vercel Ready; catalogo online identico, 9.751 schede e 448 note precedenti
+  invariate. Build ripetibili, settori, SEO/SSR, Chromium 1440/320 e WebKit 390
+  locali/online passati; 9.774 ID recensioni sincronizzati, 23 letture API reali
+  riuscite. [Fonti e limiti](data/fiere-dossier/vibo-valentia-20261105.md).
+  Rieti prosegue separatamente; nessuna altra provincia o automazione avviata.
+
 - **5 novembre 2026 — due nuove sessioni avviate su richiesta:** Rieti e Vibo
   Valentia in parallelo, worktree isolati da `da5ff17`; autorizzata anche la
   pubblicazione al termine delle ricerche e verifiche. Pubblicazioni serializzate
@@ -112,7 +120,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
   Stato, thread, fonti di avvio e rapporti in
   `.local/lavori/rieti-vibo-pubblica-20261105/`. Backup remoto sessione
   `backup/session-20261105-193831-due-province-rieti-vibo-20261105` e ramo
-  `backup/pre-rieti-vibo-20261105` verificati. Non ancora dichiarate pubblicate.
+  `backup/pre-rieti-vibo-20261105` verificati. Vibo Valentia pubblicata e verificata;
+  Rieti resta nella propria sessione isolata.
 
 - **5 novembre 2026 — Crotone:** pubblicate 11 nuove schede in 9 comuni,
   ricognizione nominale dei 27 comuni con limiti espliciti. Commit `1c53ab9`,
