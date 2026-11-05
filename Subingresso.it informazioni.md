@@ -105,6 +105,18 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 — tre nuove sessioni su richiesta:** Potenza, Campobasso e
+  Agrigento avviate in parallelo, con thread nuovi e worktree isolati da
+  `d240d1b`. Ricerca per comune, verifiche e pubblicazione al termine;
+  integrazioni serializzate con mutex, ciascuna sessione si ferma dopo la
+  propria provincia. Stato e thread in
+  `.local/lavori/tre-province-20261106/sessioni.json`, aggiornamenti nei
+  rispettivi `*-stato.json` e rapporti finali. Backup remoto sessione
+  `backup/session-20261106-004134-tre-province-potenza-campobasso-agrigento-20261106`
+  e ramo `backup/pre-tre-province-20261106` verificati. Pavia riservata;
+  Oristano e Nuoro non avviate. Nessun vecchio ciclo riattivato.
+
+
 - **6 novembre 2026 — Caltanissetta:** +16 schede in 11 comuni, una nota economica;
   ricognizione dei 22 comuni con limiti espliciti. Pubblicato `3f1b508`,
   Vercel Ready; catalogo online identico e 9.843 schede precedenti invariate.
