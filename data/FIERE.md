@@ -7,8 +7,9 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 
 ## Stato e vincoli da conservare
 
-- [Checklist unica](../docs/fiere-province.md): aggiornata il 4 novembre,
-  96 concluse e 14 aperte su 110; Matera, Medio Campidano, Ogliastra e Sulcis Iglesiente verificati online su richieste circoscritte,
+- [Checklist unica](../docs/fiere-province.md): aggiornata il 5 novembre,
+  100 concluse e 10 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+  verificate online il 5 novembre su richiesta circoscritta,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
 - Verificare dati e commit effettivi, preservare ID, fonti e province estranee.

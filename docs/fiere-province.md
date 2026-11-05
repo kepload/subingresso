@@ -1,8 +1,8 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **4 novembre 2026**: **96 concluse, 14 aperte su 110**.
-Matera, Medio Campidano, Ogliastra e Sulcis Iglesiente verificati online il 4 novembre; le altre caselle conservano gli esiti
-precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
+Stato aggiornato il **5 novembre 2026**: **100 concluse, 10 aperte su 110**.
+L'Aquila, Cosenza, Catanzaro e Reggio Calabria verificati online il 5 novembre;
+le altre caselle conservano gli esiti precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
 
 **Automazioni ferme. Pavia riservata.**
@@ -117,11 +117,11 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **81. Foggia**
 - [x] **82. Avellino**
 - [x] **83. Benevento**
-- [ ] **84. L'Aquila**
+- [x] **84. L'Aquila**
 - [x] **85. Matera**
-- [ ] **86. Cosenza**
-- [ ] **87. Catanzaro**
-- [ ] **88. Reggio Calabria**
+- [x] **86. Cosenza**
+- [x] **87. Catanzaro**
+- [x] **88. Reggio Calabria**
 - [ ] **89. Potenza**
 - [ ] **90. Campobasso**
 - [ ] **91. Rieti**
@@ -140,3 +140,5 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 Medio Campidano: nove schede verificate online, ricognizione limitata dei 28 comuni; [dossier](../data/fiere-dossier/119-medio-campidano-20261104.md).
 
 Ogliastra e Sulcis Iglesiente: 23 schede ciascuna verificate online; fonti e limiti nei dossier [Ogliastra](../data/fiere-dossier/120-ogliastra-20261104.md) e [Sulcis Iglesiente](../data/fiere-dossier/121-sulcis-iglesiente-20261104.md).
+
+L'Aquila, Cosenza, Catanzaro e Reggio Calabria: 153 aggiunte pubblicate il 5 novembre 2026, catalogo 9.740; tutte le 9.587 schede precedenti invariate. Ricerca con limiti nei rispettivi dossier; Pavia riservata e automazioni ferme.

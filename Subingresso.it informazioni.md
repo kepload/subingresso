@@ -21,12 +21,11 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **4 novembre 2026**: **96 province concluse e 14 aperte su 110**,
-Pavia inclusa tra le aperte e **riservata**. Ogliastra e Sulcis Iglesiente
-completati da due sessioni isolate su richiesta: 23 schede ciascuna, catalogo
-**9.584**, pubblicazione verificata. Entrambe le sessioni ferme dopo la propria
-provincia. Le altre caselle mantengono gli esiti precedenti. Ricerca con limiti
-espliciti, non censimento certificato.
+Ultimo esito **5 novembre 2026**: **100 province concluse e 10 aperte su 110**,
+Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
+isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
+Catalogo **9.740**, tutte le 9.587 schede precedenti invariate.
+Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
 disabilitati; vecchio Auto già disabilitato. La richiesta singola per Matera
@@ -105,6 +104,17 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **5 novembre 2026 - quattro province:** integrate e pubblicate su richiesta
+  L'Aquila, Cosenza, Catanzaro e Reggio Calabria: +153 schede e 22 riscontri
+  economici. Tutte le 9.587 schede e 426 note economiche precedenti invariate;
+  due build identiche, SEO/SSR e browser locali Chromium 1440/320 e WebKit 390
+  superati. Commit `96e62d3`, Vercel Ready, catalogo e asset online verificati;
+  registro recensioni sincronizzato a 9.740 ID, letture API reali riuscite.
+  Prove in `.local/verifiche/quattro-20261105`; fonti e limiti nei quattro
+  dossier provinciali. Test generale storico fermo su aspettativa Brescia
+  gia falsa nella base precedente; nessun dato estraneo modificato.
+  Nessun riavvio dei loop o ricerca aggiuntiva.
 
 - **4 novembre 2026 — contatori ADS:** su richiesta corretta la raccolta e
   ripuliti i report da 80 a 3 clic misurati: escluse 71 richieste del picco
