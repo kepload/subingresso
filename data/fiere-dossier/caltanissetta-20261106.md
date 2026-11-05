@@ -2,7 +2,7 @@
 
 Ricognizione nominale dei **22 comuni**, con approfondimenti selettivi:
 **16 nuove schede in 11 comuni**, tutte da fonti primarie. Catalogo da
-**9.843 a 9.859**; tutte le schede precedenti e le 452 note economiche
+**9.843 a 9.859**; tutte le schede precedenti e le 453 note economiche
 preesistenti conservate integralmente. Aggiunta una nota economica.
 
 ## Fonti e criterio
@@ -62,7 +62,13 @@ Nessun contatto a terzi, domanda, loop o altra provincia avviati.
 
 ## Verifiche e pubblicazione
 
-Due build identiche e preservazione integrale della base verificate.
-In corso verifiche settori, SEO/SSR, browser e pubblicazione.
-Checklist ancora aperta fino alla verifica online.
+Due build identiche, preservazione integrale delle 9.843 schede e delle
+453 note precedenti, settori e SEO/SSR verificati. Calendario filtrato,
+16 dettagli e 16 pagine autonome passati in Chromium 1440/320 e WebKit 390,
+sia localmente sia online.
+
+Pubblicato `3f1b508`, Vercel Ready; catalogo online semanticamente identico,
+16 letture API recensioni reali riuscite. Sincronizzati 9.859 ID recensioni,
+senza creare o modificare recensioni. Checklist chiusa dopo queste verifiche:
+104 province concluse, 6 aperte; Pavia riservata. Sessione terminata.
 

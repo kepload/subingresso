@@ -7,8 +7,8 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 
 ## Stato e vincoli da conservare
 
-- [Checklist unica](../docs/fiere-province.md): aggiornata il 5 novembre,
-  103 concluse e 7 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+- [Checklist unica](../docs/fiere-province.md): aggiornata il 6 novembre,
+  104 concluse e 6 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
@@ -32,6 +32,8 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
+
+- [Caltanissetta — 6 novembre 2026](fiere-dossier/caltanissetta-20261106.md): +16 schede in 11 comuni e una nota economica; ricognizione dei 22 comuni con limiti, pubblicata e verificata online.
 
 - [Rieti — 5 novembre 2026](fiere-dossier/rieti-20261105.md): +69 schede in 53 comuni e una quota espositore documentata, verificate online; ricognizione dei 73 comuni con limiti.
 
