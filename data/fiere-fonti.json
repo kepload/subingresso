@@ -38802,5 +38802,539 @@
       "type": "check",
       "note": "Date dalla delibera 44/2025. La pagina evento comunale mostra un intervallo incoerente 2024–2025: non adottato. Patrocinio gratuito e ingresso pubblico non sono gratuità dello stand; nessuna data 2026 dedotta."
     }
+  },
+  {
+    "id": "calabria-drapia-fiera-dei-santi-cosma-e-damiano",
+    "region": "Calabria",
+    "city": "Drapia",
+    "name": "Fiera dei Santi Cosma e Damiano",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.drapia.vv.it/wp-content/uploads/2024/02/AVVISO-ESERCENTI-FESTIVITA-SANTI-MEDICI-COSMA-E-DAMIANO.pdf",
+      "label": "Comune di Drapia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Avviso comunale per la fiera di settembre 2024.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-09-25",
+        "end": "2024-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.drapia.vv.it/wp-content/uploads/2024/02/AVVISO-ESERCENTI-FESTIVITA-SANTI-MEDICI-COSMA-E-DAMIANO.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Edizione storica 25–27 settembre 2024, domanda entro il 20 settembre 2024: termini trascorsi. Richieste autorizzazione, identità, metratura e visura camerale. Canone 40 € fino a 25 m²; 60 € oltre 25 fino a 80 m² per tutta la fiera. Nessuna tariffa 2026 dedotta."
+    },
+    "sectors": "Commercio su aree pubbliche"
+  },
+  {
+    "id": "calabria-drapia-fiera-della-santa-croce",
+    "region": "Calabria",
+    "city": "Drapia",
+    "name": "Fiera della Santa Croce",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://vividrapia.it/events/fiera-della-santa-croce/",
+      "label": "Vivi Drapia, portale turistico del Comune",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza di aprile nel repertorio turistico comunale.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Repertorio turistico del Comune con ricorrenze automatiche; conservato soltanto il mese usuale, senza confermare edizioni 2026/2027. Per il vino scartato il prolungamento anomalo fino a ottobre. Costi e ammissione di espositori esterni non documentati."
+    },
+    "venue": "Brattirò"
+  },
+  {
+    "id": "calabria-drapia-sagra-da-sujaca",
+    "region": "Calabria",
+    "city": "Drapia",
+    "name": "Sagra da Sujaca",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://vividrapia.it/events/sagra-dei-fagioli-sagra-da-sujaca/",
+      "label": "Vivi Drapia, portale turistico del Comune",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra dedicata ai fagioli di Caria.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Repertorio turistico del Comune con ricorrenze automatiche; conservato soltanto il mese usuale, senza confermare edizioni 2026/2027. Per il vino scartato il prolungamento anomalo fino a ottobre. Costi e ammissione di espositori esterni non documentati."
+    },
+    "sectors": "Alimentare, prodotti tipici",
+    "venue": "Caria"
+  },
+  {
+    "id": "calabria-drapia-sagra-del-vino",
+    "region": "Calabria",
+    "city": "Drapia",
+    "name": "Sagra del Vino",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://vividrapia.it/events/sagra-del-vino/",
+      "label": "Vivi Drapia, portale turistico del Comune",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra del vino a Brattirò, documentata nel repertorio comunale.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Repertorio turistico del Comune con ricorrenze automatiche; conservato soltanto il mese usuale, senza confermare edizioni 2026/2027. Per il vino scartato il prolungamento anomalo fino a ottobre. Costi e ammissione di espositori esterni non documentati."
+    },
+    "sectors": "Alimentare, vino",
+    "venue": "Brattirò"
+  },
+  {
+    "id": "calabria-drapia-sagra-del-dolce",
+    "region": "Calabria",
+    "city": "Drapia",
+    "name": "Sagra del Dolce",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://vividrapia.it/events/sagra-del-dolce/",
+      "label": "Vivi Drapia, portale turistico del Comune",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento gastronomico a Gasponi.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Repertorio turistico del Comune con ricorrenze automatiche; conservato soltanto il mese usuale, senza confermare edizioni 2026/2027. Per il vino scartato il prolungamento anomalo fino a ottobre. Costi e ammissione di espositori esterni non documentati."
+    },
+    "sectors": "Alimentare, dolciumi",
+    "venue": "Gasponi"
+  },
+  {
+    "id": "calabria-ricadi-festa-della-birra",
+    "region": "Calabria",
+    "city": "Ricadi",
+    "name": "Festa della Birra",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ricadi.vv.it/novita/notizie/novita_213.html",
+      "label": "Comune di Ricadi",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione estiva con avviso comunale per assegnazione degli spazi di vendita.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-30",
+        "end": "2026-07-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ricadi.vv.it/novita/notizie/novita_213.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2026: domanda entro il 22 luglio 2026, termine trascorso. Modelli distinti per non alimentari e hobbisti; alimentari e somministrazione tramite SUAP. Allegato dinamico non recuperato come PDF: nessuna tariffa dedotta."
+    },
+    "sectors": "Alimentare, non alimentare e hobbistica"
+  },
+  {
+    "id": "calabria-ricadi-sagra-della-cipolla",
+    "region": "Calabria",
+    "city": "Ricadi",
+    "name": "Sagra della Cipolla",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ricadi.vv.it/novita/notizie/novita_213.html",
+      "label": "Comune di Ricadi",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione estiva con avviso comunale per assegnazione degli spazi di vendita.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ricadi.vv.it/novita/notizie/novita_213.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2026: domanda entro il 3 agosto 2026, termine trascorso. Modelli distinti per non alimentari e hobbisti; alimentari e somministrazione tramite SUAP. Allegato dinamico non recuperato come PDF: nessuna tariffa dedotta."
+    },
+    "sectors": "Alimentare, non alimentare e hobbistica"
+  },
+  {
+    "id": "calabria-spilinga-sagra-della-nduja",
+    "region": "Calabria",
+    "city": "Spilinga",
+    "name": "Sagra della 'Nduja",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.spilinga.vv.it/novita/avvisi/novita_75.html",
+      "label": "Comune di Spilinga",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Avviso per occupazione del suolo e assegnazione dei posti della 49ª edizione.",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-08",
+        "end": "2025-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.spilinga.vv.it/novita/avvisi/novita_75.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Documentata soltanto l’edizione dell’8 agosto 2025. Gli allegati dinamici restituiscono errore applicativo: nessuna lettura integrale del bando o costo attuale dichiarata."
+    },
+    "sectors": "Alimentare, prodotti tipici"
+  },
+  {
+    "id": "calabria-mileto-commercio-ambulante-per-la-festa-della-mamma-a-paravati",
+    "region": "Calabria",
+    "city": "Mileto",
+    "name": "Commercio ambulante per la Festa della Mamma a Paravati",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.mileto.vv.it/dam/jcr:94c8fe2d-aa53-44f4-9dfe-ce5941765b6f/AVVISO%20(2).pdf",
+      "label": "Comune di Mileto",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Aree commerciali legate al pellegrinaggio della Festa della Mamma del 2026.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-10",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.mileto.vv.it/dam/jcr:94c8fe2d-aa53-44f4-9dfe-ce5941765b6f/AVVISO%20(2).pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso prot. 6117 del 22 aprile 2026, letto sulle quattro pagine scansionate. Domanda entro il 7 maggio 2026 ore 12, termine trascorso; 35 box previsti, assegnazione secondo protocollo e requisiti. Bollo 16 € distinto dal canone CUP da calcolare. Nessun posto oggi disponibile attestato."
+    },
+    "sectors": "Alimentare e non alimentare",
+    "venue": "Paravati: piazzale Campo sportivo, via Natuzza Evolo e piazzale Cimitero"
+  },
+  {
+    "id": "calabria-nicotera-mercatino-delle-sette-porte",
+    "region": "Calabria",
+    "city": "Nicotera",
+    "name": "Mercatino delle Sette Porte",
+    "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.nicotera.vv.it/wp-content/uploads/2024/06/Regolamento-Mercatino-delle-pulci.pdf",
+      "label": "Comune di Nicotera",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercatino delle pulci previsto dal regolamento comunale.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento senza anno di edizione: domenica, con fase sperimentale di tre mesi salvo proroga; attività effettiva corrente non confermata. Solo privati e associazioni non professionali, esclusi commercianti e artigiani professionali. Quota documentata 5 € per domenica comprensiva di occupazione, gestione e vigilanza, non una tariffa corrente accertata."
+    },
+    "sectors": "Usato, antiquariato, collezionismo e hobbistica",
+    "venue": "Piazza Municipio in inverno; lungomare di Nicotera Marina in estate"
+  },
+  {
+    "id": "calabria-zambrone-mercatino-estivo",
+    "region": "Calabria",
+    "city": "Zambrone",
+    "name": "Mercatino estivo",
+    "months": "7,8",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.zambrone.vv.it/wp-content/uploads/2024/02/Regolamento-mercatino-estivo.pdf",
+      "label": "Comune di Zambrone",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercatino istituito e regolamentato dal Comune nel giugno 2016.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Documento storico 2016: martedì mattina tra luglio e agosto. Nessuna conferma dell’attivazione nel 2026. L’esenzione dalla tassa di occupazione non prova gratuità complessiva del banco."
+    },
+    "sectors": "Abbigliamento, calzature, pelletteria, giocattoli, hobbistica e alimentare",
+    "venue": "Piazza 8 Marzo, via Pio La Torre e via Alcide De Gasperi"
+  },
+  {
+    "id": "calabria-zambrone-mercato-dell-artigianato-sul-lungomare",
+    "region": "Calabria",
+    "city": "Zambrone",
+    "name": "Mercato dell'artigianato sul lungomare",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.aramoni.it/page.aspx?id=2415&title=Mercato-dellartigianato-Sul-lungomare-di-Zambrone",
+      "label": "Associazione culturale Aramoni",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Comunicato dell’associazione locale per due giornate di bancarelle artigianali.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Fonte dell’associazione Aramoni: 6 e 20 agosto senza anno esplicito nella pagina. Nessuna edizione annuale o tariffa generata."
+    },
+    "sectors": "Artigianato, ceramica e bigiotteria",
+    "venue": "Lungomare di Zambrone"
+  },
+  {
+    "id": "calabria-san-gregorio-d-ippona-fiera-del-25-aprile",
+    "region": "Calabria",
+    "city": "San Gregorio d'Ippona",
+    "name": "Fiera del 25 aprile",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.sangregoriodippona.vv.it/eventi/Festa-di-San-Biagio---Zammar-10.html",
+      "label": "Comune di San Gregorio d'Ippona",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera popolare legata alla tradizione rurale, nel repertorio comunale.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-04-25",
+        "end": "2024-04-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sangregoriodippona.vv.it/eventi/Festa-di-San-Biagio---Zammar-10.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale per il 25 aprile 2024. Il costo gratuito è rivolto ai cittadini e non certifica gratuità del banco. Domande e condizioni espositori da verificare."
+    }
+  },
+  {
+    "id": "calabria-capistrano-fiera-capistranarte",
+    "region": "Calabria",
+    "city": "Capistrano",
+    "name": "Fiera Capistranarte",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.capistrano.vv.it/index.php/it/eventi/fiera-capistranarte",
+      "label": "Comune di Capistrano",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Stand di prodotti e mestieri locali lungo Corso Roma.",
+    "editions": [
+      {
+        "year": 2022,
+        "start": "2022-08-11",
+        "end": "2022-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.capistrano.vv.it/index.php/it/eventi/fiera-capistranarte"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale con data evento 11 agosto 2022; aggiornamento del sito del 2024 distinto dall’edizione. Ingresso gratuito non equivale a posteggio gratuito. Nessuna conferma 2026."
+    },
+    "sectors": "Prodotti alimentari e artigianato",
+    "venue": "Corso Roma"
+  },
+  {
+    "id": "calabria-brognaturo-sagra-paesana",
+    "region": "Calabria",
+    "city": "Brognaturo",
+    "name": "Sagra Paesana",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://brognaturonelcuore.wordpress.com/2026/09/01/17-sagra-paesana/",
+      "label": "Associazione Brognaturo nel Cuore, locandina",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "17ª edizione con cucina locale in piazza del Popolo.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://brognaturonelcuore.wordpress.com/2026/09/01/17-sagra-paesana/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Locandina dell’associazione organizzatrice: giovedì 3 settembre, collegata al post del settembre 2026. I 10 € sono costo del menu al pubblico, non del banco. Nessuna ammissione di venditori esterni attestata."
+    },
+    "sectors": "Alimentare, prodotti tipici",
+    "venue": "Piazza del Popolo"
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-del-rosario",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera del Rosario",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza della prima domenica di ottobre.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-di-sant-anna-alla-madonnella",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera di Sant'Anna alla Madonnella",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza del 26 luglio.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-di-sant-antonio",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera di Sant'Antonio",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza del 13 giugno.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-del-carmine",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera del Carmine",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza del 16 luglio.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-di-vibo-marina",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera di Vibo Marina",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza della prima domenica dopo il 15 agosto.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-di-bivona",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera di Bivona",
+    "months": "9,10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza del 28 settembre o della domenica successiva.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-fiera-di-piscopio",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Fiera di Piscopio",
+    "months": "9,10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://amministrazione-trasparente.comune.vibovalentia.vv.it/sites/default/files/regolamenti/sezione%2004/Regolamenti%20Commercio/01%20Reg%20disciplina%20commercio%20Areee%20Pubbliche.pdf",
+      "label": "Comune di Vibo Valentia",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza nella settimana del 29 settembre.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale, art. 29, pagine 12–13: ricorrenza priva di edizione annuale. Il regolamento non conferma lo svolgimento nel 2026, disponibilità o tariffe correnti. Nome descrittivo della voce regolamentare."
+    }
+  },
+  {
+    "id": "calabria-vibo-valentia-vibo-in-fermento",
+    "region": "Calabria",
+    "city": "Vibo Valentia",
+    "name": "Vibo in Fermento",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://calabriastraordinaria.it/en/events/vibo-in-fermento",
+      "label": "Regione Calabria, portale turistico: testo indicizzato",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Birrifici calabresi, degustazioni e street food nel centro cittadino.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-10-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/en/events/vibo-in-fermento"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Portale turistico regionale: 30 ottobre 2026. Recupero HTTP diretto 403; usato il testo indicizzato del dominio primario, conservato con la ricerca. Nessun originale integrale o costo banco verificato."
+    },
+    "sectors": "Alimentare, birra e street food",
+    "venue": "Corso Vittorio Emanuele III"
   }
 ]
