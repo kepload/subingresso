@@ -105,6 +105,15 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **5 novembre 2026 — due nuove sessioni avviate su richiesta:** Rieti e Vibo
+  Valentia in parallelo, worktree isolati da `da5ff17`; autorizzata anche la
+  pubblicazione al termine delle ricerche e verifiche. Pubblicazioni serializzate
+  con mutex; nessun ciclo o altra provincia autorizzati. Pavia riservata.
+  Stato, thread, fonti di avvio e rapporti in
+  `.local/lavori/rieti-vibo-pubblica-20261105/`. Backup remoto sessione
+  `backup/session-20261105-193831-due-province-rieti-vibo-20261105` e ramo
+  `backup/pre-rieti-vibo-20261105` verificati. Non ancora dichiarate pubblicate.
+
 - **5 novembre 2026 — Crotone:** pubblicate 11 nuove schede in 9 comuni,
   ricognizione nominale dei 27 comuni con limiti espliciti. Commit `1c53ab9`,
   Vercel Ready; catalogo online identico e tutte le 9.740 schede precedenti
