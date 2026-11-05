@@ -1,0 +1,1645 @@
+{
+  "schemaVersion": 1,
+  "province": "Catanzaro",
+  "checkedAt": "2026-11-05",
+  "status": "consegna-provinciale-con-limiti-non-integrata",
+  "municipalityListSource": "https://sabap-cz-kr.cultura.gov.it/?page_id=1949",
+  "municipalityCoverage": [
+    {
+      "city": "Albi",
+      "istat": "079002",
+      "query": "\"Albi\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[0]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Salsiccia e patate reperita soltanto nell’archivio secondario 2005; festa di San Nicola segnalata, senza avviso commerciale sufficiente. Nessuna scheda proposta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Amaroni",
+      "istat": "079003",
+      "query": "\"Amaroni\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[0]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Fiera delle bontà e delle arti, Miele al Borgo e Vino, Note e Gocce di Miele individuati in calendari e stampa; non trovata conferma primaria annuale leggibile adeguata. Non confondere la partecipazione di Amaroni a Limana con una fiera nel comune.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Amato",
+      "istat": "079004",
+      "query": "\"Amato\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[0]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pagina comunale Festa Patronale 9–11 agosto 2024: la fiera del bestiame è descritta al passato, prima del trasferimento della festa nel 1970. Nessuna fiera attuale dedotta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Andali",
+      "istat": "079005",
+      "query": "\"Andali\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[0]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-andali-sagra-della-salsiccia",
+        "calabria-andali-sagra-della-patata"
+      ],
+      "sourceKeys": [
+        "andali"
+      ],
+      "finding": "Due sagre nel repertorio comunale senza anno; numeri di edizione datati. Aggiunte soltanto come periodi, senza recepire il 2026 della stampa.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Argusto",
+      "istat": "079007",
+      "query": "\"Argusto\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[1]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Ricerca con molti omonimi o risultati di ristorazione (Sagra della Capra). Nessuna fonte primaria commerciale sufficiente; non equivale ad assenza di manifestazioni.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Badolato",
+      "istat": "079008",
+      "query": "\"Badolato\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[1]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Piste mercatini estivi 2024 e La Magia del Natale 2022 in stampa, senza calendario primario corrente sufficiente. Escluse le pagine che mostrano solo eventi dei dintorni.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Belcastro",
+      "istat": "079009",
+      "query": "\"Belcastro\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[1]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-belcastro-na-jurnata-ara-ruga"
+      ],
+      "sourceKeys": [
+        "bel"
+      ],
+      "finding": "Na jurnata ara ruga con fonte comunale 1 novembre 2025; orari discordanti nella pagina omessi. Il 2026 è segnalato da terzi e non viene promosso a conferma primaria.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Borgia",
+      "istat": "079011",
+      "query": "\"Borgia\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[1]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-borgia-fiera-dello-statuto",
+        "calabria-borgia-fiera-di-san-leonardo"
+      ],
+      "sourceKeys": [
+        "borgia",
+        "unpli"
+      ],
+      "finding": "Avviso Statuto 6–7 giugno 2026 e periodo San Leonardo dal repertorio della Pro Loco. Sapore & stile nel GAL agosto 2024 conservato come storico, senza nuova edizione dedotta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Botricello",
+      "istat": "079012",
+      "query": "\"Botricello\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[2]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pagina comunale Estate 2025 cita Mparrettati; programma 2026 trovato in aggregatori e homepage, ma non verificato l’allegato primario con giorno della sagra. Mercato settimanale non trasformato in fiera.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Caraffa di Catanzaro",
+      "istat": "079017",
+      "query": "\"Caraffa di Catanzaro\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[2]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pista Natale e programma arbëreshë; istituto culturale e mercato settimanale individuati, ma nessuna data commerciale primaria annuale sufficiente. Contributi e pagine generiche esclusi dal delta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cardinale",
+      "istat": "079018",
+      "query": "\"Cardinale\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[2]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Risultati dominati dalla Fiera del Cardinale di Castiglione Olona: esclusa per omonimia. Festival nTrametti presente in graduatorie, non prova di calendario o posteggi.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Carlopoli",
+      "istat": "079020",
+      "query": "\"Carlopoli\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[2]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Natale tra le Fiabe e i Sapori e Natale a Carlopoli in atti di finanziamento: non attestano giorni di mercatino né disponibilità. Calendario comunale senza eventi correnti non prova assenza.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Catanzaro",
+      "istat": "079023",
+      "query": "Catanzaro fiere mercatini avvisi 2026 comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[20]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-catanzaro-fiera-di-san-vitaliano",
+        "calabria-catanzaro-fiera-della-madonna-di-porto-salvo",
+        "calabria-catanzaro-fiera-di-san-lorenzo",
+        "calabria-catanzaro-tattoo-convention",
+        "calabria-catanzaro-biologi-ca",
+        "calabria-catanzaro-pop-culture-convention",
+        "calabria-catanzaro-calabria-sposi",
+        "calabria-catanzaro-edil-expo",
+        "calabria-catanzaro-mediterranea-village",
+        "calabria-catanzaro-la-rosa-arte-funeraria",
+        "calabria-catanzaro-degusto-salone-del-food-e-beverage",
+        "calabria-catanzaro-expo-fata-e-festa-dell-uva",
+        "calabria-catanzaro-mercato-tematico-dell-antiquariato-vintage-modernariato-arte-e-artigianato",
+        "calabria-catanzaro-mercatino-degli-hobbisti"
+      ],
+      "sourceKeys": [
+        "czfiere",
+        "degusto",
+        "fata",
+        "mercati",
+        "pala"
+      ],
+      "finding": "Avvisi tre fiere estive, calendario PalaColosimo, mercati tematici maggio e Expo FATA/uva. Programma sportivo Wushu escluso. Ipotesi mercato febbraio superata dall’avvio maggio; km0 subordinato a iter autorizzativo, escluso.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cenadi",
+      "istat": "079024",
+      "query": "\"Cenadi\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[3]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra San Martino in decreto di contributo per il 2009: nessuna continuità 2026 provata. Calendario comunale del patrono non documenta qui banchi o fiera attuale.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Centrache",
+      "istat": "079025",
+      "query": "\"Centrache\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[3]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra del Tonno all’arrabbiata 14 agosto 2023 nel portale comunale; Borgo delle radici nel GAL agosto 2024. Storico conservato, senza estrapolare ricorrenza o date 2026.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cerva",
+      "istat": "079027",
+      "query": "\"Cerva\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[3]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-cerva-fiera-della-scialatella"
+      ],
+      "sourceKeys": [
+        "cerva"
+      ],
+      "finding": "PDF Scialatella 7–8 settembre 2024 selezionato come storico. Piste 12–13 settembre 2026 e Festa della Castagna/Caldarrosta novembre presenti in aggregatori, senza avviso primario corrente sufficiente.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Chiaravalle Centrale",
+      "istat": "079029",
+      "query": "\"Chiaravalle Centrale\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[3]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-chiaravalle-centrale-festa-d-autunno"
+      ],
+      "sourceKeys": [
+        "chiar"
+      ],
+      "finding": "UNPLI conferma programma Festa d’Autunno 1 novembre 2026; 6 novembre solo riserva per pioggia. Carnevale estivo gastronomico 2024 nel GAL conservato come storico separato.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cicala",
+      "istat": "079030",
+      "query": "\"Cicala\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[4]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Fiera d’Autunno/Festa della Castagna in graduatorie regionali e bollettino parrocchiale; Parmientu in calendari terzi. Nessun avviso con giorni e operatori sufficientemente verificato per il delta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Conflenti",
+      "istat": "079033",
+      "query": "\"Conflenti\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[4]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Fiera Madonna della Quercia, Sant’Anna a San Mazzeo e spezzatino individuati come piste in portali locali; nessuna selezione annuale primaria sufficiente. Felici & Conflenti non assunto automaticamente come mercato.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cortale",
+      "istat": "079034",
+      "query": "\"Cortale\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[4]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Vinalmente in Borgo 7 novembre 2026 in ANSA e aggregatori, con rimando al portale regionale non leggibile; non acquisita conferma diretta organizzatore. Pista conservata, non scheda confermata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Cropani",
+      "istat": "079036",
+      "query": "\"Cropani\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[4]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Mercatino rionale e programma culturale trovati; nessun avviso primario fieristico annuale sufficiente selezionato. Non estendere al borgo dati del mercato di Cropani Marina.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Curinga",
+      "istat": "079039",
+      "query": "\"Curinga\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[5]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-curinga-fiera-dell-annunziata",
+        "calabria-curinga-fiera-di-san-giovanni",
+        "calabria-curinga-fiera-di-santa-maria-della-grazia",
+        "calabria-curinga-fiera-dell-immacolata"
+      ],
+      "sourceKeys": [
+        "cur"
+      ],
+      "finding": "Modulo comunale quattro fiere, con periodi e importi nel percorso 2024. Atto 2026 San Giovanni trovato ma senza lettura del suo allegato sui giorni: non aggiorna automaticamente il modulo.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Davoli",
+      "istat": "079042",
+      "query": "\"Davoli\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[5]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Castagna annunciata 1 novembre 2026 dalla stampa, calendario Davoli Zone indica 8 novembre con luoghi contraddittori: data corrente non risolta. Non creare due eventi per un possibile rinvio.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Decollatura",
+      "istat": "079043",
+      "query": "\"Decollatura\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[5]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-decollatura-fiera-del-xx-settembre"
+      ],
+      "sourceKeys": [
+        "decol"
+      ],
+      "finding": "Ordinanza comunale 46 del 17 settembre 2026, originale PDF sul sito scolastico: fiera 20–21 settembre. San Martino 9–11 novembre riguarda stampa 2025 e non conferma 2026.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Falerna",
+      "istat": "079047",
+      "query": "\"Falerna\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[5]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Comune: Festa Madonna Rosario 2025 e tariffario 2025; stampa segnala fiera 3–4 ottobre 2026. Non ottenuto calendario primario corrente sufficiente; progetto fiera agricola nel DUP non prova svolgimento.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Feroleto Antico",
+      "istat": "079048",
+      "query": "\"Feroleto Antico\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[6]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Solstizio d’Estate e Festa del Fungo individuati in stampa e calendari terzi; nessun avviso primario con giorni/partecipazione sufficientemente verificato. Portale comunale consultato come pista, non conferma negativa.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Fossato Serralta",
+      "istat": "079052",
+      "query": "\"Fossato Serralta\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[6]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Castagna 17 ottobre 2026 nell’indice regionale indicizzato; pagina regionale diretta non restituisce contenuto leggibile, orari e sedi divergono nei calendari terzi. Conservata la pista, non conferma operativa.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Gagliato",
+      "istat": "079055",
+      "query": "\"Gagliato\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[6]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Curriculum Pro Loco depositato al Consiglio regionale descrive sagre zzippuli e pasta zzita; prova storica, non calendario annuale 2026. Non convertiti contributi in quota banco.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Gasperina",
+      "istat": "079056",
+      "query": "\"Gasperina\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[6]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-gasperina-assaggia-passeggia",
+        "calabria-gasperina-festivalbeer",
+        "calabria-gasperina-zuccaland"
+      ],
+      "sourceKeys": [
+        "assaggia",
+        "gas",
+        "zucca"
+      ],
+      "finding": "Fonti organizzatore: Assaggia & Passeggia 10 agosto, Zuccaland 10–11 ottobre 2026, Festivalbeer ottobre 2025 e agosto 2026 senza giorno. Pasta e ceci/peperoni e patate da scheda comunale associazione conservati come pista.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Gimigliano",
+      "istat": "079058",
+      "query": "\"Gimigliano\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[7]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pagina comunale manifestazioni estive 2024 e archivio Pro Loco pannocchia 2014/GhemelonART 2015; non usato l’intero intervallo contenitore come durata della sagra. Di frasca in frasca novembre 2026 solo terzi.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Girifalco",
+      "istat": "079059",
+      "query": "\"Girifalco\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[7]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Avviso Fiera Commercio e Artigianato 2026 indicizzato, ma URL recuperato restituisce 410; 7–8 agosto in terzi non elevato a conferma diretta. Festa Montagna GAL 2024 e mercatino usato 2023 conservati come storico/piste.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Gizzeria",
+      "istat": "079060",
+      "query": "\"Gizzeria\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[7]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Patati, Pipi e Mulingiani 9 agosto 2026 in portali terzi; regolamento comunale generico CUP non prova l’edizione. Nessuna quota o data corrente selezionata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Guardavalle",
+      "istat": "079061",
+      "query": "\"Guardavalle\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[7]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL agosto 2024 documenta Festa del Grano/Trebbiatura e Notte delle Stelle con stand. Storico separato; calendario annuale corrente e candidature non verificati.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Isca sullo Ionio",
+      "istat": "079063",
+      "query": "\"Isca sullo Ionio\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[8]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL agosto 2024 documenta Albero di Canto con artigiani e prodotti locali; sagra tartufo gelato in portale terzo. Nessuna data 2026 primaria sufficiente selezionata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Jacurso",
+      "istat": "079065",
+      "query": "\"Jacurso\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[8]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Gelato in festa e Jacurso in festa in atti di graduatoria/contributi; destinazione gastronomica documentata, non un calendario fieristico. Nessuna fiera corrente dedotta dai finanziamenti.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Lamezia Terme",
+      "istat": "079160",
+      "query": "\"Lamezia Terme\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[8]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-lamezia-terme-fiera-di-san-biagio",
+        "calabria-lamezia-terme-fiera-di-san-francesco-di-paola-a-sambiase",
+        "calabria-lamezia-terme-fiera-dei-santi-pietro-e-paolo",
+        "calabria-lamezia-terme-fiera-di-san-francesco-di-paola-a-sant-eufemia",
+        "calabria-lamezia-terme-lamezia-comics-co"
+      ],
+      "sourceKeys": [
+        "comics",
+        "lam"
+      ],
+      "finding": "Una scheda Sant’Antonio già presente e preservata integralmente, non duplicata. Quattro altre fiere solo con periodi del repertorio; Comics 11–13 settembre 2026 dalla pagina evento comunale.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Magisano",
+      "istat": "079068",
+      "query": "\"Magisano\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[8]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-magisano-festa-della-birra"
+      ],
+      "sourceKeys": [
+        "mag"
+      ],
+      "finding": "Indice eventi comunale indica Festa Birra il 13 agosto senza anno verificato: solo periodo. Fiera storica di San Pietro il 10 ottobre in dossier legislativo non convertita in edizione corrente.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Maida",
+      "istat": "079069",
+      "query": "\"Maida\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[9]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Profumi e Suoni del Natale con invito artigiani nel dicembre 2025 trovato in stampa; nessun calendario primario corrente sufficiente selezionato. Eventi dell’agriturismo non assunti automaticamente come fiera aperta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Marcedusa",
+      "istat": "079071",
+      "query": "\"Marcedusa\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[9]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Lokal Festa del Borgo 11–12 agosto 2026 in copia social di terzi; portale comunale non fornisce qui documento annuale verificato. Nessuna data confermata o accesso stand dedotto.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Marcellinara",
+      "istat": "079072",
+      "query": "\"Marcellinara\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[9]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-marcellinara-fiera-di-settembre",
+        "calabria-marcellinara-fiera-di-ottobre"
+      ],
+      "sourceKeys": [
+        "marc"
+      ],
+      "finding": "Fonte comunale: due fiere del 2024, terza domenica settembre e prima ottobre; due singole giornate separate. Non dedotto un evento continuo né trasposte le date al 2026.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Martirano",
+      "istat": "079073",
+      "query": "\"Martirano\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[9]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sapori e Suoni 5–6 settembre 2026 in aggregatore automatico; San Gennaro con fiera in stampa 2023. Nessuna conferma primaria corrente sufficiente, calendario comunale solo patrono.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Martirano Lombardo",
+      "istat": "079074",
+      "query": "\"Martirano Lombardo\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[10]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Fragola documentata nel curriculum Pro Loco 2022 e locandina 2024; Patata Pietrebianche/Festa Pane 2026 in terzi. Date correnti non confermate da fonti primarie selezionate.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Miglierina",
+      "istat": "079077",
+      "query": "\"Miglierina\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[10]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Fiera Santa Lucia descritta in portali secondari; calendario comunale non espone qui avviso commerciale. Nessuna data 2026 proiettata dal giorno del patrono.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Montauro",
+      "istat": "079080",
+      "query": "\"Montauro\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[10]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-montauro-montauro-mi-gusta"
+      ],
+      "sourceKeys": [
+        "montauro"
+      ],
+      "finding": "Fonte comunale Montauro mi gusta, 29 agosto 2025 con fiere artigianali e km0. Notte San Martino 7 novembre 2026 solo piste terze/atto non recuperato: non nuova data confermata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Montepaone",
+      "istat": "079081",
+      "query": "\"Montepaone\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[10]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-montepaone-sagra-del-maiale"
+      ],
+      "sourceKeys": [
+        "montep"
+      ],
+      "finding": "Organizzatore Ri...vivi...amo documenta Sagra del Maiale in febbraio: periodo. Sagra fine estate 2024 nel GAL e Castagna novembre 2026 in terzi, senza giorni primari sufficienti per nuova edizione.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Motta Santa Lucia",
+      "istat": "079083",
+      "query": "\"Motta Santa Lucia\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[11]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa d’Autunno individuata nei calendari terzi, senza avviso primario sufficiente selezionato. Non usare eventi di Massagno o altre omonimie con Santa Lucia.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Nocera Terinese",
+      "istat": "079087",
+      "query": "\"Nocera Terinese\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[11]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-nocera-terinese-fiera-di-san-giovanni-battista"
+      ],
+      "sourceKeys": [
+        "noc"
+      ],
+      "finding": "Avviso comunale San Giovanni: 22–24 giugno con convocazioni 18/20 giugno 2025; storico distinto. Accabadora è manifestazione culturale, non prova di banchi; Saperi e Sapori resta pista.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Olivadi",
+      "istat": "079088",
+      "query": "\"Olivadi\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[11]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Nessun avviso fieristico primario sufficiente selezionato. Il 20 luglio del patrono/fiera in portale secondario e il generico richiamo GAL a eventi futuri non confermano edizione annuale.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Palermiti",
+      "istat": "079089",
+      "query": "\"Palermiti\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[11]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL agosto 2024 documenta Pane e calatura e Sagra maialino nero; archivio Pro Loco presso Consiglio regionale. Storico senza giorni esatti, tariffe o conferma 2026.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Pentone",
+      "istat": "079092",
+      "query": "\"Pentone\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[12]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa d’Autunno/Castagna 31 ottobre e 1 novembre 2026 con date divergenti nei calendari terzi. Fiera Madonna di Termine documentata come tradizione storica, non calendario operativo annuale verificato.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Petrizzi",
+      "istat": "079094",
+      "query": "\"Petrizzi\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[12]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pagina comunale Festival d’Estate 2025 e Sant’Antonio: descrizione generale senza prova di banchi o fiera annuale sufficiente. Non usare il periodo dell’intero festival come durata mercatino.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Petronà",
+      "istat": "079095",
+      "query": "\"Petronà\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[12]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Atto comunale 460 del 28 agosto 2026 cita Fiera Cona senza giorni nell’oggetto; 29–30 agosto in stampa non elevato a conferma da allegato. Pro Loco conserva sagre/festival storici: nessuna proiezione annuale.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Pianopoli",
+      "istat": "079096",
+      "query": "\"Pianopoli\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[12]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Portale comunale senza eventi in evidenza; Carri dell’Uva in aggregatore e Art&Folk in graduatorie. Non prova assenza di fiere né conferma presenza di stand.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Platania",
+      "istat": "079099",
+      "query": "\"Platania\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[13]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Gruppo Micologico Reventino documenta Sagra del Fungo storica, 26ª edizione; calendari 2026 riportano numeri/date da chiarire. Nessuna data corrente promossa; sito Pro Loco offre descrizione generale.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Floro",
+      "istat": "079108",
+      "query": "\"San Floro\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[13]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Fiera Sant’Anna con vendita, artigianato e maccaruni nel GAL agosto 2024; storico con mese, non prova di edizione 2026. Pagina patronale da sola non definisce fiera.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Mango d'Aquino",
+      "istat": "079110",
+      "query": "\"San Mango d'Aquino\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[13]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Regolamento mercato 2008 e programma culturale Suoni Sapori Saperi; nessun avviso annuale fieristico primario sufficiente. Vecchia TOSAP e sanzioni non diventano costi banco.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Pietro a Maida",
+      "istat": "079114",
+      "query": "\"San Pietro a Maida\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[13]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Mercato settimanale trovato in repertori secondari, sito comunale senza avviso fieristico sufficiente selezionato. Nessuna data annuale o tariffa dedotta.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Pietro Apostolo",
+      "istat": "079115",
+      "query": "\"San Pietro Apostolo\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[14]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa Ciliegia 21 giugno 2026 in stampa con materiale Pro Loco, ma non acquisita pagina primaria annuale sufficiente. Premio Kerasion non è fiera e non ne prova i giorni.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Sostene",
+      "istat": "079116",
+      "query": "\"San Sostene\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[14]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-san-sostene-festa-di-primavera"
+      ],
+      "sourceKeys": [
+        "sostene"
+      ],
+      "finding": "Fonte comunale Festa Primavera 21 aprile 2026, con mercatini artigianali e gastronomia. Il costo zero della pagina non è prezzo del banco.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "San Vito sullo Ionio",
+      "istat": "079122",
+      "query": "\"San Vito sullo Ionio\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[14]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL 2024 documenta zeppole/vino, trippa e penne; app ufficiale indica spostamento della trippa agosto 2026. Fiera 25 ottobre in aggregatore non confermata da originale: storico e piste separati.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Sant'Andrea Apostolo dello Ionio",
+      "istat": "079118",
+      "query": "\"Sant'Andrea Apostolo dello Ionio\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[14]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa del Ritorno in repertori secondari con mese agosto; sito istituzionale senza avviso annuale commerciale sufficiente selezionato. Patrono 30 novembre non trasformato in fiera.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Santa Caterina dello Ionio",
+      "istat": "079117",
+      "query": "\"Santa Caterina dello Ionio\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[15]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Alici e Paese in Festa nel GAL agosto 2024; 7 agosto 2026 in terzi non aggiornato senza fonte primaria annuale. Folklore su portale privato non è autorizzazione banchi.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Satriano",
+      "istat": "079123",
+      "query": "\"Satriano\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[15]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL agosto 2024 documenta Rughe piccanti con produttori e mostre artigianali; storico senza giorni puntuali. Manuale eventi comunale generico non prova una nuova edizione.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Sellia",
+      "istat": "079126",
+      "query": "\"Sellia\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[15]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-sellia-sagra-dell-olio-d-oliva"
+      ],
+      "sourceKeys": [
+        "sellia"
+      ],
+      "finding": "Due moduli comunali 2026 letti: XXIX Sagra Olio 17 agosto 2026, artigianato ed enogastronomia distinti. Prezzo stabilito ma non quantificato; allestimento a spese dell’espositore.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Sellia Marina",
+      "istat": "079127",
+      "query": "\"Sellia Marina\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[15]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-sellia-marina-sagra-della-merendella"
+      ],
+      "sourceKeys": [
+        "merend"
+      ],
+      "finding": "UNPLI Sagra Merendella 17–19 luglio 2026; richiamo al 2 agosto di anni passati non è altra edizione. Fiera del Passo 9 maggio 2024 su ordinanza scolastica conserva valore storico, non conferma corrente.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Serrastretta",
+      "istat": "079129",
+      "query": "\"Serrastretta\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[16]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Sagra Castagna Angoli 31 ottobre 2026 in stampa e aggregatore automatico; originale ordinanza non acquisito. Le feste religiose o pagine comunali su mercato immobiliare non confermano fiere.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Sersale",
+      "istat": "079130",
+      "query": "\"Sersale\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[16]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-sersale-notte-bianca"
+      ],
+      "sourceKeys": [
+        "sersale"
+      ],
+      "finding": "UNPLI Notte Bianca 15 luglio 2026 con stand; orari interni discordanti omessi. San Pasquale 19–20 settembre e Sapori d’Autunno trovati in terzi, senza originale annuale sufficiente.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Settingiano",
+      "istat": "079131",
+      "query": "\"Settingiano\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[16]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa Birra Martelletto in stampa 2025 e San Martino in aggregatori 2026; nessuna fonte primaria commerciale sufficiente selezionata. Processione non assunta come mercatino.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Simeri Crichi",
+      "istat": "079133",
+      "query": "\"Simeri Crichi\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[16]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Curriculum Pro Loco documenta mercatini di Natale storici senza giorni. Cin Cin/Fiera Dolce 11 novembre 2026 in stampa e aggregatori, senza originale sufficiente; Festa Musica comunale non prova posteggi.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Sorbo San Basile",
+      "istat": "079134",
+      "query": "\"Sorbo San Basile\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[17]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Ricerca nominale e portale comunale non hanno fornito calendario fieristico primario sufficiente. Patrono 3 dicembre non convertito in fiera; esclusi eventi dei dintorni.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Soverato",
+      "istat": "079137",
+      "query": "\"Soverato\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[17]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-soverato-fiera-della-galilea",
+        "calabria-soverato-fiera-artigianale-estiva"
+      ],
+      "sourceKeys": [
+        "galilea",
+        "sovert"
+      ],
+      "finding": "Delibera 13/2026: Galilea 6–7 aprile 2026 e formula CUP; fiera artigianale 15 giugno–25 settembre da avviso 2024, subordinata alla concessione. Le due annualità restano separate.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Soveria Mannelli",
+      "istat": "079138",
+      "query": "\"Soveria Mannelli\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[17]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-soveria-mannelli-fiera-della-madonna-della-purita",
+        "calabria-soveria-mannelli-fiera-dell-immacolata",
+        "calabria-soveria-mannelli-fiera-di-santa-lucia"
+      ],
+      "sourceKeys": [
+        "soveria"
+      ],
+      "finding": "Regolamento CUP 2021 art.79: Purità terza/quarta domenica ottobre, Immacolata 8 dicembre, Santa Lucia 13 dicembre. Tre identità fieristiche; Purità comprende due ricorrenze, non unico intervallo continuo.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Soveria Simeri",
+      "istat": "079139",
+      "query": "\"Soveria Simeri\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[17]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Pagina comunale Manifestazioni descrive sagre estive generiche e ricorrenze religiose; non abbastanza per identificare fiera/sagra specifica con operatori. Refuso Provincia di Cosenza del titolo sito non recepito.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Squillace",
+      "istat": "079142",
+      "query": "\"Squillace\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[18]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-squillace-bacco-al-borgo"
+      ],
+      "sourceKeys": [
+        "squillace"
+      ],
+      "finding": "Avviso e due Word comunali letti: Bacco al Borgo 14 novembre 2026. Somministrazione 8 postazioni previste, hobbisti massimo 30; scadenza hobbisti con refuso 22026. Nessuna disponibilità residua dichiarata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Stalettì",
+      "istat": "079143",
+      "query": "\"Stalettì\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[18]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "GAL agosto 2024 documenta Pitta cu’ a sarda, gastronomia e artigianato; storico senza giorno e nessuna conferma 2026. Portale turistico non fornisce qui nuovo avviso operatori.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Taverna",
+      "istat": "079146",
+      "query": "\"Taverna\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[18]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-taverna-fiera-di-san-sebastiano"
+      ],
+      "sourceKeys": [
+        "taverna"
+      ],
+      "finding": "Fonte comunale distingue fiera di San Sebastiano in ottobre dalla festa religiosa del 20 gennaio. Solo periodo fieristico; nessuna data 2026 proiettata.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Tiriolo",
+      "istat": "079147",
+      "query": "\"Tiriolo\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[18]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Bacchanalia e sagra pollo alla diavola individuate in stampa e repertori; portale turistico comunale non ha fornito qui calendario annuale fieristico sufficiente. Date e presenze non dedotte dalle cronache celebrative.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Torre di Ruggiero",
+      "istat": "079148",
+      "query": "\"Torre di Ruggiero\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[19]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Festa Sant’Anna 2024 nel portale comunale; vecchio programma e GAL 2024 sulla Peregrinatio non comprovano fiera corrente. Nessuna data o banco dedotto dal pellegrinaggio.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Vallefiorita",
+      "istat": "079151",
+      "query": "\"Vallefiorita\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[19]",
+      "outcome": "nuove-schede-documentali",
+      "newEventIds": [
+        "calabria-vallefiorita-valle-in-fiera"
+      ],
+      "sourceKeys": [
+        "valle"
+      ],
+      "finding": "UNPLI: Valle in Fiera 15 luglio 2026; locandina ufficiale letta visivamente conferma stand di prodotti tipici e artigianato nel centro storico. Orari discordanti omessi; Festa Montagna GAL 2024 resta storico separato.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    },
+    {
+      "city": "Zagarise",
+      "istat": "079157",
+      "query": "\"Zagarise\" fiera sagra mercatino comune",
+      "queryEvidence": ".local/ricerche/catanzaro-20261105/ricerche-complete.json#nominali[19]",
+      "outcome": "nessuna-nuova-scheda-sufficiente",
+      "newEventIds": [],
+      "sourceKeys": [],
+      "finding": "Relazione fine mandato 2024 elenca Borgo in festa, sagre funghi/castagne/olio e Natale; mesi storici, non conferme annuali. Borgo Incantato 1 novembre 2026 solo aggregatore: escluso dalle nuove schede confermate.",
+      "limitation": "Esito della ricognizione delle fonti accessibili, non dichiarazione di assenza di fiere. Non esaminato integralmente ogni albo, social o archivio storico."
+    }
+  ],
+  "sources": [
+    {
+      "key": "czfiere",
+      "url": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/",
+      "title": "Comune di Catanzaro, avvisi fiere 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\b0f4582ad8420140.html",
+        "sha256": "28be26cdb45b6461711048c3b762aa34ab07bbaa377a8fc69c20eeebdd0cbfaa"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "pala",
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "title": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\8139ce020282cf62.html",
+        "sha256": "a01272309278b63db4267523d4bfc7a2f4cc3c0df36f972b0f155955624cf3cd"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "degusto",
+      "url": "https://www.salonedegusto.it/wp-content/uploads/2026/02/Presentazione-deGusto-2026.pdf",
+      "title": "Cosenza Fiere, presentazione deGusto 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\e376caae41c4d356.pdf",
+        "sha256": "d685de7bc659d1056348e21bbf0a9e816796e1e3c41afa6d2fecbaa438d0de13"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "fata",
+      "url": "https://catanzaro.eu/expo-fata-2026-festa-dell-uva-germaneto/",
+      "title": "UNPLI Catanzaro, Expo FATA e Festa dell’Uva",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\a8c56cb16064d46b.html",
+        "sha256": "e5a429a1bf6b5cc63780a7963a839b39fdf97e7b8660bf514d823018b031e38f"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "mercati",
+      "url": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/",
+      "title": "Comune di Catanzaro, mercati tematici maggio 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\b21a71ef596695a8.html",
+        "sha256": "849043dbed69378d96655c63b7390f6fa3161ebef6d93ad3f980c78a8bdc94c2"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "lam",
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "title": "Comune di Lamezia Terme, Fiere lametine",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\f631c0d2b13e6c5f.html",
+        "sha256": "f91795a91905677842939957517557c16850796f8ea14a23f1a302444b17c4db"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "comics",
+      "url": "https://www.comune.lamezia-terme.cz.it/it/eventi/725799",
+      "title": "Comune di Lamezia Terme, Comics 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\9e5c382071be1403.html",
+        "sha256": "3c8f7c62ae23b31342efd6bfb06a57f4e10932e1533096f07820a54d9424579e"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "cur",
+      "url": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "title": "Comune di Curinga, modulo fiere percorso 2024",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\bccd7d671f223c29.pdf",
+        "sha256": "118c931e14b86c484f08bc7367bc52f092033b151d5574edcfe29668c9c28da7"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "soveria",
+      "url": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "title": "Comune di Soveria Mannelli, regolamento CUP 2021, art. 79",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\a091e2a245dbfb96.pdf",
+        "sha256": "d4d3be57e156bb59b0a69a369fab040a9846fa21eb91fdb4a382cf343421a8c4"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "marc",
+      "url": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara",
+      "title": "Comune di Marcellinara, fiere 2024",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\3e5e95054541f072.html",
+        "sha256": "0041ae47b2ca867566971b2f459b7dd4c97f25344169dc196c87062636d2f37a"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "borgia",
+      "url": "https://www.comune.borgia.cz.it/novita/notizie/novita_16.html",
+      "title": "Comune di Borgia, Fiera dello Statuto 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\91d16bcf7476bf5f.html",
+        "sha256": "eebc81afffeb6692b087b1f036adff1eb15a88b94dc35ed46a58f7ae8407f6b5"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "unpli",
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "title": "Visit UNPLI Calabria 2025, Pro Loco Borgia p. 10",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\9d29fd9db23df934.pdf",
+        "sha256": "5889ce90da4ee1ed9410a0322cba75490894719531b600e8b4e4031795a8cbea"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "andali",
+      "url": "https://www.comunediandali.it/servizi-al-turismo/manifestazioni-e-sagre.html",
+      "title": "Comune di Andali, manifestazioni e sagre senza anno",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\2f62ea11a8f9ead1.html",
+        "sha256": "61881c0851a0d06c40cf4203ed338cadbad480f2cdf62b97593d8b366d4a5db1"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "gas",
+      "url": "https://www.prolocogasperina.it/eventi",
+      "title": "Pro Loco Gasperina, archivio eventi",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\4dfaf335aebc977d.html",
+        "sha256": "06974da8dcd4f1fa092ebae35cd99c9b01602389ff35d9125139692f1d063d8a"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "assaggia",
+      "url": "https://www.prolocogasperina.it/eventi/assaggia-passeggia-quarta-edizione-2026",
+      "title": "Pro Loco Gasperina, Assaggia & Passeggia 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\f35c66dbf874617e.html",
+        "sha256": "c398c808e33eb5da029d4d8460a3407ad115c4b12439918828738c366055eeac"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "zucca",
+      "url": "https://www.prolocogasperina.it/",
+      "title": "Pro Loco Gasperina, Zuccaland 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\f0e21e30fd9dae06.html",
+        "sha256": "2ec00eb79c6215f5a5644f6188695c0d802c9c136629e3a0e1478812febc321a"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "squillace",
+      "url": "https://comune.squillace.cz.it/notizie/3674048/avviso-manifestazione-interesse-stand-mercatini",
+      "title": "Comune di Squillace, Bacco al Borgo 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\56d7af9869301cfb.html",
+        "sha256": "8cb2cba246d4f1ab7cea90cb7e7a7285a54348e218a973a9d8a9af30af498d80"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "squh",
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5404291/Avviso-Mercatini-2026-bacco-al-borgo.docx",
+      "title": "Comune di Squillace, avviso hobbisti 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\464b4bc62623c9c0.docx",
+        "sha256": "db872b6ce1ad54e5de538a50819d7b6cbdf8bdb25daa80384ad7fa024bc865c9"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "squs",
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5404290/Avviso-Stand-2026-bacco-al-borgo-%281%29.docx",
+      "title": "Comune di Squillace, avviso somministrazione 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\b492428d6f0f88b2.docx",
+        "sha256": "c015c9314307384a60f1b1c2989eb99e9b76f100fc3060249e7322b637f17e3c"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "sellia",
+      "url": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ARTIGIANATO-2026-1.docx",
+      "title": "Comune di Sellia, adesione artigianato Sagra dell’Olio 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\c085080d5ebf0b1e.docx",
+        "sha256": "bc7fe9c8815589e5c99b51d0d9a46611156e8a7bbd10bbeb648ca03a099f5e0d"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "selliafood",
+      "url": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ENOGASTRONOMICO.docx",
+      "title": "Comune di Sellia, adesione enogastronomia Sagra dell’Olio 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\99f23d908e82297c.docx",
+        "sha256": "27b53ae4e38b7c631e9af95ef4b80bb18a4484c124942c647abadbcd296d09b4"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "sostene",
+      "url": "https://www.comune.sansostene.cz.it/eventi/Festa-di-Primavera-a-San-Sostene.html",
+      "title": "Comune di San Sostene, Festa di Primavera 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\83e3c8b163e1ee4b.html",
+        "sha256": "1037f887ade64b665152cddd4b89831b165640ffd901a8453ad4655e4fb2faf7"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "taverna",
+      "url": "https://www.comune.taverna.cz.it/vivere_il_comune/eventi/evento_1.html",
+      "title": "Comune di Taverna, San Sebastiano e fiera di ottobre",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\cc34ffbd1857cee0.html",
+        "sha256": "b4887119a790d8b841484e6e76ffa3a67ea6f69bacfde53f3a07413b4722baed"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "montauro",
+      "url": "https://www.comune.montauro.cz.it/vivere_il_comune/eventi/evento_4.html",
+      "title": "Comune di Montauro, Montauro mi gusta 2025",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\8aa38117a40e4b5f.html",
+        "sha256": "39d98eeffe5b964f42ca2c29691b4e1a868bb2dc94815b61b564330304510e7c"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "bel",
+      "url": "https://comune.belcastro.cz.it/vivere-il-comune/eventi/na-jurnata-ara-ruga/",
+      "title": "Comune di Belcastro, Na jurnata ara ruga 2025",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\2fe82239cb4b3fdb.html",
+        "sha256": "eeb3cf792024c7385bc16d30c8583e6445ef134a71750082bd5e57bdfadd2194"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "cerva",
+      "url": "https://www.comune.cerva.cz.it/uploads/66c8726a4d9a5-AVVISO_FIERA.pdf",
+      "title": "Comune di Cerva, Scialatella 7–8 settembre 2024",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\2e4f4196f1ef1593.pdf",
+        "sha256": "b743445751a4dc17d46bbe9add281318e2ab6470ab5363a30ff2e4396c3edb88"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "galilea",
+      "url": "https://soverato.contrasparenza.it/documenti/allegati/trasparenza/40/delibera-gm-n-13-2026-approvazione-tariffa-partecipazione-fiera-della-galilea-2026.pdf",
+      "title": "Comune di Soverato, delibera G.C. 13 del 29 gennaio 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\798ada92ab6e2876.pdf",
+        "sha256": "93186a052b6cb8e2ff2543d50b350eed0d17550cfa7ce15996dd3442f09a445c"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "sovert",
+      "url": "https://www.comune.soverato.cz.it/dam/jcr:f7fd64b1-8758-4501-b4df-d388dfd0a18d/avviso-fiera-artigianale-2024.pdf",
+      "title": "Comune di Soverato, fiera artigianale 2024",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\6ec68bd67932fc18.pdf",
+        "sha256": "c7347e33afaea71c55f28149e9624f6d8375612397d26425cea846a3d7bb8dc4"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "decol",
+      "url": "https://www.icserrastretta.edu.it/pa/wp-content/uploads/2026/09/ord_00046_17-09-2026-1.pdf",
+      "title": "Comune di Decollatura, ordinanza 46/2026 conservata dall’istituto Serrastretta",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\238dd5215f8478ff.pdf",
+        "sha256": "51d8d971403ff1aef5164cc2f4bdfc21e985c713b13ad7e47624eddcd8ca46a6"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "chiar",
+      "url": "https://catanzaro.eu/eventi/festa-d-autunno-chiaravalle-2026/",
+      "title": "UNPLI Catanzaro, Festa d’Autunno Chiaravalle 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\cb1cb4303f2f168b.html",
+        "sha256": "0fdb6a5e484aa317fe3430691778b510c421f7a95bf961d3a0a0ec90d8396a2d"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "valle",
+      "url": "https://catanzaro.eu/eventi/valle-in-fiera/",
+      "title": "UNPLI Catanzaro, Valle in Fiera 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\e5a5b4f0f2b6822f.html",
+        "sha256": "40c53e770ea9758eeb93f98d7cc12b0d24e618745ff8518fef7f88b2f05457d3"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "merend",
+      "url": "https://catanzaro.eu/eventi/sagra-della-merendella/",
+      "title": "UNPLI Catanzaro, Sagra della Merendella 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\22ff632d2d5095eb.html",
+        "sha256": "54ad560c901b56cad93591ce17ffbacc4c01597137ef02b770b7482a61e3ceed"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "sersale",
+      "url": "https://catanzaro.eu/eventi/5a-edizione-notte-bianca/",
+      "title": "UNPLI Catanzaro, Notte Bianca Sersale 2026",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\493bfbff6ca70851.html",
+        "sha256": "20e250ae5ac802d1a1ca37ec1c5062f20a172d80a8c5ff63e8e17f8962cc2f07"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "mag",
+      "url": "https://www.comune.magisano.cz.it/vivere-il-comune/",
+      "title": "Comune di Magisano, eventi",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\87dbaa96afbdfb78.html",
+        "sha256": "72d9cc18ecd7ff1613a0d3a0ebbbcd5c0828910e6a28e88270b9cb4713ca4d83"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "montep",
+      "url": "https://riviviamomontepaone.it/it/iniziative-ed-eventi/sagre-feste-e-ricorrenze.html",
+      "title": "Associazione Ri...vivi...amo Montepaone, sagre e ricorrenze",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\eff6ad1fde15ff7b.html",
+        "sha256": "ea7441266590c378185413209580380b7cd155cee065ff3def86bb3b7cbe4103"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "noc",
+      "url": "https://www.comune.noceraterinese.cz.it/nocerater/po/attachment_news.php?id=258",
+      "title": "Comune di Nocera Terinese, avviso Fiera San Giovanni 2025",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\7c2a01818ac811cb.pdf",
+        "sha256": "2deee07c759e187882aa409ce7151048837a74a7c98d2d8cee12a38e898ef89c"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "gal",
+      "url": "https://www.galserrecalabresi.it/wp-content/uploads/2024/09/Newsletter_agosto_2024.pdf",
+      "title": "GAL Serre Calabresi, Orizzonti Rurali agosto 2024",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": false,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\adafcac9bb7ca2e6.pdf",
+        "sha256": "810e1491aeb709832366e86fe0e85cd5adfc8ff7ff67e89ff9c139ebb2ea5960"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "elenco",
+      "url": "https://sabap-cz-kr.cultura.gov.it/?page_id=1949",
+      "title": "Ministero della Cultura, territorio e funzionari: elenco comuni",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": false,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\07a65125a0a327a8.html",
+        "sha256": "7b3da4925a7b1dc145c0c07ff7e1a14ae81e4f6e82a5ba0fadc1919deecf818c"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "fiore",
+      "url": "https://calabriastraordinaria.it/eventi/catanzaro-in-fiore",
+      "title": "Calabria Straordinaria, Catanzaro in Fiore 2025",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": false,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\de57b7d17d8e0544.html",
+        "sha256": "12e44d5a08941f1b0e039481b766a5402d23a5df4b81bc46c61e286fc83a8ed1"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "falerna",
+      "url": "https://comune.falerna.cz.it/wp-content/uploads/2025/09/GC-160-del-02-12-2024-Canone-Unico.pdf",
+      "title": "Comune di Falerna, delibera 160/2024 tariffe 2025",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": false,
+      "acquisition": {
+        "status": 200,
+        "file": "originali\\cfa3ca26f189e230.pdf",
+        "sha256": "225425e1ed50dd9937ee7ce3d7b2f8013fdcb39ac3a985cca97bc3dfeb9f7304"
+      },
+      "limitation": "Originale conservato; lettura limitata ai passaggi pertinenti. HTTP 200 da solo non certifica testo utile."
+    },
+    {
+      "key": "valle-poster",
+      "url": "https://catanzaro.eu/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-15-at-12.59.32.jpeg",
+      "title": "UNPLI/Pro Loco Vallefiorita, locandina ufficiale",
+      "checkedAt": "2026-11-05",
+      "usedForDelta": true,
+      "acquisition": {
+        "status": 200,
+        "file": "valle-in-fiera-locandina.jpeg",
+        "sha256": "12538af242045be50cf9a631dedb986980557d9d818e24be1a99408c61e4aa0f"
+      },
+      "limitation": "Locandina senza anno nel disegno; anno 2026 dalla pagina evento UNPLI. Orari discordanti omessi."
+    }
+  ],
+  "historicalFindingsOutsideDelta": [
+    {
+      "city": "Centrache",
+      "name": "Borgo delle radici",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Degustazioni e ambienti tradizionali, nessun giorno esatto ricavato."
+    },
+    {
+      "city": "Girifalco",
+      "name": "Festa della Montagna",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Stand di prodotti e artigiani; nessun giorno esatto ricavato."
+    },
+    {
+      "city": "San Floro",
+      "name": "Fiera di Sant'Anna",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Vendita prodotti e antichi mestieri, nessuna data annuale corrente."
+    },
+    {
+      "city": "Stalettì",
+      "name": "Pitta cu’ a sarda",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Rassegna gastronomica e artigianale, giorni non accertati."
+    },
+    {
+      "city": "Guardavalle",
+      "name": "Festa del Grano e della Trebbiatura / Notte delle Stelle",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Due identità citate nel resoconto, non un evento continuo."
+    },
+    {
+      "city": "Isca sullo Ionio",
+      "name": "Albero di Canto",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Stand locali, nessun avviso annuale corrente verificato."
+    },
+    {
+      "city": "Satriano",
+      "name": "Rughe piccanti",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Produttori e artigianato nel resoconto, giorni non accertati."
+    },
+    {
+      "city": "Palermiti",
+      "name": "Pane e calatura / Sagra del maialino nero",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Due iniziative distinte, non date 2026."
+    },
+    {
+      "city": "Santa Caterina dello Ionio",
+      "name": "Sagra delle Alici / Paese in Festa",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Eventi distinti, nessuna conferma annuale corrente."
+    },
+    {
+      "city": "Montepaone",
+      "name": "Sagra di fine estate",
+      "year": 2024,
+      "sourceKey": "gal",
+      "note": "Prodotti locali e artigiani; giorni non ricavati dal mese di pubblicazione."
+    },
+    {
+      "city": "Zagarise",
+      "name": "Borgo in festa / Natale in Borgo / sagre funghi castagne olio",
+      "year": 2024,
+      "sourceKey": null,
+      "sourceUrl": "https://www.comune.zagarise.cz.it/wp-content/uploads/2024/03/Relazione-fine-mandato-ZAGARISE-2024.pdf",
+      "note": "Più iniziative descritte nella relazione comunale fine mandato 2024: mesi storici, non calendario annuale 2026 né evento unico."
+    }
+  ],
+  "identityPreservation": {
+    "existingProvinceEvents": 1,
+    "preservedIds": [
+      "calabria-lamezia-terme-fiera-di-sant-antonio"
+    ],
+    "newIds": 52,
+    "semanticReview": "Nessuna nuova scheda dedicata a Sant’Antonio; fiere omonime di comuni diversi distinte. Nessun alias applicato a schede precedenti."
+  }
+}

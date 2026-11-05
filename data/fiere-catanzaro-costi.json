@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "province": "Catanzaro",
+  "checkedAt": "2026-11-05",
+  "mode": "append-only-proposal",
+  "events": {
+    "calabria-curinga-fiera-dell-annunziata": {
+      "label": "Suolo 30 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 30 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-di-san-giovanni": {
+      "label": "Suolo 40 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 40 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-di-santa-maria-della-grazia": {
+      "label": "Suolo 25 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 25 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-dell-immacolata": {
+      "label": "Suolo 40 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 40 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-soverato-fiera-della-galilea": {
+      "label": "Canone 2026: 1 €/m² × superficie × 2 giorni",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Delibera G.C. 13 del 29/01/2026: il dispositivo stabilisce 1,00 €/m² × superficie occupata × 2 giorni, per il 6–7 aprile 2026. Canone di occupazione, non prezzo completo del banco: bollo, IVA, allacci, energia e ulteriori oneri non quantificati. Nessuna trasposizione al 2027.",
+      "sourceUrl": "https://soverato.contrasparenza.it/documenti/allegati/trasparenza/40/delibera-gm-n-13-2026-approvazione-tariffa-partecipazione-fiera-della-galilea-2026.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-squillace-bacco-al-borgo": {
+      "label": "Hobbisti: suolo da pagare, importo non pubblicato",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Avviso hobbisti: importo e conto per il suolo saranno comunicati ai selezionati; energia elettrica non fornita dal Comune. Non è una quota nota né gratuità. Per la selezione somministrazione il documento esaminato non quantifica il canone: non estendere automaticamente questa condizione economica agli otto stand.",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5404291/Avviso-Mercatini-2026-bacco-al-borgo.docx",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-sellia-sagra-dell-olio-d-oliva": {
+      "label": "Allestimento proprio; prezzo spazio non indicato",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Moduli artigianato ed enogastronomia del 17 agosto 2026: stand allestito a proprie spese; alternativa su suolo/locale privato oppure spazio/stand comunale con punto luce al prezzo stabilito, senza cifra. Nessun costo complessivo, IVA o consumo energetico ricavabile; non significa spazio gratuito.",
+      "sourceUrl": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ARTIGIANATO-2026-1.docx",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    }
+  },
+  "excludedEconomics": [
+    {
+      "sourceKey": "lam",
+      "reason": "Bollo 14,62 euro nella pagina comunale aggiornata 2025 ma con procedura datata: non accreditato come onere corrente, né associato alla scheda preesistente Sant’Antonio."
+    },
+    {
+      "sourceKey": "falerna",
+      "reason": "Canone 0,60 €/m²/giorno per fiere religiose nel tariffario 2025: nessuna scheda con edizione corrente primaria sufficiente selezionata; non associato per ipotesi."
+    },
+    {
+      "sourceKey": "assaggia",
+      "reason": "€0 a persona riguarda il visitatore, non l’espositore."
+    },
+    {
+      "sourceKey": "gal",
+      "reason": "Finanziamenti pubblici agli eventi non sono tariffe banco."
+    },
+    {
+      "sourceKey": "unpli",
+      "reason": "Nessuna affluenza o numero di operatori ricavato dal repertorio come dato corrente."
+    }
+  ]
+}
