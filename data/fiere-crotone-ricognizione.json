@@ -1,0 +1,194 @@
+{
+  "province": "Crotone",
+  "checkedAt": "2026-11-05",
+  "method": "Ricognizione web nominale in gruppi dei 27 comuni, approfondimenti selettivi di fonti comunali, organizzatore e portale regionale. Non esame integrale di albi, social o archivi.",
+  "limitations": [
+    "403 Regione e connessioni interrotte Comune Crotone: riscontri testuali indicizzati del dominio primario, non originali integralmente recuperati.",
+    "Nessuna assenza di eventi certificata per comuni senza aggiunte; piste non confermate escluse.",
+    "Nessun costo attuale, disponibilità, affluenza o notorietà dedotto."
+  ],
+  "municipalities": [
+    {
+      "city": "Belvedere di Spinello",
+      "query": "Belvedere di Spinello sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Caccuri",
+      "query": "Caccuri sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-caccuri-sagra-dell-uva"
+      ],
+      "note": "Sagra uva dal portale regionale; Festa Autunno terza fonte senza originale leggibile esclusa."
+    },
+    {
+      "city": "Carfizzi",
+      "query": "Carfizzi sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Casabona",
+      "query": "Casabona sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Castelsilano",
+      "query": "Castelsilano sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Cerenzia",
+      "query": "Cerenzia sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Cirò",
+      "query": "Cirò sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Cirò Marina",
+      "query": "Cirò Marina sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Mercati Saraceni è luogo storico con fiera interrotta nel XIX secolo: non aggiunta."
+    },
+    {
+      "city": "Cotronei",
+      "query": "Cotronei sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-cotronei-sagra-della-castagna"
+      ],
+      "note": "Programma diretto organizzatore letto; giorni stand distinti."
+    },
+    {
+      "city": "Crotone",
+      "query": "Crotone sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-crotone-mercato-del-primo-giovedi-del-mese",
+        "calabria-crotone-fiera-di-san-dionigi",
+        "calabria-crotone-mercatini-di-natale"
+      ],
+      "note": "Tre nuove schede da Comune; Fiera Mariana precedente conservata."
+    },
+    {
+      "city": "Crucoli",
+      "query": "Crucoli sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-crucoli-sagra-della-sardella"
+      ],
+      "note": "Pagina comunale con date 9-10 agosto 2026."
+    },
+    {
+      "city": "Cutro",
+      "query": "Cutro sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Isola di Capo Rizzuto",
+      "query": "Isola di Capo Rizzuto sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Melissa",
+      "query": "Melissa sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Mesoraca",
+      "query": "Mesoraca sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Modulo Ecce Homo trovato, nessun periodo verificato: non aggiunto."
+    },
+    {
+      "city": "Pallagorio",
+      "query": "Pallagorio sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Petilia Policastro",
+      "query": "Petilia Policastro sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-petilia-policastro-fiera-dei-saperi"
+      ],
+      "note": "Fiera dei Saperi dal portale regionale, 4 ottobre 2026."
+    },
+    {
+      "city": "Rocca di Neto",
+      "query": "Rocca di Neto sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Roccabernarda",
+      "query": "Roccabernarda sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "San Mauro Marchesato",
+      "query": "San Mauro Marchesato sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-san-mauro-marchesato-mercatini-di-natale"
+      ],
+      "note": "Programma regionale Natale 2025/2026, non aperture quotidiane."
+    },
+    {
+      "city": "San Nicola dell'Alto",
+      "query": "San Nicola dell'Alto sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Santa Severina",
+      "query": "Santa Severina sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Savelli",
+      "query": "Savelli sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-savelli-sagra-della-castagna"
+      ],
+      "note": "Delibera 44/2025 risolve intervallo erroneo della pagina evento."
+    },
+    {
+      "city": "Scandale",
+      "query": "Scandale sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-scandale-sagra-del-fico-d-india"
+      ],
+      "note": "Pro Loco: solo periodo ricorrente settembre."
+    },
+    {
+      "city": "Strongoli",
+      "query": "Strongoli sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Ricerca nominale in gruppo; nessun nuovo evento selezionato con periodo e fonte primaria sufficienti. Non equivale ad assenza di manifestazioni."
+    },
+    {
+      "city": "Umbriatico",
+      "query": "Umbriatico sagra fiera mercatini comune pro loco",
+      "newIds": [
+        "calabria-umbriatico-christmas-village"
+      ],
+      "note": "Repertorio comunale, Natale senza data annuale; metadati non convertiti in date evento."
+    },
+    {
+      "city": "Verzino",
+      "query": "Verzino sagra fiera mercatini comune pro loco",
+      "newIds": [],
+      "note": "Piste fiera animali e miele da approfondire; nessuna data corrente primaria verificata."
+    }
+  ]
+}

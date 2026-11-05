@@ -1,0 +1,291 @@
+{
+  "province": "Crotone",
+  "checkedAt": "2026-11-05",
+  "mode": "append-only",
+  "events": [
+    {
+      "id": "calabria-crotone-mercato-del-primo-giovedi-del-mese",
+      "region": "Calabria",
+      "city": "Crotone",
+      "name": "Mercato del primo giovedì del mese",
+      "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.crotone.it/vivere-il-comune/luoghi/mercato-del-primo-giovedi-del-mese/",
+        "label": "Comune di Crotone",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercato mensile tra viale Regina Margherita, via Francesco Le Rose e piazzale Nettuno.",
+      "sectors": "Merceologie da verificare nella concessione",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Primo giovedì del mese; spazi riservati a titolari di concessione comunale. Nessuna data annuale generata. La voce gratuito della pagina luogo non prova gratuità del posteggio."
+      }
+    },
+    {
+      "id": "calabria-crotone-fiera-di-san-dionigi",
+      "region": "Calabria",
+      "city": "Crotone",
+      "name": "Fiera di San Dionigi",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.crotone.it/wp-content/uploads/2026/04/avviso_pubblico_San_Dionigi_2024.pdf",
+        "label": "Comune di Crotone, avviso 2024",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera di dolciumi in piazza Pitagora e via Messinetti; documentata l’edizione 2024.",
+      "sectors": "Prodotti alimentari, dolciumi",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-10-09",
+          "end": "2024-10-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.crotone.it/wp-content/uploads/2026/04/avviso_pubblico_San_Dionigi_2024.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso storico 2024: undici posteggi da 24 m², concessione per la sola edizione. Non è un bando aperto né una conferma delle condizioni 2026."
+      }
+    },
+    {
+      "id": "calabria-crotone-mercatini-di-natale",
+      "region": "Calabria",
+      "city": "Crotone",
+      "name": "Mercatini di Natale",
+      "months": "11,12,1",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.crotone.it/wp-content/uploads/2026/04/76780_AVVISO_MERCATINI_DI_NATALE_20_1763380099.pdf",
+        "label": "Comune di Crotone, avviso Natale 2025",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Casette, banchi e food truck tra piazza della Resistenza e via Vittorio Veneto.",
+      "sectors": "Artigianato, commercio al dettaglio a tema natalizio, alimentare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-29",
+          "end": "2026-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.crotone.it/wp-content/uploads/2026/04/76780_AVVISO_MERCATINI_DI_NATALE_20_1763380099.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso storico per dieci spazi, con tipologie e durate da verificare nel documento. L’intervallo è quello dell’iniziativa, non assicura apertura quotidiana di ciascun banco. Nessuna edizione Natale 2026 dedotta."
+      }
+    },
+    {
+      "id": "calabria-petilia-policastro-fiera-dei-saperi",
+      "region": "Calabria",
+      "city": "Petilia Policastro",
+      "name": "Fiera dei Saperi",
+      "months": "10",
+      "category": "artigianato",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/fiera-dei-saperi",
+        "label": "Regione Calabria, portale turistico",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand di aziende locali e artigiani in piazza Filottete, in collaborazione con GAL Kroton.",
+      "sectors": "Prodotti enogastronomici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/fiera-dei-saperi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Verificare con il Comune o l’organizzatore categorie ammesse, domanda e costi. La presenza di stand non certifica disponibilità di posteggi."
+      }
+    },
+    {
+      "id": "calabria-cotronei-sagra-della-castagna",
+      "region": "Calabria",
+      "city": "Cotronei",
+      "name": "Sagra della Castagna",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.circolonoiconvoi.it/sagra-della-castagna-di-cotronei-3/",
+        "label": "Circolo Noi con Voi, programma XVII edizione",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Programma culturale dal 5 all’8 novembre; caldarroste e stand in piazza della Solidarietà il 7 e l’8.",
+      "sectors": "Alimentare, castagne, dolciumi",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-05",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.circolonoiconvoi.it/sagra-della-castagna-di-cotronei-3/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma 2026 dell’organizzatore: stand gastronomici soltanto sabato 7 e domenica 8 dalle 17. Il 5 teatro e il 6 convegno, non quattro giorni di mercato. Domanda e costi banco non pubblicati nella pagina."
+      }
+    },
+    {
+      "id": "calabria-crucoli-sagra-della-sardella",
+      "region": "Calabria",
+      "city": "Crucoli",
+      "name": "Sagra della Sardella",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.crucoli.kr.it/portamiacrucoli/",
+        "label": "Comune di Crucoli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Percorso gastronomico nel centro storico dedicato alla sardella.",
+      "sectors": "Alimentare, prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.crucoli.kr.it/portamiacrucoli/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Verificare con il Comune o l’organizzatore categorie ammesse, domanda e costi. La presenza di stand non certifica disponibilità di posteggi."
+      }
+    },
+    {
+      "id": "calabria-caccuri-sagra-dell-uva",
+      "region": "Calabria",
+      "city": "Caccuri",
+      "name": "Sagra dell’Uva",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://calabriastraordinaria.it/en/events/grape-festival-caccuri",
+        "label": "Regione Calabria, portale turistico",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Degustazioni e cucina locale in piazza di Porta Grande.",
+      "sectors": "Alimentare, olio e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/en/events/grape-festival-caccuri"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Verificare con il Comune o l’organizzatore categorie ammesse, domanda e costi. La presenza di stand non certifica disponibilità di posteggi."
+      }
+    },
+    {
+      "id": "calabria-scandale-sagra-del-fico-d-india",
+      "region": "Calabria",
+      "city": "Scandale",
+      "name": "Sagra del Fico d’India",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocoscandale.it/",
+        "label": "Pro Loco Scandale",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra con stand gastronomici dedicati al fico d’India.",
+      "sectors": "Alimentare, dolci, marmellate e liquori",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "L’organizzatore indica solitamente settembre senza date di un’edizione annuale. Nessuna conferma 2026 o tariffa per espositori ricavata dalla ricorrenza."
+      }
+    },
+    {
+      "id": "calabria-san-mauro-marchesato-mercatini-di-natale",
+      "region": "Calabria",
+      "city": "San Mauro Marchesato",
+      "name": "Mercatini di Natale",
+      "months": "12,1",
+      "category": "mercatino",
+      "source": {
+        "url": "https://calabriastraordinaria.it/eventi/natale-a-san-mauro-marchesato",
+        "label": "Regione Calabria, portale turistico",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatini artigianali ed enogastronomici nel programma natalizio del borgo.",
+      "sectors": "Artigianato e prodotti enogastronomici",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-08",
+          "end": "2026-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://calabriastraordinaria.it/eventi/natale-a-san-mauro-marchesato"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Periodo del programma natalizio 2025/2026; non equivale a mercato quotidiano. Giorni effettivi dei singoli stand, modalità e costi da verificare con l’organizzazione."
+      }
+    },
+    {
+      "id": "calabria-umbriatico-christmas-village",
+      "region": "Calabria",
+      "city": "Umbriatico",
+      "name": "Christmas Village",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.umbriatico.kr.it/vivere-il-comune/eventi/",
+        "label": "Comune di Umbriatico, repertorio eventi",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa natalizia con mercatini e bancarelle di artigianato.",
+      "sectors": "Artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il repertorio descrive il periodo natalizio; la data 3 dicembre 2024 è metadato del contenuto, non una data di svolgimento accertata. Nessuna edizione corrente o apertura giornaliera dedotta."
+      }
+    },
+    {
+      "id": "calabria-savelli-sagra-della-castagna",
+      "region": "Calabria",
+      "city": "Savelli",
+      "name": "Sagra della Castagna",
+      "months": "10,11",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.savelli.kr.it/wp-content/uploads/2025/10/44-Sagra-della-Castagna.pdf",
+        "label": "Comune di Savelli, delibera 44/2025",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Edizione 2025 con gastronomia locale e artigianato.",
+      "sectors": "Alimentare e artigianato",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-31",
+          "end": "2025-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.savelli.kr.it/wp-content/uploads/2025/10/44-Sagra-della-Castagna.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date dalla delibera 44/2025. La pagina evento comunale mostra un intervallo incoerente 2024–2025: non adottato. Patrocinio gratuito e ingresso pubblico non sono gratuità dello stand; nessuna data 2026 dedotta."
+      }
+    }
+  ]
+}
