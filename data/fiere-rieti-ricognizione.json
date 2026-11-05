@@ -1,0 +1,2073 @@
+{
+  "province": "Rieti",
+  "checkedAt": "2026-11-05",
+  "municipalityCount": 73,
+  "method": "Una query nominale distinta per ciascuno dei 73 comuni; approfondimenti mirati di Comune, Pro Loco, organizzatore, Regione e UNPLI. Query e risposte effettive conservate privatamente. Originali recuperati con stato HTTP e SHA256; lettura dei passaggi pertinenti, non dichiarazione di lettura integrale di ogni sito.",
+  "limitations": [
+    "Non censimento esaustivo o certificato degli eventi.",
+    "Fonti secondarie usate come piste; date non promosse a conferme senza riscontro primario.",
+    "Periodi senza anno e storico espliciti; nessuna previsione di disponibilità, vendite, affluenza o notorietà.",
+    "Nessuna modifica al catalogo nazionale, alle schede precedenti, al DB o alla checklist."
+  ],
+  "municipalities": [
+    {
+      "city": "Accumoli",
+      "query": "\"Accumoli\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.accumoli.ri.it/wp-content/uploads/2025/05/Delibera-n-38-2025.pdf",
+        "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+        "https://www.arsial.it/wp-content/uploads/2025/03/Progetti-non-ammessi.pdf",
+        "https://www.comune.accumoli.ri.it/novita/istituzione-in-via-sperimentale-del-mercato-comunale-presso-larea-antistante-il-centro-commerciale-monti-della-laga/",
+        "https://www.impresainungiorno.gov.it/web/guest/comune?",
+        "https://www.parchilazio.it/schede-398-sagra_della_pasta_del_vergaro",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DEC-T00184-12-12-2024-Allegato.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DGR-1069-05-12-2024-Allegato.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/schede-398-sagra_della_pasta_del_vergaro",
+          "label": "Parchi Lazio",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+          "label": "Comune di Accumoli",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+          "label": "Comune di Accumoli",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+          "label": "Comune di Accumoli",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+          "label": "Comune di Accumoli",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-accumoli-sagra-della-pasta-del-vergaro",
+        "lazio-accumoli-sagra-delle-fettuccine-alla-trota",
+        "lazio-accumoli-sagra-della-pasta-alla-griscia",
+        "lazio-accumoli-sagra-della-pecora",
+        "lazio-accumoli-mostra-e-rassegna-equina-tpr"
+      ],
+      "outcome": "Cinque identità da calendario comunale e Parchi Lazio. Mercato sperimentale settimanale 2025 escluso dal delta: la delibera scade al 31 dicembre 2025; l’esenzione canone non estesa al 2026 né ad altre fiere.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Amatrice",
+      "query": "\"Amatrice\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.prolocoamatrice.it sagra 2026 autunno",
+        "\"Amatrice\" \"Sagra\" site:visitlazio.com/eventi-lazio 2026"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://centroitaliaevents.it/lazio/rieti/amatrice/festa-dellautunno-di-amatrice.html",
+        "https://marche.centroitaliaevents.it/lazio/rieti/amatrice/festa-dellautunno-di-amatrice.html",
+        "https://www.halleyweb.com/c057002/zf/index.php/uffici/index/detail/categoria/80/id/76",
+        "https://www.halleyweb.com/c057002/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTVRjMUU5QT0-H",
+        "https://www.halleyweb.com/c057002/zf/index.php/atti-generali/index/download-file/atto/16/voce/20",
+        "https://www.parchilazio.it/schede-426-primaverissima_sagra_degli_gnocchi_ricci",
+        "https://www.halleyweb.com/c057002/zf/index.php/atti-generali/index/download-file/atto/16/voce/19",
+        "https://sagr.it/lazio/sabina/eventi/festa-dell-autunno-amatrice"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/amatrice-60sagra-spaghetti-allamatriciana/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-amatrice-sagra-degli-spaghetti-all-amatriciana"
+      ],
+      "outcome": "Sagra Amatriciana 2026 da Regione. Festa Autunno 2026 trovata negli aggregatori, non aggiunta senza fonte primaria leggibile; home Pro Loco HTTP 500.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Antrodoco",
+      "query": "\"Antrodoco\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.prolocoantrodoco.it autunno stracci",
+        "\"Antrodoco\" \"Festa d’Autunno\" site:comune.antrodoco.ri.it",
+        "\"Antrodoco\" \"Stracci\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/antrodoco/festa-d-autunno-112451",
+        "https://www.visitbracciano.it/evento/festa-d-autunno-182-2026-10-31",
+        "https://www.comune.antrodoco.ri.it/it/vivere/pro-loco-1",
+        "https://sagr.it/lazio/sabina/eventi/festa-d-autunno-antrodoco",
+        "https://www.festivalinitalia.it/index.php/festival/festa-autunno-marrone-antrodoco",
+        "https://portaleventi.it/evento/festa-dautunno-e-alta-via-del-marrone-ad-antrodoco",
+        "https://www.lazionascosto.it/sagre-lazio/festa-dautunno-antrodoco/",
+        "https://www.cheventi.it/eventi/2026-xxxii-festa-dautunno-antrodoco-ri/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/antrodoco/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-antrodoco-sagra-degli-stracci-antrodocani"
+      ],
+      "outcome": "Stracci dal portale regionale, solo agosto. Festa Autunno negli aggregatori; sito Pro Loco con errore DNS e ricerca comunale mirata senza risultato utile: non attribuite date 2026.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Ascrea",
+      "query": "\"Ascrea\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.ascrea.eu sagra 2026"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/ascrea",
+        "https://www.ascrea.eu/proloco-ascrea/",
+        "https://lazio.piazzainfesta.it/ascrea/fiera-tradizionale-di-san-carlo-129585",
+        "https://lazio.piazzainfesta.it/ascrea/eventi-tradizionali-e-ricreativi-della-pro-loco-di-rocca-sinibalda-129586",
+        "https://www.gosabina.com/eventi/sagre-e-degustazioni/xxxviii-sagra-delle-fettuccine-ai-funghi-porcini/12864/",
+        "https://lazioeventi.com/eventi/festa-della-castagna-ad-ascrea",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.comune.ascrea.ri.it/it/eventi/sagra-delle-fettuccine-ai-funghi-porcini"
+      ],
+      "sources": [
+        {
+          "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+          "label": "Organizzatore / Pro Loco Ascrea",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+          "label": "Organizzatore / Pro Loco Ascrea",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+          "label": "Organizzatore / Pro Loco Ascrea",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-ascrea-festa-degli-asparagi",
+        "lazio-ascrea-sagra-delle-fettuccine-al-fungo-porcino",
+        "lazio-ascrea-festa-della-castagna"
+      ],
+      "outcome": "Tre manifestazioni con periodo dal sito Pro Loco. Non aggiunta la Fiera San Carlo di Posticciola erroneamente geolocalizzata ad Ascrea da un aggregatore.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Belmonte in Sabina",
+      "query": "\"Belmonte in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolocobelmonteinsabina.it/chi-siamo/",
+        "https://www.prolocobelmonteinsabina.it/",
+        "https://www.comune.belmonteinsabina.ri.it/vivere_il_comune/eventi/evento_1.html",
+        "https://www.prolocobelmonteinsabina.it/2026/08/14/comunicato-stampa-2/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.visitlazio.com/belmonte-in-sabina/",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=belmonteinsabina",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-del-turchetto-belmonte-in-sabina"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocobelmonteinsabina.it/sagra-del-truchetto/",
+          "label": "Organizzatore / Pro Loco Belmonte in Sabina",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-belmonte-in-sabina-sagra-del-turchetto"
+      ],
+      "outcome": "Turchetto: fonte diretta Pro Loco, periodo dopo Ferragosto. Non dedotto l’anno dall’ordinale.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Borbona",
+      "query": "\"Borbona\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Borbona\" sagra fagiolo site:comune.borbona.ri.it",
+        "\"Borbona\" \"fagiolo\" \"proloco\"",
+        "\"Borbona\" sagra fagiolo 2026 comune"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.borbona.rieti.it/it/eventi/623249",
+        "https://www.comune.borbona.rieti.it/it/news/xliv-sagra-del-fagiolo-borbontino?type=1",
+        "https://www.comune.borbona.rieti.it/it/news/2-maggio-fiera-della-croce",
+        "https://www.comune.borbona.rieti.it/it/news/2031683",
+        "https://www.cittadellapatata.it/comune-di-borbona/",
+        "https://www.cittadellapatata.it/eventi/",
+        "https://www.comune.borbona.rieti.it/it/news-category/135750?type=1",
+        "https://www.cittadellapatata.it/comune-di-borbona/page/2/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.borbona.rieti.it/it/news/xliv-sagra-del-fagiolo-borbontino",
+          "label": "Comune di Borbona",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-borbona-sagra-del-fagiolo-borbontino"
+      ],
+      "outcome": "Pagina comunale della XLIV edizione 2026; mercatini soltanto il 18 ottobre. Scheda 2023 conservata come confronto, non duplicata.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Borgo Velino",
+      "query": "\"Borgo Velino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Borgo Velino\" sagra marrone comune pro loco"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://velino.it/la-nostra-terra/i-comuni/borgo-velino",
+        "https://velino.it/la-nostra-terra/cultura/manifestazioni",
+        "https://www.visitlazio.com/eventi-lazio/il-borgo-in-sagra-a-borgo-velino/",
+        "http://www.comune.borgovelino.ri.it/",
+        "https://www.chiesadirieti.it/wp-content/uploads/2019/05/Frontiera_2017_37.pdf",
+        "https://volontariatolazio.it/wp-content/uploads/2021/09/GustoCostruireComunita.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.slowsabina.it/provincia-di-rieti/borgo-velino/"
+      ],
+      "sources": [
+        {
+          "url": "https://velino.it/la-nostra-terra/i-comuni/borgo-velino",
+          "label": "Comunità Montana del Velino",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://velino.it/la-nostra-terra/i-comuni/borgo-velino",
+          "label": "Comunità Montana del Velino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-borgo-velino-sagra-del-marrone-antrodocano",
+        "lazio-borgo-velino-mercatini-di-natale"
+      ],
+      "outcome": "Comunità Montana: Marrone a novembre e Natale a dicembre, pagina territoriale 2018. Nessun anno attuale generato; Il Borgo in Sagra resta pista senza programma operativo.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Borgorose",
+      "query": "\"Borgorose\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.arsial.it/wp-content/uploads/2025/09/ALLEGATO-2-Pubblici-Ammessi-non-finanziati.pdf",
+        "https://www.serviziocivileunpli.net/scn/wp-content/uploads/2026/03/Valorizzare-per-appartenere_il-patrimonio-culturale-come-identit%C3%A0-condivisa.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://lazio.piazzainfesta.it/borgorose/xxxvi-edizione-della-mostra-interregionale-caitpr-92699",
+        "https://www.rietiinunclick.it/borgorose",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DGR-1069-05-12-2024-Allegato.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DEC-T00184-12-12-2024-Allegato.pdf",
+        "https://www.eventiesagre.it/Mercatini_Filiera%2BCorta/21185303_Mercato%2BSettimanale%2BDi%2BBorgorose.html"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/i-sapori-del-borgo-antico-a-castelmenardo/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-borgorose-i-sapori-del-borgo-antico"
+      ],
+      "outcome": "I Sapori del Borgo Antico a Castelmenardo confermato da Regione per 24–25 ottobre 2026. Mostra CAITPR da aggregatore non aggiunta senza originale.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Cantalice",
+      "query": "\"Cantalice\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.prolococantalice.it strengozze 2026",
+        "\"Cantalice\" strengozze site:prolococantalice.it/Wordpress",
+        "\"Cantalice\" \"Strengozze\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolococantalice.it/Wordpress/?page_id=3907",
+        "https://www.facebook.com/proloco.cantalice/?ref=page_internal",
+        "https://www.arsial.it/wp-content/uploads/2025/03/progetti-ammessi-finanziati.pdf",
+        "https://www.arsial.it/app/uploads/amm-trasparente/Determinazione-Dirigenziale-623-2024-signed-1.pdf",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-delle-strengozze-cantalice",
+        "https://centroitaliaevents.it/lazio/rieti/cantalice/sagra-delle-strengozze.html",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.arsial.it/wp-content/uploads/2026/02/Allegato_2_AMMESSI_E_NON_FINANZIATI.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/sagra-delle-strengozze-a-cantalice/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-cantalice-sagra-delle-strengozze"
+      ],
+      "outcome": "Regione documenta 22–25 agosto 2024; programma 2026 degli aggregatori non adottato. Sito diretto Pro Loco recuperato ma home non fornisce conferma di nuove date.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Cantalupo in Sabina",
+      "query": "\"Cantalupo in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.cantalupoinsabina.ri.it/vivere_il_comune/eventi/evento_3.html",
+        "https://www.comune.cantalupoinsabina.ri.it/vivere_il_comune/luoghi/luogo_1.html",
+        "https://www.ilborghista.it/events/6-sapori-dautunno-a-cantalupo-in-sabina-2026-circolo-culturale-sabino-elio-augusto-di-carlo-pro-loco-cantalupo-in-sabina",
+        "https://ilborghista.it/events/6-sapori-dautunno-a-cantalupo-in-sabina-2026-circolo-culturale-sabino-elio-augusto-di-carlo-pro-loco-cantalupo-in-sabina",
+        "https://www.visitlazio.com/cantalupo-in-sabina/",
+        "https://geosabina.it/sabina_event/mercatino-di-natale-cantalupo-in-sabina/",
+        "https://www.rietiinunclick.it/cantalupo-in-sabina",
+        "https://cantalupoinsabina.halleyegov.it/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.cantalupoinsabina.ri.it/vivere_il_comune/eventi/evento_3.html",
+          "label": "Comune di Cantalupo in Sabina",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-cantalupo-in-sabina-fiera-contadina-a-sant-adamo"
+      ],
+      "outcome": "Fiera Sant’Adamo: scheda comunale 12 maggio 2024, non 2026. Sapori Autunno trovato su aggregatore, escluso senza fonte primaria corrente.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Casaprota",
+      "query": "\"Casaprota\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.casaprota.ri.it/it/eventi/sagra-bruschetta-e-mostra-mercato-del-prodotto-tipico",
+        "https://www.comune.casaprota.ri.it/it/page/scoprire-casaprota",
+        "https://www.casaprota.net/",
+        "https://comune.casaprota.ri.it/it/vecchi-eventi",
+        "https://www.casaprota.net/chi-siamo/",
+        "https://www.consiglio.regione.lazio.it/binary/consiglio_regionale/tbl_delibere_udp/Deliberazione_n._136_22.pdf",
+        "https://lazioeventi.com/eventi/sagra-della-bruschetta",
+        "https://www.casaprota.net/contatti/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.casaprota.ri.it/it/eventi/sagra-bruschetta-e-mostra-mercato-del-prodotto-tipico",
+          "label": "Comune di Casaprota",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-casaprota-sagra-della-bruschetta-e-mostra-mercato-del-prodotto-tipico"
+      ],
+      "outcome": "Sagra e mostra mercato unite: scheda comunale 25–26 gennaio 2025. Consultati anche sito Pro Loco e archivio, senza dedurre rinnovo 2026.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Casperia",
+      "query": "\"Casperia\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Casperia\" \"stringozzi\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.casperia.com/1feste.htm",
+        "https://www.arsial.it/wp-content/uploads/2025/03/Schede-PAT-Lazio_agg_2024_file-unico.pdf",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-polenta-casperia",
+        "https://www.comune.casperia.ri.it/it/public_documents/modulistica-commercio",
+        "https://www.visitcasperia.it/eventi-2/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://comune.casperia.ri.it/it/eventi",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G10958_04_07_2017_Allegato1.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/a-casperia-la-44-sagra-dei-stringozzi-aspresi/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-casperia-sagra-dei-stringozzi-aspresi"
+      ],
+      "outcome": "Stringozzi da Regione: stand dal 30 luglio 2026; il 29 è anteprima musicale. Mercato al Borgo: trovata modulistica comunale, periodo e calendario non dimostrati.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Castel di Tora",
+      "query": "\"Castel di Tora\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Castel di Tora\" polentone site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.prolocoroma.it/castel-di-tora-rieti/",
+        "https://geosabina.it/sabina_event/sagra-del-polentone-caste-di-tora-lago-del-turano/",
+        "https://ilborghista.it/events/sagra-degli-stigliozzi",
+        "https://www.comune.castelditora.ri.it/it/sitemap",
+        "https://borghipiubelliditalia.it/borgo/castel-di-tora/",
+        "https://lazioeventi.com/eventi/festa-del-polentone"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/castel-di-tora/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.visitlazio.com/castel-di-tora/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-castel-di-tora-sagra-del-polentone",
+        "lazio-castel-di-tora-sagra-degli-strigliozzi"
+      ],
+      "outcome": "Regione: Polentone nella prima domenica di Quaresima e Strigliozzi ultima domenica settembre. Ricorrenze senza date annuali. Mangiando sotto le stelle non aggiunto come fiera autonoma.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Castel Sant'Angelo",
+      "query": "\"Castel Sant'Angelo\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/castel-santangelo/punto-vendita-stagionale-del-marrone-antrodocano-e-prodotti-tipici-119620",
+        "https://comune.castelsantangelo.ri.it/it/eventi",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://cultura.gov.it/luogo/castel-santangelo",
+        "https://lazio.piazzainfesta.it/en/castel-santangelo",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.ilborghista.it/municipality/castel-santangelo/events",
+        "https://comune.castelsantangelo.ri.it/it/sitemap"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Pagina comunale eventi trovata senza programma corrente. Punto vendita stagionale Marrone e prodotti tipici nell’aggregatore è attività commerciale, non fiera verificata; esclusa anche confusione col monumento di Roma.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Castelnuovo di Farfa",
+      "query": "\"Castelnuovo di Farfa\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.castelnuovodifarfaturismo.it/news-ed-eventi.php",
+        "https://www.ilborghista.it/municipality/castelnuovo-di-farfa/events?includeInactive=true",
+        "https://geosabina.it/sabina_event/sagra-delle-fregnacce-con-la-persa-castel-nuovo-di-farfa/",
+        "https://www.visitlazio.com/eventi-lazio/estate-castelnovese-tra-musica-e-sagre/",
+        "https://www.comune.castelnuovodifarfa.ri.it",
+        "https://www.comune.castelnuovodifarfa.ri.it/c057014/zf/index.php/uffici/index/detail/id/1",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=castelnuovodifarfa",
+        "https://www.festivalinitalia.it/festival/sagra-del-frittello-e-del-vino-novello-castelnuovo-di-farfa"
+      ],
+      "sources": [
+        {
+          "url": "https://www.castelnuovodifarfaturismo.it/news-ed-eventi.php",
+          "label": "Comune di Castelnuovo di Farfa",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-castelnuovo-di-farfa-sagra-delle-fregnacce-con-la-persa"
+      ],
+      "outcome": "Fregnacce: calendario turistico comunale, 14 agosto senza anno. Pagina con riferimenti 2017: non interamente corrente. Nessun costo dedotto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Cittaducale",
+      "query": "\"Cittaducale\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://cittaducale.mycity.it/modulistica/categorie/777467/schede/344832-domanda-richiesta-fiera",
+        "https://www.visitbracciano.it/evento/rulli-e-cantine-202-2026-11-06",
+        "https://www.unplilazio.it/news-dalle-pro-loco/a-cittaducale-un-mercatino-dellantiquariato-artigianato-e-collezionismo/",
+        "https://portaleventi.it/evento/rulli-e-cantine-a-santa-rufina",
+        "https://www.verdepiana.it/progetto-verdepiana/",
+        "https://cittaducale.iswebcloud.it/area_letturaEvento/180545/pagsistema.html",
+        "https://www.arsial.it/wp-content/uploads/2025/03/progetti-ammessi-finanziati.pdf",
+        "https://www.eventiesagre.it/Eventi_Sagre/21172410_Fiera%2BDi%2BSan%2BMagno%2BE%2BSagra%2BDel%2BPecorino%2BA%2BCittaducale.html"
+      ],
+      "sources": [
+        {
+          "url": "https://www.unplilazio.it/news-dalle-pro-loco/a-cittaducale-un-mercatino-dellantiquariato-artigianato-e-collezionismo/",
+          "label": "UNPLI Lazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-cittaducale-riviviamo-cittaducale"
+      ],
+      "outcome": "RiviviAmo da UNPLI: 30 aprile 2017, storico. Modulistica fiera comunale non prova data; Rulli e Cantine 2026 su aggregatori resta pista senza originale letto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Cittareale",
+      "query": "\"Cittareale\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://halleyweb.com/c057017/zf/index.php/servizi-aggiuntivi/index/index/idtesto/14",
+        "https://comunecittareale.ri.it/c057017/po/mostra_news.php?area=H&id=393",
+        "https://www.cittareale.it/mercatino.asp",
+        "https://halleyweb.com/c057017/zf/index.php/servizi-aggiuntivi/index/index/idtesto/12",
+        "https://www.visitlazio.com/eventi-lazio/festa-dei-cavalli-a-cittareale/",
+        "https://www.comunecittareale.ri.it/",
+        "https://www.comunecittareale.ri.it/c057017/zf/index.php/servizi-aggiuntivi/index/index/idtesto/13",
+        "https://lazio.piazzainfesta.it/cittareale/festa-dei-cavalli-2026-72490"
+      ],
+      "sources": [
+        {
+          "url": "https://www.cittareale.it/mercatino.asp",
+          "label": "Cittareale, portale territoriale",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-cittareale-mercatino-di-natale"
+      ],
+      "outcome": "Mercatino Natale dal portale territoriale, fine settimana vicino all’8 dicembre. Recuperato anche calendario comunale esplicitamente del 2015; non spacciato per 2026. Fiera cavallo citata da avviso lavori 2026 senza data evento sufficiente.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Collalto Sabino",
+      "query": "\"Collalto Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.collaltosabino.rieti.it/it/eventi",
+        "https://prolocollalto.jimdoweb.com/",
+        "https://www.comune.collaltosabino.rieti.it/it/news/torna-il-paese-di-babbo-natale-xi-edizione",
+        "https://www.ilpaesedibabbonatale.info",
+        "https://regione.lazio.it/sites/default/files/amministrazione-trasparente/criteri-e-modalita/G05500-24042026.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://future-respect.it/wp-content/uploads/2025/05/CAMPUS-FUTURE-RESPECT-2025-PROGRAMMA.pdf",
+        "https://collalto-sabino-api.municipiumapp.it/s3/2215/allegati/resoconto-fine-mandato-2016_21.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.ilpaesedibabbonatale.info/",
+          "label": "Organizzatore / Pro Loco Collalto Sabino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-collalto-sabino-il-paese-di-babbo-natale"
+      ],
+      "outcome": "Comune 2025 e sito evento 2026 confrontati. Sei date 2026 dall’organizzatore, ordinale XI rimasto nel testo non adottato. Nessuna apertura continua tra le date.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Colle di Tora",
+      "query": "\"Colle di Tora\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Colle di Tora\" \"Fiera del Gusto\" site:comune.colleditora.ri.it",
+        "\"Colle di Tora\" \"Gusto\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.colleditora.ri.it/it/news/istituzione-del-divieto-di-transito-e-sosta-per-il-giorno-03-gennaio-2026-su-tratto-di-strada-zona-adibita-a-mercato-fisso-in-occasione-del-natale-collepiccolese-2025-2026-1940177",
+        "https://portaleventi.it/evento/fiera-del-gusto-a-colle-di-tora",
+        "https://www.festivalinitalia.it/festival/fiera-del-gusto-colle-di-tora",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://www.parchilazio.it/documenti/schede/2568_allegato1.pdf",
+        "https://lazioeventi.com/eventi/fiera-del-gusto-viaggio-tra-i-sapori-del-territorio",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G10958_04_07_2017_Allegato1.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Fiera del Gusto 25 luglio 2026 trovata negli aggregatori; query mirata sul Comune senza riscontro utile. Ordinanza Natale Collepiccolese riguarda viabilità e programma ricreativo: non prova mercatino aperto ai banchi; nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Collegiove",
+      "query": "\"Collegiove\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=collegiove",
+        "https://www.visitlazio.com/collegiove/",
+        "https://www.comunecollegiove.it/s3/2233/allegati/regolamento-uso-locali.pdf",
+        "https://www.festivalinitalia.it/festival/sagra-del-fungo-porcino-collegiove",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.visitbracciano.it/evento/castagna-in-fest-175-2026-10-25",
+        "https://festorum.it/evento/corpus-domini-ed-infiorata-collegiovese-2026",
+        "https://www.navegnacervia.it/leggi_news.asp?cid=421"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/collegiove/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-collegiove-sagra-dei-cecamariti"
+      ],
+      "outcome": "Cecamariti da Regione: fine luglio. Fungo Porcino e Castagna in Fest su aggregatori non aggiunti senza fonte primaria sufficiente.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Collevecchio",
+      "query": "\"Collevecchio\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/collevecchio",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G15861_06_12_2018_Allegato1_Elenco_regionale_Pro_Loco_del_Lazio.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/DD-G09564-12-07-2023.pdf",
+        "https://comune.collevecchio.ri.it/it/eventi",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11878_25_09_2018_Allegato1_Elenco_regionale_pro_loco_del_Lazio.pdf",
+        "https://www.rietinvetrina.it/a-collevecchio-la-sagra-del-pampepato/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11030_28_09_2020_Allegato1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G09878-23-07-2024.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Calendario comunale indicizzato senza eventi; Sagra Pampepato in articolo del 2010 e Profumi Primavera 2024 su aggregatore. Nessuna nuova identità con periodo e fonte primaria sufficiente.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Colli sul Velino",
+      "query": "\"Colli sul Velino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.collisulvelino.ri.it/eventi",
+        "https://comune.collisulvelino.ri.it/eventi/3436167/agri-festa-colli-velino",
+        "https://www.chesagra.it/lazio/ri/colli-sul-velino/autunno-s-martino",
+        "https://lazio.piazzainfesta.it/colli-sul-velino/san-martino-vivere-e-conoscere-il-territorio-di-colli-sul-velino-131551",
+        "https://www.chesagra.it/lazio/ri/colli-sul-velino/festa-di-san-martino",
+        "https://comune.collisulvelino.ri.it/",
+        "https://www.comune.collisulvelino.ri.it/",
+        "https://www.festivalinitalia.it/festival/agrifesta-colli-sul-velino"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.collisulvelino.ri.it/eventi/3436167/agri-festa-colli-velino",
+          "label": "Comune di Colli sul Velino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-colli-sul-velino-agri-festa"
+      ],
+      "outcome": "Agri Festa dal Comune, 12–13 luglio 2025. San Martino 2026 su aggregatore non aggiunto senza originale; non scambiata la data di aggiornamento pagina con data evento.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Concerviano",
+      "query": "\"Concerviano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11030_28_09_2020_Allegato1.pdf",
+        "https://atticrlarchivio.regione.lazio.it/atticrlottava/allegati/schemidelibere/SD%20411.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G07063_21_06_2016_Allegato1.pdf",
+        "https://www.comune.concerviano.ri.it/territorio/territorio.html",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G10958_04_07_2017_Allegato1.pdf",
+        "https://cicolanoexperience.weebly.com/eventi-e-sagre.html",
+        "https://www.festivalinitalia.it/festival/estate-in-festa-varco-sabino"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Risultati: descrizione territoriale comunale e calendario Cicolano non istituzionale con Pasquarella; nessun nuovo evento mercatale selezionato. Non certifica assenza.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Configni",
+      "query": "\"Configni\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Configni\" \"asparago\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.eventiesagre.it/Eventi_Sagre/21022182_Sagra%2BDel%2BPrugnolo%2BE%2BDell%2Basparago%2BSelvatico.html",
+        "https://www.comune.configni.ri.it/vivere_il_comune/luoghi/luogo_1.html",
+        "https://lazio.centroitaliaevents.it/lazio/rieti/configni/cena-di-san-martino-al-contrario-a-configni.html",
+        "https://lazioeventi.com/eventi/sagra-dellasparago-selvatico-prugnolo",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://geosabina.it/sabina_event/sagra-del-prugnolo-e-dellasparago-selvatico-configni/",
+        "https://www.halleyweb.com/c057024/zf/index.php/trasparenza/index/index/categoria/80",
+        "https://www.festivalinitalia.it/festival/sagra-prugnolo-asparago-selvatico-configni"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/prugnolo-e-asparago-selvatico-in-sagra-a-configni/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-configni-sagra-del-prugnolo-e-dell-asparago-selvatico"
+      ],
+      "outcome": "Sagra Prugnolo e Asparago 23–25 maggio 2025 dalla Regione. Cena San Martino da aggregatore non classificata come fiera.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Contigliano",
+      "query": "\"Contigliano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Contigliano\" \"pizzicotto\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.contigliano.ri.it/wp-content/uploads/2024/09/Regolamento-rievocazione-storica-Assalto-al-Castello.pdf",
+        "https://comune.contigliano.ri.it/wp-content/uploads/2024/09/DELIBERA-DI-CONSIGLIO-COMUANLE-N.-33-DEL-25.07.2024.pdf",
+        "https://www.arsial.it/wp-content/uploads/2025/03/progetti-ammessi-finanziati.pdf",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-del-pizzicotto-contigliano",
+        "https://www.arsial.it/wp-content/uploads/2025/09/ALLEGATO-2-Pubblici-Ammessi-non-finanziati.pdf",
+        "https://portaleventi.it/evento/sagra-de-u-pizzicottu-a-contigliano",
+        "https://www.visitlazio.com/eventi-lazio/il-carnevale-di-contigliano/",
+        "https://www.comune.contigliano.ri.it/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/contigliano/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-contigliano-sagra-del-pizzicotto"
+      ],
+      "outcome": "Pizzicotto da Regione, metà agosto senza anno. Regolamento Assalto al Castello reperito nei risultati: rievocazione con taverne, nessun nuovo mercato autonomo dedotto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Cottanello",
+      "query": "\"Cottanello\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Cottanello\" \"Vicolo\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/cottanello/oltre-la-terra-cottanello-il-percorso-dei-sapori-28237",
+        "https://lazio.piazzainfesta.it/cottanello",
+        "https://comune.cottanello.ri.it/it/news/2030639",
+        "https://comune.cottanello.ri.it/it/news/ordinanza-n-20-del-2026-ferragosto-cottanellese-2026",
+        "https://www.arsial.it/wp-content/uploads/2025/09/Avviso-Pubblico-1.pdf",
+        "https://lazio.piazzainfesta.it/en/cottanello/oltre-la-terra-cottanello-the-path-of-flavors-28237",
+        "https://comune.cottanello.ri.it/it/sitemap",
+        "https://www.comune.cottanello.ri.it/it/sitemap"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Ordinanze comunali Ferragosto 2026 reperite nei risultati e pista Oltre la Terra con mercati contadini da aggregatore. Non acquisito programma primario dei mercati: nessuna aggiunta né quota dedotta dal finanziamento.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Fara in Sabina",
+      "query": "\"Fara in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Fara in Sabina\" \"Fiori in Farfa\" abbazia"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.cosedicasa.com/mercatini/farfa-chiostro-dellabbazia",
+        "https://geosabina.it/sabina_event/festa-dell-olio-nuovo-canneto-sabino/",
+        "https://ilborghista.it/events/per-le-vie-del-borgo-mercatino-farfa-2026-comune-di-fara-in-sabina",
+        "https://geosabina.it/sabina_event/fiori-in-farfa-edizione-autunnale-fara-in-sabina/",
+        "https://www.visitlazio.com/eventi-lazio/il-mercatino-del-borgo-di-farfa/",
+        "https://www.comunefarainsabina.rieti.it/",
+        "https://www.comunefarainsabina.rieti.it/wp-content/uploads/2026/03/Avviso-concessione-Chiosco-Fara.pdf",
+        "https://www.visitfarainsabina.it/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Fiera di Farfa già in base, conservata integralmente. Fiori in Farfa e Per le vie del Borgo reperiti in fonti secondarie; query Abbazia non fornisce una nuova identità operativa verificata. Nessuna proposta di sovrascrittura.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Fiamignano",
+      "query": "\"Fiamignano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolocofiamignano.it/sagra-della-lenticchia-di-rascino/",
+        "https://www.prolocofiamignano.it/eventi/55a-sagra-della-lenticchia-di-rascino/",
+        "https://www.prolocofiamignano.it/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.comune.fiamignano.ri.it/it/vecchi-eventi",
+        "https://www.innerwheel.it/documenti/rivista_genn_2021_s_alta-%281%29-1277398426.pdf",
+        "https://www.visitlazio.com/fiamignano/",
+        "https://comune.fiamignano.ri.it/it"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocofiamignano.it/eventi/55a-sagra-della-lenticchia-di-rascino/",
+          "label": "Organizzatore / Pro Loco Fiamignano",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-fiamignano-sagra-della-lenticchia-di-rascino"
+      ],
+      "outcome": "Programma diretto Pro Loco, 9 agosto 2026; stand lavanda distinto dall’orario distribuzione. Nessuna quota o libero accesso banchi dedotto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Forano",
+      "query": "\"Forano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/forano/festa-delle-castagne-e-vino-novello-2026-131216",
+        "https://comune.forano.ri.it/it/eventi",
+        "https://ilborghista.it/events/castagne-e-vino-novello",
+        "https://comune.forano.ri.it/it/page/manifestazioni-ricorrenti-1",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-pastasciutta-forano",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://ilborghista.it/region/lazio/events"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.forano.ri.it/it/page/manifestazioni-ricorrenti-1",
+          "label": "Comune di Forano",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-forano-sagra-della-pastasciutta"
+      ],
+      "outcome": "Sagra Pastasciutta da calendario comunale aggiornato nel 2023. Castagne e Vino Novello a Gavignano: date discordanti negli aggregatori, non adottate.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Frasso Sabino",
+      "query": "\"Frasso Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Frasso Sabino\" \"mercato\" \"prima domenica\" comune"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://halleyweb.com/c057030/zf/index.php/atti-amministrativi/delibere",
+        "https://www.prolocofrassosabino.it/chi-siamo/",
+        "https://halleyweb.com/c057030/zf/index.php/atti-amministrativi/delibere/index",
+        "https://halleyweb.com/c057030/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G9mprMETBPT0-A",
+        "https://www.prolocofrassosabino.it/",
+        "https://www.sharry.land/it/eventi/piazza-del-contadino-a-frasso-sabino",
+        "https://www.sharry.land/it/eventi/fiera-osteria-nuova-a-frasso-sabino",
+        "https://lazio.piazzainfesta.it/frasso-sabino/sabina-festival-2026-56760"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocofrassosabino.it/mercato-agricolo/",
+          "label": "Organizzatore / Pro Loco Frasso Sabino",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.prolocofrassosabino.it/mercato-agricolo/",
+          "label": "Organizzatore / Pro Loco Frasso Sabino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-frasso-sabino-mercato-agricolo-piazza-del-contadino",
+        "lazio-frasso-sabino-fiera-delle-merci-e-del-bestiame-di-osteria-nuova"
+      ],
+      "outcome": "Pro Loco documenta Piazza del Contadino e vicina Fiera Merci e Bestiame, stessa domenica ma attività distinte. Revoche singole di concessioni 2026 trovate nei risultati non equivalgono ad annullamento del mercato. Nessuna duplicazione nei comuni confinanti.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Greccio",
+      "query": "\"Greccio\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.comune.greccio.ri.it disciplinare 2026 2027"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://turismo.comune.greccio.ri.it/eventi",
+        "https://turismo.comune.greccio.ri.it/eventi/3611895/greccio-presepio-xxviii-mostra-mercato",
+        "https://prolocogreccio.com/",
+        "https://turismo.comune.greccio.ri.it/menu/2713693",
+        "https://lazio.piazzainfesta.it/greccio/xxviii-mostra-mercato-dell-artigianato-e-dell-oggettistica-per-il-presepe-125339",
+        "https://italianonprofit.it/scheda-ente/00953940574/",
+        "https://prolocogreccio.com/contatti/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf",
+          "label": "Organizzatore / Pro Loco Greccio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-greccio-greccio-il-presepio-mostra-mercato-dell-artigianato-e-dell-oggettistica-per-il-presepio"
+      ],
+      "outcome": "Disciplinare primario 2026/2027 scaricato e letto: giorni discontinui e quota 400 euro. Escluso il Mercatino del Baratto e del Dono quale iniziativa di scambio; nessuna gratuità banco dedotta dall’ingresso libero.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Labro",
+      "query": "\"Labro\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.arsial.it/wp-content/uploads/2025/03/progetti-ammessi-finanziati.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://labro.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/2/atto/G9WpRd0TBPT0-A",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://comunedilabro.com/pro-loco",
+        "https://comune.labro.ri.it/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11030_28_09_2020_Allegato1.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Calendario ed elementi comunali e pagina Pro Loco trovati, senza fonte utile su nuovo evento commerciale con periodo. Non certifica assenza; nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Leonessa",
+      "query": "\"Leonessa\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.comune.leonessa.ri.it fiera 2026"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://marche.centroitaliaevents.it/lazio/rieti/leonessa/sagra-della-patata-di-leonessa.html",
+        "https://lazio.centroitaliaevents.it/lazio/rieti/leonessa/sagra-della-patata-di-leonessa.html",
+        "https://zonaromanord.it/leonessa-dal-9-all11-ottobre-torna-la-sagra-della-patata/",
+        "https://comune.leonessa.ri.it/it/news/36a-sagra-della-patata-di-leonessa-info-utili-su-viabilita-e-parcheggi?type=3",
+        "https://www.visitlazio.com/eventi-lazio/sagra-della-patata-a-leonessa-tra-gusto-e-musica/",
+        "https://www.comune.leonessa.ri.it/it",
+        "https://www.comune.leonessa.ri.it/it/eventi/688499",
+        "https://www.comune.leonessa.ri.it/it/eventi/sagra-della-patata-di-leonessa-35esima-edizione"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.leonessa.ri.it/it/news/36a-sagra-della-patata-di-leonessa-info-utili-su-viabilita-e-parcheggi",
+          "label": "Comune di Leonessa",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-leonessa-sagra-della-patata"
+      ],
+      "outcome": "Comune: Sagra Patata 9–11 ottobre 2026. Nei risultati albo compaiono concessioni fiere 29 giugno e seconde domeniche luglio/agosto/settembre; atti completi non acquisiti, identità non aggiunte per ipotesi.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Longone Sabino",
+      "query": "\"Longone Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolocolongone.it/manifestazioni/sagra/",
+        "https://www.prolocolongone.it/manifestazioni/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DD-G12735-28-09-2023-Allegato-1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.prolocolongone.it/longone/",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G07063_21_06_2016_Allegato1.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocolongone.it/manifestazioni/sagra/",
+          "label": "Organizzatore / Pro Loco Longone Sabino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-longone-sabino-sagra-della-braciola-di-pecora"
+      ],
+      "outcome": "Fonte Pro Loco: Braciola 16 agosto, senza anno. Calendario generale sito è del 2012; barra laterale 2026 non rinnova la sagra.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Magliano Sabina",
+      "query": "\"Magliano Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Magliano Sabina\" sagra site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://halleyweb.com/c057035/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/2/atto/G5XpjNETEZz0-A",
+        "https://halleyweb.com/c057035/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/3/atto/G5XpjNETEZz0-A",
+        "https://halleyweb.com/c057035/zf/index.php/atti-amministrativi/delibere/index/table-delibere-public-page/5",
+        "https://www.comune.maglianosabina.ri.it/it/eventi/",
+        "https://comune.maglianosabina.ri.it/it/news/1897840",
+        "https://www.tecuting2.it/c057035/zf/index.php/atti-amministrativi/delibere/table",
+        "https://www.amsabina.it/servizi/%E2%81%A0servizi-culturali/",
+        "https://geosabina.it/sabina_event/festa-di-san-liberatore-tradizione-e-spettacoli-magliano-sabina/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Atto comunale su patrocinio San Liberatore 15–17 maggio 2026 trovato nei risultati; nessuna descrizione primaria di mercato o banchi. Nessuna aggiunta da solo patrocinio.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Marcetelli",
+      "query": "\"Marcetelli\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Marcetelli\" castagna site:comune.marcetelli.ri.it"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.marcetelli.ri.it/it/vivere/755197",
+        "https://www.centroitaliaevents.it/lazio/rieti/marcetelli/sagra-della-castagna-rossa-di-marcetelli.html",
+        "https://centroitaliaevents.it/lazio/rieti/marcetelli/sagra-della-castagna-rossa-di-marcetelli.html",
+        "https://www.visitlazio.com/eventi-lazio/marcetelli-celebra-la-castagna-rossa/",
+        "https://www.comune.marcetelli.ri.it/",
+        "https://www.arsial.it/wp-content/uploads/2026/02/Allegato_3_NON_AMMESSI.pdf",
+        "https://www.comune.marcetelli.ri.it/it",
+        "https://festorum.it/evento/47-sagra-della-castagna-rossa-del-cicolano-2026"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.marcetelli.ri.it/it/eventi/46-sagra-della-castagna-rossa",
+          "label": "Comune di Marcetelli",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-marcetelli-sagra-della-castagna-rossa"
+      ],
+      "outcome": "Comune: 46ª Castagna Rossa 1 novembre 2025, punti vendita e banchi espliciti. 2026 da aggregatori non adottato; caldarroste gratis non quota banco.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Micigliano",
+      "query": "\"Micigliano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Micigliano\" castagna site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://halleyweb.com/c057037/zf/index.php/atti-amministrativi/delibere/index/table-delibere-public-page/3",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-castagna-micigliano",
+        "https://lazioeventi.com/eventi/sagra-della-castagna-micigliano",
+        "https://lazio.piazzainfesta.it/micigliano",
+        "https://www.viaggiando-italia.it/33a-sagra-della-castagna-di-micigliano-caldarroste-e-borgo-d-autunno-a-rieti/",
+        "https://www.comune.micigliano.ri.it/it",
+        "https://www.upposto.it/eventi/cmudno0ct005li08zghxz0t84",
+        "https://www.arsial.it/wp-content/uploads/2025/09/ALLEGATO-2-Pubblici-Ammessi-non-finanziati.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/micigliano/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.visitlazio.com/micigliano/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-micigliano-sagra-della-castagna",
+        "lazio-micigliano-sagra-del-tartufo"
+      ],
+      "outcome": "Regione: Tartufo luglio e Castagna ultima domenica ottobre, senza anno. Aggregatori riportano novembre 2026: dato non promosso a conferma.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Mompeo",
+      "query": "\"Mompeo\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.mompeo.ri.it/vivere_il_comune/eventi/evento_13.html",
+        "https://www.comune.mompeo.ri.it/EG0/EGSCHTST38.HBL?MESSA=PUBBLICA&en=e1360",
+        "https://www.mompeoturismo.it/contatti",
+        "https://www.mompeoturismo.it/eventi",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.visitlazio.com/eventi-lazio/festa-dellolio-nuovo-a-mompeo/",
+        "https://www.halleyweb.com/c057038/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G1WpjMkTRPT0-A",
+        "https://www.comune.mompeo.ri.it/vivere_il_comune/eventi/evento_1.html"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.mompeo.ri.it/vivere_il_comune/eventi/evento_13.html",
+          "label": "Comune di Mompeo",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-mompeo-festa-dell-olio"
+      ],
+      "outcome": "Comune: Olio 7–8 novembre 2026 con mercatini agroalimentari. Costi pubblici assenti non certificano posteggio gratuito.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Montasola",
+      "query": "\"Montasola\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Montasola\" \"fregnaccia\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.rietiinunclick.it/montasola",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=montasola",
+        "https://geosabina.it/sabina_event/sagra-del-polentone-montasola/",
+        "https://www.visitlazio.com/eventi-lazio/a-montasola-la-storica-sagra-della-fregnaccia/",
+        "http://www.comune.montasola.ri.it/",
+        "https://geosabina.it/sabina_event/festa-della-montagna/",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-fregnaccia-montasola"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/a-montasola-la-storica-sagra-della-fregnaccia/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-montasola-sagra-della-fregnaccia"
+      ],
+      "outcome": "Regione: Fregnaccia 31 maggio 2026. Pista Polentone su GeoSabina non aggiunta senza ulteriore fonte primaria.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Monte San Giovanni in Sabina",
+      "query": "\"Monte San Giovanni in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Monte San Giovanni in Sabina\" fiera site:comune.montesangiovanniinsabina.ri.it"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.sabinaparcoslow.it/servizi/cosa-fare/pro-loco/pro-loco-monte-san-giovanni-in-sabina",
+        "https://www.facebook.com/prolocomontesangiovannisabino/mentions/",
+        "https://www.instagram.com/prolocomontesangiovanni",
+        "https://wa.me/3398516054",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.comune.montesangiovanniinsabina.ri.it/trasparenza/disposizioni-generali/atti-generali/attigenerali/",
+        "https://www.festivalinitalia.it/index.php/en/festival/monte-san-giovanni-in-sabina-monthly-fair",
+        "https://www.visitlazio.com/eventi-lazio/la-festa-del-gusto-a-monte-san-giovanni-in-sabina/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Fiera mensile quarta domenica 2026 riportata da sito secondario. Query del sito comunale restituisce home/news senza atto istitutivo utile: esclusa come conferma; fonte insufficiente non assenza.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Montebuono",
+      "query": "\"Montebuono\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DGR-1069-05-12-2024-Allegato.pdf",
+        "https://www.lagazzettadellantiquariato.it/wp-content/uploads/2017/07/GUIDAMI_Ottobre-2020.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DEC-T00184-12-12-2024-Allegato.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DGR-713-14-11-2023.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DPRL-T00234-20-11-2023-Allegato.pdf",
+        "https://www.coe.int/it/web/venice/rieti/-/asset_publisher/MLGykmpUdTLm/content/alla-scoperta-di-montebuono-tra-storie-e-sapori",
+        "https://www.comune.montebuono.ri.it/it/unita_organizzative/cultura"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Riscontro Consiglio d’Europa su giornata Alla scoperta di Montebuono con piccolo mercatino; non acquisiti calendario e condizioni nel documento completo, nessuna nuova scheda datata.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Monteleone Sabino",
+      "query": "\"Monteleone Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.halleyweb.com/c057041/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/4/atto/G1npRM0TBPT0-A",
+        "https://monteleonesabino.halleyweb.it/c057041/po/mostra_news.php?area=H&id=568",
+        "https://www.festivalinitalia.it/festival/sagra-della-bruschetta-monteleone-sabino",
+        "https://www.halleyweb.com/c057041/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G5npjMUTBPT0-A",
+        "https://comune.monteleonesabino.ri.it/c057041/po/elenco_news.php?archivio=1&area=H&tags=&x=",
+        "https://www.cheventi.it/organizzatori/pro-loco-monteleone-sabino/",
+        "https://ilborghista.it/events/sagra-della-bruschetta",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-bruschetta-monteleone-sabino"
+      ],
+      "sources": [
+        {
+          "url": "https://monteleonesabino.halleyweb.it/c057041/po/mostra_news.php?area=H&id=568",
+          "label": "Comune di Monteleone Sabino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-monteleone-sabino-mercatino-hobbistico"
+      ],
+      "outcome": "Avviso comunale: mercatino hobbistico sperimentale quarta domenica marzo–ottobre 2026. Nessuna continuità giornaliera o proroga oltre ottobre dedotta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Montenero Sabino",
+      "query": "\"Montenero Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Montenero Sabino\" \"Fezze\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.montenerosabino.ri.it/amministrazione/enti_e_fondazioni/ente_13.html",
+        "https://www.prolocomontenerosabino.com/",
+        "https://www.prolocomontenerosabino.com/montenerosabinoeventi",
+        "https://www.prolocomontenerosabino.com/contatti",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.prolocomontenerosabino.com/galleria",
+        "https://www.comune.montenerosabino.ri.it/novita/notizie/novita_12.html",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DGR-1069-05-12-2024-Allegato.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/a-montenero-la-sagra-dei-maccheroni-a-fezze/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-montenero-sabino-sagra-dei-maccheroni-a-fezze"
+      ],
+      "outcome": "Sito diretto Pro Loco documenta identità e Regione date Maccheroni 25–26 luglio 2026. Spettacoli musicali non duplicati in fiere.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Montopoli di Sabina",
+      "query": "\"Montopoli di Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/montopoli-di-sabina/montopoli-in-festa-san-michele-2026-tradizioni-musica-teatro-sapori-e-comunita-28409",
+        "https://www.visitlazio.com/montopoli-di-sabina/",
+        "https://servizionline.hspromilaprod.hypersicapp.net/cmsmontopolisabina/portale/albopretorio/albopretorioconsultazione.aspx?P=6500",
+        "https://www.comune.montopolidisabina.ri.it/it/news/142867/il-comune-di-montopoli-informa-avviso-fiera-dellaltra-energia",
+        "https://forms.gle/TZJ6QVVCEWL4PsKc6",
+        "https://lazioeventi.com/eventi/sagra-delle-fregnacce-alla-sabinese",
+        "https://www.lazioinfesta.com/dove/informarti/comune/5278/montopoli-di-sabina-ri.html",
+        "https://portaleventi.it/evento/montopoli-in-festa-san-michele"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Scheda regionale e risultati albo su San Michele e Pizza Fritta; programma specifico della sagra non acquisito. Finanziamento o SIAE non prova nuovo mercato: nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Morro Reatino",
+      "query": "\"Morro Reatino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.unplilazio.it/wp-content/uploads/2025/03/Scheda-aggiornamento-dati-e-referenti-Reg.li-2024-2028.pdf",
+        "https://www.viaggiesagre.it/notizie/morroreat.html",
+        "https://www.umbriaon.it/2015/wp-content/uploads/2015/12/opuscolo-presepi-2015_completo11.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.anticocasale.umbria.it/wp-content/uploads/2015/11/PRESEPI-GENERALE-CON-FOTO.pdf",
+        "https://www.festivalinitalia.it/festival/sagra-della-pizzola-morro-reatino",
+        "https://www.italia.it/it/lazio/morro-reatino/morro-reatino",
+        "https://www.casaprota.net/mostra-mercato-del-prodotto-tipico/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Pizzola estiva in fonte secondaria e riferimenti UNPLI generali. Nessun periodo verificato da fonte diretta sufficiente; presepe non trasformato in fiera.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Nespolo",
+      "query": "\"Nespolo\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://piemonte.piazzainfesta.it/virle-piemonte/fiera-del-puciu-fera-dij-pocio-e-dla-cossa-128290",
+        "https://www.confinelive.it/feste-patronali-a-nespolo-valturano-ottima-riuscita/",
+        "https://comune.nespolo.ri.it/it",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DGR-713-14-11-2023.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DGR-1069-05-12-2024-Allegato2.pdf",
+        "https://comune.nespolo.ri.it/it/eventi/628029",
+        "https://www.sabinamagazine.it/a-nespolo-un-ricco-programma-di-iniziative-estive/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Disambiguata la Fiera del Nespolo di Virle Piemonte, estranea alla provincia. Comune e cronaca feste patronali locali senza mercato verificato: nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Orvinio",
+      "query": "\"Orvinio\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Orvinio\" sagra site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://centroitaliaevents.it/lazio/rieti/orvinio/autunno-orviniese.html",
+        "https://www.festivalinitalia.it/festival/sagra-della-polenta-orvinio",
+        "https://www.festivalinitalia.it/festival/autunno-orviniese",
+        "https://sagr.it/lazio/sabina/eventi/autunno-orviniese-i-sapori-della-sabina-in-festa-1-novembre",
+        "https://portaleventi.it/evento/autunno-orviniese",
+        "https://centroitaliaevents.it/lazio/rieti/orvinio/sagra-della-polenta-di-orvinio.html",
+        "https://www.chesagra.it/lazio/ri/orvinio/enorvinio",
+        "https://lazio.piazzainfesta.it/orvinio/halloween-8-edizione-di-autunno-orviniese-128124"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/la-44-sagra-del-polentone-di-orvinio/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/sagra-dellu-pizzillu-a-orvinio-2/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-orvinio-sagra-del-polentone",
+        "lazio-orvinio-sagra-dellu-pizzillu"
+      ],
+      "outcome": "Regione documenta Polentone 25 gennaio 2026 e Pizzillu 8 dicembre 2025. Sagra estiva Polenta e Autunno negli aggregatori non fuse col Polentone invernale né aggiunte senza primaria.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Paganico Sabino",
+      "query": "\"Paganico Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.paganicosabino.org/la-pro-loco/",
+        "https://www.paganicosabino.org/tradizioni/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.navegnacervia.it/public/20245992359_A00024.pdf",
+        "https://www.comune.paganicosabino.ri.it/it/eventi/640877",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.parchilazio.it/documenti/schede/2568_allegato1.pdf",
+        "https://www.visitlazio.com/paganico-sabino/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.paganicosabino.org/tradizioni/",
+          "label": "Organizzatore / Pro Loco Paganico Sabino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-paganico-sabino-fiera-di-san-giovanni"
+      ],
+      "outcome": "Fonte Pro Loco: Fiera San Giovanni il 30 agosto, periodo senza anno. Bestiame descritto come passato, attuali merci non alimentari. Castagnata 2026 negli aggregatori non confermata dalla pagina letta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Pescorocchiano",
+      "query": "\"Pescorocchiano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Pescorocchiano\" castagna site:comune.pescorocchiano.ri.it",
+        "\"Pescorocchiano\" \"castagna\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/pescorocchiano/sagra-della-castagna-129605",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-castagna-pescorocchiano",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://fuoriporta.app/feste/sagra-della-castagna-pescorocchiano-2026",
+        "https://lazio.centroitaliaevents.it/lazio/rieti/pescorocchiano/festa-della-castagna-a-pescorocchiano.html",
+        "https://marche.centroitaliaevents.it/lazio/rieti/pescorocchiano/festa-della-castagna-a-pescorocchiano.html",
+        "https://lazio.piazzainfesta.it/pescorocchiano",
+        "https://www.visitlazio.com/eventi-lazio/festa-della-castagna-rossa-a-pescorocchiano/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/festa-della-castagna-rossa-a-pescorocchiano/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-pescorocchiano-festa-della-castagna-rossa"
+      ],
+      "outcome": "Regione: Castagna Rossa 31 ottobre–1 novembre 2026 a Castello del Peschio, sabato pranzo/cena e domenica pranzo; nessun banco disponibile dedotto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Petrella Salto",
+      "query": "\"Petrella Salto\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.petrellasalto.ri.it/amministrazione/uffici/ufficio_27.html",
+        "https://www.comune.petrellasalto.ri.it/amministrazione/enti_e_fondazioni/ente_11.html",
+        "https://www.comune.petrellasalto.ri.it/vivere_il_comune/eventi/evento_3.html",
+        "https://www.comune.petrellasalto.ri.it/amministrazione/enti_e_fondazioni/ente_10.html",
+        "https://www.comune.petrellasalto.ri.it/vivere_il_comune/eventi/evento_1.html",
+        "https://www.prolocopetrellasalto.it/",
+        "https://www.prolocopetrellasalto.it/italiano/notizie",
+        "https://petrellasalto.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G5WpjNETnPT0-A"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.petrellasalto.ri.it/vivere_il_comune/eventi/evento_3.html",
+          "label": "Comune di Petrella Salto",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-petrella-salto-sagra-dei-fagioli-con-le-cotiche"
+      ],
+      "outcome": "Comune: Fagioli con Cotiche a Offeio 17 agosto 2025. Mappa municipio non adottata come sede. Fiera Beata Filippa menzionata nel calendario secondario senza originale corrente: esclusa.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio Bustone",
+      "query": "\"Poggio Bustone\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.poggiobustone.ri.it/luoghi/2472082/pro-loco-poggio-bustone",
+        "https://comune.poggiobustone.ri.it/eventi/2419999/72-sagra-porchetta-cena-medievale",
+        "https://www.parcoallenoci.it/hotel-ristorante-rieti/poggio-bustone/poggio-bustone.html",
+        "https://www.visitlazio.com/poggio-bustone/",
+        "https://www.sagredok.it/index.php?Itemid=840&id=614&option=com_content&view=article",
+        "https://comune.poggiobustone.ri.it/argomenti/argomento-dettaglio/1798946",
+        "https://eventi.corriere.it/dove-festival/evento/poggio-bustone/",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-porchetta-poggio-bustone"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.poggiobustone.ri.it/eventi/2419999/72-sagra-porchetta-cena-medievale",
+          "label": "Comune di Poggio Bustone",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-bustone-sagra-della-porchetta"
+      ],
+      "outcome": "Comune: 72ª Porchetta 1–2 ottobre 2022; aggiornamento pagina 2024 distinto. Data 2026 dell’albergo non adottata come fonte organizzatore.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio Catino",
+      "query": "\"Poggio Catino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.poggiocatino.ri.it/vivere_il_comune/eventi/evento_1.html",
+        "https://it-it.facebook.com/prolocopcatino/.--------------------------------------------------------------------------------",
+        "https://www.halleyweb.com/c057052/po/mostra_news.php?area=F&id=597",
+        "https://www.halleyweb.com/c057052/zf/index.php/atti-generali",
+        "https://www.rietiinunclick.it/poggio-catino",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://lazio.piazzainfesta.it/poggio-catino/artigianato-in-dimora-95216",
+        "https://www.comune.poggiocatino.ri.it/novita/notizie/novita_191.html"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.poggiocatino.ri.it/vivere_il_comune/eventi/evento_1.html",
+          "label": "Comune di Poggio Catino",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.halleyweb.com/c057052/po/mostra_news.php?area=F&id=597",
+          "label": "Comune di Poggio Catino",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-catino-sagra-della-panzanella",
+        "lazio-poggio-catino-mercatino-puntocom"
+      ],
+      "outcome": "Comune: Panzanella 17 agosto 2025 e Puntocom 10 agosto 2024. Ordinanza distingue mercatino e Ferragosto; nessun prolungamento automatico.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio Mirteto",
+      "query": "\"Poggio Mirteto\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Poggio Mirteto\" \"Fiera\" site:comune.poggiomirteto.ri.it"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.poggiomirteto.ri.it/wp-content/uploads/2023/10/regolamento-cup.pdf",
+        "https://comune.poggiomirteto.ri.it/vivere-il-comune/eventi/",
+        "https://www.centroitaliaevents.it/lazio/rieti/poggio-mirteto/carnevalone-poggiano.html",
+        "https://servizionline.hspromilaprod.hypersicapp.net/cmspoggiomirteto/portale/albopretorio/albopretorioconsultazione.aspx?P=400",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=poggiomirteto",
+        "https://geosabina.it/sabina_event/mercatino-di-primavera-poggio-mirteto/",
+        "https://lazioeventi.com/eventi/carnevalone-poggiano",
+        "https://lazioeventi.com/eventi/10-sagra-padellaccia-mercatino-natale"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.poggiomirteto.ri.it/vivere-il-comune/eventi/sabina-libri-2026/",
+          "label": "Comune di Poggio Mirteto",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-mirteto-sabina-libri"
+      ],
+      "outcome": "Comune: Sabina Libri 22–24 maggio 2026. Discordanza IV/VI edizione ignorata. Carnevalone non trasformato in mercato; accesso visitatori gratuito distinto da stand.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio Moiano",
+      "query": "\"Poggio Moiano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolocopoggiomoiano.it/chi-siamo/",
+        "https://www.prolocopoggiomoiano.it/",
+        "https://www.parchilazio.it/documenti/schede/news_7845_1308_223_allegato1.pdf",
+        "https://www.visitlazio.com/poggio-moiano/",
+        "https://www.eventiesagre.it/Eventi_Sagre/16719_Sagra%2BDell%2Basparago%2BSelvatico%2Ba%2BPoggio%2BMoiano.html",
+        "https://infioritalia.com/documents/guida-borghi-infiorati-ita.pdf",
+        "https://www.prolocopoggiomoiano.it/wp-content/uploads/2024/10/Regolamento-Richiesta-materiale.pdf",
+        "https://parcolucretili.it/10-e-11-maggio-sagra-della%C2%A2a%C2%ACa%C2%A2asparago-selvatico-a-poggio-moiano/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocopoggiomoiano.it/Eventi/19-sagra-dellasparago-selvatico/",
+          "label": "Organizzatore / Pro Loco Poggio Moiano",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-moiano-sagra-dell-asparago-selvatico"
+      ],
+      "outcome": "Pro Loco: rinvio Asparago al 24 maggio 2026. Natale 2024 ha locandina non letta integralmente e testo senza giorni: nessuna edizione datata creata.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio Nativo",
+      "query": "\"Poggio Nativo\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.visitlazio.com/poggio-nativo/",
+        "https://www.festivalinitalia.it/festival/festa-d-autunno-poggio-nativo",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G10958_04_07_2017_Allegato1.pdf",
+        "https://lazio.piazzainfesta.it/poggio-nativo/festeggiamenti-in-onore-del-ss-nome-di-maria-80946",
+        "https://www.comune.poggionativo.ri.it/it/page/albo-pretorio-trasparenza"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/poggio-nativo/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-nativo-sagra-della-ciambella"
+      ],
+      "outcome": "Regione: Ciambella 16 agosto senza anno. Festa Autunno nell’aggregatore e altre sagre citate senza calendario specifico non aggiunte.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Poggio San Lorenzo",
+      "query": "\"Poggio San Lorenzo\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+        "https://poggiosanlorenzo.halleyweb.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+        "https://www.comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+        "https://lazio.piazzainfesta.it/poggio-san-lorenzo",
+        "https://comune.poggiosanlorenzo.ri.it/feste-e-sagre/hh/index.php",
+        "https://www.comune.poggiosanlorenzo.ri.it/hh/index.php",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DD-G07475-12-06-2025-Allegati.pdf",
+        "https://comune.poggiosanlorenzo.ri.it/hh/index.php"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+          "label": "Comune di Poggio San Lorenzo",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+          "label": "Comune di Poggio San Lorenzo",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-poggio-san-lorenzo-sagra-del-frittello",
+        "lazio-poggio-san-lorenzo-sagra-del-pesce"
+      ],
+      "outcome": "Comune: Frittello nel fine settimana San Giuseppe, Pesce a cavallo giugno/luglio. Solo ricorrenze, nessuna data 2026 calcolata.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Posta",
+      "query": "\"Posta\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Posta\" \"fiera\" site:comune.posta.rieti.it"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.posta.rieti.it/index.php/it/vivere/associazione-culturale-pro-loco-di-posta",
+        "https://www.comune.posta.rieti.it/it/vivere/associazione-culturale-pro-loco-di-posta",
+        "https://www.visitlazio.com/eventi-lazio/6-sagra-del-fritto-e-cena-con-delitto-a-posta/",
+        "http://www.comunediposta.it/",
+        "https://www.altavalledelvelino.com/eventi-e-manifestazioni/details/210-Fiera%20di%20Santa%20Lucia.html",
+        "https://www.regione.piemonte.it/governo/bollettino/abbonati/2017/06/attach/dda1900000745_180.pdf",
+        "https://portaleventi.it/evento/festa-di-s-prosdocimo-a-lastebasse",
+        "https://www.visitlazio.com/eventi-lazio/natale-insieme-a-posta/"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Sagra Fritto 18 agosto 2026 su VisitLazio è cena gastronomica; non selezionata come nuova fiera autonoma. Fiera Santa Barbara in aggregatore con date da annunciare, query comunale senza fonte utile: nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Pozzaglia Sabina",
+      "query": "\"Pozzaglia Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://lazio.piazzainfesta.it/pozzaglia-sabina/sagra-della-polenta-126474",
+        "https://lazio.piazzainfesta.it/pozzaglia-sabina/fiera-annuale-e-festeggiamenti-in-onore-di-santa-agostina-pietrantoni-77434",
+        "https://lazio.piazzainfesta.it/pozzaglia-sabina",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G12734_20_09_2017_Allegato1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DD-G12735-28-09-2023-Allegato-1.pdf",
+        "https://fuoriporta.app/feste/sagra-della-polenta-pozzaglia-sabina-2026",
+        "https://www.visitlazio.com/eventi-lazio/polenta-funghi-porcini-caldarroste-in-sabina/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11030_28_09_2020_Allegato1.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Fiera annuale 10 settembre e Polenta a Pietraforte su aggregatore. Non acquisito originale comunale/organizzatore con periodo confermato, nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Rieti",
+      "query": "\"Rieti\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "site.comune.rieti.it fiera santa lucia sant antonio 2025 2026",
+        "\"Posta\" \"fiera\" site:comune.posta.rieti.it",
+        "Rieti fiera mondiale peperoncino 2026 sito ufficiale date espositori"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.rieti.it/wp-content/uploads/2024/08/Regolamento-del-commercio-ambulante-nellambito-del-territorio-comunale.pdf",
+        "https://lazio.piazzainfesta.it/rieti",
+        "https://volontariatolazio.it/a-rieti-torna-il-mercatino-del-baratto-e-del-dono-scambio-riuso-e-solidarieta/",
+        "https://www.arsial.it/wp-content/uploads/2025/07/2024-08-05-Det-85-Grad-Avv-Pub-Comuni-Proloco-Municipi-Roma-signed.pdf",
+        "https://www.tuttorieti.com/mercatino-dellantiquariato/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.comune.borbona.rieti.it/it/eventi/623249",
+        "https://www.fgm.it/documenti/eventi/santabarbaranelmondo.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+          "label": "Comune di Rieti",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+          "label": "Comune di Rieti",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+          "label": "Comune di Rieti",
+          "checkedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.fieramondialedelpeperoncino.com/edizione-2026/",
+          "label": "Organizzatore / Pro Loco Rieti",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-rieti-fiera-di-santa-barbara",
+        "lazio-rieti-fiera-di-santa-lucia",
+        "lazio-rieti-fiera-di-sant-antonio",
+        "lazio-rieti-fiera-mondiale-campionaria-del-peperoncino"
+      ],
+      "outcome": "Delibera comunale 227/2024 letta per le tre ricorrenze. Peperoncino: originale Comune HTTP 403, sostituito da programma diretto organizzatore 28 agosto–6 settembre 2026. Nessuna cifra di presenze o notorietà adottata.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Rivodutri",
+      "query": "\"Rivodutri\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.arsial.it/wp-content/uploads/2025/03/progetti-ammessi-finanziati.pdf",
+        "https://bussola.s3.eu-west-1.amazonaws.com/234108/51201912844906.pdf",
+        "https://www.unplilazio.it/news-dalle-pro-loco/sagra-della-trota-biologica-e-del-gambero-di-fiume-a-rivodutri/",
+        "https://www.festivalinitalia.it/festival/sagra-della-trota-biologica-e-del-gambero-di-fiume-rivodutri",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR-DPRL-T00234-20-11-2023-Allegato.pdf",
+        "https://geosabina.it/sabina_event/in-the-cantine-festa-del-vino-rivodutri/",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-della-trota-biologica-e-del-gambero-di-fiume-rivodutri",
+        "https://www.visitlazio.com/eventi-lazio/la-sagra-della-trota-biologica-a-rivodutri/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.unplilazio.it/news-dalle-pro-loco/sagra-della-trota-biologica-e-del-gambero-di-fiume-a-rivodutri/",
+          "label": "UNPLI Lazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-rivodutri-sagra-della-trota-biologica-e-del-gambero-di-fiume"
+      ],
+      "outcome": "Fonte UNPLI del 2016: Trota e Gambero 5–7 agosto, con artigianato. Evento storico con limite esplicito, non luglio 2026 ipotizzato dagli aggregatori.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Rocca Sinibalda",
+      "query": "\"Rocca Sinibalda\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Rocca Sinibalda\" frascarelli site:comune.roccasinibalda.ri.it",
+        "\"Rocca Sinibalda\" \"frascarelli\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.centroitaliaevents.it/lazio/rieti/rocca-sinibalda/sagra-dei-frascarelli-a-rocca-sinibalda.html",
+        "https://lazio.piazzainfesta.it/rocca-sinibalda/fiera-tradizionale-di-san-carlo-129619",
+        "https://italive.it/sagra-dei-frascarelli-e-delle-castagne/",
+        "https://lazio.piazzainfesta.it/rocca-sinibalda/sagra-della-polenta-129618",
+        "https://geosabina.it/sabina_event/sagra-dei-frascarelli-rocca-sinibalda/",
+        "https://geosabina.it/sabina_event/sagra-dei-vertuti-rocca-sinibalda/",
+        "https://lazio.piazzainfesta.it/ascrea/eventi-tradizionali-e-ricreativi-della-pro-loco-di-rocca-sinibalda-129586",
+        "https://lazio.piazzainfesta.it/ascrea"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/sagra-dei-frascarelli-a-rocca-sinibalda/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-rocca-sinibalda-sagra-dei-frascarelli-e-castagne"
+      ],
+      "outcome": "Regione: Frascarelli e Castagne 1 novembre 2025. Fiera San Carlo a Posticciola non aggiunta perché riscontri aggregatori contrastano sull’attribuzione comunale.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Roccantica",
+      "query": "\"Roccantica\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Roccantica\" frittello site:roccantica.org",
+        "\"Roccantica\" \"Frittello\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.roccantica.ri.it/albo-pretorio/archivio?page=32",
+        "https://www.visitlazio.com/roccantica/",
+        "https://comune.roccantica.ri.it/albo-pretorio/archivio",
+        "https://rievocazionistoriche.cultura.gov.it/places/italy/lazio/roccantica/medioevo-in-festa/",
+        "https://comune.roccantica.ri.it/albo-pretorio/archivio?page=33",
+        "https://www.arsial.it/wp-content/uploads/2026/02/Allegato_3_NON_AMMESSI.pdf",
+        "https://www.feditgiochistorici.it/roccantica/ita_def.asp",
+        "https://rievochiamo.it/eventi/medioevo-in-festa"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/roccantica/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-roccantica-sagra-del-frittello"
+      ],
+      "outcome": "Regione: Frittello a San Giuseppe, senza anno. Medioevo in Festa resta rievocazione, non nuovo mercato autonomo documentato.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Salisano",
+      "query": "\"Salisano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Salisano\" \"olio\" site:visitlazio.com",
+        "\"Salisano\" \"Festa dell’Olio\""
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=salisano",
+        "https://ilborghista.it/municipality/salisano/events",
+        "https://ilborghista.it/events/festa-dell-olio-1",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://bussola.s3.eu-west-1.amazonaws.com/592800/papellosalisanesenumero3.pdf",
+        "https://ilborghista.it/region/lazio/events",
+        "https://www.festivalinitalia.it/index.php/festival/festa-patronale-santa-giulia-salisano"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Festa Olio su aggregatore con data 9 novembre 2026 espressamente indicativa. Non trovata conferma primaria con periodo, nessuna aggiunta e nessun prezzo dedotto.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Scandriglia",
+      "query": "\"Scandriglia\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Scandriglia\" \"Sagne\" site:visitlazio.com"
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.centroitaliaevents.it/lazio/rieti/scandriglia/sagra-delle-sagne-a-scandriglia.html",
+        "https://www.eventiesagre.it/Eventi_Sagre/20771_Sagra%2BDelle%2BSagne%2BScandrigliesi.html",
+        "https://www.sabinamagazine.it/a-scandriglia-sagra-delle-sagne/",
+        "https://www.metroitalia.info/roma/eventi/detail.php?id=QStXP4JNVTN0mWouFso5",
+        "https://www.visitscandriglia.it/2024/03/04/how-to-teach-children-to-dress-themselves-the-ultimate-guide/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DD-G07475-12-06-2025-Allegati.pdf",
+        "https://www.parks.it/parco.monti.lucretili/dettaglio.php?id=18491",
+        "https://festorum.it/evento/sagra-delle-sagne-scandrigliesi-2026"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/scandriglia/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-scandriglia-sagra-delle-sagne-scandrigliesi"
+      ],
+      "outcome": "Regione documenta Sagne ad agosto, senza anno. Le date 21–22 agosto 2026 dei siti secondari non adottate.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Selci",
+      "query": "\"Selci\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [
+        "\"Selci\" \"Fiera di Santo Stefano\""
+      ],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://selci.halleyegov.it/vivere_il_comune/eventi/eventi.html",
+        "https://www.festivalinitalia.it/festival/sagra-del-fallone-selciano",
+        "https://www.festivalinitalia.it/festival/sagra-della-porchetta-selci",
+        "https://www.halleyweb.com/c054044/zf/index.php/atti-amministrativi/decreti/dettaglio/atto/G5XpjeUTUaz0-A/provvedimenti/1/categoria/112",
+        "https://www.festivalinitalia.it/index.php/festival/sagra-del-cinghiale-selciano",
+        "https://www.comune.selci.ri.it/",
+        "https://www.laclessidraaps.it/progettazione-bandi/",
+        "https://www2.saturnonotizie.it/uploads/news/posts/2025/12/204069/attachments/553_204069_dba844c6e533fdb06e86bf97a9f9aaf9.pdf"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.selci.ri.it/vivere_il_comune/eventi/evento_1.html",
+          "label": "Comune di Selci",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-selci-fiera-di-santo-stefano"
+      ],
+      "outcome": "Comune denomina la manifestazione Fiera Santo Stefano e data 3 agosto 2025. Fonte descrive soprattutto patronale: merceologie/posteggi restano da verificare; nessun costo pubblico trasferito al banco.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Stimigliano",
+      "query": "\"Stimigliano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.stimigliano.ri.it/it/news/137232/autorizzazione-allo-svolgimento-del-mercato-settimanale-in-piazza-iv-novembre-dalle-ore-07-00-alle-13-00",
+        "https://www.visitlazio.com/eventi-lazio/torna-la-sagra-dei-dolci-a-stimigliano/",
+        "https://www.comune.stimigliano.ri.it/",
+        "https://www.comune.stimigliano.ri.it/it/news/autorizzazione-allo-svolgimento-del-mercato-settimanale-in-piazza-iv-novembre-dalle-ore-07-00-alle-13-00",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2025/DGR-916-20-10-2025-Allegato1-ammessi.pdf",
+        "https://www.visitbracciano.it/evento/sagra-dei-dolci-86-2026-10-10",
+        "https://www.comune.stimigliano.ri.it/it/sitemap",
+        "https://www.visitlazio.com/eventi-lazio/stimigliano-love-festival-e-sagra-del-picchiarello/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/torna-la-sagra-dei-dolci-a-stimigliano/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-stimigliano-sagra-dei-dolci"
+      ],
+      "outcome": "Regione: Dolci 10 ottobre 2026 con artigianato. Avviso mercato settimanale comunale non trasformato in fiera annuale.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Tarano",
+      "query": "\"Tarano\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.tarano.ri.it/it/eventi/tarano-love-vintage",
+        "https://www.comune.tarano.ri.it/it/eventi/609238",
+        "https://comune.tarano.ri.it/it/sitemap",
+        "https://www.comune.tarano.ri.it/it/vecchi-eventi",
+        "https://www.comune.tarano.ri.it/index.php/it/vecchi-eventi",
+        "https://www.comune.tarano.ri.it/it/sitemap?id=prg",
+        "https://www.comune.tarano.ri.it/en/events/tarano-love-vintage",
+        "https://www.comune.tarano.ri.it/en/eventi/tarano-love-vintage"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.tarano.ri.it/it/eventi/609238",
+          "label": "Comune di Tarano",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-tarano-mercatino-vintage"
+      ],
+      "outcome": "Comune: Vintage tre volte l’anno, periodi indicati. Container evento 24–31 agosto 2023 non equivale a otto giorni effettivi. Apertura web restituiva home generica; originale HTTP recuperato contiene la scheda.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Toffia",
+      "query": "\"Toffia\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.regione.lazio.it/documenti/88685",
+        "https://www.centroitaliaevents.it/lazio/rieti/frasso-sabino/sabina-festival.html",
+        "https://centroitaliaevents.it/lazio/rieti/frasso-sabino/sabina-festival.html",
+        "https://www.arsial.it/app/uploads/amm-trasparente/Determinazione-Dirigenziale-623-2024-signed-1.pdf",
+        "https://www.exponoi.it/index.php/lista-eventi-realizzati",
+        "https://www.regione.lazio.it/sites/default/files/2026-04/Estrazione-provvedimenti-2026-09042026.pdf",
+        "https://geosabina.it/sabina_event/carnevale-a-toffia/",
+        "https://www.regione.lazio.it/sites/default/files/2026-03/Estrazione-provvedimenti-2026-30032026.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Risultati riportano Sagra Fettuccine con la Perza nel Sabina Festival di Frasso Sabino e iniziative di ExpoNoi. Sede esterna non attribuita a Toffia; nessuna nuova manifestazione locale con fonte primaria sufficiente.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Torri in Sabina",
+      "query": "\"Torri in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://comune.torriinsabina.ri.it/argomenti/argomento-dettaglio/1776641",
+        "https://www.sharry.land/it/eventi/il-mercato-domenicale-di-torri-in-sabina",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.focsiv.it/wp-content/uploads/2015/03/SCHEDA_SINTETICA_ITALIA_Forum-Novum_PRODOCS1.pdf",
+        "https://www.giraitalia.it/sagre/49131_sagra_del_prosciutto_dell_olio_e_del_vino_novello.html",
+        "https://www.estateromana.com/proposte/torri-in-sabina-ri/",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=torriinsabina",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G15861_06_12_2018_Allegato1_Elenco_regionale_Pro_Loco_del_Lazio.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Fonte secondaria mercato domenicale piazza Roma e pagina turistica comunale senza calendario operativo. Nessuna nuova fiera selezionata; non certifica assenza di mercato settimanale.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Torricella in Sabina",
+      "query": "\"Torricella in Sabina\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=torricellainsabina",
+        "https://www.comune.torricellainsabina.ri.it/novita/avvisi/novita_485.html",
+        "https://www.visitlazio.com/torricella-in-sabina/",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://comune.torricellainsabina.ri.it/",
+        "https://lazio.centroitaliaevents.it/lazio/rieti/frasso-sabino/sabina-festival.html",
+        "https://www.halleyweb.com/c057069/zf/index.php/atti-amministrativi/ordinanze/index",
+        "https://marche.centroitaliaevents.it/lazio/rieti/frasso-sabino/sabina-festival.html"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Scheda regionale e sito comunale: la grande fiera è descritta come passato. Censimento botteghe 2026 non è un evento fieristico; nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Turania",
+      "query": "\"Turania\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.visitbracciano.it/evento/sagra-della-castagna-207-2026-11-01",
+        "https://www.visitlazio.com/eventi-lazio/domenica-a-turania-tra-castagne-e-polenta/",
+        "http://www.comune.turania.ri.it/",
+        "https://fuoriporta.app/feste/sagra-della-castagna-turania-2026",
+        "https://ilborghista.it/events/43-sagra-della-castagna-2026-pro-loco-turania-aps",
+        "https://lazioeventi.com/eventi/sagra-della-castagna-turania",
+        "https://www.festivalinitalia.it/festival/sagra-della-castagna-turania",
+        "https://infestaapp.it/event/domenica-a-turania-tra-castagne-e-polenta-turania-10919"
+      ],
+      "sources": [
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/domenica-a-turania-tra-castagne-e-polenta/",
+          "label": "Regione Lazio, VisitLazio",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-turania-sagra-della-castagna"
+      ],
+      "outcome": "Regione: Castagna 1 novembre 2026. Nessuna quota espositore o affluenza dedotta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Vacone",
+      "query": "\"Vacone\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.prolocovacone.it/",
+        "https://www.prolocovacone.it/i-progetti/",
+        "https://prolocovacone.altervista.org/",
+        "https://www.festivalinitalia.it/index.php/festival/festa-dautunno-vacone",
+        "https://prolocovacone.altervista.org/i-progetti/",
+        "https://www.eleonoramattia.it/wp-content/uploads/2022/06/manifestazioni-tradizionali-1.pdf",
+        "https://romaedintorni.com/SagraDetail/festa-dautunno-a-vacone-tra-i-sapori-della-sabina-2026",
+        "https://comunevacone.blogspot.com/2009/08/"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocovacone.it/i-progetti/",
+          "label": "Organizzatore / Pro Loco Vacone",
+          "checkedAt": "2026-11-05"
+        }
+      ],
+      "newIds": [
+        "lazio-vacone-festa-d-autunno"
+      ],
+      "outcome": "Fonte diretta Pro Loco: Autunno ultima domenica ottobre, prodotti e possibilità esporre. Suoni sotto le stelle percorso gastronomico e Sentieri trekking non trasformati in fiere autonome.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    },
+    {
+      "city": "Varco Sabino",
+      "query": "\"Varco Sabino\" sagra fiera mercatino comune pro loco",
+      "additionalQueries": [],
+      "searchEvidence": ".local/ricerche/rieti-20261105/query-web.json",
+      "searchResultUrls": [
+        "https://www.comune.varcosabino.ri.it/it/events",
+        "https://www.regione.lazio.it/sites/default/files/2025-09/Allegato_1-agg-22-09-2025.pdf",
+        "https://www.lazioturismo.it/asp/scheda.asp?comune=varcosabino",
+        "https://www.parchilazio.it/documenti/schede/2568_allegato1.pdf",
+        "https://www.festivalinitalia.it/festival/estate-in-festa-varco-sabino",
+        "https://www.paesiunitidellasabina.it/varco-sabino-eventi-estivi-e-sagre-con-la-pro-loco/",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/2024/TUR-DD-G11748-10-09-2024-Allegato-1.pdf",
+        "https://www.regione.lazio.it/sites/default/files/documentazione/TUR_DD_G11878_25_09_2018_Allegato1_Elenco_regionale_pro_loco_del_Lazio.pdf"
+      ],
+      "sources": [],
+      "newIds": [],
+      "outcome": "Calendario comunale indicizzato senza eventi; Bracioletta dopo Ferragosto solo in fonti secondarie. Vecchio PDF Parchi Lazio non prova edizione corrente; nessuna aggiunta.",
+      "limitations": "Ricognizione documentale, non esame integrale di albi/social; nessuna assenza certificata o disponibilità di banchi attestata."
+    }
+  ],
+  "existingEventUpdateProposals": []
+}

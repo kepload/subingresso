@@ -1,0 +1,1721 @@
+{
+  "province": "Rieti",
+  "checkedAt": "2026-11-05",
+  "mode": "append-only",
+  "events": [
+    {
+      "id": "lazio-accumoli-sagra-della-pasta-del-vergaro",
+      "region": "Lazio",
+      "city": "Accumoli",
+      "name": "Sagra della Pasta del Vergaro",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.parchilazio.it/schede-398-sagra_della_pasta_del_vergaro",
+        "label": "Parchi Lazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "A Roccasalli la sagra comprende la fiera e stand di prodotti tipici.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Periodo agosto senza anno; la fiera di Roccasalli è parte della sagra, non una seconda identità."
+      }
+    },
+    {
+      "id": "lazio-accumoli-sagra-delle-fettuccine-alla-trota",
+      "region": "Lazio",
+      "city": "Accumoli",
+      "name": "Sagra delle Fettuccine alla Trota",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+        "label": "Comune di Accumoli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra gastronomica di Accumoli nel calendario comunale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario tradizionale aggiornato nel 2023: 14 agosto senza anno. Nessuna data 2026 dedotta."
+      }
+    },
+    {
+      "id": "lazio-accumoli-sagra-della-pasta-alla-griscia",
+      "region": "Lazio",
+      "city": "Accumoli",
+      "name": "Sagra della Pasta alla Griscia",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+        "label": "Comune di Accumoli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra nella frazione Grisciano.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale: 18 agosto senza anno; nessuna edizione 2026 confermata."
+      }
+    },
+    {
+      "id": "lazio-accumoli-sagra-della-pecora",
+      "region": "Lazio",
+      "city": "Accumoli",
+      "name": "Sagra della Pecora",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+        "label": "Comune di Accumoli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra nella frazione Illica.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale: 20 agosto senza anno; nessuna edizione 2026 confermata."
+      }
+    },
+    {
+      "id": "lazio-accumoli-mostra-e-rassegna-equina-tpr",
+      "region": "Lazio",
+      "city": "Accumoli",
+      "name": "Mostra e Rassegna Equina TPR",
+      "months": "11",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.comune.accumoli.ri.it/turismo/manifestazioni/",
+        "label": "Comune di Accumoli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Rassegna dedicata al cavallo da tiro pesante rapido.",
+      "sectors": "Cavalli da tiro pesante rapido",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale: seconda domenica di novembre, senza anno. Condizioni e tariffe espositori non verificate."
+      }
+    },
+    {
+      "id": "lazio-amatrice-sagra-degli-spaghetti-all-amatriciana",
+      "region": "Lazio",
+      "city": "Amatrice",
+      "name": "Sagra degli Spaghetti all’Amatriciana",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/amatrice-60sagra-spaghetti-allamatriciana/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione gastronomica con artigianato e musica.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/amatrice-60sagra-spaghetti-allamatriciana/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-antrodoco-sagra-degli-stracci-antrodocani",
+      "region": "Lazio",
+      "city": "Antrodoco",
+      "name": "Sagra degli Stracci Antrodocani",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/antrodoco/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata agli stracci della tradizione locale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il portale regionale indica i primi giorni di agosto, senza anno. Nessun giorno 2026 generato."
+      }
+    },
+    {
+      "id": "lazio-ascrea-festa-degli-asparagi",
+      "region": "Lazio",
+      "city": "Ascrea",
+      "name": "Festa degli Asparagi",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+        "label": "Organizzatore / Pro Loco Ascrea",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa gastronomica nel calendario della Pro Loco.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo periodo tradizionale documentato; nessuna edizione annuale o disponibilità di posteggi confermata."
+      }
+    },
+    {
+      "id": "lazio-ascrea-sagra-delle-fettuccine-al-fungo-porcino",
+      "region": "Lazio",
+      "city": "Ascrea",
+      "name": "Sagra delle Fettuccine al Fungo Porcino",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+        "label": "Organizzatore / Pro Loco Ascrea",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra estiva nel calendario della Pro Loco.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo periodo tradizionale documentato; nessuna edizione annuale o disponibilità di posteggi confermata."
+      }
+    },
+    {
+      "id": "lazio-ascrea-festa-della-castagna",
+      "region": "Lazio",
+      "city": "Ascrea",
+      "name": "Festa della Castagna",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.ascrea.eu/proloco-ascrea/proloco-ascrea-sagre-ed-eventi/",
+        "label": "Organizzatore / Pro Loco Ascrea",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Festa autunnale nel calendario della Pro Loco.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo periodo tradizionale documentato; nessuna edizione annuale o disponibilità di posteggi confermata."
+      }
+    },
+    {
+      "id": "lazio-belmonte-in-sabina-sagra-del-turchetto",
+      "region": "Lazio",
+      "city": "Belmonte in Sabina",
+      "name": "Sagra del Turchetto",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocobelmonteinsabina.it/sagra-del-truchetto/",
+        "label": "Organizzatore / Pro Loco Belmonte in Sabina",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Percorso gastronomico nel centro storico dedicato al Turchetto.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La Pro Loco indica il periodo immediatamente dopo Ferragosto. Non ricavata una data annuale dal solo numero di edizione."
+      }
+    },
+    {
+      "id": "lazio-borbona-sagra-del-fagiolo-borbontino",
+      "region": "Lazio",
+      "city": "Borbona",
+      "name": "Sagra del Fagiolo Borbontino",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.borbona.rieti.it/it/news/xliv-sagra-del-fagiolo-borbontino",
+        "label": "Comune di Borbona",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Gastronomia locale con mercatini dei prodotti tipici e del riuso.",
+      "sectors": "Prodotti alimentari, prodotti tipici e usato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.borbona.rieti.it/it/news/xliv-sagra-del-fagiolo-borbontino"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma 2026: degustazioni dal 17 ottobre; mercatini soltanto domenica 18 dalle 9. Nessuna quota banco verificata."
+      }
+    },
+    {
+      "id": "lazio-borgo-velino-sagra-del-marrone-antrodocano",
+      "region": "Lazio",
+      "city": "Borgo Velino",
+      "name": "Sagra del Marrone Antrodocano",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://velino.it/la-nostra-terra/i-comuni/borgo-velino",
+        "label": "Comunità Montana del Velino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra autunnale nel calendario della Comunità Montana.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Pagina territoriale del 2018: novembre senza anno; programmazione corrente da verificare."
+      }
+    },
+    {
+      "id": "lazio-borgo-velino-mercatini-di-natale",
+      "region": "Lazio",
+      "city": "Borgo Velino",
+      "name": "Mercatini di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://velino.it/la-nostra-terra/i-comuni/borgo-velino",
+        "label": "Comunità Montana del Velino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatini natalizi nel calendario della Comunità Montana.",
+      "sectors": "Merceologie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Pagina territoriale del 2018: solo dicembre senza anno, nessuna edizione corrente confermata."
+      }
+    },
+    {
+      "id": "lazio-cantalice-sagra-delle-strengozze",
+      "region": "Lazio",
+      "city": "Cantalice",
+      "name": "Sagra delle Strengozze",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/sagra-delle-strengozze-a-cantalice/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Gastronomia locale con bancarelle artigianali.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-22",
+          "end": "2024-08-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/sagra-delle-strengozze-a-cantalice/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Documentata solo l’edizione 2024; le date indicative 2026 degli aggregatori non sono adottate."
+      }
+    },
+    {
+      "id": "lazio-cantalupo-in-sabina-fiera-contadina-a-sant-adamo",
+      "region": "Lazio",
+      "city": "Cantalupo in Sabina",
+      "name": "Fiera contadina a Sant’Adamo",
+      "months": "5",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.cantalupoinsabina.ri.it/vivere_il_comune/eventi/evento_3.html",
+        "label": "Comune di Cantalupo in Sabina",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera contadina presso la chiesa di Sant’Adamo.",
+      "sectors": "Prodotti agricoli; altre merceologie da verificare",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-05-12",
+          "end": "2024-05-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cantalupoinsabina.ri.it/vivere_il_comune/eventi/evento_3.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-casaprota-sagra-della-bruschetta-e-mostra-mercato-del-prodotto-tipico",
+      "region": "Lazio",
+      "city": "Casaprota",
+      "name": "Sagra della Bruschetta e Mostra Mercato del Prodotto Tipico",
+      "months": "1",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.casaprota.ri.it/it/eventi/sagra-bruschetta-e-mostra-mercato-del-prodotto-tipico",
+        "label": "Comune di Casaprota",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione dedicata all’olio sabino con prodotti tipici e artigianali.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-01-25",
+          "end": "2025-01-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.casaprota.ri.it/it/eventi/sagra-bruschetta-e-mostra-mercato-del-prodotto-tipico"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Sagra e mostra mercato sono una sola iniziativa. Scheda comunale 2025, non conferma di nuove edizioni."
+      }
+    },
+    {
+      "id": "lazio-casperia-sagra-dei-stringozzi-aspresi",
+      "region": "Lazio",
+      "city": "Casperia",
+      "name": "Sagra dei Stringozzi Aspresi",
+      "months": "7,8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/a-casperia-la-44-sagra-dei-stringozzi-aspresi/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra con stand gastronomici e mercatini artigianali.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-30",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/a-casperia-la-44-sagra-dei-stringozzi-aspresi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il 29 luglio è Aspettando la Sagra; stand gastronomici dal 30 luglio al 2 agosto. Esclusa l’anteprima dall’intervallo di mercato."
+      }
+    },
+    {
+      "id": "lazio-castel-di-tora-sagra-del-polentone",
+      "region": "Lazio",
+      "city": "Castel di Tora",
+      "name": "Sagra del Polentone",
+      "months": "2,3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/castel-di-tora/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla polenta con condimento di pesce.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Prima domenica di Quaresima, senza anno: mesi possibili febbraio/marzo. Non generata una data per il 2026."
+      }
+    },
+    {
+      "id": "lazio-castel-di-tora-sagra-degli-strigliozzi",
+      "region": "Lazio",
+      "city": "Castel di Tora",
+      "name": "Sagra degli Strigliozzi",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/castel-di-tora/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla pasta fatta a mano.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ultima domenica di settembre, senza anno; nessuna edizione annuale dedotta."
+      }
+    },
+    {
+      "id": "lazio-castelnuovo-di-farfa-sagra-delle-fregnacce-con-la-persa",
+      "region": "Lazio",
+      "city": "Castelnuovo di Farfa",
+      "name": "Sagra delle Fregnacce con la Persa",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.castelnuovodifarfaturismo.it/news-ed-eventi.php",
+        "label": "Comune di Castelnuovo di Farfa",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra nel calendario turistico comunale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario ricorrente: 14 agosto senza anno; la pagina contiene anche riferimenti storici, non è un programma 2026."
+      }
+    },
+    {
+      "id": "lazio-cittaducale-riviviamo-cittaducale",
+      "region": "Lazio",
+      "city": "Cittaducale",
+      "name": "RiviviAmo Cittaducale",
+      "months": "4",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.unplilazio.it/news-dalle-pro-loco/a-cittaducale-un-mercatino-dellantiquariato-artigianato-e-collezionismo/",
+        "label": "UNPLI Lazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatino in piazza del Popolo.",
+      "sectors": "Antiquariato, artigianato e collezionismo",
+      "editions": [
+        {
+          "year": 2017,
+          "start": "2017-04-30",
+          "end": "2017-04-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.unplilazio.it/news-dalle-pro-loco/a-cittaducale-un-mercatino-dellantiquariato-artigianato-e-collezionismo/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte UNPLI del 2017: unico appuntamento storico documentato, nessuna ricorrenza mensile o edizione attuale dedotta."
+      }
+    },
+    {
+      "id": "lazio-cittareale-mercatino-di-natale",
+      "region": "Lazio",
+      "city": "Cittareale",
+      "name": "Mercatino di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.cittareale.it/mercatino.asp",
+        "label": "Cittareale, portale territoriale",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Espositori di artigianato, idee regalo e specialità gastronomiche.",
+      "sectors": "Artigianato e prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il sito territoriale indica il fine settimana vicino all’8 dicembre, senza anno. Il calendario comunale recuperato è del 2015, non del 2026."
+      }
+    },
+    {
+      "id": "lazio-collegiove-sagra-dei-cecamariti",
+      "region": "Lazio",
+      "city": "Collegiove",
+      "name": "Sagra dei Cecamariti",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/collegiove/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla pasta fatta a mano locale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La scheda regionale indica fine luglio senza anno; nessuna data annuale dedotta."
+      }
+    },
+    {
+      "id": "lazio-colli-sul-velino-agri-festa",
+      "region": "Lazio",
+      "city": "Colli sul Velino",
+      "name": "Agri Festa",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.collisulvelino.ri.it/eventi/3436167/agri-festa-colli-velino",
+        "label": "Comune di Colli sul Velino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa della Pro Loco con produttori del territorio al Parco Pubblico.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-12",
+          "end": "2025-07-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.collisulvelino.ri.it/eventi/3436167/agri-festa-colli-velino"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione 2025 dalle ore 18. La data di aggiornamento della pagina nel 2026 non rinnova l’evento."
+      }
+    },
+    {
+      "id": "lazio-collalto-sabino-il-paese-di-babbo-natale",
+      "region": "Lazio",
+      "city": "Collalto Sabino",
+      "name": "Il Paese di Babbo Natale",
+      "months": "11,12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.ilpaesedibabbonatale.info/",
+        "label": "Organizzatore / Pro Loco Collalto Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatini di artigianato nelle cantine del borgo.",
+      "sectors": "Artigianato e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-22",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-29",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilpaesedibabbonatale.info/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Sei giornate indicate dal sito dell’evento per il 2026, ore 10–18. Il richiamo all’undicesima edizione nel testo è rimasto dal 2025; non usato per datare. Nessuna quota espositore dedotta dall’ingresso libero."
+      }
+    },
+    {
+      "id": "lazio-configni-sagra-del-prugnolo-e-dell-asparago-selvatico",
+      "region": "Lazio",
+      "city": "Configni",
+      "name": "Sagra del Prugnolo e dell’Asparago Selvatico",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/prugnolo-e-asparago-selvatico-in-sagra-a-configni/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata a funghi primaverili e asparagi.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-05-23",
+          "end": "2025-05-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/prugnolo-e-asparago-selvatico-in-sagra-a-configni/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-contigliano-sagra-del-pizzicotto",
+      "region": "Lazio",
+      "city": "Contigliano",
+      "name": "Sagra del Pizzicotto",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/contigliano/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra della pasta di pane tipica locale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La scheda regionale indica metà agosto, senza anno."
+      }
+    },
+    {
+      "id": "lazio-forano-sagra-della-pastasciutta",
+      "region": "Lazio",
+      "city": "Forano",
+      "name": "Sagra della Pastasciutta",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.forano.ri.it/it/page/manifestazioni-ricorrenti-1",
+        "label": "Comune di Forano",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra nel calendario ricorrente comunale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario aggiornato nel 2023: 14 agosto senza anno; nessuna edizione corrente dedotta."
+      }
+    },
+    {
+      "id": "lazio-fiamignano-sagra-della-lenticchia-di-rascino",
+      "region": "Lazio",
+      "city": "Fiamignano",
+      "name": "Sagra della Lenticchia di Rascino",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocofiamignano.it/eventi/55a-sagra-della-lenticchia-di-rascino/",
+        "label": "Organizzatore / Pro Loco Fiamignano",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra organizzata dalla Pro Loco.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.prolocofiamignano.it/eventi/55a-sagra-della-lenticchia-di-rascino/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma 2026: stand Profumo di Lavanda dalle 11 e distribuzione lenticchie dalle 20:30; nessuna ammissione di banchi esterni attestata."
+      }
+    },
+    {
+      "id": "lazio-frasso-sabino-mercato-agricolo-piazza-del-contadino",
+      "region": "Lazio",
+      "city": "Frasso Sabino",
+      "name": "Mercato Agricolo Piazza del Contadino",
+      "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.prolocofrassosabino.it/mercato-agricolo/",
+        "label": "Organizzatore / Pro Loco Frasso Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercato di vendita diretta in via Mirtense, località Osteria Nuova.",
+      "sectors": "Prodotti agricoli e alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Prima domenica del mese, ore 8–14; riservato alla vendita diretta agricola. Distinto dalla vicina Fiera delle Merci e del Bestiame. Posti e tariffe correnti non verificati."
+      }
+    },
+    {
+      "id": "lazio-frasso-sabino-fiera-delle-merci-e-del-bestiame-di-osteria-nuova",
+      "region": "Lazio",
+      "city": "Frasso Sabino",
+      "name": "Fiera delle Merci e del Bestiame di Osteria Nuova",
+      "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.prolocofrassosabino.it/mercato-agricolo/",
+        "label": "Organizzatore / Pro Loco Frasso Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera mensile vicina al mercato agricolo Piazza del Contadino.",
+      "sectors": "Merci e bestiame; dettaglio merceologie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Prima domenica del mese documentata dalla Pro Loco. Distinta dal mercato di vendita diretta, senza duplicarla nei comuni confinanti. Nessuna affluenza o disponibilità dedotta."
+      }
+    },
+    {
+      "id": "lazio-greccio-greccio-il-presepio-mostra-mercato-dell-artigianato-e-dell-oggettistica-per-il-presepio",
+      "region": "Lazio",
+      "city": "Greccio",
+      "name": "Greccio il Presepio - Mostra Mercato dell’Artigianato e dell’Oggettistica per il Presepio",
+      "months": "11,12,1",
+      "category": "artigianato",
+      "source": {
+        "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf",
+        "label": "Organizzatore / Pro Loco Greccio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mostra mercato nel centro storico con casette espositive.",
+      "sectors": "Artigianato presepiale, decorazioni natalizie, legno, ceramica, tessili, prodotti tipici confezionati",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-24",
+          "end": "2026-12-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-01-01",
+          "end": "2027-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5184657/Disciplinare_2026_2027.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Disciplinare 2026/2027: partecipazione all’intero calendario; il 5–8 dicembre solo artigianato presepiale. Domande scadute il 25 luglio 2026. Orari particolari il 24/25 dicembre e il 1 gennaio; esclusi 31 dicembre e giorni non indicati. Ammissione e disponibilità non garantite."
+      }
+    },
+    {
+      "id": "lazio-leonessa-sagra-della-patata",
+      "region": "Lazio",
+      "city": "Leonessa",
+      "name": "Sagra della Patata",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.leonessa.ri.it/it/news/36a-sagra-della-patata-di-leonessa-info-utili-su-viabilita-e-parcheggi",
+        "label": "Comune di Leonessa",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione della tradizione agricola leonessana.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-09",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.leonessa.ri.it/it/news/36a-sagra-della-patata-di-leonessa-info-utili-su-viabilita-e-parcheggi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date 2026 confermate dalla comunicazione comunale sulla viabilità. Nessuna quota o disponibilità espositore verificata."
+      }
+    },
+    {
+      "id": "lazio-longone-sabino-sagra-della-braciola-di-pecora",
+      "region": "Lazio",
+      "city": "Longone Sabino",
+      "name": "Sagra della Braciola di Pecora",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocolongone.it/manifestazioni/sagra/",
+        "label": "Organizzatore / Pro Loco Longone Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra gastronomica organizzata dalla Pro Loco.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Fonte Pro Loco: tradizione del 16 agosto, senza anno. Il calendario automatico nella barra laterale non data la sagra."
+      }
+    },
+    {
+      "id": "lazio-marcetelli-sagra-della-castagna-rossa",
+      "region": "Lazio",
+      "city": "Marcetelli",
+      "name": "Sagra della Castagna Rossa",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.marcetelli.ri.it/it/eventi/46-sagra-della-castagna-rossa",
+        "label": "Comune di Marcetelli",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici, punti vendita di castagne e banchi espositori.",
+      "sectors": "Prodotti alimentari; altre merceologie da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-01",
+          "end": "2025-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.marcetelli.ri.it/it/eventi/46-sagra-della-castagna-rossa"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione comunale 2025; caldarroste gratuite non equivalgono a posteggio gratuito."
+      }
+    },
+    {
+      "id": "lazio-micigliano-sagra-della-castagna",
+      "region": "Lazio",
+      "city": "Micigliano",
+      "name": "Sagra della Castagna",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/micigliano/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra autunnale nel calendario territoriale regionale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ultima domenica di ottobre senza anno. Non adottata la diversa data 2026 di aggregatori."
+      }
+    },
+    {
+      "id": "lazio-micigliano-sagra-del-tartufo",
+      "region": "Lazio",
+      "city": "Micigliano",
+      "name": "Sagra del Tartufo",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/micigliano/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra estiva dedicata al tartufo.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Fonte regionale: luglio senza anno; nessuna data di edizione corrente dedotta."
+      }
+    },
+    {
+      "id": "lazio-mompeo-festa-dell-olio",
+      "region": "Lazio",
+      "city": "Mompeo",
+      "name": "Festa dell’Olio",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.mompeo.ri.it/vivere_il_comune/eventi/evento_13.html",
+        "label": "Comune di Mompeo",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Incontri con produttori e mercatini agroalimentari.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.mompeo.ri.it/vivere_il_comune/eventi/evento_13.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date comunali 2026; la voce senza costi riguarda l’evento pubblico, non prova banco gratuito."
+      }
+    },
+    {
+      "id": "lazio-montasola-sagra-della-fregnaccia",
+      "region": "Lazio",
+      "city": "Montasola",
+      "name": "Sagra della Fregnaccia",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/a-montasola-la-storica-sagra-della-fregnaccia/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici al Parco Comunale Il Monte.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-31",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/a-montasola-la-storica-sagra-della-fregnaccia/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-monteleone-sabino-mercatino-hobbistico",
+      "region": "Lazio",
+      "city": "Monteleone Sabino",
+      "name": "Mercatino Hobbistico",
+      "months": "3,4,5,6,7,8,9,10",
+      "category": "mercatino",
+      "source": {
+        "url": "https://monteleonesabino.halleyweb.it/c057041/po/mostra_news.php?area=H&id=568",
+        "label": "Comune di Monteleone Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatino sperimentale in piazza XXIV Aprile 1944.",
+      "sectors": "Hobbistica; merceologie autorizzate da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026: quarta domenica da marzo a ottobre, ore 8:30–13:30. Non trasformato in evento continuo né prolungato oltre ottobre; domanda comunale e autorizzazione necessarie."
+      }
+    },
+    {
+      "id": "lazio-montenero-sabino-sagra-dei-maccheroni-a-fezze",
+      "region": "Lazio",
+      "city": "Montenero Sabino",
+      "name": "Sagra dei Maccheroni a Fezze",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/a-montenero-la-sagra-dei-maccheroni-a-fezze/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand dedicati alla pasta fatta a mano e alle specialità locali.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/a-montenero-la-sagra-dei-maccheroni-a-fezze/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-orvinio-sagra-del-polentone",
+      "region": "Lazio",
+      "city": "Orvinio",
+      "name": "Sagra del Polentone",
+      "months": "1",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/la-44-sagra-del-polentone-di-orvinio/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Gastronomia con mercatini artigianali ed enogastronomici.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-25",
+          "end": "2026-01-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/la-44-sagra-del-polentone-di-orvinio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-orvinio-sagra-dellu-pizzillu",
+      "region": "Lazio",
+      "city": "Orvinio",
+      "name": "Sagra dellu Pizzillu",
+      "months": "12",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/sagra-dellu-pizzillu-a-orvinio-2/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand dedicato alla pizza locale senza lievito.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-08",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/sagra-dellu-pizzillu-a-orvinio-2/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-paganico-sabino-fiera-di-san-giovanni",
+      "region": "Lazio",
+      "city": "Paganico Sabino",
+      "name": "Fiera di San Giovanni",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.paganicosabino.org/tradizioni/",
+        "label": "Organizzatore / Pro Loco Paganico Sabino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera con ambulanti di casalinghi, calzature, giocattoli e abbigliamento.",
+      "sectors": "Casalinghi, calzature, giocattoli, abbigliamento",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La Pro Loco descrive il 30 agosto di ogni anno. Fonte di tradizione, nessuna data annuale generata; vendita di animali citata come passato, non come offerta attuale."
+      }
+    },
+    {
+      "id": "lazio-pescorocchiano-festa-della-castagna-rossa",
+      "region": "Lazio",
+      "city": "Pescorocchiano",
+      "name": "Festa della Castagna Rossa",
+      "months": "10,11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/festa-della-castagna-rossa-a-pescorocchiano/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Percorso gastronomico nelle cantine del Castello del Peschio.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/festa-della-castagna-rossa-a-pescorocchiano/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione regionale 2026: sabato pranzo e cena, domenica solo pranzo. Nessuna quota banco attestata."
+      }
+    },
+    {
+      "id": "lazio-petrella-salto-sagra-dei-fagioli-con-le-cotiche",
+      "region": "Lazio",
+      "city": "Petrella Salto",
+      "name": "Sagra dei Fagioli con le Cotiche",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.petrellasalto.ri.it/vivere_il_comune/eventi/evento_3.html",
+        "label": "Comune di Petrella Salto",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Eco-sagra nella frazione Offeio.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-17",
+          "end": "2025-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.petrellasalto.ri.it/vivere_il_comune/eventi/evento_3.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Scheda comunale 2025. L’indirizzo del municipio nella mappa non sostituisce la sede dichiarata a Offeio."
+      }
+    },
+    {
+      "id": "lazio-poggio-bustone-sagra-della-porchetta",
+      "region": "Lazio",
+      "city": "Poggio Bustone",
+      "name": "Sagra della Porchetta",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.poggiobustone.ri.it/eventi/2419999/72-sagra-porchetta-cena-medievale",
+        "label": "Comune di Poggio Bustone",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Cantine e stand gastronomici aperti nel borgo.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2022,
+          "start": "2022-10-01",
+          "end": "2022-10-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.poggiobustone.ri.it/eventi/2419999/72-sagra-porchetta-cena-medievale"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pagina della 72ª edizione: date 1–2 ottobre 2022. Aggiornamento della pagina nel 2024 distinto dall’anno dell’evento; nessuna edizione 2026 dedotta."
+      }
+    },
+    {
+      "id": "lazio-poggio-catino-sagra-della-panzanella",
+      "region": "Lazio",
+      "city": "Poggio Catino",
+      "name": "Sagra della Panzanella",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.poggiocatino.ri.it/vivere_il_comune/eventi/evento_1.html",
+        "label": "Comune di Poggio Catino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla panzanella locale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-17",
+          "end": "2025-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.poggiocatino.ri.it/vivere_il_comune/eventi/evento_1.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-poggio-catino-mercatino-puntocom",
+      "region": "Lazio",
+      "city": "Poggio Catino",
+      "name": "Mercatino Puntocom",
+      "months": "8",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.halleyweb.com/c057052/po/mostra_news.php?area=F&id=597",
+        "label": "Comune di Poggio Catino",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatino comunale in collaborazione con la Pro Loco.",
+      "sectors": "Merceologie da verificare",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-10",
+          "end": "2024-08-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.halleyweb.com/c057052/po/mostra_news.php?area=F&id=597"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ordinanza comunale 2024: avvio il 10 agosto. Il Ferragosto dal 13 al 17 è altra iniziativa, non estensione del mercatino."
+      }
+    },
+    {
+      "id": "lazio-poggio-moiano-sagra-dell-asparago-selvatico",
+      "region": "Lazio",
+      "city": "Poggio Moiano",
+      "name": "Sagra dell’Asparago Selvatico",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocopoggiomoiano.it/Eventi/19-sagra-dellasparago-selvatico/",
+        "label": "Organizzatore / Pro Loco Poggio Moiano",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra della Pro Loco dedicata agli asparagi.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-24",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.prolocopoggiomoiano.it/Eventi/19-sagra-dellasparago-selvatico/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La Pro Loco annuncia il rinvio per maltempo e la nuova data 24 maggio 2026; non usata la data originaria."
+      }
+    },
+    {
+      "id": "lazio-poggio-nativo-sagra-della-ciambella",
+      "region": "Lazio",
+      "city": "Poggio Nativo",
+      "name": "Sagra della Ciambella",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/poggio-nativo/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla ciambella all’anice cotta a legna.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Portale regionale: 16 agosto senza anno; nessuna edizione annuale dedotta."
+      }
+    },
+    {
+      "id": "lazio-poggio-san-lorenzo-sagra-del-frittello",
+      "region": "Lazio",
+      "city": "Poggio San Lorenzo",
+      "name": "Sagra del Frittello",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+        "label": "Comune di Poggio San Lorenzo",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra di frittelli e altre preparazioni locali.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale: fine settimana di San Giuseppe, senza anno."
+      }
+    },
+    {
+      "id": "lazio-poggio-san-lorenzo-sagra-del-pesce",
+      "region": "Lazio",
+      "city": "Poggio San Lorenzo",
+      "name": "Sagra del Pesce",
+      "months": "6,7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.poggiosanlorenzo.ri.it/c057056/zf/index.php/servizi-aggiuntivi/index/index/idtesto/11",
+        "label": "Comune di Poggio San Lorenzo",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa gastronomica estiva nel calendario comunale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ultimo fine settimana di giugno o primo di luglio, senza anno; nessuna data annuale generata."
+      }
+    },
+    {
+      "id": "lazio-rieti-fiera-di-santa-barbara",
+      "region": "Lazio",
+      "city": "Rieti",
+      "name": "Fiera di Santa Barbara",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+        "label": "Comune di Rieti",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Banchi su area pubblica e settore bestiame nell’area dell’ex mattatoio.",
+      "sectors": "Merci varie; bestiame",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Delibera 227/2024: 3–4 dicembre di ogni anno. Ricorrenza senza generare un’edizione 2026; concessioni e planimetrie da rispettare."
+      }
+    },
+    {
+      "id": "lazio-rieti-fiera-di-santa-lucia",
+      "region": "Lazio",
+      "city": "Rieti",
+      "name": "Fiera di Santa Lucia",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+        "label": "Comune di Rieti",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Banchi tra via Liberato di Benedetto, piazza Angelucci e via Molino della Salce.",
+      "sectors": "Merci varie",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Delibera 227/2024: 13 dicembre di ogni anno. Ricorrenza senza generare un’edizione 2026; concessioni e planimetrie da rispettare."
+      }
+    },
+    {
+      "id": "lazio-rieti-fiera-di-sant-antonio",
+      "region": "Lazio",
+      "city": "Rieti",
+      "name": "Fiera di Sant’Antonio",
+      "months": "6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://lnx.comune.rieti.it/sites/default/files/allegatiarticoli/Deliberazione%20Giunta%20Comunale%20227%20del%2014.11.2024.pdf",
+        "label": "Comune di Rieti",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Banchi su area pubblica e settore bestiame nell’area dell’ex mattatoio.",
+      "sectors": "Merci varie; bestiame",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Delibera 227/2024: 13 giugno di ogni anno. Ricorrenza senza generare un’edizione 2026; concessioni e planimetrie da rispettare."
+      }
+    },
+    {
+      "id": "lazio-rieti-fiera-mondiale-campionaria-del-peperoncino",
+      "region": "Lazio",
+      "city": "Rieti",
+      "name": "Fiera Mondiale Campionaria del Peperoncino",
+      "months": "8,9",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.fieramondialedelpeperoncino.com/edizione-2026/",
+        "label": "Organizzatore / Pro Loco Rieti",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand fieristici e gastronomici dedicati al peperoncino.",
+      "sectors": "Prodotti alimentari, peperoncino",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-28",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.fieramondialedelpeperoncino.com/edizione-2026/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Programma dell’organizzatore 2026. Partecipazione espositori tramite organizzatore; nessun preventivo pubblico verificato."
+      }
+    },
+    {
+      "id": "lazio-rivodutri-sagra-della-trota-biologica-e-del-gambero-di-fiume",
+      "region": "Lazio",
+      "city": "Rivodutri",
+      "name": "Sagra della Trota Biologica e del Gambero di Fiume",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.unplilazio.it/news-dalle-pro-loco/sagra-della-trota-biologica-e-del-gambero-di-fiume-a-rivodutri/",
+        "label": "UNPLI Lazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra alle sorgenti di Santa Susanna con mercatino artigianale.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2016,
+          "start": "2016-08-05",
+          "end": "2016-08-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.unplilazio.it/news-dalle-pro-loco/sagra-della-trota-biologica-e-del-gambero-di-fiume-a-rivodutri/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte UNPLI del 2016: unica edizione storica documentata, non programma corrente."
+      }
+    },
+    {
+      "id": "lazio-rocca-sinibalda-sagra-dei-frascarelli-e-castagne",
+      "region": "Lazio",
+      "city": "Rocca Sinibalda",
+      "name": "Sagra dei Frascarelli e Castagne",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/sagra-dei-frascarelli-a-rocca-sinibalda/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici e mercatini tra le vie del borgo.",
+      "sectors": "Prodotti alimentari; merceologie mercatini da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-01",
+          "end": "2025-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/sagra-dei-frascarelli-a-rocca-sinibalda/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-roccantica-sagra-del-frittello",
+      "region": "Lazio",
+      "city": "Roccantica",
+      "name": "Sagra del Frittello",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/roccantica/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra di frittelli di cavolfiore in piazza San Valentino.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Tradizione di San Giuseppe senza anno; non dedotto il giorno esatto dell’edizione 2026."
+      }
+    },
+    {
+      "id": "lazio-selci-fiera-di-santo-stefano",
+      "region": "Lazio",
+      "city": "Selci",
+      "name": "Fiera di Santo Stefano",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.selci.ri.it/vivere_il_comune/eventi/evento_1.html",
+        "label": "Comune di Selci",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Appuntamento patronale denominato Fiera di Santo Stefano dal Comune.",
+      "sectors": "Merceologie da verificare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-03",
+          "end": "2025-08-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.selci.ri.it/vivere_il_comune/eventi/evento_1.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-stimigliano-sagra-dei-dolci",
+      "region": "Lazio",
+      "city": "Stimigliano",
+      "name": "Sagra dei Dolci",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/torna-la-sagra-dei-dolci-a-stimigliano/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Dolci locali con mercatini dell’artigianato.",
+      "sectors": "Dolciumi e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/torna-la-sagra-dei-dolci-a-stimigliano/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-tarano-mercatino-vintage",
+      "region": "Lazio",
+      "city": "Tarano",
+      "name": "Mercatino Vintage",
+      "months": "5,8,9,12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.tarano.ri.it/it/eventi/609238",
+        "label": "Comune di Tarano",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatino al Campo Fiera di Borgonuovo.",
+      "sectors": "Vintage, antiquariato e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Tre appuntamenti tradizionali: maggio, fine agosto o prima metà settembre, dicembre. Date del contenitore 24–31 agosto 2023 non usate come apertura continuativa; nessun calendario 2026 dedotto."
+      }
+    },
+    {
+      "id": "lazio-turania-sagra-della-castagna",
+      "region": "Lazio",
+      "city": "Turania",
+      "name": "Sagra della Castagna",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/domenica-a-turania-tra-castagne-e-polenta/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Giornata gastronomica dedicata a castagne e polenta.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/domenica-a-turania-tra-castagne-e-polenta/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione documentata dalla fonte; nessuna disponibilità o quota per banchi esterni verificata."
+      }
+    },
+    {
+      "id": "lazio-vacone-festa-d-autunno",
+      "region": "Lazio",
+      "city": "Vacone",
+      "name": "Festa d’Autunno",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocovacone.it/i-progetti/",
+        "label": "Organizzatore / Pro Loco Vacone",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Prodotti del territorio e creazioni artigianali al Bosco del Pago.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La Pro Loco indica l’ultima domenica di ottobre, senza anno. Espositori ammessi tramite organizzatore; quota non pubblicata."
+      }
+    },
+    {
+      "id": "lazio-borgorose-i-sapori-del-borgo-antico",
+      "region": "Lazio",
+      "city": "Borgorose",
+      "name": "I Sapori del Borgo Antico",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/eventi-lazio/i-sapori-del-borgo-antico-a-castelmenardo/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Percorso gastronomico nelle cantine di Castelmenardo.",
+      "sectors": "Prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitlazio.com/eventi-lazio/i-sapori-del-borgo-antico-a-castelmenardo/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte regionale 2026; indirizzo comunale generico non usato come sede dell’evento, che si tiene a Castelmenardo."
+      }
+    },
+    {
+      "id": "lazio-poggio-mirteto-sabina-libri",
+      "region": "Lazio",
+      "city": "Poggio Mirteto",
+      "name": "Sabina Libri",
+      "months": "5",
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.poggiomirteto.ri.it/vivere-il-comune/eventi/sabina-libri-2026/",
+        "label": "Comune di Poggio Mirteto",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera dell’editoria e delle pubblicazioni sul territorio sabino.",
+      "sectors": "Libri, editoria",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-22",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.poggiomirteto.ri.it/vivere-il-comune/eventi/sabina-libri-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date comunali 2026 presso la Biblioteca. Il titolo indica IV e il testo VI edizione: numero non adottato. Ingresso libero non prova stand gratuito."
+      }
+    },
+    {
+      "id": "lazio-scandriglia-sagra-delle-sagne-scandrigliesi",
+      "region": "Lazio",
+      "city": "Scandriglia",
+      "name": "Sagra delle Sagne Scandrigliesi",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitlazio.com/scandriglia/",
+        "label": "Regione Lazio, VisitLazio",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla pasta tipica locale.",
+      "sectors": "Prodotti alimentari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Fonte regionale: agosto senza anno; nessuna data 2026 confermata."
+      }
+    }
+  ]
+}
