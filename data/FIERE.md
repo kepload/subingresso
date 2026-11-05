@@ -32,6 +32,11 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [L'Aquila - 5 novembre 2026](fiere-dossier/laquila-20261105.md)
+- [Cosenza - 5 novembre 2026](fiere-dossier/cosenza-20261105.md)
+- [Catanzaro - 5 novembre 2026](fiere-dossier/catanzaro-20261105.md)
+- [Reggio Calabria - 5 novembre 2026](fiere-dossier/reggio-calabria-20261105.md)
+
 - [Card show e anteprime recensioni — 4 novembre 2026](fiere-dossier/122-carte-collezionabili-20261104.md): tre nuove fiere, CardFest già presente, ricerca mirata senza riavvio delle automazioni.
 
 - [Ogliastra — ricerca documentale, 4 novembre 2026](fiere-dossier/120-ogliastra-20261104.md)

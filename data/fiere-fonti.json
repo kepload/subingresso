@@ -34654,5 +34654,3869 @@
     "sourceRecordIds": [
       "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli"
     ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Buonvicino",
+    "name": "Fiera di San Ciriaco Abate",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf",
+      "label": "comune.buonvicino.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera con aree per merci, prodotti tipici e artigianato; via Vittoria è dedicata al settore alimentare.",
+    "sectors": "Abbigliamento, calzature, tessili, casalinghi, piante, alimentari e artigianato",
+    "venue": "Piazza XVII Settembre, Piazza Tre Fontane e via Vittoria",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso 2026 per operatori autorizzati su area pubblica. Domande prorogate all’8 settembre 2026 ore 12, termine trascorso. Piazza XVII Settembre 13–19 settembre; Tre Fontane 17–19; area food 13 settembre–21 settembre ore 02. Canone e bollo separati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-13",
+        "end": "2026-09-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Cetraro",
+    "name": "Fiera di San Benedetto",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf",
+      "label": "comune.cetraro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione e vendita in Marina e nel centro, con sezioni per prodotti tipici e artigianato.",
+    "sectors": "Abbigliamento, calzature, tessili, casalinghi, piante, alimentari e artigianato",
+    "venue": "Cetraro Marina e Centro",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso 2026 per operatori autorizzati; domanda entro il 26 giugno ore 12, termine trascorso. Marina dal 10 luglio ore 19 al 12 ore 12; Centro dal 10 ore 21 all’11 ore 23. Canone distinto per area e bollo separato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-10",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Castrovillari",
+    "name": "Fiera di San Giovanni",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni",
+      "label": "comune.castrovillari.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera commerciale con assegnazione comunale di posteggi.",
+    "venue": "Area mercatale, via SS. Medici e via Veterani dello Sport",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: 216 posteggi a graduatoria per operatori con autorizzazione/SCIA e iscrizione camerale. Domanda entro il 12 aprile 2026, termine trascorso. Canone 1,20 €/m²/giorno; bollo distinto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-17",
+        "end": "2026-06-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Castrovillari",
+    "name": "Fiera delle Stagioni",
+    "months": "7,9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera",
+      "label": "comune.castrovillari.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera con posteggi a graduatoria e possibilità di spunta prevista dagli avvisi delle singole giornate.",
+    "venue": "Centro cittadino",
+    "participation": {
+      "type": "selected",
+      "note": "Gli avvisi 2026 indicano graduatoria, pagamento PagoPA e accesso degli spuntisti dalle ore 7 per i posti residui nelle date documentate. Non costituiscono disponibilità per altre giornate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-12",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-20",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "San Giovanni in Fiore",
+    "name": "Fiera tradizionale di San Giovanni in Fiore",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-inaugurata-la-fiera-tradizionale-tre-giorni-di-storia-commercio-e-socialita-la-sindaca-succurro-evento-emozionale-e-occasione-per-un-turismo-di-esperienze-in-sila/",
+      "label": "comune.sangiovanniinfiore.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento di fine agosto dedicato al commercio ambulante.",
+    "venue": "Area dell’entrata sud della città",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-26",
+        "end": "2025-08-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-inaugurata-la-fiera-tradizionale-tre-giorni-di-storia-commercio-e-socialita-la-sindaca-succurro-evento-emozionale-e-occasione-per-un-turismo-di-esperienze-in-sila/"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "San Giovanni in Fiore",
+    "name": "Fiera d’Autunno",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/",
+      "label": "comune.sangiovanniinfiore.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercato straordinario con merci per la casa e altre categorie.",
+    "sectors": "Casalinghi, piante, calzature, abbigliamento, libri e alimentari",
+    "venue": "Zona Ceretti",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-10-12",
+        "end": "2024-10-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "San Giovanni in Fiore",
+    "name": "Sagra della Patata",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/",
+      "label": "comune.sangiovanniinfiore.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Stand gastronomici dedicati alla patata del territorio.",
+    "sectors": "Gastronomia e prodotti tipici",
+    "venue": "Isola pedonale via Roma",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-10-12",
+        "end": "2024-10-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Corigliano-Rossano",
+    "name": "Fiera di Maggio di Schiavonea",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf",
+      "label": "www.comunecoriglianorossano.eu",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera sul lungomare con operatori alimentari, non alimentari e artigiani.",
+    "sectors": "Alimentari, non alimentari e artigianato",
+    "venue": "Lungomare di Schiavonea",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso storico 2024 con selezione comunale e istanza tramite PEC. Non utilizzare la vecchia scadenza per edizioni successive."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-05-04",
+        "end": "2024-05-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf"
+      }
+    ],
+    "lat": 39.6651875,
+    "lng": 16.5274375,
+    "coordinateSource": {
+      "url": "https://www.calabriaterrabuona.it/luoghi/schiavonea-corigliano-rossano",
+      "label": "Regione Calabria — località Schiavonea, punto indicativo, non ingresso della fiera"
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Corigliano-Rossano",
+    "name": "Fiera di Novembre di Schiavonea",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf",
+      "label": "www.comunecoriglianorossano.eu",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento autunnale del lungomare richiamato nel bando comunale delle fiere.",
+    "sectors": "Alimentari e non alimentari",
+    "venue": "Lungomare di Schiavonea",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "lat": 39.6651875,
+    "lng": 16.5274375,
+    "coordinateSource": {
+      "url": "https://www.calabriaterrabuona.it/luoghi/schiavonea-corigliano-rossano",
+      "label": "Regione Calabria — località Schiavonea, punto indicativo, non ingresso della fiera"
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Mormanno",
+    "name": "Festa del Bocconotto",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.mormanno.cs.it/vivere_il_comune/eventi/evento_13.html",
+      "label": "www.comune.mormanno.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Iniziativa dedicata al dolce locale, con degustazioni e street food.",
+    "sectors": "Dolci, street food e prodotti agroalimentari",
+    "venue": "Piazza Umberto I",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.mormanno.cs.it/vivere_il_comune/eventi/evento_13.html"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Montegiordano",
+    "name": "Sagra dei Piselli e delle Fave",
+    "months": "4",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?D=true&Documento=14520-12831-mntgrdn278",
+      "label": "www.servizipubblicaamministrazione.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione della Pro Loco dedicata ai prodotti agricoli del territorio.",
+    "sectors": "Gastronomia e prodotti agricoli",
+    "venue": "Via del Carmine, Piano delle Rose",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-25",
+        "end": "2026-04-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?D=true&Documento=14520-12831-mntgrdn278"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Fuscaldo",
+    "name": "Festival delle Alici del Tirreno Cosentino",
+    "months": "7,8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf",
+      "label": "www.comune.fuscaldo.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Festival con stand gastronomici e artigianato.",
+    "sectors": "Gastronomia e artigianato",
+    "participation": {
+      "type": "selected",
+      "note": "Moduli 2026 distinti per gastronomia e artigianato; domanda entro il 20 giugno, termine trascorso. Selezione comunale e vincoli sugli sponsor. Artigiani non iscritti: esposizione esclusivamente promozionale secondo il disciplinare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-30",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "San Donato di Ninea",
+    "name": "Festa d’Autunno - Sagra delle Castagne",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/Dettaglio.aspx?CE=sndntnn1494&Pub=6103&RicCro=1",
+      "label": "www.servizipubblicaamministrazione.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione autunnale dedicata alla castagna.",
+    "sectors": "Gastronomia e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Sant'Agata di Esaro",
+    "name": "Sagra della Castagna",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "prolocomongrassano.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Festa gastronomica del borgo dedicata alla castagna.",
+    "sectors": "Gastronomia e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Sant'Agata di Esaro",
+    "name": "Sagra della Polpetta di Maruggio, del Maiale e del Cinghiale",
+    "months": "2",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "prolocomongrassano.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Iniziativa dedicata alla polpetta locale e alla cucina tradizionale.",
+    "sectors": "Gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Belmonte Calabro",
+    "name": "Sagra da Pasta di Ziti",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "prolocomongrassano.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra dedicata alla pasta della tradizione nuziale locale.",
+    "sectors": "Gastronomia",
+    "venue": "Centro storico",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Carpanzano",
+    "name": "Sagra della Castagna",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "prolocomongrassano.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra autunnale dedicata al frutto del territorio.",
+    "sectors": "Gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Dipignano",
+    "name": "Sagra della Polenta",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "prolocomongrassano.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Iniziativa gastronomica con preparazione della polenta secondo la tradizione locale.",
+    "sectors": "Gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Fagnano Castello",
+    "name": "Festival della Castanicoltura - Sagra della Castagna",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.fagnanocastello.cs.it/it/events/663093",
+      "label": "comune.fagnanocastello.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione con fiera artigiana e stand gastronomici dedicati al castagno.",
+    "sectors": "Gastronomia e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-24",
+        "end": "2025-10-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.fagnanocastello.cs.it/it/events/663093"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Plataci",
+    "name": "Shtridhëla - Il gusto delle nostre radici",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.plataci.cs.it/Dettaglionews?IDNews=416062",
+      "label": "www.comune.plataci.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Serata gastronomica dedicata alla pasta tradizionale arbëreshë.",
+    "sectors": "Gastronomia",
+    "venue": "Borgo di Plataci",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.plataci.cs.it/Dettaglionews?IDNews=416062"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Cariati",
+    "name": "Mercatini di Natale",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.prolococariati.it/eventi/",
+      "label": "www.prolococariati.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercatini artigiani nel borgo medievale.",
+    "sectors": "Artigianato",
+    "venue": "Piazza Plebiscito",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Orsomarso",
+    "name": "Fiera di Sant’Anna",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+      "label": "comune.orsomarso.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera collegata alla festa della compatrona.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Orsomarso",
+    "name": "Fiera di Santa Lucia",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+      "label": "comune.orsomarso.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera e tradizioni gastronomiche nella ricorrenza di Santa Lucia.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Orsomarso",
+    "name": "Mercato di Sant’Antonio",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+      "label": "comune.orsomarso.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercato collegato alla ricorrenza di Sant’Antonio.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Orsomarso",
+    "name": "Mercato dei Santi Cosma e Damiano",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+      "label": "comune.orsomarso.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercato nella ricorrenza dei Santi Cosma e Damiano.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "San Lorenzo Bellizzi",
+    "name": "Fiera di San Lorenzo Martire",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+      "label": "www.comune.sanlorenzobellizzi.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera collegata alla festa patronale.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "San Lorenzo Bellizzi",
+    "name": "Fiera dell’Immacolata",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+      "label": "www.comune.sanlorenzobellizzi.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera nella ricorrenza dell’Immacolata.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "San Lorenzo Bellizzi",
+    "name": "Sagra dell’Uva",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+      "label": "www.comune.sanlorenzobellizzi.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento gastronomico autunnale dedicato all’uva.",
+    "sectors": "Gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Scigliano",
+    "name": "Fiera di San Giuseppe",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.scigliano.cs.it/vivere-il-comune/territorio/eventi/",
+      "label": "comune.scigliano.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera specializzata nelle piante fruttifere e nelle sementi.",
+    "sectors": "Piante e sementi",
+    "venue": "Diano",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Scigliano",
+    "name": "Sagra della Capra e Fiera di Sant’Angelo",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.scigliano.cs.it/vivere-il-comune/territorio/eventi/",
+      "label": "comune.scigliano.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra gastronomica e fiera del bestiame presso il Savuto.",
+    "sectors": "Gastronomia e animali",
+    "venue": "Chiesetta di Sant’Angelo presso il Savuto",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "San Nicola Arcella",
+    "name": "Mercatini sul Mare",
+    "months": "9",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.sannicolaarcella.cs.it/Novita/Notizie/San-Nicola-Arcella-tornano-i-Mercatini-sul-mare-tre-giorni-tra-artigianato-musica-e-tradizioni",
+      "label": "www.comune.sannicolaarcella.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Bancarelle artigiane e iniziative nel centro storico.",
+    "sectors": "Artigianato",
+    "venue": "Centro storico",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Spezzano Albanese",
+    "name": "Sagra del Mostacciolo Arbëresh",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.spezzano-albanese.cs.it/novita/spezzano-albanese-esperienza-autentica-sagra-del-mostacciolo-arberesh-prima-edizione/",
+      "label": "www.comune.spezzano-albanese.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizioni e degustazioni dedicate al dolce arbëreshë.",
+    "sectors": "Dolci e gastronomia",
+    "venue": "Piazza Luigi Mortati",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-24",
+        "end": "2025-08-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.spezzano-albanese.cs.it/novita/spezzano-albanese-esperienza-autentica-sagra-del-mostacciolo-arberesh-prima-edizione/"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Rogliano",
+    "name": "Festa del Pane",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione",
+      "label": "www.comune.rogliano.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione di prodotti da forno, produzioni agricole e opere artigiane.",
+    "sectors": "Prodotti da forno, agricoli, gastronomia e artigianato",
+    "venue": "Corso Umberto e Piazza Morelli",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso 2026: selezione per area expo/food, richiesta entro il 17 agosto ore 12, termine trascorso. Quote dopo accettazione. L’avviso vincola gli stand alle due giornate 26–27 settembre."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Aiello Calabro",
+    "name": "Fiera di Acquafredda",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+      "label": "comune.aiellocalabro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera della contrada Acquafredda nel programma estivo comunale.",
+    "venue": "Contrada Acquafredda",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-06",
+        "end": "2025-07-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Aiello Calabro",
+    "name": "Pane e Casu",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+      "label": "comune.aiellocalabro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Serata gastronomica dedicata a pane e formaggio.",
+    "sectors": "Gastronomia",
+    "venue": "Piazza Plebiscito",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-03",
+        "end": "2025-08-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Aiello Calabro",
+    "name": "Aiello Beer Fest",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+      "label": "comune.aiellocalabro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Festa della birra inserita nel programma comunale.",
+    "sectors": "Bevande",
+    "venue": "Piazza Plebiscito",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-06",
+        "end": "2025-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Aiello Calabro",
+    "name": "Peperoncino in Festa",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+      "label": "comune.aiellocalabro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Iniziativa dedicata al peperoncino.",
+    "sectors": "Gastronomia",
+    "venue": "Piazza Plebiscito",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-09",
+        "end": "2025-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Aiello Calabro",
+    "name": "Sagra del Tartufo",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+      "label": "comune.aiellocalabro.cs.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra dedicata al tartufo.",
+    "sectors": "Gastronomia",
+    "venue": "Piazza Plebiscito",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-15",
+        "end": "2025-08-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Calabria",
+    "city": "Bisignano",
+    "name": "Fiera della Madonnella - Santa Maria di Costantinopoli",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://bisignano-api.municipiumapp.it/s3/708/allegati/guidaturisticabisignanor.pdf",
+      "label": "bisignano-api.municipiumapp.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera di merci varie e artigianato.",
+    "sectors": "Merci varie e artigianato",
+    "venue": "Via Principe di Piemonte",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "region": "Calabria",
+    "city": "Bisignano",
+    "name": "Fiera del Santissimo Crocifisso della Riforma",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://bisignano-api.municipiumapp.it/s3/708/allegati/guidaturisticabisignanor.pdf",
+      "label": "bisignano-api.municipiumapp.it",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera di merci varie e artigianato presso la Riforma.",
+    "sectors": "Merci varie e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+    }
+  },
+  {
+    "id": "calabria-catanzaro-fiera-di-san-vitaliano",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Fiera di San Vitaliano",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/",
+      "label": "Comune di Catanzaro, avvisi fiere 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera cittadina con avviso per gli operatori.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale per operatori; documenti di dettaglio sul vecchio portale non leggibili nel controllo web. Termini, costi e merceologie non ricostruiti."
+    },
+    "research": {
+      "sourceKey": "czfiere",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-15",
+        "end": "2026-07-16",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/"
+      }
+    ]
+  },
+  {
+    "id": "calabria-catanzaro-fiera-della-madonna-di-porto-salvo",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Fiera della Madonna di Porto Salvo",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/",
+      "label": "Comune di Catanzaro, avvisi fiere 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera cittadina legata alla ricorrenza marinara.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive l’evento. Requisiti per espositori, importi, assegnazioni e disponibilità non verificati; nessuna candidatura inviata."
+    },
+    "research": {
+      "sourceKey": "czfiere",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/"
+      }
+    ]
+  },
+  {
+    "id": "calabria-catanzaro-fiera-di-san-lorenzo",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Fiera di San Lorenzo",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/",
+      "label": "Comune di Catanzaro, avvisi fiere 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera cittadina nel quartiere Mater Domini.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive l’evento. Requisiti per espositori, importi, assegnazioni e disponibilità non verificati; nessuna candidatura inviata."
+    },
+    "research": {
+      "sourceKey": "czfiere",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/pubblicati-avvisi-per-assegnazione-posteggi-fiere-san-vitaliano-madonna-di-porto-salvo-e-san-lorenzo/"
+      }
+    ],
+    "venue": "Quartiere Mater Domini"
+  },
+  {
+    "id": "calabria-catanzaro-tattoo-convention",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Tattoo Convention",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Convention dedicata al tatuaggio.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-biologi-ca",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Biologi-ca",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione specialistica su biologia e intelligenza artificiale.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-pop-culture-convention",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Pop Culture Convention",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento comics e games.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-calabria-sposi",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Calabria Sposi",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Salone wedding e cerimonie.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-22",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-edil-expo",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Edil Expo",
+    "months": "11",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione edilizia ed energie rinnovabili.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-22",
+        "end": "2026-11-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-mediterranea-village",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Mediterranea Village",
+    "months": "5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Manifestazione su dieta mediterranea, salute e benessere.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale 2026–2027; salone specialistico. Accesso degli ambulanti, contratto e prezzi dello stand non documentati."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-05-05",
+        "end": "2027-05-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ],
+    "venue": "PalaColosimo"
+  },
+  {
+    "id": "calabria-catanzaro-la-rosa-arte-funeraria",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "La Rosa Arte Funeraria",
+    "months": "2",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "label": "Comune di Catanzaro, calendario PalaColosimo 2026–2027",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione tecnica di settore.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario comunale: solo mese e anno, senza giorni. Non generare date puntuali."
+    },
+    "research": {
+      "sourceKey": "pala",
+      "temporalStatus": "edition-month",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Febbraio 2027; giorni non pubblicati",
+      "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/",
+      "notAnnualConfirmation": true
+    },
+    "venue": "PalaColosimo",
+    "editions": [
+      {
+        "year": 2027,
+        "label": "Febbraio 2027 — giorni non pubblicati",
+        "dateType": "calendar",
+        "periodOnly": true,
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/ente-fiera-palacolosimo-di-catanzaro-presentato-il-nuovo-calendario-eventi-2026-2027-tra-economia-grande-affluenza-e-sviluppo-del-territorio/"
+      }
+    ]
+  },
+  {
+    "id": "calabria-catanzaro-degusto-salone-del-food-e-beverage",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "deGusto - Salone del Food e Beverage",
+    "months": "11",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.salonedegusto.it/wp-content/uploads/2026/02/Presentazione-deGusto-2026.pdf",
+      "label": "Cosenza Fiere, presentazione deGusto 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Salone professionale agroalimentare.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Organizzato da Cosenza Fiere a Catanzaro. Candidatura espositore e preventivo da verificare, senza promessa di accesso o posti."
+    },
+    "research": {
+      "sourceKey": "degusto",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-14",
+        "end": "2026-11-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.salonedegusto.it/wp-content/uploads/2026/02/Presentazione-deGusto-2026.pdf"
+      }
+    ],
+    "venue": "Polo fieristico Colosimo"
+  },
+  {
+    "id": "calabria-catanzaro-expo-fata-e-festa-dell-uva",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Expo FATA e Festa dell'Uva",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://catanzaro.eu/expo-fata-2026-festa-dell-uva-germaneto/",
+      "label": "UNPLI Catanzaro, Expo FATA e Festa dell’Uva",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Esposizione agricola e prodotti locali.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Il 22 ottobre è apertura con presentazione; Expo 23–25 ottobre 9–19. L’ingresso libero del pubblico non è una tariffa espositore."
+    },
+    "research": {
+      "sourceKey": "fata",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-22",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catanzaro.eu/expo-fata-2026-festa-dell-uva-germaneto/"
+      }
+    ],
+    "venue": "Area COMALCA, Germaneto"
+  },
+  {
+    "id": "calabria-catanzaro-mercato-tematico-dell-antiquariato-vintage-modernariato-arte-e-artigianato",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Mercato tematico dell'antiquariato vintage modernariato arte e artigianato",
+    "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/",
+      "label": "Comune di Catanzaro, mercati tematici maggio 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercato tematico nel centro cittadino.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Avviso per 30 posteggi nominali, non disponibilità residua. Il programma di maggio supera la precedente ipotesi febbraio su Corso Mazzini/Galleria Mancuso; verificare eventuali variazioni."
+    },
+    "research": {
+      "sourceKey": "mercati",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Prima e quarta domenica del mese, avviso maggio 2026",
+      "sourceUrl": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/",
+      "notAnnualConfirmation": true
+    },
+    "venue": "Piazza Prefettura"
+  },
+  {
+    "id": "calabria-catanzaro-mercatino-degli-hobbisti",
+    "region": "Calabria",
+    "city": "Catanzaro",
+    "name": "Mercatino degli Hobbisti",
+    "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/",
+      "label": "Comune di Catanzaro, mercati tematici maggio 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercatino dedicato alle creazioni degli hobbisti.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Riservato agli hobbisti iscritti al registro comunale; avviso riaperto fino al 26 giugno 2026, termine trascorso. Non estendere la singola data d’avvio a tutte le domeniche."
+    },
+    "research": {
+      "sourceKey": "mercati",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Avvio 31 maggio 2026; ricorrenza successiva da verificare",
+      "sourceUrl": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/",
+      "notAnnualConfirmation": true
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-31",
+        "end": "2026-05-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.catanzaro.it/novita/mercati-tematici-in-piazza-prefettura-al-via-domenica-31-maggio-con-gli-hobbisti/"
+      }
+    ],
+    "venue": "Piazza Prefettura"
+  },
+  {
+    "id": "calabria-lamezia-terme-fiera-di-san-biagio",
+    "region": "Calabria",
+    "city": "Lamezia Terme",
+    "name": "Fiera di San Biagio",
+    "months": "2",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "label": "Comune di Lamezia Terme, Fiere lametine",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nel repertorio comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Autorizzazione al commercio su aree pubbliche; domanda per la singola fiera. Pagina aggiornata 2025 ma riferimenti e bollo 14,62 euro palesemente datati: requisiti e termine dei 60 giorni da riconfermare; nessuna scadenza 2026 calcolata."
+    },
+    "research": {
+      "sourceKey": "lam",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "1–3 febbraio",
+      "sourceUrl": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-lamezia-terme-fiera-di-san-francesco-di-paola-a-sambiase",
+    "region": "Calabria",
+    "city": "Lamezia Terme",
+    "name": "Fiera di San Francesco di Paola a Sambiase",
+    "months": "5,6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "label": "Comune di Lamezia Terme, Fiere lametine",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nel repertorio comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Autorizzazione al commercio su aree pubbliche; domanda per la singola fiera. Pagina aggiornata 2025 ma riferimenti e bollo 14,62 euro palesemente datati: requisiti e termine dei 60 giorni da riconfermare; nessuna scadenza 2026 calcolata."
+    },
+    "research": {
+      "sourceKey": "lam",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "31 maggio–2 giugno",
+      "sourceUrl": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-lamezia-terme-fiera-dei-santi-pietro-e-paolo",
+    "region": "Calabria",
+    "city": "Lamezia Terme",
+    "name": "Fiera dei Santi Pietro e Paolo",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "label": "Comune di Lamezia Terme, Fiere lametine",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nel repertorio comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Autorizzazione al commercio su aree pubbliche; domanda per la singola fiera. Pagina aggiornata 2025 ma riferimenti e bollo 14,62 euro palesemente datati: requisiti e termine dei 60 giorni da riconfermare; nessuna scadenza 2026 calcolata."
+    },
+    "research": {
+      "sourceKey": "lam",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "27–29 giugno",
+      "sourceUrl": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-lamezia-terme-fiera-di-san-francesco-di-paola-a-sant-eufemia",
+    "region": "Calabria",
+    "city": "Lamezia Terme",
+    "name": "Fiera di San Francesco di Paola a Sant'Eufemia",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "label": "Comune di Lamezia Terme, Fiere lametine",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nel repertorio comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Autorizzazione al commercio su aree pubbliche; domanda per la singola fiera. Pagina aggiornata 2025 ma riferimenti e bollo 14,62 euro palesemente datati: requisiti e termine dei 60 giorni da riconfermare; nessuna scadenza 2026 calcolata."
+    },
+    "research": {
+      "sourceKey": "lam",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Seconda domenica di luglio, con venerdì e sabato precedenti",
+      "sourceUrl": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-lamezia-terme-lamezia-comics-co",
+    "region": "Calabria",
+    "city": "Lamezia Terme",
+    "name": "Lamezia Comics & Co.",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/eventi/725799",
+      "label": "Comune di Lamezia Terme, Comics 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera del fumetto e della cultura pop.",
+    "sectors": "Esposizione specialistica; categorie da verificare con l’organizzatore",
+    "participation": {
+      "type": "exhibitors",
+      "note": "L’organizzatore distingue espositori, artisti e food vendor. Gratuità di ingresso per il pubblico; quote degli stand non pubblicate nelle fonti esaminate."
+    },
+    "research": {
+      "sourceKey": "comics",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-11",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.lamezia-terme.cz.it/it/eventi/725799"
+      }
+    ],
+    "venue": "Parco Peppino Impastato"
+  },
+  {
+    "id": "calabria-curinga-fiera-dell-annunziata",
+    "region": "Calabria",
+    "city": "Curinga",
+    "name": "Fiera dell'Annunziata",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "label": "Comune di Curinga, modulo fiere percorso 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera elencata nella modulistica comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Modulo conservato nel percorso 2024, privo di anno nel corpo: periodo ricorrente e tariffe storiche, non conferma 2026. Autorizzazione, iscrizione camerale e domanda almeno 60 giorni prima secondo questo modulo, da riconfermare."
+    },
+    "research": {
+      "sourceKey": "cur",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "25 marzo",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "notAnnualConfirmation": true
+    },
+    "venue": "Acconia"
+  },
+  {
+    "id": "calabria-curinga-fiera-di-san-giovanni",
+    "region": "Calabria",
+    "city": "Curinga",
+    "name": "Fiera di San Giovanni",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "label": "Comune di Curinga, modulo fiere percorso 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera elencata nella modulistica comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Modulo conservato nel percorso 2024, privo di anno nel corpo: periodo ricorrente e tariffe storiche, non conferma 2026. Autorizzazione, iscrizione camerale e domanda almeno 60 giorni prima secondo questo modulo, da riconfermare."
+    },
+    "research": {
+      "sourceKey": "cur",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "22–23 giugno",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "notAnnualConfirmation": true
+    },
+    "venue": "Acconia"
+  },
+  {
+    "id": "calabria-curinga-fiera-di-santa-maria-della-grazia",
+    "region": "Calabria",
+    "city": "Curinga",
+    "name": "Fiera di Santa Maria della Grazia",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "label": "Comune di Curinga, modulo fiere percorso 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera elencata nella modulistica comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Modulo conservato nel percorso 2024, privo di anno nel corpo: periodo ricorrente e tariffe storiche, non conferma 2026. Autorizzazione, iscrizione camerale e domanda almeno 60 giorni prima secondo questo modulo, da riconfermare."
+    },
+    "research": {
+      "sourceKey": "cur",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "1 luglio",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "notAnnualConfirmation": true
+    },
+    "venue": "Località La Grazia"
+  },
+  {
+    "id": "calabria-curinga-fiera-dell-immacolata",
+    "region": "Calabria",
+    "city": "Curinga",
+    "name": "Fiera dell'Immacolata",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "label": "Comune di Curinga, modulo fiere percorso 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera elencata nella modulistica comunale.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Modulo conservato nel percorso 2024, privo di anno nel corpo: periodo ricorrente e tariffe storiche, non conferma 2026. Autorizzazione, iscrizione camerale e domanda almeno 60 giorni prima secondo questo modulo, da riconfermare."
+    },
+    "research": {
+      "sourceKey": "cur",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Terza domenica e terzo lunedì di ottobre",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "notAnnualConfirmation": true
+    },
+    "venue": "Curinga"
+  },
+  {
+    "id": "calabria-soveria-mannelli-fiera-della-madonna-della-purita",
+    "region": "Calabria",
+    "city": "Soveria Mannelli",
+    "name": "Fiera della Madonna della Purità",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "label": "Comune di Soveria Mannelli, regolamento CUP 2021, art. 79",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nell’articolo 79 del regolamento.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Regolamento approvato nel 2021: prova del periodo storicizzato, non avviso annuale 2026. Tariffa concreta e modalità della singola edizione non verificate."
+    },
+    "research": {
+      "sourceKey": "soveria",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Terza e quarta domenica di ottobre",
+      "sourceUrl": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-soveria-mannelli-fiera-dell-immacolata",
+    "region": "Calabria",
+    "city": "Soveria Mannelli",
+    "name": "Fiera dell'Immacolata",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "label": "Comune di Soveria Mannelli, regolamento CUP 2021, art. 79",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nell’articolo 79 del regolamento.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Regolamento approvato nel 2021: prova del periodo storicizzato, non avviso annuale 2026. Tariffa concreta e modalità della singola edizione non verificate."
+    },
+    "research": {
+      "sourceKey": "soveria",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "8 dicembre",
+      "sourceUrl": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-soveria-mannelli-fiera-di-santa-lucia",
+    "region": "Calabria",
+    "city": "Soveria Mannelli",
+    "name": "Fiera di Santa Lucia",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "label": "Comune di Soveria Mannelli, regolamento CUP 2021, art. 79",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Ricorrenza fieristica nell’articolo 79 del regolamento.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Regolamento approvato nel 2021: prova del periodo storicizzato, non avviso annuale 2026. Tariffa concreta e modalità della singola edizione non verificate."
+    },
+    "research": {
+      "sourceKey": "soveria",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "13 dicembre",
+      "sourceUrl": "https://www.comune.soveriamannelli.cz.it/wp-content/uploads/CUP-vigente.pdf",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-marcellinara-fiera-di-settembre",
+    "region": "Calabria",
+    "city": "Marcellinara",
+    "name": "Fiera di settembre",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara",
+      "label": "Comune di Marcellinara, fiere 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Bancarelle nel centro del paese.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Pagina riferita al 2024. L’intervallo 15 settembre–6 ottobre contiene due appuntamenti distinti: non quattro settimane di fiera continua."
+    },
+    "research": {
+      "sourceKey": "marc",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Terza domenica di settembre",
+      "sourceUrl": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara",
+      "notAnnualConfirmation": true
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-09-15",
+        "end": "2024-09-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara"
+      }
+    ],
+    "venue": "Dalle Croci a Piazza Francesco Scerbo"
+  },
+  {
+    "id": "calabria-marcellinara-fiera-di-ottobre",
+    "region": "Calabria",
+    "city": "Marcellinara",
+    "name": "Fiera di ottobre",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara",
+      "label": "Comune di Marcellinara, fiere 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Bancarelle nel centro del paese.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Pagina riferita al 2024. L’intervallo 15 settembre–6 ottobre contiene due appuntamenti distinti: non quattro settimane di fiera continua."
+    },
+    "research": {
+      "sourceKey": "marc",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Prima domenica di ottobre",
+      "sourceUrl": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara",
+      "notAnnualConfirmation": true
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-10-06",
+        "end": "2024-10-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.marcellinara.cz.it/evento/la-fiera-di-marcellinara"
+      }
+    ],
+    "venue": "Dalle Croci a Piazza Francesco Scerbo"
+  },
+  {
+    "id": "calabria-borgia-fiera-dello-statuto",
+    "region": "Calabria",
+    "city": "Borgia",
+    "name": "Fiera dello Statuto",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.borgia.cz.it/novita/notizie/novita_16.html",
+      "label": "Comune di Borgia, Fiera dello Statuto 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera con avviso comunale per operatori.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Operatori con autorizzazione/SCIA A o B, espositori e artigiani iscritti CCIAA secondo avviso; istanza entro 31 maggio 2026 ore 12, termine trascorso."
+    },
+    "research": {
+      "sourceKey": "borgia",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-06",
+        "end": "2026-06-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.borgia.cz.it/novita/notizie/novita_16.html"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "id": "calabria-borgia-fiera-di-san-leonardo",
+    "region": "Calabria",
+    "city": "Borgia",
+    "name": "Fiera di San Leonardo",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "label": "Visit UNPLI Calabria 2025, Pro Loco Borgia p. 10",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Tradizione di scambio di produzioni agricole e artigiane.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Repertorio turistico: nessuna conferma annuale 2026, tariffa o disponibilità. Bestiame descritto come caratteristica tradizionale, non autorizzazione sanitaria corrente."
+    },
+    "research": {
+      "sourceKey": "unpli",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "4–6 novembre, repertorio Pro Loco 2025",
+      "sourceUrl": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-andali-sagra-della-salsiccia",
+    "region": "Calabria",
+    "city": "Andali",
+    "name": "Sagra della Salsiccia",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comunediandali.it/servizi-al-turismo/manifestazioni-e-sagre.html",
+      "label": "Comune di Andali, manifestazioni e sagre senza anno",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra di cucina locale descritta dal Comune.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale senza anno, con numeri di edizione datati; nessuna conferma 2026 e nessuna procedura per banchi esterni."
+    },
+    "research": {
+      "sourceKey": "andali",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "13 agosto",
+      "sourceUrl": "https://www.comunediandali.it/servizi-al-turismo/manifestazioni-e-sagre.html",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-andali-sagra-della-patata",
+    "region": "Calabria",
+    "city": "Andali",
+    "name": "Sagra della Patata",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comunediandali.it/servizi-al-turismo/manifestazioni-e-sagre.html",
+      "label": "Comune di Andali, manifestazioni e sagre senza anno",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Sagra di cucina locale descritta dal Comune.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale senza anno, con numeri di edizione datati; nessuna conferma 2026 e nessuna procedura per banchi esterni."
+    },
+    "research": {
+      "sourceKey": "andali",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "9 agosto",
+      "sourceUrl": "https://www.comunediandali.it/servizi-al-turismo/manifestazioni-e-sagre.html",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-gasperina-assaggia-passeggia",
+    "region": "Calabria",
+    "city": "Gasperina",
+    "name": "Assaggia & Passeggia",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocogasperina.it/eventi/assaggia-passeggia-quarta-edizione-2026",
+      "label": "Pro Loco Gasperina, Assaggia & Passeggia 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Itinerario gastronomico nel borgo.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Percorso organizzato dalla Pro Loco, non avviso per posteggi. La voce €0 a persona non riguarda gli espositori."
+    },
+    "research": {
+      "sourceKey": "assaggia",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocogasperina.it/eventi/assaggia-passeggia-quarta-edizione-2026"
+      }
+    ],
+    "venue": "Piazza Enrico Fermi"
+  },
+  {
+    "id": "calabria-gasperina-festivalbeer",
+    "region": "Calabria",
+    "city": "Gasperina",
+    "name": "Festivalbeer",
+    "months": "8,10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocogasperina.it/eventi",
+      "label": "Pro Loco Gasperina, archivio eventi",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Birra artigianale e stand gastronomici.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Archivio organizzatore: seconda edizione 11 ottobre 2025; terza edizione indicata ad agosto 2026 senza giorno, da non completare per ipotesi."
+    },
+    "research": {
+      "sourceKey": "gas",
+      "temporalStatus": "historical-and-edition-month",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-11",
+        "end": "2025-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocogasperina.it/eventi"
+      },
+      {
+        "year": 2026,
+        "label": "Agosto 2026 — giorno non pubblicato",
+        "dateType": "calendar",
+        "periodOnly": true,
+        "sourceUrl": "https://www.prolocogasperina.it/eventi"
+      }
+    ],
+    "venue": "Piazzale della Pace"
+  },
+  {
+    "id": "calabria-gasperina-zuccaland",
+    "region": "Calabria",
+    "city": "Gasperina",
+    "name": "Zuccaland",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocogasperina.it/",
+      "label": "Pro Loco Gasperina, Zuccaland 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Villaggio autunnale con laboratori e degustazioni.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Evento della Pro Loco; accesso di espositori esterni e relativo listino non documentati."
+    },
+    "research": {
+      "sourceKey": "zucca",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocogasperina.it/"
+      }
+    ]
+  },
+  {
+    "id": "calabria-squillace-bacco-al-borgo",
+    "region": "Calabria",
+    "city": "Squillace",
+    "name": "Bacco al Borgo",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.squillace.cz.it/notizie/3674048/avviso-manifestazione-interesse-stand-mercatini",
+      "label": "Comune di Squillace, Bacco al Borgo 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Vino, gastronomia e mercatino creativo nel centro storico.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Due selezioni: fino a 30 hobbisti senza partita IVA per opere proprie e 8 operatori di somministrazione, numeri dell’avviso non posti residui. Domande somministrazione entro 9 novembre 2026 ore 12; avviso hobbisti riporta 09/11/22026, refuso da chiarire. Energia non fornita; per somministrazione vietate bombole gas. Suolo hobbisti da pagare con importo comunicato ai selezionati."
+    },
+    "research": {
+      "sourceKey": "squillace",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-14",
+        "end": "2026-11-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.squillace.cz.it/notizie/3674048/avviso-manifestazione-interesse-stand-mercatini"
+      }
+    ],
+    "venue": "Centro storico, Corso Guglielmo Pepe"
+  },
+  {
+    "id": "calabria-sellia-sagra-dell-olio-d-oliva",
+    "region": "Calabria",
+    "city": "Sellia",
+    "name": "Sagra dell'Olio d'Oliva",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ARTIGIANATO-2026-1.docx",
+      "label": "Comune di Sellia, adesione artigianato Sagra dell’Olio 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Prodotti artigianali e gastronomia dedicata all’olio.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Moduli distinti artigianato/enogastronomia: allestimento a proprie spese, spazio privato oppure assegnato dal Comune al prezzo stabilito non indicato; punto luce previsto solo per gli spazi pubblici descritti."
+    },
+    "research": {
+      "sourceKey": "sellia",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-17",
+        "end": "2026-08-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ARTIGIANATO-2026-1.docx"
+      }
+    ]
+  },
+  {
+    "id": "calabria-san-sostene-festa-di-primavera",
+    "region": "Calabria",
+    "city": "San Sostene",
+    "name": "Festa di Primavera",
+    "months": "4",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.sansostene.cz.it/eventi/Festa-di-Primavera-a-San-Sostene.html",
+      "label": "Comune di San Sostene, Festa di Primavera 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Mercatini artigianali e prodotti locali.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "La pagina pubblica non disciplina l’accesso di espositori esterni. Nessun costo stand ricavato dalla gratuità dell’evento."
+    },
+    "research": {
+      "sourceKey": "sostene",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-21",
+        "end": "2026-04-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sansostene.cz.it/eventi/Festa-di-Primavera-a-San-Sostene.html"
+      }
+    ],
+    "venue": "Piazza della Vittoria"
+  },
+  {
+    "id": "calabria-taverna-fiera-di-san-sebastiano",
+    "region": "Calabria",
+    "city": "Taverna",
+    "name": "Fiera di San Sebastiano",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.taverna.cz.it/vivere_il_comune/eventi/evento_1.html",
+      "label": "Comune di Taverna, San Sebastiano e fiera di ottobre",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera autunnale citata nella pagina del patrono.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Il 20 gennaio 2025 della pagina riguarda la festa religiosa; non è la data della fiera, descritta separatamente in ottobre."
+    },
+    "research": {
+      "sourceKey": "taverna",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Ottobre; giorni non indicati",
+      "sourceUrl": "https://www.comune.taverna.cz.it/vivere_il_comune/eventi/evento_1.html",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-montauro-montauro-mi-gusta",
+    "region": "Calabria",
+    "city": "Montauro",
+    "name": "Montauro mi gusta",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.montauro.cz.it/vivere_il_comune/eventi/evento_4.html",
+      "label": "Comune di Montauro, Montauro mi gusta 2025",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera di artigianato e produzioni a chilometro zero.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Edizione 2025; nessuna conferma 2026. La voce senza costi è rivolta al pubblico e non prova gratuità dello stand."
+    },
+    "research": {
+      "sourceKey": "montauro",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-29",
+        "end": "2025-08-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.montauro.cz.it/vivere_il_comune/eventi/evento_4.html"
+      }
+    ],
+    "venue": "Lungomare"
+  },
+  {
+    "id": "calabria-belcastro-na-jurnata-ara-ruga",
+    "region": "Calabria",
+    "city": "Belcastro",
+    "name": "Na jurnata ara ruga",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.belcastro.cz.it/vivere-il-comune/eventi/na-jurnata-ara-ruga/",
+      "label": "Comune di Belcastro, Na jurnata ara ruga 2025",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Stand gastronomici e antichi mestieri nel borgo.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale 2025. Segnalazioni 2026 di terzi non usate per aggiornare l’edizione. Orario finale discordante nella stessa pagina, quindi omesso."
+    },
+    "research": {
+      "sourceKey": "bel",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-11-01",
+        "end": "2025-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.belcastro.cz.it/vivere-il-comune/eventi/na-jurnata-ara-ruga/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "id": "calabria-cerva-fiera-della-scialatella",
+    "region": "Calabria",
+    "city": "Cerva",
+    "name": "Fiera della Scialatella",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.cerva.cz.it/uploads/66c8726a4d9a5-AVVISO_FIERA.pdf",
+      "label": "Comune di Cerva, Scialatella 7–8 settembre 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera con domanda presso l’ufficio commercio.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Avviso con anno 2024 esplicito. Le date 2026 degli aggregatori non sono confermate da questo documento."
+    },
+    "research": {
+      "sourceKey": "cerva",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-09-07",
+        "end": "2024-09-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cerva.cz.it/uploads/66c8726a4d9a5-AVVISO_FIERA.pdf"
+      }
+    ]
+  },
+  {
+    "id": "calabria-soverato-fiera-della-galilea",
+    "region": "Calabria",
+    "city": "Soverato",
+    "name": "Fiera della Galilea",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://soverato.contrasparenza.it/documenti/allegati/trasparenza/40/delibera-gm-n-13-2026-approvazione-tariffa-partecipazione-fiera-della-galilea-2026.pdf",
+      "label": "Comune di Soverato, delibera G.C. 13 del 29 gennaio 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera pasquale con tariffa comunale 2026.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Autorizzazioni tramite evidenza pubblica. Canone 2026 distinto da bolli, servizi ed eventuali altri oneri."
+    },
+    "research": {
+      "sourceKey": "galilea",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-06",
+        "end": "2026-04-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://soverato.contrasparenza.it/documenti/allegati/trasparenza/40/delibera-gm-n-13-2026-approvazione-tariffa-partecipazione-fiera-della-galilea-2026.pdf"
+      }
+    ],
+    "venue": "Area del mercato settimanale del venerdì"
+  },
+  {
+    "id": "calabria-soverato-fiera-artigianale-estiva",
+    "region": "Calabria",
+    "city": "Soverato",
+    "name": "Fiera Artigianale estiva",
+    "months": "6,7,8,9",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.soverato.cz.it/dam/jcr:f7fd64b1-8758-4501-b4df-d388dfd0a18d/avviso-fiera-artigianale-2024.pdf",
+      "label": "Comune di Soverato, fiera artigianale 2024",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera artigianale e somministrazione estiva.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2024: candidatura non equivaleva al rilascio dell’autorizzazione, subordinato alla concessione demaniale. Artigiani, creativi e somministrazione con requisiti distinti; termine 6 giugno 2024 ore 12 trascorso."
+    },
+    "research": {
+      "sourceKey": "sovert",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-06-15",
+        "end": "2024-09-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.soverato.cz.it/dam/jcr:f7fd64b1-8758-4501-b4df-d388dfd0a18d/avviso-fiera-artigianale-2024.pdf"
+      }
+    ]
+  },
+  {
+    "id": "calabria-decollatura-fiera-del-xx-settembre",
+    "region": "Calabria",
+    "city": "Decollatura",
+    "name": "Fiera del XX Settembre",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.icserrastretta.edu.it/pa/wp-content/uploads/2026/09/ord_00046_17-09-2026-1.pdf",
+      "label": "Comune di Decollatura, ordinanza 46/2026 conservata dall’istituto Serrastretta",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera di produzioni agricole e artigianali.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza sindacale 46/2026: svolgimento 20–21 settembre; chiusura scuole solo il 21. Nessuna tariffa o candidatura nell’ordinanza."
+    },
+    "research": {
+      "sourceKey": "decol",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-20",
+        "end": "2026-09-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.icserrastretta.edu.it/pa/wp-content/uploads/2026/09/ord_00046_17-09-2026-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "calabria-chiaravalle-centrale-festa-d-autunno",
+    "region": "Calabria",
+    "city": "Chiaravalle Centrale",
+    "name": "Festa d'Autunno",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://catanzaro.eu/eventi/festa-d-autunno-chiaravalle-2026/",
+      "label": "UNPLI Catanzaro, Festa d’Autunno Chiaravalle 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Caldarroste, vino e prodotti tipici.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 1 novembre 2026; 6 novembre solo alternativa in caso di pioggia, non seconda edizione confermata. Nessun riscontro di attivazione del rinvio."
+    },
+    "research": {
+      "sourceKey": "chiar",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catanzaro.eu/eventi/festa-d-autunno-chiaravalle-2026/"
+      }
+    ],
+    "venue": "Rione Cona"
+  },
+  {
+    "id": "calabria-vallefiorita-valle-in-fiera",
+    "region": "Calabria",
+    "city": "Vallefiorita",
+    "name": "Valle in Fiera",
+    "months": "7",
+    "category": "artigianato",
+    "source": {
+      "url": "https://catanzaro.eu/eventi/valle-in-fiera/",
+      "label": "UNPLI Catanzaro, Valle in Fiera 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Appuntamento fieristico del calendario UNPLI.",
+    "sectors": "Prodotti tipici e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Scheda UNPLI e locandina ufficiale: stand di prodotti tipici e artigianato nel centro storico. Requisiti per espositori e importi non indicati. Orario discordante tra locandina e dati strutturati omesso."
+    },
+    "research": {
+      "sourceKey": "valle",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi.",
+      "additionalSourceUrl": "https://catanzaro.eu/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-15-at-12.59.32.jpeg"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-15",
+        "end": "2026-07-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catanzaro.eu/eventi/valle-in-fiera/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "id": "calabria-sellia-marina-sagra-della-merendella",
+    "region": "Calabria",
+    "city": "Sellia Marina",
+    "name": "Sagra della Merendella",
+    "months": "7,8",
+    "category": "sagra",
+    "source": {
+      "url": "https://catanzaro.eu/eventi/sagra-della-merendella/",
+      "label": "UNPLI Catanzaro, Sagra della Merendella 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Valorizzazione della pesca merendella e prodotti locali.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Date strutturate 17–19 luglio 2026. Il 2 agosto è ricordato come culmine di anni precedenti: non è una seconda data 2026 confermata."
+    },
+    "research": {
+      "sourceKey": "merend",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-17",
+        "end": "2026-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catanzaro.eu/eventi/sagra-della-merendella/"
+      }
+    ]
+  },
+  {
+    "id": "calabria-sersale-notte-bianca",
+    "region": "Calabria",
+    "city": "Sersale",
+    "name": "Notte Bianca",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://catanzaro.eu/eventi/5a-edizione-notte-bianca/",
+      "label": "UNPLI Catanzaro, Notte Bianca Sersale 2026",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Stand gastronomici in occasione della festa cittadina.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Scheda UNPLI: orario 19 nel testo e 20 nei dati strutturati, quindi omesso. Partecipazione esterna e tariffe non precisate."
+    },
+    "research": {
+      "sourceKey": "sersale",
+      "temporalStatus": "documented-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-15",
+        "end": "2026-07-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catanzaro.eu/eventi/5a-edizione-notte-bianca/"
+      }
+    ],
+    "venue": "Piazza Casolini"
+  },
+  {
+    "id": "calabria-magisano-festa-della-birra",
+    "region": "Calabria",
+    "city": "Magisano",
+    "name": "Festa della Birra",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.magisano.cz.it/vivere-il-comune/",
+      "label": "Comune di Magisano, eventi",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Festa organizzata dalla Pro Loco.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Anno non verificato nell’indice comunale: nessuna data 2026 dedotta."
+    },
+    "research": {
+      "sourceKey": "mag",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Agosto; indice comunale indica 13 agosto senza anno",
+      "sourceUrl": "https://www.comune.magisano.cz.it/vivere-il-comune/",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-montepaone-sagra-del-maiale",
+    "region": "Calabria",
+    "city": "Montepaone",
+    "name": "Sagra del Maiale",
+    "months": "2",
+    "category": "sagra",
+    "source": {
+      "url": "https://riviviamomontepaone.it/it/iniziative-ed-eventi/sagre-feste-e-ricorrenze.html",
+      "label": "Associazione Ri...vivi...amo Montepaone, sagre e ricorrenze",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Piatti della cucina locale proposti dall’associazione.",
+    "sectors": "Prodotti alimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Evento gastronomico dell’associazione; nessun invito a operatori esterni o calendario annuale confermato."
+    },
+    "research": {
+      "sourceKey": "montep",
+      "temporalStatus": "recurring-period",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "periodEvidence": {
+      "label": "Febbraio, secondo la descrizione dell’organizzatore",
+      "sourceUrl": "https://riviviamomontepaone.it/it/iniziative-ed-eventi/sagre-feste-e-ricorrenze.html",
+      "notAnnualConfirmation": true
+    }
+  },
+  {
+    "id": "calabria-nocera-terinese-fiera-di-san-giovanni-battista",
+    "region": "Calabria",
+    "city": "Nocera Terinese",
+    "name": "Fiera di San Giovanni Battista",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.noceraterinese.cz.it/nocerater/po/attachment_news.php?id=258",
+      "label": "Comune di Nocera Terinese, avviso Fiera San Giovanni 2025",
+      "checkedAt": "2026-11-05"
+    },
+    "summary": "Fiera patronale con assegnazione dei posteggi.",
+    "sectors": "Merceologie da verificare nell’avviso della singola fiera",
+    "participation": {
+      "type": "check",
+      "note": "Anno ricavato dalle giornate di convocazione operatori del medesimo avviso: 18 e 20 giugno 2025. Non sono termini per il 2026."
+    },
+    "research": {
+      "sourceKey": "noc",
+      "temporalStatus": "historical-edition",
+      "limit": "Le date documentano il programma dell’edizione indicata, non l’effettivo svolgimento né la disponibilità di posteggi."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-06-22",
+        "end": "2025-06-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.noceraterinese.cz.it/nocerater/po/attachment_news.php?id=258"
+      }
+    ]
+  },
+  {
+    "id": "calabria-agnana-calabra-festa-di-san-basilio-magno",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Agnana Calabra",
+    "name": "Festa di San Basilio Magno",
+    "category": "tradizionale",
+    "months": [
+      6
+    ],
+    "venue": "Vie del paese",
+    "organizer": "Comune / organizzazione locale",
+    "sectors": "Dolci locali e souvenir",
+    "source": {
+      "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+    ],
+    "summary": "Il Comune documenta bancarelle durante la ricorrenza patronale. Solo periodo tradizionale.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-agnana-calabra-festa-della-madonna-della-misericordia",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Agnana Calabra",
+    "name": "Festa della Madonna della Misericordia",
+    "category": "tradizionale",
+    "months": [
+      8
+    ],
+    "venue": "Vie del paese",
+    "organizer": "Comune / organizzazione locale",
+    "sectors": "Dolci locali e souvenir",
+    "source": {
+      "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+    ],
+    "summary": "Bancarelle documentate nella pagina comunale sulle tradizioni; manca un bando per una nuova edizione.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.agnana.rc.it/novita/notizie/novita_1.html"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-bivongi-mercato-della-badia",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Bivongi",
+    "name": "Mercato della Badia",
+    "category": "artigianato",
+    "months": [
+      8
+    ],
+    "venue": "Borgo di Bivongi",
+    "organizer": "Comune di Bivongi",
+    "sectors": "Artigianato e prodotti agroalimentari tipici",
+    "source": {
+      "url": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html"
+    ],
+    "summary": "Mercato di artigianato e produzioni agroalimentari. Edizione 2026 trascorsa; non è un avviso attualmente aperto.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-17",
+        "end": "2026-08-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Domanda al protocollo o via PEC entro il 3 agosto 2026 con ricevuta della quota. Esenzione solo per ETS senza scopo di lucro. Tariffario collegato tramite funzione dinamica, importi non acquisiti. Edizione conclusa.",
+      "url": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+      "deadline": "2026-08-03"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-bivongi-san-martino-sapori-e-profumi-d-autunno",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Bivongi",
+    "name": "San Martino · Sapori e Profumi d’Autunno",
+    "category": "sagra",
+    "months": [
+      11
+    ],
+    "venue": "Cantine, musei e piazze del borgo",
+    "organizer": "Pro Loco Bivongi",
+    "sectors": "Vino e prodotti tipici",
+    "source": {
+      "url": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+    ],
+    "summary": "Rassegna tra cantine, piazze e musei con degustazioni e prodotti tipici. Conservata solo l’edizione 2025.",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-11-11",
+        "end": "2025-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://calabriastraordinaria.it/eventi/san-martino-sapori-e-profumi-dautunno"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-brancaleone-brancaleone-in-fiera",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Brancaleone",
+    "name": "Brancaleone in Fiera",
+    "category": "mercatino",
+    "months": [
+      1
+    ],
+    "venue": "Piazza Stazione, Brancaleone Marina",
+    "organizer": "Pro Loco Brancaleone",
+    "sectors": "Gastronomia, artigianato e attività commerciali",
+    "source": {
+      "url": "https://calabriastraordinaria.it/en/events/brancaleone-fair",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+    ],
+    "summary": "Manifestazione con stand gastronomici, artigianato e attività commerciali. Edizione trascorsa.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-01-24",
+        "end": "2026-01-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://calabriastraordinaria.it/en/events/brancaleone-fair"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-cardeto-sagra-della-castagna",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Cardeto",
+    "name": "Sagra della Castagna",
+    "category": "sagra",
+    "months": [
+      10
+    ],
+    "venue": "Centro di Cardeto",
+    "organizer": "Comune di Cardeto",
+    "sectors": "Prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026",
+      "https://www.galareagrecanica.it/index.php/territorio/comuni/item/567-comune-di-cardeto"
+    ],
+    "summary": "Il Comune conferma la giornata della sagra. Il GAL documenta anche esposizioni di prodotti locali e oggetti; non è un bando per ambulanti.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-31",
+        "end": "2026-10-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.cardeto.rc.it/it/news/avviso-fornitura-castagne-xxvi-sagra-della-castagna-2026"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-cinquefrondi-mercatino-dell-usato-viviamo-cinquefrondi",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Cinquefrondi",
+    "name": "Mercatino dell’usato · Viviamo Cinquefrondi",
+    "category": "mercatino",
+    "months": [
+      7
+    ],
+    "venue": "Piazzale Stadio comunale",
+    "organizer": "Progetto Viviamo Cinquefrondi / Comune",
+    "sectors": "Usato",
+    "source": {
+      "url": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+    ],
+    "summary": "Mercatino dell’usato e laboratori, appuntamento specifico del progetto Viviamo Cinquefrondi.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-19",
+        "end": "2026-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.cinquefrondi.rc.it/novita/notizie/novita_836.html"
+    },
+    "merchandiseSectors": [
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-cittanova-fiera-nel-solco-delle-tradizioni-di-san-rocco",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Cittanova",
+    "name": "Fiera Nel solco delle tradizioni di San Rocco",
+    "category": "tradizionale",
+    "months": [
+      9
+    ],
+    "venue": "Territorio comunale; assegnazione in Via Dante",
+    "organizer": "Comune di Cittanova",
+    "sectors": "Commercio ambulante; categorie non precisate nell’avviso",
+    "source": {
+      "url": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf",
+      "https://www.comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026"
+    ],
+    "summary": "Fiera commerciale documentata dall’avviso comunale. Assegnazione dei posteggi distinta dai giorni della fiera.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "L’avviso fissa l’assegnazione in Via Dante il 17 e 18 settembre, 15:30–19:30, per occupare il 19–21. Non è prova di una spunta senza requisiti. Edizione conclusa.",
+      "url": "https://cittanova-api.municipiumapp.it/s3/2147/allegati/fiera-nel-solco-delle-trad-di-san-rocco-commerc-ambul.pdf"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-cittanova-fiera-di-san-girolamo",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Cittanova",
+    "name": "Fiera di San Girolamo",
+    "category": "tradizionale",
+    "months": [
+      9
+    ],
+    "venue": "Comune di Cittanova; vie non verificate",
+    "organizer": "Comune di Cittanova",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "source": {
+      "url": "https://www.comune.cittanova.rc.it/it/news/2044946",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cittanova.rc.it/it/news/2044946"
+    ],
+    "summary": "Avviso comunale per l’assegnazione dei posteggi. Testo indicizzato conservato; allegato non acquisito.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-29",
+        "end": "2026-09-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cittanova.rc.it/it/news/2044946"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Avviso del 23 settembre 2026 per le occupazioni 29–30 settembre. La pagina restituisce 410 nel recupero diretto: non ricostruite procedure o tariffe mancanti.",
+      "url": "https://www.comune.cittanova.rc.it/it/news/2044946"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-cittanova-fiera-maria-ss-del-rosario",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Cittanova",
+    "name": "Fiera Maria SS. del Rosario",
+    "category": "tradizionale",
+    "months": [
+      10
+    ],
+    "venue": "Comune di Cittanova; vie non verificate",
+    "organizer": "Comune di Cittanova",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "source": {
+      "url": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+    ],
+    "summary": "Avviso comunale riferito esplicitamente al Rosario. Il percorso URL riutilizza un titolo diverso; non conta come una seconda fiera di San Rocco.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Fonte comunale indicizzata, avviso dell’8 ottobre 2026. Recupero diretto 410; non acquisito l’allegato. Edizione conclusa.",
+      "url": "https://comune.cittanova.rc.it/it/news/avviso-fiera-nel-solco-delle-tradizioni-di-san-rocco-19-21-settembre-2026-2053519"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-delianuova-fiera-di-sant-arcangelo",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Delianuova",
+    "name": "Fiera di Sant’Arcangelo",
+    "category": "tradizionale",
+    "months": [
+      10
+    ],
+    "venue": "Quartiere Paracorio, Piazza Regina Elena e vie indicate nell’ordinanza",
+    "organizer": "Comune di Delianuova",
+    "sectors": "Commercio ambulante; merceologie non precisate",
+    "source": {
+      "url": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+    ],
+    "summary": "Edizione storica con bancarelle e venditori ambulanti nel quartiere Paracorio. Nessuna data 2026 dedotta dall’ultima domenica di ottobre.",
+    "editions": [
+      {
+        "year": 2021,
+        "start": "2021-10-31",
+        "end": "2021-10-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://r1-it.storage.cloud.it/divanuova-at/www.comune.delianuova.rc.it/attachments/article/370/29%2010%202021%20ORD_2021_7.pdf"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-gerace-fiera-della-madonna-del-carmine",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Gerace",
+    "name": "Fiera della Madonna del Carmine",
+    "category": "tradizionale",
+    "months": [
+      7
+    ],
+    "venue": "Gerace",
+    "organizer": "Confraternita della Madonna del Carmine",
+    "sectors": "Fiera; merceologie non documentate",
+    "source": {
+      "url": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+    ],
+    "summary": "Il Comune descrive una fiera accanto ai festeggiamenti. La pagina aggiornata nel 2026 conserva date 2023.",
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-07-22",
+        "end": "2023-07-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.gerace.rc.it/vivere_il_comune/eventi/evento_4.html"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-gioia-tauro-fiera-mare-e-terra",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Gioia Tauro",
+    "name": "Fiera Mare e Terra",
+    "category": "mercatino",
+    "months": [
+      7
+    ],
+    "venue": "Lungomare di Gioia Tauro",
+    "organizer": "Organizzazione locale; avviso operatori non acquisito",
+    "sectors": "Artigianato e commercio ambulante",
+    "source": {
+      "url": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+    ],
+    "summary": "Percorso espositivo con artigianato e commercio ambulante sul lungomare. Nessuna disponibilità o affluenza certificata in questa scheda.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-17",
+        "end": "2026-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://calabriastraordinaria.it/eventi/fiera-mare-e-terra"
+    },
+    "merchandiseSectors": [
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-gioiosa-ionica-sagra-del-pezzo-duro",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Gioiosa Ionica",
+    "name": "Sagra del Pezzo Duro",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Gioiosa Ionica",
+    "organizer": "Pro Loco Gioiosa Ionica e maestri gelatai locali",
+    "sectors": "Gelato e dolci",
+    "source": {
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125",
+      "label": "UNPLI Calabria · guida 2025, contributo Pro Loco Gioiosa Ionica",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125"
+    ],
+    "summary": "Sagra del gelato gioiosano organizzata dalla Pro Loco con i gelatai locali. Nessuna edizione 2026 ricavata dalla ricorrenza.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf#page=125"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-mammola-sagra-dello-stocco",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Mammola",
+    "name": "Sagra dello Stocco",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Largo Magenta; intrattenimento in Piazza Ferrari",
+    "organizer": "Comune / Pro Loco Mammola",
+    "sectors": "Gastronomia e prodotti tipici",
+    "source": {
+      "url": "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/"
+    ],
+    "summary": "Stand di distribuzione dello stocco in Largo Magenta. Conservato il periodo tradizionale: il testo non prova due giornate di vendita.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://comune.mammola.rc.it/vivere-il-comune/eventi/sagra-dello-stocco-9-agosto-2024/"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-motta-san-giovanni-mercatini-di-natale",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Motta San Giovanni",
+    "name": "Mercatini di Natale",
+    "category": "mercatino",
+    "months": [
+      12
+    ],
+    "venue": "Piazza della Municipalità e Piazza del Borgo, Motta Centro",
+    "organizer": "Comune di Motta San Giovanni",
+    "sectors": "Prodotti alimentari e non alimentari, artigianato della tradizione calabrese",
+    "source": {
+      "url": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "https://motta-san-giovanni-api.municipiumapp.it/s3/4533/allegati/bando-mercatini-di-natale-2026.pdf"
+    ],
+    "summary": "Rassegna di prodotti calabresi con assegnazione gratuita dello stand, subordinata a selezione. L’avviso PDF conserva alcuni richiami al 2025.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-12",
+        "end": "2026-12-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026"
+      }
+    ],
+    "participation": {
+      "type": "selected",
+      "note": "Domanda su modello entro il 7 novembre 2026 ore 12:00, via PEC, email o protocollo. Ammessi prodotti della tradizione; requisiti diversi per hobbisti e imprese. Nessuna garanzia di posto. Pagina 2026 esplicita, ma art.3 e art.5 del PDF conservano 2025: verificare prima della domanda.",
+      "url": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "deadline": "2026-11-07"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-oppido-mamertina-sagra-degli-arrosticini-e-prodotti-tipici-mamertini",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Oppido Mamertina",
+    "name": "Sagra degli Arrosticini e Prodotti Tipici Mamertini",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Piazza Rocco Mammone",
+    "organizer": "Organizzazione locale; partecipazione esterna non verificata",
+    "sectors": "Gastronomia e prodotti tipici",
+    "source": {
+      "url": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+    ],
+    "summary": "Edizione storica dedicata agli arrosticini di agnello e ai prodotti tipici. Non trasferita al 2026.",
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-08-11",
+        "end": "2023-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://calabriastraordinaria.it/eventi/sagra-arrosticini-e-prodotti-tipici-mamertini"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-palmi-fiera-di-san-rocco",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Palmi",
+    "name": "Fiera di San Rocco",
+    "category": "tradizionale",
+    "months": [
+      8
+    ],
+    "venue": "Aree individuate dal Comune con deliberazione 108/2026",
+    "organizer": "Comune di Palmi",
+    "sectors": "Alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "https://www.comune.palmi.rc.it/novita/fiera-di-san-rocco-2026-avviso-pubblico-per-lassegnazione-dei-posteggi-destinati-agli-operatori-commerciali/"
+    ],
+    "summary": "Selezione per posteggi alimentari e non alimentari. L’articolo sulla durata specifica il 2026; nel preambolo resta un richiamo al 2025.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-12",
+        "end": "2026-08-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Scadenza 24 luglio 2026 ore 12:00. Per ambulanti autorizzati modello A via PEC; altre attività alimentari e spettacoli viaggianti seguono il SUAP come indicato nel bando. Edizione conclusa.",
+      "url": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "deadline": "2026-07-24"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-reggio-di-calabria-fiera-delle-feste-mariane",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Reggio di Calabria",
+    "name": "Fiera delle Feste Mariane",
+    "category": "tradizionale",
+    "months": [
+      9
+    ],
+    "venue": "Pentimele e postazioni previste in centro dal bando",
+    "organizer": "Comune di Reggio Calabria",
+    "sectors": "Alimentare e non alimentare; casalinghi e dimostratori",
+    "source": {
+      "url": "https://comune.reggio-calabria.it/Notizie/Details/8350",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.reggio-calabria.it/Notizie/Details/8350",
+      "https://comune.reggio-calabria.it/Allegati/10863-Avviso_fiera_Festa_Mariana_2026-signed-signed_timbrato_per_stampa-fea6ea8d-5ad8-4b04-b6f8-92884066e146.pdf",
+      "https://comune.reggio-calabria.it/Allegati/10861-Tariffe_2026-b311e274-e0bb-46b3-bc8b-8e7456a33aa6.pdf"
+    ],
+    "summary": "Fiera delle festività patronali con posteggi commerciali. Smontaggio entro mezzogiorno del 21 settembre: non è un’ulteriore giornata di vendita.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-10",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.reggio-calabria.it/Notizie/Details/8350"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Modello A via PEC entro il 25 agosto ore 12:00. Graduatorie definitive pubblicate il 4 settembre. Canoni in tabella per 10 giorni benché il periodo sia 10–20: discrepanza da chiarire, senza ricalcolare il listino.",
+      "url": "https://comune.reggio-calabria.it/Notizie/Details/8350",
+      "deadline": "2026-08-25"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-reggio-di-calabria-reggio-calabria-comics",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Reggio di Calabria",
+    "name": "Reggio Calabria Comics",
+    "category": "espositiva",
+    "months": [
+      10
+    ],
+    "venue": "Castello Aragonese",
+    "organizer": "Reggio Calabria Comics",
+    "sectors": "Fumetti e prodotti della cultura pop",
+    "source": {
+      "url": "https://www.reggiocalabriacomics.it/",
+      "label": "Organizzatore · Reggio Calabria Comics",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.reggiocalabriacomics.it/",
+      "https://www.reggiocalabriacomics.it/partecipa/"
+    ],
+    "summary": "Fiera del fumetto e della cultura pop al Castello Aragonese. Le date del 2025 ancora presenti nel sito riguardano contenuti storici.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.reggiocalabriacomics.it/"
+      }
+    ],
+    "participation": {
+      "type": "exhibitors",
+      "note": "Il modulo distingue venditori professionali, hobbisti e illustratori. Domanda soggetta a risposta dell’organizzazione; nessun prezzo o spazio disponibile verificato. Edizione conclusa.",
+      "url": "https://www.reggiocalabriacomics.it/"
+    },
+    "merchandiseSectors": [
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-reggio-di-calabria-bergare",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Reggio di Calabria",
+    "name": "Bergarè",
+    "category": "espositiva",
+    "months": [
+      10
+    ],
+    "venue": "Piazza e Castello Aragonese",
+    "organizer": "Camera di Commercio di Reggio Calabria",
+    "sectors": "Agroalimentare, bergamotto, artigianato e street food",
+    "source": {
+      "url": "https://www.bergare.it/",
+      "label": "Camera di Commercio di Reggio Calabria · Bergarè",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.bergare.it/"
+    ],
+    "summary": "Villaggio di imprese del bergamotto e artigianato, street food e incontri B2B. Non è un mercato con ammissione automatica per ambulanti.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-22",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.bergare.it/"
+      }
+    ],
+    "participation": {
+      "type": "exhibitors",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.bergare.it/"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-rizziconi-fiera-dell-agricoltura-eccellenze-in-comune",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Rizziconi",
+    "name": "Fiera dell’Agricoltura · Eccellenze in Comune",
+    "category": "espositiva",
+    "months": [
+      12
+    ],
+    "venue": "Via Palmiro Togliatti, area adiacente alla scuola media",
+    "organizer": "Comune di Rizziconi",
+    "sectors": "Prodotti agroalimentari e street food",
+    "source": {
+      "url": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura",
+      "label": "Regione Calabria · Calabria Straordinaria",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+    ],
+    "summary": "Edizione storica con aziende locali, degustazioni, street food e sagra dell’olio. Nessuna replica 2026 dedotta.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-12-17",
+        "end": "2024-12-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+      }
+    ],
+    "participation": {
+      "type": "exhibitors",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://calabriastraordinaria.it/eventi/fiera-dellagricoltura"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-rizziconi-mercatini-di-natale",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Rizziconi",
+    "name": "Mercatini di Natale",
+    "category": "mercatino",
+    "months": [
+      12
+    ],
+    "venue": "Piazza Marconi",
+    "organizer": "Comune di Rizziconi",
+    "sectors": "Alimentari, prodotti tipici, artigianato e articoli natalizi",
+    "source": {
+      "url": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf"
+    ],
+    "summary": "Casette per artigianato, commercio e prodotti alimentari. Il documento contiene importi discordanti: nessun prezzo univoco adottato.",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-16",
+        "end": "2025-12-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Scadenza storica 1 dicembre 2025. Assegnazione per ordine cronologico e bilanciamento merceologico. Il prezzo dell’art.9 contrasta con il modello di domanda: occorre chiarimento; edizione conclusa.",
+      "url": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+      "deadline": "2025-12-01"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-san-ferdinando-fiera-di-san-ferdinando-re",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "San Ferdinando",
+    "name": "Fiera di San Ferdinando Re",
+    "category": "tradizionale",
+    "months": [
+      5,
+      6
+    ],
+    "venue": "Piazza Nunziante e strade adiacenti",
+    "organizer": "Comune di San Ferdinando",
+    "sectors": "Alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+    ],
+    "summary": "Posteggi alimentari e non alimentari nella piazza e nelle strade adiacenti durante la festa patronale 2025. Il termine al mattino del 1 giugno non prova una fiera diurna quel giorno.",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-05-30",
+        "end": "2025-06-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.sanferdinando.rc.it/it/news/avviso-pubblico-per-linstallazione-temporanea-di-stand-adibiti-al-commercio-su-aree-pubbliche?type=3"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-san-giorgio-morgeto-festa-medioevale-mercatino",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "San Giorgio Morgeto",
+    "name": "Festa Medioevale · Mercatino",
+    "category": "artigianato",
+    "months": [
+      8
+    ],
+    "venue": "Centro storico",
+    "organizer": "Associazione Nuovo Mondo ETS",
+    "sectors": "Artigianato, alimentari confezionati e non alimentari ammessi dal regolamento",
+    "source": {
+      "url": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+      "label": "Associazione Nuovo Mondo ETS",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.sangiorgiomedievale.it/regolamento-espositori"
+    ],
+    "summary": "Mercatino a tema medievale con prodotti artigianali e alimentari confezionati. Non ammessi abbigliamento e prodotti industriali fuori tema.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-12",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sangiorgiomedievale.it/regolamento-espositori"
+      }
+    ],
+    "participation": {
+      "type": "selected",
+      "note": "Adesioni entro il 10 agosto 2026, previo accordo e scheda stand. Banco e abiti coerenti con il tema; solo illuminazione, non corrente per altri usi. Edizione conclusa. Il numero d’edizione non è univoco tra fonti e non viene riportato.",
+      "url": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+      "deadline": "2026-08-10"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
+  },
+  {
+    "id": "calabria-scido-sagra-della-carne-di-capra-e-pappaluni",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Scido",
+    "name": "Sagra della Carne di Capra e Pappaluni",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Piazza Municipio",
+    "organizer": "Comune e associazioni locali",
+    "sectors": "Gastronomia e prodotti tipici",
+    "source": {
+      "url": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+    ],
+    "summary": "Edizione storica della sagra di carne di capra e fagioli. Il periodo ricorrente del 17 agosto non conferma il 2026.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-17",
+        "end": "2024-08-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://comune.scido.rc.it/vivere-il-comune/eventi/sagra-della-carne-di-capra-e-pappaluni/"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-seminara-sagra-dell-olio",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Seminara",
+    "name": "Sagra dell’Olio",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Seminara",
+    "organizer": "Organizzazione locale; bando non acquisito",
+    "sectors": "Gastronomia e olio locale",
+    "source": {
+      "url": "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio"
+    ],
+    "summary": "Evento gastronomico dedicato all’olio locale. La fonte comunale precisa che la cadenza non è annuale: nessuna edizione 2026 confermata.",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://www.comune.seminara.rc.it/it/page/la-sagra-dell-olio"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-siderno-fiera-di-portosalvo",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Siderno",
+    "name": "Fiera di Portosalvo",
+    "category": "tradizionale",
+    "months": [
+      9
+    ],
+    "venue": "Centro di Siderno",
+    "organizer": "Comune di Siderno",
+    "sectors": "Commercio fieristico; settori ammessi da verificare nel bando",
+    "source": {
+      "url": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+    ],
+    "summary": "Fiera patronale 2026 anticipata al 3 settembre rispetto al consueto periodo. Conservato il calendario dell’edizione documentata.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-03",
+        "end": "2026-09-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://comune.siderno.rc.it/index.php/it/news/101444/dal-3-all-8-settembre-i-festeggiamenti-civili-in-onore-di-maria-ss-di-portosalvo"
+    },
+    "merchandiseSectors": []
+  },
+  {
+    "id": "calabria-stignano-a-fera-da-mpetrata",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Stignano",
+    "name": "A Fera da Mpetrata",
+    "category": "sagra",
+    "months": [
+      8
+    ],
+    "venue": "Borgo di Stignano",
+    "organizer": "Comune / organizzazione locale",
+    "sectors": "Gastronomia e prodotti tipici",
+    "source": {
+      "url": "https://comune.stignano.rc.it/it/eventi/647313",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.stignano.rc.it/it/eventi/647313"
+    ],
+    "summary": "Manifestazione del borgo dedicata alle tradizioni culinarie. La qualificazione di sagra non prova posteggi aperti a venditori esterni.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-11",
+        "end": "2024-08-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.stignano.rc.it/it/eventi/647313"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ammissione di venditori esterni e costi del banco non verificati nella fonte. La presenza della sagra non garantisce posteggi.",
+      "url": "https://comune.stignano.rc.it/it/eventi/647313"
+    },
+    "merchandiseSectors": [
+      "alimentare"
+    ]
+  },
+  {
+    "id": "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Terranova Sappo Minulio",
+    "name": "Fiera Patronale del SS. Crocifisso",
+    "category": "tradizionale",
+    "months": [
+      5
+    ],
+    "venue": "Strade del centro cittadino",
+    "organizer": "Comune di Terranova Sappo Minulio",
+    "sectors": "Commercio ambulante alimentare e non alimentare",
+    "source": {
+      "url": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "https://comune.terranovasappominulio.rc.it/it/news/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026"
+    ],
+    "summary": "Manifestazione commerciale nelle strade del centro in occasione della festa del SS. Crocifisso.",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-03",
+        "end": "2026-05-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf"
+      }
+    ],
+    "participation": {
+      "type": "public",
+      "note": "Istanza entro il 28 aprile 2026, via PEC o protocollo; superficie dichiarata e ricevuta del canone. Tardive solo con residui secondo avviso, non prova di disponibilità. Edizione conclusa.",
+      "url": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "deadline": "2026-04-28"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare"
+    ]
+  },
+  {
+    "id": "calabria-locri-locri-festival-agrifest",
+    "region": "Calabria",
+    "province": "Reggio Calabria",
+    "city": "Locri",
+    "name": "Locri Festival · Agrifest",
+    "category": "artigianato",
+    "months": [
+      8
+    ],
+    "venue": "Piazza dei Martiri e Via Margherita di Savoia",
+    "organizer": "Comune di Locri",
+    "sectors": "Prodotti agroalimentari e artigianato",
+    "source": {
+      "url": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf",
+      "label": "Comune / organizzatore",
+      "checkedAt": "2026-11-05"
+    },
+    "sourceRecordIds": [
+      "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf"
+    ],
+    "summary": "Mercatini artigianali e prodotti tipici nel Locri Festival 2024. Ammessi anche hobbisti, aziende agricole, associazioni e ambulanti previa selezione.",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-16",
+        "end": "2024-08-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf"
+      }
+    ],
+    "participation": {
+      "type": "selected",
+      "note": "Domande storiche entro il 5 agosto 2024 via PEC, protocollo o posta sul modello comunale. Scelta per differenziazione dei prodotti e anzianità CCIAA in caso di richieste simili eccedenti i posti. Costi non verificati; edizione conclusa.",
+      "url": "https://comune.locri.rc.it/wp-content/uploads/2024/07/manifestazione_partecipazione_locri_festival_agrifest_mercatini.pdf",
+      "deadline": "2024-08-05"
+    },
+    "merchandiseSectors": [
+      "alimentare",
+      "non-alimentare",
+      "artigianato"
+    ]
   }
 ]

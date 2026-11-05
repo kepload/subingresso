@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-04",
+  "checkedAt": "2026-11-05",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -3716,6 +3716,235 @@
       "sourceUrl": "https://www.comune.iglesias.ca.it/it/community/notizie/notizia/Notteggiando-2026-Bando-per-lassegnazione-di-12-stalli-su-area-pubblica/",
       "checkedAt": "2026-11-04",
       "review": "live-source-review"
+    },
+    "abruzzo-acciano-fiera-di-beffi-fiera-della-capra": {
+      "kind": "partial",
+      "label": "Canone di occupazione esente (2026)",
+      "details": "Avviso comunale 2026: nessun canone per le occupazioni della Fiera di Beffi per commercianti e hobbisti locali. Altri servizi e oneri non quantificati; nessun prezzo totale del banco attestato.",
+      "sourceUrl": "https://www.comune.acciano.aq.it/novita/fiera-della-capra-2026-invito-agli-espositori/",
+      "checkedAt": "2026-11-05",
+      "period": "2026"
+    },
+    "abruzzo-tornimparte-antica-fiera-di-tornimparte": {
+      "kind": "partial",
+      "label": "Bollo 16 €; canone separato (2026)",
+      "details": "Modulo comunale aggiornato 2026: bollo 16 euro, oltre al canone. Il modulo scrive 0,50 euro × mq totali e subito dopo uno sconto del 50% per il 2026: non chiarisce se la cifra sia già ridotta. Nessun totale né aliquota netta dedotta. Nessuna indicazione IVA o altri servizi.",
+      "sourceUrl": "https://www.comune.tornimparte.aq.it/s3/7299/allegati/modulistica/modulistica-fiera-agg-to2026.pdf",
+      "checkedAt": "2026-11-05",
+      "period": "2026"
+    },
+    "abruzzo-san-demetrio-ne-vestini-fiera-delle-bucalette": {
+      "kind": "partial",
+      "label": "Canone di suolo 1 € (2025)",
+      "details": "Delibera comunale 81 del 24 settembre 2025, richiamata dall’avviso: canone di occupazione ridotto a 1 euro per l’edizione 21 novembre 2025. Domanda regolare necessaria; altri oneri non quantificati. Non trasferibile al 2026 e non prezzo totale del banco.",
+      "sourceUrl": "https://www.comune.sandemetrionevestini.aq.it/novita/fiera-delle-bucalette-2025/",
+      "checkedAt": "2026-11-05",
+      "period": "2025"
+    },
+    "calabria-buonvicino-fiera-di-san-ciriaco-abate": {
+      "label": "Aree 1–2: 1 €/m²/giorno; food: 2 €/m²/giorno + bollo",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso 2026, art. 9: aree 1 e 2 canone 1 euro/m²/giorno; area 3 via Vittoria 2 euro/m²/giorno. Bollo di 16 euro distinto. Durate diverse per area; non calcolato un totale senza metratura e giorni assegnati. Nessuna IVA o servizio extra dedotto.",
+      "sourceUrl": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-cetraro-fiera-di-san-benedetto": {
+      "label": "Marina 5,30 €/m²; Centro 3,38 €/m² + bollo",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso 2026 art. 9: canone omnicomprensivo 5,30 euro/m² in Marina e 3,38 euro/m² in Centro, senza moltiplicazione giornaliera aggiunta. Tabelle: 12 m² Marina 63,60 euro; 6 m² Centro 20,28 euro. Marca da bollo 16 euro separata. Non sono costi complessivi dell’attività né tariffe di altre edizioni.",
+      "sourceUrl": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-castrovillari-fiera-di-san-giovanni": {
+      "label": "Canone 1,20 €/m²/giorno; bollo distinto",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Bando 2026 art. 10: canone 1,20 euro/m²/giorno per la fiera 17–18 giugno; domanda in bollo, non incluso nel canone. La successiva riduzione per il pomeriggio piovoso del 17 riguarda gli aventi diritto nella Fiera delle Stagioni di luglio, non un prezzo generale.",
+      "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-fuscaldo-festival-delle-alici-del-tirreno-cosentino": {
+      "label": "Artigianato 2×1 m: 200 € + 20 € diritti",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo 2026: stand artigianato in legno 200×100 cm, contributo 200 euro; diritti di segreteria 20 euro distinti. Nel modulo gastronomia 3×3 m la quota è lasciata vuota, quindi da comunicare dopo selezione. IVA e ulteriori oneri non specificati: nessun totale universale.",
+      "sourceUrl": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-rogliano-festa-del-pane": {
+      "label": "60 € per l’intera iniziativa espositiva",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Avviso 2026 art. 5: 60 euro da versare dopo accettazione, entro dieci giorni, per le due giornate espositive 26–27 settembre. Le strutture disponibili sono differenziate fra expo e food e assegnate dal Comune; non promessa di spazio o gratuità di servizi. IVA e ulteriori oneri non esplicitati.",
+      "sourceUrl": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-curinga-fiera-dell-annunziata": {
+      "label": "Suolo 30 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 30 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-di-san-giovanni": {
+      "label": "Suolo 40 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 40 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-di-santa-maria-della-grazia": {
+      "label": "Suolo 25 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 25 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-curinga-fiera-dell-immacolata": {
+      "label": "Suolo 40 € nel modulo storico 2024",
+      "kind": "partial",
+      "period": null,
+      "details": "Il modulo nel percorso comunale 2024 indica 40 € per occupazione di suolo pubblico per questa fiera. Il corpo non dichiara anno di validità, dimensioni, IVA o servizi; usa ancora la dicitura TOSAP. Non è un preventivo complessivo né una tariffa 2026 confermata. Allestimento, energia e altri oneri non quantificati.",
+      "sourceUrl": "https://www.comune.curinga.cz.it/wp-content/uploads/2024/05/CA_05_DOMANDA_PER_ASSEGNAZIONE_POSTEGGIO-FIERE-2024-3-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-soverato-fiera-della-galilea": {
+      "label": "Canone 2026: 1 €/m² × superficie × 2 giorni",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Delibera G.C. 13 del 29/01/2026: il dispositivo stabilisce 1,00 €/m² × superficie occupata × 2 giorni, per il 6–7 aprile 2026. Canone di occupazione, non prezzo completo del banco: bollo, IVA, allacci, energia e ulteriori oneri non quantificati. Nessuna trasposizione al 2027.",
+      "sourceUrl": "https://soverato.contrasparenza.it/documenti/allegati/trasparenza/40/delibera-gm-n-13-2026-approvazione-tariffa-partecipazione-fiera-della-galilea-2026.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-squillace-bacco-al-borgo": {
+      "label": "Hobbisti: suolo da pagare, importo non pubblicato",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Avviso hobbisti: importo e conto per il suolo saranno comunicati ai selezionati; energia elettrica non fornita dal Comune. Non è una quota nota né gratuità. Per la selezione somministrazione il documento esaminato non quantifica il canone: non estendere automaticamente questa condizione economica agli otto stand.",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5404291/Avviso-Mercatini-2026-bacco-al-borgo.docx",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-sellia-sagra-dell-olio-d-oliva": {
+      "label": "Allestimento proprio; prezzo spazio non indicato",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Moduli artigianato ed enogastronomia del 17 agosto 2026: stand allestito a proprie spese; alternativa su suolo/locale privato oppure spazio/stand comunale con punto luce al prezzo stabilito, senza cifra. Nessun costo complessivo, IVA o consumo energetico ricavabile; non significa spazio gratuito.",
+      "sourceUrl": "https://comune.sellia.cz.it/wp-content/uploads/2026/07/Scheda-adesione-sagra-SETTORE-ARTIGIANATO-2026-1.docx",
+      "checkedAt": "2026-11-05",
+      "review": "catanzaro-document-review"
+    },
+    "calabria-bivongi-mercato-della-badia": {
+      "kind": "conditional",
+      "label": "Esenzione quota soltanto per ETS senza scopo di lucro",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.bivongi.rc.it/novita/notizie/novita_233.html",
+      "checkedAt": "2026-11-05",
+      "details": "Quota obbligatoria con ricevuta allegata alla domanda; esentati esclusivamente ETS senza scopo di lucro. Tariffario 2026 collegato tramite funzione dinamica, importi non acquisiti. Non equivale a costo complessivo nullo."
+    },
+    "calabria-palmi-fiera-di-san-rocco": {
+      "kind": "partial",
+      "label": "Diritti 10 € + bollo 16 €; canone e assicurazione separati",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.palmi.rc.it/wp-content/uploads/2026/06/Avviso-Pubblico-Fiera-San-Rocco-2026-DEF-1.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Il bando richiede 10 € di istruttoria e una marca da bollo da 16 €. Canone secondo tariffario comunale e polizza RCT da pagare a parte: il massimale di 500.000 € non è il premio. Nessun totale posteggio verificato.",
+      "components": [
+        {
+          "type": "istruttoria",
+          "amount": 10,
+          "currency": "EUR"
+        },
+        {
+          "type": "bollo-domanda",
+          "amount": 16,
+          "currency": "EUR"
+        }
+      ]
+    },
+    "calabria-reggio-di-calabria-fiera-delle-feste-mariane": {
+      "kind": "partial",
+      "label": "Canone Pentimele 321,60 € per 12 m² / 10 giorni",
+      "period": "2026",
+      "sourceUrl": "https://comune.reggio-calabria.it/Allegati/10861-Tariffe_2026-b311e274-e0bb-46b3-bc8b-8e7456a33aa6.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Tabella 2026: Pentimele 2,68 €/m² per 10 giorni, moduli 12/24/36/48 m²: 321,60/643,20/964,80/1.286,40 €. Duomo-centro 3,35 €/m² per 10 giorni: 9 m² 301,50 €, 18 m² 603 €, 24 m² 804 €. Durata tariffaria 10 giorni contro periodo 10–20 settembre: non ricalcolata. Bando: istruttoria 10 €, bollo domanda 16 €, bollo autorizzazione e assicurazione separati. Importi non preventivo completo; IVA non precisata.",
+      "relatedSourceUrls": [
+        "https://comune.reggio-calabria.it/Allegati/10863-Avviso_fiera_Festa_Mariana_2026-signed-signed_timbrato_per_stampa-fea6ea8d-5ad8-4b04-b6f8-92884066e146.pdf"
+      ],
+      "rateDays": 10,
+      "components": [
+        {
+          "type": "canone",
+          "area": "Pentimele",
+          "sqm": 12,
+          "amount": 321.6,
+          "currency": "EUR"
+        },
+        {
+          "type": "istruttoria",
+          "amount": 10,
+          "currency": "EUR"
+        },
+        {
+          "type": "bollo-domanda",
+          "amount": 16,
+          "currency": "EUR"
+        }
+      ]
+    },
+    "calabria-motta-san-giovanni-mercatini-di-natale": {
+      "kind": "conditional",
+      "label": "Assegnazione gratuita dello stand, previa selezione",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.mottasangiovanni.rc.it/it/news/manifestazione-di-interesse-per-l-assegnazione-gratuita-di-stand-per-i-mercatini-di-natale-2026",
+      "checkedAt": "2026-11-05",
+      "details": "Pagina comunale e bando prevedono assegnazione gratuita delle casette. Non certificati gratuiti acquisti, dotazioni, adempimenti o tutti i servizi. Bando con richiami 2025 agli art.3 e 5; pagina aggiornata specifica 12–13 dicembre 2026.",
+      "relatedSourceUrls": [
+        "https://motta-san-giovanni-api.municipiumapp.it/s3/4533/allegati/bando-mercatini-di-natale-2026.pdf"
+      ]
+    },
+    "calabria-rizziconi-mercatini-di-natale": {
+      "kind": "conditional",
+      "label": "Importi discordanti nel documento: tariffa da chiarire",
+      "period": "2025",
+      "sourceUrl": "https://www.comune.rizziconi.rc.it/dam/jcr%3Aa61061af-5cea-4244-828a-bea6678ea1b2/avviso%20mercatini%20di%20natale%20Avviso-Pubblico%20e%20allegati%202025.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Art.9 p.6: 420 € per sei giorni o 210 € per tre, con noleggio, promozione ed energia nei limiti dell’impianto. Modello p.12: 4.000 € per tre giorni e 200 € per sei. Non corretto per ipotesi, nessun prezzo sintetico certo; IVA non precisata.",
+      "conflict": true
+    },
+    "calabria-san-giorgio-morgeto-festa-medioevale-mercatino": {
+      "kind": "conditional",
+      "label": "Due giorni: agroalimentari 250 € / altri prodotti 150 €",
+      "period": "2026",
+      "sourceUrl": "https://www.sangiorgiomedievale.it/regolamento-espositori",
+      "checkedAt": "2026-11-05",
+      "details": "Regolamento, art.8: 250 € agroalimentari con eventuale degustazione/vendita; 150 € non agroalimentari. Quote per entrambe le giornate con banco fornito; punto luce, esclusa corrente per altri usi. IVA non precisata. I 75 € per costume danneggiato/smarrito sono risarcimento, non costo ordinario."
+    },
+    "calabria-terranova-sappo-minulio-fiera-patronale-del-ss-crocifisso": {
+      "kind": "unit",
+      "label": "Canone base 0,60 €/m²/giorno, riduzioni da verificare",
+      "period": "2026",
+      "sourceUrl": "https://terranovasappominulio-api.municipiumapp.it/s3/7218/allegati/avvisi/avviso-occupazione-suolo-pubblico-festa-patronale-del-3-maggio-2026.pdf",
+      "checkedAt": "2026-11-05",
+      "details": "Avviso SUAP p.2: tariffa 0,60 €/m²/giorno per fiere e sagre, con riduzioni secondo regolamento comunale. Non quantificate le riduzioni né calcolato un totale per banco; superficie da dichiarare e canone da allegare alla domanda.",
+      "rate": 0.6,
+      "unit": "EUR/m2/day"
     }
   }
 }
