@@ -8,7 +8,7 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 ## Stato e vincoli da conservare
 
 - [Checklist unica](../docs/fiere-province.md): aggiornata il 5 novembre,
-  100 concluse e 10 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+  101 concluse e 9 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
@@ -32,6 +32,8 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
+
+- [Crotone — 5 novembre 2026](fiere-dossier/crotone-20261105.md): +11 schede in 9 comuni pubblicate e verificate online; ricerca con limiti.
 
 - [L'Aquila - 5 novembre 2026](fiere-dossier/laquila-20261105.md)
 - [Cosenza - 5 novembre 2026](fiere-dossier/cosenza-20261105.md)

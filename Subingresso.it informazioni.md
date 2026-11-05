@@ -21,10 +21,10 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **5 novembre 2026**: **100 province concluse e 10 aperte su 110**,
+Ultimo esito **5 novembre 2026**: **101 province concluse e 9 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **9.740**, tutte le 9.587 schede precedenti invariate.
+Catalogo **9.751** dopo Crotone (+11 in 9 comuni); tutte le 9.740 schede precedenti invariate.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -104,6 +104,14 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **5 novembre 2026 — Crotone:** pubblicate 11 nuove schede in 9 comuni,
+  ricognizione nominale dei 27 comuni con limiti espliciti. Commit `1c53ab9`,
+  Vercel Ready; catalogo online identico e tutte le 9.740 schede precedenti
+  invariate. Build ripetibile, settori, SEO e browser Chromium 1440/320 e
+  WebKit 390 locali e online passati; 9.751 ID recensioni sincronizzati, letture
+  API reali riuscite. Nessun costo corrente dedotto; fonti, errori di accesso
+  e limiti nel [dossier](data/fiere-dossier/crotone-20261105.md). Nessun loop avviato.
 
 - **5 novembre 2026 - quattro province:** integrate e pubblicate su richiesta
   L'Aquila, Cosenza, Catanzaro e Reggio Calabria: +153 schede e 22 riscontri
