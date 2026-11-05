@@ -1,0 +1,2493 @@
+{
+  "province": "Cosenza",
+  "checkedAt": "2026-11-05",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti-non-pubblicata",
+    "privateArchive": ".local/ricerche/fiere-cosenza-20261105",
+    "methodology": "150 ricerche nominali, una per comune, raggruppate in 38 richieste finite; approfondimenti su fonti comunali, Pro Loco, bandi e guida UNPLI. Le risposte web grezze sono conservate privatamente. Le ricerche iniziali orientative non sono tutte archiviate; i documenti selezionati sono scaricati o distinti come estratti indicizzati. Nessun contatto a terzi.",
+    "municipalityCoverage": [
+      {
+        "city": "Acquaformosa",
+        "query": "\"Acquaformosa\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-01.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Acquappesa",
+        "query": "\"Acquappesa\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-01.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Acri",
+        "query": "\"Acri\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-01.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Aiello Calabro",
+        "query": "\"Aiello Calabro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-01.json",
+        "newEventIds": [
+          "calabria-aiello-calabro-fiera-di-acquafredda",
+          "calabria-aiello-calabro-pane-e-casu",
+          "calabria-aiello-calabro-aiello-beer-fest",
+          "calabria-aiello-calabro-peperoncino-in-festa",
+          "calabria-aiello-calabro-sagra-del-tartufo"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Aieta",
+        "query": "\"Aieta\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-02.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Albidona",
+        "query": "\"Albidona\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-02.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Alessandria del Carretto",
+        "query": "\"Alessandria del Carretto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-02.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Altilia",
+        "query": "\"Altilia\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-02.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Altomonte",
+        "query": "\"Altomonte\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-03.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Amantea",
+        "query": "\"Amantea\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-03.json",
+        "newEventIds": [],
+        "previousEventIds": [
+          "calabria-amantea-fiera-di-ognissanti"
+        ],
+        "outcome": "Schede preesistenti conservate; nessuna nuova scheda sufficientemente documentata selezionata."
+      },
+      {
+        "city": "Amendolara",
+        "query": "\"Amendolara\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-03.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Aprigliano",
+        "query": "\"Aprigliano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-03.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Belmonte Calabro",
+        "query": "\"Belmonte Calabro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-04.json",
+        "newEventIds": [
+          "calabria-belmonte-calabro-sagra-da-pasta-di-ziti"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Belsito",
+        "query": "\"Belsito\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-04.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Belvedere Marittimo",
+        "query": "\"Belvedere Marittimo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-04.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Bianchi",
+        "query": "\"Bianchi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-04.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Bisignano",
+        "query": "\"Bisignano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-05.json",
+        "newEventIds": [
+          "calabria-bisignano-fiera-della-madonnella-santa-maria-di-costantinopoli",
+          "calabria-bisignano-fiera-del-santissimo-crocifisso-della-riforma"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Bocchigliero",
+        "query": "\"Bocchigliero\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-05.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Bonifati",
+        "query": "\"Bonifati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-05.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Buonvicino",
+        "query": "\"Buonvicino\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-05.json",
+        "newEventIds": [
+          "calabria-buonvicino-fiera-di-san-ciriaco-abate"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Calopezzati",
+        "query": "\"Calopezzati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-06.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Caloveto",
+        "query": "\"Caloveto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-06.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Campana",
+        "query": "\"Campana\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-06.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Canna",
+        "query": "\"Canna\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-06.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cariati",
+        "query": "\"Cariati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-07.json",
+        "newEventIds": [
+          "calabria-cariati-mercatini-di-natale"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Carolei",
+        "query": "\"Carolei\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-07.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Carpanzano",
+        "query": "\"Carpanzano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-07.json",
+        "newEventIds": [
+          "calabria-carpanzano-sagra-della-castagna"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Casali del Manco",
+        "query": "\"Casali del Manco\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-07.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cassano all'Ionio",
+        "query": "\"Cassano all'Ionio\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-08.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Castiglione Cosentino",
+        "query": "\"Castiglione Cosentino\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-08.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Castrolibero",
+        "query": "\"Castrolibero\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-08.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Castroregio",
+        "query": "\"Castroregio\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-08.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Castrovillari",
+        "query": "\"Castrovillari\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-09.json",
+        "newEventIds": [
+          "calabria-castrovillari-fiera-di-san-giovanni",
+          "calabria-castrovillari-fiera-delle-stagioni"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Celico",
+        "query": "\"Celico\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-09.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cellara",
+        "query": "\"Cellara\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-09.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cerchiara di Calabria",
+        "query": "\"Cerchiara di Calabria\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-09.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cerisano",
+        "query": "\"Cerisano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-10.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cervicati",
+        "query": "\"Cervicati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-10.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cerzeto",
+        "query": "\"Cerzeto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-10.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cetraro",
+        "query": "\"Cetraro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-10.json",
+        "newEventIds": [
+          "calabria-cetraro-fiera-di-san-benedetto"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Civita",
+        "query": "\"Civita\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-11.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Cleto",
+        "query": "\"Cleto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-11.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Colosimi",
+        "query": "\"Colosimi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-11.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Corigliano-Rossano",
+        "query": "\"Corigliano-Rossano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-11.json",
+        "newEventIds": [
+          "calabria-corigliano-rossano-fiera-di-maggio-di-schiavonea",
+          "calabria-corigliano-rossano-fiera-di-novembre-di-schiavonea"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Cosenza",
+        "query": "\"Cosenza\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-12.json",
+        "newEventIds": [],
+        "previousEventIds": [
+          "calabria-cosenza-fiera-di-san-giuseppe"
+        ],
+        "outcome": "Schede preesistenti conservate; nessuna nuova scheda sufficientemente documentata selezionata."
+      },
+      {
+        "city": "Cropalati",
+        "query": "\"Cropalati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-12.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Crosia",
+        "query": "\"Crosia\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-12.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Diamante",
+        "query": "\"Diamante\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-12.json",
+        "newEventIds": [],
+        "previousEventIds": [
+          "calabria-diamante-peperoncino-festival"
+        ],
+        "outcome": "Schede preesistenti conservate; nessuna nuova scheda sufficientemente documentata selezionata."
+      },
+      {
+        "city": "Dipignano",
+        "query": "\"Dipignano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-13.json",
+        "newEventIds": [
+          "calabria-dipignano-sagra-della-polenta"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Domanico",
+        "query": "\"Domanico\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-13.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Fagnano Castello",
+        "query": "\"Fagnano Castello\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-13.json",
+        "newEventIds": [
+          "calabria-fagnano-castello-festival-della-castanicoltura-sagra-della-castagna"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Falconara Albanese",
+        "query": "\"Falconara Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-13.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Figline Vegliaturo",
+        "query": "\"Figline Vegliaturo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-14.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Firmo",
+        "query": "\"Firmo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-14.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Fiumefreddo Bruzio",
+        "query": "\"Fiumefreddo Bruzio\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-14.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Francavilla Marittima",
+        "query": "\"Francavilla Marittima\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-14.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Frascineto",
+        "query": "\"Frascineto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-15.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Fuscaldo",
+        "query": "\"Fuscaldo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-15.json",
+        "newEventIds": [
+          "calabria-fuscaldo-festival-delle-alici-del-tirreno-cosentino"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Grimaldi",
+        "query": "\"Grimaldi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-15.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Grisolia",
+        "query": "\"Grisolia\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-15.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Guardia Piemontese",
+        "query": "\"Guardia Piemontese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-16.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Lago",
+        "query": "\"Lago\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-16.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Laino Borgo",
+        "query": "\"Laino Borgo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-16.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Laino Castello",
+        "query": "\"Laino Castello\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-16.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Lappano",
+        "query": "\"Lappano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-17.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Lattarico",
+        "query": "\"Lattarico\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-17.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Longobardi",
+        "query": "\"Longobardi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-17.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Longobucco",
+        "query": "\"Longobucco\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-17.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Lungro",
+        "query": "\"Lungro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-18.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Luzzi",
+        "query": "\"Luzzi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-18.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Maierà",
+        "query": "\"Maierà\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-18.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Malito",
+        "query": "\"Malito\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-18.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Malvito",
+        "query": "\"Malvito\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-19.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Mandatoriccio",
+        "query": "\"Mandatoriccio\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-19.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Mangone",
+        "query": "\"Mangone\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-19.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Marano Marchesato",
+        "query": "\"Marano Marchesato\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-19.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Marano Principato",
+        "query": "\"Marano Principato\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-20.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Marzi",
+        "query": "\"Marzi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-20.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Mendicino",
+        "query": "\"Mendicino\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-20.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Mongrassano",
+        "query": "\"Mongrassano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-20.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Montalto Uffugo",
+        "query": "\"Montalto Uffugo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-21.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Montegiordano",
+        "query": "\"Montegiordano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-21.json",
+        "newEventIds": [
+          "calabria-montegiordano-sagra-dei-piselli-e-delle-fave"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Morano Calabro",
+        "query": "\"Morano Calabro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-21.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Mormanno",
+        "query": "\"Mormanno\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-21.json",
+        "newEventIds": [
+          "calabria-mormanno-festa-del-bocconotto"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Mottafollone",
+        "query": "\"Mottafollone\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-22.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Nocara",
+        "query": "\"Nocara\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-22.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Oriolo",
+        "query": "\"Oriolo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-22.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Orsomarso",
+        "query": "\"Orsomarso\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-22.json",
+        "newEventIds": [
+          "calabria-orsomarso-fiera-di-sant-anna",
+          "calabria-orsomarso-fiera-di-santa-lucia",
+          "calabria-orsomarso-mercato-di-sant-antonio",
+          "calabria-orsomarso-mercato-dei-santi-cosma-e-damiano"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Paludi",
+        "query": "\"Paludi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-23.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Panettieri",
+        "query": "\"Panettieri\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-23.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Paola",
+        "query": "\"Paola\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-23.json",
+        "newEventIds": [],
+        "previousEventIds": [
+          "calabria-paola-fiera-di-san-francesco"
+        ],
+        "outcome": "Schede preesistenti conservate; nessuna nuova scheda sufficientemente documentata selezionata."
+      },
+      {
+        "city": "Papasidero",
+        "query": "\"Papasidero\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-23.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Parenti",
+        "query": "\"Parenti\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-24.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Paterno Calabro",
+        "query": "\"Paterno Calabro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-24.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Pedivigliano",
+        "query": "\"Pedivigliano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-24.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Piane Crati",
+        "query": "\"Piane Crati\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-24.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Pietrafitta",
+        "query": "\"Pietrafitta\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-25.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Pietrapaola",
+        "query": "\"Pietrapaola\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-25.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Plataci",
+        "query": "\"Plataci\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-25.json",
+        "newEventIds": [
+          "calabria-plataci-shtridhela-il-gusto-delle-nostre-radici"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Praia a Mare",
+        "query": "\"Praia a Mare\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-25.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Rende",
+        "query": "\"Rende\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-26.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Rocca Imperiale",
+        "query": "\"Rocca Imperiale\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-26.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Roggiano Gravina",
+        "query": "\"Roggiano Gravina\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-26.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Rogliano",
+        "query": "\"Rogliano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-26.json",
+        "newEventIds": [
+          "calabria-rogliano-festa-del-pane"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Rose",
+        "query": "\"Rose\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-27.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Roseto Capo Spulico",
+        "query": "\"Roseto Capo Spulico\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-27.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Rota Greca",
+        "query": "\"Rota Greca\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-27.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Rovito",
+        "query": "\"Rovito\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-27.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Basile",
+        "query": "\"San Basile\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-28.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Benedetto Ullano",
+        "query": "\"San Benedetto Ullano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-28.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Cosmo Albanese",
+        "query": "\"San Cosmo Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-28.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Demetrio Corone",
+        "query": "\"San Demetrio Corone\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-28.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Donato di Ninea",
+        "query": "\"San Donato di Ninea\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-29.json",
+        "newEventIds": [
+          "calabria-san-donato-di-ninea-festa-d-autunno-sagra-delle-castagne"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "San Fili",
+        "query": "\"San Fili\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-29.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Giorgio Albanese",
+        "query": "\"San Giorgio Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-29.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Giovanni in Fiore",
+        "query": "\"San Giovanni in Fiore\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-29.json",
+        "newEventIds": [
+          "calabria-san-giovanni-in-fiore-fiera-tradizionale-di-san-giovanni-in-fiore",
+          "calabria-san-giovanni-in-fiore-fiera-d-autunno",
+          "calabria-san-giovanni-in-fiore-sagra-della-patata"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "San Lorenzo Bellizzi",
+        "query": "\"San Lorenzo Bellizzi\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-30.json",
+        "newEventIds": [
+          "calabria-san-lorenzo-bellizzi-fiera-di-san-lorenzo-martire",
+          "calabria-san-lorenzo-bellizzi-fiera-dell-immacolata",
+          "calabria-san-lorenzo-bellizzi-sagra-dell-uva"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "San Lorenzo del Vallo",
+        "query": "\"San Lorenzo del Vallo\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-30.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Lucido",
+        "query": "\"San Lucido\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-30.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Marco Argentano",
+        "query": "\"San Marco Argentano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-30.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Martino di Finita",
+        "query": "\"San Martino di Finita\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-31.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Nicola Arcella",
+        "query": "\"San Nicola Arcella\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-31.json",
+        "newEventIds": [
+          "calabria-san-nicola-arcella-mercatini-sul-mare"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "San Pietro in Amantea",
+        "query": "\"San Pietro in Amantea\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-31.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Pietro in Guarano",
+        "query": "\"San Pietro in Guarano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-31.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Sosti",
+        "query": "\"San Sosti\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-32.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "San Vincenzo La Costa",
+        "query": "\"San Vincenzo La Costa\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-32.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Sangineto",
+        "query": "\"Sangineto\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-32.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Sant'Agata di Esaro",
+        "query": "\"Sant'Agata di Esaro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-32.json",
+        "newEventIds": [
+          "calabria-sant-agata-di-esaro-sagra-della-castagna",
+          "calabria-sant-agata-di-esaro-sagra-della-polpetta-di-maruggio-del-maiale-e-del-cinghiale"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Santa Caterina Albanese",
+        "query": "\"Santa Caterina Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-33.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Santa Domenica Talao",
+        "query": "\"Santa Domenica Talao\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-33.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Santa Maria del Cedro",
+        "query": "\"Santa Maria del Cedro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-33.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Santa Sofia d'Epiro",
+        "query": "\"Santa Sofia d'Epiro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-33.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Santo Stefano di Rogliano",
+        "query": "\"Santo Stefano di Rogliano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-34.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Saracena",
+        "query": "\"Saracena\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-34.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Scala Coeli",
+        "query": "\"Scala Coeli\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-34.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Scalea",
+        "query": "\"Scalea\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-34.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Scigliano",
+        "query": "\"Scigliano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-35.json",
+        "newEventIds": [
+          "calabria-scigliano-fiera-di-san-giuseppe",
+          "calabria-scigliano-sagra-della-capra-e-fiera-di-sant-angelo"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Serra d'Aiello",
+        "query": "\"Serra d'Aiello\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-35.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Spezzano Albanese",
+        "query": "\"Spezzano Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-35.json",
+        "newEventIds": [
+          "calabria-spezzano-albanese-sagra-del-mostacciolo-arberesh"
+        ],
+        "previousEventIds": [],
+        "outcome": "Nuove schede documentate; vedere evidence per date e limiti."
+      },
+      {
+        "city": "Spezzano della Sila",
+        "query": "\"Spezzano della Sila\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-35.json",
+        "newEventIds": [],
+        "previousEventIds": [
+          "calabria-spezzano-della-sila-sagra-del-fungo-di-camigliatello"
+        ],
+        "outcome": "Schede preesistenti conservate; nessuna nuova scheda sufficientemente documentata selezionata."
+      },
+      {
+        "city": "Tarsia",
+        "query": "\"Tarsia\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-36.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Terranova da Sibari",
+        "query": "\"Terranova da Sibari\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-36.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Terravecchia",
+        "query": "\"Terravecchia\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-36.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Torano Castello",
+        "query": "\"Torano Castello\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-36.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Tortora",
+        "query": "\"Tortora\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-37.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Trebisacce",
+        "query": "\"Trebisacce\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-37.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Vaccarizzo Albanese",
+        "query": "\"Vaccarizzo Albanese\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-37.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Verbicaro",
+        "query": "\"Verbicaro\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-37.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Villapiana",
+        "query": "\"Villapiana\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-38.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      },
+      {
+        "city": "Zumpano",
+        "query": "\"Zumpano\" (fiera OR sagra OR mercatino) (comune OR \"pro loco\")",
+        "privateResult": "ricognizione-38.json",
+        "newEventIds": [],
+        "previousEventIds": [],
+        "outcome": "Ricognizione nominale web svolta; nessuna nuova scheda con fonte primaria e periodo sufficiente selezionata. Non prova assenza di eventi; non equivale a lettura integrale di albo e social."
+      }
+    ],
+    "limitations": [
+      "Non censimento certificato né lettura integrale di tutti gli albi, social, frazioni e manifestazioni religiose.",
+      "Nessuna disponibilità, fatturato, affluenza o notorietà stimata.",
+      "Fonte regionale Calabria Straordinaria bloccata/solo involucro: non considerata conferma degli eventi.",
+      "Date storiche e ricorrenze non promosse a conferme 2026.",
+      "Cinque schede precedenti conservate integralmente; nessun aggiornamento implicito dei loro contenuti.",
+      "Il file contiene soltanto aggiunte e costi proposti: builder e catalogo pubblico non lo caricano finché non integrato.",
+      "Nessuna sincronizzazione recensioni/database; pubblicazione e chiusura checklist riservate all’integrazione."
+    ]
+  },
+  "integration": {
+    "mode": "append-only-delta",
+    "baseCommit": "358d781",
+    "baseCatalogCount": 9587,
+    "baseCatalogSha256": "c10d80e2cb4713ac50af583eebdf5fcbe7b0ac81c73cc3a8b980e9ee9785adb7",
+    "preservedCosenzaIds": [
+      "calabria-cosenza-fiera-di-san-giuseppe",
+      "calabria-diamante-peperoncino-festival",
+      "calabria-paola-fiera-di-san-francesco",
+      "calabria-spezzano-della-sila-sagra-del-fungo-di-camigliatello",
+      "calabria-amantea-fiera-di-ognissanti"
+    ],
+    "doNotRegisterAsProvinceOverride": true
+  },
+  "events": [
+    {
+      "region": "Calabria",
+      "city": "Buonvicino",
+      "name": "Fiera di San Ciriaco Abate",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf",
+        "label": "comune.buonvicino.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera con aree per merci, prodotti tipici e artigianato; via Vittoria è dedicata al settore alimentare.",
+      "sectors": "Abbigliamento, calzature, tessili, casalinghi, piante, alimentari e artigianato",
+      "venue": "Piazza XVII Settembre, Piazza Tre Fontane e via Vittoria",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso 2026 per operatori autorizzati su area pubblica. Domande prorogate all’8 settembre 2026 ore 12, termine trascorso. Piazza XVII Settembre 13–19 settembre; Tre Fontane 17–19; area food 13 settembre–21 settembre ore 02. Canone e bollo separati."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Cetraro",
+      "name": "Fiera di San Benedetto",
+      "months": "7",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf",
+        "label": "comune.cetraro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Esposizione e vendita in Marina e nel centro, con sezioni per prodotti tipici e artigianato.",
+      "sectors": "Abbigliamento, calzature, tessili, casalinghi, piante, alimentari e artigianato",
+      "venue": "Cetraro Marina e Centro",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso 2026 per operatori autorizzati; domanda entro il 26 giugno ore 12, termine trascorso. Marina dal 10 luglio ore 19 al 12 ore 12; Centro dal 10 ore 21 all’11 ore 23. Canone distinto per area e bollo separato."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-10",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Castrovillari",
+      "name": "Fiera di San Giovanni",
+      "months": "6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni",
+        "label": "comune.castrovillari.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera commerciale con assegnazione comunale di posteggi.",
+      "venue": "Area mercatale, via SS. Medici e via Veterani dello Sport",
+      "participation": {
+        "type": "selected",
+        "note": "Bando 2026: 216 posteggi a graduatoria per operatori con autorizzazione/SCIA e iscrizione camerale. Domanda entro il 12 aprile 2026, termine trascorso. Canone 1,20 €/m²/giorno; bollo distinto."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-17",
+          "end": "2026-06-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Castrovillari",
+      "name": "Fiera delle Stagioni",
+      "months": "7,9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera",
+        "label": "comune.castrovillari.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera con posteggi a graduatoria e possibilità di spunta prevista dagli avvisi delle singole giornate.",
+      "venue": "Centro cittadino",
+      "participation": {
+        "type": "selected",
+        "note": "Gli avvisi 2026 indicano graduatoria, pagamento PagoPA e accesso degli spuntisti dalle ore 7 per i posti residui nelle date documentate. Non costituiscono disponibilità per altre giornate."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3646223/bando-pubblico-assegnazione-posteggi-fiera"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "San Giovanni in Fiore",
+      "name": "Fiera tradizionale di San Giovanni in Fiore",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-inaugurata-la-fiera-tradizionale-tre-giorni-di-storia-commercio-e-socialita-la-sindaca-succurro-evento-emozionale-e-occasione-per-un-turismo-di-esperienze-in-sila/",
+        "label": "comune.sangiovanniinfiore.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Appuntamento di fine agosto dedicato al commercio ambulante.",
+      "venue": "Area dell’entrata sud della città",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-26",
+          "end": "2025-08-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-inaugurata-la-fiera-tradizionale-tre-giorni-di-storia-commercio-e-socialita-la-sindaca-succurro-evento-emozionale-e-occasione-per-un-turismo-di-esperienze-in-sila/"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "San Giovanni in Fiore",
+      "name": "Fiera d’Autunno",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/",
+        "label": "comune.sangiovanniinfiore.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercato straordinario con merci per la casa e altre categorie.",
+      "sectors": "Casalinghi, piante, calzature, abbigliamento, libri e alimentari",
+      "venue": "Zona Ceretti",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-10-12",
+          "end": "2024-10-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "San Giovanni in Fiore",
+      "name": "Sagra della Patata",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/",
+        "label": "comune.sangiovanniinfiore.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Stand gastronomici dedicati alla patata del territorio.",
+      "sectors": "Gastronomia e prodotti tipici",
+      "venue": "Isola pedonale via Roma",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-10-12",
+          "end": "2024-10-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.sangiovanniinfiore.cs.it/novita/san-giovanni-in-fiore-fine-settimana-con-doppio-appuntamento-sagra-della-patata-e-fiera-dautunno-la-sindaca-succurro-due-eventi-di-grande-richiamo/"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Corigliano-Rossano",
+      "name": "Fiera di Maggio di Schiavonea",
+      "months": "5",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf",
+        "label": "www.comunecoriglianorossano.eu",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera sul lungomare con operatori alimentari, non alimentari e artigiani.",
+      "sectors": "Alimentari, non alimentari e artigianato",
+      "venue": "Lungomare di Schiavonea",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso storico 2024 con selezione comunale e istanza tramite PEC. Non utilizzare la vecchia scadenza per edizioni successive."
+      },
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-05-04",
+          "end": "2024-05-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf"
+        }
+      ],
+      "lat": 39.6651875,
+      "lng": 16.5274375,
+      "coordinateSource": {
+        "url": "https://www.calabriaterrabuona.it/luoghi/schiavonea-corigliano-rossano",
+        "label": "Regione Calabria — località Schiavonea, punto indicativo, non ingresso della fiera"
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Corigliano-Rossano",
+      "name": "Fiera di Novembre di Schiavonea",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comunecoriglianorossano.eu/wp-content/uploads/2024/03/Prot_Int-0031425-del-13-03-2024-Documento-1-avviso-pubblico.pdf",
+        "label": "www.comunecoriglianorossano.eu",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Appuntamento autunnale del lungomare richiamato nel bando comunale delle fiere.",
+      "sectors": "Alimentari e non alimentari",
+      "venue": "Lungomare di Schiavonea",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "lat": 39.6651875,
+      "lng": 16.5274375,
+      "coordinateSource": {
+        "url": "https://www.calabriaterrabuona.it/luoghi/schiavonea-corigliano-rossano",
+        "label": "Regione Calabria — località Schiavonea, punto indicativo, non ingresso della fiera"
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Mormanno",
+      "name": "Festa del Bocconotto",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.mormanno.cs.it/vivere_il_comune/eventi/evento_13.html",
+        "label": "www.comune.mormanno.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa dedicata al dolce locale, con degustazioni e street food.",
+      "sectors": "Dolci, street food e prodotti agroalimentari",
+      "venue": "Piazza Umberto I",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.mormanno.cs.it/vivere_il_comune/eventi/evento_13.html"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Montegiordano",
+      "name": "Sagra dei Piselli e delle Fave",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?D=true&Documento=14520-12831-mntgrdn278",
+        "label": "www.servizipubblicaamministrazione.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione della Pro Loco dedicata ai prodotti agricoli del territorio.",
+      "sectors": "Gastronomia e prodotti agricoli",
+      "venue": "Via del Carmine, Piano delle Rose",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?D=true&Documento=14520-12831-mntgrdn278"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Fuscaldo",
+      "name": "Festival delle Alici del Tirreno Cosentino",
+      "months": "7,8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf",
+        "label": "www.comune.fuscaldo.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Festival con stand gastronomici e artigianato.",
+      "sectors": "Gastronomia e artigianato",
+      "participation": {
+        "type": "selected",
+        "note": "Moduli 2026 distinti per gastronomia e artigianato; domanda entro il 20 giugno, termine trascorso. Selezione comunale e vincoli sugli sponsor. Artigiani non iscritti: esposizione esclusivamente promozionale secondo il disciplinare."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-30",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "San Donato di Ninea",
+      "name": "Festa d’Autunno - Sagra delle Castagne",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/Dettaglio.aspx?CE=sndntnn1494&Pub=6103&RicCro=1",
+        "label": "www.servizipubblicaamministrazione.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione autunnale dedicata alla castagna.",
+      "sectors": "Gastronomia e prodotti tipici",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Sant'Agata di Esaro",
+      "name": "Sagra della Castagna",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+        "label": "prolocomongrassano.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Festa gastronomica del borgo dedicata alla castagna.",
+      "sectors": "Gastronomia e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Sant'Agata di Esaro",
+      "name": "Sagra della Polpetta di Maruggio, del Maiale e del Cinghiale",
+      "months": "2",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+        "label": "prolocomongrassano.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa dedicata alla polpetta locale e alla cucina tradizionale.",
+      "sectors": "Gastronomia",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Belmonte Calabro",
+      "name": "Sagra da Pasta di Ziti",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+        "label": "prolocomongrassano.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata alla pasta della tradizione nuziale locale.",
+      "sectors": "Gastronomia",
+      "venue": "Centro storico",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Carpanzano",
+      "name": "Sagra della Castagna",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+        "label": "prolocomongrassano.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra autunnale dedicata al frutto del territorio.",
+      "sectors": "Gastronomia",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Dipignano",
+      "name": "Sagra della Polenta",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocomongrassano.it/wp-content/uploads/2025/04/visit-unpli-calabria-2025.pdf",
+        "label": "prolocomongrassano.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa gastronomica con preparazione della polenta secondo la tradizione locale.",
+      "sectors": "Gastronomia",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Fagnano Castello",
+      "name": "Festival della Castanicoltura - Sagra della Castagna",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.fagnanocastello.cs.it/it/events/663093",
+        "label": "comune.fagnanocastello.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Manifestazione con fiera artigiana e stand gastronomici dedicati al castagno.",
+      "sectors": "Gastronomia e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-24",
+          "end": "2025-10-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.fagnanocastello.cs.it/it/events/663093"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Plataci",
+      "name": "Shtridhëla - Il gusto delle nostre radici",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.plataci.cs.it/Dettaglionews?IDNews=416062",
+        "label": "www.comune.plataci.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Serata gastronomica dedicata alla pasta tradizionale arbëreshë.",
+      "sectors": "Gastronomia",
+      "venue": "Borgo di Plataci",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.plataci.cs.it/Dettaglionews?IDNews=416062"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Cariati",
+      "name": "Mercatini di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.prolococariati.it/eventi/",
+        "label": "www.prolococariati.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercatini artigiani nel borgo medievale.",
+      "sectors": "Artigianato",
+      "venue": "Piazza Plebiscito",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Orsomarso",
+      "name": "Fiera di Sant’Anna",
+      "months": "7",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+        "label": "comune.orsomarso.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera collegata alla festa della compatrona.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Orsomarso",
+      "name": "Fiera di Santa Lucia",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+        "label": "comune.orsomarso.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera e tradizioni gastronomiche nella ricorrenza di Santa Lucia.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Orsomarso",
+      "name": "Mercato di Sant’Antonio",
+      "months": "6",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+        "label": "comune.orsomarso.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercato collegato alla ricorrenza di Sant’Antonio.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Orsomarso",
+      "name": "Mercato dei Santi Cosma e Damiano",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.orsomarso.cs.it/vivere-il-comune/territorio/feste-ed-eventi/",
+        "label": "comune.orsomarso.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Mercato nella ricorrenza dei Santi Cosma e Damiano.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "San Lorenzo Bellizzi",
+      "name": "Fiera di San Lorenzo Martire",
+      "months": "8",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+        "label": "www.comune.sanlorenzobellizzi.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera collegata alla festa patronale.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "San Lorenzo Bellizzi",
+      "name": "Fiera dell’Immacolata",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+        "label": "www.comune.sanlorenzobellizzi.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera nella ricorrenza dell’Immacolata.",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "San Lorenzo Bellizzi",
+      "name": "Sagra dell’Uva",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.sanlorenzobellizzi.cs.it/Guidaalpaese?IDCat=9218&IDPagina=60055",
+        "label": "www.comune.sanlorenzobellizzi.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Appuntamento gastronomico autunnale dedicato all’uva.",
+      "sectors": "Gastronomia",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Scigliano",
+      "name": "Fiera di San Giuseppe",
+      "months": "3",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.scigliano.cs.it/vivere-il-comune/territorio/eventi/",
+        "label": "comune.scigliano.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera specializzata nelle piante fruttifere e nelle sementi.",
+      "sectors": "Piante e sementi",
+      "venue": "Diano",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Scigliano",
+      "name": "Sagra della Capra e Fiera di Sant’Angelo",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.scigliano.cs.it/vivere-il-comune/territorio/eventi/",
+        "label": "comune.scigliano.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra gastronomica e fiera del bestiame presso il Savuto.",
+      "sectors": "Gastronomia e animali",
+      "venue": "Chiesetta di Sant’Angelo presso il Savuto",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "San Nicola Arcella",
+      "name": "Mercatini sul Mare",
+      "months": "9",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.sannicolaarcella.cs.it/Novita/Notizie/San-Nicola-Arcella-tornano-i-Mercatini-sul-mare-tre-giorni-tra-artigianato-musica-e-tradizioni",
+        "label": "www.comune.sannicolaarcella.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Bancarelle artigiane e iniziative nel centro storico.",
+      "sectors": "Artigianato",
+      "venue": "Centro storico",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Spezzano Albanese",
+      "name": "Sagra del Mostacciolo Arbëresh",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.spezzano-albanese.cs.it/novita/spezzano-albanese-esperienza-autentica-sagra-del-mostacciolo-arberesh-prima-edizione/",
+        "label": "www.comune.spezzano-albanese.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Esposizioni e degustazioni dedicate al dolce arbëreshë.",
+      "sectors": "Dolci e gastronomia",
+      "venue": "Piazza Luigi Mortati",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-24",
+          "end": "2025-08-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.spezzano-albanese.cs.it/novita/spezzano-albanese-esperienza-autentica-sagra-del-mostacciolo-arberesh-prima-edizione/"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Rogliano",
+      "name": "Festa del Pane",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione",
+        "label": "www.comune.rogliano.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Esposizione di prodotti da forno, produzioni agricole e opere artigiane.",
+      "sectors": "Prodotti da forno, agricoli, gastronomia e artigianato",
+      "venue": "Corso Umberto e Piazza Morelli",
+      "participation": {
+        "type": "selected",
+        "note": "Avviso 2026: selezione per area expo/food, richiesta entro il 17 agosto ore 12, termine trascorso. Quote dopo accettazione. L’avviso vincola gli stand alle due giornate 26–27 settembre."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Aiello Calabro",
+      "name": "Fiera di Acquafredda",
+      "months": "7",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+        "label": "comune.aiellocalabro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera della contrada Acquafredda nel programma estivo comunale.",
+      "venue": "Contrada Acquafredda",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-06",
+          "end": "2025-07-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Aiello Calabro",
+      "name": "Pane e Casu",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+        "label": "comune.aiellocalabro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Serata gastronomica dedicata a pane e formaggio.",
+      "sectors": "Gastronomia",
+      "venue": "Piazza Plebiscito",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-03",
+          "end": "2025-08-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Aiello Calabro",
+      "name": "Aiello Beer Fest",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+        "label": "comune.aiellocalabro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Festa della birra inserita nel programma comunale.",
+      "sectors": "Bevande",
+      "venue": "Piazza Plebiscito",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-06",
+          "end": "2025-08-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Aiello Calabro",
+      "name": "Peperoncino in Festa",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+        "label": "comune.aiellocalabro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Iniziativa dedicata al peperoncino.",
+      "sectors": "Gastronomia",
+      "venue": "Piazza Plebiscito",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-09",
+          "end": "2025-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Aiello Calabro",
+      "name": "Sagra del Tartufo",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf",
+        "label": "comune.aiellocalabro.cs.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Sagra dedicata al tartufo.",
+      "sectors": "Gastronomia",
+      "venue": "Piazza Plebiscito",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-15",
+          "end": "2025-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.aiellocalabro.cs.it/wp-content/uploads/2025/06/EA_Programma_2025.pdf"
+        }
+      ]
+    },
+    {
+      "region": "Calabria",
+      "city": "Bisignano",
+      "name": "Fiera della Madonnella - Santa Maria di Costantinopoli",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://bisignano-api.municipiumapp.it/s3/708/allegati/guidaturisticabisignanor.pdf",
+        "label": "bisignano-api.municipiumapp.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera di merci varie e artigianato.",
+      "sectors": "Merci varie e artigianato",
+      "venue": "Via Principe di Piemonte",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    },
+    {
+      "region": "Calabria",
+      "city": "Bisignano",
+      "name": "Fiera del Santissimo Crocifisso della Riforma",
+      "months": "3",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://bisignano-api.municipiumapp.it/s3/708/allegati/guidaturisticabisignanor.pdf",
+        "label": "bisignano-api.municipiumapp.it",
+        "checkedAt": "2026-11-05"
+      },
+      "summary": "Fiera di merci varie e artigianato presso la Riforma.",
+      "sectors": "Merci varie e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, ma non conferma disponibilità per nuovi venditori. Verificare ammissione, categoria e costi con l’organizzatore; le sagre possono avere ristoro gestito internamente."
+      }
+    }
+  ],
+  "costs": {
+    "calabria-buonvicino-fiera-di-san-ciriaco-abate": {
+      "label": "Aree 1–2: 1 €/m²/giorno; food: 2 €/m²/giorno + bollo",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso 2026, art. 9: aree 1 e 2 canone 1 euro/m²/giorno; area 3 via Vittoria 2 euro/m²/giorno. Bollo di 16 euro distinto. Durate diverse per area; non calcolato un totale senza metratura e giorni assegnati. Nessuna IVA o servizio extra dedotto.",
+      "sourceUrl": "https://comune.buonvicino.cs.it/wp-content/uploads/2026/08/AVVISO_PUBBLICO_POSTEGGI_FIERA_SAN_CIRIACO.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-cetraro-fiera-di-san-benedetto": {
+      "label": "Marina 5,30 €/m²; Centro 3,38 €/m² + bollo",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso 2026 art. 9: canone omnicomprensivo 5,30 euro/m² in Marina e 3,38 euro/m² in Centro, senza moltiplicazione giornaliera aggiunta. Tabelle: 12 m² Marina 63,60 euro; 6 m² Centro 20,28 euro. Marca da bollo 16 euro separata. Non sono costi complessivi dell’attività né tariffe di altre edizioni.",
+      "sourceUrl": "https://comune.cetraro.cs.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-POSTEGGI-FIERA-SAN-BENEDETTO_compressed-1-1.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-castrovillari-fiera-di-san-giovanni": {
+      "label": "Canone 1,20 €/m²/giorno; bollo distinto",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Bando 2026 art. 10: canone 1,20 euro/m²/giorno per la fiera 17–18 giugno; domanda in bollo, non incluso nel canone. La successiva riduzione per il pomeriggio piovoso del 17 riguarda gli aventi diritto nella Fiera delle Stagioni di luglio, non un prezzo generale.",
+      "sourceUrl": "https://comune.castrovillari.cs.it/notizie/3545924/bando-assegnazione-posteggi-fiera-san-giovanni",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-fuscaldo-festival-delle-alici-del-tirreno-cosentino": {
+      "label": "Artigianato 2×1 m: 200 € + 20 € diritti",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo 2026: stand artigianato in legno 200×100 cm, contributo 200 euro; diritti di segreteria 20 euro distinti. Nel modulo gastronomia 3×3 m la quota è lasciata vuota, quindi da comunicare dopo selezione. IVA e ulteriori oneri non specificati: nessun totale universale.",
+      "sourceUrl": "https://www.comune.fuscaldo.cs.it/wp-content/uploads/2026/04/domanda-di-partecipaizone.pdf",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    },
+    "calabria-rogliano-festa-del-pane": {
+      "label": "60 € per l’intera iniziativa espositiva",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Avviso 2026 art. 5: 60 euro da versare dopo accettazione, entro dieci giorni, per le due giornate espositive 26–27 settembre. Le strutture disponibili sono differenziate fra expo e food e assegnate dal Comune; non promessa di spazio o gratuità di servizi. IVA e ulteriori oneri non esplicitati.",
+      "sourceUrl": "https://www.comune.rogliano.cs.it/Novita/Avvisi/Manifestazione-di-interesse-Occupazione-spazi-espositivi-Festa-del-Pane-VIII-Edizione",
+      "checkedAt": "2026-11-05",
+      "review": "live-source-review"
+    }
+  },
+  "evidence": {
+    "calabria-buonvicino-fiera-di-san-ciriaco-abate": {
+      "sourceKey": "buonvicino",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Intervallo complessivo delle aree: il 21 settembre comprende soltanto la chiusura food alle ore 02. Proroga documentata, non disponibilità attuale."
+    },
+    "calabria-cetraro-fiera-di-san-benedetto": {
+      "sourceKey": "cetraro",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Le ore per lo sgombero non estendono la vendita. Il Centro non vende fino al 12 luglio."
+    },
+    "calabria-castrovillari-fiera-di-san-giovanni": {
+      "sourceKey": "castrovillari-sangiovanni",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Fonte successiva sulla Fiera delle Stagioni documenta maltempo il pomeriggio del 17 giugno e riduzione del canone per gli aventi diritto; non promessa di rimborso generalizzata."
+    },
+    "calabria-castrovillari-fiera-delle-stagioni": {
+      "sourceKey": "castrovillari-stagioni",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "12 luglio dalla pagina comunale notizie/3612125; 20 settembre da notizie/3646223. Nessun intervallo continuo luglio–settembre e nessun calendario trimestrale dedotto."
+    },
+    "calabria-san-giovanni-in-fiore-fiera-tradizionale-di-san-giovanni-in-fiore": {
+      "sourceKey": "sgf-tradizionale",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Edizione storica 2025; non conferma il 2026."
+    },
+    "calabria-san-giovanni-in-fiore-fiera-d-autunno": {
+      "sourceKey": "sgf-autunno",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Edizione storica 2024; distinta dalla Sagra della Patata in via Roma."
+    },
+    "calabria-san-giovanni-in-fiore-sagra-della-patata": {
+      "sourceKey": "sgf-autunno",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Evento storico dell’associazione Jure Vetere; distinto dalla Fiera d’Autunno. Accesso di venditori esterni non provato."
+    },
+    "calabria-corigliano-rossano-fiera-di-maggio-di-schiavonea": {
+      "sourceKey": "schiavonea",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Avviso primario 2024; non conferma 2026 né prezzi correnti."
+    },
+    "calabria-corigliano-rossano-fiera-di-novembre-di-schiavonea": {
+      "sourceKey": "schiavonea",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "La premessa del bando 2024 documenta ricorrenza 1–2 novembre. Avviso 2026 ripreso dalla stampa ma originale corrente non acquisito: nessuna edizione 2026 inserita."
+    },
+    "calabria-mormanno-festa-del-bocconotto": {
+      "sourceKey": "mormanno",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Il costo nullo della pagina è riferito al pubblico; nessuna gratuità del banco dedotta."
+    },
+    "calabria-montegiordano-sagra-dei-piselli-e-delle-fave": {
+      "sourceKey": "montegiordano",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Ordinanza n. 2 del 23 aprile 2026: il 27 è ripristino della viabilità, non terzo giorno della sagra. Refuso 2027 nel rigo dello sgombero non esteso al programma."
+    },
+    "calabria-fuscaldo-festival-delle-alici-del-tirreno-cosentino": {
+      "sourceKey": "fuscaldo",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "200 € solo per stand artigianato 2×1 m; 20 € diritti separati. Il modulo gastronomia lascia vuota la quota. Non usare il costo del concorso fotografico come prezzo dello stand."
+    },
+    "calabria-san-donato-di-ninea-festa-d-autunno-sagra-delle-castagne": {
+      "sourceKey": "sandonato-periodo",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Titolo dell’atto primario indicizzato indica 6–8 novembre 2026; download restituisce pagina senza contenuti. Conservato solo novembre, senza promuovere l’estratto a edizione confermata."
+    },
+    "calabria-sant-agata-di-esaro-sagra-della-castagna": {
+      "sourceKey": "santagata",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Guida UNPLI 2025 e sito Pro Loco documentano la ricorrenza. Date 5–8 novembre 2026 sostenute da stampa/aggregatori non confermate qui con programma primario leggibile."
+    },
+    "calabria-sant-agata-di-esaro-sagra-della-polpetta-di-maruggio-del-maiale-e-del-cinghiale": {
+      "sourceKey": "unpli-2025",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Guida UNPLI: ricorrenza collegata alla festa del 5 febbraio; nessuna edizione corrente o accesso esterno documentato."
+    },
+    "calabria-belmonte-calabro-sagra-da-pasta-di-ziti": {
+      "sourceKey": "unpli-2025",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenza del 16 agosto documentata dalla Pro Loco nella guida; nessuna data 2026 confermata."
+    },
+    "calabria-carpanzano-sagra-della-castagna": {
+      "sourceKey": "unpli-2025",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "La guida UNPLI indica ottobre; nessun giorno o anno corrente dedotto."
+    },
+    "calabria-dipignano-sagra-della-polenta": {
+      "sourceKey": "unpli-2025",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Settembre secondo guida UNPLI; non conferma 2026."
+    },
+    "calabria-fagnano-castello-festival-della-castanicoltura-sagra-della-castagna": {
+      "sourceKey": "fagnano-evento",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Intervallo esplicitamente pubblicato nella pagina comunale: storico 2025. Albo 2026 segnala la 41ª edizione, ma senza date lette qui; nessuna trasposizione al 2026."
+    },
+    "calabria-plataci-shtridhela-il-gusto-delle-nostre-radici": {
+      "sourceKey": "lettura-8",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Prevale la pagina specifica comunale 2026 sulla generica ricorrenza agostana della guida UNPLI. Degustazioni gratuite non provano gratuità di uno stand."
+    },
+    "calabria-cariati-mercatini-di-natale": {
+      "sourceKey": "lettura-10",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Solo mese dalla pagina della Pro Loco; nessuna edizione 2026 confermata."
+    },
+    "calabria-orsomarso-fiera-di-sant-anna": {
+      "sourceKey": "lettura-0",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenze comunali: 26 luglio, 13 dicembre, 13 giugno e 26 settembre rispettivamente. Nessun anno o bando corrente; non è il mercato settimanale."
+    },
+    "calabria-orsomarso-fiera-di-santa-lucia": {
+      "sourceKey": "lettura-0",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenze comunali: 26 luglio, 13 dicembre, 13 giugno e 26 settembre rispettivamente. Nessun anno o bando corrente; non è il mercato settimanale."
+    },
+    "calabria-orsomarso-mercato-di-sant-antonio": {
+      "sourceKey": "lettura-0",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenze comunali: 26 luglio, 13 dicembre, 13 giugno e 26 settembre rispettivamente. Nessun anno o bando corrente; non è il mercato settimanale."
+    },
+    "calabria-orsomarso-mercato-dei-santi-cosma-e-damiano": {
+      "sourceKey": "lettura-0",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenze comunali: 26 luglio, 13 dicembre, 13 giugno e 26 settembre rispettivamente. Nessun anno o bando corrente; non è il mercato settimanale."
+    },
+    "calabria-san-lorenzo-bellizzi-fiera-di-san-lorenzo-martire": {
+      "sourceKey": "lettura-4",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Pagina comunale delle ricorrenze: festa patronale 8–10 agosto, Immacolata 8 dicembre, sagra in ottobre. Non prova edizione 2026."
+    },
+    "calabria-san-lorenzo-bellizzi-fiera-dell-immacolata": {
+      "sourceKey": "lettura-4",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Pagina comunale delle ricorrenze: festa patronale 8–10 agosto, Immacolata 8 dicembre, sagra in ottobre. Non prova edizione 2026."
+    },
+    "calabria-san-lorenzo-bellizzi-sagra-dell-uva": {
+      "sourceKey": "lettura-4",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Pagina comunale delle ricorrenze: festa patronale 8–10 agosto, Immacolata 8 dicembre, sagra in ottobre. Non prova edizione 2026."
+    },
+    "calabria-scigliano-fiera-di-san-giuseppe": {
+      "sourceKey": "lettura-5",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Ricorrenza del 19 marzo dalla pagina comunale; nessuna edizione annuale corrente."
+    },
+    "calabria-scigliano-sagra-della-capra-e-fiera-di-sant-angelo": {
+      "sourceKey": "lettura-5",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "La fonte descrive nello stesso appuntamento del 29 settembre sagra e fiera: una sola scheda. Requisiti veterinari e ammissioni attuali non verificati."
+    },
+    "calabria-san-nicola-arcella-mercatini-sul-mare": {
+      "sourceKey": "lettura-1",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Pagina datata settembre 2026, ma giorni della settimana 19 venerdì e 20 sabato corrispondono al 2025. Conservato soltanto settembre, senza attribuire anno alle date 18–20."
+    },
+    "calabria-spezzano-albanese-sagra-del-mostacciolo-arberesh": {
+      "sourceKey": "spezzano-mostacciolo",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Prima edizione 2025 dalla pagina comunale; nessuna conferma 2026."
+    },
+    "calabria-rogliano-festa-del-pane": {
+      "sourceKey": "rogliano-bando",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma generale segnalato dalla stampa 25–27 settembre; l’avviso degli espositori documenta solo 26–27, conservati nella scheda."
+    },
+    "calabria-aiello-calabro-fiera-di-acquafredda": {
+      "sourceKey": "aiello-programma",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma Estate Aiellese 2025 verificato visivamente; non conferma 2026, tariffe o posti per venditori esterni."
+    },
+    "calabria-aiello-calabro-pane-e-casu": {
+      "sourceKey": "aiello-programma",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma Estate Aiellese 2025 verificato visivamente; non conferma 2026, tariffe o posti per venditori esterni."
+    },
+    "calabria-aiello-calabro-aiello-beer-fest": {
+      "sourceKey": "aiello-programma",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma Estate Aiellese 2025 verificato visivamente; non conferma 2026, tariffe o posti per venditori esterni."
+    },
+    "calabria-aiello-calabro-peperoncino-in-festa": {
+      "sourceKey": "aiello-programma",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma Estate Aiellese 2025 verificato visivamente; non conferma 2026, tariffe o posti per venditori esterni."
+    },
+    "calabria-aiello-calabro-sagra-del-tartufo": {
+      "sourceKey": "aiello-programma",
+      "basis": "date esplicite nella fonte primaria",
+      "limitation": "Programma Estate Aiellese 2025 verificato visivamente; non conferma 2026, tariffe o posti per venditori esterni."
+    },
+    "calabria-bisignano-fiera-della-madonnella-santa-maria-di-costantinopoli": {
+      "sourceKey": "bisignano",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Guida turistica comunale: terza domenica di ottobre, solo ricorrenza. Nessuna edizione corrente."
+    },
+    "calabria-bisignano-fiera-del-santissimo-crocifisso-della-riforma": {
+      "sourceKey": "bisignano",
+      "basis": "solo periodo: nessuna edizione annuale confermata",
+      "limitation": "Guida turistica comunale: primo venerdì di marzo. Il rinvio a fiere ottocentesche non usato come prova corrente."
+    }
+  }
+}
