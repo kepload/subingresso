@@ -1,0 +1,1655 @@
+{
+  "province": "Agrigento",
+  "checkedAt": "2026-11-06",
+  "baseline": "d240d1b",
+  "method": "Ricerca nominale di tutti i 43 comuni, approfondimenti su Comuni, Pro Loco, organizzatori, GAL e atti regionali. Non lettura integrale di tutti gli albi/social e non censimento certificato.",
+  "municipalityReference": {
+    "file": "data/comuni.json",
+    "count": 43,
+    "externalSource": "https://www.anci.sicilia.it/comuni-siciliani/comuni-siciliani-agrigento/"
+  },
+  "municipalities": [
+    {
+      "city": "Agrigento",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Agrigento\" mercatini natale espositori comune bando"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-01.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Grotte\" \"Agrigento\" sagra mercatino natale"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-43.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Santa Elisabetta\" \"Agrigento\" sagra mercatino"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-44.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Agrigento\" \"mercatini di Natale\" site:comune.agrigento.it/novita"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-63.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Agrigento\" \"Mandorlo\" \"2026\" \"mercatini\" comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-91.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-agrigento-mercatini-di-natale",
+        "sicilia-agrigento-fiera-del-mandorlo-in-fiore"
+      ],
+      "outcome": "Due nuove identità: Natale 2025 dal bando conservato da Intradata; Mandorlo 2026 dal bando e dalla brochure comunale. San Calogero già presente: solo proposta separata. Vecchi URL 404/500, copia archivio distinta dalla fonte comunale corrente.",
+      "sources": [
+        {
+          "eventId": "sicilia-agrigento-mercatini-di-natale",
+          "proof": "ab231f3e8076f02c",
+          "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2025/10/Avviso-Natale-2025_signed_signed.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-agrigento-fiera-del-mandorlo-in-fiore",
+          "proof": "caa724ae10b52926",
+          "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-FIERA-MANDORLO-IN-FIORE-2026.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Alessandria della Rocca",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Alessandria della Rocca\" fiera sagra pro loco comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-01.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-alessandria-della-rocca-sagra-della-froscia-e-della-ncannellata"
+      ],
+      "outcome": "Froscia e ’ncannellata 9–11 maggio 2025 dall’avviso alle aziende. Traccia della seconda edizione nei contratti 2026 ma senza programma integrale; non attribuite nuove date. Pista Olio senza edizione originale recuperata.",
+      "sources": [
+        {
+          "eventId": "sicilia-alessandria-della-rocca-sagra-della-froscia-e-della-ncannellata",
+          "proof": "9525a76211a3925f",
+          "sourceUrl": "https://www.comune.alessandriadellarocca.ag.it/novita/avvisi/novita_47.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Aragona",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Aragona\" fiera sagra mercatino comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-01.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.aragona.ag.it sagra tagano fiera"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-42.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Aragona\" \"Tagano\" \"Pro Loco\" 2026"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-51.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Aragona\" \"tagano\" site:prolocoaragona.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-83.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Tagano, Salsiccia e Cuddriruni presenti in linee programmatiche comunali 2024 e nel calendario turistico. Nessun avviso annuale originale approfondito con certezza; articolo Taganu con aggiornamento settembre 2026 ma invito al 13 aprile senza anno coerente: non usato per datare il 2026.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Bivona",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Bivona\" sagra pesca comune 2025 2026"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-01.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-bivona-sagra-della-pescabivona-igp"
+      ],
+      "outcome": "Pescabivona 8–9 agosto 2026 dal programma comunale, vendita esplicita nel villaggio. Edizione 2025 e decreto 2024 distinti; non usata la finestra amministrativa 1–31 agosto 2024 come calendario dei banchi.",
+      "sources": [
+        {
+          "eventId": "sicilia-bivona-sagra-della-pescabivona-igp",
+          "proof": "9dbe2830f785bedf",
+          "sourceUrl": "https://www.comune.bivona.ag.it/novita/avvisi/novita_147.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Burgio",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Burgio\" sagra fiera mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-02.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.burgio.ag.it Ceramicando 2025 arancia"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-49.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Burgio\" \"Ceramicando\" site:regione.sicilia.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-69.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Burgio\" \"Ceramicando\" \"2025\" \"Sipario4\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-87.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Piste Arancia, Virgineddi, Spiga, Olio e Ceramicando/Grabuscia. Decreto con domanda di contributo e portale BurgioFest non provano calendario o posteggi 2026. Ceramicando 2025 soltanto resoconto stampa approfondito; nessuna nuova scheda senza programma primario recuperato.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Calamonaci",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Calamonaci\" sagra fiera mercatino comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-03.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Calamonaci\" \"Pane\" site:regione.sicilia.it 2025"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-65.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Calamonaci\" \"sagra\" \"pane\" \"2026\" sito comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-85.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.calamonaci.ag.it \"pane\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-98.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Pane e Grani Antichi: finanziamento regionale 2025 e comunicato stampa 2–4 settembre 2025; blog Alto Verdura parla di 25–27 settembre 2026, altro portale indica 1 settembre non confermato. Nessun originale di programma recuperato per risolvere le edizioni. Ricotta e presepe non dimostrano accesso commerciale esterno.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Caltabellotta",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Caltabellotta\" sagra fiera mercatino comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-04.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.caltabellotta.ag.it olio sagra 2025 2026"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-48.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Merenda nell’Oliveta 21 giugno 2025 dal Comune: esperienza/degustazione, senza prova di una mostra mercato aperta a banchi. Piste olio e Città Presepe senza avviso commerciale specifico; tariffario generale del canone non trasformato in quota evento.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Camastra",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Camastra\" sagra fiera mercatino comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-05.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Camastra\" \"mennula\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-64.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Camastra\" \"fiera\" \"San Biagio\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-90.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Ordinanza 18/2026 indicizzata: suolo gratuito 3–6 settembre per San Biagio; documento integrale non approfondito e nessun settore trasferito per ipotesi. Mennula Camastrisi appare in graduatoria contributi 2026, non prova autonoma di giorni di evento. Nessuna aggiunta o tariffa totale.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Cammarata",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Cammarata\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-06.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Cammarata\" \"fiera\" \"2026\" agricoltura"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-61.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Cammarata\" \"fiera della montagna\" pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-82.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.cammarata.ag.it \"Fiera\" \"Montagna\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-96.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Fiera della Montagna condivisa con San Giovanni Gemini: tracce storiche dicembre 2018, calendario provinciale in aprile e pista Montagna a Cavallo 2026; identità/calendari non fusi. Pro Loco e GAL consultati, nessun nuovo ID separato attribuito a Cammarata senza localizzazione commerciale precisa.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Campobello di Licata",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Campobello di Licata\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-07.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-campobello-di-licata-sagra-di-lu-mpurnatu-e-la-mpanata"
+      ],
+      "outcome": "’Mpurnatu/’Mpanata 8–10 maggio 2026: Comune esplicita stand alimentari e artigianali. Antichi Sapori 20 giugno è cena popolare con ticket, senza prova di mercato o posteggi esterni: esclusa dal delta.",
+      "sources": [
+        {
+          "eventId": "sicilia-campobello-di-licata-sagra-di-lu-mpurnatu-e-la-mpanata",
+          "proof": "e3e02facb4fcf274",
+          "sourceUrl": "https://www.comune.campobellodilicata.ag.it/it/eventi/sagra-di-lu-mpurnatu-e-di-la-mpanata-viaggio-nei-sapori-di-un-tempo",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Canicattì",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Canicattì\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-08.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.canicatti.ag.it \"Summer village 2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-58.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Canicattì\" \"Fiera del Rosario\" \"2026\" comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-93.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-canicatti-fiera-del-rosario"
+      ],
+      "outcome": "Rosario conservato con l’edizione ufficiale 18–20 ottobre 2025. Summer Village 24–27 luglio 2026 classificato dal Comune come fiera ma testo principalmente spettacoli; non usato per inventare settori o accesso espositori. Portali Rosario 2026 si dichiarano non confermati.",
+      "sources": [
+        {
+          "eventId": "sicilia-canicatti-fiera-del-rosario",
+          "proof": "63c05d25d49b5184",
+          "sourceUrl": "https://comune.canicatti.ag.it/it/eventi/fiera-del-rosario",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Casteltermini",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Casteltermini\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-09.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-casteltermini-sagra-della-cuccia-e-mercatino-di-santa-lucia",
+        "sicilia-casteltermini-fiera-e-mercatino-della-sagra-del-tatarata"
+      ],
+      "outcome": "Santa Lucia 12–13 dicembre 2026 da pagina e bando Pro Loco, costo 25 €. Tataratà: mercatino e bestiame nella guida ufficiale; date complessive festa 29–31 maggio 2026, non tutti i giorni attribuiti al bestiame. Divergenza orario domenicale 9/10 dichiarata.",
+      "sources": [
+        {
+          "eventId": "sicilia-casteltermini-sagra-della-cuccia-e-mercatino-di-santa-lucia",
+          "proof": "fdc5316843d3820e",
+          "sourceUrl": "https://prolococasteltermini.it/news/11a-sagra-della-cuccia-e-mercatino-di-santa-lucia-12-e-13-dicembre-2026/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-casteltermini-fiera-e-mercatino-della-sagra-del-tatarata",
+          "proof": "cee011c88218e7cf",
+          "sourceUrl": "https://www.sagradeltatarata.it/come-godersi-la-sagra/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Castrofilippo",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Castrofilippo\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-10.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-castrofilippo-sagra-della-cipolla-paglina"
+      ],
+      "outcome": "Cipolla Paglina 7–10 agosto 2026 dall’avviso comunale spettacoli. Distinta la procedura artisti dalle concessioni commerciali; nessuna quota o stand disponibile dedotti.",
+      "sources": [
+        {
+          "eventId": "sicilia-castrofilippo-sagra-della-cipolla-paglina",
+          "proof": "f73a7facebcfe108",
+          "sourceUrl": "https://www.comune.castrofilippo.ag.it/novita/avvisi/novita_87.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Cattolica Eraclea",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Cattolica Eraclea\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-11.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Cattolica Eraclea\" \"Rosario\" \"2026\" mercatisti"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-92.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-cattolica-eraclea-fiera-del-rosario"
+      ],
+      "outcome": "Rosario: avviso comunale 2026 documenta 11–12 ottobre ed esenzione della sola occupazione. Non aggiunto 10 ottobre dei portali. San Martino rintracciato in guida locale, senza programma originale annuale acquisito.",
+      "sources": [
+        {
+          "eventId": "sicilia-cattolica-eraclea-fiera-del-rosario",
+          "proof": "2d9824766386c3d1",
+          "sourceUrl": "https://www.comune.cattolicaeraclea.ag.it/novita/notizie/novita_83.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Cianciana",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Cianciana\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-12.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-cianciana-festa-di-san-martino"
+      ],
+      "outcome": "San Martino, seconda edizione 10 novembre 2024 dalla pagina comunale. Luogo effettivo Chiostro del Convento; il Municipio è il campo del template. Nessuna data 2026 o prezzo banco proiettati.",
+      "sources": [
+        {
+          "eventId": "sicilia-cianciana-festa-di-san-martino",
+          "proof": "92c27431902f0b83",
+          "sourceUrl": "https://comune.cianciana.ag.it/evento/festa-di-san-martino-seconda-edizione/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Comitini",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Comitini\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-13.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Comitini\" \"Cacciatore\" site:regione.sicilia.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-67.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Comitini\" \"sagra del cacciatore\" \"2024\" \"agosto\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-88.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-comitini-sagra-del-cacciatore"
+      ],
+      "outcome": "Cacciatore 20–21 luglio 2024 dalla liquidazione regionale 4042/2025. L’Artigianato in Fiera documentato dalla stampa nel 2017 come ricorrente: non proiettato sul 2026 e non aggiunto senza fonte dell’organizzatore recuperata.",
+      "sources": [
+        {
+          "eventId": "sicilia-comitini-sagra-del-cacciatore",
+          "proof": "c4fff8095d21364c",
+          "sourceUrl": "https://www.regione.sicilia.it/system/files/2025-05/Decreto%20liquidazione%20Ass%20Pro%20Loco%20Terra%20dello%20Zolfo%20anno%202024.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Favara",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Favara\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-14.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.favara.ag.it \"fiera\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-50.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Favara\" \"fiori\" \"2026\" ordinanza"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-77.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-favara-fiera-dei-fiori"
+      ],
+      "outcome": "Fiera dei Fiori 30 ottobre–1 novembre 2026 dal messaggio del Comune nell’app ufficiale. Portale automatico usato soltanto come pista. Agnello Pasquale compare nella guida provinciale, senza nuovo programma annuale approfondito.",
+      "sources": [
+        {
+          "eventId": "sicilia-favara-fiera-dei-fiori",
+          "proof": "a34688c3863a807d",
+          "sourceUrl": "https://favara.comune.digital/news/i/bab9bf822240faab988d5587de5828c2/da-domani-30-ottobre-e-fino-al-prossimo-1-novembre-dalle-7-alle-22-torna-piazza-della-pace-la-tradizionale-fiera-d",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Grotte",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Grotte\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-15.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Grotte\" \"Agrigento\" sagra mercatino natale"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-43.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Grotte\" site:comune.grotte.ag.it \"sagra\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-76.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Prima query confondeva Sarego e Castellana Grotte: risultati fuori territorio esclusi. Query mirate Agrigento e dominio comunale: presepe vivente, ma nessuna prova primaria specifica di posteggi commerciali; non dichiarata assenza di eventi.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Joppolo Giancaxio",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Joppolo Giancaxio\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-16.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-joppolo-giancaxio-sagra-del-melone-giallo"
+      ],
+      "outcome": "Melone Giallo 2–3 agosto 2025 dal PDF comunale, letto visivamente. Fornitura meloni a 0,80 €/kg non è prezzo banco. Portale Visit Joppolo con testo segnaposto nell’Olio Nuovo: non usato come programma annuale affidabile.",
+      "sources": [
+        {
+          "eventId": "sicilia-joppolo-giancaxio-sagra-del-melone-giallo",
+          "proof": "8a99c2bd3c091e87",
+          "sourceUrl": "https://www.comune.joppologiancaxio.ag.it/halley//ht/eg138/TMPI659419.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Lampedusa e Linosa",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Lampedusa e Linosa\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-17.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Ordinanza Linosa del 23 luglio 2026 attesta sagra paesana senza identità/settori sufficienti. Regolamento storico documenta mercatini stagionali in via Roma, ma non calendario corrente o disponibilità: nessuna nuova edizione dedotta.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Licata",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Campobello di Licata\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-07.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Licata\" \"2° fiera\" \"2024\" site:comune.licata.ag.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-104.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Licata\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-18.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Licata\" \"ceramica\" site:comune.licata.ag.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-80.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Licata\" \"Fiera di Maggio\" \"2026\" \"25\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-94.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-licata-fiera-di-maggio",
+        "sicilia-licata-mercatini-di-natale"
+      ],
+      "outcome": "Fiera di Maggio 2026 documentata dal PDF scansionato: 30 € SUAP, quota non quantificata e giorni assenti. Natale 6–28 dicembre 2025 è programma del bando per gestore. Ceramica agosto 2024: vecchio PDF 404; testo indicizzato conservato, nessuna scheda nuova da quel solo riscontro.",
+      "sources": [
+        {
+          "eventId": "sicilia-licata-fiera-di-maggio",
+          "proof": "995a47772e0c17cf",
+          "sourceUrl": "https://comune.licata.ag.it/novita/fiera-di-maggio-2026/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-licata-mercatini-di-natale",
+          "proof": "9188a1cebdee4493",
+          "sourceUrl": "https://comune.licata.ag.it/wp-content/uploads/2026/07/Avviso-Pubblico-–-Mercatini-di-Natale-2025.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Lucca Sicula",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Lucca Sicula\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-19.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-lucca-sicula-fiera-del-crocifisso",
+        "sicilia-lucca-sicula-festa-dell-olio"
+      ],
+      "outcome": "Olio novembre e fiera del Crocifisso settembre da pagine comunali. “Quest’anno 11–13 settembre” nella pagina aggiornata 2023 non trasformato in edizione 2026. Recuperato il link reale festa-olio dopo 404 del percorso ipotizzato.",
+      "sources": [
+        {
+          "eventId": "sicilia-lucca-sicula-fiera-del-crocifisso",
+          "proof": "412a2d293747806f",
+          "sourceUrl": "https://comune.luccasicula.ag.it/it/page/festa-del-crocifisso",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-lucca-sicula-festa-dell-olio",
+          "proof": "8d613fbadb411b92",
+          "sourceUrl": "https://comune.luccasicula.ag.it/it/page/festa-olio",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Menfi",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Menfi\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-20.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.menfi.ag.it Inycon 2026 stand"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-45.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-menfi-inycon-villaggio-delle-tipicita-e-area-espositiva"
+      ],
+      "outcome": "Inycon 2–4 ottobre 2026 dal bando aggiornato. Villaggio gratuito selezionato e Area Espositiva 200 € distinti, senza sdoppiare l’evento. Paranza 2024 nel registro contributi ARS resta pista storica non approfondita con programma.",
+      "sources": [
+        {
+          "eventId": "sicilia-menfi-inycon-villaggio-delle-tipicita-e-area-espositiva",
+          "proof": "2aebb74535e11020",
+          "sourceUrl": "https://www.comune.menfi.ag.it/wp-content/uploads/2026/09/Avviso-per-partecipazione-villaggio-tipicita-e-area-Expo-aggionato.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Montallegro",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Montallegro\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-21.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Montallegro\" \"Pomodoro\" site:regione.sicilia.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-68.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Montallegro\" \"sagra del pomodoro\" \"2026\" pro loco agosto"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-86.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.montallegro.ag.it \"pomodoro\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-97.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Pomodoro Siccagno: decreto regionale 2024 prova iniziativa finanziata; portali con giorni 1–2 o 7–9 agosto e avviso di mancata conferma. Nessun originale di programma corrente recuperato; nessuna data, gratuità o affluenza importate.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Montevago",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Montevago\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-22.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-montevago-festa-del-vino"
+      ],
+      "outcome": "Festa del Vino 25–27 settembre 2026, avviso espositori e originale letto visivamente. Suolo gratuito più bollo/diritti 21,16 €. Fiera Agricola agosto e Odori/Sapori restano piste diverse senza programma primario acquisito.",
+      "sources": [
+        {
+          "eventId": "sicilia-montevago-festa-del-vino",
+          "proof": "c51f52497f245e40",
+          "sourceUrl": "https://www.comune.montevago.ag.it/novita/avvisi/novita_260.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Naro",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Naro\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-23.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Naro\" \"fiera\" site:comune.naro.ag.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-70.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-naro-fiera-di-san-calogero"
+      ],
+      "outcome": "San Calogero: fiera lungo viale Umberto nell’ottavario da Visit Naro; mantenuto giugno senza data annuale. Guida PDF scaricata dal Comune non aggiunge calendario commerciale. Naro La Fiera/Natale solo piste stampa; niente seconda identità presunta.",
+      "sources": [
+        {
+          "eventId": "sicilia-naro-fiera-di-san-calogero",
+          "proof": "490e707e518cb98e",
+          "sourceUrl": "https://www.visitnaro.net/tradizioni.php",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Palma di Montechiaro",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Palma di Montechiaro\" \"Mercato alla voce\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-107.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Palma di Montechiaro\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-24.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Mercato alla Voce 30–31 ottobre 2026 confermato dal sindaco nell’app: progetto di promozione pesca e vendita narrata, senza concessione di posteggi esterni. Non aggiunto come opportunità commerciale aperta; finanziamento 29.821 € non quota espositore.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Porto Empedocle",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Porto Empedocle\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-25.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Porto Empedocle\" \"fiera\" \"San Calogero\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-53.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Pagine comunali ufficio Commercio/Fiere e organizzazione eventi, piste religiose San Calogero e Sagra del Mare; nessun bando commerciale di edizione recuperato. Non ricavate fiere dai soli festeggiamenti o dall’elenco uffici.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Racalmuto",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Racalmuto\" \"Sagra dell'Agricoltura\" \"2026\" \"25\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-102.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Racalmuto\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-26.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Racalmuto\" \"Agricoltura\" \"sagra\" \"prodotti\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-71.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-racalmuto-fiera-maria-ss-del-monte"
+      ],
+      "outcome": "Fiera Maria SS. del Monte: bando originale 2025, 59 posteggi e cadenza luglio. Recupero TLS non validato dichiarato. Sagra Agricoltura 25, 26 e 31 luglio 2026 compare nel testo indicizzato; paginazione live diversa e documento specifico non recuperato: nessuna data continua 25–31 inventata. Fuazza Fest resta pista nei contributi.",
+      "sources": [
+        {
+          "eventId": "sicilia-racalmuto-fiera-maria-ss-del-monte",
+          "proof": "70463be796678232-tls-unverified",
+          "sourceUrl": "https://trasparenza.comune.racalmuto.ag.it/zf/index.php/trasparenza/index/visualizza-documento-generico/categoria/313/documento/1852",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Raffadali",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Raffadali\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-27.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Raffadali\" \"Fastuca\" \"2026\" espositori"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-60.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-raffadali-fastuca-fest",
+        "sicilia-raffadali-fiera-del-rosario-e-sagra-del-maccu"
+      ],
+      "outcome": "Fastuca Fest 17–20 settembre 2026 da programma organizzatore. Rosario/Maccu: primo weekend ottobre dal piano comunale p. 45, senza edizione annuale. Donazioni camminata, merchandising e prenotazioni non trattati come quota banco.",
+      "sources": [
+        {
+          "eventId": "sicilia-raffadali-fastuca-fest",
+          "proof": "c5a4b757b7e87050",
+          "sourceUrl": "https://www.fastucafest.it/programma2026/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-raffadali-fiera-del-rosario-e-sagra-del-maccu",
+          "proof": "4d2172cca16225d4",
+          "sourceUrl": "https://comune.raffadali.ag.it/f/cms_pagine_summernote/2024/11/34503_00_relazione_ppc_completa_di_schede.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Ravanusa",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Ravanusa\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-28.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Ravanusa\" \"Sammartinu\" site:comune.ravanusa.ag.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-52.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Ravanusa\" \"Lu Sammartinu\" \"2025\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-78.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Lu Sammartinu: portale con stato confermato e contemporaneo avviso “edizione 2026 non confermata”; stampa sulle edizioni precedenti senza originale dell’associazione SpaceR recuperato. Mercato settimanale ordinario distinto e non aggiunto.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Realmonte",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Realmonte\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-29.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Realmonte\" \"mercatini\" \"Comune\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-54.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Pagina comunale della Pro Loco Scala dei Turchi e sito associazione: informazioni generiche, non calendario commerciale. Query mercatini restituisce anche associazione omonima milanese e piano rifiuti 2014: esclusi. Nessuna assenza di eventi dichiarata.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Ribera",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Ribera\" \"fiera dei morti\" \"2026\" \"comune\" \"dicembre\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-105.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.ribera.ag.it \"fiera\" \"novembre\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-106.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Ribera\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-30.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.ribera.ag.it Riberella 2026 sagra"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-46.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Ribera\" \"Riberella\" site:regione.sicilia.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-66.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Ribera\" \"Riberella Winter\" comune programma"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-75.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-ribera-fiera-dei-morti"
+      ],
+      "outcome": "Fiera dei Morti attestata nella relazione comunale 2020–2025. Articolo Radio Studio 5 del 4 novembre riferisce rinvio al 5–6 dicembre 2026 per maltempo: fonte di stampa conservata, senza conferma comunale recuperata. Nessuna edizione 2026 confermata nel delta; Riberella e Pizza in Fest restano piste distinte.",
+      "sources": [
+        {
+          "eventId": "sicilia-ribera-fiera-dei-morti",
+          "proof": "e0946feb6817ed88",
+          "sourceUrl": "https://www.comune.ribera.ag.it/wp-content/uploads/2025/07/2.-RFMS-2020-2025-signed.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Sambuca di Sicilia",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Sambuca di Sicilia\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-31.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-sambuca-di-sicilia-aziende-in-fiera"
+      ],
+      "outcome": "Aziende in Fiera 19–21 settembre 2026 dall’avviso originale letto visivamente, adesioni per operatori locali entro 16 settembre. Minni di Virgini/Minna Fest e Babbalucia restano piste senza programma primario annuale acquisito.",
+      "sources": [
+        {
+          "eventId": "sicilia-sambuca-di-sicilia-aziende-in-fiera",
+          "proof": "7c8ef236afcbade6",
+          "sourceUrl": "https://comune.sambucadisicilia.ag.it/wp-content/uploads/2026/09/Avviso-Aziende-in-Fiera-2026.pdf",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "San Biagio Platani",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"San Biagio Platani\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-32.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"San Biagio Platani\" \"mercatini\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-56.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"San Biagio Platani\" \"festa del pane\" site:regione.sicilia.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-72.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Archi di Pasqua: allestimenti e sculture di pane non provano vendita o disponibilità di banchi. Festa del Pane citata da portali senza originale annuale recuperato; nessuna nuova scheda per semplice deduzione gastronomica.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "San Giovanni Gemini",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"San Giovanni Gemini\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-33.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"San Giovanni Gemini\" \"fiera\" \"Gesù\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-81.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-san-giovanni-gemini-fiera-di-ottobre-madonna-della-provvidenza",
+        "sicilia-san-giovanni-gemini-fiera-di-giugno-gesu-nazareno"
+      ],
+      "outcome": "Ottobre 10–12 ottobre 2026: scaricati decreto 22 e ordinanza 45 tramite funzione pubblica di download. Giugno 2026: estratto decreto 13, senza giorni. Fiera della Montagna non sdoppiata con Cammarata e non fusa con Montagna a Cavallo.",
+      "sources": [
+        {
+          "eventId": "sicilia-san-giovanni-gemini-fiera-di-ottobre-madonna-della-provvidenza",
+          "proof": "96fad1b0dcc5c360",
+          "sourceUrl": "https://www.comune.sangiovannigemini.ag.it/novita/avvisi/novita_186.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-san-giovanni-gemini-fiera-di-giugno-gesu-nazareno",
+          "proof": "5c5ca7ec82b91455",
+          "sourceUrl": "https://trasparenza.comune.sangiovannigemini.ag.it/sanggemini/zf/index.php/atti-amministrativi/legge-regionale-sicilia-11-2015/estratto-decreti/table-estratto-decreti-page/3",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Sant'Angelo Muxaro",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Sant'Angelo Muxaro\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-34.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Sant'Angelo Muxaro\" \"Asparago\" \"2026\" \"Mushar\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-84.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-sant-angelo-muxaro-sagra-della-ricotta"
+      ],
+      "outcome": "Ricotta: solo ricorrenza gennaio dalla guida turistica provinciale. Ordinanze 35–36 del 22 dicembre 2025 indicizzano 6 gennaio 2026 ma originali 404. Asparago Sicano 10–12 aprile 2026 indicizzato nel vecchio sito, pagina e PDF non recuperabili: nessuna scheda corrente da sola indicizzazione.",
+      "sources": [
+        {
+          "eventId": "sicilia-sant-angelo-muxaro-sagra-della-ricotta",
+          "proof": "3df939f05fc6fe65",
+          "sourceUrl": "https://livingagrigento.it/it_it/eventi/main/evento?id=1534_agrigento---visualizza-il-calendario-degli-eventi-in-provincia",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Santa Elisabetta",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Santa Elisabetta\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-35.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Santa Elisabetta\" \"Agrigento\" sagra mercatino"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-44.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Pastorale di Nardu e Ricotta nel portale turistico comunale e Oplà; rappresentazione tradizionale con degustazioni non basta a dimostrare mercato per espositori. Fiera di Santa Elisabetta di Romans d’Isonzo esclusa perché fuori provincia.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Santa Margherita di Belice",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Santa Margherita di Belice\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-36.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-santa-margherita-di-belice-fiera-di-settembre",
+        "sicilia-santa-margherita-di-belice-fiera-di-novembre-fera-di-li-ficu",
+        "sicilia-santa-margherita-di-belice-ficodindia-fest"
+      ],
+      "outcome": "Tre identità comunali: Settembre, Novembre/li Ficu, Ficodindia. Ricorrenze senza anno lasciate tali. Mostra Pecora parte della fiera di settembre, senza duplicato. “I Sapori del Territorio” è pagina descrittiva gastronomica, non un quarto evento.",
+      "sources": [
+        {
+          "eventId": "sicilia-santa-margherita-di-belice-fiera-di-settembre",
+          "proof": "7476e7213d812fa5",
+          "sourceUrl": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/fiera-di-settembre/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-santa-margherita-di-belice-fiera-di-novembre-fera-di-li-ficu",
+          "proof": "3ddb2f18f4b61798",
+          "sourceUrl": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/fiera-di-novembre/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        },
+        {
+          "eventId": "sicilia-santa-margherita-di-belice-ficodindia-fest",
+          "proof": "607edd525acb5922",
+          "sourceUrl": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/ficodindia-fest/",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Santo Stefano Quisquina",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Santo Stefano Quisquina\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-37.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-santo-stefano-quisquina-sagra-del-formaggio-e-dei-prodotti-tipici-quisquinesi"
+      ],
+      "outcome": "Formaggio 30–31 maggio 2026: programma, moduli A/A1 e SCIA originali acquisiti. Suolo 1,03 €/m² e luce 50 € separati; nessuna esenzione A1 dedotta. Ritorno mercato settimanale a Piazza Repubblica dal 18 giugno: ordinario, non nuova fiera.",
+      "sources": [
+        {
+          "eventId": "sicilia-santo-stefano-quisquina-sagra-del-formaggio-e-dei-prodotti-tipici-quisquinesi",
+          "proof": "7b2e011e1f3ef224",
+          "sourceUrl": "https://www.comune.santostefanoquisquina.ag.it/novita/comunicati_stampa/novita_492.html",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Sciacca",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Sciacca\" \"Ceramiche\" \"Autore\" \"settembre 2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-108.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Sciacca\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-38.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Sciacca\" \"Ceramiche d’Autore\" \"2026\" comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-62.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Sciacca\" \"mostra mercato\" site:comune.sciacca.ag.it"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-79.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Sciacca\" \"fiera di ferragosto\" \"2026\" comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-89.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.sciacca.ag.it \"Ferragosto\" \"2026\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-99.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [
+        "sicilia-sciacca-fiera-di-ferragosto"
+      ],
+      "outcome": "Ferragosto attestata dalla determina e PDF integrale. Finestra servizi 12–17 agosto non trasformata in apertura certa banchi. Ceramiche d’Autore indicizzata nel calendario dell’app ma non recuperata come scheda corrente; fiori Defunti soltanto portale automatico, nessuna nuova scheda.",
+      "sources": [
+        {
+          "eventId": "sicilia-sciacca-fiera-di-ferragosto",
+          "proof": "65da4de4a68f91d4",
+          "sourceUrl": "https://servizi.comune.sciacca.ag.it/de/attachment.php?serialDocumento=04OROG020268A&p7m=1&mosdoc=0",
+          "access": "downloaded",
+          "note": "Originale e testo conservati; lettura mirata ai dati utilizzati."
+        }
+      ],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Siculiana",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "site:comune.siculiana.ag.it \"Mercato di Kalat\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-100.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Siculiana\" \"mercato di kalat\" \"luglio\" \"agosto\" comune"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-103.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Siculiana\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-39.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "site:comune.siculiana.ag.it \"Kalat\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-59.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "Mercato di Kalat: affidamento luglio 2026 indicizzato, paginazione live spostata; portale turistico sull’edizione 2024 ora in manutenzione. Certificati TLS problematici dichiarati. Non usati gli snippet come originali integrali, nessuna edizione importata dalla sola stampa.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    },
+    {
+      "city": "Villafranca Sicula",
+      "queryExecuted": true,
+      "searches": [
+        {
+          "queries": [
+            "\"Villafranca Sicula\" fiera sagra mercatino comune pro loco"
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-40.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        },
+        {
+          "queries": [
+            "\"Villafranca Sicula\" \"sagra\" \"olio\""
+          ],
+          "evidenceFile": ".local/ricerche/agrigento-20261106/search-55.json",
+          "resultType": "search-output",
+          "limitation": "Risultati e testo restituiti dal motore; non lettura integrale dei documenti collegati."
+        }
+      ],
+      "newIds": [],
+      "outcome": "San Michele/Madonna del Mirto e Entrata Alloro ricorrono in contributi ARS e portali. Sono prove di manifestazioni religiose, senza avviso di fiera o banchi recuperato. Non attribuite sagre Olio dei vicini Lucca/Burgio al comune.",
+      "sources": [],
+      "limit": "Ricognizione nominale con approfondimenti selettivi; nessuna aggiunta non significa assenza di eventi."
+    }
+  ],
+  "existingEventUpdateProposals": [
+    {
+      "id": "sicilia-agrigento-fiera-di-san-calogero",
+      "action": "proposal-only-do-not-apply",
+      "sourceUrl": "https://comune.agrigento.it/novita/fiera-di-san-calogero/",
+      "evidenceFile": ".local/ricerche/agrigento-20261106/9e2ad8fb8d9d247e.txt",
+      "proposedChanges": {
+        "editions": [
+          {
+            "year": 2026,
+            "start": "2026-07-03",
+            "end": "2026-07-12",
+            "dateType": "confirmed"
+          }
+        ],
+        "sectors": "Artigianato, hobbisti, prodotti tipici e commercio",
+        "participationNote": "Avviso 2026: domanda entro 23 giugno ore 15; casette e aree distinte. Bollo 16 €, servizi elettrici e altri oneri distinti, nessun preventivo totale."
+      },
+      "reason": "Identità già presente nella base: nessuna sovrascrittura o duplicazione durante ricerca."
+    }
+  ],
+  "accessLimitations": [
+    "HTTP 404 e 500, mirror Intradata, paginazioni mutevoli e snippet indicizzati documentati separatamente; non assimilati a originali letti.",
+    "Racalmuto e Siculiana: alcuni recuperi pubblici con verifica TLS non riuscita; retry dichiarati tlsVerification:false.",
+    "Sant’Angelo: nessuna nuova data annuale basata soltanto su snippet. Siculiana: manutenzione del portale turistico.",
+    "Nessun annullamento definitivo attestato da originale pertinente; Ribera: rinvio per maltempo riferito dalla stampa, non trasformato in conferma comunale."
+  ],
+  "costResearch": {
+    "file": "data/fiere-agrigento-costi.json",
+    "count": 8,
+    "scope": "Sole condizioni documentate delle nuove schede; proposta San Calogero esclusa dall’overlay."
+  }
+}
