@@ -8,7 +8,7 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 ## Stato e vincoli da conservare
 
 - [Checklist unica](../docs/fiere-province.md): aggiornata il 6 novembre,
-  107 concluse e 3 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+  108 concluse e 2 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
@@ -33,7 +33,7 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
-- [Oristano — 6 novembre 2026](fiere-dossier/oristano-20261106.md): 64 nuove schede in 45 comuni, ricognizione degli 87 comuni e quattro note economiche; verifica di pubblicazione in corso.
+- [Oristano — 6 novembre 2026](fiere-dossier/oristano-20261106.md): 64 nuove schede in 45 comuni, ricognizione degli 87 comuni e quattro note economiche; pubblicazione verificata, fonti e limiti nel dossier.
 
 - [Ingressi Google nel calendario — 6 novembre 2026](fiere-dossier/123-ingressi-google-calendario-20261106.md): scheda già aperta, ritorno alla ricerca locale, fonti pubbliche e URL indicizzati conservati.
 

@@ -21,14 +21,14 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **6 novembre 2026**: **107 province concluse e 3 aperte su 110**,
+Ultimo esito **6 novembre 2026**: **108 province concluse e 2 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **10.202** dopo Potenza (+83 in 55 comuni, 2 note economiche storiche); tutte le 10.119 schede e 471 note precedenti invariate, Agrigento e Campobasso incluse.
+Catalogo **10.266** dopo Oristano (+64 in 45 comuni, quattro note economiche); tutte le 10.202 schede e 473 note precedenti invariate. Restano Pavia (riservata) e Nuoro.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
-disabilitati; vecchio Auto già disabilitato. La richiesta singola per Matera
+disabilitati; vecchio Auto già disabilitato. La richiesta singola per Oristano
 non riavvia i cicli né autorizza altre province o riprese al rinnovo. Le vecchie
 autorizzazioni a usare quota, account o sessioni parallele sono storico.
 Non avviare controller, task o ricerche dalle istruzioni archiviate.
@@ -138,4 +138,4 @@ Avvii delle sessioni conservati nello [snapshot dedicato](docs/archivio/informaz
 
 Esiti Rieti/Vibo conservati nello [snapshot del 6 novembre](docs/archivio/informazioni-esiti-pre-potenza-20261106.md).
 
-- **6 novembre 2026 — Oristano, avvio parziale:** scelta una sola provincia su richiesta corrente; backup remoto verificato, ricerca preliminare salvata in `.local/ricerche/oristano-20261106/RIPRESA.md`. Nessuna modifica al catalogo o pubblicazione; provincia ancora aperta. Nessun ciclo avviato.
+- **6 novembre 2026 — Oristano:** completata e pubblicata `5bb5779`, check Vercel riuscito. +64 schede in 45 comuni e quattro note economiche; ricognizione 87/87 con limiti. Catalogo live identico, 10.202 schede/473 note precedenti invariate; build/settori/SEO e Chromium1440/320 + WebKit390 locali/online passati, 64 pagine e letture API riuscite, 10.266 ID recensioni sincronizzati. Due fixture generali preesistenti non più valide e credenziale Vercel locale non valida documentate nel [dossier](data/fiere-dossier/oristano-20261106.md); deploy verificato tramite GitHub e sito reale. Sessione conclusa dopo questa provincia, nessun ciclo o altra provincia avviata.
