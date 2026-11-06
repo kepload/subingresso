@@ -133,7 +133,7 @@ async function run(engine, label, viewport, base) {
         await count(expected.length);
         assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), null);
         assert.equal(await page.locator('#province-filter').inputValue(), 'Genova');
-        assert.equal(await page.locator('#sector-filter').inputValue(), sector);
+        assert(await page.locator('#article-sector-options input[value="' + sector + '"]').isChecked());
         await page.reload(); await count(expected.length);
         const marker = page.locator('.fiere-marker').filter({ has: page.locator('title') });
         // Marker IDs are comma-separated; choose the group containing this event.

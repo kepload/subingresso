@@ -530,7 +530,6 @@
         state.query = (params.get('q') || '').slice(0, 100);
         $('province-filter').value = state.province || (state.region ? 'regione:' + state.region : '');
         $('type-filter').value = state.category;
-        $('sector-filter').value = state.sector;
         $('fair-search').value = state.query;
     }
     function positionArticleMenu() {
@@ -543,6 +542,21 @@
         $('article-filter').querySelector('.fiere-article-menu').style.maxHeight = Math.max(100, Math.min(360, openAbove ? above : below)) + 'px';
     }
     function initArticles() {
+        const sectorChoices = node('div', 'fiere-sector-choices');
+        $('article-sector-options').append(sectorChoices);
+        for (const [key, text] of [['', 'Tutti i settori'], ...Object.entries(SECTORS)]) {
+            const label = node('label', 'fiere-article-option');
+            const input = node('input');
+            input.type = 'radio'; input.name = 'settore'; input.value = key; input.disabled = true;
+            const count = node('span', 'fiere-article-count');
+            count.setAttribute('aria-hidden', 'true');
+            label.append(input, node('span', '', text), count);
+            input.addEventListener('change', () => {
+                state.sector = key; state.articles = [];
+                changed(false);
+            });
+            sectorChoices.append(label);
+        }
         for (let group = 0; group < ARTICLE_GROUPS.length; group++) {
             const fieldset = node('fieldset', 'fiere-article-group');
             fieldset.append(node('legend', '', ARTICLE_GROUPS[group]));
@@ -563,7 +577,7 @@
             }
             $('article-options').append(fieldset);
         }
-        $('clear-articles').addEventListener('click', () => { state.articles = []; changed(false); });
+        $('clear-articles').addEventListener('click', () => { state.sector = ''; state.articles = []; changed(false); });
         $('article-filter').addEventListener('toggle', positionArticleMenu);
         window.addEventListener('resize', positionArticleMenu);
         window.addEventListener('scroll', positionArticleMenu, { passive: true });
@@ -578,11 +592,20 @@
     }
     function renderArticles() {
         const counts = Object.fromEntries(ARTICLE_OPTIONS.map(option => [option.key, 0]));
+        const sectorCounts = Object.fromEntries(Object.keys(SECTORS).map(key => [key, 0]));
+        const pool = filterEvents(state.events, { ...state, sector: '', articles: [] });
         const today = todayInRome();
-        for (const event of filterEvents(state.events, { ...state, articles: [] })) {
+        for (const event of pool) {
+            for (const sector of event.merchandiseSectors) if (Object.hasOwn(sectorCounts, sector)) sectorCounts[sector]++;
+            if (state.sector && !event.merchandiseSectors.includes(state.sector)) continue;
             for (const option of ARTICLE_OPTIONS) {
                 if (matchesArticles(event, optionTypes(option, state.sector), today)) counts[option.key]++;
             }
+        }
+        for (const input of $('article-sector-options').querySelectorAll('input')) {
+            input.disabled = !state.ready;
+            input.checked = input.value === state.sector;
+            input.parentElement.querySelector('.fiere-article-count').textContent = String(input.value ? sectorCounts[input.value] : pool.length);
         }
         for (const input of $('article-options').querySelectorAll('input')) {
             const type = ARTICLE_OPTIONS.find(option => option.key === input.value);
@@ -596,8 +619,9 @@
         }
         for (const group of $('article-options').children) group.hidden = ![...group.querySelectorAll('label')].some(label => !label.hidden);
         const selections = articleSelections(state.articles, state.sector);
+        if (!selections.length && state.sector) selections.push({ label: SECTORS[state.sector], types: [] });
         $('article-summary-text').textContent = !selections.length ? 'Tutte le tipologie' : selections.length === 1 ? selections[0].label : selections.length + ' tipologie selezionate';
-        $('clear-articles').disabled = !state.articles.length;
+        $('clear-articles').disabled = !state.articles.length && !state.sector;
         const chips = document.createDocumentFragment();
         for (const selection of selections) {
             const button = node('button', 'fiere-article-chip');
@@ -607,12 +631,13 @@
             button.append(node('span', '', selection.label), cross);
             button.addEventListener('click', () => {
                 state.articles = state.articles.filter(value => !selection.types.includes(value));
+                if (!state.articles.length) state.sector = '';
                 changed(false); $('article-summary').focus();
             });
             chips.append(button);
         }
         $('selected-articles').replaceChildren(chips);
-        $('selected-articles').hidden = !state.articles.length;
+        $('selected-articles').hidden = !selections.length;
         positionArticleMenu();
     }
     function renderMonths() {
@@ -927,7 +952,7 @@
         renderMonths(); renderArticles(); renderList(events); renderMap(events);
         const articleCount = articleSelections(state.articles, state.sector).length;
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (articleCount ? ' · ' + articleCount + (articleCount === 1 ? ' tipologia' : ' tipologie') : '');
-        const extraCount = Number(Boolean(state.query)) + Number(Boolean(state.sector)) + Number(Boolean(state.category)) + Number(Boolean(articleCount));
+        const extraCount = Number(Boolean(state.query)) + Number(Boolean(state.category)) + Number(Boolean(state.sector || articleCount));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));
@@ -944,7 +969,7 @@
         Object.assign(state, { region: '', province: '', category: '', sector: '', articles: [], months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
         $('article-filter').open = false;
         $('article-fit-dialog').close();
-        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
+        for (const id of ['province-filter', 'type-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
     async function fetchJSON(url) {
@@ -1020,7 +1045,7 @@
                 }
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
-            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
+            state.ready = true; $('province-filter').disabled = false; fitProvince(); render();
             const requested = state.events.find(event => event.id === (initialFair()?.id || new URLSearchParams(location.search).get('fiera')));
             if (requested && !landingDismissed) {
                 if (!$('fair-dialog').open || state.selected !== requested.id) openDetail(requested);
@@ -1177,11 +1202,6 @@
         });
         $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
-        $('sector-filter').addEventListener('change', () => {
-            state.sector = $('sector-filter').value;
-            state.articles = state.articles.filter(key => !state.sector || ARTICLE_TYPES[key].sectors.includes(state.sector));
-            changed(false);
-        });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);

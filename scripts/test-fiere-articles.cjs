@@ -96,9 +96,10 @@ async function run(engine, engineName, width, height, base) {
         assert.equal(await page.locator('.fiere-main-fields > .fiere-place').count(), 1);
         assert(!await page.locator('#article-summary').evaluate(element => element.checkVisibility()));
         assert.equal(await page.locator('#extra-filters #article-filter').count(), 1);
-        assert(!await page.locator('#sector-filter').isVisible());
+        assert.equal(await page.locator('#sector-filter').count(), 0);
         assert(!await page.locator('#type-filter').isVisible());
-        assert.equal(await page.locator('#extra-filters #sector-filter, #extra-filters #type-filter').count(), 2);
+        assert.equal(await page.locator('#extra-filters #type-filter').count(), 1);
+        assert.equal(await page.locator('#article-filter input[name="settore"]').count(), 5);
         if (process.env.FIERE_ARTICLES_OUTPUT) {
             fs.mkdirSync(process.env.FIERE_ARTICLES_OUTPUT, { recursive: true });
             await page.screenshot({ path: path.join(process.env.FIERE_ARTICLES_OUTPUT, engineName + '-' + width + '-main.png'), fullPage: false });
@@ -123,6 +124,8 @@ async function run(engine, engineName, width, height, base) {
         await page.selectOption('#type-filter', 'tradizionale');
         const combined = compactUnion.filter(e => e.months.includes(10) && e.region === 'Lombardia' && e.category === 'tradizionale');
         await verify(combined, true);
+        const foodInScope = events.filter(e => e.months.includes(10) && e.region === 'Lombardia' && e.category === 'tradizionale' && e.merchandiseSectors.includes('alimentare'));
+        assert.equal(await page.locator('#article-sector-options input[value="alimentare"]').locator('..').locator('.fiere-article-count').textContent(), String(foodInScope.length));
         assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
         await page.locator('#extra-filters > summary').click();
         assert(await page.locator('#extra-filter-count').isVisible());
@@ -136,22 +139,47 @@ async function run(engine, engineName, width, height, base) {
         await verify(events);
         assert.equal(await page.locator('#selected-articles button').count(), 0);
         assert.equal(new URL(page.url()).searchParams.get('articoli'), null);
-        // A broad sector narrows the choices and clears incompatible selections.
+        // The same menu selects a whole sector, refines it, and clears both levels.
         await page.goto(base + '/fiere?articoli=calzature,dolciumi');
         await verify(union);
         await openExtras();
-        await page.selectOption('#sector-filter', 'alimentare');
-        const food = api.filterEvents(events, { months: [], query: '', sector: 'alimentare', articles: ['dolciumi'] });
-        await verify(food);
-        assert.equal(await page.locator('#selected-articles button').count(), 1);
         await page.locator('#article-summary').click();
+        await page.locator('#article-sector-options input[value="alimentare"]').check();
+        const foodSector = events.filter(e => e.merchandiseSectors.includes('alimentare'));
+        await verify(foodSector);
+        assert.equal(await page.locator('#article-summary-text').innerText(), 'Alimentare');
+        assert.equal(new URL(page.url()).searchParams.get('settore'), 'alimentare');
+        assert.equal(new URL(page.url()).searchParams.get('articoli'), null);
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '1');
         assert.equal(await checkbox('calzature').isVisible(), false);
-        assert(await checkbox('dolciumi').evaluate(input => input.indeterminate), 'A saved precise choice stays precise inside its compact option');
+        await checkbox('dolciumi').check();
+        await verify(api.filterEvents(events, { months: [], query: '', sector: 'alimentare', articles: ['dolciumi', 'cioccolato'] }));
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '1');
+        const food = api.filterEvents(events, { months: [], query: '', sector: 'alimentare', articles: ['dolciumi'] });
+        assert.equal(await page.locator('#selected-articles button').count(), 1);
         assert(await page.locator('#clear-articles').evaluate(element => element.getBoundingClientRect().top >= document.querySelector('header').getBoundingClientRect().bottom), 'The menu toolbar stays below the fixed header');
         await page.locator('#clear-articles').click();
-        await verify(events.filter(e => e.merchandiseSectors.includes('alimentare')));
+        await verify(events);
+        assert.equal(new URL(page.url()).searchParams.get('settore'), null);
+        assert.equal(new URL(page.url()).searchParams.get('articoli'), null);
+        for (const sector of Object.keys(api.SECTORS)) {
+            await page.locator('#article-sector-options input[value="' + sector + '"]').check();
+            await verify(events.filter(e => e.merchandiseSectors.includes(sector)));
+            assert.equal(await page.locator('#article-summary-text').innerText(), api.SECTORS[sector]);
+        }
+        await page.locator('#article-sector-options input[value=""]').check();
+        await verify(events);
         await page.locator('#article-summary').focus();
         await page.keyboard.press('Escape');
+        await page.goto(base + '/fiere?settore=artigianato');
+        await verify(events.filter(e => e.merchandiseSectors.includes('artigianato')));
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '1');
+        await openExtras();
+        assert.equal(await page.locator('#article-summary-text').innerText(), 'Artigianato');
+        assert(await page.locator('#article-sector-options input[value="artigianato"]').isChecked());
+        await page.getByRole('button', { name: 'Rimuovi Artigianato', exact: true }).click();
+        await verify(events);
+        assert.equal(new URL(page.url()).searchParams.get('settore'), null);
         // URL values are deduplicated, validated and checked against the sector.
         await page.goto(base + '/fiere?articoli=calzature,calzature,inesistente,toString&articoli=dolciumi');
         await verify(union);
@@ -193,8 +221,9 @@ async function run(engine, engineName, width, height, base) {
         assert.equal(new URL(page.url()).searchParams.get('articoli'), 'cioccolato');
         await openExtras();
         assert.equal(await page.locator('#article-summary-text').innerText(), 'Cioccolato e cacao');
-        assert.equal(await page.locator('#extra-filter-count').innerText(), '3');
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
         await page.locator('#article-summary').click();
+        assert(await page.locator('#article-sector-options input[value="alimentare"]').isChecked());
         assert(await checkbox('dolciumi').evaluate(input => input.indeterminate));
         await checkbox('dolciumi').check();
         assert.deepEqual(new URL(page.url()).searchParams.get('articoli').split(',').sort(), ['cioccolato', 'dolciumi']);

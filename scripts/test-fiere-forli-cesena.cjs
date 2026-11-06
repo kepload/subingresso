@@ -67,7 +67,9 @@ const server=http.createServer((req,res)=>{
      assert(await page.locator('#fair-dialog').isVisible());assert.match(await page.locator('#fair-dialog').innerText(),/Forlì-Cesena/);
      await page.keyboard.press('Escape');
     }
-    await page.selectOption('#sector-filter','alimentare');
+    if (!await page.locator('#extra-filters').evaluate(element => element.open)) await page.locator('#extra-filters > summary').click();
+    await page.locator('#article-summary').click();
+    await page.locator('#article-sector-options input[value="alimentare"]').check();
     const expected=events.filter(e=>e.merchandiseSectors.includes('alimentare')).length;
     await page.waitForFunction(n=>document.querySelector('#list-count').textContent===String(n),expected);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
