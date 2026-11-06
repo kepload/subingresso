@@ -147,7 +147,9 @@ button.fiere-reputation{text-decoration:none}
 #fair-dialog::backdrop { background: #0f172a70; backdrop-filter: none; }
 body:has(#fair-dialog:modal) { overflow: hidden; }
 #fair-dialog .fiere-dialog-top { position: sticky; top: -28px; z-index: 2; padding: 12px 0; margin: -12px 0 12px; background: var(--ad-panel, #fff); }
-#fair-dialog #close-detail { width: 44px; height: 44px; flex: 0 0 44px; background: var(--ad-raised, #f1f5f9); color: inherit; }
+#fair-dialog #close-detail { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; line-height: 1; background: var(--ad-raised, #f1f5f9); color: inherit; }
+#fair-dialog #close-detail svg { display: block; flex: none; pointer-events: none; }
+.fiere-filters .fiere-search-title { margin: 0 0 20px; color: var(--ad-ink, #102b52); font-size: 24px; font-weight: 800; letter-spacing: -.025em; line-height: 1.25; }
 #fair-dialog #detail-title { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.025em; line-height: 1.2; overflow-wrap: anywhere; }
 #fair-dialog #detail-location { margin-top: 8px; font-size: 16px; color: var(--ad-muted, #475569); }
 .fiere-detail-overview { margin: 24px 0; display: grid; gap: 18px; }
@@ -179,6 +181,7 @@ body:has(#fair-dialog:modal) { overflow: hidden; }
     #fair-dialog { padding: 20px; width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
     #fair-dialog .fiere-dialog-top { top: -20px; }
     #fair-dialog #detail-title { font-size: 24px; }
+    .fiere-filters .fiere-search-title { font-size: 22px; margin-bottom: 18px; }
     #fair-dialog .sf-fair-actions > a { margin-left: 0; }
     #fair-dialog .fiere-detail-facts { grid-template-columns: 1fr; gap: 4px; }
     #fair-dialog .fiere-detail-facts dd { margin-bottom: 12px; }
