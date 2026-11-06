@@ -93,10 +93,17 @@ async function run(engine, engineName, width, height, base) {
         }
         await page.goto(base + '/fiere');
         await verify(events);
-        assert.equal(await page.locator('.fiere-main-fields > .fiere-place').count(), 2);
+        assert.equal(await page.locator('.fiere-main-fields > .fiere-place').count(), 1);
+        assert(!await page.locator('#article-summary').evaluate(element => element.checkVisibility()));
+        assert.equal(await page.locator('#extra-filters #article-filter').count(), 1);
         assert(!await page.locator('#sector-filter').isVisible());
         assert(!await page.locator('#type-filter').isVisible());
         assert.equal(await page.locator('#extra-filters #sector-filter, #extra-filters #type-filter').count(), 2);
+        if (process.env.FIERE_ARTICLES_OUTPUT) {
+            fs.mkdirSync(process.env.FIERE_ARTICLES_OUTPUT, { recursive: true });
+            await page.screenshot({ path: path.join(process.env.FIERE_ARTICLES_OUTPUT, engineName + '-' + width + '-main.png'), fullPage: false });
+        }
+        await openExtras();
         await page.locator('#article-summary').click();
         assert.equal(await page.locator('#article-options input').count(), 24);
         const sweetsCount = events.filter(event => eligible(event, ['dolciumi', 'cioccolato'])).length;
@@ -116,11 +123,14 @@ async function run(engine, engineName, width, height, base) {
         await page.selectOption('#type-filter', 'tradizionale');
         const combined = compactUnion.filter(e => e.months.includes(10) && e.region === 'Lombardia' && e.category === 'tradizionale');
         await verify(combined, true);
-        assert.equal(await page.locator('#extra-filter-count').innerText(), '1');
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
         await page.locator('#extra-filters > summary').click();
         assert(await page.locator('#extra-filter-count').isVisible());
         await page.reload();
         await verify(combined, true);
+        assert(!await page.locator('#article-summary').evaluate(element => element.checkVisibility()));
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
+        await openExtras();
         assert.equal(await page.locator('#selected-articles button').count(), 2);
         await page.locator('#reset-filters').click();
         await verify(events);
@@ -153,6 +163,7 @@ async function run(engine, engineName, width, height, base) {
         // Chips remove individual types; keyboard checkboxes and empty results work.
         await page.goto(base + '/fiere?articoli=calzature,dolciumi');
         await verify(union);
+        await openExtras();
         await page.getByRole('button', { name: 'Rimuovi Calzature', exact: true }).click();
         await verify(events.filter(e => eligible(e, ['dolciumi'])));
         await page.locator('#article-summary').click();
@@ -180,8 +191,9 @@ async function run(engine, engineName, width, height, base) {
         await page.goto(base + '/fiere?articoli=cioccolato&settore=alimentare&tipo=sagra');
         await verify(api.filterEvents(events, { months: [], query: '', articles: ['cioccolato'], sector: 'alimentare', category: 'sagra' }));
         assert.equal(new URL(page.url()).searchParams.get('articoli'), 'cioccolato');
+        await openExtras();
         assert.equal(await page.locator('#article-summary-text').innerText(), 'Cioccolato e cacao');
-        assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '3');
         await page.locator('#article-summary').click();
         assert(await checkbox('dolciumi').evaluate(input => input.indeterminate));
         await checkbox('dolciumi').check();
@@ -196,13 +208,16 @@ async function run(engine, engineName, width, height, base) {
         await page.goto(base + '/fiere?articoli=calzature&q=' + encodeURIComponent(shoes.name) + '&provincia=' + encodeURIComponent(shoes.province));
         await count(api.filterEvents(events, { articles: ['calzature'], query: shoes.name, province: shoes.province, months: [] }).length);
         await page.locator('.fiere-card[data-event-id="' + shoes.id + '"] .fiere-card-button').click();
+        await page.locator('#detail-facts').locator('..').locator('summary').click();
         assert((await page.locator('#detail-facts').innerText()).includes('Calzature'));
         await page.locator('#detail-page-link').click();
-        assert((await page.locator('main dl').innerText()).includes('Calzature'));
+        await page.locator('#detail-facts').locator('..').locator('summary').click();
+        assert((await page.locator('#detail-facts').innerText()).includes('Calzature'));
         assert.equal(new URL(page.url()).pathname, '/fiere/' + shoes.id);
         // Every choice fits a touch target and the menu scrolls on short screens.
         await page.goto(base + '/fiere?articoli=calzature,dolciumi');
         await verify(union);
+        await openExtras();
         await page.locator('#article-summary').click();
         assert(await page.locator('#article-options label').evaluateAll(labels => labels.every(label => label.getBoundingClientRect().height >= 44)));
         assert(await page.locator('.fiere-article-menu').evaluate(menu => menu.scrollHeight > menu.clientHeight));
@@ -211,6 +226,8 @@ async function run(engine, engineName, width, height, base) {
         if (process.env.FIERE_ARTICLES_OUTPUT) {
             fs.mkdirSync(process.env.FIERE_ARTICLES_OUTPUT, { recursive: true });
             await page.screenshot({ path: path.join(process.env.FIERE_ARTICLES_OUTPUT, engineName + '-' + width + '-menu.png'), fullPage: false });
+            await page.evaluate(() => document.documentElement.classList.add('admin-dark'));
+            await page.screenshot({ path: path.join(process.env.FIERE_ARTICLES_OUTPUT, engineName + '-' + width + '-menu-dark.png'), fullPage: false });
         }
         assert.deepEqual(errors, []);
         console.log(engineName + ' ' + width + 'x' + height + ': multi-select, OR results, list/map, URL/reload, sectors, reset, keyboard, details and overflow passed.');

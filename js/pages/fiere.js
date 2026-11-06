@@ -927,7 +927,7 @@
         renderMonths(); renderArticles(); renderList(events); renderMap(events);
         const articleCount = articleSelections(state.articles, state.sector).length;
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (articleCount ? ' · ' + articleCount + (articleCount === 1 ? ' tipologia' : ' tipologie') : '');
-        const extraCount = Number(Boolean(state.query)) + Number(Boolean(state.sector)) + Number(Boolean(state.category));
+        const extraCount = Number(Boolean(state.query)) + Number(Boolean(state.sector)) + Number(Boolean(state.category)) + Number(Boolean(articleCount));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));
