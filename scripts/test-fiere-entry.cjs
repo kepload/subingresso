@@ -95,7 +95,7 @@ const server = http.createServer((req,res) => {
             assert.equal(await page.locator('#province-filter').inputValue(),fair.province);
             await page.locator('#close-detail').click();
             assert(!new URL(page.url()).searchParams.has('fiera'));
-            await page.goto(base+'/fiere?q='+encodeURIComponent(fair.name));
+            await page.goto(base+'/fiere?q='+encodeURIComponent(fair.city));
             await page.locator('[data-event-id="'+fair.id+'"] .fiere-card-button').click();
             await page.locator('#detail-explore').click();
             assert.equal(await page.locator('#province-filter').inputValue(),fair.province);
