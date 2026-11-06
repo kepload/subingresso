@@ -1,0 +1,2177 @@
+{
+  "province": "Potenza",
+  "checkedAt": "2026-11-06",
+  "baseline": "d240d1b",
+  "method": "Ricognizione nominale dei 100 comuni, ricerche primarie mirate e verifica delle identità; nessuna soglia di completezza né censimento certificato. Query effettive e limiti conservati.",
+  "municipalities": [
+    {
+      "city": "Abriola",
+      "queryExecuted": true,
+      "queries": [
+        "Abriola fiera sagra mercatino comune proloco",
+        "\"Abriola\" sagra proloco",
+        "site:comune.abriola.pz.it \"autunno\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-01.json",
+        ".local/ricerche/potenza-20261106/web-26.json",
+        ".local/ricerche/potenza-20261106/web-45.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Festa dell’Autunno 17 ottobre 2026 emersa nei portali; primaria regionale recuperata sulla rievocazione Assalto al Castello, che da sola non dimostra una fiera o banchi. Ricerca nel dominio comunale senza risultati utili; nessuna nuova scheda.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Acerenza",
+      "queryExecuted": true,
+      "queries": [
+        "Acerenza fiera sagra mercatino comune proloco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-01.json"
+      ],
+      "newIds": [
+        "basilicata-acerenza-festival-dei-prodotti-tipici",
+        "basilicata-acerenza-mercatini-di-natale-e-dei-sapori",
+        "basilicata-acerenza-mercatino-del-borgo"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/acerenza-al-via-mercatino-dellartigianato/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/768ea5c27b4ec41c.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/ad-acerenza-i-mercatini-di-natale-e-dei-sapori/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/3082fc38b445a7b8.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Festival dei prodotti tipici 2025 (APT), mercatini di Natale 2025 (comunicato Pro Loco) e Mercatino Del Borgo istituito nel 2016. Tenuti distinti luci natalizie e mercatini; regolamento fiere trovato nell’indice comunale, non tariffario letto.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Albano di Lucania",
+      "queryExecuted": true,
+      "queries": [
+        "\"Albano di Lucania\" fiera sagra mercatino",
+        "\"Albano di Lucania\" \"Notti della magia\" stand"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-01.json",
+        ".local/ricerche/potenza-20261106/web-26.json"
+      ],
+      "newIds": [
+        "basilicata-albano-di-lucania-le-notti-della-magia"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/de/eventi-in-basilicata/lasciarsi-incantare-dalla-magia-dei-vicoli-ad-albano-di-lucania/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/9373cb75232d0499.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Le Notti della Magia 28–30 agosto 2026 nell’APT. Il decreto ministeriale nomina la rievocazione ma non prova prezzi o posteggi. Comunicato storico su archivio Potenza in timeout; usata la pagina APT acquisita.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Anzi",
+      "queryExecuted": true,
+      "queries": [
+        "Anzi fiera sagra mercatino comune",
+        "\"Banzi\" Basilicata fiera sagra mercatino comune proloco",
+        "\"Banzi\" \"sagra\" site:regione.basilicata.it",
+        "site:visitanzi.it \"sagra\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-01.json",
+        ".local/ricerche/potenza-20261106/web-03.json",
+        ".local/ricerche/potenza-20261106/web-33.json",
+        ".local/ricerche/potenza-20261106/web-45.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Visit Anzi descrive Folk Festival, Guglie e feste religiose. Il programma culturale non prova autonomamente un mercato per espositori; nessuna scheda commerciale forzata dalla rassegna musicale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Armento",
+      "queryExecuted": true,
+      "queries": [
+        "\"Armento\" fiera sagra mercatino comune pro loco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-02.json"
+      ],
+      "newIds": [
+        "basilicata-armento-sagra-dei-piatti-tipici-e-ru-pest-armentese"
+      ],
+      "sources": [
+        {
+          "url": "https://armento-api.municipiumapp.it/s3/335/allegati/ordinanza-15_2025-docx-signed.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/225d6c3c043fb069.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Ordinanza 15/2025 originale: Sagra dei Piatti Tipici e ru’ Pest il 10 agosto. Distinta la fascia di chiusura fino alle 3 dell’11 dalle date dell’evento. Pagina eventi corrente vuota non equivale ad assenza di eventi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Atella",
+      "queryExecuted": true,
+      "queries": [
+        "\"Atella\" fiera sagra mercatino comune pro loco",
+        "\"Atella\" \"2026\" \"castagna\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-02.json",
+        ".local/ricerche/potenza-20261106/web-33.json"
+      ],
+      "newIds": [
+        "basilicata-atella-beer-festival"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Beer Festival 18–20 luglio 2025 nel calendario APT. Pista Castagna/Emigrante 2026 su RACE e riscontro regionale 2012: collegamento di identità e programma corrente non sufficientemente corroborati, non aggiunta seconda sagra dalla sola variante.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Avigliano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Avigliano\" fiera sagra mercatino comune pro loco",
+        "\"fiera\" \"Avigliano\" \"2026\" bando tariffa"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-02.json",
+        ".local/ricerche/potenza-20261106/web-35.json"
+      ],
+      "newIds": [
+        "basilicata-avigliano-fiera-di-lagopesole-del-29-giugno"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.avigliano.pz.it/schedadocumento/1287",
+          "evidenceFile": ".local/ricerche/potenza-20261106/9f6d89733e84492f.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Fiera di Lagopesole 29 giugno 2026 documentata dal Comune. Baccalà e Strazzata già presenti: nessuna duplicazione. Campionaria nazionale: AEFI elenca 2026, stampa documenta annullamento 2025; organizzatore corrente non recuperato, esclusa dal delta e lasciata come pista.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Balvano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Balvano\" fiera sagra mercatino comune pro loco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-02.json"
+      ],
+      "newIds": [
+        "basilicata-balvano-sagra-r-i-cavatiedd"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Cavatiedd 1–2 agosto 2025 nel calendario APT con locandina. Stampa riprende 7–8 agosto 2026 dalla Pro Loco: non usata come originale corrente né come nuovo evento.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Banzi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Banzi\" Basilicata fiera sagra mercatino comune proloco",
+        "\"Banzi\" \"sagra\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-03.json",
+        ".local/ricerche/potenza-20261106/web-33.json"
+      ],
+      "newIds": [
+        "basilicata-banzi-foodies-festival-della-ruralita",
+        "basilicata-banzi-sagra-del-peperone"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/banzi-29-settembre-quinta-edizione-sagra-del-peperone/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/52dc61392508c93f.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Foodies 18–20 luglio 2025 nell’APT; Sagra del Peperone nel comunicato comunale 2018. Varianti “crusco e non solo” non generate come nuovi eventi. Mercato ordinario mensile e rinvii 2024/2025 non aggiunti come fiere straordinarie.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Baragiano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Baragiano\" Basilicata fiera sagra mercatino comune proloco",
+        "site:comune.baragiano.pz.it \"sagra\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-03.json",
+        ".local/ricerche/potenza-20261106/web-45.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Comune con bando per area mercatale alimentare/non alimentare; guida regionale storica cita fiere e patrimonio culturale menziona percorso enogastronomico. Mancano un programma di edizione e condizioni specifiche recuperate; nessuna scheda da date isolate della guida 2009.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Barile",
+      "queryExecuted": true,
+      "queries": [
+        "\"Barile\" Basilicata fiera sagra mercatino comune proloco",
+        "\"Barile\" \"2026\" \"Tumact\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-03.json",
+        ".local/ricerche/potenza-20261106/web-33.json"
+      ],
+      "newIds": [
+        "basilicata-barile-tumact-me-tulez-festival-dell-aglianico-del-vulture"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/a-barile-la-festa-dellaglianico/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/b934b76d80280599.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Tumact Me Tulez 3–4 ottobre 2026 nel comunicato del presidente Pro Loco sul portale regionale. Confrontata edizione 2024; Via Crucis e manifestazioni culturali non moltiplicate in schede mercato.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Bella",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bella\" Basilicata fiera sagra mercatino comune proloco",
+        "\"Bella\" \"sagra\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-03.json",
+        ".local/ricerche/potenza-20261106/web-26.json"
+      ],
+      "newIds": [
+        "basilicata-bella-strade-gustando"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Strade Gustando 17–18 agosto 2025, APT e locandina. Fuochi di San Giuseppe nel patrimonio culturale e Sentiero del Pane nei finanziamenti: non bastano a provare nuove fiere o costi banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Brienza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Brienza\" fiera sagra mercatino comune proloco",
+        "\"Brienza\" fiera site:comune.brienza.pz.it",
+        "site:comune.brienza.pz.it \"fiera\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-04.json",
+        ".local/ricerche/potenza-20261106/web-33.json",
+        ".local/ricerche/potenza-20261106/web-45.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pista fiera SS. Crocifisso 19–20 settembre 2026 da portale automatico; ricerca nel dominio comunale senza risultato di edizione recuperabile. Guida 2009 non usata per proclamare conferme 2026. Nessuna nuova scheda.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Brindisi Montagna",
+      "queryExecuted": true,
+      "queries": [
+        "\"Brindisi Montagna\" fiera sagra mercatino comune proloco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-04.json"
+      ],
+      "newIds": [
+        "basilicata-brindisi-montagna-giornate-medioevali"
+      ],
+      "sources": [
+        {
+          "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=417&sec=5",
+          "evidenceFile": ".local/ricerche/potenza-20261106/e02a67b0edd5fd94.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Giornate Medioevali documentate dalla scheda depositata dal Comune: fine ottobre, con dettagli 2023. Expo Pro Loco al Parco della Grancia emersa nel comunicato AGR, da non confondere con le Giornate: non aggiunta senza chiudere data e continuità.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Calvello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Calvello\" fiera sagra mercatino comune proloco",
+        "\"Calvello\" \"castagna\" site:regione.basilicata.it",
+        "\"Calvello\" \"2026\" \"Sagra\" site:comune.calvello.pz.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-04.json",
+        ".local/ricerche/potenza-20261106/web-34.json",
+        ".local/ricerche/potenza-20261106/web-42.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Sito Pro Loco indicizzato con Sagra 24–25 ottobre 2026 e pacchetti turistici da 15/12 €; recupero diretto HTTP 999 e browser in timeout. Fonte regionale storica 2014, non usata come conferma 2026. Pista conservata; prezzi esperienze non costi banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Calvera",
+      "queryExecuted": true,
+      "queries": [
+        "\"Calvera\" fiera sagra mercatino comune proloco",
+        "\"Calvera\" \"Maccaruni\" site:regione.basilicata.it",
+        "\"Calvera\" \"Maccaruni\" \"Pro Loco\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-04.json",
+        ".local/ricerche/potenza-20261106/web-37.json",
+        ".local/ricerche/potenza-20261106/web-46.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Maccaruni cu Fierr 10 agosto 2026 annunciati in resoconto GustArte: l’evento di Gravina è fuori provincia. Pro Loco individuata, ma programma originale calverese non acquisito. Pitta di Grannini e sapori autunnali emersi nella stampa storica: non aggiunti sulla sola citazione.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Campomaggiore",
+      "queryExecuted": true,
+      "queries": [
+        "\"Campomaggiore\" (fiera OR sagra OR mercatini) Basilicata",
+        "\"Campomaggiore\" sagra proloco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-05.json",
+        ".local/ricerche/potenza-20261106/web-26.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fonti Comune/Pro Loco su Utopia, festa del Carmelo, organetto e antichi mestieri; risultati omonimi nel Lazio esclusi. Nessun programma commerciale autonomo o bando banco recuperato: non affermata assenza di fiere.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Cancellara",
+      "queryExecuted": true,
+      "queries": [
+        "\"Cancellara\" (fiera OR sagra OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-05.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Sagra della Salsiccia già presente. Fonte regionale 2015 su San Biagio e replica il 7 febbraio proposta come approfondimento storico, non nuova identità. Edizione 2026 dei portali e Decathlon delle Tradizioni non generano doppioni.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Carbone",
+      "queryExecuted": true,
+      "queries": [
+        "\"Carbone\" (fiera OR sagra OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-05.json"
+      ],
+      "newIds": [
+        "basilicata-carbone-mostra-mercato-del-tartufo-bianco-del-serrapotamo",
+        "basilicata-carbone-sagra-della-farina-di-carosella-lucana",
+        "basilicata-carbone-sagra-del-coriandolo"
+      ],
+      "sources": [
+        {
+          "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/40a65dbf30d237d1.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/a-carbone-torna-la-mostra-del-tartufo-bianco/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/5708d2f333d41391.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/carbone-bilancio-positivo-della-sagra-della-farina/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/8dc12fcaee11895a.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Mostra Mercato Tartufo 2025 documentata integralmente; programma 2026 dei portali da corroborare. Carosella: APT 2025 e resoconto 2026 senza giorno assoluto. Coriandolo in elenco ALSIA senza anno. Budget culturali non interpretati come tariffari espositori.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castelgrande",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castelgrande\" (fiera OR sagra OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-05.json"
+      ],
+      "newIds": [
+        "basilicata-castelgrande-mercatini-di-natale-e-mostra-di-presepi"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.castelgrande.pz.it/evento/mercatini-di-natale/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/c7a97987128f3abc.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Pagina dettaglio Natale 20 dicembre 2025–6 gennaio 2026; indice comunale con giorni diversi, discordanza esplicita. Nessuna estensione al 2026/2027 e nessuna presunzione di apertura quotidiana dei banchi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castelluccio Inferiore",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castelluccio Inferiore\" (fiera OR sagra OR mercatini)",
+        "\"Castelluccio Inferiore\" \"Fiera di Santa Maria\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-06.json",
+        ".local/ricerche/potenza-20261106/web-40.json"
+      ],
+      "newIds": [
+        "basilicata-castelluccio-inferiore-a-pricicch",
+        "basilicata-castelluccio-inferiore-festa-del-picciddat"
+      ],
+      "sources": [
+        {
+          "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=1162&sec=5",
+          "evidenceFile": ".local/ricerche/potenza-20261106/a4cad6e8a909eae9.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/40a65dbf30d237d1.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Pricicch’ descritta dal Comune nel patrimonio culturale con riferimenti 2018–2020; Festa del Picciddat in ALSIA ad aprile senza anno. Santa Maria 7 settembre 2026 emersa solo nei portali: non aggiunta come conferma primaria.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castelluccio Superiore",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castelluccio Superiore\" (fiera OR sagra OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-06.json"
+      ],
+      "newIds": [
+        "basilicata-castelluccio-superiore-fiera-in-onore-di-maria-angelica-mastroti",
+        "basilicata-castelluccio-superiore-pollino-wine-fest"
+      ],
+      "sources": [
+        {
+          "url": "https://castellucciosuperiore.halleyweb.it/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20007/idtesto/3",
+          "evidenceFile": ".local/ricerche/potenza-20261106/928081e1e9e50695.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.comune.castellucciosuperiore.pz.it/schedaEventoDetail/estate-castelluccese-2026",
+          "evidenceFile": ".local/ricerche/potenza-20261106/1c069a63d1ad1cfb.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Calendario comunale: fiera Maria Angelica Mastroti 25 maggio senza anno; cartellone estivo 2026: Pollino Wine Fest 1 agosto. Botanicum ALSIA è una pista erbe/officinali, non automaticamente mercato; non aggiunto.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castelmezzano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castelmezzano\" (fiera OR sagra OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-06.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Portale turistico Le Feste descrive Cuccìa a Santa Lucia e Festa du Masc’. Titolarità primaria del sito e programma di mercato non completamente risolti; nessun 2026 dedotto. Pagina istituzionale eventi non certifica assenza di iniziative.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castelsaraceno",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castelsaraceno\" (fiera OR sagra OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-06.json"
+      ],
+      "newIds": [
+        "basilicata-castelsaraceno-festa-della-montagna-fiera-della-montagna",
+        "basilicata-castelsaraceno-festa-del-centro-storico"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolococastelsaraceno.it/festa-della-montagna-2025/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/8eca5d92809dc587.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.prolococastelsaraceno.it/home-2/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/330f7b50bfcfc201.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Festa Centro Storico 13 agosto 2024 e Montagna/Fiera come una sola identità, documentata 2023 e 2025. Modulo espositori 2023 originale con due quote; open call 2025 su Drive non acquisita integralmente. Prezzi escursioni esclusi dai costi banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Castronuovo di Sant'Andrea",
+      "queryExecuted": true,
+      "queries": [
+        "\"Castronuovo di Sant’Andrea\" (fiera OR sagra OR mercatino)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-07.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pro Loco ufficiale consultata. Caldarroste 7 novembre 2026 nei portali automatici, non sulla pagina primaria acquisita. Mercatino settimanale e sospensione 2020 non sono fiere aggiuntive. Nessuna scheda 2026 dalla sola rassegna indicizzata.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Cersosimo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Cersosimo\" (fiera OR sagra OR mercatino)",
+        "\"Cersosimo\" sagra sito comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-07.json",
+        ".local/ricerche/potenza-20261106/web-27.json"
+      ],
+      "newIds": [
+        "basilicata-cersosimo-strazzata"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Strazzata 18 agosto 2025 in APT, Piazza Unità. Cena sotto le Stelle nel cartellone culturale non trasformata in nuova fiera. Gli indirizzi Largo Fiera in registri PAT e SUAP non provano autonomamente eventi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Chiaromonte",
+      "queryExecuted": true,
+      "queries": [
+        "\"Chiaromonte\" (fiera OR sagra OR mercatino)",
+        "\"Chiaromonte\" sagra \"Pro Loco\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-07.json",
+        ".local/ricerche/potenza-20261106/web-27.json"
+      ],
+      "newIds": [
+        "basilicata-chiaromonte-sagra-del-sambuco"
+      ],
+      "sources": [
+        {
+          "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/40a65dbf30d237d1.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Sambuco a maggio in ALSIA; stampa annuncia 23 maggio 2026 ma programma originale non acquisito. Carnevale 2026 APT e patrimonio: non confusi automaticamente con Sambuco né introdotti come generica fiera commerciale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Corleto Perticara",
+      "queryExecuted": true,
+      "queries": [
+        "\"Corleto Perticara\" (fiera OR sagra OR mercatino)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-07.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fiera 4 ottobre 2026 nel portale automatico; albo comunale individuato ma atto specifico non recuperato integralmente. Pro Loco Corletana consultata, nessun bando tariffario specifico acquisito. Date di guide storiche non bastano a certificare edizioni correnti.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Episcopia",
+      "queryExecuted": true,
+      "queries": [
+        "\"Episcopia\" sagra fiera comune",
+        "\"Episcopia\" \"sagra\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-08.json",
+        ".local/ricerche/potenza-20261106/web-34.json"
+      ],
+      "newIds": [
+        "basilicata-episcopia-le-vie-del-gusto-sagra-dei-rascatiedd-ca-muddica"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/le-vie-del-gusto-a-episcopia/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/bb5a6b4639ba744d.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Programma primario 7 agosto 2025: Vie del Gusto include la Sagra dei Rascatiedd, una sola scheda. Calendario ALSIA e bollettino UNPLI storico usati per confronto, non per creare duplicati o date 2026.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Fardella",
+      "queryExecuted": true,
+      "queries": [
+        "\"Fardella\" sagra fiera comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-08.json"
+      ],
+      "newIds": [
+        "basilicata-fardella-sagra-dei-raskatiell"
+      ],
+      "sources": [
+        {
+          "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=290&sec=5",
+          "evidenceFile": ".local/ricerche/potenza-20261106/ceade88d31640f9d.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Raskatiell: scheda comunale patrimonio, Visit Fardella e ALSIA concordano sul periodo agosto, ricorrenza 18. Sapori/Fardella d’Autunno 2026 nei portali: programma originale non recuperato. Nessun costo banco dedotto dai contributi comunali.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Filiano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Filiano\" sagra fiera comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-08.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pecorino già presente, programma 52ª edizione individuato nel Comune e modulo catering emerso nell’indice; appalto catering non prezzo per banco. Mercato della Terra e Lu Muzz’c sono piste distinte non chiuse da originali di edizione.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Forenza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Forenza\" sagra fiera comune",
+        "\"Forenza\" \"fiera\" \"14 settembre\" \"2026\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-08.json",
+        ".local/ricerche/potenza-20261106/web-38.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fiera del Crocifisso 14 settembre 2026 nell’indicizzazione della home comunale; pagina attuale acquisita non conserva quel contenuto. Il portale automatico lo riprende; atto originale non recuperato, nessuna nuova scheda dalla sola copia.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Francavilla in Sinni",
+      "queryExecuted": true,
+      "queries": [
+        "\"Francavilla in Sinni\" (sagra OR fiera OR mercatini)",
+        "\"Francavilla in Sinni\" \"sagra\" site:comune.francavillainsinni.pz.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-09.json",
+        ".local/ricerche/potenza-20261106/web-38.json"
+      ],
+      "newIds": [
+        "basilicata-francavilla-in-sinni-madonna-di-pertusavutte-sagra-del-vino-nuovo"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.francavillainsinni.pz.it/contenuti/19302/sapori",
+          "evidenceFile": ".local/ricerche/potenza-20261106/d9706285c02c23d8.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Comune I Sapori: Madonna di Pertusavutte l’8 dicembre senza edizione corrente. Autunno e Sagra Castagne 7 novembre 2026 nei comunicati stampa; pagina originale organizzatore non recuperata, non proiettata sulla sagra del vino.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Gallicchio",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gallicchio\" (sagra OR fiera OR mercatini)",
+        "\"Gallicchio\" sagra comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-09.json",
+        ".local/ricerche/potenza-20261106/web-27.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pagina eventi comunale acquisita senza appuntamenti correnti; APT estate 2025 riporta spettacolo di Dino Paradiso, non una fiera. Query nominali non hanno restituito un programma commerciale primario: esito limitato, non assenza di eventi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Genzano di Lucania",
+      "queryExecuted": true,
+      "queries": [
+        "\"Genzano di Lucania\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-09.json"
+      ],
+      "newIds": [
+        "basilicata-genzano-di-lucania-sagra-dell-uva-e-dei-prodotti-tipici"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/a-genzano-sabato-la-sagra-delluva/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/463a5e40d4e922da.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Sagra dell’Uva nel comunicato Pro Loco su Regione 2017. Pro Loco corrente consultata (aperture Monteserico); 10–11 ottobre 2026 nella stampa, programma originale non recuperato. Nessuna data esatta dedotta dal sabato del testo storico.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Ginestra",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ginestra\" (sagra OR fiera OR mercatini)",
+        "\"Ginestra\" \"Basilicata\" sagra",
+        "\"Ginestra\" \"Liakra\"",
+        "\"Ginestra\" \"Liakra et Bare\" site:comune.ginestra.pz.it",
+        "\"Liakra et Bare\" comune Ginestra 2026"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-09.json",
+        ".local/ricerche/potenza-20261106/web-27.json",
+        ".local/ricerche/potenza-20261106/web-39.json",
+        ".local/ricerche/potenza-20261106/web-42.json",
+        ".local/ricerche/potenza-20261106/web-43.json"
+      ],
+      "newIds": [
+        "basilicata-ginestra-liakra-et-bare-il-borgo-dei-sapori-arbereshe"
+      ],
+      "sources": [
+        {
+          "url": "https://agr.regione.basilicata.it/post/a-ginestra-il-borgo-dei-sapori-arbereshe/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/2fe9e8b65b4db12a.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Individuata e acquisita fonte AGR 2025 per Liakra et Bare. Stampa e portali sul 24 ottobre 2026 conservati come pista: non dichiarati lettura di originale comunale. Esclusi i mercatini della Ginestra Fiorentina.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Grumento Nova",
+      "queryExecuted": true,
+      "queries": [
+        "\"Grumento Nova\" (sagra OR fiera OR mercatini) comune",
+        "\"Grumento Nova\" \"mercatini\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-10.json",
+        ".local/ricerche/potenza-20261106/web-46.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Giornale comunale g-090 conserva resoconto di una prima edizione natalizia il 16 dicembre; brochure municipale menziona una fiera. Dati storici non sufficientemente collocati per nuova scheda di edizione; portali turistici generici non usati come conferma 2026.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Guardia Perticara",
+      "queryExecuted": true,
+      "queries": [
+        "\"Guardia Perticara\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-10.json"
+      ],
+      "newIds": [
+        "basilicata-guardia-perticara-sagra-della-strazzatella"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/a-guardia-perticara-la-sagra-della-strazzatella/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/873668439e360d90.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Strazzatella 21 agosto 2018 nel programma primario regionale. Portale 2026 con data fine 2025 incoerente: nessuna data corrente importata. SUAP e candidatura culturale non sono bandi posteggi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Lagonegro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lagonegro\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-10.json"
+      ],
+      "newIds": [
+        "basilicata-lagonegro-fiera-della-madonna-di-sirino"
+      ],
+      "sources": [
+        {
+          "url": "https://comune.lagonegro.pz.it/schedadocumento/467",
+          "evidenceFile": ".local/ricerche/potenza-20261106/c8ede632dc1d74dc.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Ordinanza comunale 9/2025 acquisita per Fiera Sirino 21–22 settembre. Festa Castagna 31 ottobre–1 novembre 2026 trovata nella stampa/portali, non chiusa con originale. Rifiuti e concessioni non interpretati come listino.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Latronico",
+      "queryExecuted": true,
+      "queries": [
+        "\"Latronico\" (sagra OR fiera OR mercatini) comune",
+        "\"Latronico\" \"mercatini\" site:comune.latronico.pz.it",
+        "site:regione.basilicata.it \"Latronico\" \"castagna\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-10.json",
+        ".local/ricerche/potenza-20261106/web-41.json",
+        ".local/ricerche/potenza-20261106/web-44.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pagina eventi comunale corrente priva di appuntamenti. Santo Stefano 26 dicembre 2026 e Saperi/Sapori ad Agromonte Mileo nei portali, originali non recuperati. Nessun nolo stand quantificato da questi testi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Laurenzana",
+      "queryExecuted": true,
+      "queries": [
+        "\"Laurenzana\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-11.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pista Fiera Addolorata 18 settembre 2026 con elenco operatori ripreso da Laurenzanaonline; sito comunale consultato ma originale assegnazione non acquisito. La fonte giornalistica resta pista, non prova di posteggi liberi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Lauria",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lauria\" (sagra OR fiera OR mercatini) comune",
+        "site:comune.lauria.pz.it \"fiera\" \"2026\"",
+        "Lauria fiera 2026 posteggi bando",
+        "\"Lauria\" \"fiera\" \"novembre\" site:comune.lauria.pz.it",
+        "\"Lauria\" \"fiera\" \"1 novembre\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-11.json",
+        ".local/ricerche/potenza-20261106/web-31.json",
+        ".local/ricerche/potenza-20261106/web-32.json",
+        ".local/ricerche/potenza-20261106/web-34.json",
+        ".local/ricerche/potenza-20261106/web-38.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Regolamento fiere comunale individuato; Fiera Tutti i Santi 1 novembre 2026 e 53 posteggi riportati dal portale automatico. Mancano atto primario e allegati di edizione: nessun dato commerciale corrente importato.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Lavello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lavello\" (sagra OR fiera OR mercatini) comune",
+        "\"fiera\" \"Lavello\" \"2026\" bando tariffa"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-11.json",
+        ".local/ricerche/potenza-20261106/web-35.json"
+      ],
+      "newIds": [
+        "basilicata-lavello-fiera-del-29-maggio",
+        "basilicata-lavello-fiera-dell-11-settembre"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.lavello.pz.it/schedaArgomento/38",
+          "evidenceFile": ".local/ricerche/potenza-20261106/a62f8e8f5e4bbf4b.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.halleyweb.com/c076043/zf/index.php/trasparenza/index/index/categoria/552",
+          "evidenceFile": "vedi prove web e limiti nel dossier",
+          "retrieved": false
+        }
+      ],
+      "outcome": "Aggiunte fiera maggio e settembre come identità distinte. Maggio: soltanto indice ufficiale indicizzato, dichiarato; settembre: pagina comunale acquisita con graduatoria. Rinvii mercati quindicinali non registrati come nuove fiere. Tariffari non letti.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Maratea",
+      "queryExecuted": true,
+      "queries": [
+        "\"Maratea\" (sagra OR fiera OR mercatini) comune",
+        "site:comune.maratea.pz.it \"Mercatini\" \"2026\"",
+        "\"Maratea\" \"mercatini\" \"2026\" \"euro\"",
+        "\"Maratea\" \"mercatino\" site:marateaproloco.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-11.json",
+        ".local/ricerche/potenza-20261106/web-31.json",
+        ".local/ricerche/potenza-20261106/web-35.json",
+        ".local/ricerche/potenza-20261106/web-42.json"
+      ],
+      "newIds": [
+        "basilicata-maratea-mercatini-di-natale"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.maratea.pz.it/Dettaglionews?IDNews=425136",
+          "evidenceFile": ".local/ricerche/potenza-20261106/b5cc7ceae19390de.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Manifestazione di interesse Natale 7 dicembre 2026–6 gennaio 2027 e dettaglio albo 1983/2026 acquisiti; download avviso fallito con pagina errore. Protocollo Pro Loco per antiquariato/usato acquisito, ma nessun periodo verificato: non creata scheda con mesi inventati.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Marsico Nuovo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Marsico Nuovo\" (sagra OR fiera OR mercatini) comune",
+        "\"Marsico Nuovo\" sagra fiera proloco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-12.json",
+        ".local/ricerche/potenza-20261106/web-28.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Agosto Marsicano 2026 acquisito, con pista Sagra Porchetta AICS Pergola 11–12 agosto nei dati della pagina. Titolarità specifica del cartellone e condizioni operatori non risolte; non forzata una nuova scheda dal solo elenco. Festività e spettacoli non trasformati in mercato.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Marsicovetere",
+      "queryExecuted": true,
+      "queries": [
+        "\"Marsicovetere\" (sagra OR fiera OR mercatini) comune",
+        "\"Marsicovetere\" \"fiera\" \"19 settembre\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-12.json",
+        ".local/ricerche/potenza-20261106/web-40.json"
+      ],
+      "newIds": [
+        "basilicata-marsicovetere-rassegna-gastronomica-del-panuozzo-e-della-pizza-in-tour"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Rassegna panuozzo/pizza 10–11 luglio 2025 nell’APT. Fiera 19 settembre 2026 nei portali e antiquariato due volte l’anno in guida privata: atti e date primarie non acquisiti. Tartufo/Vini lucani richiamati da promozione turistica, pista separata.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Maschito",
+      "queryExecuted": true,
+      "queries": [
+        "\"Maschito\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-12.json"
+      ],
+      "newIds": [
+        "basilicata-maschito-festa-dell-uva"
+      ],
+      "sources": [
+        {
+          "url": "https://www.festadelluvamaschito.it/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/8ad99bf6132fb2d2.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Sito dell’organizzatore Berimbau per Festa Uva 12–13 settembre 2026. La sfilata del 13 è parte dei due giorni. Invito comunale generale a proporre eventi estivi non equivale a bando per banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Melfi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Melfi\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-12.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Varola già presente: programma 16–18 ottobre 2026 acquisito dalla Pro Loco, registrato come proposta separata. Giornate medievali 23–25 ottobre nel comunicato ma non automaticamente nuova fiera: occorre distinguere rievocazione e spazi per espositori.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Missanello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Missanello\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-13.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pagina comunale Sagra Castagna 1 novembre 2025 acquisita; footer con collegamento anomalo a casinò, quindi integrità fonte da rivalidare prima di usare nuovi dati. Rascatiell 19 settembre 2026 da portale non corroborato; nessuna scheda introdotta.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Moliterno",
+      "queryExecuted": true,
+      "queries": [
+        "\"Moliterno\" (sagra OR fiera OR mercatini)",
+        "\"Moliterno\" \"Canestrato\" \"2026\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-13.json",
+        ".local/ricerche/potenza-20261106/web-34.json"
+      ],
+      "newIds": [
+        "basilicata-moliterno-sagra-del-canestrato-igp-le-notti-del-canestrato"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/il-9-e-10-agosto-a-moliterno-la-sagra-del-canestrato/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/45762fe384469d14.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Canestrato 9–10 agosto 2026 nel programma primario regionale. Fiera straordinaria 8 agosto compare nel portale estivo, non atto originale. Paese dei Libri nel bollettino UNPLI 2020: pista storica non aggiunta come edizione corrente.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Montemilone",
+      "queryExecuted": true,
+      "queries": [
+        "\"Montemilone\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-13.json"
+      ],
+      "newIds": [
+        "basilicata-montemilone-festa-della-salsiccia-e-dei-prodotti-tipici"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.montemilone.pz.it/novita/avvisi/novita_87.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/6fe87f7b25fa4369.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Bando posteggi Festa Salsiccia 9–11 ottobre 2026: pagina primaria integrale, scadenza 22 settembre. Allegati JavaScript non acquisiti. Calendario home a scorrimento non usato come durata evento. Fiera Santa Lucia emersa da stampa 2025, non aggiunta senza atto.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Montemurro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Montemurro\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-13.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Sagra Olio nei portali 2026 con giorno settimana discordante; brochure turistica comunale e tradizioni agricole acquisite, ma programma originale di edizione non risolto. Festa d’Autunno 7 novembre nella stampa, nessun bando banco verificato.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Muro Lucano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Muro Lucano\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-14.json"
+      ],
+      "newIds": [
+        "basilicata-muro-lucano-sagra-dell-agnello",
+        "basilicata-muro-lucano-sagra-della-patata-di-montagna"
+      ],
+      "sources": [
+        {
+          "url": "https://sagradellapatatadimontagna.it/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/91dccb82d618f322.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Patata 11–13 settembre 2026 dal sito organizzatore e Agnello 12–13 luglio 2025 da APT. Nessuna affluenza importata dal resoconto celebrativo. Il vecchio appalto per area mercato non è tariffario o nuovo evento.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Nemoli",
+      "queryExecuted": true,
+      "queries": [
+        "\"Nemoli\" (sagra OR fiera OR mercatini) comune",
+        "\"Nemoli\" sagra polenta comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-14.json",
+        ".local/ricerche/potenza-20261106/web-28.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Polenta al Carnevale corroborata da APT e fonte culturale comunale che la inserisce in Saperi & Sapori. Non risolta la distinzione tra format storici e data corrente; nessun nuovo evento creato da una duplicazione presunta.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Noepoli",
+      "queryExecuted": true,
+      "queries": [
+        "\"Noepoli\" (sagra OR fiera OR mercatini) comune",
+        "\"Noepoli\" sagra comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-14.json",
+        ".local/ricerche/potenza-20261106/web-28.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Comune con Pro Loco ViviAmo individuata e calendario vuoto; APT 2025 mostra concerti e iniziative culturali. Non recuperato programma commerciale primario o bando fiere; calendario vuoto non dimostra assenza di manifestazioni.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Oppido Lucano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Oppido Lucano\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-14.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fonte comunale nel patrimonio regionale descrive Sagra Pasta Fresca in luglio/agosto e la sua organizzazione; mercato mensile spostato nel febbraio 2026 è ordinario. Pista gastronomica primaria conservata senza data 2026.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Palazzo San Gervasio",
+      "queryExecuted": true,
+      "queries": [
+        "\"Palazzo San Gervasio\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-15.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Festa Olio 19–20 settembre 2026 soltanto in portale; APT riporta Gezziamoci e concerti, non prova di fiera. Pista prima fiera autunnale 2024 nella stampa: programma e condizioni originarie non acquisiti.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Paterno",
+      "queryExecuted": true,
+      "queries": [
+        "\"Paterno Basilicata\" (sagra OR fiera OR mercatini)",
+        "\"Paterno\" \"sagra\" \"Potenza\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-15.json",
+        ".local/ricerche/potenza-20261106/web-28.json"
+      ],
+      "newIds": [
+        "basilicata-paterno-sagra-della-scarpedda",
+        "basilicata-paterno-fiera-della-madonna-del-carmine"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.comune.paterno.pz.it/page/avvisi-pubblici-per-la-fiera-e-le-festivit-del-15-",
+          "evidenceFile": ".local/ricerche/potenza-20261106/9aa6377a3503d49a.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Sagra Scarpedda 2025 APT e bando comunale Carmine 2026 distinti. Pagina primaria con 85 posteggi complessivi e scadenza 20 giugno; bollo non quantificato. Attrazioni spettacolo viaggiante non confuse con il banco commerciale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Pescopagano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pescopagano\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-15.json"
+      ],
+      "newIds": [
+        "basilicata-pescopagano-podolica-sagra-della-carne-podolica",
+        "basilicata-pescopagano-fiera-della-ss-annunziata",
+        "basilicata-pescopagano-fiera-del-2-luglio",
+        "basilicata-pescopagano-fiera-del-15-settembre"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.comune.pescopagano.pz.it/it/news-category/141826",
+          "evidenceFile": ".local/ricerche/potenza-20261106/beda1b68fa82d613.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Tre fiere di Via Roma nel calendario comunale 2026; dettaglio 410 dichiarato. Bando SS Annunziata 2025 originale conservato senza estenderne condizioni al 2026. Podolica 25–26 luglio 2025 APT distinta dalla fiera commerciale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Picerno",
+      "queryExecuted": true,
+      "queries": [
+        "\"Picerno\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-15.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Modulistica comunale occupazione suolo e scheda Pro Loco acquisite, senza date di manifestazioni specifiche. Fiere 17 giugno/1 dicembre e Sagra Maiale nella guida regionale 2009: non proiettate sul calendario corrente.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Pietragalla",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pietragalla\" (fiera OR mercatini OR sagra) comune bando",
+        "\"Pietragalla\" sagra palmenti"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-16.json",
+        ".local/ricerche/potenza-20261106/web-29.json"
+      ],
+      "newIds": [
+        "basilicata-pietragalla-carbonara-day-di-san-giorgio",
+        "basilicata-pietragalla-pizza-festival-di-san-giorgio"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Carbonara Day e Pizza Festival nella frazione San Giorgio in APT 2025. Cantinarte documentata nel patrimonio MiC, ma periodo e programma di edizione non sufficientemente definiti: non assegnati mesi per ipotesi.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Pietrapertosa",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pietrapertosa\" (fiera OR mercatini OR sagra) comune bando",
+        "\"Pietrapertosa\" sagra \"cuccia\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-16.json",
+        ".local/ricerche/potenza-20261106/web-29.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Cuccìa, Rafanata e Sapori d’Autunno soprattutto in guide; fonte Borghi Più Belli descrive tradizioni alimentari, non conferma autonomamente un mercato né giorni 2026. Farm Festival nei portali da approfondire con originale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Pignola",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pignola\" (fiera OR mercatini OR sagra) comune bando",
+        "\"Pignola\" sagra \"Pro Loco\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-16.json",
+        ".local/ricerche/potenza-20261106/web-29.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Sito Pro Loco Il Portale acquisito con Vignola Terra Regale e archivio eventi; festa patronale e Carnevale nelle fonti Comune/radiciculturali. Non provato un evento mercatale autonomo: nessuna data di fiera dedotta dai riti.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Potenza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Potenza\" (fiera OR mercatini OR sagra) comune bando",
+        "\"Vietri di Potenza\" (sagra OR fiera OR mercatini) comune",
+        "\"Paterno\" \"sagra\" \"Potenza\"",
+        "site:comune.potenza.it \"fiera\" \"2026\"",
+        "Potenza fiera 2026 posteggi via Fisica",
+        "\"Vietri di Potenza\" \"Tipica\" 2026",
+        "\"Potenza\" \"Choco Italia\" site:italiaeventi.org"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-16.json",
+        ".local/ricerche/potenza-20261106/web-25.json",
+        ".local/ricerche/potenza-20261106/web-28.json",
+        ".local/ricerche/potenza-20261106/web-31.json",
+        ".local/ricerche/potenza-20261106/web-32.json",
+        ".local/ricerche/potenza-20261106/web-36.json",
+        ".local/ricerche/potenza-20261106/web-42.json"
+      ],
+      "newIds": [
+        "basilicata-potenza-fiera-di-agosto",
+        "basilicata-potenza-fiera-de-li-zang",
+        "basilicata-potenza-lucania-is-comics"
+      ],
+      "sources": [
+        {
+          "url": "https://archivio.comune.potenza.it/wp-content/uploads/2024/12/Provvedimento-159.pdf",
+          "evidenceFile": "vedi prove web e limiti nel dossier",
+          "retrieved": false
+        },
+        {
+          "url": "https://www.lucaniaiscomics.it/programma/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/17c014b91da6d977.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Fiere Agosto e Li Zang da ordinanza 159/2024, PDF letto tramite browser ma originale diretto in timeout. Lucania is Comics con area espositiva nel programma 2026. Antiquariato e Choco Italia restano piste da chiudere con specifici originali, nessun costo ricavato dai biglietti.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Rapolla",
+      "queryExecuted": true,
+      "queries": [
+        "\"Rapolla\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-17.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Parco Urbano Cantine già presente; modulo standisti emerso nell’indice, conservato come pista di manutenzione e non duplicato. Nessuna nuova tariffa dalla sola presenza del modulo o dalle date dei portali.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Rapone",
+      "queryExecuted": true,
+      "queries": [
+        "\"Rapone\" (sagra OR fiera OR mercatini) comune",
+        "\"Rapone\" \"sagra\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-17.json",
+        ".local/ricerche/potenza-20261106/web-41.json"
+      ],
+      "newIds": [
+        "basilicata-rapone-sagra-della-soppressata-e-del-caciocavallo"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/domani-a-rapone-concerto-dei-terraross/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/53d3f8a8d2ed3264.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Soppressata/Caciocavallo da comunicato regionale storico 2013, confrontato con calendario UNPLI 2014. Non usato “domani” per calcolare la data e non proclamata continuità 2026.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Rionero in Vulture",
+      "queryExecuted": true,
+      "queries": [
+        "\"Rionero in Vulture\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-17.json"
+      ],
+      "newIds": [
+        "basilicata-rionero-in-vulture-pizzalovers-festival"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "PizzaLovers 2025 APT nuovo; Notte Bianca Aglianico già presente, programma comunale 25 luglio 2026 proposto separatamente. Cantine in Festa 2016 e mercatino antiquariato 2024 sono piste distinte non chiuse con programma originale corrente.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Ripacandida",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ripacandida\" (sagra OR fiera OR mercatini) comune",
+        "\"Ripacandida\" \"sagra\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-17.json",
+        ".local/ricerche/potenza-20261106/web-41.json"
+      ],
+      "newIds": [
+        "basilicata-ripacandida-sagra-dello-zafferano"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Zafferano 2–3 agosto 2025 nell’APT. SUAP non equivale a prova di nuovi appuntamenti; non importate generiche iniziative del Vulture o numeri di notorietà.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Rivello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Rivello\" (sagra OR fiera OR mercatini) Basilicata",
+        "\"Rivello\" \"Rotale\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-18.json",
+        ".local/ricerche/potenza-20261106/web-37.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fungo Porcino/Fagiolo di Rotale 10–11 ottobre 2026 nei portali, locandina associata erroneamente a Carbone in un risultato. Fonte originale locale non acquisita: nessuna scheda da quel dato incerto.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Roccanova",
+      "queryExecuted": true,
+      "queries": [
+        "\"Roccanova\" (sagra OR fiera OR mercatini) Basilicata",
+        "\"Roccanova\" festa vino comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-18.json",
+        ".local/ricerche/potenza-20261106/web-29.json"
+      ],
+      "newIds": [
+        "basilicata-roccanova-sagra-del-vino"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/parte-a-roccanova-la-sagra-del-vino/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/31655c226ae4299b.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Sagra Vino da comunicato circolo Ugo Foscolo nel portale Regione 2011, distinta da Notti del Vino 29 agosto 2026 dei portali. L’ingresso di degustazione non è una quota espositore; edizione nuova da corroborare.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Rotonda",
+      "queryExecuted": true,
+      "queries": [
+        "\"Rotonda\" (sagra OR fiera OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-18.json"
+      ],
+      "newIds": [
+        "basilicata-rotonda-fiera-del-lunedi-prima-di-pasqua",
+        "basilicata-rotonda-fiera-del-13-giugno",
+        "basilicata-rotonda-fiera-del-17-agosto",
+        "basilicata-rotonda-il-bianco-e-la-rossa-festa-del-fagiolo-bianco-e-della-melanzana-rossa"
+      ],
+      "sources": [
+        {
+          "url": "https://egov.hseweb.it/rotonda/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20029/idtesto/34",
+          "evidenceFile": ".local/ricerche/potenza-20261106/4f91c38068a240aa.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/rotonda-celebra-le-sue-eccellenze/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/2526b4206c757cdc.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Tre fiere commerciali nel calendario comunale senza anno e Bianco/La Rossa 28–29 agosto 2026 nel programma primario. Notte Rosa del Vino autunnale distinta, non un’estensione automatica della festa estiva; niente duplicato per varianti del titolo.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Ruoti",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ruoti\" (sagra OR fiera OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-18.json"
+      ],
+      "newIds": [
+        "basilicata-ruoti-fiera-di-san-donato"
+      ],
+      "sources": [
+        {
+          "url": "https://www.comune.ruoti.pz.it/page/festivit-e-sagre",
+          "evidenceFile": ".local/ricerche/potenza-20261106/abca66e85e0e2e79.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Comune documenta Fiera San Donato con giorno precedente alla festa 6/7 agosto: ambiguità del giorno conservata. Non applicato arbitrariamente al 2026 e non dichiarato settore bestiame corrente dalla menzione storica.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Ruvo del Monte",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ruvo del Monte\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-19.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pro Loco e fonti regionali storiche individuate; Sagra Agnello ripresa nella stampa 18 luglio 2026 dopo pausa e Castagna 30 ottobre nel portale. Programmi originali attuali e condizioni banco non acquisiti: non aggiunte sulla sola ricorrenza.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Chirico Nuovo",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Chirico Nuovo\" (sagra OR fiera OR mercatini)",
+        "\"San Chirico Nuovo\" \"fiera\" \"2026\" ordinanza"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-19.json",
+        ".local/ricerche/potenza-20261106/web-40.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Fiera 10 settembre 2026 nel portale automatico, ricerca nominale e ricerca atto specifico eseguite senza originale recuperato. Non importati banchi, ingresso o disponibilità dai testi generati.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Chirico Raparo",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Chirico Raparo\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-19.json"
+      ],
+      "newIds": [
+        "basilicata-san-chirico-raparo-fiera-di-san-vito",
+        "basilicata-san-chirico-raparo-fiera-a-l-acqua-a-preta",
+        "basilicata-san-chirico-raparo-profumi-d-autunno"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocosanchirichese.it/manifestazioni/eventi.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/7ee3152859ae8046.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.prolocosanchirichese.it/territorio/il-paese.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/c96ec29f3b4e29f5.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Calendario Pro Loco con San Vito e acqua a preta senza anno; Profumi Autunno 31 ottobre 2026 nella pagina dell’organizzatore. AgostInsieme/Pasta re Casa e Gustando Campagna individuati come approfondimenti; non duplicate le fiere dalle due date annuali.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Costantino Albanese",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Costantino Albanese\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-19.json"
+      ],
+      "newIds": [
+        "basilicata-san-costantino-albanese-festa-della-birra"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Festa Birra 7 agosto 2025 nel calendario APT. Mercato settimanale del martedì nei portali non nuova fiera. Festività religiose e riti arborei non trasformati in opportunità espositore senza prova.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Fele",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Fele\" (sagra OR fiera OR mercatini)",
+        "site:regione.basilicata.it \"San Fele\" \"Festa d’Autunno\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-20.json",
+        ".local/ricerche/potenza-20261106/web-44.json"
+      ],
+      "newIds": [
+        "basilicata-san-fele-sagra-da-ciambotte-e-da-paste-de-case",
+        "basilicata-san-fele-a-candarate-sagra-del-maiale",
+        "basilicata-san-fele-festa-della-grigliata-di-cecci",
+        "basilicata-san-fele-festa-d-autunno"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/il-27-ottobre-la-festa-dautunno-a-san-fele/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/89f8a3c8ac5dda3a.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Tre appuntamenti gastronomici estivi nell’APT 2025 e Festa Autunno 27 ottobre 2024 in programma primario. Le date 2026 della stampa e il cartellone Estate comunale non estesi arbitrariamente alle singole sagre.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Martino d'Agri",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Martino d’Agri\" (sagra OR fiera OR mercatini)",
+        "\"San Martino d'Agri\" sagra",
+        "\"San Martino d'Agri\" \"sagra\" prodotti",
+        "\"San Martino d'Agri\" \"fiera\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-20.json",
+        ".local/ricerche/potenza-20261106/web-30.json",
+        ".local/ricerche/potenza-20261106/web-32.json",
+        ".local/ricerche/potenza-20261106/web-46.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Query nominale, variante apostrofo e ricerca fiera eseguite; risultati prevalentemente PIAO e aggregatori di eventi dei dintorni. Guide con contenuti geografici incongrui escluse. Non acquisito un programma commerciale primario; nessuna conclusione di assenza.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Paolo Albanese",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Paolo Albanese\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-20.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "APT Pollino e registri culturali descrivono cultura arbëreshë, folklore e Himunea; nessun programma commerciale autonomo o bando banco specifico recuperato. Non confusi i vicini San Costantino e gli eventi regionali dei portali.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "San Severino Lucano",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Severino Lucano\" (sagra OR fiera OR mercatini)"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-20.json"
+      ],
+      "newIds": [
+        "basilicata-san-severino-lucano-autunno-sanseverinese"
+      ],
+      "sources": [
+        {
+          "url": "https://agr.regione.basilicata.it/post/al-via-programma-dellautunno-sanseverinese/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/5319e993d9d54d14.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Autunno sanseverinese da programma Comune/Pro Loco 2024, un’unica rassegna con giornate distinte. Fiera Rosario e programmi gastronomici 2026 nei portali non corredati da originale recuperato. Festival escursionismo non aggiunto come fiera generica.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sant'Angelo Le Fratte",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sant’Angelo Le Fratte\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-21.json"
+      ],
+      "newIds": [
+        "basilicata-sant-angelo-le-fratte-le-cantine-aperte"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prolocosantangelolefratte.org/wp/wp-content/uploads/2023/07/Proloco-Santangelo-Le-Fratte-regolamento-ingresso-in-festa-2023-IBAN_Corretto..pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/f7292e53913baf74.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Cantine Aperte 2023 con regolamento e quota per categorie. Tariffe dichiarate 2022, non occultata la discordanza. Fonte provinciale e calendario APT confermano il format; nessun duplicato “Le Cantine” e nessuna tariffa turistica trasferita al banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sant'Arcangelo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sant’Arcangelo\" (sagra OR fiera OR mercatini) comune",
+        "\"Sant'Arcangelo\" \"Basilicata\" sagra"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-21.json",
+        ".local/ricerche/potenza-20261106/web-30.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Query nominali disambiguate da Santarcangelo romagnola e fiera Delianuova. Piste Sagre da resoconti culturali e appuntamento collegato a Roccanova 2011; non provata autonoma identità con data/periodo e condizioni. Nessuna nuova scheda per semplice luogo collaterale.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sarconi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sarconi\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-21.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Modulo nolo espositori 2026 acquisito e controllato visivamente: 220 € due giorni, soli confezionati. ID preesistente conservato; costo e date solo proposta separata, non applicata nella fixture.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Sasso di Castalda",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sasso di Castalda\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-21.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Natale 20–21 dicembre 2025 in comunicato stampa e Estate San Martino 2026 in portale; fonte primaria di edizione non acquisita. SUAP e contatti Pro Loco individuati; nessun accesso banco dedotto da generico patrocinio.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Satriano di Lucania",
+      "queryExecuted": true,
+      "queries": [
+        "\"Satriano di Lucania\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-22.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Infopoint ufficiale descrive Festa Pizza Chiena e rassegne, scheda regionale Etno Folk culturale. Data/periodo specifico della pizza non risolto con originale: nessuna data inventata, nessuna fiera creata dalla sola presenza di gastronomia nella descrizione del paese.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Savoia di Lucania",
+      "queryExecuted": true,
+      "queries": [
+        "\"Savoia di Lucania\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-22.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Portale comunale e scheda culturale Passannante acquisiti; risultati su storia e manifestazioni culturali, non programma commerciale primario. Vecchie guide e feste patronali non trasformate in schede fiera senza riscontro specifico.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Senise",
+      "queryExecuted": true,
+      "queries": [
+        "\"Senise\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-22.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Peperone già presente (ALSIA U Strittul ru Zafaran è stessa identità). Santa Lucia e Primo Maggio in stampa/CAI storici, Pëttëcèddë in comunicato 2025: originali organizzatore di edizione non acquisiti. Non usati contributi comunali come costo espositore.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Spinoso",
+      "queryExecuted": true,
+      "queries": [
+        "\"Spinoso\" (sagra OR fiera OR mercatini) comune",
+        "\"Spinoso\" sagra proloco"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-22.json",
+        ".local/ricerche/potenza-20261106/web-30.json"
+      ],
+      "newIds": [
+        "basilicata-spinoso-antichi-sapori",
+        "basilicata-spinoso-sagra-della-castagna"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.regione.basilicata.it/a-spinoso-il-20-ottobre-la-xviii-sagra-della-castagna/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/4c4fc8b53836e3b3.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Antichi Sapori 12–13 agosto 2025 APT e Castagna storica 2013, con gallerie Pro Loco. “Castagne in Festa” 2026 potrebbe essere variante: non duplicata senza prova. PIAO mercati straordinari è competenza ufficio, non programma di edizione.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Teana",
+      "queryExecuted": true,
+      "queries": [
+        "\"Teana\" (sagra OR fiera OR mercatini) Basilicata",
+        "\"Teana\" \"Mischiglio\" site:regione.basilicata.it"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-23.json",
+        ".local/ricerche/potenza-20261106/web-37.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Pro Loco ufficiale acquisita; dossier Mischiglio regionale e progetto Le vie dei sapori consultati. Non individuato programma primario datato di sagra autonoma/mercatino, quindi nessun nuovo ID dalla sola esistenza del prodotto.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Terranova di Pollino",
+      "queryExecuted": true,
+      "queries": [
+        "\"Terranova di Pollino\" (sagra OR fiera OR mercatini) Basilicata"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-23.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "ALSIA nomina Palio del grano Carosella in luglio: evento culturale, non automaticamente fiera. Fonti Comune/Parco su Madonna Pietà e rito arboreo; mercato/bestiame nei portali non confermato da atto originale corrente.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Tito",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tito\" (sagra OR fiera OR mercatini) Basilicata",
+        "site:comune.tito.pz.it \"mercatini\" \"2026\"",
+        "Tito mercatini Villa Costituzione 2026 bando artigianato",
+        "\"Tito\" \"Mercatini\" \"avviso\"",
+        "\"Tito\" \"mercatini\" site:comune.tito.pz.it OR site:comune.tito.pz.it/page"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-23.json",
+        ".local/ricerche/potenza-20261106/web-31.json",
+        ".local/ricerche/potenza-20261106/web-32.json",
+        ".local/ricerche/potenza-20261106/web-35.json",
+        ".local/ricerche/potenza-20261106/web-39.json"
+      ],
+      "newIds": [
+        "basilicata-tito-centro-in-tavola"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/tito-ritorna-centro-in-tavola/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/95cd9ad975bca0a6.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Centro in Tavola 4–6 settembre 2026 nel programma Comune/Pro Loco pubblicato da Regione. Mercatini Villa Costituzione ottobre/novembre 2026 nei portali senza avviso primario acquisito: tenuti fuori dal delta. Natale e pista ghiaccio non estendono il periodo dei mercatini.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Tolve",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tolve\" (sagra OR fiera OR mercatini) Basilicata",
+        "\"Tolve\" \"Fiera agroalimentare\""
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-23.json",
+        ".local/ricerche/potenza-20261106/web-39.json"
+      ],
+      "newIds": [
+        "basilicata-tolve-fiera-agroalimentare-di-prodotti-lucani"
+      ],
+      "sources": [
+        {
+          "url": "https://egov.hseweb.it/tolve/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRJNE61Yz0-H",
+          "evidenceFile": ".local/ricerche/potenza-20261106/fea71f948cfef0eb.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Ordinanza comunale 31/2026 acquisita per Fiera agroalimentare 12 settembre. Fascia dei divieti distinta dagli orari reali degli stand; nessun numero di banchi o tariffa ricavato dal traffico.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Tramutola",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tramutola\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-24.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Castagna già presente. Pro Loco e sito Munnaredda individuati, programmi 2026 come proposta di aggiornamento da rivalidare; nessun nuovo ID dal nome “Munnaredda”. Contributi comunali non costi per banco.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Trecchina",
+      "queryExecuted": true,
+      "queries": [
+        "\"Trecchina\" (sagra OR fiera OR mercatini) comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-24.json"
+      ],
+      "newIds": [
+        "basilicata-trecchina-sagra-della-castagna"
+      ],
+      "sources": [
+        {
+          "url": "https://archivio.comune.trecchina.pz.it/vivere-trecchina/gli-eventi/",
+          "evidenceFile": "vedi prove web e limiti nel dossier",
+          "retrieved": false
+        }
+      ],
+      "outcome": "Comune archivio eventi e Amici Castagna concordano sul format di ottobre con fiera alimentare/artigiana. Download diretto archivio fallito, estrazione web conservata. Titolo sito 2026 sopra locandina 2024: non assegnate date 2026 da immagini storiche.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Trivigno",
+      "queryExecuted": true,
+      "queries": [
+        "\"Trivigno\" (sagra OR fiera OR mercatini) comune",
+        "\"Trivigno\" sagra comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-24.json",
+        ".local/ricerche/potenza-20261106/web-30.json"
+      ],
+      "newIds": [],
+      "sources": [],
+      "outcome": "Query nominale e pagina eventi comunale acquisite senza eventi correnti. Calendario APT 2020 restituisce richiamo a Campanaccio senza prova autonoma di fiera nella ricerca: non ricostruite date o condizioni dal solo nome.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Vaglio Basilicata",
+      "queryExecuted": true,
+      "queries": [
+        "\"Vaglio Basilicata\" (sagra OR fiera OR mercatini) comune",
+        "\"Vaglio Basilicata\" \"fiera\" \"2026\" ordinanza"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-24.json",
+        ".local/ricerche/potenza-20261106/web-40.json"
+      ],
+      "newIds": [
+        "basilicata-vaglio-basilicata-vaglio-terra-di-cultura-e-sapori"
+      ],
+      "sources": [
+        {
+          "url": "https://www.regione.basilicata.it/dal-7-al-9-agosto-vaglio-terra-di-cultura-e-sapori/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/318bd7749f842dd0.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Terra Cultura Sapori 7–9 agosto 2026 nel comunicato primario APS/Comune. Madonna Grazie 9 settembre 2026 nel portale automatico senza originale: identità distinta conservata come pista, non aggiunta.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Venosa",
+      "queryExecuted": true,
+      "queries": [
+        "\"Venosa\" (sagra OR fiera OR mercatini) comune",
+        "\"Venosa\" \"Borgo diVino\" 2026 organizzatore"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-25.json",
+        ".local/ricerche/potenza-20261106/web-36.json"
+      ],
+      "newIds": [
+        "basilicata-venosa-festival-del-gusto",
+        "basilicata-venosa-borgo-divino-in-tour"
+      ],
+      "sources": [
+        {
+          "url": "https://borgodivino.it/venosa/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/8ca3b9140e6e8a9f.txt",
+          "retrieved": true
+        },
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Festival Gusto storico 26–28 settembre 2025 APT; Borgo diVino 30 ottobre–1 novembre 2026 sito organizzatore. Voucher degustazione 20 € e cauzione 2 € esclusi da costi banco. Fiera Sapori Sud e mercati rionali sono piste non duplicate automaticamente.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Vietri di Potenza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Vietri di Potenza\" (sagra OR fiera OR mercatini) comune",
+        "\"Vietri di Potenza\" \"Tipica\" 2026"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-25.json",
+        ".local/ricerche/potenza-20261106/web-36.json"
+      ],
+      "newIds": [
+        "basilicata-vietri-di-potenza-tipica"
+      ],
+      "sources": [
+        {
+          "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+          "evidenceFile": ".local/ricerche/potenza-20261106/cbe7daa0cdce9b66.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Tipica 12–13 agosto 2025 APT e scheda culturale comunale; programma 2026 nella stampa, non dichiarato originale acquisito. Mancano condizioni e tariffario banco corrente, nessuna stima dall’affluenza celebrativa.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Viggianello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Viggianello\" (sagra OR fiera OR mercatini) comune",
+        "\"Viggianello\" \"Gusto del Pollino\" 2026 comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-25.json",
+        ".local/ricerche/potenza-20261106/web-36.json"
+      ],
+      "newIds": [
+        "basilicata-viggianello-il-gusto-del-pollino",
+        "basilicata-viggianello-sagra-della-rappasciona"
+      ],
+      "sources": [
+        {
+          "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+          "evidenceFile": ".local/ricerche/potenza-20261106/40a65dbf30d237d1.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "ALSIA: Gusto Pollino ottobre/novembre e Rappasciona dicembre senza anno. I portali divergono su date fino a gennaio e propongono 2027 indicativo: nessuna data corrente proiettata. Titolo TTLP trattato come variante, non duplicato.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    },
+    {
+      "city": "Viggiano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Viggiano\" (sagra OR fiera OR mercatini) comune",
+        "\"Viggiano\" \"porcino\" \"2026\" comune"
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/potenza-20261106/web-25.json",
+        ".local/ricerche/potenza-20261106/web-39.json"
+      ],
+      "newIds": [
+        "basilicata-viggiano-festa-del-porcino-e-dei-sapori-del-sottobosco"
+      ],
+      "sources": [
+        {
+          "url": "https://festadelporcino.it/",
+          "evidenceFile": ".local/ricerche/potenza-20261106/7559fe571b133852.txt",
+          "retrieved": true
+        }
+      ],
+      "outcome": "Porcino 30 ottobre–1 novembre 2026 sito organizzatore con prodotti tipici/artigiani. Costi giochi, attività e tesserini funghi separati. Fiera Madonna Sacro Monte nell’indice comunale 2023: bando completo non acquisito, non dedotte date della fiera dalle sole processioni.",
+      "limits": "Ricerca nelle fonti accessibili, non lettura integrale di tutti gli albi o social. Nessun riscontro non prova assenza di eventi; nessuna disponibilità commerciale presunta."
+    }
+  ],
+  "proposedExistingUpdates": [
+    {
+      "id": "basilicata-sarconi-sagra-del-fagiolo",
+      "status": "proposal-only-not-applied",
+      "proposal": "Edizione 18–19 agosto 2026 e nolo espositori 220 € per due giorni, soli confezionati.",
+      "sourceUrl": "https://www.prolocosarconi.org/wp-content/uploads/2026/07/Scarica_il_file_Modello_Nolo_Stand_Sagra_Fagiolo_2026.pdf"
+    },
+    {
+      "id": "basilicata-melfi-sagra-della-varola",
+      "status": "proposal-only-not-applied",
+      "proposal": "Programma Pro Loco 16–18 ottobre 2026, nessuna nuova identità.",
+      "sourceUrl": "https://www.prolocomelfi.it/sagra-della-varola-2026/"
+    },
+    {
+      "id": "basilicata-rionero-in-vulture-notte-bianca-dell-aglianico-del-vulture",
+      "status": "proposal-only-not-applied",
+      "proposal": "Programma comunale del 25 luglio 2026, nessun nuovo ID.",
+      "sourceUrl": "https://www.comune.rioneroinvulture.pz.it/schedaEventoDetail/la-notte-bianca-dell-aglianico-del-vulture-25-lugl"
+    }
+  ],
+  "publicationRevalidation": {
+    "baselineCommit": "a11de98",
+    "baselineEvents": 10119,
+    "baselineCostNotes": 471,
+    "checkedAt": "2026-11-06",
+    "sectorReview": {
+      "foodNormalizedIds": [
+        "basilicata-marsicovetere-rassegna-gastronomica-del-panuozzo-e-della-pizza-in-tour",
+        "basilicata-armento-sagra-dei-piatti-tipici-e-ru-pest-armentese"
+      ],
+      "normalizationReason": "Food explicitly documented: panuozzo/pizza in APT2025 and gastronomic sagra in Armento ordinance15/2025; descriptive terms normalized with prodotti alimentari for the unchanged builder.",
+      "unknownSectorIds": [
+        "basilicata-avigliano-fiera-di-lagopesole-del-29-giugno",
+        "basilicata-castelluccio-superiore-fiera-in-onore-di-maria-angelica-mastroti",
+        "basilicata-lagonegro-fiera-della-madonna-di-sirino",
+        "basilicata-lavello-fiera-del-29-maggio",
+        "basilicata-lavello-fiera-dell-11-settembre",
+        "basilicata-maratea-mercatini-di-natale",
+        "basilicata-pescopagano-fiera-della-ss-annunziata",
+        "basilicata-pescopagano-fiera-del-2-luglio",
+        "basilicata-pescopagano-fiera-del-15-settembre",
+        "basilicata-potenza-fiera-di-agosto",
+        "basilicata-potenza-fiera-de-li-zang",
+        "basilicata-rotonda-fiera-del-lunedi-prima-di-pasqua",
+        "basilicata-rotonda-fiera-del-13-giugno",
+        "basilicata-rotonda-fiera-del-17-agosto",
+        "basilicata-ruoti-fiera-di-san-donato",
+        "basilicata-san-chirico-raparo-fiera-di-san-vito",
+        "basilicata-san-chirico-raparo-fiera-a-l-acqua-a-preta"
+      ],
+      "unknownReason": "Generic merchandise or Christmas products without supported specific sectors; no inferred food/nonfood assignment."
+    }
+  }
+}

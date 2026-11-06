@@ -4134,6 +4134,22 @@
       "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
       "checkedAt": "2026-11-06",
       "period": "2026"
+    },
+    "basilicata-castelsaraceno-festa-della-montagna-fiera-della-montagna": {
+      "kind": "fee",
+      "label": "2023: chiosco 150 € o gazebo 250 €",
+      "period": "2023",
+      "sourceUrl": "https://www.prolococastelsaraceno.it/wp-content/uploads/2023/10/Modulo-di-adesione-Fiera-della-Montagna_2023.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Modulo Fiera della Montagna 28 ottobre–1 novembre 2023: quota adesione e stand 150 € per chiosco in legno 1,80×0,80 m oppure 250 € per gazebo chiuso in legno 3×2 m, punto presa e punto luce compresi. Pagamento entro 26 ottobre 2023. IVA, bollo, eventuale canone e altri oneri non quantificati nel modulo: non certificato un totale onnicomprensivo. Tariffe storiche 2023, non applicate alle edizioni 2025 o 2026."
+    },
+    "basilicata-sant-angelo-le-fratte-le-cantine-aperte": {
+      "kind": "conditional",
+      "label": "Quote dichiarate 2022; intestazione regolamento 2023",
+      "period": "2022",
+      "sourceUrl": "https://www.prolocosantangelolefratte.org/wp/wp-content/uploads/2023/07/Proloco-Santangelo-Le-Fratte-regolamento-ingresso-in-festa-2023-IBAN_Corretto..pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Regolamento intestato 12–14 agosto 2023, ma sezione tariffe e causale versamento indicano espressamente 2022. Per sera: somministrazione preparata/consumata sul posto 230 € + IVA (280,60 €); promozionale o prodotti non cucinati 150 € + IVA (183 €); sole bevande di vino o derivate 130 € + IVA (158,60 €). Casette per non alimentari/artigiani/associazioni: prezzo da concordare, indicativamente 50 € + IVA (61 €) a sera; il testo esclude IVA per i non soggetti. Per attività alimentari stand non forniti. Bollo, canone e altri servizi non quantificati. Discordanza conservata: nessun listino corrente né totale certo per l’edizione 2023."
     }
   }
 }

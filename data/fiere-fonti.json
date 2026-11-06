@@ -47343,5 +47343,2161 @@
     },
     "frequencyNote": "Periodo natalizio da relazione comunale storica; nessuna edizione annuale confermata.",
     "id": "molise-ripalimosani-mercatini-natalizi"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Acerenza",
+    "name": "Festival dei prodotti tipici",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso di prodotti tipici nel centro storico di Acerenza.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-22",
+        "end": "2025-08-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-acerenza-festival-dei-prodotti-tipici"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Atella",
+    "name": "Beer Festival",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festival della birra al Giardino Saraceno.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-18",
+        "end": "2025-07-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-atella-beer-festival"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Balvano",
+    "name": "Sagra R’i Cavatiedd",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra gastronomica dedicata ai cavatelli di Balvano.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-01",
+        "end": "2025-08-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-balvano-sagra-r-i-cavatiedd"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Banzi",
+    "name": "Foodies — Festival della ruralità",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Appuntamento del gusto e della ruralità nel calendario APT.",
+    "sectors": "Gastronomia e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-18",
+        "end": "2025-07-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-banzi-foodies-festival-della-ruralita"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Bella",
+    "name": "Strade Gustando",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand gastronomici nella Villa Comunale di Bella.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-17",
+        "end": "2025-08-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-bella-strade-gustando"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Cersosimo",
+    "name": "Strazzata",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Serata gastronomica dedicata alla strazzata in Piazza Unità.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-18",
+        "end": "2025-08-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-cersosimo-strazzata"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Marsicovetere",
+    "name": "Rassegna gastronomica del panuozzo e della pizza in tour",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rassegna gastronomica a Villa d’Agri, frazione di Marsicovetere.",
+    "sectors": "Prodotti alimentari: panuozzo e pizza",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-10",
+        "end": "2025-07-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-marsicovetere-rassegna-gastronomica-del-panuozzo-e-della-pizza-in-tour"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Muro Lucano",
+    "name": "Sagra dell’agnello",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra gastronomica al Piazzale Fiera di Muro Lucano.",
+    "sectors": "Carne di agnello e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-12",
+        "end": "2025-07-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-muro-lucano-sagra-dell-agnello"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Paterno",
+    "name": "Sagra della scarpedda",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra della scarpedda, quarta edizione nel calendario 2025.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-03",
+        "end": "2025-08-03",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-paterno-sagra-della-scarpedda"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pescopagano",
+    "name": "Podolica — Sagra della carne podolica",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata alla carne bovina podolica.",
+    "sectors": "Carne podolica e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-25",
+        "end": "2025-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-pescopagano-podolica-sagra-della-carne-podolica"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pietragalla",
+    "name": "Carbonara Day di San Giorgio",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Serata gastronomica in Piazza Fontana nella frazione San Giorgio.",
+    "sectors": "Gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-26",
+        "end": "2025-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-pietragalla-carbonara-day-di-san-giorgio"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pietragalla",
+    "name": "Pizza Festival di San Giorgio",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festival della pizza nella frazione San Giorgio di Pietragalla.",
+    "sectors": "Pizza e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-17",
+        "end": "2025-08-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-pietragalla-pizza-festival-di-san-giorgio"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rionero in Vulture",
+    "name": "PizzaLovers Festival",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festival gastronomico in Piazza XX Settembre.",
+    "sectors": "Pizza e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-12",
+        "end": "2025-07-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-rionero-in-vulture-pizzalovers-festival"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Ripacandida",
+    "name": "Sagra dello zafferano",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dello zafferano nel Giardino storico di San Francesco.",
+    "sectors": "Zafferano e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-02",
+        "end": "2025-08-03",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-ripacandida-sagra-dello-zafferano"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Costantino Albanese",
+    "name": "Festa della Birra",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festa della birra di San Costantino Albanese nel calendario APT.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-07",
+        "end": "2025-08-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-san-costantino-albanese-festa-della-birra"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Fele",
+    "name": "Sagra dā ciambottë e dā pastë dë casë",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata alla ciambotta e alla pasta di casa.",
+    "sectors": "Gastronomia e pasta fresca",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-01",
+        "end": "2025-08-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-san-fele-sagra-da-ciambotte-e-da-paste-de-case"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Fele",
+    "name": "A Candaratë — Sagra del maiale",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Appuntamento gastronomico A Candaratë.",
+    "sectors": "Carne di maiale e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-03",
+        "end": "2025-08-03",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-san-fele-a-candarate-sagra-del-maiale"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Fele",
+    "name": "Festa della grigliata di Cecci",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festa gastronomica nella frazione Cecci.",
+    "sectors": "Carne alla griglia e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-19",
+        "end": "2025-08-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-san-fele-festa-della-grigliata-di-cecci"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Spinoso",
+    "name": "Antichi sapori",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso gastronomico del Casale Spinusii, indicato nel calendario APT con il refuso “Siponoso”.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. Località ricondotta a Spinoso; non creata una nuova località dal refuso APT."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-12",
+        "end": "2025-08-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-spinoso-antichi-sapori"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Venosa",
+    "name": "Festival del gusto",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festival enogastronomico di Venosa nel calendario APT.",
+    "sectors": "Prodotti alimentari e bevande",
+    "participation": {
+      "type": "check",
+      "note": "Calendario storico 2025, letto anche visivamente. Non conferma edizioni successive né posteggi disponibili. Quote banco non indicate nella pagina. "
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-26",
+        "end": "2025-09-28",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-venosa-festival-del-gusto"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Acerenza",
+    "name": "Mercatini di Natale e dei Sapori",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.regione.basilicata.it/ad-acerenza-i-mercatini-di-natale-e-dei-sapori/",
+      "label": "Regione Basilicata, comunicato Pro Loco 4 dicembre 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand enogastronomici e artigianali nel centro storico.",
+    "sectors": "Prodotti alimentari e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "XI edizione documentata il 6–7 dicembre 2025. Le luci Vicoli in Luce fino al 6 gennaio sono un’iniziativa distinta e non estendono la durata dei mercatini. Nessuna data 2026 dedotta."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-06",
+        "end": "2025-12-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/ad-acerenza-i-mercatini-di-natale-e-dei-sapori/"
+      }
+    ],
+    "id": "basilicata-acerenza-mercatini-di-natale-e-dei-sapori"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Acerenza",
+    "name": "Mercatino Del Borgo",
+    "months": "7,8,9,10",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.regione.basilicata.it/acerenza-al-via-mercatino-dellartigianato/",
+      "label": "Regione Basilicata, comunicazione Comune 22 luglio 2016",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatino di artigianato, prodotti tipici, collezionismo e antiquariato nel centro storico.",
+    "sectors": "Artigianato, prodotti tipici, collezionismo e antiquariato",
+    "participation": {
+      "type": "check",
+      "note": "Istituzione storica nel 2016, ultima domenica da luglio a ottobre. Non verificata continuità attuale. Gli incentivi tributari per nuovi insediamenti non sono prezzi o esenzioni del singolo banco."
+    },
+    "editions": [],
+    "id": "basilicata-acerenza-mercatino-del-borgo"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Albano di Lucania",
+    "name": "Le Notti della Magia",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/de/eventi-in-basilicata/lasciarsi-incantare-dalla-magia-dei-vicoli-ad-albano-di-lucania/",
+      "label": "APT Basilicata, programma 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rassegna tra vicoli, tradizioni, spettacolo ed enogastronomia.",
+    "sectors": "Enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Dodicesima edizione nel programma APT del 28–30 agosto 2026. La rassegna non equivale a un avviso per posteggi esterni; quote e condizioni banco non recuperate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-08-30",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/de/eventi-in-basilicata/lasciarsi-incantare-dalla-magia-dei-vicoli-ad-albano-di-lucania/"
+      }
+    ],
+    "id": "basilicata-albano-di-lucania-le-notti-della-magia"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Armento",
+    "name": "Sagra dei Piatti Tipici e ru’ Pest Armentese",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://armento-api.municipiumapp.it/s3/335/allegati/ordinanza-15_2025-docx-signed.pdf",
+      "label": "Comune di Armento, ordinanza 15/2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra gastronomica in via Vittorio Emanuele III e Piazza Umberto I.",
+    "sectors": "Prodotti alimentari: piatti tipici e pesto armentese",
+    "participation": {
+      "type": "check",
+      "note": "Evento documentato il 10 agosto 2025; la chiusura stradale prosegue fino alle 3 dell’11 agosto e non prova un secondo giorno di sagra. Le altre chiusure estive non sono date dell’evento. Nessuna disponibilità banco attestata."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-10",
+        "end": "2025-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://armento-api.municipiumapp.it/s3/335/allegati/ordinanza-15_2025-docx-signed.pdf"
+      }
+    ],
+    "id": "basilicata-armento-sagra-dei-piatti-tipici-e-ru-pest-armentese"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Avigliano",
+    "name": "Fiera di Lagopesole del 29 giugno",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.avigliano.pz.it/schedadocumento/1287",
+      "label": "Comune di Avigliano, assegnazione posteggi 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera per la vendita su suolo pubblico nella frazione Lagopesole.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Avviso di assegnazione per il 29 giugno 2026. L’elenco assegnatari non certifica posti ancora liberi. Distinta dalla fiera campionaria nazionale autunnale e dalla Sagra della Strazzata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-29",
+        "end": "2026-06-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.avigliano.pz.it/schedadocumento/1287"
+      }
+    ],
+    "id": "basilicata-avigliano-fiera-di-lagopesole-del-29-giugno"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Banzi",
+    "name": "Sagra del Peperone",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/banzi-29-settembre-quinta-edizione-sagra-del-peperone/",
+      "label": "Regione Basilicata, nota Comune 25 settembre 2018",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand di prodotti tipici e percorso enogastronomico nel borgo.",
+    "sectors": "Peperoni e prodotti alimentari tipici",
+    "participation": {
+      "type": "check",
+      "note": "Quinta edizione storica del 29 settembre 2018. Identità collegata alle successive menzioni di “peperone crusco e non solo”; non creata una seconda scheda da questa variante. Non confermata una data corrente."
+    },
+    "editions": [
+      {
+        "year": 2018,
+        "start": "2018-09-29",
+        "end": "2018-09-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/banzi-29-settembre-quinta-edizione-sagra-del-peperone/"
+      }
+    ],
+    "id": "basilicata-banzi-sagra-del-peperone"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Barile",
+    "name": "Tumact Me Tulez — Festival dell’Aglianico del Vulture",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/a-barile-la-festa-dellaglianico/",
+      "label": "Regione Basilicata, comunicato presidente Pro Loco 27 agosto 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra del piatto arbëreshë Tumact Me Tulez e dei prodotti del Vulture.",
+    "sectors": "Gastronomia, vino Aglianico e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Trentesima edizione annunciata per il 3–4 ottobre 2026. Patrocini e programma non costituiscono assegnazione di un banco né disponibilità attuale."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/a-barile-la-festa-dellaglianico/"
+      }
+    ],
+    "id": "basilicata-barile-tumact-me-tulez-festival-dell-aglianico-del-vulture"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Brindisi Montagna",
+    "name": "Giornate Medioevali",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=417&sec=5",
+      "label": "Regione Basilicata, scheda presentata dal Comune",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rievocazione nel borgo con percorso gastronomico e attività artigiane.",
+    "sectors": "Enogastronomia e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "La scheda comunale descrive l’ultimo fine settimana di ottobre e un ampliamento nel 2023. È un periodo tradizionale, non una data confermata 2026; non importati preventivi organizzativi o presenze dichiarate come costi banco o affluenza."
+    },
+    "editions": [],
+    "id": "basilicata-brindisi-montagna-giornate-medioevali"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Carbone",
+    "name": "Mostra Mercato del Tartufo Bianco del Serrapotamo",
+    "months": "10,11",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.regione.basilicata.it/a-carbone-torna-la-mostra-del-tartufo-bianco/",
+      "label": "Regione Basilicata, comunicato XVIII edizione 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mostra mercato con acquisto di tartufo e prodotti del territorio, stand e degustazioni.",
+    "sectors": "Tartufo, prodotti alimentari tipici",
+    "participation": {
+      "type": "check",
+      "note": "Fonte primaria acquisita per il 31 ottobre–2 novembre 2025. Le date 2026 presenti sui portali restano da corroborare e non sono proiettate sulla scheda."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-31",
+        "end": "2025-11-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/a-carbone-torna-la-mostra-del-tartufo-bianco/"
+      }
+    ],
+    "id": "basilicata-carbone-mostra-mercato-del-tartufo-bianco-del-serrapotamo"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Carbone",
+    "name": "Sagra della Farina di Carosella Lucana",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/carbone-bilancio-positivo-della-sagra-della-farina/",
+      "label": "Regione Basilicata, resoconto Pro Loco 12 agosto 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra gastronomica dedicata alla farina dell’antica varietà Carosella.",
+    "sectors": "Farina di carosella e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Il resoconto dell’VIII edizione dice “domenica scorsa”, senza data assoluta dell’evento: registrato soltanto agosto 2026, senza calcolare il giorno. La data del 5 agosto nel calendario APT riguarda il 2025."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Agosto 2026; giorno non esplicitato nel resoconto",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.regione.basilicata.it/carbone-bilancio-positivo-della-sagra-della-farina/",
+        "periodOnly": true
+      }
+    ],
+    "id": "basilicata-carbone-sagra-della-farina-di-carosella-lucana"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Carbone",
+    "name": "Sagra del Coriandolo",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+      "label": "ALSIA Basilicata, Gli eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata al coriandolo e alle tradizioni alimentari locali.",
+    "sectors": "Prodotti alimentari tipici",
+    "participation": {
+      "type": "check",
+      "note": "ALSIA la elenca ad agosto senza anno. Periodo consueto, nessuna edizione datata o candidatura banco verificata."
+    },
+    "editions": [],
+    "id": "basilicata-carbone-sagra-del-coriandolo"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelgrande",
+    "name": "Mercatini di Natale e mostra di presepi",
+    "months": "12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.castelgrande.pz.it/evento/mercatini-di-natale/",
+      "label": "Comune di Castelgrande, pagina aggiornata 2 dicembre 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatini con artigianato, prodotti tipici e mostra di presepi.",
+    "sectors": "Artigianato, decorazioni e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Pagina evento: 20 dicembre 2025–6 gennaio 2026. Un indice comunale restituisce un calendario diverso: conservata come fonte la pagina di dettaglio datata; non dedotta una nuova edizione 2026/2027 né apertura quotidiana di tutti i banchi."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-20",
+        "end": "2026-01-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.castelgrande.pz.it/evento/mercatini-di-natale/"
+      }
+    ],
+    "id": "basilicata-castelgrande-mercatini-di-natale-e-mostra-di-presepi"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelluccio Inferiore",
+    "name": "A Pricicch’",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=1162&sec=5",
+      "label": "Regione Basilicata, scheda Comune di Castelluccio Inferiore",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Apertura delle cantine con vino nuovo, prodotti locali e stand artigianali.",
+    "sectors": "Vino, gastronomia e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Fonte storica: ricorrenza del 7–8 dicembre e programmi riferiti al 2018–2020. Non confermate le date 6–8 dicembre 2026 dei portali; degustazione di vino gratuita al pubblico non significa banco gratuito."
+    },
+    "editions": [],
+    "id": "basilicata-castelluccio-inferiore-a-pricicch"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelluccio Inferiore",
+    "name": "Festa del Picciddat",
+    "months": "4",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+      "label": "ALSIA Basilicata, Gli eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festa del prodotto tradizionale Picciddat.",
+    "sectors": "Prodotti alimentari tipici",
+    "participation": {
+      "type": "check",
+      "note": "Elenco ALSIA senza anno, con indicazione aprile. Non dedotti giorni precisi, continuità annuale o ammissione di venditori esterni."
+    },
+    "editions": [],
+    "id": "basilicata-castelluccio-inferiore-festa-del-picciddat"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelluccio Superiore",
+    "name": "Fiera in onore di Maria Angelica Mastroti",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://castellucciosuperiore.halleyweb.it/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20007/idtesto/3",
+      "label": "Comune di Castelluccio Superiore, Calendario eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera riportata nel calendario delle ricorrenze comunali.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Il calendario comunale indica il 25 maggio senza un anno d’edizione. Non trasformato in conferma 2026; settori specifici, tariffe e posteggi non documentati nella pagina."
+    },
+    "editions": [],
+    "id": "basilicata-castelluccio-superiore-fiera-in-onore-di-maria-angelica-mastroti"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelluccio Superiore",
+    "name": "Pollino Wine Fest",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.castellucciosuperiore.pz.it/schedaEventoDetail/estate-castelluccese-2026",
+      "label": "Comune di Castelluccio Superiore, Estate Castelluccese 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Appuntamento di degustazione del vino nel programma estivo comunale.",
+    "sectors": "Vino e degustazioni",
+    "participation": {
+      "type": "check",
+      "note": "Il testo nomina il Pollino Wine Fest del 1° agosto 2026. Non utilizzate le date generali del cartellone come durata del festival; costi e accesso espositori non dichiarati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.castellucciosuperiore.pz.it/schedaEventoDetail/estate-castelluccese-2026"
+      }
+    ],
+    "id": "basilicata-castelluccio-superiore-pollino-wine-fest"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelsaraceno",
+    "name": "Festa della Montagna — Fiera della Montagna",
+    "months": "10,11",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.prolococastelsaraceno.it/festa-della-montagna-2025/",
+      "label": "Pro Loco Castelsaraceno, programma e open call 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera dei prodotti di montagna e stand enogastronomici all’interno della Festa della Montagna.",
+    "sectors": "Prodotti alimentari tipici e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Open call per artigiani, produttori e aziende enogastronomiche del 25–26 ottobre 2025. La mostra mercato e la Sagra della Montagna sono parti dello stesso evento: una sola identità. Il modulo 2023 ha quote storiche distinte; non estese al 2025 o al 2026."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-25",
+        "end": "2025-10-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolococastelsaraceno.it/festa-della-montagna-2025/"
+      },
+      {
+        "year": 2023,
+        "start": "2023-10-28",
+        "end": "2023-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitcastelsaraceno.info/wp-content/uploads/2023/10/festa-della-montagna-adv-STAMPA.pdf"
+      }
+    ],
+    "id": "basilicata-castelsaraceno-festa-della-montagna-fiera-della-montagna"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Castelsaraceno",
+    "name": "Festa del Centro Storico",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolococastelsaraceno.it/home-2/",
+      "label": "Pro Loco Castelsaraceno, Estate tra i due parchi 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso gastronomico tra i vicoli del centro storico.",
+    "sectors": "Piatti tipici e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Programma Pro Loco del 13 agosto 2024, coerente con la scheda comunale del patrimonio culturale. Nessuna edizione 2026 dedotta; il percorso non dimostra accesso libero per operatori esterni."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-13",
+        "end": "2024-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolococastelsaraceno.it/home-2/"
+      }
+    ],
+    "id": "basilicata-castelsaraceno-festa-del-centro-storico"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Chiaromonte",
+    "name": "Sagra del Sambuco",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+      "label": "ALSIA Basilicata, Gli eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata alle preparazioni alimentari con sambuco.",
+    "sectors": "Sambuco e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Fonte ALSIA: maggio senza anno. La stampa annuncia il 23 maggio 2026, ma non recuperato un programma originale di quella edizione: non inserite date esatte 2026."
+    },
+    "editions": [],
+    "id": "basilicata-chiaromonte-sagra-del-sambuco"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Episcopia",
+    "name": "Le Vie del Gusto — Sagra dei Rascatiedd ca’ muddica",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/le-vie-del-gusto-a-episcopia/",
+      "label": "Regione Basilicata, programma Pro Loco 6 agosto 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso gastronomico con stand di prodotti tipici, artigianato e pasta con mollica.",
+    "sectors": "Gastronomia, pasta fresca e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Programma del 7 agosto 2025: la sagra dei rascatiedd delle 20 è interna alle Vie del Gusto, quindi non duplicata come evento autonomo. Quote e disponibilità per banchi esterni non documentate."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-07",
+        "end": "2025-08-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/le-vie-del-gusto-a-episcopia/"
+      }
+    ],
+    "id": "basilicata-episcopia-le-vie-del-gusto-sagra-dei-rascatiedd-ca-muddica"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Fardella",
+    "name": "Sagra dei Raskatiell",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://patrimonioculturale.regione.basilicata.it/rbc/form.jsp?bene=290&sec=5",
+      "label": "Regione Basilicata, scheda Comune di Fardella",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra della pasta tradizionale con laboratori gastronomici e prodotti del territorio.",
+    "sectors": "Pasta fresca e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La scheda comunale e Visit Fardella indicano il 18 agosto come ricorrenza, senza confermare un’edizione corrente. I contributi comunali e il piano dei costi dell’organizzazione non sono quote banco."
+    },
+    "editions": [],
+    "id": "basilicata-fardella-sagra-dei-raskatiell"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Francavilla in Sinni",
+    "name": "Madonna di Pertusavutte — Sagra del vino nuovo",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.francavillainsinni.pz.it/contenuti/19302/sapori",
+      "label": "Comune di Francavilla in Sinni, I sapori",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra paesana dedicata al vino in occasione dell’Immacolata.",
+    "sectors": "Vino e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale del 2018: ricorrenza l’8 dicembre, senza conferma di un’edizione corrente. Non trasferita qui la Festa d’Autunno annunciata dalla stampa per il 7 novembre 2026."
+    },
+    "editions": [],
+    "id": "basilicata-francavilla-in-sinni-madonna-di-pertusavutte-sagra-del-vino-nuovo"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Genzano di Lucania",
+    "name": "Sagra dell’Uva e dei Prodotti Tipici",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/a-genzano-sabato-la-sagra-delluva/",
+      "label": "Regione Basilicata, nota Pro Loco 13 ottobre 2017",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso tra prodotti tipici e tradizione della vendemmia nel centro storico.",
+    "sectors": "Vino e prodotti alimentari tipici",
+    "participation": {
+      "type": "check",
+      "note": "Riscontro primario storico dell’ottobre 2017. Non calcolato il sabato dal giorno di pubblicazione; le date 10–11 ottobre 2026 della stampa non sostituiscono un programma primario recuperato."
+    },
+    "editions": [],
+    "id": "basilicata-genzano-di-lucania-sagra-dell-uva-e-dei-prodotti-tipici"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Ginestra",
+    "name": "Liakra et Bare — Il Borgo dei Sapori Arbëreshë",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://agr.regione.basilicata.it/post/a-ginestra-il-borgo-dei-sapori-arbereshe/",
+      "label": "AGR Regione Basilicata, programma 2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso enogastronomico e culturale dedicato ai sapori arbëreshë.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Fonte regionale per il 25–26 ottobre 2025. Il 24 ottobre 2026 è documentato da comunicati ripresi dalla stampa ma manca l’originale comunale acquisito: mantenuta soltanto l’edizione primaria 2025."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-25",
+        "end": "2025-10-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://agr.regione.basilicata.it/post/a-ginestra-il-borgo-dei-sapori-arbereshe/"
+      }
+    ],
+    "id": "basilicata-ginestra-liakra-et-bare-il-borgo-dei-sapori-arbereshe"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Guardia Perticara",
+    "name": "Sagra della Strazzatella",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/a-guardia-perticara-la-sagra-della-strazzatella/",
+      "label": "Regione Basilicata, programma Pro Loco 20 agosto 2018",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand e forni locali propongono la strazzatella nelle vie del borgo.",
+    "sectors": "Strazzatella e prodotti alimentari",
+    "participation": {
+      "type": "check",
+      "note": "Fonte storica riferita al 21 agosto 2018. Non trasferite le date 2026 di portali che riportano anche un termine evento 2025 incoerente."
+    },
+    "editions": [
+      {
+        "year": 2018,
+        "start": "2018-08-21",
+        "end": "2018-08-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/a-guardia-perticara-la-sagra-della-strazzatella/"
+      }
+    ],
+    "id": "basilicata-guardia-perticara-sagra-della-strazzatella"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Lagonegro",
+    "name": "Fiera della Madonna di Sirino",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.lagonegro.pz.it/schedadocumento/467",
+      "label": "Comune di Lagonegro, ordinanza sindacale 9/2025",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di venditori ambulanti in occasione dei festeggiamenti della Madonna di Sirino.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza sulla gestione dei rifiuti per la fiera del 21–22 settembre 2025. Nessuna disponibilità o quota dedotta dalle prescrizioni sui rifiuti."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-21",
+        "end": "2025-09-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.lagonegro.pz.it/schedadocumento/467"
+      }
+    ],
+    "id": "basilicata-lagonegro-fiera-della-madonna-di-sirino"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Lavello",
+    "name": "Fiera del 29 maggio",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.halleyweb.com/c076043/zf/index.php/trasparenza/index/index/categoria/552",
+      "label": "Comune di Lavello, indice avviso fiera maggio 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera comunale con procedura di assegnazione dei posteggi.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Indice comunale letto nel risultato indicizzato: avviso fiera 29 maggio 2026 e graduatorie del 22/27 maggio. Recupero integrale dell’indice/allegati non riuscito; conservata prova indicizzata, non attestata lettura del bando. Nessun importo o numero di posti dedotto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-29",
+        "end": "2026-05-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c076043/zf/index.php/trasparenza/index/index/categoria/552"
+      }
+    ],
+    "id": "basilicata-lavello-fiera-del-29-maggio",
+    "researchAccess": "indexed-excerpt; full attachments unavailable"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Lavello",
+    "name": "Fiera dell’11 settembre",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lavello.pz.it/schedaArgomento/38",
+      "label": "Comune di Lavello, pubblicazione graduatoria 4 settembre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera comunale con graduatoria degli assegnatari.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale acquisita: graduatoria definitiva per l’11 settembre 2026. Non è prova di disponibilità attuale e non contiene il tariffario."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-11",
+        "end": "2026-09-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.lavello.pz.it/schedaArgomento/38"
+      }
+    ],
+    "id": "basilicata-lavello-fiera-dell-11-settembre"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Maratea",
+    "name": "Mercatini di Natale",
+    "months": "12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.maratea.pz.it/Dettaglionews?IDNews=425136",
+      "label": "Comune di Maratea, manifestazione di interesse 28 ottobre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatini natalizi previsti in Piazza Buraglia nel centro storico.",
+    "sectors": "Prodotti natalizi; settori da verificare nell’avviso",
+    "participation": {
+      "type": "check",
+      "note": "Manifestazione di interesse comunale per il 7 dicembre 2026–6 gennaio 2027, non prova definitiva dell’allestimento né di posteggi disponibili. Albo n. 1983/2026 verificato; link all’avviso restituisce errore di download, quindi condizioni e quote non ricavate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-07",
+        "end": "2027-01-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.maratea.pz.it/Dettaglionews?IDNews=425136"
+      }
+    ],
+    "id": "basilicata-maratea-mercatini-di-natale"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Maschito",
+    "name": "Festa dell’Uva",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.festadelluvamaschito.it/",
+      "label": "Associazione Berimbau, sito ufficiale edizione 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festa della vendemmia con percorsi enogastronomici e carri.",
+    "sectors": "Vino Aglianico e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Edizione conclusa del 12–13 settembre 2026. La sfilata domenicale è una parte del programma e non la sola giornata dell’evento; nessuna edizione 2027 confermata dal saluto “ci vediamo nel 2027”."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-12",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.festadelluvamaschito.it/"
+      }
+    ],
+    "id": "basilicata-maschito-festa-dell-uva"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Moliterno",
+    "name": "Sagra del Canestrato IGP — Le Notti del Canestrato",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/il-9-e-10-agosto-a-moliterno-la-sagra-del-canestrato/",
+      "label": "Regione Basilicata, programma 45ª edizione 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso gastronomico e stand dedicati al Canestrato di Moliterno e ai prodotti locali.",
+    "sectors": "Canestrato, formaggi e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Edizione 2026 documentata il 9–10 agosto. Non confusa con la Fiera Straordinaria di Agosto dell’8 agosto citata da portali; eventuale partecipazione esterna e prezzo da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-09",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/il-9-e-10-agosto-a-moliterno-la-sagra-del-canestrato/"
+      }
+    ],
+    "id": "basilicata-moliterno-sagra-del-canestrato-igp-le-notti-del-canestrato"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Montemilone",
+    "name": "Festa della Salsiccia e dei Prodotti Tipici",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.montemilone.pz.it/novita/avvisi/novita_87.html",
+      "label": "Comune di Montemilone, bando posteggi 11 settembre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione con posteggi per prodotti tipici, artigianato e street food.",
+    "sectors": "Alimentare, non alimentare, artigianato e street food",
+    "participation": {
+      "type": "check",
+      "note": "Bando per il 9–11 ottobre 2026: istanze entro le 12 del 22 settembre 2026, termine trascorso. Categorie: operatori autorizzati, produttori, artigiani/hobbisti e associazioni con titoli richiesti. Allegati richiamati tramite JavaScript non acquisiti; la pagina non contiene quote. Il calendario automatico della home non sostituisce le date esplicite del bando."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.montemilone.pz.it/novita/avvisi/novita_87.html"
+      }
+    ],
+    "id": "basilicata-montemilone-festa-della-salsiccia-e-dei-prodotti-tipici"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Muro Lucano",
+    "name": "Sagra della Patata di Montagna",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://sagradellapatatadimontagna.it/",
+      "label": "Pro Loco Murese, sito ufficiale 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata alle preparazioni con la patata di montagna e ai prodotti locali.",
+    "sectors": "Patate e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Quindicesima edizione dell’11–13 settembre 2026. Nessuna stima di affluenza inserita; date e successo non provano disponibilità per espositori."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-11",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://sagradellapatatadimontagna.it/"
+      }
+    ],
+    "id": "basilicata-muro-lucano-sagra-della-patata-di-montagna"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Paterno",
+    "name": "Fiera della Madonna del Carmine",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.paterno.pz.it/page/avvisi-pubblici-per-la-fiera-e-le-festivit-del-15-",
+      "label": "Comune di Paterno, avvisi 25 maggio 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera nelle festività della Madonna del Carmine con posteggi commerciali.",
+    "sectors": "Alimentare, somministrazione, non alimentare e produttori agricoli",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 15–16 luglio 2026; domande in bollo tramite SUAP o PEC entro il 20 giugno. La pagina indica 85 posteggi complessivi e distingue la procedura dello spettacolo viaggiante. Numero e scadenza sono storici, non disponibilità attuale; importo del bollo e canone non dedotti."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-15",
+        "end": "2026-07-16",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.paterno.pz.it/page/avvisi-pubblici-per-la-fiera-e-le-festivit-del-15-"
+      }
+    ],
+    "id": "basilicata-paterno-fiera-della-madonna-del-carmine"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pescopagano",
+    "name": "Fiera della SS. Annunziata",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.pescopagano.pz.it/it/news-category/141826",
+      "label": "Comune di Pescopagano, avviso fiere 20 marzo 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale in Via Roma.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "L’indice comunale acquisito elenca il 25 marzo, 2 luglio e 15 settembre 2026. La pagina di dettaglio risponde 410: condizioni 2026 non lette integralmente. Il bando della SS. Annunziata 2025 non è applicato alle altre fiere né al 2026; nessuna disponibilità attestata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-25",
+        "end": "2026-03-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pescopagano.pz.it/it/news-category/141826"
+      }
+    ],
+    "id": "basilicata-pescopagano-fiera-della-ss-annunziata"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pescopagano",
+    "name": "Fiera del 2 luglio",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.pescopagano.pz.it/it/news-category/141826",
+      "label": "Comune di Pescopagano, avviso fiere 20 marzo 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale in Via Roma.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "L’indice comunale acquisito elenca il 25 marzo, 2 luglio e 15 settembre 2026. La pagina di dettaglio risponde 410: condizioni 2026 non lette integralmente. Il bando della SS. Annunziata 2025 non è applicato alle altre fiere né al 2026; nessuna disponibilità attestata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-02",
+        "end": "2026-07-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pescopagano.pz.it/it/news-category/141826"
+      }
+    ],
+    "id": "basilicata-pescopagano-fiera-del-2-luglio"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Pescopagano",
+    "name": "Fiera del 15 settembre",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.pescopagano.pz.it/it/news-category/141826",
+      "label": "Comune di Pescopagano, avviso fiere 20 marzo 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale in Via Roma.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "L’indice comunale acquisito elenca il 25 marzo, 2 luglio e 15 settembre 2026. La pagina di dettaglio risponde 410: condizioni 2026 non lette integralmente. Il bando della SS. Annunziata 2025 non è applicato alle altre fiere né al 2026; nessuna disponibilità attestata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-15",
+        "end": "2026-09-15",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pescopagano.pz.it/it/news-category/141826"
+      }
+    ],
+    "id": "basilicata-pescopagano-fiera-del-15-settembre"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Potenza",
+    "name": "Fiera di Agosto",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://archivio.comune.potenza.it/wp-content/uploads/2024/12/Provvedimento-159.pdf",
+      "label": "Comune di Potenza, calendario mercati 2025, ordinanza 159/2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera annuale cittadina del 27 agosto.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Fonte ufficiale letta nell’estrazione PDF del browser; download diretto in timeout. Calendario storico 2025: nessuna conferma automatica 2026. L’atto contiene refusi sui giorni della settimana dei mercati: non usati per correggere o calcolare le date delle fiere."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-27",
+        "end": "2025-08-27",
+        "dateType": "calendar",
+        "sourceUrl": "https://archivio.comune.potenza.it/wp-content/uploads/2024/12/Provvedimento-159.pdf"
+      }
+    ],
+    "id": "basilicata-potenza-fiera-di-agosto"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Potenza",
+    "name": "Fiera de Li Zang",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://archivio.comune.potenza.it/wp-content/uploads/2024/12/Provvedimento-159.pdf",
+      "label": "Comune di Potenza, calendario mercati 2025, ordinanza 159/2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera annuale cittadina del 23 ottobre.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Fonte ufficiale letta nell’estrazione PDF del browser, originale diretto in timeout. Data del calendario 2025; non conferma 2026. Il bando 2025 separato è emerso soltanto dall’indice e non è stato acquisito integralmente: nessun costo da esso dedotto."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-23",
+        "end": "2025-10-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://archivio.comune.potenza.it/wp-content/uploads/2024/12/Provvedimento-159.pdf"
+      }
+    ],
+    "id": "basilicata-potenza-fiera-de-li-zang"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Potenza",
+    "name": "Lucania is Comics",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.lucaniaiscomics.it/programma/",
+      "label": "Organizzatore, programma ufficiale 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festival del fumetto con area espositiva per hobbisti, artigiani e associazioni in Piazza Matteotti.",
+    "sectors": "Fumetti, libri, artigianato e hobbistica",
+    "participation": {
+      "type": "check",
+      "note": "Programma 9–11 ottobre 2026; le aree espositive sono parti della stessa manifestazione. Il prezzo dei biglietti visitatori non è un prezzo banco. Condizioni e quote espositori non recuperate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lucaniaiscomics.it/programma/"
+      }
+    ],
+    "id": "basilicata-potenza-lucania-is-comics"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rapone",
+    "name": "Sagra della Soppressata e del Caciocavallo",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/domani-a-rapone-concerto-dei-terraross/",
+      "label": "Regione Basilicata, nota della manifestazione 2013",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata a soppressata e caciocavallo con prodotti tipici.",
+    "sectors": "Salumi e formaggi",
+    "participation": {
+      "type": "check",
+      "note": "Riscontro primario storico della 38ª edizione. Periodo di agosto; non calcolato il giorno dalla parola “domani” e non ricostruita un’edizione attuale da ricorrenze storiche."
+    },
+    "editions": [],
+    "id": "basilicata-rapone-sagra-della-soppressata-e-del-caciocavallo"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Roccanova",
+    "name": "Sagra del Vino",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/parte-a-roccanova-la-sagra-del-vino/",
+      "label": "Regione Basilicata, comunicato circolo Ugo Foscolo 2011",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra dedicata al vino nuovo Grottino di Roccanova.",
+    "sectors": "Vino e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Riscontro storico della XXVI edizione, legato all’8 dicembre; non conferma un’edizione corrente. Eventi collaterali a Sant’Arcangelo non generano automaticamente una seconda scheda."
+    },
+    "editions": [],
+    "id": "basilicata-roccanova-sagra-del-vino"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rotonda",
+    "name": "Fiera del lunedì prima di Pasqua",
+    "months": "3,4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://egov.hseweb.it/rotonda/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20029/idtesto/34",
+      "label": "Comune di Rotonda, Mercati e fiere",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di prodotti generici elencata dal Comune.",
+    "sectors": "Prodotti generici",
+    "participation": {
+      "type": "check",
+      "note": "Lunedì precedente la Pasqua, senza calcolare una data 2026. Nessun bando di edizione, tariffario o disponibilità recuperati; distinti dai mercati ordinari del giovedì."
+    },
+    "editions": [],
+    "id": "basilicata-rotonda-fiera-del-lunedi-prima-di-pasqua"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rotonda",
+    "name": "Fiera del 13 giugno",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://egov.hseweb.it/rotonda/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20029/idtesto/34",
+      "label": "Comune di Rotonda, Mercati e fiere",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di prodotti generici elencata dal Comune.",
+    "sectors": "Prodotti generici",
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza del 13 giugno, anno non specificato. Nessun bando di edizione, tariffario o disponibilità recuperati; distinti dai mercati ordinari del giovedì."
+    },
+    "editions": [],
+    "id": "basilicata-rotonda-fiera-del-13-giugno"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rotonda",
+    "name": "Fiera del 17 agosto",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://egov.hseweb.it/rotonda/zf/index.php/servizi-aggiuntivi/index/index/idservizio/20029/idtesto/34",
+      "label": "Comune di Rotonda, Mercati e fiere",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di prodotti generici elencata dal Comune.",
+    "sectors": "Prodotti generici",
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza del 17 agosto, anno non specificato. Nessun bando di edizione, tariffario o disponibilità recuperati; distinti dai mercati ordinari del giovedì."
+    },
+    "editions": [],
+    "id": "basilicata-rotonda-fiera-del-17-agosto"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Rotonda",
+    "name": "Il Bianco e La Rossa — Festa del Fagiolo Bianco e della Melanzana Rossa",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/rotonda-celebra-le-sue-eccellenze/",
+      "label": "Regione Basilicata, programma XVI edizione 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rassegna delle due produzioni DOP con degustazioni, show cooking e prodotti locali.",
+    "sectors": "Fagiolo bianco, melanzana rossa e vino",
+    "participation": {
+      "type": "check",
+      "note": "Edizione del 28–29 agosto 2026. Non confusa con l’edizione speciale autunnale della Notte Rosa del Vino, di cui resta una pista distinta."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-08-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/rotonda-celebra-le-sue-eccellenze/"
+      }
+    ],
+    "id": "basilicata-rotonda-il-bianco-e-la-rossa-festa-del-fagiolo-bianco-e-della-melanzana-rossa"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Ruoti",
+    "name": "Fiera di San Donato",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.ruoti.pz.it/page/festivit-e-sagre",
+      "label": "Comune di Ruoti, Festività e sagre",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera nella strada principale per la ricorrenza di San Donato.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale: festeggiamenti 6/7 agosto e fiera il giorno precedente. Registrato solo agosto; non risolta arbitrariamente l’ambiguità del giorno e non confermato il 2026. Il riferimento ad animali riguarda il passato."
+    },
+    "editions": [],
+    "id": "basilicata-ruoti-fiera-di-san-donato"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Chirico Raparo",
+    "name": "Fiera di San Vito",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.prolocosanchirichese.it/territorio/il-paese.html",
+      "label": "Pro Loco Sanchirichese, calendario del paese",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera nel calendario delle tradizioni locali.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Il calendario Pro Loco elenca il 18 agosto. Fonte senza anno: non inserite edizioni 2026. Quote, settori specifici e disponibilità non documentati."
+    },
+    "editions": [],
+    "id": "basilicata-san-chirico-raparo-fiera-di-san-vito"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Chirico Raparo",
+    "name": "Fiera a l’acqua a preta",
+    "months": "5,9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.prolocosanchirichese.it/territorio/il-paese.html",
+      "label": "Pro Loco Sanchirichese, calendario del paese",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera nel calendario delle tradizioni locali.",
+    "sectors": "Merci varie",
+    "participation": {
+      "type": "check",
+      "note": "Il calendario Pro Loco elenca il 15 maggio e il 29 settembre come appuntamenti della stessa fiera. Fonte senza anno: non inserite edizioni 2026. Quote, settori specifici e disponibilità non documentati."
+    },
+    "editions": [],
+    "id": "basilicata-san-chirico-raparo-fiera-a-l-acqua-a-preta"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Chirico Raparo",
+    "name": "Profumi d’Autunno",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocosanchirichese.it/manifestazioni/eventi.html",
+      "label": "Pro Loco Sanchirichese, programma 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Appuntamento gastronomico autunnale in Largo Monumento ai Caduti.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Pagina dell’organizzatore: sabato 31 ottobre 2026 dalle 19:30. Nessun bando o prezzo espositori nella scheda; evento distinto dalle fiere del calendario."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-31",
+        "end": "2026-10-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocosanchirichese.it/manifestazioni/eventi.html"
+      }
+    ],
+    "id": "basilicata-san-chirico-raparo-profumi-d-autunno"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Fele",
+    "name": "Festa d’Autunno",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/il-27-ottobre-la-festa-dautunno-a-san-fele/",
+      "label": "Regione Basilicata, programma Pro Loco e Comune 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand di artigianato, prodotti tipici e caldarroste nel borgo.",
+    "sectors": "Gastronomia e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "XXIV edizione del 27 ottobre 2024. La XXVI edizione 2026 è annunciata dalla stampa ma l’originale non è acquisito: non proiettate le nuove date."
+    },
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-10-27",
+        "end": "2024-10-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/il-27-ottobre-la-festa-dautunno-a-san-fele/"
+      }
+    ],
+    "id": "basilicata-san-fele-festa-d-autunno"
+  },
+  {
+    "region": "Basilicata",
+    "city": "San Severino Lucano",
+    "name": "Autunno sanseverinese",
+    "months": "10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://agr.regione.basilicata.it/post/al-via-programma-dellautunno-sanseverinese/",
+      "label": "AGR Regione Basilicata, programma Comune e Pro Loco 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rassegna autunnale con degustazioni di prodotti locali e sagre gastronomiche.",
+    "sectors": "Prodotti gastronomici tipici, funghi e castagne",
+    "participation": {
+      "type": "check",
+      "note": "Programma storico 2024 a giornate, non apertura continuativa per un mese. Sagra del fungo del 2 novembre interna alla rassegna: non duplicata. Date e banchi delle edizioni successive da verificare."
+    },
+    "editions": [],
+    "id": "basilicata-san-severino-lucano-autunno-sanseverinese"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Sant'Angelo Le Fratte",
+    "name": "Le Cantine Aperte",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocosantangelolefratte.org/wp/wp-content/uploads/2023/07/Proloco-Santangelo-Le-Fratte-regolamento-ingresso-in-festa-2023-IBAN_Corretto..pdf",
+      "label": "Pro Loco Sant’Angelo Le Fratte, regolamento edizione 2023",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso tra cantine con prodotti gastronomici, vino e artigianato.",
+    "sectors": "Alimentare, bevande e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Regolamento per il 12–14 agosto 2023: autorizzazione dell’organizzazione, SCIA e categorie di vendita; escluse determinate concorrenze alimentari e superalcolici. Le quote nel testo sono esplicitamente anno 2022 nonostante intestazione 2023: non considerate listino corrente."
+    },
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-08-12",
+        "end": "2023-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocosantangelolefratte.org/wp/wp-content/uploads/2023/07/Proloco-Santangelo-Le-Fratte-regolamento-ingresso-in-festa-2023-IBAN_Corretto..pdf"
+      }
+    ],
+    "id": "basilicata-sant-angelo-le-fratte-le-cantine-aperte"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Spinoso",
+    "name": "Sagra della Castagna",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/a-spinoso-il-20-ottobre-la-xviii-sagra-della-castagna/",
+      "label": "Regione Basilicata, nota Pro Loco e Comune 9 ottobre 2013",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra della castagna organizzata dalla Pro Loco con il Comune.",
+    "sectors": "Castagne e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Riscontro storico del 20 ottobre 2013 e gallerie della Pro Loco. Il collegamento con “Castagne in Festa” 2026 resta da validare: non creata una seconda identità né trasferite date da portali."
+    },
+    "editions": [
+      {
+        "year": 2013,
+        "start": "2013-10-20",
+        "end": "2013-10-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/a-spinoso-il-20-ottobre-la-xviii-sagra-della-castagna/"
+      }
+    ],
+    "id": "basilicata-spinoso-sagra-della-castagna"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Tito",
+    "name": "Centro in Tavola",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/tito-ritorna-centro-in-tavola/",
+      "label": "Regione Basilicata, programma Comune e Pro Loco 3 settembre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso di aziende, associazioni e produzioni locali con stand gastronomici ed esposizioni artigiane.",
+    "sectors": "Prodotti alimentari e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Edizione 4–6 settembre 2026; coinvolgimento delle attività locali e oltre trenta stand descritti nel programma non significano banchi disponibili per nuovi operatori. Quote non recuperate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-04",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/tito-ritorna-centro-in-tavola/"
+      }
+    ],
+    "id": "basilicata-tito-centro-in-tavola"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Tolve",
+    "name": "Fiera agroalimentare di prodotti lucani",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://egov.hseweb.it/tolve/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRJNE61Yz0-H",
+      "label": "Comune di Tolve, ordinanza 31 del 10 settembre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera agroalimentare in Largo Mario Pagano, Via Roma e Corso Vittorio Emanuele.",
+    "sectors": "Prodotti agroalimentari lucani",
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza per il 12 settembre 2026; la fascia 10–23 riguarda i divieti stradali e non viene presentata come orario certificato dei banchi. Nessun bando o costo dedotto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-12",
+        "end": "2026-09-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://egov.hseweb.it/tolve/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRJNE61Yz0-H"
+      }
+    ],
+    "id": "basilicata-tolve-fiera-agroalimentare-di-prodotti-lucani"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Trecchina",
+    "name": "Sagra della Castagna",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://archivio.comune.trecchina.pz.it/vivere-trecchina/gli-eventi/",
+      "label": "Comune di Trecchina, eventi; Amici della Castagna",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra con caldarroste e fiera di prodotti tipici lucani, calabresi, campani e artigianato.",
+    "sectors": "Prodotti alimentari e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale: tra terza e quarta settimana di ottobre; sito dell’organizzatore consultato con titolo 2026 e immagini/gallerie storiche. Non ricavate date 2026 dalla vecchia locandina 2024. Quota espositori non verificata."
+    },
+    "editions": [],
+    "id": "basilicata-trecchina-sagra-della-castagna"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Vaglio Basilicata",
+    "name": "Vaglio Terra di Cultura e Sapori",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.basilicata.it/dal-7-al-9-agosto-vaglio-terra-di-cultura-e-sapori/",
+      "label": "Regione Basilicata, programma APS e Comune 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso enogastronomico e culturale nel borgo.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Programma del 7–9 agosto 2026, curato dall’APS Vaglio Terra di Cultura e Sapori. Non confuso con la fiera Madonna delle Grazie di settembre; quote banco non verificate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.basilicata.it/dal-7-al-9-agosto-vaglio-terra-di-cultura-e-sapori/"
+      }
+    ],
+    "id": "basilicata-vaglio-basilicata-vaglio-terra-di-cultura-e-sapori"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Venosa",
+    "name": "Borgo diVino in tour",
+    "months": "10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://borgodivino.it/venosa/",
+      "label": "Organizzatore Borgo diVino, tappa Venosa 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Degustazioni di vini e acquisto di specialità gastronomiche nel borgo.",
+    "sectors": "Vino e prodotti gastronomici",
+    "participation": {
+      "type": "check",
+      "note": "Tappa del 30 ottobre–1 novembre 2026. Voucher visitatori 20 € e cauzione calice 2 € non sono costi espositore: esclusi dal registro banco. Nessuna disponibilità derivata dal contatore del negozio online."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://borgodivino.it/venosa/"
+      }
+    ],
+    "id": "basilicata-venosa-borgo-divino-in-tour"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Vietri di Potenza",
+    "name": "Tipica",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf",
+      "label": "APT Basilicata, Speciale estate 2025, pagina 9",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso enogastronomico delle tipicità vietresi.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Fonte APT per il 12–13 agosto 2025 e scheda del patrimonio culturale del Comune. L’edizione 2026 è riportata dalla stampa ma non viene trasformata qui in conferma primaria."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-12",
+        "end": "2025-08-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.basilicataturistica.it/wp-content/uploads/2022/06/APT-Speciale-Estate-A4_2025-Digitale-Aggiornato_4-Agosto-1.pdf"
+      }
+    ],
+    "id": "basilicata-vietri-di-potenza-tipica"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Viggianello",
+    "name": "Il Gusto del Pollino",
+    "months": "10,11",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+      "label": "ALSIA Basilicata, Gli eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatini autunnali dedicati alla filiera di funghi e castagne.",
+    "sectors": "Prodotti alimentari, funghi e castagne",
+    "participation": {
+      "type": "check",
+      "note": "ALSIA indica ottobre e novembre senza anno. Non trasferito il calendario dei cinque weekend 2026 dai portali. Accesso ai posteggi e prezzi da verificare con un avviso specifico."
+    },
+    "editions": [],
+    "id": "basilicata-viggianello-il-gusto-del-pollino"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Viggianello",
+    "name": "Sagra della Rappasciona",
+    "months": "12",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.alsia.it/opencms/opencms/biodiversita/eventi.html",
+      "label": "ALSIA Basilicata, Gli eventi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Sagra del piatto tradizionale Rappasciona.",
+    "sectors": "Prodotti gastronomici tipici",
+    "participation": {
+      "type": "check",
+      "note": "Fonte ALSIA senza anno, con indicazione dicembre. Non proiettate date fino a gennaio 2027 né il 4 gennaio ricorrente dei portali; collegamento con “Rappasciona Fest” da validare."
+    },
+    "editions": [],
+    "id": "basilicata-viggianello-sagra-della-rappasciona"
+  },
+  {
+    "region": "Basilicata",
+    "city": "Viggiano",
+    "name": "Festa del Porcino e dei Sapori del Sottobosco",
+    "months": "10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://festadelporcino.it/",
+      "label": "Organizzatore, programma ufficiale 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand gastronomici, prodotti tipici e artigiani nelle piazze di Viggiano.",
+    "sectors": "Prodotti alimentari, funghi e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Programma ufficiale del 30 ottobre–1 novembre 2026. I contributi per tombolata, attività, passeggiate e tesserino raccolta funghi non sono prezzi banco; non inseriti come quote espositori."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://festadelporcino.it/"
+      }
+    ],
+    "id": "basilicata-viggiano-festa-del-porcino-e-dei-sapori-del-sottobosco"
   }
 ]
