@@ -105,10 +105,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **6 novembre 2026 ? filtro unico fiere:** pubblicato `991d795`; rimosso ?Cosa vendi?, quattro settori integrati in ?Tipologia di articolo?, con conteggi, articoli compatibili, un solo indicatore e azzeramento completo. Link precedenti conservati; classificazioni e catalogo invariati. Selezioni/URL/azzera e menu in chiaro/scuro: Chromium1440/820/320 e WebKit390 locali/online passati; SEO e ingressi locali passati. Prove `.local/verifiche/fiere-filtro-unificato/`.
-
-
-- **6 novembre 2026 — filtri fiere:** pubblicato `e92df8f`; «Tipologia di articolo» spostata in «Altri filtri», principali solo Quando/Dove. Indicatore delle tipologie attive a sezione chiusa. SEO, ingressi e selezioni/URL/azzera verificati; Chromium1440/820/320 e WebKit390 locali/online passati. Catalogo invariato. Prove `.local/verifiche/fiere-tipologia-secondari/`.
+- **6 novembre 2026 — filtro unico fiere:** pubblicato `991d795`; rimosso «Cosa vendi», settori integrati in «Tipologia di articolo» dentro «Altri filtri». Principali solo Quando/Dove. Conteggi, articoli compatibili e azzeramento unico; link e catalogo conservati. Chromium1440/820/320 e WebKit390 locali/online passati, SEO e ingressi locali passati. Prove `.local/verifiche/fiere-filtro-unificato/`.
 
 
 - **6 novembre 2026 - Potenza:** pubblicato `34d1bed`, Vercel Ready `dpl_FGiuw5uR51RQ5pAoyMxbx6nouUL9`; +83 schede e 2 note storiche, ricognizione 100/100. Catalogo live identico, 10.119 schede/471 note precedenti invariate; build/settori/SEO/SSR e browser locali/online passati; 10.202 ID recensioni sincronizzati e 83 letture API riuscite. [Fonti e limiti](data/fiere-dossier/potenza-20261106.md). Potenza ultima delle tre, 6.1 sol low, sessione fermata alla conclusione; nessuna altra provincia autorizzata o prosecuzione automatica.
