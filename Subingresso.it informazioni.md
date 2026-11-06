@@ -105,6 +105,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 — ingressi Google nelle fiere:** pubblicato `b843e2c`; URL indicizzati conservati, calendario con scheda aperta, provincia/mesi coerenti e ritorno alla ricerca. Procedura ufficiale in evidenza e favicon ripristinato. Verifiche locali e online Chromium1440/768/320 e WebKit390; recensioni, accesso e promemoria simulati passati. Catalogo invariato; integrazione isolata sotto mutex. [Contratto e limiti](data/fiere-dossier/123-ingressi-google-calendario-20261106.md).
+
+
 - **6 novembre 2026 — tre nuove sessioni su richiesta:** Potenza, Campobasso e
   Agrigento avviate in parallelo, con thread nuovi e worktree isolati da
   `d240d1b`. Ricerca per comune, verifiche e pubblicazione al termine;
