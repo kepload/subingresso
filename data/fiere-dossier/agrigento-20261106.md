@@ -1,9 +1,10 @@
-# Agrigento — ricerca del 6 novembre 2026, da integrare
+# Agrigento — ricerca e pubblicazione del 6 novembre 2026
 
 Ricognizione nominale dei **43 comuni**: **34 nuove schede in 26 comuni**,
 **8 note economiche**. È una ricerca documentale con limiti, non un censimento
-certificato. Nessuna pubblicazione, modifica del catalogo nazionale o chiusura
-della checklist in questa fase.
+certificato. Pubblicata e verificata online: catalogo nazionale a 9.893 schede e 462 note.
+
+Le sezioni seguenti conservano la consegna della fase di ricerca; esito della successiva integrazione in fondo.
 
 ## File e prove
 
@@ -18,7 +19,7 @@ della checklist in questa fase.
   effettivo su copie private.
 
 Originali, testi, risultati di ricerca, metadati HTTP e SHA-256 in
-`.local/ricerche/agrigento-20261106/`. `manifest.json` elenca i recuperi,
+`.local/worktrees/agrigento-20261106/.local/ricerche/agrigento-20261106/`. `manifest.json` elenca i recuperi,
 compresi quelli falliti; `search-*.json` conserva query e risposta ricevuta,
 senza presentare gli snippet come lettura integrale dei documenti collegati.
 `visual-reading.json` distingue le letture dei PDF scansionati dal testo estratto.
@@ -142,3 +143,9 @@ Nessun sub-agente, altra provincia, loop o task avviati. Pavia resta riservata.
 Rapporto e segnale pronto nella cartella condivisa autorizzata
 `.local/lavori/tre-province-20261106/`; integrazione e pubblicazione rimandate
 alla successiva istruzione del launcher sotto mutex, senza attesa attiva.
+
+## Pubblicazione verificata
+
+Commit dati `3fdaa4c`, ricerca `bdf8041`; Vercel Ready `dpl_8GrHAbAfLaYrmAkTQ5bxMxErMAdy`, dominio subingresso.it. Tutte le 9.859 schede e 454 note precedenti invariate; due build identiche, settori e SEO passati. Filtro, dettagli e pagine delle 35 schede provinciali verificati su Chromium1440/320 e WebKit390 locali/online; catalogo online identico, 34 letture API recensioni riuscite e 9.893 ID sincronizzati. Proposta San Calogero esclusa.
+
+Prove di pubblicazione `.local/verifiche/agrigento-pubblicazione-20261106/`. Errori parziali: primo script fermato prima di scrivere per fonte senza ID, corretto; test generale pagine fermato nella fase browser per risoluzione Playwright, suite provinciale completa passata con modulo presente. Nessun account, recensione o invio reale di prova. Solo Agrigento conclusa; Potenza/Campobasso ferme, nessuna ripresa automatica.

@@ -21,10 +21,10 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **6 novembre 2026**: **104 province concluse e 6 aperte su 110**,
+Ultimo esito **6 novembre 2026**: **105 province concluse e 5 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **9.859** dopo Caltanissetta (+16 in 11 comuni); tutte le 9.843 schede precedenti, Rieti inclusa, invariate.
+Catalogo **9.893** dopo Agrigento (+34 in 26 comuni, 8 note economiche); tutte le 9.859 schede e 454 note precedenti invariate.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -104,6 +104,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **6 novembre 2026 — Agrigento:** pubblicato `3fdaa4c`, Vercel Ready `dpl_8GrHAbAfLaYrmAkTQ5bxMxErMAdy`; +34 schede e 8 note, ricognizione 43 comuni. Catalogo live identico, dati precedenti invariati, build/settori/SEO e Chromium1440/320 + WebKit390 locali/online passati; 9.893 ID recensioni sincronizzati e 34 letture API riuscite. [Fonti e limiti](data/fiere-dossier/agrigento-20261106.md). Richiesta corrente: chiudere soltanto una provincia con 6.1 sol low; Potenza e Campobasso ferme, prosecuzione da decidere dopo controllo quota, nessuna ripresa automatica.
 
 - **6 novembre 2026 — finiture ricerca fiere:** pubblicato `a03c064`; X centrata con SVG e titolo «Trova la fiera giusta per te» sopra Quando. Centro verificato in chiaro/scuro su Chromium1440/320 e WebKit390; percorso calendario verificato anche online. Catalogo invariato, pubblicazione sotto mutex. Prove `.local/verifiche/fiere-titolo-chiudi/`.
 

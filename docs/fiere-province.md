@@ -1,6 +1,6 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **6 novembre 2026**: **104 concluse, 6 aperte su 110**.
+Stato aggiornato il **6 novembre 2026**: **105 concluse, 5 aperte su 110**.
 L'Aquila, Cosenza, Catanzaro e Reggio Calabria verificati online il 5 novembre;
 le altre caselle conservano gli esiti precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
@@ -125,7 +125,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [ ] **89. Potenza**
 - [ ] **90. Campobasso**
 - [x] **91. Rieti**
-- [ ] **92. Agrigento**
+- [x] **92. Agrigento**
 - [ ] **93. Oristano**
 - [ ] **94. Nuoro**
 - [x] **95. Vibo Valentia**
@@ -150,3 +150,5 @@ Vibo Valentia: 23 nuove schede in 10 comuni, ricognizione dei 50 comuni e quattr
 Rieti: +69 schede in 53 comuni, ricognizione dei 73 comuni e una nota costo; verificate online il 5 novembre 2026. [Fonti e limiti](../data/fiere-dossier/rieti-20261105.md). Entrambe le sessioni Rieti/Vibo concluse; nessuna prosecuzione.
 
 Caltanissetta: +16 schede in 11 comuni e una nota economica, verificate online il 6 novembre 2026. Ricognizione dei 22 comuni con limiti; [dossier](../data/fiere-dossier/caltanissetta-20261106.md). Nessuna prosecuzione.
+
+Agrigento: +34 schede in 26 comuni e 8 note economiche, ricognizione dei 43 comuni; catalogo e percorsi verificati online il 6 novembre 2026. [Fonti e limiti](../data/fiere-dossier/agrigento-20261106.md). Solo questa provincia conclusa; Potenza e Campobasso ferme.

@@ -8,7 +8,7 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 ## Stato e vincoli da conservare
 
 - [Checklist unica](../docs/fiere-province.md): aggiornata il 6 novembre,
-  104 concluse e 6 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+  105 concluse e 5 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
@@ -172,3 +172,5 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 - [Teramo — ricerca provinciale del 26 ottobre 2026](fiere-dossier/117-teramo-ricerca-provinciale-del-26-ottobre-2026.md)
 
 - [Medio Campidano ? 4 novembre 2026](fiere-dossier/119-medio-campidano-20261104.md)
+
+- [Agrigento — 6 novembre 2026](fiere-dossier/agrigento-20261106.md): +34 schede e 8 note economiche; 43 comuni esaminati, limiti espliciti, pubblicazione verificata.
