@@ -1,0 +1,2607 @@
+{
+  "province": "Campobasso",
+  "checkedAt": "2026-11-06",
+  "baseline": "d240d1b",
+  "method": "Ricognizione nominale di tutti gli 84 comuni; approfondimenti selettivi su Comuni, Pro Loco, organizzatori e fonti istituzionali. Calendario 2021 letto come fonte storica, non prova di svolgimento né conferma corrente. Non lettura integrale degli albi o censimento certificato. Le query e gli originali con esiti HTTP/SHA256 sono conservati nel worktree privato.",
+  "municipalities": [
+    {
+      "city": "Acquaviva Collecroce",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Acquaviva Collecroce\" fiera sagra mercatino comune pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-01.json"
+        }
+      ],
+      "newIds": [
+        "molise-acquaviva-collecroce-fiera-di-san-michele",
+        "molise-acquaviva-collecroce-fiera-di-san-biagio"
+      ],
+      "outcome": "Aggiunte: Fiera di San Michele; Fiera di San Biagio.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=21",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=22",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Baranello",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Baranello\" fiera sagra mercatino comune pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-01.json"
+        }
+      ],
+      "newIds": [
+        "molise-baranello-fiera-di-san-michele",
+        "molise-baranello-fiera-dell-immacolata"
+      ],
+      "outcome": "Aggiunte: Fiera di San Michele; Fiera dell'Immacolata.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=22",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Bojano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Bojano\" fiera sagra mercatino comune pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-01.json"
+        }
+      ],
+      "newIds": [
+        "molise-bojano-fiera-dell-epifania",
+        "molise-bojano-fiera-dell-annunciazione",
+        "molise-bojano-fiera-di-san-martino"
+      ],
+      "outcome": "Aggiunte: Fiera dell'Epifania; Fiera dell'Annunciazione; Fiera di San Martino.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=22",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Bonefro",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Bonefro\" fiera sagra mercatino comune pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-01.json"
+        },
+        {
+          "query": "\"Bonefro\" \"Mercatini della Creatività\" comune 2025",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-23.json"
+        },
+        {
+          "query": "\"Bonefro\" mercatini site:comune.bonefro.cb.it",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-24.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Mercatini della Creatività: 14 dicembre 2025 da Eventi Molise e stampa, non dal programma originale dell’organizzatore. Portale comunale recuperato; nessuna nuova scheda su questi soli riscontri.",
+      "sources": [
+        {
+          "url": "https://www.comune.bonefro.cb.it/",
+          "label": "Comune di Bonefro, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/bonefro-natale.txt"
+      ]
+    },
+    {
+      "city": "Busso",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Busso\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-02.json"
+        }
+      ],
+      "newIds": [
+        "molise-busso-fiera-nostra"
+      ],
+      "outcome": "Aggiunte: Fiera Nostra.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Comune di Busso, calendario senza anno",
+          "url": "https://www.halleyweb.com/busso/hh/index.php"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/busso-fiere.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=22",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Campobasso",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Campobasso\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-02.json"
+        },
+        {
+          "query": "\"Campobasso\" \"ORO\" \"2026\" fiera tartufo organizzatori",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-23.json"
+        },
+        {
+          "query": "\"Campobasso\" \"ORO\" \"tartufo\" \"26\" \"2026\"",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-27.json"
+        }
+      ],
+      "newIds": [
+        "molise-campobasso-campobazar",
+        "molise-campobasso-mercatini-di-natale",
+        "molise-campobasso-campobasso-in-fiera"
+      ],
+      "outcome": "Aggiunte: CampoBazar; Mercatini di Natale; Campobasso in Fiera.",
+      "limits": "Tre nuove identità. CampoBazar riservato ad attività occasionali: gratuito non significa banco professionale ammesso. Natale 1–23 dicembre 2024 come previsione dell’avviso. Campobasso in Fiera: rinvio del 25 gennaio al 1 febbraio 2026 esplicito; originali in contenitore firmato, estratto il PDF senza validare la firma. Corpus Domini già presente: proposta separata, nessuna sovrascrittura.",
+      "sources": [
+        {
+          "url": "https://egov.comune.campobasso.it/campobasso2/zf/index.php/servizi-aggiuntivi/index/index/idtesto/20290",
+          "label": "Comune di Campobasso, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.campobasso.it/campobasso2/po/attachment_news.php?id=2864",
+          "label": "Comune di Campobasso, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://egov.comune.campobasso.it/campobasso2/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G9mpZMUTEYz0-A",
+          "label": "Comune di Campobasso, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Comune di Campobasso, determina 3766 del 22 settembre 2026, titolo edizione settembre",
+          "url": "https://egov.comune.campobasso.it/campobasso2/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G1npBMkT6QT0-A"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/campobasso-campobazar.txt",
+        ".local/ricerche/campobasso-20261106/campobasso-fiera-ordinanza-estratto.txt",
+        ".local/ricerche/campobasso-20261106/campobasso-fiera-ordinanza.html",
+        ".local/ricerche/campobasso-20261106/campobasso-fiera-settembre-alt.txt",
+        ".local/ricerche/campobasso-20261106/campobasso-in-fiera.txt",
+        ".local/ricerche/campobasso-20261106/campobasso-natale-2024.pdf#page=2",
+        ".local/ricerche/campobasso-20261106/campobasso-natale-2024.txt",
+        ".local/ricerche/campobasso-20261106/campobazar-disciplinare.pdf",
+        ".local/ricerche/campobasso-20261106/campobazar-disciplinare.txt"
+      ]
+    },
+    {
+      "city": "Campochiaro",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Campochiaro\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-02.json"
+        }
+      ],
+      "newIds": [
+        "molise-campochiaro-fiera-di-san-simone"
+      ],
+      "outcome": "Aggiunte: Fiera di San Simone.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=23",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Campodipietra",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Campodipietra\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-02.json"
+        }
+      ],
+      "newIds": [
+        "molise-campodipietra-fiera-della-prima-domenica-di-giugno",
+        "molise-campodipietra-fiera-di-san-martino"
+      ],
+      "outcome": "Aggiunte: Fiera della prima domenica di giugno; Fiera di San Martino.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=23",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Campolieto",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Campolieto\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-03.json"
+        }
+      ],
+      "newIds": [
+        "molise-campolieto-fiere-di-giugno-e-luglio"
+      ],
+      "outcome": "Aggiunte: Fiere di giugno e luglio.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=23",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Campomarino",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Campomarino\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-03.json"
+        }
+      ],
+      "newIds": [
+        "molise-campomarino-fiera-di-santa-cristina",
+        "molise-campomarino-fiera-di-sant-anna",
+        "molise-campomarino-fiera-di-nuova-cliternia"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Cristina; Fiera di Sant'Anna; Fiera di Nuova Cliternia.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=23",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Casacalenda",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Casacalenda\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-03.json"
+        }
+      ],
+      "newIds": [
+        "molise-casacalenda-fiera-di-san-giuseppe",
+        "molise-casacalenda-fiera-di-san-pasquale",
+        "molise-casacalenda-fiera-della-madonna-del-carmine",
+        "molise-casacalenda-fiera-di-settembre",
+        "molise-casacalenda-fiera-di-novembre",
+        "molise-casacalenda-festa-del-santo-patrono-sant-onofrio"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giuseppe; Fiera di San Pasquale; Fiera della Madonna del Carmine; Fiera di settembre; Fiera di novembre; Festa del Santo Patrono Sant'Onofrio.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=24",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Casalciprano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Casalciprano\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-03.json"
+        }
+      ],
+      "newIds": [
+        "molise-casalciprano-fiera-dell-annunziata",
+        "molise-casalciprano-fiera-di-san-nicola"
+      ],
+      "outcome": "Aggiunte: Fiera dell'Annunziata; Fiera di San Nicola.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=24",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=25",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Castelbottaccio",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Castelbottaccio\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-04.json"
+        }
+      ],
+      "newIds": [
+        "molise-castelbottaccio-fiera-di-santa-giusta",
+        "molise-castelbottaccio-fiera-di-santa-caterina"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Giusta; Fiera di Santa Caterina.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=25",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Castellino del Biferno",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Castellino del Biferno\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-04.json"
+        }
+      ],
+      "newIds": [
+        "molise-castellino-del-biferno-fiera-di-santa-lucia"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Lucia.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=25",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Castelmauro",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Castelmauro\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-04.json"
+        }
+      ],
+      "newIds": [
+        "molise-castelmauro-fiera-di-sant-anna",
+        "molise-castelmauro-fiera-della-madonna-della-salute",
+        "molise-castelmauro-fiera-di-san-leonardo"
+      ],
+      "outcome": "Aggiunte: Fiera di Sant'Anna; Fiera della Madonna della Salute; Fiera di San Leonardo.",
+      "limits": "Tartufando 7 agosto 2026 emerge dal testo indicizzato della Pro Loco, ma recupero diretto fallito per certificato scaduto: non importato. I 28 € sono menù, non banco. Fiere Sant’Anna e San Leonardo corroborate dal sito comunale senza anno.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Comune di Castelmauro, festività e tradizioni senza anno",
+          "url": "https://halleyweb.com/cmauro/hh/index.php"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/castelmauro-fiere.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=25",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Castropignano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Castropignano\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-04.json"
+        },
+        {
+          "query": "\"Castropignano\" \"Tartufo e Tintilia\" site:arsarp.it",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-29.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Tartufo e Tintilia: servizio RAI del settembre 2026 con interviste e stand; programma originale e giorni operativi non recuperati. Nessuna edizione annuale aggiunta da quel solo resoconto.",
+      "sources": [],
+      "evidenceFiles": []
+    },
+    {
+      "city": "Cercemaggiore",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Cercemaggiore\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-05.json"
+        }
+      ],
+      "newIds": [
+        "molise-cercemaggiore-fiera-di-san-biagio",
+        "molise-cercemaggiore-fiera-di-san-vincenzo-ferrero",
+        "molise-cercemaggiore-festa-di-santa-maria-della-libera",
+        "molise-cercemaggiore-fiera-di-san-marco",
+        "molise-cercemaggiore-fiera-di-san-domenico",
+        "molise-cercemaggiore-fiera-di-santa-filomena",
+        "molise-cercemaggiore-fiera-di-san-vincenzo-martire",
+        "molise-cercemaggiore-festa-della-madonna-di-lourdes"
+      ],
+      "outcome": "Aggiunte: Fiera di San Biagio; Fiera di San Vincenzo Ferrero; Festa di Santa Maria della Libera; Fiera di San Marco; Fiera di San Domenico; Fiera di Santa Filomena; Fiera di San Vincenzo Martire; Festa della Madonna di Lourdes.",
+      "limits": "San Vincenzo Martire: 10–11 settembre 2025 dalla pagina comunale aggiornata nel 2026. San Vincenzo Ferrero del 1 luglio resta distinto. San Biagio febbraio e dopo Pasqua riuniti senza creare due identità omonime; altri appuntamenti soltanto calendario storico.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.cercemaggiore.cb.it/vivere_il_comune/eventi/evento_1.html",
+          "label": "Comune di Cercemaggiore, festa con fiera e mercato 2025",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/cercemaggiore-san-vincenzo.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=26",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Cercepiccola",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Cercepiccola\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-05.json"
+        },
+        {
+          "query": "\"Cercepiccola\" cantine site:comune.cercepiccola.cb.it",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-24.json"
+        },
+        {
+          "query": "\"Cercepiccola\" \"Cantine\" \"Pro\" 2026 facebook",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-27.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Cantine Cercepiccolesi: portali indicano 21 novembre 2026, mentre altre pagine proiettano 25 ottobre dal 2025. Pagina comunale Vivere il Comune senza eventi in evidenza; originale Pro Cercepiccola non recuperato. Nessuna data scelta fra quelle discordanti.",
+      "sources": [
+        {
+          "url": "https://comune.cercepiccola.cb.it/vivere-il-comune/",
+          "label": "Comune di Cercepiccola, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/cercepiccola-comune.txt"
+      ]
+    },
+    {
+      "city": "Civitacampomarano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Civitacampomarano\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-05.json"
+        }
+      ],
+      "newIds": [
+        "molise-civitacampomarano-fiera-di-san-liberatore",
+        "molise-civitacampomarano-fiera-di-san-giovanni",
+        "molise-civitacampomarano-fiera-di-san-donato",
+        "molise-civitacampomarano-fiera-di-san-francesco",
+        "molise-civitacampomarano-fiera-di-ottobre",
+        "molise-civitacampomarano-fiera-di-san-martino"
+      ],
+      "outcome": "Aggiunte: Fiera di San Liberatore; Fiera di San Giovanni; Fiera di San Donato; Fiera di San Francesco; Fiera di ottobre; Fiera di San Martino.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=26",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=27",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Colle d'Anchise",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Colle d'Anchise\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-05.json"
+        },
+        {
+          "query": "\"Colle d'Anchise\" sagra fiera",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-24.json"
+        },
+        {
+          "query": "\"Colle d'Anchise\" site:comune.colledanchise.cb.it eventi",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-29.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Ricerche nominali e mirate non hanno restituito un programma comunale o Pro Loco con identità commerciale verificabile. Riferimenti generici nella newsletter AMHS marzo 2018 e documenti territoriali non usati per creare una fiera.",
+      "sources": [],
+      "evidenceFiles": []
+    },
+    {
+      "city": "Colletorto",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Colletorto\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-06.json"
+        }
+      ],
+      "newIds": [
+        "molise-colletorto-fiera-di-san-teodoro",
+        "molise-colletorto-fiera-di-san-giovanni",
+        "molise-colletorto-fiera-di-san-matteo"
+      ],
+      "outcome": "Aggiunte: Fiera di San Teodoro; Fiera di San Giovanni; Fiera di San Matteo.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=27",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Duronia",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Duronia\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-06.json"
+        }
+      ],
+      "newIds": [
+        "molise-duronia-fiera-della-madonna-incoronata"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna Incoronata.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=27",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Ferrazzano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Ferrazzano\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-06.json"
+        }
+      ],
+      "newIds": [
+        "molise-ferrazzano-argentina-fest",
+        "molise-ferrazzano-ferragosto-ferrazzanese"
+      ],
+      "outcome": "Aggiunte: Argentina Fest; Ferragosto Ferrazzanese.",
+      "limits": "Argentina Fest e Ferragosto: proposte gastronomiche descritte dalla Pro Loco, soltanto mese e nessun anno. Oktoberferz e Palazzo di Babbo Natale non aggiunti: la pagina non precisa periodo annuale operativo o posteggi sufficienti per le ulteriori schede.",
+      "sources": [
+        {
+          "url": "https://www.prolocoferrazzano.it/eventi",
+          "label": "Pro Loco Ferrazzano, descrizione delle manifestazioni",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/ferrazzano-eventi.txt"
+      ]
+    },
+    {
+      "city": "Fossalto",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Fossalto\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-06.json"
+        }
+      ],
+      "newIds": [
+        "molise-fossalto-fiera-di-san-nicola",
+        "molise-fossalto-fiera-di-sant-agnese",
+        "molise-fossalto-fiera-di-sant-antonio",
+        "molise-fossalto-fiera-della-madonna-delle-grazie-centro-abitato",
+        "molise-fossalto-fiera-di-san-tommaso",
+        "molise-fossalto-fiera-della-madonna-del-colle",
+        "molise-fossalto-fiera-della-madonna-delle-grazie-contrada-lisciaro",
+        "molise-fossalto-fiera-del-1-maggio"
+      ],
+      "outcome": "Aggiunte: Fiera di San Nicola; Fiera di Sant'Agnese; Fiera di Sant'Antonio; Fiera della Madonna delle Grazie — centro abitato; Fiera di San Tommaso; Fiera della Madonna del Colle; Fiera della Madonna delle Grazie — contrada Lisciaro; Fiera del 1° maggio.",
+      "limits": "Madonna delle Grazie: due sedi distinte nel calendario 2021 (via Garibaldi in agosto; Lisciaro in settembre), disambiguate nel titolo. Nessuna data 2026 o disponibilità corrente confermata.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=28",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Gambatesa",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Gambatesa\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-07.json"
+        }
+      ],
+      "newIds": [
+        "molise-gambatesa-fiera-madonna-della-vittoria",
+        "molise-gambatesa-fiera-di-santa-lucia"
+      ],
+      "outcome": "Aggiunte: Fiera Madonna della Vittoria; Fiera di Santa Lucia.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=29",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Gildone",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Gildone\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-07.json"
+        }
+      ],
+      "newIds": [
+        "molise-gildone-fiera-di-san-sabino",
+        "molise-gildone-fiera-di-santa-maria-dell-assunta",
+        "molise-gildone-fiera-di-santa-maria-e-santa-lucia",
+        "molise-gildone-fiera-della-beata-vergine-maria",
+        "molise-gildone-fiera-di-san-francesco-saverio"
+      ],
+      "outcome": "Aggiunte: Fiera di San Sabino; Fiera di Santa Maria dell'Assunta; Fiera di Santa Maria e santa Lucia; Fiera della Beata Vergine Maria; Fiera di San Francesco Saverio.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=29",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Guardialfiera",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Guardialfiera\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-07.json"
+        }
+      ],
+      "newIds": [
+        "molise-guardialfiera-fiera-di-marzo",
+        "molise-guardialfiera-fiera-di-maggio",
+        "molise-guardialfiera-fiera-d-agosto"
+      ],
+      "outcome": "Aggiunte: Fiera di marzo; Fiera di maggio; Fiera d'agosto.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=29",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=30",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Guardiaregia",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Guardiaregia\" fiera mercatino sagra Comune Pro Loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-07.json"
+        },
+        {
+          "query": "\"Guardiaregia\" \"Cantine Divine\" pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-24.json"
+        }
+      ],
+      "newIds": [
+        "molise-guardiaregia-cantine-di-vine"
+      ],
+      "outcome": "Aggiunte: Cantine di…Vine.",
+      "limits": "Cantine di…Vine 23–25 ottobre 2026 da portale della Camera di Commercio; nessuna ammissione automatica di ambulanti esterni o tariffa banco dedotta dalle degustazioni.",
+      "sources": [
+        {
+          "url": "https://molise-italia.com/eventi/cantine-divine-guardiaregia/",
+          "label": "Camera di Commercio del Molise, portale Molise Italia",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/guardiaregia-cantine.html",
+        ".local/ricerche/campobasso-20261106/guardiaregia-cantine.txt"
+      ]
+    },
+    {
+      "city": "Guglionesi",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Guglionesi\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-08.json"
+        }
+      ],
+      "newIds": [
+        "molise-guglionesi-fiera-di-marzo",
+        "molise-guglionesi-fiera-di-maggio",
+        "molise-guglionesi-fiera-di-agosto",
+        "molise-guglionesi-fiera-di-settembre",
+        "molise-guglionesi-fiera-di-ottobre",
+        "molise-guglionesi-fiera-di-sant-adamo"
+      ],
+      "outcome": "Aggiunte: Fiera di marzo; Fiera di maggio; Fiera di agosto; Fiera di settembre; Fiera di ottobre; Fiera di Sant'Adamo.",
+      "limits": "Sant’Adamo 27–29 giugno 2024 con zona A limitata al 27; bandi scaduti e bollo distinto dal suolo. Sant’Adamo di vendemmia di novembre non assimilato a questa fiera. Altri cinque appuntamenti dal calendario storico 2021, senza conferma corrente.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://halleyweb.com/guglionesi/po/attachment_news.php?id=1474",
+          "label": "Comune di Guglionesi, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/guglionesi-bando.pdf",
+        ".local/ricerche/campobasso-20261106/guglionesi-bando.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=30",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Jelsi",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Jelsi\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-08.json"
+        }
+      ],
+      "newIds": [
+        "molise-jelsi-fiera-della-domenica-delle-palme",
+        "molise-jelsi-fiera-di-aprile",
+        "molise-jelsi-fiera-di-maggio",
+        "molise-jelsi-fiera-di-sant-antonio",
+        "molise-jelsi-fiera-di-sant-anna",
+        "molise-jelsi-fiera-di-agosto",
+        "molise-jelsi-fiera-di-sant-andrea"
+      ],
+      "outcome": "Aggiunte: Fiera della domenica delle Palme; Fiera di Aprile; Fiera di Maggio; Fiera di Sant'Antonio; Fiera di Sant'Anna; Fiera di Agosto; Fiera di Sant'Andrea.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=30",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=31",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Larino",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Larino\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-08.json"
+        }
+      ],
+      "newIds": [
+        "molise-larino-fiera-di-sant-antonio",
+        "molise-larino-fiera-di-febbraio",
+        "molise-larino-fiera-di-san-giuseppe",
+        "molise-larino-fiera-di-aprile",
+        "molise-larino-fiera-di-san-primiano",
+        "molise-larino-fiera-di-giugno",
+        "molise-larino-fiera-di-san-rocco",
+        "molise-larino-fiera-di-novembre",
+        "molise-larino-fiera-di-santa-lucia"
+      ],
+      "outcome": "Aggiunte: Fiera di Sant'Antonio; Fiera di Febbraio; Fiera di San Giuseppe; Fiera di Aprile; Fiera di San Primiano; Fiera di Giugno; Fiera di San Rocco; Fiera di Novembre; Fiera di Santa Lucia.",
+      "limits": "San Pardo nella prima quindicina di ottobre del calendario 2021 potrebbe sovrapporsi alla Fiera d’Ottobre già presente: escluso. La scheda preesistente 2026 resta identica; altre fiere stagionali rimangono esclusivamente storiche.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=31",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=32",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Limosano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Limosano\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-08.json"
+        }
+      ],
+      "newIds": [
+        "molise-limosano-fiera-del-7-agosto"
+      ],
+      "outcome": "Aggiunte: Fiera del 7 Agosto.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=32",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Lucito",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Lucito\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-09.json"
+        }
+      ],
+      "newIds": [
+        "molise-lucito-fiera-di-san-nicola",
+        "molise-lucito-fiera-dell-immacolata",
+        "molise-lucito-fiera-di-tutti-i-santi"
+      ],
+      "outcome": "Aggiunte: Fiera di San Nicola; Fiera dell'Immacolata; Fiera di Tutti i Santi.",
+      "limits": "San Nicola: dicembre 2025 documentato, maggio soltanto nel calendario 2021. Immacolata: Comune 11 settembre 2025, calendario storico 10 settembre con nome più esteso; una sola identità. Ingresso libero non convertito in stand gratuito.",
+      "sources": [
+        {
+          "url": "https://www.comune.lucito.cb.it/evento/fiera-di-san-nicola/",
+          "label": "Comune di Lucito, programma 2025",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.lucito.cb.it/evento/fiera-dellimmacolata/",
+          "label": "Comune di Lucito, programma 2025",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/lucito-immacolata.txt",
+        ".local/ricerche/campobasso-20261106/lucito-nicola.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=32",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=33",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Lupara",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Lupara\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-09.json"
+        }
+      ],
+      "newIds": [
+        "molise-lupara-fiera-della-madonna-dell-incoronata",
+        "molise-lupara-fiera-di-sant-antonio",
+        "molise-lupara-fiera-di-san-matteo"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna dell'Incoronata; Fiera di Sant'Antonio; Fiera di San Matteo.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=33",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Macchia Valfortore",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Macchia Valfortore\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-09.json"
+        }
+      ],
+      "newIds": [
+        "molise-macchia-valfortore-fiera-di-san-bonifacio",
+        "molise-macchia-valfortore-fiera-di-maria-ss-incoronata"
+      ],
+      "outcome": "Aggiunte: Fiera di San Bonifacio; Fiera di Maria SS. Incoronata.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=33",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Mafalda",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Mafalda\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-09.json"
+        }
+      ],
+      "newIds": [
+        "molise-mafalda-fiera-di-sant-andrea-apostolo"
+      ],
+      "outcome": "Aggiunte: Fiera di Sant'Andrea Apostolo.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=33",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Matrice",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Matrice\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-10.json"
+        }
+      ],
+      "newIds": [
+        "molise-matrice-festa-di-sant-urbano",
+        "molise-matrice-festa-sant-antonio-e-ss-cuore-di-gesu",
+        "molise-matrice-festa-della-madonna-del-carmelo",
+        "molise-matrice-festa-di-santa-maria-ss-assunta",
+        "molise-matrice-festa-santa-maria-ss-assunta-e-di-san-rocco",
+        "molise-matrice-festa-san-pio",
+        "molise-matrice-festa-di-san-michele"
+      ],
+      "outcome": "Aggiunte: Festa di Sant'Urbano; Festa Sant'Antonio e SS. Cuore di Gesù; Festa della Madonna del Carmelo; Festa di Santa Maria SS. Assunta; Festa Santa Maria SS. Assunta e di San Rocco; Festa San Pio; Festa di San Michele.",
+      "limits": "Esclusa Madonna della Strada con data relativa al patrono non convertita in mese certo. Gli altri sette eventi riportano posteggi e mesi espliciti nel calendario 2021; non sono edizioni 2026.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=34",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Mirabello Sannitico",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Mirabello Sannitico\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-10.json"
+        }
+      ],
+      "newIds": [
+        "molise-mirabello-sannitico-fiera-di-san-giuseppe",
+        "molise-mirabello-sannitico-fiera-di-san-giorgio",
+        "molise-mirabello-sannitico-fiera-della-madonna-del-carmine"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giuseppe; Fiera di San Giorgio; Fiera della Madonna del Carmine.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=34",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=35",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Molise",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Molise\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-10.json"
+        }
+      ],
+      "newIds": [
+        "molise-molise-fiera-della-madonna-del-piano"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna del Piano.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=35",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Monacilioni",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Monacilioni\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-10.json"
+        }
+      ],
+      "newIds": [
+        "molise-monacilioni-fiera-di-ottobre",
+        "molise-monacilioni-sagra-della-soppressata"
+      ],
+      "outcome": "Aggiunte: Fiera di Ottobre; Sagra della Soppressata.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.santabenedettamonacilioni.it/festeggiamenti/",
+          "label": "Comitato Festa Santa Benedetta, Monacilioni",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/monacilioni-comitato.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=35",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montagano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montagano\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-11.json"
+        }
+      ],
+      "newIds": [
+        "molise-montagano-fiera-di-santa-croce",
+        "molise-montagano-fiera-di-sant-antonio",
+        "molise-montagano-fiera-di-sant-alessandro"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Croce; Fiera di Sant'Antonio; Fiera di Sant'Alessandro.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Comune di Montagano, festività senza anno",
+          "url": "https://comune.montagano.cb.it/manifestazioni/"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/montagano-manifestazioni.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=35",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montecilfone",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montecilfone\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-11.json"
+        }
+      ],
+      "newIds": [
+        "molise-montecilfone-fiera-di-san-giorgio",
+        "molise-montecilfone-fiera-di-san-martino"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giorgio; Fiera di San Martino.",
+      "limits": "San Giorgio 22 aprile 2026 dall’avviso comunale di assegnazione; gli allegati JavaScript non sono stati scaricati. Fiere serali raggruppate e a data da ordinanza non scisse in identità autonome. San Martino resta dal solo calendario 2021.",
+      "sources": [
+        {
+          "url": "https://www.comune.montecilfone.cb.it/novita/avvisi/novita_536.html",
+          "label": "Comune di Montecilfone, assegnazione posteggi San Giorgio 2026",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/montecilfone-san-giorgio.txt",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=35",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=36",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montefalcone nel Sannio",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montefalcone nel Sannio\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-11.json"
+        }
+      ],
+      "newIds": [
+        "molise-montefalcone-nel-sannio-fiera-di-aprile",
+        "molise-montefalcone-nel-sannio-fiera-di-maggio",
+        "molise-montefalcone-nel-sannio-fiera-di-giugno",
+        "molise-montefalcone-nel-sannio-fiera-di-novembre",
+        "molise-montefalcone-nel-sannio-fiera-di-dicembre"
+      ],
+      "outcome": "Aggiunte: Fiera di Aprile; Fiera di Maggio; Fiera di Giugno; Fiera di Novembre; Fiera di Dicembre.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=36",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montelongo",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montelongo\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-11.json"
+        }
+      ],
+      "newIds": [
+        "molise-montelongo-fiera-di-san-rocco"
+      ],
+      "outcome": "Aggiunte: Fiera di San Rocco.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=36",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montemitro",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montemitro\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-12.json"
+        },
+        {
+          "query": "\"Montemitro\" mercatini fiera comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-25.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Calendario regionale: mercato del lunedì e ultimo venerdì di maggio legato alla festa patronale; non separato automaticamente in una nuova fiera. Portale comunale recuperato, nessun programma originale di mercatino straordinario verificato.",
+      "sources": [
+        {
+          "url": "https://www.comune.montemitro.cb.it/it",
+          "label": "Comune di Montemitro, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/montemitro-comune.txt"
+      ]
+    },
+    {
+      "city": "Montenero di Bisaccia",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montenero di Bisaccia\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-12.json"
+        }
+      ],
+      "newIds": [
+        "molise-montenero-di-bisaccia-fiera-di-san-giuseppe",
+        "molise-montenero-di-bisaccia-fiera-della-madonna-di-bisaccia",
+        "molise-montenero-di-bisaccia-fiera-di-sant-antonio",
+        "molise-montenero-di-bisaccia-fiera-di-san-paolo",
+        "molise-montenero-di-bisaccia-fiera-di-san-zenone",
+        "molise-montenero-di-bisaccia-fiera-di-san-matteo",
+        "molise-montenero-di-bisaccia-fiera-di-santa-lucia"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giuseppe; Fiera della Madonna di Bisaccia; Fiera di Sant'Antonio; Fiera di San Paolo; Fiera di San Zenone; Fiera di San Matteo; Fiera di Santa Lucia.",
+      "limits": "S. Zenone di luglio e S. Zenone I di ottobre del calendario 2021 sono conservati in una sola scheda con i due periodi; nessuna seconda identità derivata dal suffisso. Il sito comunale turistico non conferma le date annuali correnti.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=37",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Montorio nei Frentani",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Montorio nei Frentani\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-12.json"
+        },
+        {
+          "query": "\"Montorio nei Frentani\" \"Sagra\" site:halleyweb.com",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-25.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Sagra delle Tolle: Eventi Molise segnala 8–9 agosto 2026; Il Ponte descrive 9–10 agosto 2025. Portale comunale letto, ma programma originale Pro Loco non recuperato. Non confusi i due anni né aggiunti prezzi o disponibilità.",
+      "sources": [
+        {
+          "url": "https://halleyweb.com/montorio/hh/index.php",
+          "label": "Comune di Montorio nei Frentani, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/montorio-comune.txt"
+      ]
+    },
+    {
+      "city": "Morrone del Sannio",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Morrone del Sannio\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-12.json"
+        }
+      ],
+      "newIds": [
+        "molise-morrone-del-sannio-fiera-dell-annunziata",
+        "molise-morrone-del-sannio-fiera-di-san-roberto",
+        "molise-morrone-del-sannio-fiera-di-sant-antonio",
+        "molise-morrone-del-sannio-fiera-di-san-nazario",
+        "molise-morrone-del-sannio-fiera-di-santa-maria-delle-grazie",
+        "molise-morrone-del-sannio-fiera-di-san-fortunato-e-di-san-gerardo",
+        "molise-morrone-del-sannio-fiera-dell-addolorata",
+        "molise-morrone-del-sannio-fiera-di-san-modesto-patrono",
+        "molise-morrone-del-sannio-fiera-di-tutti-i-santi"
+      ],
+      "outcome": "Aggiunte: Fiera dell'Annunziata; Fiera di San Roberto; Fiera di Sant'Antonio; Fiera di San Nazario; Fiera di Santa Maria delle Grazie; Fiera di San Fortunato e di San Gerardo; Fiera dell'Addolorata; Fiera di San Modesto (Patrono); Fiera di tutti i Santi.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=37",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=38",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Oratino",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Oratino\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-13.json"
+        },
+        {
+          "query": "\"Oratino\" mercatini comune pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-25.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "La Faglia è un rito e non dimostra banchi commerciali. Pagina comunale sulle associazioni e Pro Loco recuperata; nessun avviso espositivo specifico usato. Regolamento canone 2023 trovato nell’indice non equivale a tariffa di un evento.",
+      "sources": [
+        {
+          "url": "https://comune.oratino.cb.it/novita/associazioni/",
+          "label": "Comune di Oratino, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/oratino-associazioni.txt"
+      ]
+    },
+    {
+      "city": "Palata",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Palata\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-13.json"
+        }
+      ],
+      "newIds": [
+        "molise-palata-fiera-di-maggio-san-michele",
+        "molise-palata-fiera-di-giugno-sant-antonio",
+        "molise-palata-fiera-di-luglio-madonna-del-carmine",
+        "molise-palata-fiera-di-ottobre-fiera-nostra",
+        "molise-palata-fiera-di-dicembre-dell-immacolata"
+      ],
+      "outcome": "Aggiunte: Fiera di Maggio (San Michele); Fiera di Giugno (Sant'Antonio); Fiera di Luglio (Madonna del Carmine); Fiera di Ottobre (Fiera Nostra); Fiera di Dicembre (Dell'Immacolata).",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=38",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=39",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Petacciato",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Petacciato\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-13.json"
+        }
+      ],
+      "newIds": [
+        "molise-petacciato-fiera-annuale"
+      ],
+      "outcome": "Aggiunte: Fiera Annuale.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=39",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Petrella Tifernina",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Petrella Tifernina\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-13.json"
+        }
+      ],
+      "newIds": [
+        "molise-petrella-tifernina-fiera-del-rosario"
+      ],
+      "outcome": "Aggiunte: Fiera del Rosario.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=39",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Pietracatella",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Pietracatella\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-14.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Vicolo Invita/Festival del Folklore: atto indicizzato di liquidazione relativo al 2025, pubblicato nel 2026; nessuna data dell’evento dedotta dall’atto di spesa. Programma gastronomico originale non recuperato.",
+      "sources": [
+        {
+          "url": "https://www.comune.pietracatella.cb.it/",
+          "label": "Comune di Pietracatella, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/pietracatella-comune.txt"
+      ]
+    },
+    {
+      "city": "Pietracupa",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Pietracupa\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-14.json"
+        },
+        {
+          "query": "\"Pietracupa\" sagra mercatini comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-25.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Pista Addó Z’ Magna e Z’ Vév da portale eventi, senza programma dell’associazione Borgo Inaspettato recuperato. I risultati sulla sagra Sagne e Fasciuole riguardano anche Chiauci: non attribuiti a Pietracupa. Mappa comunale recuperata.",
+      "sources": [
+        {
+          "url": "https://www.comune.pietracupa.cb.it/EG0/EGSMISTMSIT.HBL?FUNZ=1&en=eg759",
+          "label": "Comune di Pietracupa, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/pietracupa-mappa.txt"
+      ]
+    },
+    {
+      "city": "Portocannone",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Portocannone\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-14.json"
+        },
+        {
+          "query": "\"Portocannone\" \"Oktoberfest\" 2026 associazione",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-27.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Oktoberfest 31 ottobre 2026 segnalato da Piazza in Festa, senza originale dell’Associazione Carro dei Giovani recuperato. Sagra dei Fusilli presente in documenti territoriali storici, non confermata da un programma corrente. Homepage comunale senza appuntamenti nel periodo visualizzato: non prova assenza di eventi.",
+      "sources": [
+        {
+          "url": "https://comune.portocannone.cb.it/",
+          "label": "Comune di Portocannone, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/portocannone-comune.txt"
+      ]
+    },
+    {
+      "city": "Provvidenti",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Provvidenti\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-14.json"
+        },
+        {
+          "query": "\"Provvidenti\" sagra fiera comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-26.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Pagina comunale della Madonna della Libera letta: funzioni religiose, costumi, balli e canti; non descrive posteggi commerciali. La terza domenica di agosto nel testo riguarda la comunità emigrata a Montréal: non attribuita al paese molisano.",
+      "sources": [
+        {
+          "url": "https://comune.provvidenti.cb.it/vivere-il-comune/eventi/festa-in-onore-di-santa-maria-della-libera/",
+          "label": "Comune di Provvidenti, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/provvidenti-libera.txt"
+      ]
+    },
+    {
+      "city": "Riccia",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Riccia\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-15.json"
+        }
+      ],
+      "newIds": [
+        "molise-riccia-fiera-di-san-giuseppe",
+        "molise-riccia-fiera-di-san-vitale",
+        "molise-riccia-fiera-di-san-giovanni",
+        "molise-riccia-fiera-di-san-matteo",
+        "molise-riccia-fiera-di-tutti-i-santi",
+        "molise-riccia-fiera-dell-immacolata-concezione"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giuseppe; Fiera di San Vitale; Fiera di San Giovanni; Fiera di San Matteo; Fiera di Tutti i Santi; Fiera dell'Immacolata Concezione.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=39",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=40",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Ripabottoni",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Ripabottoni\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-15.json"
+        }
+      ],
+      "newIds": [
+        "molise-ripabottoni-fiera-di-san-michele",
+        "molise-ripabottoni-fiera-della-madonna-di-monte-castello"
+      ],
+      "outcome": "Aggiunte: Fiera di San Michele; Fiera della Madonna di Monte Castello.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=40",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Ripalimosani",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Ripalimosani\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-15.json"
+        },
+        {
+          "query": "\"Ripalimosani\" mercatini natale comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-26.json"
+        }
+      ],
+      "newIds": [
+        "molise-ripalimosani-mercatini-natalizi"
+      ],
+      "outcome": "Aggiunte: Mercatini natalizi.",
+      "limits": "Mercatini natalizi attestati dalla relazione comunale 2014–2019, senza date annuali utilizzabili. Non equiparati automaticamente a O che bel Castello o a rassegne 2026 dei portali.",
+      "sources": [
+        {
+          "url": "https://ripalimosani.halleyweb.it/po/attachment_news.php?id=376",
+          "label": "Comune di Ripalimosani, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/ripalimosani-relazione.pdf",
+        ".local/ricerche/campobasso-20261106/ripalimosani-relazione.txt"
+      ]
+    },
+    {
+      "city": "Roccavivara",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Roccavivara\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-15.json"
+        }
+      ],
+      "newIds": [
+        "molise-roccavivara-canneto-in-fiera"
+      ],
+      "outcome": "Aggiunte: Canneto in fiera.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=40",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Rotello",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Rotello\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-16.json"
+        }
+      ],
+      "newIds": [
+        "molise-rotello-fiera-dell-ultimo-sabato-di-aprile",
+        "molise-rotello-fiera-di-san-donato"
+      ],
+      "outcome": "Aggiunte: Fiera dell'ultimo sabato di aprile; Fiera di San Donato.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=41",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Salcito",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Salcito\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-16.json"
+        }
+      ],
+      "newIds": [
+        "molise-salcito-fiera-di-aprile",
+        "molise-salcito-fiera-di-giugno",
+        "molise-salcito-fiera-di-settembre",
+        "molise-salcito-fiera-di-ottobre"
+      ],
+      "outcome": "Aggiunte: Fiera di Aprile; Fiera di Giugno; Fiera di Settembre; Fiera di Ottobre.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=41",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "San Biase",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Biase\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-16.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-biase-fiera-di-febbraio",
+        "molise-san-biase-fiera-di-santa-pia",
+        "molise-san-biase-fiera-di-san-biagio",
+        "molise-san-biase-fiera-di-santa-primitiva"
+      ],
+      "outcome": "Aggiunte: Fiera di Febbraio; Fiera di Santa Pia; Fiera di San Biagio; Fiera di Santa Primitiva.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=41",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "San Felice del Molise",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Felice del Molise\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-16.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-felice-del-molise-fiera-di-san-felice-papa",
+        "molise-san-felice-del-molise-fiera-di-san-felice-martire"
+      ],
+      "outcome": "Aggiunte: Fiera di San Felice Papa; Fiera di San Felice Martire.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "San Giacomo degli Schiavoni",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Giacomo degli Schiavoni\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-17.json"
+        },
+        {
+          "query": "\"San Giacomo degli Schiavoni\" sagra comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-26.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Sagra del Prosciutto e festa patronale emergono da portali/stampa e video 2023; originale commerciale dell’organizzatore non recuperato. La voce comunale sui mercatini è una visita/gita, non prova di mercatino nel comune.",
+      "sources": [
+        {
+          "url": "https://www.comune.sangiacomo.cb.it/it",
+          "label": "Comune di San Giacomo degli Schiavoni, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/san-giacomo-comune.txt"
+      ]
+    },
+    {
+      "city": "San Giovanni in Galdo",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Giovanni in Galdo\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-17.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-giovanni-in-galdo-fiere-del-27-maggio-e-17-agosto",
+        "molise-san-giovanni-in-galdo-sagra-della-pasta-con-le-polpette",
+        "molise-san-giovanni-in-galdo-sagra-del-panunto",
+        "molise-san-giovanni-in-galdo-sagra-della-trippa-e-pizza-di-granone",
+        "molise-san-giovanni-in-galdo-sagra-della-pasta-e-fagioli-e-fricassea",
+        "molise-san-giovanni-in-galdo-sagra-dello-spezzatino-con-cacio-e-uova"
+      ],
+      "outcome": "Aggiunte: Fiere del 27 maggio e 17 agosto; Sagra della Pasta con le polpette; Sagra del Panunto; Sagra della Trippa e Pizza di Granone; Sagra della Pasta e Fagioli e Fricassea; Sagra dello Spezzatino con cacio e uova.",
+      "limits": "Sagre comunali con anni effettivi 2024/2025: non proiettate al 2026. Spezzatino: programma religioso 24–30 giugno 2024 senza giorni gastronomici separati, conservato solo giugno. Fiere 27 maggio/17 agosto dal calendario 2021 tenute in una sola scheda.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.sangiovanniingaldo.cb.it/evento/sagra-della-pasta-con-le-polpette/",
+          "label": "Comune di San Giovanni in Galdo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.sangiovanniingaldo.cb.it/evento/sagra-del-panunto/",
+          "label": "Comune di San Giovanni in Galdo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.sangiovanniingaldo.cb.it/evento/sagra-della-trippa-e-pizza-di-granone/",
+          "label": "Comune di San Giovanni in Galdo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.sangiovanniingaldo.cb.it/evento/sagra-della-pasta-e-fagioli-e-fricassea/",
+          "label": "Comune di San Giovanni in Galdo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.sangiovanniingaldo.cb.it/evento/sagra-dello-spezzatino-con-cacio-e-uova-festivita-santantonio-da-padova/",
+          "label": "Comune di San Giovanni in Galdo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt",
+        ".local/ricerche/campobasso-20261106/san-giovanni-fricassea.html",
+        ".local/ricerche/campobasso-20261106/san-giovanni-fricassea.txt",
+        ".local/ricerche/campobasso-20261106/san-giovanni-panunto.html",
+        ".local/ricerche/campobasso-20261106/san-giovanni-panunto.txt",
+        ".local/ricerche/campobasso-20261106/san-giovanni-polpette.html",
+        ".local/ricerche/campobasso-20261106/san-giovanni-polpette.txt",
+        ".local/ricerche/campobasso-20261106/san-giovanni-spezzatino.txt",
+        ".local/ricerche/campobasso-20261106/san-giovanni-trippa.html",
+        ".local/ricerche/campobasso-20261106/san-giovanni-trippa.txt"
+      ]
+    },
+    {
+      "city": "San Giuliano del Sannio",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Giuliano del Sannio\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-17.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-giuliano-del-sannio-fiera-di-san-nicola"
+      ],
+      "outcome": "Aggiunte: Fiera di San Nicola.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "San Giuliano di Puglia",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Giuliano di Puglia\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-17.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-giuliano-di-puglia-fiera-di-sant-elena"
+      ],
+      "outcome": "Aggiunte: Fiera di Sant'Elena.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "San Martino in Pensilis",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Martino in Pensilis\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-18.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-martino-in-pensilis-fiera-di-santa-rosa",
+        "molise-san-martino-in-pensilis-sagra-della-pampanella"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Rosa; Sagra della Pampanella.",
+      "limits": "Fiera di Santa Rosa 30–31 agosto 2024 da ordinanza, identità corroborata dal calendario regionale. Pampanella da partecipante Confcommercio, soltanto 8 agosto 2018. Nessuna annualità 2026 dedotta per questi eventi.",
+      "sources": [
+        {
+          "url": "https://halleyweb.com/sanmartino/po/attachment_news.php?id=1346",
+          "label": "Comune di San Martino in Pensilis, ordinanza 66/2024",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.confcommerciomolise.it/3-sagra-della-pampanella-a-san-martino-in-pensilis-confcommercio-molise-e-il-comitato-promotore-per-il-marchio-igp-per-la-valorizzazione-di-un-prodotto-tipico-di-grande-pregio-e-tradizione/",
+          "label": "Confcommercio Molise, partecipante alla Sagra 2018",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt",
+        ".local/ricerche/campobasso-20261106/san-martino-fiera.txt",
+        ".local/ricerche/campobasso-20261106/san-martino-pampanella.txt"
+      ]
+    },
+    {
+      "city": "San Massimo",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Massimo\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-18.json"
+        }
+      ],
+      "newIds": [
+        "molise-san-massimo-festa-della-castagna"
+      ],
+      "outcome": "Aggiunte: Festa della Castagna.",
+      "limits": "Castagna: terza edizione 18–19 ottobre 2024 dalla pagina comunale; ingresso/navetta gratuiti non equivalgono a quota banco. Nessuna edizione 2026 dedotta.",
+      "sources": [
+        {
+          "url": "https://comune.sanmassimo.cb.it/vivere-il-comune/eventi/3-edizione-festa-della-castagna/",
+          "label": "Comune di San Massimo, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/san-massimo-castagna.txt"
+      ]
+    },
+    {
+      "city": "San Polo Matese",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"San Polo Matese\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-18.json"
+        },
+        {
+          "query": "\"San Polo Matese\" sagra sito comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-29.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Taccozze e Fagioli e Baccalà Fritto segnalati da portali con date anche stimate. Homepage comunale recuperata senza un programma originale pertinente. Mercato settimanale regionale separato dalle fiere; nessuna data annuale aggiunta.",
+      "sources": [
+        {
+          "url": "https://www.comune.sanpolomatese.cb.it/",
+          "label": "Comune di San Polo Matese, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/san-polo-comune.txt"
+      ]
+    },
+    {
+      "city": "Sant'Angelo Limosano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Sant'Angelo Limosano\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-18.json"
+        }
+      ],
+      "newIds": [
+        "molise-sant-angelo-limosano-fiera-di-san-pietro",
+        "molise-sant-angelo-limosano-fiera-di-santa-irene",
+        "molise-sant-angelo-limosano-fiera-della-madonna-delle-stelle"
+      ],
+      "outcome": "Aggiunte: Fiera di San Pietro; Fiera di Santa Irene; Fiera della Madonna delle Stelle.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=42",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=43",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Sant'Elia a Pianisi",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Sant'Elia a Pianisi\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-19.json"
+        }
+      ],
+      "newIds": [
+        "molise-sant-elia-a-pianisi-fiera-bimestrale-di-merci",
+        "molise-sant-elia-a-pianisi-sagra-festa-di-sant-antonio",
+        "molise-sant-elia-a-pianisi-sagra-di-sant-elia-profeta",
+        "molise-sant-elia-a-pianisi-sagra-della-madonna-del-carmelo",
+        "molise-sant-elia-a-pianisi-sagra-festa-di-san-matteo"
+      ],
+      "outcome": "Aggiunte: Fiera bimestrale di merci; Sagra Festa di Sant'Antonio; Sagra di Sant'Elia Profeta; Sagra della Madonna del Carmelo; Sagra Festa di San Matteo.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=43",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Santa Croce di Magliano",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Santa Croce di Magliano\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-19.json"
+        },
+        {
+          "query": "\"Santa Croce di Magliano\" \"fiera\" baccalà comune",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-27.json"
+        }
+      ],
+      "newIds": [],
+      "outcome": "Nessuna scheda aggiunta dopo i riscontri sotto descritti.",
+      "limits": "Fiera mercato 8–13 giugno 2005 da SantaCroceOnline; baccalà da snippet della newsletter UNPLI 2016. Download UNPLI fallito per certificato: snippet non prova di lettura integrale. Pagina comunale Vivere il Comune descrive feste patronali, senza banchi verificati.",
+      "sources": [
+        {
+          "url": "https://comune.santacrocedimagliano.cb.it/vivere-il-comune/",
+          "label": "Comune di Santa Croce di Magliano, pagina pertinente recuperata",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/santa-croce-vivere.txt"
+      ]
+    },
+    {
+      "city": "Sepino",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Sepino\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-19.json"
+        }
+      ],
+      "newIds": [
+        "molise-sepino-fiera-di-san-giuseppe-o-8-di-pasqua",
+        "molise-sepino-fiera-di-santa-cristina",
+        "molise-sepino-fiera-di-altilia",
+        "molise-sepino-fiera-della-3-di-ottobre"
+      ],
+      "outcome": "Aggiunte: Fiera di San Giuseppe o 8^ di Pasqua; Fiera di Santa Cristina; Fiera di Altilia; Fiera della 3^ di ottobre.",
+      "limits": "Santa Cristina: Pro Loco indica fiera il 23 luglio, calendario 2021 anche il 24; mantenuto solo il mese. Piana d’Olmo e Altilia corroborate dalla Pro Loco senza anno. Botteghe nel Centro Storico: mese/giorni non ricavati da soli riferimenti generici.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Pro Loco Pro Sepino, manifestazioni senza anno",
+          "url": "https://www.sepino.net/uncategorized/elenco-di-tutte-le-manifestazioni-sepinesi/"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=43",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=44",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt",
+        ".local/ricerche/campobasso-20261106/sepino-manifestazioni.txt"
+      ]
+    },
+    {
+      "city": "Spinete",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Spinete\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-19.json"
+        },
+        {
+          "query": "\"Spinete\" \"Sapor\" pro loco",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-26.json"
+        },
+        {
+          "query": "\"Spinete\" site:comune.spinete.cb.it eventi",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-29.json"
+        }
+      ],
+      "newIds": [
+        "molise-spinete-sapor-d-na-vota"
+      ],
+      "outcome": "Aggiunte: Sapor d’na vota.",
+      "limits": "Sapor d’na vota: programma originale comunale 11 ottobre 2025. Il resoconto musicale 10 ottobre 2026 dei Recu’cce non sostituisce il programma annuale. Menù 17/20 € escluso dai costi banco.",
+      "sources": [
+        {
+          "url": "https://www.comune.spinete.cb.it/evento/sapor-dna-vota/",
+          "label": "Comune di Spinete, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/spinete-sapor.txt"
+      ]
+    },
+    {
+      "city": "Tavenna",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Tavenna\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-20.json"
+        }
+      ],
+      "newIds": [
+        "molise-tavenna-fiera-della-madonna-dell-incoronata",
+        "molise-tavenna-fiera-di-santa-irene"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna dell'Incoronata; Fiera di Santa Irene.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=44",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Termoli",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Termoli\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-20.json"
+        }
+      ],
+      "newIds": [
+        "molise-termoli-fiera-della-madonna-della-vittoria-madonna-a-lungo",
+        "molise-termoli-sagra-del-pesce",
+        "molise-termoli-fiera-dei-santi-pietro-e-paolo",
+        "molise-termoli-fiera-della-madonna-del-carmelo",
+        "molise-termoli-fiera-di-santa-maria-degli-angeli",
+        "molise-termoli-fiera-di-ferragosto",
+        "molise-termoli-mercatino-degli-hobbisti"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna della Vittoria (Madonna a Lungo); Sagra del Pesce; Fiera dei Santi Pietro e Paolo; Fiera della Madonna del Carmelo; Fiera di Santa Maria degli Angeli; Fiera di Ferragosto; Mercatino degli hobbisti.",
+      "limits": "Bando comunale 2026 approfondito con graduatorie: sei nuove identità legate al bando, San Basso già presente e lasciato intatto. Date pre-sagra/pesce 21–22 agosto da graduatoria, merceologie alimentari limitate. Santa Maria a Valentina ricondotta a Madonna a Lungo nella stessa località. Fiera del Disco/Beer Fest di novembre non aggiunte senza originale recuperato. Mercatino hobbisti: finestra stagionale, non apertura quotidiana certificata.",
+      "sources": [
+        {
+          "url": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+          "label": "Comune di Termoli, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.comune.termoli.cb.it/novita/graduatoria-definitiva-delle-ditte-ammesse-a-partecipare-alla-manifestazione-della-pre-sagra-e-sagra-del-pesce-21-e-22-agosto-2026/",
+          "label": "Comune di Termoli, bando e graduatorie 2026",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.estatetermolese.com/eventi/mercatino-degli-hobbisti/",
+          "label": "Comune di Termoli, documento o pagina ufficiale",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=44",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt",
+        ".local/ricerche/campobasso-20261106/termoli-bando-pdf.pdf#page=1",
+        ".local/ricerche/campobasso-20261106/termoli-bando-pdf.txt",
+        ".local/ricerche/campobasso-20261106/termoli-hobbisti.html",
+        ".local/ricerche/campobasso-20261106/termoli-hobbisti.txt",
+        ".local/ricerche/campobasso-20261106/termoli-pesce.txt",
+        ".local/ricerche/campobasso-20261106/termoli-pietro-carmelo.txt"
+      ]
+    },
+    {
+      "city": "Torella del Sannio",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Torella del Sannio\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-20.json"
+        }
+      ],
+      "newIds": [
+        "molise-torella-del-sannio-fiera-di-ottobre"
+      ],
+      "outcome": "Aggiunte: Fiera di Ottobre.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=44",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Toro",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Toro\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-20.json"
+        }
+      ],
+      "newIds": [
+        "molise-toro-fiera-dell-incoronata",
+        "molise-toro-fiera-di-san-mercurio",
+        "molise-toro-fiera-di-san-nicola"
+      ],
+      "outcome": "Aggiunte: Fiera dell'Incoronata; Fiera di San Mercurio; Fiera di San Nicola.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=45",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Trivento",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Trivento\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-21.json"
+        }
+      ],
+      "newIds": [
+        "molise-trivento-fiera-di-santa-croce",
+        "molise-trivento-fiera-di-nostra-signora",
+        "molise-trivento-fiera-di-san-nazario",
+        "molise-trivento-fiera-di-sant-antonio",
+        "molise-trivento-fiera-di-sant-andrea",
+        "molise-trivento-fiera-della-concezione"
+      ],
+      "outcome": "Aggiunte: Fiera di Santa Croce; Fiera di Nostra Signora; Fiera di San Nazario; Fiera di Sant'Antonio; Fiera di Sant'Andrea; Fiera della Concezione.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=45",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Tufara",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Tufara\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-21.json"
+        }
+      ],
+      "newIds": [
+        "molise-tufara-fiera-della-madonna-del-carmine",
+        "molise-tufara-fiera-di-sant-agostino",
+        "molise-tufara-fiera-di-san-michele-arcangelo",
+        "molise-tufara-fiera-di-san-giovanni-eremita"
+      ],
+      "outcome": "Aggiunte: Fiera della Madonna del Carmine; Fiera di Sant'Agostino; Fiera di San Michele Arcangelo; Fiera di San Giovanni Eremita.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=46",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    },
+    {
+      "city": "Ururi",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Ururi\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-21.json"
+        }
+      ],
+      "newIds": [
+        "molise-ururi-fiera-annuale"
+      ],
+      "outcome": "Aggiunte: Fiera Annuale.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        },
+        {
+          "label": "Comune di Ururi, modulistica richiesta posteggio fiera annuale 8 settembre",
+          "url": "https://www.comune.ururi.cb.it/amministrazione/documenti_e_dati/modulistica/documento_59.html"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=46",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt",
+        ".local/ricerche/campobasso-20261106/ururi-fiera.txt"
+      ]
+    },
+    {
+      "city": "Vinchiaturo",
+      "queryExecuted": true,
+      "queries": [
+        {
+          "query": "\"Vinchiaturo\" (fiera OR mercatino OR sagra) (comune OR proloco)",
+          "evidenceFile": ".local/ricerche/campobasso-20261106/query-21.json"
+        }
+      ],
+      "newIds": [
+        "molise-vinchiaturo-fiera-di-sant-antonio-abate",
+        "molise-vinchiaturo-fiera-di-san-berardino-da-siena",
+        "molise-vinchiaturo-fiera-di-san-giovanni",
+        "molise-vinchiaturo-fiera-dell-assunta",
+        "molise-vinchiaturo-fiera-di-san-francesco",
+        "molise-vinchiaturo-fiera-di-santa-lucia"
+      ],
+      "outcome": "Aggiunte: Fiera di Sant'Antonio Abate; Fiera di San Berardino da Siena; Fiera di San Giovanni; Fiera dell'Assunta; Fiera di San Francesco; Fiera di Santa Lucia.",
+      "limits": "Le ricorrenze sopra elencate derivano dal calendario regionale 2021, pagine pertinenti lette e conservate. La ricerca nominale non ha fornito un bando locale corrente sufficiente ad aggiornarle; nessuna data 2026, tariffa o disponibilità attestata. Non è una dichiarazione di assenza di altri eventi.",
+      "sources": [
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=21442506&DOCORE_versione=1&FNSTR=TGXWGGAPAO_2021.PFF&DB_NAME=l1200158&ContestoChk=DE",
+          "label": "Regione Molise, calendario storico 2021",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "evidenceFiles": [
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=46",
+        ".local/ricerche/campobasso-20261106/regione-2021.pdf#page=47",
+        ".local/ricerche/campobasso-20261106/regione-2021.txt"
+      ]
+    }
+  ],
+  "updateProposals": [
+    {
+      "id": "molise-campobasso-fiera-del-corpus-domini",
+      "status": "proposal-only-not-applied",
+      "sourceUrl": "https://egov.comune.campobasso.it/campobasso2/po/attachment_news.php?id=2880",
+      "evidenceFile": ".local/ricerche/campobasso-20261106/campobasso-corpus-2025.txt",
+      "proposal": "Documentare soltanto l’edizione storica 20–22 giugno 2025 e il bando scaduto 22 aprile 2025. Domanda: bollo 16 € e diritti istruttoria 51,65 €; canone e contributo festa separati, non quantificati. Non prezzo completo del banco. Non sostituire una eventuale fonte 2026 più recente senza ulteriore verifica."
+    },
+    {
+      "id": "molise-termoli-festa-di-san-basso",
+      "status": "proposal-only-not-applied",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "evidenceFile": ".local/ricerche/campobasso-20261106/termoli-bando-pdf.txt",
+      "proposal": "Aggiungere in futuro soltanto la documentazione dei posteggi 3–5 agosto 2026 dal bando comunale: alimentari, non alimentari e somministrazione. Distinguere durata dei posteggi dal programma religioso della fonte preesistente. Oneri domanda 100 € istruttoria + bollo 16 €, CUP separato; non duplicare gli oneri della domanda multi manifestazione. Scheda e costi della base lasciati intatti."
+    }
+  ],
+  "regionalExclusions": [
+    {
+      "index": 6,
+      "city": "Bojano",
+      "title": "Fiera di San Bartolomeo",
+      "reason": "Identità già presente nella base: San Bartolomeo di Bojano."
+    },
+    {
+      "index": 9,
+      "city": "Campobasso",
+      "title": "Fiera del Corpus Domini",
+      "reason": "Corpus Domini già presente: aggiornamento separato."
+    },
+    {
+      "index": 22,
+      "city": "Casacalenda",
+      "title": "Festa di Maria SS. Madonna della Difesa",
+      "reason": "Festa Madonna della Difesa: manca il periodo nel calendario; non dedotto."
+    },
+    {
+      "index": 32,
+      "city": "Cercemaggiore",
+      "title": "Festa di San Biagio",
+      "reason": "San Biagio febbraio riunito alla ricorrenza pasquale sotto una sola identità."
+    },
+    {
+      "index": 88,
+      "city": "Larino",
+      "title": "Fiera di San Pardo",
+      "reason": "San Pardo a ottobre: possibile sovrapposizione alla Fiera d’Ottobre già presente; escluso per identità irrisolta."
+    },
+    {
+      "index": 102,
+      "city": "Matrice",
+      "title": "Festa della Madonna della Strada",
+      "reason": "Matrice Madonna della Strada: data relativa ai festeggiamenti del patrono, non convertita in un mese certo."
+    },
+    {
+      "index": 119,
+      "city": "Montecilfone",
+      "title": "Fiere serali: San Giorgio, Sant’Antonio da Padova, Ferragosto Albanese",
+      "reason": "Fiere serali di Montecilfone raggruppate e senza giorni/mese: non separate in nuove identità."
+    },
+    {
+      "index": 132,
+      "city": "Montenero di Bisaccia",
+      "title": "Fiera di S. Zenone I",
+      "reason": "San Zenone I riunito come seconda ricorrenza di San Zenone, senza una seconda scheda."
+    }
+  ],
+  "costNotes": {
+    "newNotes": 9,
+    "distinctDocuments": 4,
+    "baseNotesUntouched": true,
+    "visitorPricesExcluded": [
+      "Spinete: menù 17/20 € nel 2025",
+      "Castelmauro Tartufando: menù 28 € da snippet non integralmente letto",
+      "Ingressi e navette gratuiti non sono gratuità del banco"
+    ]
+  }
+}

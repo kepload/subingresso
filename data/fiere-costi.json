@@ -4062,6 +4062,78 @@
       "sourceUrl": "https://www.comune.santostefanoquisquina.ag.it/novita/comunicati_stampa/novita_492.html",
       "checkedAt": "2026-11-06",
       "details": "Modulo comunale A della XXIV Sagra 2026: suolo calcolato come superficie in m² × 1,03 €, senza moltiplicatore giornaliero esplicitato. Punto luce richiesto separatamente: forfait 50 €. Stand personale. Il diverso modulo A1 per attività locali non esplicita questi importi: nessuna esenzione dedotta. IVA e altri oneri non precisati. Moduli originali DOCX scaricati dal collegamento comunale."
+    },
+    "molise-campobasso-mercatini-di-natale": {
+      "kind": "conditional",
+      "label": "Casetta circa 700 € + IVA; suolo separato — avviso 2024",
+      "details": "Avviso 2024, art. 5: noleggio indicativo di circa 700 € + IVA per casetta presumibilmente 4 × 2,50 m, condivisibile da due operatori. Impianto elettrico e consumo inclusi nel noleggio; contratto diretto con il fornitore. Occupazione di suolo pubblico a carico di ciascun operatore, importo non quantificato. Non preventivo definitivo né tariffa 2026; non diviso automaticamente per due o per i giorni.",
+      "sourceUrl": "https://www.comune.campobasso.it/campobasso2/po/attachment_news.php?id=2864",
+      "checkedAt": "2026-11-06",
+      "period": "2024"
+    },
+    "molise-campobasso-campobazar": {
+      "kind": "conditional",
+      "label": "Partecipazione gratuita per cessioni occasionali non professionali",
+      "details": "Pagina comunale: partecipazione gratuita con domanda. Disciplinare aggiornato il 12 giugno 2025, art. 9: esenzione dal canone per l’iniziativa comunale a fronte della dichiarazione che l’attività non ha rilevanza economica né commerciale. Beni propri usati e manufatti non seriali; alimenti e beni nuovi vietati. Non una tariffa gratuita per un normale banco d’impresa; servizi ulteriori non quantificati.",
+      "sourceUrl": "https://egov.comune.campobasso.it/campobasso2/zf/index.php/servizi-aggiuntivi/index/index/idtesto/20290",
+      "checkedAt": "2026-11-06",
+      "period": null
+    },
+    "molise-guglionesi-fiera-di-sant-adamo": {
+      "kind": "partial",
+      "label": "Bollo 16 €; occupazione separata — storico 2024",
+      "details": "Bando Sant’Adamo 27–29 giugno 2024: domanda in bollo da 16 €. Il Comune trasmette avviso PagoPA per il pagamento anticipato dell’occupazione, da effettuare entro il 21 giugno 2024; importo non riportato nel bando. I 16 € non sono prezzo del banco. Zona A solo 27 giugno; zona B 27–29 giugno. IVA, servizi ed eventuali altri oneri non quantificati.",
+      "sourceUrl": "https://halleyweb.com/guglionesi/po/attachment_news.php?id=1474",
+      "checkedAt": "2026-11-06",
+      "period": "2024"
+    },
+    "molise-termoli-fiera-della-madonna-della-vittoria-madonna-a-lungo": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
+    },
+    "molise-termoli-sagra-del-pesce": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
+    },
+    "molise-termoli-fiera-dei-santi-pietro-e-paolo": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
+    },
+    "molise-termoli-fiera-della-madonna-del-carmelo": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
+    },
+    "molise-termoli-fiera-di-santa-maria-degli-angeli": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
+    },
+    "molise-termoli-fiera-di-ferragosto": {
+      "kind": "partial",
+      "label": "Domanda: 100 € istruttoria + bollo 16 €; CUP separato — 2026",
+      "details": "Bando manifestazioni Termoli 2026: domanda in bollo da 16 € (art. 2) e ricevuta di 100 € per diritti istruttori (art. 4, punto 9). La domanda consente di indicare più manifestazioni: questi oneri non sono moltiplicati automaticamente per evento, banco o giornata. Canone unico patrimoniale separato, importo comunicato agli assegnatari e da pagare entro 5 giorni dalla PEC (art. 5). IVA, elettricità e servizi non quantificati. Termine della domanda già scaduto; non prezzo complessivo del posteggio.",
+      "sourceUrl": "https://www.comune.termoli.cb.it/wp-content/uploads/2026/02/BANDO_FESTE_ANNO_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "period": "2026"
     }
   }
 }
