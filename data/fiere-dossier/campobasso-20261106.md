@@ -18,6 +18,8 @@ File di consegna:
 - [Verificatore](../../scripts/verify-fiere-campobasso.py): fixture privata con
   il builder effettivo, senza modifica dei file nazionali.
 
+Le sezioni di ricerca conservano la consegna iniziale; esito della successiva pubblicazione in fondo.
+
 ## Metodo e prove conservate
 
 Ricerca nominale per ogni comune, seguita da approfondimenti selettivi su
@@ -28,7 +30,7 @@ degli albi o ogni pagina social; ricerca conclusa con limiti, non censimento
 certificato. Nessun contatto, domanda, credenziale letta, altra provincia,
 sessione aggiuntiva o automazione avviata.
 
-Originali e testi in `.local/ricerche/campobasso-20261106/` di questo worktree:
+Originali e testi in `.local/worktrees/campobasso-20261106/.local/ricerche/campobasso-20261106/`:
 79 tentativi di acquisizione, 75 risposte HTTP 200, con URL finale, dimensione
 e SHA256 nei `fonti-*-http.json`. `event-evidence.json` collega ogni nuovo ID
 all'originale e alle pagine pertinenti. Conservati anche PDF, testi estratti,
@@ -149,3 +151,9 @@ Non modificati cataloghi nazionali, builder, registro costi nazionale, checklist
 memoria o DB. Ricerca pronta per l'integrazione separata sotto mutex; **non
 pubblicata**, checklist non chiusa. La successiva integrazione dovrà confrontare
 il delta con la base allora corrente e ripetere le verifiche pertinenti.
+
+## Pubblicazione verificata
+
+Commit `e494dd3`, Vercel Ready `dpl_H7yYjcoixfLkZ6vcifqqc85xGNaQ` su subingresso.it. Catalogo 10.119 schede e 471 note; tutte le 9.893 schede e 462 note precedenti identiche nello stesso ordine. Due build identiche, settori e SEO passati. Tutte le 230 schede provinciali nel filtro e SSR; dettagli/pagine su 14 campioni (tutte le nuove note e le edizioni 2026 incluse), Chromium1440/320 e WebKit390 locali/online. Catalogo online identico, 226 letture API riuscite e 10.119 ID recensioni sincronizzati. Due proposte su eventi precedenti escluse. Nessun account, recensione o invio reale di prova.
+
+Prove `.local/verifiche/campobasso-pubblicazione-20261106/`. Fonti e limiti storici conservati. Solo Campobasso aggiuntiva conclusa con 6.1 sol low; Potenza ferma, nessuna prosecuzione automatica.

@@ -1,6 +1,6 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **6 novembre 2026**: **105 concluse, 5 aperte su 110**.
+Stato aggiornato il **6 novembre 2026**: **106 concluse, 4 aperte su 110**.
 L'Aquila, Cosenza, Catanzaro e Reggio Calabria verificati online il 5 novembre;
 le altre caselle conservano gli esiti precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
@@ -123,7 +123,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **87. Catanzaro**
 - [x] **88. Reggio Calabria**
 - [ ] **89. Potenza**
-- [ ] **90. Campobasso**
+- [x] **90. Campobasso**
 - [x] **91. Rieti**
 - [x] **92. Agrigento**
 - [ ] **93. Oristano**
@@ -152,3 +152,5 @@ Rieti: +69 schede in 53 comuni, ricognizione dei 73 comuni e una nota costo; ver
 Caltanissetta: +16 schede in 11 comuni e una nota economica, verificate online il 6 novembre 2026. Ricognizione dei 22 comuni con limiti; [dossier](../data/fiere-dossier/caltanissetta-20261106.md). Nessuna prosecuzione.
 
 Agrigento: +34 schede in 26 comuni e 8 note economiche, ricognizione dei 43 comuni; catalogo e percorsi verificati online il 6 novembre 2026. [Fonti e limiti](../data/fiere-dossier/agrigento-20261106.md). Solo questa provincia conclusa; Potenza e Campobasso ferme.
+
+Campobasso: +226 schede in 70 comuni e 9 note, ricognizione 84/84; 197 schede da calendario storico 2021, soltanto 10 con edizioni 2026. Verificata online il 6 novembre 2026. [Fonti e limiti](../data/fiere-dossier/campobasso-20261106.md). Potenza ferma, nessuna prosecuzione automatica.

@@ -21,10 +21,10 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **6 novembre 2026**: **105 province concluse e 5 aperte su 110**,
+Ultimo esito **6 novembre 2026**: **106 province concluse e 4 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **9.893** dopo Agrigento (+34 in 26 comuni, 8 note economiche); tutte le 9.859 schede e 454 note precedenti invariate.
+Catalogo **10.119** dopo Campobasso (+226 in 70 comuni, 9 note economiche); tutte le 9.893 schede e 462 note precedenti invariate, Agrigento inclusa.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -105,6 +105,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 - Campobasso:** pubblicato `e494dd3`, Vercel Ready `dpl_H7yYjcoixfLkZ6vcifqqc85xGNaQ`; +226 schede e 9 note, ricognizione 84/84. Catalogo live identico, 9.893 schede/462 note precedenti invariate, due build/settori/SEO e browser locali/online passati; 10.119 ID recensioni sincronizzati e 226 letture API riuscite. [Fonti e limiti](data/fiere-dossier/campobasso-20261106.md): 197 schede storiche 2021, 10 con edizioni 2026. Richiesta corrente: una sola provincia aggiuntiva, 6.1 sol low; Potenza ferma, nessuna prosecuzione automatica.
+
 - **6 novembre 2026 — Agrigento:** pubblicato `3fdaa4c`, Vercel Ready `dpl_8GrHAbAfLaYrmAkTQ5bxMxErMAdy`; +34 schede e 8 note, ricognizione 43 comuni. Catalogo live identico, dati precedenti invariati, build/settori/SEO e Chromium1440/320 + WebKit390 locali/online passati; 9.893 ID recensioni sincronizzati e 34 letture API riuscite. [Fonti e limiti](data/fiere-dossier/agrigento-20261106.md). Richiesta corrente: chiudere soltanto una provincia con 6.1 sol low; Potenza e Campobasso ferme, prosecuzione da decidere dopo controllo quota, nessuna ripresa automatica.
 
 - **6 novembre 2026 — finiture ricerca fiere:** pubblicato `a03c064`; X centrata con SVG e titolo «Trova la fiera giusta per te» sopra Quando. Centro verificato in chiaro/scuro su Chromium1440/320 e WebKit390; percorso calendario verificato anche online. Catalogo invariato, pubblicazione sotto mutex. Prove `.local/verifiche/fiere-titolo-chiudi/`.
@@ -113,16 +115,6 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 - **6 novembre 2026 — ingressi Google nelle fiere:** pubblicato `b843e2c`; URL indicizzati conservati, calendario con scheda aperta, provincia/mesi coerenti e ritorno alla ricerca. Procedura ufficiale in evidenza e favicon ripristinato. Verifiche locali e online Chromium1440/768/320 e WebKit390; recensioni, accesso e promemoria simulati passati. Catalogo invariato; integrazione isolata sotto mutex. [Contratto e limiti](data/fiere-dossier/123-ingressi-google-calendario-20261106.md).
 
 
-- **6 novembre 2026 — tre nuove sessioni su richiesta:** Potenza, Campobasso e
-  Agrigento avviate in parallelo, con thread nuovi e worktree isolati da
-  `d240d1b`. Ricerca per comune, verifiche e pubblicazione al termine;
-  integrazioni serializzate con mutex, ciascuna sessione si ferma dopo la
-  propria provincia. Stato e thread in
-  `.local/lavori/tre-province-20261106/sessioni.json`, aggiornamenti nei
-  rispettivi `*-stato.json` e rapporti finali. Backup remoto sessione
-  `backup/session-20261106-004134-tre-province-potenza-campobasso-agrigento-20261106`
-  e ramo `backup/pre-tre-province-20261106` verificati. Pavia riservata;
-  Oristano e Nuoro non avviate. Nessun vecchio ciclo riattivato.
 
 
 - **6 novembre 2026 — Caltanissetta:** +16 schede in 11 comuni, una nota economica;
@@ -148,15 +140,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
   riuscite. [Fonti e limiti](data/fiere-dossier/vibo-valentia-20261105.md).
   Rieti prosegue separatamente; nessuna altra provincia o automazione avviata.
 
-- **5 novembre 2026 — due nuove sessioni avviate su richiesta:** Rieti e Vibo
-  Valentia in parallelo, worktree isolati da `da5ff17`; autorizzata anche la
-  pubblicazione al termine delle ricerche e verifiche. Pubblicazioni serializzate
-  con mutex; nessun ciclo o altra provincia autorizzati. Pavia riservata.
-  Stato, thread, fonti di avvio e rapporti in
-  `.local/lavori/rieti-vibo-pubblica-20261105/`. Backup remoto sessione
-  `backup/session-20261105-193831-due-province-rieti-vibo-20261105` e ramo
-  `backup/pre-rieti-vibo-20261105` verificati. Vibo Valentia pubblicata e verificata;
-  Rieti pubblicata e verificata; entrambe le sessioni concluse, senza prosecuzione.
-
 Esiti precedenti (Crotone e attività del 4–5 novembre) conservati
 [nello snapshot del 5 novembre](docs/archivio/informazioni-esiti-20261105.md).
+
+Avvii delle sessioni conservati nello [snapshot dedicato](docs/archivio/informazioni-avvii-20261106.md).
