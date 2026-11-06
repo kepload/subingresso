@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "province": "Nuoro",
+  "checkedAt": "2026-11-06",
+  "events": {
+    "sardegna-nuoro-mastros-in-nugoro-autunno-in-barbagia": {
+      "kind": "partial",
+      "label": "50 €; somministrazione 100 €; CUP aggiuntivo",
+      "details": "Disciplinare 2026, art. 5: quota 50 € per gli altri partecipanti e 100 € per somministrazione di alimenti e bevande; entrambe comprendono 30 € di diritti di segreteria, da non sommare di nuovo. Vale sia su area pubblica sia in sede privata. Art. 8: per suolo pubblico si aggiunge il CUP secondo regolamento, salvo esenzioni, non quantificato qui. Energia elettrica autonoma; eventuale cauzione mastelli non quantificata. PagoPA contestuale alla domanda; rimborso per mancata ammissione esclusi i 30 € di diritti. Termine 1 ottobre 2026; riapertura solo per spazi privati fino al 21 ottobre ore 10, scaduto. IVA e altri oneri non quantificati: non è un totale chiavi in mano.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.nuoro.it/download/f2beb783588946e8a3682c0e3ce008e8/DISCIPLINARE%20Nuoro%202026.pdf?ea9061d305f952e3819119b04fcec1a4",
+      "checkedAt": "2026-11-06"
+    },
+    "sardegna-nuoro-carreras-de-lollobe-autunno-in-barbagia": {
+      "kind": "partial",
+      "label": "50 €; somministrazione 100 €; CUP aggiuntivo",
+      "details": "Disciplinare 2026, art. 5: quota 50 € per gli altri partecipanti e 100 € per somministrazione di alimenti e bevande; entrambe comprendono 30 € di diritti di segreteria, da non sommare di nuovo. Vale sia su area pubblica sia in sede privata. Art. 8: per suolo pubblico si aggiunge il CUP secondo regolamento, salvo esenzioni, non quantificato qui. Energia elettrica autonoma; eventuale cauzione mastelli non quantificata. PagoPA contestuale alla domanda; rimborso per mancata ammissione esclusi i 30 € di diritti. Termine 25 agosto 2026, scaduto. IVA e altri oneri non quantificati: non è un totale chiavi in mano.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.nuoro.it/download/f1a22d525aeb4c668158dfa4f769322c/DISCIPLINARE_Lollove_2026.pdf?7a817ee1c8a71a6a2b81a4899f956653",
+      "checkedAt": "2026-11-06"
+    },
+    "sardegna-tiana-autunno-in-barbagia-tiana": {
+      "kind": "conditional",
+      "label": "residenti gratis; esterni 50 € privato / 100 € pubblico",
+      "details": "Art. 14, edizione 14–15 novembre 2026: adesione gratuita per residenti di Tiana; hobbisti e operatori occasionali esterni in abitazione privata di terzi 50 €, secondo accordi con il proprietario; esterni su suolo pubblico 100 € fino a 30 m² per l’intera manifestazione. Nessuna deduzione sulla gratuità di affitti privati o ulteriori oneri, IVA e servizi non quantificati. PagoPA dopo accettazione entro 4 novembre, termine scaduto; domande 8–17 ottobre, scadute. Punti ristoro riservati ai residenti; suolo pubblico solo se autorizzato.",
+      "period": "2026",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5361687/Disciplinare_Autunno_Barbagia_2026_corretto.pdf",
+      "checkedAt": "2026-11-06"
+    },
+    "sardegna-ollolai-autunno-in-barbagia-ollolai": {
+      "kind": "partial",
+      "label": "30 € di contributo + CUP sul suolo pubblico",
+      "details": "Art. 21 del disciplinare 2024 richiamato dall’avviso 2026: contributo fisso 30 € dopo accoglimento, più CUP per il suolo pubblico. Tabella: 0,60 € giornalieri al m² o lineare in Piazza Marconi e Via Mazzini, 0,57 € nelle altre vie/piazze; coefficiente 1; moltiplicare per metri autorizzati e i due giorni. Unità effettiva e importo da confermare nell’assegnazione: non calcolato un banco ipotetico. IVA, bollo e altri servizi non quantificati. Domande fino al 25 ottobre 2026, scadute. Allegato A 2026 introduce obbligo di apertura sabato e domenica e restrizioni ai ristori in Piazza Marconi.",
+      "period": "2026",
+      "sourceUrl": "https://comune.ollolai.nu.it/media/acfupload/Disciplinare_Impara_SArte_2024_copy_1.pdf",
+      "checkedAt": "2026-11-06"
+    },
+    "sardegna-olzai-autunno-in-barbagia-olzai": {
+      "kind": "partial",
+      "label": "hobbisti 25 € locali / 50 € esterni; ristoro 50 € locali",
+      "details": "Art. 14 disciplinare 24–25 ottobre 2026: hobbisti/espositori occasionali residenti, nativi e/o originari di Olzai 25 €, non residenti 50 €. Punti ristoro 50 € per residenti, nativi e/o originari, non ammessi per non residenti. Contributi organizzativi dopo accoglimento; canone, bollo, IVA, utenze e altri oneri non quantificati: non tariffa complessiva. Termine domande 12 ottobre, scaduto; pagina ore 12 e PDF ore 14 discordanti. La formula del PDF sul versamento «entro 48 ore dalla data del 24 ottobre» non è reinterpretata come una nuova scadenza.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.olzai.nu.it/uploads/allegati/DISCIPLINARE_AUTUNNO_IN_BARBAGIA_2026.pdf",
+      "checkedAt": "2026-11-06"
+    },
+    "sardegna-dorgali-shopping-sotto-le-stelle-mercatini-di-natale": {
+      "kind": "partial",
+      "label": "50 € diritti SUAPE per lo street food; banco non quantificato",
+      "period": "2025",
+      "sourceUrl": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Regolamento 8 e 13 dicembre 2025, art. 5: per i punti ristoro street food ammessi è richiesta pratica SUAPE con modulo F40 e 50 € di diritti di istruttoria. Sono diritti amministrativi, non quota banco; canone, bollo, IVA e servizi non quantificati. Domanda entro 28 novembre 2025, scaduta. Non applicare automaticamente il dato a tutti gli espositori o all’edizione 2026."
+    }
+  },
+  "existingUpdates": [],
+  "newIds": [
+    "sardegna-nuoro-mastros-in-nugoro-autunno-in-barbagia",
+    "sardegna-nuoro-carreras-de-lollobe-autunno-in-barbagia",
+    "sardegna-tiana-autunno-in-barbagia-tiana",
+    "sardegna-ollolai-autunno-in-barbagia-ollolai",
+    "sardegna-olzai-autunno-in-barbagia-olzai",
+    "sardegna-dorgali-shopping-sotto-le-stelle-mercatini-di-natale"
+  ],
+  "limitations": "Cinque note economiche 2026 e una storica 2025. Nessun aggiornamento a note preesistenti."
+}

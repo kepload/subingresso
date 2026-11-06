@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "province": "Pavia",
+  "checkedAt": "2026-11-06",
+  "events": {
+    "lombardia-vigevano-fiera-d-agosto": {
+      "kind": "partial",
+      "label": "bollo 16 €; istruttoria e canone da quantificare",
+      "period": "2026",
+      "sourceUrl": "https://comune.vigevano.pv.it/servizio/fiere/",
+      "checkedAt": "2026-11-06",
+      "details": "Servizio comunale aggiornato il 23 settembre 2026: marca da bollo di 16 € per l’istanza, più oneri istruttori non quantificati e Canone Unico Patrimoniale da pagare online con PagoPA. Il bollo non è la tariffa del banco; il totale dipende dal posteggio. Iscrizione e scelta su TownSpaces. Il mancato pagamento del CUP annulla la scelta. Per agosto iscrizioni 6 maggio–12 luglio 2026, scadute; la pagina non permette di estendere il termine alle fiere di marzo e ottobre."
+    },
+    "lombardia-vigevano-fiera-di-ottobre": {
+      "kind": "partial",
+      "label": "bollo 16 €; istruttoria e canone da quantificare",
+      "period": "2026",
+      "sourceUrl": "https://comune.vigevano.pv.it/servizio/fiere/",
+      "checkedAt": "2026-11-06",
+      "details": "Servizio comunale aggiornato il 23 settembre 2026: marca da bollo di 16 € per l’istanza, più oneri istruttori non quantificati e Canone Unico Patrimoniale da pagare online con PagoPA. Il bollo non è la tariffa del banco; il totale dipende dal posteggio. Iscrizione e scelta su TownSpaces. Il mancato pagamento del CUP annulla la scelta. Per agosto iscrizioni 6 maggio–12 luglio 2026, scadute; la pagina non permette di estendere il termine alle fiere di marzo e ottobre."
+    },
+    "lombardia-vigevano-fiera-di-marzo": {
+      "kind": "partial",
+      "label": "bollo 16 €; istruttoria e canone da quantificare",
+      "period": "2026",
+      "sourceUrl": "https://comune.vigevano.pv.it/servizio/fiere/",
+      "checkedAt": "2026-11-06",
+      "details": "Servizio comunale aggiornato il 23 settembre 2026: marca da bollo di 16 € per l’istanza, più oneri istruttori non quantificati e Canone Unico Patrimoniale da pagare online con PagoPA. Il bollo non è la tariffa del banco; il totale dipende dal posteggio. Iscrizione e scelta su TownSpaces. Il mancato pagamento del CUP annulla la scelta. Per agosto iscrizioni 6 maggio–12 luglio 2026, scadute; la pagina non permette di estendere il termine alle fiere di marzo e ottobre."
+    },
+    "lombardia-pavia-autunno-pavese": {
+      "kind": "conditional",
+      "label": "spazio da 330 € + iscrizione 120 € + IVA",
+      "period": "2026",
+      "sourceUrl": "https://www.autunnopavesedoc.it/wp-content/uploads/2026/07/AP_Modulo_Adesione_PRODUTTORI_2026.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Moduli organizzatore 2026, prezzi IVA esclusa (IVA 22%): iscrizione 120 € distinta dallo spazio. Allestito 65 €/m², minimo 9 m²; semi allestito 55 €/m², minimo 9 m²; postazione 6 m² 330 € a disponibilità limitata; Piazza del Gusto interna 12 m² 960 €, senza fritti/grigliati. Food truck esterno, solo furgone mobile: 500 € per postazione + 120 € iscrizione + IVA, allaccio monofase 3 kW compreso (modulo Food Truck separato). Nell’iscrizione produttori: pass, RC furto escluso, pulizia generale, Wi-Fi, catalogo e 1 kW monofase; arredi e maggiori potenze extra secondo listino. Esempi extra IVA esclusa: frigo 130 L 95 €, frigo 300 L 185 €, trifase fino a 3 kW 150 €, energia aggiuntiva 20 €/kW. Acconto 50% con domanda entro 31 luglio 2026; saldo entro 28 settembre, termini scaduti. SIAE eventualmente a parte per diffusione sonora; altri oneri non quantificati. Non sono prezzi di ingresso pubblico né una tariffa per edizioni future."
+    }
+  },
+  "existingUpdates": [],
+  "initialState": {
+    "lombardia-vigevano-fiera-d-agosto": null,
+    "lombardia-vigevano-fiera-di-ottobre": null,
+    "lombardia-vigevano-fiera-di-marzo": null,
+    "lombardia-pavia-autunno-pavese": null
+  },
+  "sources": [
+    "https://www.autunnopavesedoc.it/wp-content/uploads/2026/07/AP_Modulo_Adesione_PRODUTTORI_2026.pdf",
+    "https://www.autunnopavesedoc.it/wp-content/uploads/2026/07/AP_Modulo_Adesione_FOODTRUCK_2026.pdf",
+    "https://comune.vigevano.pv.it/servizio/fiere/"
+  ]
+}

@@ -1,0 +1,2808 @@
+{
+  "schemaVersion": 1,
+  "province": "Nuoro",
+  "checkedAt": "2026-11-06",
+  "status": "ricerca pronta per integrazione",
+  "municipalitySource": "data/italia-province.json → sardiniaMunicipalities (53 comuni; Seulo incluso, Ogliastra e Gallura escluse)",
+  "municipalities": [
+    {
+      "city": "Aritzo",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Aritzo\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-0.json"
+      ],
+      "newIds": [
+        "sardegna-aritzo-sagra-della-carapigna-e-artigiani-in-piazza"
+      ],
+      "existingUpdateIds": [
+        "sardegna-aritzo-sagra-della-castagna-e-della-nocciola"
+      ],
+      "sources": [
+        {
+          "url": "https://turismoaritzo.it/eventi/3633737/sagra-carapigna-artigiani-piazza",
+          "finalUrl": "https://turismoaritzo.it/eventi/3633737/sagra-carapigna-artigiani-piazza",
+          "status": 200,
+          "file": "originali\\dc3db276f43666c2.html",
+          "sha256": "b761c9b1393ac354bcadc038564131822c28f50aaee3c0140f1595d22fc76d75",
+          "bytes": 45198,
+          "textFile": "originali/dc3db276f43666c2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf",
+          "status": 200,
+          "file": "originali\\10c1a73e7e36fc41.pdf",
+          "sha256": "52672aa1a81e9fe8adf6b01af12cad7562ae4cb947554609a6d357826b804221",
+          "bytes": 8517344,
+          "textFile": "originali/10c1a73e7e36fc41.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/aritzo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/aritzo",
+        "status": 200,
+        "file": "originali\\2e8f66d705afd048.html",
+        "sha256": "9e2b28557c085b767e66739ba01f5f42935ff8215b54a0327fa02bd3a6363487",
+        "bytes": 92215,
+        "textFile": "originali/2e8f66d705afd048.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede e 1 arricchimento esistente da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Atzara",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Atzara\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-0.json"
+      ],
+      "newIds": [
+        "sardegna-atzara-autunno-in-barbagia-atzara",
+        "sardegna-atzara-sagra-del-vino"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Atzara-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Atzara-00003/",
+          "status": 200,
+          "file": "originali\\f4beadb18a70d0d2.html",
+          "sha256": "9b3eb868d41546f1f1be6c80b1f38107c7ca0e7d118123e587c917dc0aead931",
+          "bytes": 29706,
+          "textFile": "originali/f4beadb18a70d0d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/atzara",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/atzara",
+          "status": 200,
+          "file": "originali\\d160022212c8b5ca.html",
+          "sha256": "eef18b06e87f27ab831fcd8717b35e34a8159274c43e59e026fd8201215d85ee",
+          "bytes": 90823,
+          "textFile": "originali/d160022212c8b5ca.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/atzara",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/atzara",
+        "status": 200,
+        "file": "originali\\d160022212c8b5ca.html",
+        "sha256": "eef18b06e87f27ab831fcd8717b35e34a8159274c43e59e026fd8201215d85ee",
+        "bytes": 90823,
+        "textFile": "originali/d160022212c8b5ca.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Austis",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Austis\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-0.json"
+      ],
+      "newIds": [
+        "sardegna-austis-autunno-in-barbagia-austis"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/austis_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/austis_programma.pdf",
+          "status": 200,
+          "file": "originali\\e8640988e06f90c6.pdf",
+          "sha256": "3ee33cf2065f54856002cb9575d5d833ab2c4161b7ba004d37763aa235c3fd00",
+          "bytes": 9848022,
+          "textFile": "originali/e8640988e06f90c6.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Austis-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Austis-00003/",
+          "status": 200,
+          "file": "originali\\f7d3a84addc402b6.html",
+          "sha256": "66aafdd3c5f7c4bee26e753bb1c92fdc853f042842bc98851dbe506a2bbe9d36",
+          "bytes": 31502,
+          "textFile": "originali/f7d3a84addc402b6.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/austis",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/austis",
+        "status": 200,
+        "file": "originali\\4d3242dcf190816b.html",
+        "sha256": "1ebb231d0cdeac4c73ce104f79c05fcf6afff2c9c6501f4b1c1120ac005acd4b",
+        "bytes": 86300,
+        "textFile": "originali/4d3242dcf190816b.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Belvì",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Belvì\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-0.json"
+      ],
+      "newIds": [
+        "sardegna-belvi-autunno-in-barbagia-belvi",
+        "sardegna-belvi-sagra-delle-ciliegie"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_belvi.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_belvi.pdf",
+          "status": 200,
+          "file": "originali\\c205f9d2cbc215ab.pdf",
+          "sha256": "dcfcc417c3f270e4c44f99a01861d59aa021e14c225d042f32e33c6859512b4d",
+          "bytes": 25961480,
+          "textFile": "originali/c205f9d2cbc215ab.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Belvi-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Belvi-00003/",
+          "status": 200,
+          "file": "originali\\3d827a2e507dc7ba.html",
+          "sha256": "032b8ed75aaa6abbe854f0ca4e5c80a6817e75b8b7e2df9210436a0335053c82",
+          "bytes": 32306,
+          "textFile": "originali/3d827a2e507dc7ba.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/belvi",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/belvi",
+          "status": 200,
+          "file": "originali\\14b49a1e047f05f3.html",
+          "sha256": "041ab1a5923e617c1b28ab2f00bb3b347af0c8807a38ed5b6d4ce4da707ae9db",
+          "bytes": 92372,
+          "textFile": "originali/14b49a1e047f05f3.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/belvi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/belvi",
+        "status": 200,
+        "file": "originali\\14b49a1e047f05f3.html",
+        "sha256": "041ab1a5923e617c1b28ab2f00bb3b347af0c8807a38ed5b6d4ce4da707ae9db",
+        "bytes": 92372,
+        "textFile": "originali/14b49a1e047f05f3.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Birori",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Birori\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-48.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/birori",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/birori",
+        "status": 200,
+        "file": "originali\\95f1bef64d6fa9a3.html",
+        "sha256": "7432edaf44ed1a9f11d11adff84ca0e09022c9a24732bc9de749c4131bc33233",
+        "bytes": 91460,
+        "textFile": "originali/95f1bef64d6fa9a3.txt"
+      },
+      "outcome": "Fonti selezionate: pagina regionale e ricerca nominale; non individuata una manifestazione commerciale con periodo sufficientemente documentato. Il mercato settimanale e le sole celebrazioni religiose non sono nuove fiere.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Bitti",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bitti\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-48.json"
+      ],
+      "newIds": [
+        "sardegna-bitti-autunno-in-barbagia-bitti"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-mappe-paesi/mappa_bitti_26.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-mappe-paesi/mappa_bitti_26.pdf",
+          "status": 200,
+          "file": "originali\\db237e1fea94a03d.pdf",
+          "sha256": "a2cf8c66a0264f68e2366d30129292835aa1ee87ffcb075c51fda9b730cbfc03",
+          "bytes": 2060165,
+          "textFile": "originali/db237e1fea94a03d.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Bitti-00005/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Bitti-00005/",
+          "status": 200,
+          "file": "originali\\86721ef0138043e6.html",
+          "sha256": "a7a10bd5845782fd8152e0746c95f2d60217847af8ca99c4c1db7baa00b52ba6",
+          "bytes": 32026,
+          "textFile": "originali/86721ef0138043e6.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bitti",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bitti",
+        "status": 200,
+        "file": "originali\\a1fe28a7f21c0f67.html",
+        "sha256": "863f74fc14c2b8f75b6c3ddd5dcdea0b5f0760eccabddaf9d2e334ff5d06e17f",
+        "bytes": 93612,
+        "textFile": "originali/a1fe28a7f21c0f67.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Bolotana",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bolotana\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-52.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.comune.bolotana.nu.it/vivere-il-comune/eventi/eventi-di-affari-o-commerciali/fiera-o-salone",
+          "finalUrl": "https://www.comune.bolotana.nu.it/vivere-il-comune/eventi/eventi-di-affari-o-commerciali/fiera-o-salone",
+          "status": 200,
+          "file": "originali\\475bc8e5ffd6025c.html",
+          "sha256": "f51758a005663ccaab1b022e442044f65ea5bd4f0ddcbfbe33895d7f112bd289",
+          "bytes": 46099,
+          "textFile": "originali/475bc8e5ffd6025c.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bolotana",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bolotana",
+        "status": 200,
+        "file": "originali\\d103e1c766ec293c.html",
+        "sha256": "00329db3900279e668693dc8332e1ab6ac5dd5b1d5c95f574b22bc416ffb7221",
+        "bytes": 91577,
+        "textFile": "originali/d103e1c766ec293c.txt"
+      },
+      "outcome": "Individuata la Sagra de Sa Seada 2026 nella stampa e un impegno nell’albo; la categoria comunale Fiera o Salone è vuota. Non ricavata da una fonte primaria selezionata una data della sagra, pertanto nessuna nuova scheda. Categoria vuota non significa assenza di eventi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Borore",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Borore\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-4.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/borore",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/borore",
+        "status": 200,
+        "file": "originali\\f85fe169ff07b4a9.html",
+        "sha256": "60825ddf8e9c538b7e98291b31c85f3455830214ddc2eb5d249f761fb27082a4",
+        "bytes": 91393,
+        "textFile": "originali/f85fe169ff07b4a9.txt"
+      },
+      "outcome": "Segnalata dalla stampa la sagra Culurzones, seadas e ruggiolos nel 2016; non selezionata una fonte primaria sufficiente. Mercato settimanale escluso.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Bortigali",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bortigali\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-4.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bortigali",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bortigali",
+        "status": 200,
+        "file": "originali\\2d45502e7365b9a1.html",
+        "sha256": "d5cd258ec763da4420a008373ac2403870401bffdf89f9cf029010f0fb3c0931",
+        "bytes": 90710,
+        "textFile": "originali/2d45502e7365b9a1.txt"
+      },
+      "outcome": "Fonte regionale: celebrazioni della Madonna di Sauccu 7–17 settembre; non adottate come fiera senza prova commerciale. Le pariglie di carnevale non bastano a documentare un mercato.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Desulo",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Desulo\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-4.json"
+      ],
+      "newIds": [
+        "sardegna-desulo-la-montagna-produce-autunno-in-barbagia"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/desulo_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/desulo_programma.pdf",
+          "status": 200,
+          "file": "originali\\35f6dd887aa9dd72.pdf",
+          "sha256": "aa7c02f4b7a60d15fd49b0ae8d628ec484664493e7b5ddb86d0431d5a0e9bab9",
+          "bytes": 7837739,
+          "textFile": "originali/35f6dd887aa9dd72.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Desulo-00001/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Desulo-00001/",
+          "status": 200,
+          "file": "originali\\b0cd6e30b3c4df65.html",
+          "sha256": "64bc9f6452810f755761499ccf67eb0c38045b669219cd9ebf2b75502870fb8b",
+          "bytes": 32833,
+          "textFile": "originali/b0cd6e30b3c4df65.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/desulo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/desulo",
+        "status": 200,
+        "file": "originali\\77a3e653a9984343.html",
+        "sha256": "389a935e2b387191df5b094a378ec628385add090c2ebcf83365fccea5bb85b6",
+        "bytes": 93439,
+        "textFile": "originali/77a3e653a9984343.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Dorgali",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Dorgali\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-4.json"
+      ],
+      "newIds": [
+        "sardegna-dorgali-autunno-in-barbagia-dorgali",
+        "sardegna-dorgali-shopping-sotto-le-stelle-mercatini-di-natale"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/dorgali_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/dorgali_programma.pdf",
+          "status": 200,
+          "file": "originali\\0a8114b297d3f5c4.pdf",
+          "sha256": "c23525d10a4aedd72b5735fb85ddeb695ebc285cb3991bb7a623772c22e3d612",
+          "bytes": 9262724,
+          "textFile": "originali/0a8114b297d3f5c4.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Dorgali-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Dorgali-00004/",
+          "status": 200,
+          "file": "originali\\503b07da20009c56.html",
+          "sha256": "3441614e98a9630def5102b11cada57e465f8f1ba64673a1cc9ff0f8dd08ce5b",
+          "bytes": 33647,
+          "textFile": "originali/503b07da20009c56.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf",
+          "finalUrl": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf",
+          "status": 200,
+          "file": "originali\\36f4694821d1ba16.pdf",
+          "sha256": "e6d149fdbca962066961d5d3d9ea5a74b8fb13e6d7e163d1256ba78a0158aa80",
+          "bytes": 237200,
+          "textFile": "originali/36f4694821d1ba16.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/dorgali",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/dorgali",
+        "status": 200,
+        "file": "originali\\c9a018537c958e39.html",
+        "sha256": "99e0944011bdb08c662ce5baec5843d31989a977f75662d33b32eeb64f5f264a",
+        "bytes": 97357,
+        "textFile": "originali/c9a018537c958e39.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Dualchi",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Dualchi\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-8.json"
+      ],
+      "newIds": [
+        "sardegna-dualchi-sagra-del-fico-d-india",
+        "sardegna-dualchi-dualchi-produce"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+          "status": 200,
+          "file": "originali\\cfef6ed60657b371.html",
+          "sha256": "d1d79b8dd7158a32890ddab5fb15ffd1931f2a8e89b7514ba50c35a4412992c1",
+          "bytes": 89721,
+          "textFile": "originali/cfef6ed60657b371.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+        "status": 200,
+        "file": "originali\\cfef6ed60657b371.html",
+        "sha256": "d1d79b8dd7158a32890ddab5fb15ffd1931f2a8e89b7514ba50c35a4412992c1",
+        "bytes": 89721,
+        "textFile": "originali/cfef6ed60657b371.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Fonni",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Fonni\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-8.json"
+      ],
+      "newIds": [
+        "sardegna-fonni-autunno-in-barbagia-fonni"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Fonni-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Fonni-00004/",
+          "status": 200,
+          "file": "originali\\9739597bdcac6b6f.html",
+          "sha256": "44c53aac3e01d36c82fc6b08ac867a97d3baf5ff1dda684f89828df5b6e25a47",
+          "bytes": 28064,
+          "textFile": "originali/9739597bdcac6b6f.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/fonni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/fonni",
+        "status": 200,
+        "file": "originali\\ae9f4931d15b365b.html",
+        "sha256": "a1b5c3e720dfa08e980b00d69c3034911efb090b46309da2e1f91ec9357b360f",
+        "bytes": 97761,
+        "textFile": "originali/ae9f4931d15b365b.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Gadoni",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gadoni\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-8.json"
+      ],
+      "newIds": [
+        "sardegna-gadoni-autunno-in-barbagia-gadoni"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Gadoni-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Gadoni-00003/",
+          "status": 200,
+          "file": "originali\\93716bd33aaf2769.html",
+          "sha256": "3a81057a372b2d25c4302375a4423af7eca3427c1e40751b867f4ef4b38b45a5",
+          "bytes": 28696,
+          "textFile": "originali/93716bd33aaf2769.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gadoni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/gadoni",
+        "status": 200,
+        "file": "originali\\7d90fc0e23d3b62b.html",
+        "sha256": "13b58e22f7af39f4cf74ee3d7c973ff54fe12f67b6f252e9a8fdb5c097eaf234",
+        "bytes": 89381,
+        "textFile": "originali/7d90fc0e23d3b62b.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Galtellì",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Galtellì\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-8.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/galtelli",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/galtelli",
+        "status": 200,
+        "file": "originali\\8fa7be5939563639.html",
+        "sha256": "2716f5293aea54a20efc7f773754e3e54ed7562749ade2ab7343460d69ede61f",
+        "bytes": 92773,
+        "textFile": "originali/8fa7be5939563639.txt"
+      },
+      "outcome": "Individuate sagre del vitello e della pecora 2026 negli aggregatori, senza pagina primaria leggibile selezionata. Ticket cena non è costo banco.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Gavoi",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gavoi\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-12.json"
+      ],
+      "newIds": [
+        "sardegna-gavoi-autunno-in-barbagia-gavoi"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/gavoi_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/gavoi_programma.pdf",
+          "status": 200,
+          "file": "originali\\02b4cba6ef13bb99.pdf",
+          "sha256": "2de7d4aadd156ad5357d3f1ef6a1fdf0adfe0167f886914be0d20d45ac30182e",
+          "bytes": 12018924,
+          "textFile": "originali/02b4cba6ef13bb99.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Gavoi-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Gavoi-00004/",
+          "status": 200,
+          "file": "originali\\02d09972afc50752.html",
+          "sha256": "adac6154a75292621a8868cf43186f17ea66ad848540597149d426c8ac73d9d4",
+          "bytes": 28477,
+          "textFile": "originali/02d09972afc50752.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gavoi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/gavoi",
+        "status": 200,
+        "file": "originali\\8c49efa0aa66b33a.html",
+        "sha256": "b9d3c5f9823d2dc3aeb31c77efa215897b8ec4517b715b7f29e3f2d3e5e10818",
+        "bytes": 96075,
+        "textFile": "originali/8c49efa0aa66b33a.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Irgoli",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Irgoli\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-12.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/irgoli",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/irgoli",
+        "status": 200,
+        "file": "originali\\ad9f3adab9dc7ddf.html",
+        "sha256": "e14507a533ff6df68c0725e1bdc86019f062367e0f2cce265218d0bff9755f8d",
+        "bytes": 93199,
+        "textFile": "originali/ad9f3adab9dc7ddf.txt"
+      },
+      "outcome": "Segnalazioni di mercatini natalizi sul portale territoriale; non selezionato un programma primario con anno e date univoche. Festival musicali e mercato settimanale esclusi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Lei",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lei\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-12.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/lei",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/lei",
+        "status": 200,
+        "file": "originali\\681a52fa330cae94.html",
+        "sha256": "ee84d6ced2153e453a9c0a214ae9d25ce6c408b4b160bc3277a049bd433bc8c8",
+        "bytes": 90012,
+        "textFile": "originali/681a52fa330cae94.txt"
+      },
+      "outcome": "Ricerca nominale e pagina regionale controllate; nessuna manifestazione commerciale con periodo verificabile selezionata. Omonimia con il pronome e località estranee filtrata.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Loculi",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Loculi\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-12.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.comune.loculi.nu.it/it/vecchi-eventi",
+          "finalUrl": "https://www.comune.loculi.nu.it/it/vecchi-eventi",
+          "status": 200,
+          "file": "originali\\e553c28877961b5b.html",
+          "sha256": "927c8bf71cedf26e53fcec9af3550a73ba8d5407798d56ae55986c698c334cad",
+          "bytes": 72431,
+          "textFile": "originali/e553c28877961b5b.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/loculi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/loculi",
+        "status": 200,
+        "file": "originali\\ab9ab8401f8616ad.html",
+        "sha256": "517af35c50fc67cacd597a5c9d5befb8dc948cbb6276af471d7238ac08882ac9",
+        "bytes": 90698,
+        "textFile": "originali/ab9ab8401f8616ad.txt"
+      },
+      "outcome": "Archivio comunale: Primavera a Loculi ha date scheda 25–26 giugno 2023 ma testo esplicito 2022. Evento storico individuato, escluso dal delta per incoerenza non risolta; nessuna conferma 2026.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Lodè",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lodè\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-16.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/lode",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/lode",
+        "status": 200,
+        "file": "originali\\ab961a5247ecd61c.html",
+        "sha256": "0ad1552303000b576dc0990ca469927eef05aeb69f08901034a3d4016eb69920",
+        "bytes": 92000,
+        "textFile": "originali/ab961a5247ecd61c.txt"
+      },
+      "outcome": "Fonti individuano feste patronali e mercati settimanali; l’evento natalizio A Boche Tenorosa è segnalato senza fonte primaria selezionata. Nessuna nuova scheda non significa assenza.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Lodine",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lodine\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-16.json"
+      ],
+      "newIds": [
+        "sardegna-lodine-autunno-in-barbagia-lodine"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lodine_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lodine_programma.pdf",
+          "status": 200,
+          "file": "originali\\ca9abf3763f371f8.pdf",
+          "sha256": "ddbb239a41a2e9f5b0350c5d167a733a6ab39b2b719100a536ce004a1b2b1aff",
+          "bytes": 9620075,
+          "textFile": "originali/ca9abf3763f371f8.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lodine/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lodine/",
+          "status": 200,
+          "file": "originali\\5f3c8486ea7dc3f1.html",
+          "sha256": "78fd53fb23c2d59d7b9aa91f49c2d29a7daf8d09d4dcb7c960f6e86a1d666b1e",
+          "bytes": 21958,
+          "textFile": "originali/5f3c8486ea7dc3f1.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/lodine",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/lodine",
+        "status": 200,
+        "file": "originali\\89d286432e2aa07b.html",
+        "sha256": "61d16e5a8c1deae30a6973b3626a40d6a0f67ea9fbcc1bf5a8f6aa9571676990",
+        "bytes": 91536,
+        "textFile": "originali/89d286432e2aa07b.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Lula",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Lula\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-16.json"
+      ],
+      "newIds": [
+        "sardegna-lula-autunno-in-barbagia-lula"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/Lula_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/Lula_programma.pdf",
+          "status": 200,
+          "file": "originali\\8487d5b658c2d30d.pdf",
+          "sha256": "b75f3ac528653fd191542f321e31f14f23367ba00f45ad6109c7ec2563fee2a5",
+          "bytes": 8112307,
+          "textFile": "originali/8487d5b658c2d30d.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lula-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lula-00003/",
+          "status": 200,
+          "file": "originali\\122ef4e9b49d3cf7.html",
+          "sha256": "635a3eec9b40d33cb206fefe363bf77df45c0d61e0ff4e1fd0e33050de056f5b",
+          "bytes": 32150,
+          "textFile": "originali/122ef4e9b49d3cf7.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/lula",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/lula",
+        "status": 200,
+        "file": "originali\\f17d63e95677f7be.html",
+        "sha256": "ec3bafcaf93d1b458cb29fd9e5a20bbf7015cda89d00dca3aa7649c778f5544b",
+        "bytes": 92938,
+        "textFile": "originali/f17d63e95677f7be.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Macomer",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Macomer\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-16.json"
+      ],
+      "newIds": [
+        "sardegna-macomer-mostra-nazionale-degli-ovini-e-rassegna-dell-agroalimentare",
+        "sardegna-macomer-mostra-del-libro-in-sardegna"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://comune.macomer.nu.it/notizie/3566197/rassegna-ovini-8-10-maggio-2026",
+          "finalUrl": "https://comune.macomer.nu.it/notizie/3566197/rassegna-ovini-8-10-maggio-2026",
+          "status": 200,
+          "file": "originali\\5bcc37302ee0ecc1.html",
+          "sha256": "e16baae352cf42ca9bab9f00746155d31356e5ad6b6a1d693ed94b8af83afd3b",
+          "bytes": 179071,
+          "textFile": "originali/5bcc37302ee0ecc1.txt"
+        },
+        {
+          "url": "https://www.sardegnaturismo.it/it/eventi/mostra-del-libro",
+          "finalUrl": "https://www.sardegnaturismo.it/it/eventi/mostra-del-libro",
+          "status": 200,
+          "file": "originali\\5833287f2237dfd3.html",
+          "sha256": "89f6f6068c437c558780fa335d97ed3020798522076a8d4b8b552f048715e15d",
+          "bytes": 60965,
+          "textFile": "originali/5833287f2237dfd3.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/macomer",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/macomer",
+        "status": 200,
+        "file": "originali\\bdea35e182b33ec2.html",
+        "sha256": "37526917fe83800b81814fbe70562f6325e18118e0c5fa0b7b51287fb8c29f86",
+        "bytes": 93749,
+        "textFile": "originali/bdea35e182b33ec2.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Mamoiada",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Mamoiada\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-20.json"
+      ],
+      "newIds": [
+        "sardegna-mamoiada-autunno-in-barbagia-mamoiada"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_mamoiada.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_mamoiada.pdf",
+          "status": 200,
+          "file": "originali\\7c41effb6318613d.pdf",
+          "sha256": "0b273917383501366347e0690e08903921d2762bd8aa4fe7c2d2aea0f5e429db",
+          "bytes": 5902532,
+          "textFile": "originali/7c41effb6318613d.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Mamoiada-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Mamoiada-00003/",
+          "status": 200,
+          "file": "originali\\0ea1ef66b5daae90.html",
+          "sha256": "fcf7b284c5c06cb49495ceeafb2358ea6e8fa8b243800fe621892eaccebcced3",
+          "bytes": 31863,
+          "textFile": "originali/0ea1ef66b5daae90.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/mamoiada",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/mamoiada",
+        "status": 200,
+        "file": "originali\\7c2466d21076b86c.html",
+        "sha256": "caf1f99e42bff4eae434d6a08fa86629f8947be3d9e6925f306a085f0fcfc43c",
+        "bytes": 98840,
+        "textFile": "originali/7c2466d21076b86c.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Meana Sardo",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Meana Sardo\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-20.json"
+      ],
+      "newIds": [
+        "sardegna-meana-sardo-autunno-in-barbagia-meana-sardo",
+        "sardegna-meana-sardo-sagra-del-formaggio"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/meanasardo_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/meanasardo_programma.pdf",
+          "status": 200,
+          "file": "originali\\9794227bcb00292f.pdf",
+          "sha256": "31e3a71aa58e413a270e73779df3fdf07cc284be175049027ba61a5b31a786f6",
+          "bytes": 9834545,
+          "textFile": "originali/9794227bcb00292f.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Meana-Sardo-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Meana-Sardo-00003/",
+          "status": 200,
+          "file": "originali\\d18ffed25465fe83.html",
+          "sha256": "451feb9b6997279fdd5080939b0186eaf696a1a214f1591923165c6c7a27207c",
+          "bytes": 28304,
+          "textFile": "originali/d18ffed25465fe83.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/meana-sardo",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/meana-sardo",
+          "status": 200,
+          "file": "originali\\229c9a38ff55f270.html",
+          "sha256": "db6ea81dfadfbaed571b1aa02acf4e3005b6e159f79ceae06cc59d8938c48692",
+          "bytes": 92078,
+          "textFile": "originali/229c9a38ff55f270.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/meana-sardo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/meana-sardo",
+        "status": 200,
+        "file": "originali\\229c9a38ff55f270.html",
+        "sha256": "db6ea81dfadfbaed571b1aa02acf4e3005b6e159f79ceae06cc59d8938c48692",
+        "bytes": 92078,
+        "textFile": "originali/229c9a38ff55f270.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Noragugume",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Noragugume\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-20.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://comune.noragugume.nu.it/",
+          "finalUrl": "https://comune.noragugume.nu.it/",
+          "status": 200,
+          "file": "originali\\adb7a40b577324fa.html",
+          "sha256": "74394d73a5c0e383a91d98f014a145b7b8cbe162b6c955a8558c1aa18a655355",
+          "bytes": 166390,
+          "textFile": "originali/adb7a40b577324fa.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/noragugume",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/noragugume",
+        "status": 200,
+        "file": "originali\\c32a19ed36f613b4.html",
+        "sha256": "cffc4dfca512e972fa358b0626c9594387deb8483b25dab04c52465a09bca4ef",
+        "bytes": 91320,
+        "textFile": "originali/c32a19ed36f613b4.txt"
+      },
+      "outcome": "Individuati mercatini di Natale 2024 negli atti di affidamento e precedenti nella stampa; nessun calendario primario univoco selezionato per una nuova scheda. Homepage corrente controllata.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Nuoro",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Nuoro\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-20.json"
+      ],
+      "newIds": [
+        "sardegna-nuoro-carreras-de-lollobe-autunno-in-barbagia",
+        "sardegna-nuoro-mastros-in-nugoro-autunno-in-barbagia"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lollove_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lollove_programma.pdf",
+          "status": 200,
+          "file": "originali\\664e3c723b6a6883.pdf",
+          "sha256": "f03ba630bd90734f3e9474d5cf49da844e6dd098eb8653b2532c3f4092f0a6c9",
+          "bytes": 12572646,
+          "textFile": "originali/664e3c723b6a6883.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lollove-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Lollove-00003/",
+          "status": 200,
+          "file": "originali\\1dd56bcfc55d8e7f.html",
+          "sha256": "577c1818e8b0a8ff644e105ff9b076ea22eb5281e4ac6654542a49a943160336",
+          "bytes": 29675,
+          "textFile": "originali/1dd56bcfc55d8e7f.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.comune.nuoro.it/download/f1a22d525aeb4c668158dfa4f769322c/DISCIPLINARE_Lollove_2026.pdf?7a817ee1c8a71a6a2b81a4899f956653",
+          "finalUrl": "https://www.comune.nuoro.it/download/f1a22d525aeb4c668158dfa4f769322c/DISCIPLINARE_Lollove_2026.pdf?7a817ee1c8a71a6a2b81a4899f956653",
+          "status": 200,
+          "file": "originali\\f1fabe813460b7a2.pdf",
+          "sha256": "153ce879a0d0b8515d864c29542c70a95c6b70b05aa14ff1d4a07e5cf345b6b9",
+          "bytes": 171850,
+          "textFile": "originali/f1fabe813460b7a2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_nuoro.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_nuoro.pdf",
+          "status": 200,
+          "file": "originali\\7407f6bf04572315.pdf",
+          "sha256": "6dee48aeb6a5a9eb542084674c090a6886f32079685995e20b49c851e0d1d0bd",
+          "bytes": 12335750,
+          "textFile": "originali/7407f6bf04572315.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Nuoro-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Nuoro-00003/",
+          "status": 200,
+          "file": "originali\\c264151be1eb03a0.html",
+          "sha256": "437bc68514b83d3197428236edaf89552870eb4bbd5a1efa3d881479318ddb59",
+          "bytes": 29391,
+          "textFile": "originali/c264151be1eb03a0.txt"
+        },
+        {
+          "url": "https://www.comune.nuoro.it/download/f2beb783588946e8a3682c0e3ce008e8/DISCIPLINARE%20Nuoro%202026.pdf?ea9061d305f952e3819119b04fcec1a4",
+          "finalUrl": "https://www.comune.nuoro.it/download/f2beb783588946e8a3682c0e3ce008e8/DISCIPLINARE%20Nuoro%202026.pdf?ea9061d305f952e3819119b04fcec1a4",
+          "status": 200,
+          "file": "originali\\030e06a1b951da16.pdf",
+          "sha256": "1dc4ab7f4c9dc55b7ea95f25e7e386bccf32088e6716a8bedf910baf508cd5be",
+          "bytes": 170727,
+          "textFile": "originali/030e06a1b951da16.txt"
+        },
+        {
+          "url": "https://www.comune.nuoro.it/it/novita/page/mastros-in-nugoro-2026-riapertura-dei-termini-per-le-domande-di-partecipazione-in-sede-privata",
+          "finalUrl": "https://www.comune.nuoro.it/it/novita/page/mastros-in-nugoro-2026-riapertura-dei-termini-per-le-domande-di-partecipazione-in-sede-privata",
+          "status": 200,
+          "file": "originali\\90d14f423a5c30a5.html",
+          "sha256": "521410f0f865b20216961da72b75dde11354920805f37b11f6ac035ebe53f6a4",
+          "bytes": 104773,
+          "textFile": "originali/90d14f423a5c30a5.txt"
+        },
+        {
+          "url": "https://www.comune.nuoro.it/it/novita/page/autunno-in-barbagia-2026-mastros-in-nugoro-pubblicazione-dell-elenco-degli-ammessi",
+          "finalUrl": "https://www.comune.nuoro.it/it/novita/page/autunno-in-barbagia-2026-mastros-in-nugoro-pubblicazione-dell-elenco-degli-ammessi",
+          "status": 200,
+          "file": "originali\\8cd8ac1053243831.html",
+          "sha256": "35bdc8e088540ba3f1f87c0232086b4bfea461630652517d890ae9d5ca4d7e5e",
+          "bytes": 104641,
+          "textFile": "originali/8cd8ac1053243831.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/nuoro",
+        "status": 404,
+        "limitation": "Pagina non disponibile al download; non usata come prova negativa."
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Oliena",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Oliena\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-24.json"
+      ],
+      "newIds": [
+        "sardegna-oliena-autunno-in-barbagia-oliena"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/oliena_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/oliena_programma.pdf",
+          "status": 200,
+          "file": "originali\\60f29adc56505cdd.pdf",
+          "sha256": "b88be55843f5886796fa39ec2dd302c215a8ab917cba7c8fc41ea8ab2c66006a",
+          "bytes": 6226918,
+          "textFile": "originali/60f29adc56505cdd.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Oliena-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Oliena-00003/",
+          "status": 200,
+          "file": "originali\\afeebd679ce96bad.html",
+          "sha256": "5d10cc51d6b62491653e2668d57f1bbb97bd61e0df6c3b970bcce8796aacfd30",
+          "bytes": 32574,
+          "textFile": "originali/afeebd679ce96bad.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.comune.oliena.nu.it/uploads/allegati/Avviso_CORTES_APERTAS_2026_rivolto_ad_operatori_economici_ed_espositori_locali_signed.pdf",
+          "finalUrl": "https://www.comune.oliena.nu.it/uploads/allegati/Avviso_CORTES_APERTAS_2026_rivolto_ad_operatori_economici_ed_espositori_locali_signed.pdf",
+          "status": 200,
+          "file": "originali\\aa324874393b12dc.pdf",
+          "sha256": "056a6ef695267a54abfcad070ba2a3bc6c049f7a7f6337881d3c6f975744234c",
+          "bytes": 301347,
+          "textFile": "originali/aa324874393b12dc.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/oliena",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/oliena",
+        "status": 200,
+        "file": "originali\\4e8c35dd03a91eab.html",
+        "sha256": "70d4cd1cf40b4caa0ea40c44032bd41fb152a300e6361d209310bda8f49abb87",
+        "bytes": 99040,
+        "textFile": "originali/4e8c35dd03a91eab.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Ollolai",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ollolai\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-24.json"
+      ],
+      "newIds": [
+        "sardegna-ollolai-autunno-in-barbagia-ollolai"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://comune.ollolai.nu.it/media/acfupload/Avviso_Autunno_in_Barbagia_2026.pdf",
+          "finalUrl": "https://comune.ollolai.nu.it/media/acfupload/Avviso_Autunno_in_Barbagia_2026.pdf",
+          "status": 200,
+          "file": "originali\\eb8584b8a71853b1.pdf",
+          "sha256": "45a3c5765f3e0c0e7217f4644c52b57297c7d7eb4884bb125ef4064340634066",
+          "bytes": 258778,
+          "textFile": "originali/eb8584b8a71853b1.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ollolai-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ollolai-00003/",
+          "status": 200,
+          "file": "originali\\1780eb40de32f065.html",
+          "sha256": "5af14ecd0b3f908b8964e2dd56f05ef86f7133ed634e4127a39d15d67c906284",
+          "bytes": 27891,
+          "textFile": "originali/1780eb40de32f065.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://comune.ollolai.nu.it/media/acfupload/Disciplinare_Impara_SArte_2024_copy_1.pdf",
+          "finalUrl": "https://comune.ollolai.nu.it/media/acfupload/Disciplinare_Impara_SArte_2024_copy_1.pdf",
+          "status": 200,
+          "file": "originali\\f0187742ca8e1e93.pdf",
+          "sha256": "65dc9406a4aba02d564b8e7084c4e4d5b17bd28154f71088f30f6899a1c71746",
+          "bytes": 472813,
+          "textFile": "originali/f0187742ca8e1e93.txt"
+        },
+        {
+          "url": "https://comune.ollolai.nu.it/media/acfupload/Allegato_A.pdf",
+          "finalUrl": "https://comune.ollolai.nu.it/media/acfupload/Allegato_A.pdf",
+          "status": 200,
+          "file": "originali\\0ba789f69498fd34.pdf",
+          "sha256": "ac70ec436fb0dfd9736471ee99da6f3b2e74f74eca1351002788d3334c0e3db4",
+          "bytes": 264915,
+          "textFile": "originali/0ba789f69498fd34.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ollolai",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ollolai",
+        "status": 200,
+        "file": "originali\\2fd07ac8d01e244b.html",
+        "sha256": "ac3337ad3ff5e725d72526e96c0dac618bea6f1a0b280db3e6b21a38f46be983",
+        "bytes": 92051,
+        "textFile": "originali/2fd07ac8d01e244b.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Olzai",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Olzai\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-24.json"
+      ],
+      "newIds": [
+        "sardegna-olzai-autunno-in-barbagia-olzai"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/olzai_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/olzai_programma.pdf",
+          "status": 200,
+          "file": "originali\\64c381fa47754e89.pdf",
+          "sha256": "e6a329327b56f455a44b924ae1e7211ac1407d3c22128341a383d816fe4d43eb",
+          "bytes": 6165361,
+          "textFile": "originali/64c381fa47754e89.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Olzai-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Olzai-00003/",
+          "status": 200,
+          "file": "originali\\70835eee16059a4c.html",
+          "sha256": "64cf12c323852b7f69c1a0a6f97813637519e2249c8aaa260815766d3a86afa1",
+          "bytes": 29993,
+          "textFile": "originali/70835eee16059a4c.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.comune.olzai.nu.it/uploads/allegati/DISCIPLINARE_AUTUNNO_IN_BARBAGIA_2026.pdf",
+          "finalUrl": "https://www.comune.olzai.nu.it/uploads/allegati/DISCIPLINARE_AUTUNNO_IN_BARBAGIA_2026.pdf",
+          "status": 200,
+          "file": "originali\\e157314611ccf8e1.pdf",
+          "sha256": "212edb44faca32b39acfb52daee9e263ab2961b210a12326774cc4729c7883c9",
+          "bytes": 506775,
+          "textFile": "originali/e157314611ccf8e1.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/olzai",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/olzai",
+        "status": 200,
+        "file": "originali\\6abee9ed2b051443.html",
+        "sha256": "c51439e23986e932e320bb72bd65e84f3e09bca6190fa78fe89b6edcf7d62acf",
+        "bytes": 92372,
+        "textFile": "originali/6abee9ed2b051443.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Onanì",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Onanì\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-24.json"
+      ],
+      "newIds": [
+        "sardegna-onani-autunno-in-barbagia-onani"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/onani_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/onani_programma.pdf",
+          "status": 200,
+          "file": "originali\\45dcfe4c1fcf4374.pdf",
+          "sha256": "d3c063389b334e6ef8dce894b84d8aae83a2e6e95640c8a0245162a1516e272a",
+          "bytes": 20352332,
+          "textFile": "originali/45dcfe4c1fcf4374.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Onani-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Onani-00004/",
+          "status": 200,
+          "file": "originali\\ef9d16c7c1bee731.html",
+          "sha256": "03873b8e5ab79e7289f60e9ba4145b27a37a998752038ff3c9b731bd96449b21",
+          "bytes": 29994,
+          "textFile": "originali/ef9d16c7c1bee731.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/onani",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/onani",
+        "status": 200,
+        "file": "originali\\2374e6e088625996.html",
+        "sha256": "355fa351c1703b8fbf8f4e7fea82484f8d57ac111b4e99ddbdeac2958a979895",
+        "bytes": 87225,
+        "textFile": "originali/2374e6e088625996.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Onifai",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Onifai\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-28.json"
+      ],
+      "newIds": [
+        "sardegna-onifai-mercatini-di-natale"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.comune.onifai.nu.it/it/novita/page/seconda-edizione-dei-mercatini-di-natale",
+          "finalUrl": "https://www.comune.onifai.nu.it/it/novita/page/seconda-edizione-dei-mercatini-di-natale",
+          "status": 200,
+          "file": "originali\\8da3d37dfcc8cf5a.html",
+          "sha256": "690d1a5cdade6256e0dd12424050c0b5906da0a450c6442b263d885b440e8bc9",
+          "bytes": 88155,
+          "textFile": "originali/8da3d37dfcc8cf5a.txt"
+        },
+        {
+          "url": "https://www.comune.onifai.nu.it/download/0d4b94cca3f34b4485adc0d0fc33affd/modulo%20mercatini%20di%20onifai%202026.doc?6801e7179f8b627ba6f55442f3d836f1",
+          "finalUrl": "https://www.comune.onifai.nu.it/download/0d4b94cca3f34b4485adc0d0fc33affd/modulo%20mercatini%20di%20onifai%202026.doc?6801e7179f8b627ba6f55442f3d836f1",
+          "status": 200,
+          "file": "originali/a0bdc92b83d602d5.doc",
+          "textFile": "originali/a0bdc92b83d602d5.txt",
+          "sha256": "cde9518fbd0d2fafdb4688faee6af9e98fa3728a7371cce68a12257e151c62b3",
+          "bytes": 54784,
+          "extraction": "Partial printable strings from WordDocument stream, not layout-aware"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/onifai",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/onifai",
+        "status": 200,
+        "file": "originali\\d147445944bbe023.html",
+        "sha256": "339c2551b0003be15063e1fad3ee511612a0f9c07a203eeae591c53fdc7602e6",
+        "bytes": 91275,
+        "textFile": "originali/d147445944bbe023.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Oniferi",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Oniferi\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-28.json"
+      ],
+      "newIds": [
+        "sardegna-oniferi-autunno-in-barbagia-oniferi"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Oniferi-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Oniferi-00003/",
+          "status": 200,
+          "file": "originali\\a8c65d2c631d2792.html",
+          "sha256": "f7fa37e89c92623222daf56db64d33815a6e4d5e350838500ec5ff87468cc323",
+          "bytes": 24784,
+          "textFile": "originali/a8c65d2c631d2792.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/oniferi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/oniferi",
+        "status": 200,
+        "file": "originali\\378fd6fb699f1aa1.html",
+        "sha256": "9f1344174a26c612f1b00e5723f3102a2dea0c40ae6270599a93b5b8bf5ac85c",
+        "bytes": 91912,
+        "textFile": "originali/378fd6fb699f1aa1.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Orani",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Orani\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-28.json"
+      ],
+      "newIds": [
+        "sardegna-orani-autunno-in-barbagia-orani"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orani_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orani_programma.pdf",
+          "status": 200,
+          "file": "originali\\312dabde4c57882e.pdf",
+          "sha256": "1309ea58159c7a911ced729a4233bfd7c7bf9f3e912d20246670139c9e73d6d5",
+          "bytes": 5374954,
+          "textFile": "originali/312dabde4c57882e.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orani-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orani-00003/",
+          "status": 200,
+          "file": "originali\\c76cefe37fa2663f.html",
+          "sha256": "cfd1559b34fd97eae26d3c8d9dcb9fad55f79fef0821e1a979c33e9a30f0f143",
+          "bytes": 33507,
+          "textFile": "originali/c76cefe37fa2663f.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/orani",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/orani",
+        "status": 200,
+        "file": "originali\\cefbfde497b3b3d0.html",
+        "sha256": "4cadfb7f03271f7356931b8b3f046caaa359302c29f8b0ca72c44535bcd56111",
+        "bytes": 93004,
+        "textFile": "originali/cefbfde497b3b3d0.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Orgosolo",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Orgosolo\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-28.json"
+      ],
+      "newIds": [
+        "sardegna-orgosolo-autunno-in-barbagia-orgosolo"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_orgosolo.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_orgosolo.pdf",
+          "status": 200,
+          "file": "originali\\a43f3ba54077a727.pdf",
+          "sha256": "39cd3c4e9ada0b5a837a5acf3dce505cec25378ac421a4edda907d3974f1d5e1",
+          "bytes": 11611062,
+          "textFile": "originali/a43f3ba54077a727.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orgosolo-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orgosolo-00004/",
+          "status": 200,
+          "file": "originali\\2978fd7612b6447d.html",
+          "sha256": "20e1e3ca8df14c9e12e9a1acae52464b4597c5357ac05c7163b99fc8427db040",
+          "bytes": 32788,
+          "textFile": "originali/2978fd7612b6447d.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/orgosolo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/orgosolo",
+        "status": 200,
+        "file": "originali\\bf926a6d17a844b8.html",
+        "sha256": "230a1a0ab08df3d761331d2059cabe574c7d1124e826cb1e4ae91e71efbeca31",
+        "bytes": 98481,
+        "textFile": "originali/bf926a6d17a844b8.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Orosei",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Orosei\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-32.json"
+      ],
+      "newIds": [
+        "sardegna-orosei-primavera-nel-cuore-della-sardegna"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/orosei_broch_2026.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/orosei_broch_2026.pdf",
+          "status": 200,
+          "file": "originali\\12d4b4b726dd7d39.pdf",
+          "sha256": "63980161b124c0dcc4ce5237a1ac1c364d0779034d14b58bcf99e29c4cbc4ccc",
+          "bytes": 617532,
+          "textFile": "originali/12d4b4b726dd7d39.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-mappe-paesi/2026/orosei_mappa_2026.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-mappe-paesi/2026/orosei_mappa_2026.pdf",
+          "status": 200,
+          "file": "originali\\e12c9566b4a5debc.pdf",
+          "sha256": "4aa2b8b15cf95aaf50ada7ee4b01ca733f6095d7bb261c7af288ca239e435a1f",
+          "bytes": 1684935,
+          "textFile": "originali/e12c9566b4a5debc.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/orosei",
+        "status": 404,
+        "limitation": "Pagina non disponibile al download; non usata come prova negativa."
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Orotelli",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Orotelli\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-32.json"
+      ],
+      "newIds": [
+        "sardegna-orotelli-autunno-in-barbagia-orotelli"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orotelli_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orotelli_programma.pdf",
+          "status": 200,
+          "file": "originali\\c93fccb7b22c69a6.pdf",
+          "sha256": "abbcbe7b05fcaff1e23f29248b394a71fd0be18584d5867fea3631464385a9e4",
+          "bytes": 9600142,
+          "textFile": "originali/c93fccb7b22c69a6.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orotelli-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orotelli-00003/",
+          "status": 200,
+          "file": "originali\\762ef01476f0e306.html",
+          "sha256": "845ff6e3a3f257e1da619a92bdd4045c51ff392531db096294b5b353b4f345fe",
+          "bytes": 24733,
+          "textFile": "originali/762ef01476f0e306.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/orotelli",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/orotelli",
+        "status": 200,
+        "file": "originali\\e330bc8a765a9aac.html",
+        "sha256": "74b6945a60a618c80af627c5399576200062930ba93f6638292f4f0d8056a0d0",
+        "bytes": 93258,
+        "textFile": "originali/e330bc8a765a9aac.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Ortueri",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ortueri\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-32.json"
+      ],
+      "newIds": [
+        "sardegna-ortueri-autunno-in-barbagia-ortueri"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ortueri-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ortueri-00003/",
+          "status": 200,
+          "file": "originali\\6ed54692b73aa8e4.html",
+          "sha256": "f434ceb6ffe562957ea16ab5e6f7b05f37e77152baf30278b116bd3dde7ad609",
+          "bytes": 23664,
+          "textFile": "originali/6ed54692b73aa8e4.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ortueri",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ortueri",
+        "status": 200,
+        "file": "originali\\22def38bd075ff07.html",
+        "sha256": "c32c8c270ef9f7c4cf2cecfcc178d94cbb9fff3abe25a6b151a6239a6af0240c",
+        "bytes": 90272,
+        "textFile": "originali/22def38bd075ff07.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Orune",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Orune\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-32.json"
+      ],
+      "newIds": [
+        "sardegna-orune-autunno-in-barbagia-orune"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orune-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Orune-00003/",
+          "status": 200,
+          "file": "originali\\3ac4810583bceeab.html",
+          "sha256": "097c50727bee16f849e05f5f21176f7fb376687027d7a4a2f7684dfb57e974a7",
+          "bytes": 28369,
+          "textFile": "originali/3ac4810583bceeab.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/orune",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/orune",
+        "status": 200,
+        "file": "originali\\5c8be67c4d5a1ff2.html",
+        "sha256": "4c6e9062dc0e3e73631866d4d6c80ed71597fbd95443ae0df85a68666c54ba6b",
+        "bytes": 92076,
+        "textFile": "originali/5c8be67c4d5a1ff2.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Osidda",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Osidda\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-36.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/osidda",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/osidda",
+        "status": 200,
+        "file": "originali\\9ffd04deb73e4060.html",
+        "sha256": "c7f680ca80803dc7c7f6a7e4cb7da3bb39bc674523cfc003fb0a15e9ea1fd928",
+        "bytes": 87199,
+        "textFile": "originali/9ffd04deb73e4060.txt"
+      },
+      "outcome": "Pagina regionale e query nominali controllate; feste religiose e sportive non adottate come manifestazioni commerciali senza prova specifica.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Ottana",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ottana\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-36.json"
+      ],
+      "newIds": [
+        "sardegna-ottana-autunno-in-barbagia-ottana"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ottana.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ottana.pdf",
+          "status": 200,
+          "file": "originali\\96d93a291f054776.pdf",
+          "sha256": "20ed62a35d8b1c10fdeb62ddfc735ba7198b0fa2884cafb7b1984d5b10b681d4",
+          "bytes": 7428446,
+          "textFile": "originali/96d93a291f054776.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ottana-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ottana-00003/",
+          "status": 200,
+          "file": "originali\\c69f286c4039ce61.html",
+          "sha256": "1b36859dd89048ed02153f3fe9e959bbc4fefbe59896cbfd02de02a34d17ffaf",
+          "bytes": 24804,
+          "textFile": "originali/c69f286c4039ce61.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ottana",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ottana",
+        "status": 200,
+        "file": "originali\\4a4efc4de96df88a.html",
+        "sha256": "d1e384b65077faea92b36ec45436ec99167a63a2d67b506a917832488569c67e",
+        "bytes": 91102,
+        "textFile": "originali/4a4efc4de96df88a.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Ovodda",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ovodda\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-36.json"
+      ],
+      "newIds": [
+        "sardegna-ovodda-autunno-in-barbagia-ovodda"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ovodda.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ovodda.pdf",
+          "status": 200,
+          "file": "originali\\3118016f3245f25f.pdf",
+          "sha256": "ee3a0bcfd72142b0164ac3d3d1bb2bfc15e32e66fb33d6ed7d7a6e1e66144a7a",
+          "bytes": 5779958,
+          "textFile": "originali/3118016f3245f25f.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ovodda-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Ovodda-00003/",
+          "status": 200,
+          "file": "originali\\c02a59be56518cd1.html",
+          "sha256": "388a5f8249cdf155328724ccecfec0629ff263726c283480c5a601d915aa602c",
+          "bytes": 31186,
+          "textFile": "originali/c02a59be56518cd1.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ovodda",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ovodda",
+        "status": 200,
+        "file": "originali\\5c9fcd3fba31cd85.html",
+        "sha256": "ef16056b0b155c66374971b4b3f6071af95d441c0a3531d5246754e3af16b80d",
+        "bytes": 90031,
+        "textFile": "originali/5c9fcd3fba31cd85.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Posada",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Posada\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-36.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/posada",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/posada",
+        "status": 200,
+        "file": "originali\\764004cd60ed05d7.html",
+        "sha256": "eec51aeba5c4be6f431d921992406094ffd7a25e16f68da7637734bf05dc5cd6",
+        "bytes": 95130,
+        "textFile": "originali/764004cd60ed05d7.txt"
+      },
+      "outcome": "Mappa comunale Ballos de Mes’Austu con espositori e ristori, ma senza anno/giorno ricavabile in modo univoco; graduatoria di altra edizione non trasferita al 2026. Nessuna nuova scheda.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Sarule",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sarule\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-40.json"
+      ],
+      "newIds": [
+        "sardegna-sarule-autunno-in-barbagia-sarule",
+        "sardegna-sarule-sagra-dei-formaggi-dell-area-gal-bmg-e-dei-prodotti-agroalimentari"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sarule_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sarule_programma.pdf",
+          "status": 200,
+          "file": "originali\\cd495717b635129b.pdf",
+          "sha256": "5da8c69c6961d8fd2c013bfb273950c23bb35b6a383df252e2291aeb8925c28d",
+          "bytes": 11572614,
+          "textFile": "originali/cd495717b635129b.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Sarule-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Sarule-00003/",
+          "status": 200,
+          "file": "originali\\2f737db459be8a10.html",
+          "sha256": "b37c68ee2f53e8fbcb4461649c1941120c4e4f4da74cefae6eab066909428f0e",
+          "bytes": 31509,
+          "textFile": "originali/2f737db459be8a10.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.distrettoruraledellabarbagia.it/a-sarule-la-sagra-dei-formaggi-dellarea-gal-bmg-e-dei-prodotti-agroalimentari/",
+          "finalUrl": "https://www.distrettoruraledellabarbagia.it/a-sarule-la-sagra-dei-formaggi-dellarea-gal-bmg-e-dei-prodotti-agroalimentari/",
+          "status": 200,
+          "file": "originali\\9cd73dc339fafa8c.html",
+          "sha256": "c064835791c4e3c727679fc2cdc1f12da9bff63c218fc0cc11dbda04a8f8a70b",
+          "bytes": 118435,
+          "textFile": "originali/9cd73dc339fafa8c.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sarule",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sarule",
+        "status": 200,
+        "file": "originali\\a732d66d45ec11ba.html",
+        "sha256": "a6e3a10312b4aaad38eeaf7721b3ee9627a0e2ee97a13121871ef451475f44c0",
+        "bytes": 91003,
+        "textFile": "originali/a732d66d45ec11ba.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Seulo",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Seulo\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-40.json"
+      ],
+      "newIds": [
+        "sardegna-seulo-autunno-in-barbagia-seulo",
+        "sardegna-seulo-sagra-de-su-casu-in-filixi",
+        "sardegna-seulo-sa-tundimenta-seulese"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Seulo/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Seulo/",
+          "status": 200,
+          "file": "originali\\69f68b80aab9f177.html",
+          "sha256": "375f2e777ef01c30b29883690e9415aeafd863131ff14bacb3f55bff6c2445ba",
+          "bytes": 27315,
+          "textFile": "originali/69f68b80aab9f177.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/seulo",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/seulo",
+          "status": 200,
+          "file": "originali\\f5f1bdd05aa4dd78.html",
+          "sha256": "d8541769d4985d28ca523a046fbedf184f509b007b67169a19cd329ed85907bb",
+          "bytes": 92134,
+          "textFile": "originali/f5f1bdd05aa4dd78.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/seulo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/seulo",
+        "status": 200,
+        "file": "originali\\f5f1bdd05aa4dd78.html",
+        "sha256": "d8541769d4985d28ca523a046fbedf184f509b007b67169a19cd329ed85907bb",
+        "bytes": 92134,
+        "textFile": "originali/f5f1bdd05aa4dd78.txt"
+      },
+      "outcome": "Selezionate 3 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Silanus",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Silanus\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-40.json"
+      ],
+      "newIds": [
+        "sardegna-silanus-sagra-de-su-ischidu",
+        "sardegna-silanus-cosas-bonas-de-silanos-i-sapori-dell-identita"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.sardegnaturismo.it/it/esplora/silanus",
+          "finalUrl": "https://www.sardegnaturismo.it/it/esplora/silanus",
+          "status": 200,
+          "file": "originali\\a6134443494981ce.html",
+          "sha256": "a1dd5bd500921eaa83eb78602a3a61438876c8efcee440a8754c9960f118f3dd",
+          "bytes": 92666,
+          "textFile": "originali/a6134443494981ce.txt"
+        },
+        {
+          "url": "https://www.comune.silanus.nu.it/uploads/allegati/Regolamento.pdf",
+          "finalUrl": "https://www.comune.silanus.nu.it/uploads/allegati/Regolamento.pdf",
+          "status": 200,
+          "file": "originali\\42817568ee162d7e.pdf",
+          "sha256": "6b835f87cb401e9cb0867ea92fe27020746cdddc58855fd133df97313ac52aa5",
+          "bytes": 831590,
+          "textFile": "originali/42817568ee162d7e.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/silanus",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/silanus",
+        "status": 200,
+        "file": "originali\\a6134443494981ce.html",
+        "sha256": "a1dd5bd500921eaa83eb78602a3a61438876c8efcee440a8754c9960f118f3dd",
+        "bytes": 92666,
+        "textFile": "originali/a6134443494981ce.txt"
+      },
+      "outcome": "Selezionate 2 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Sindia",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sindia\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-40.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sindia",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sindia",
+        "status": 200,
+        "file": "originali\\2fbf3ebd35447ab2.html",
+        "sha256": "793d95ceb10b67dcbfdfc6800cf56d495f3b0f88874d63bce54fe341824af07b",
+        "bytes": 93224,
+        "textFile": "originali/2fbf3ebd35447ab2.txt"
+      },
+      "outcome": "Ricognizione distingue l’Ardia e le celebrazioni religiose da fiere/mercatini. Non individuata fonte primaria selezionata con natura commerciale e periodo sufficiente.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Siniscola",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Siniscola\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-44.json"
+      ],
+      "newIds": [
+        "sardegna-siniscola-primavera-nel-cuore-della-sardegna-siniscolapuntozero"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.sardegnaturismo.it/sites/default/files/locandine/siniscola_2026.pdf",
+          "finalUrl": "https://www.sardegnaturismo.it/sites/default/files/locandine/siniscola_2026.pdf",
+          "status": 200,
+          "file": "originali\\019efe494ce55432.pdf",
+          "sha256": "7c6a81c1798e649370907016f722a97a135437fd5fc5313f85124eb54ed16711",
+          "bytes": 691066,
+          "textFile": "originali/019efe494ce55432.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siniscola",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/siniscola",
+        "status": 200,
+        "file": "originali\\ea00ce2602b47a4d.html",
+        "sha256": "932ed496aa43392d6fb673acbe939b2323f1439aaf94ebbf07cbeb2450a52bbb",
+        "bytes": 92453,
+        "textFile": "originali/ea00ce2602b47a4d.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Sorgono",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sorgono\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-44.json"
+      ],
+      "newIds": [
+        "sardegna-sorgono-autunno-in-barbagia-sorgono"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sorgono_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sorgono_programma.pdf",
+          "status": 200,
+          "file": "originali\\0c94e24b52cf84fb.pdf",
+          "sha256": "f21a50d35ee9dff56943c836fc464c9d635689fdcfc978fdf355785fda53ec74",
+          "bytes": 8722389,
+          "textFile": "originali/0c94e24b52cf84fb.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Sorgono-00004/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Sorgono-00004/",
+          "status": 200,
+          "file": "originali\\133a7efa1dc177a5.html",
+          "sha256": "ec40d4f75c4ec6ec22696e5179edff559bc23a3d3e6cda627ace7e33a3bfe54e",
+          "bytes": 29000,
+          "textFile": "originali/133a7efa1dc177a5.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sorgono",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sorgono",
+        "status": 200,
+        "file": "originali\\a5b12aeb2bceb0b5.html",
+        "sha256": "51fa6e0305ed178ca17d8fac3e7f12a3dd0896b595ec77da32a3b5de9a3f2357",
+        "bytes": 93463,
+        "textFile": "originali/a5b12aeb2bceb0b5.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Teti",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Teti\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-44.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/teti",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/teti",
+        "status": 200,
+        "file": "originali\\81da8a2a421f78d6.html",
+        "sha256": "b89bfd7c1b97eaf341db455a12ea000a14a1c2064063538b31665810405ffb0f",
+        "bytes": 92172,
+        "textFile": "originali/81da8a2a421f78d6.txt"
+      },
+      "outcome": "Individuate iniziative del Centro Commerciale Naturale Bidda Mia e attività culturali/archeologiche; non selezionato programma primario di una fiera o sagra autonoma con periodo sufficiente.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Tiana",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tiana\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-44.json"
+      ],
+      "newIds": [
+        "sardegna-tiana-autunno-in-barbagia-tiana"
+      ],
+      "existingUpdateIds": [],
+      "sources": [
+        {
+          "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5361687/Disciplinare_Autunno_Barbagia_2026_corretto.pdf",
+          "finalUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5361687/Disciplinare_Autunno_Barbagia_2026_corretto.pdf",
+          "status": 200,
+          "file": "originali\\ac37be8b00fd40d3.pdf",
+          "sha256": "9cf525b98e703cb19b3ed38db13dd5dc4f841272ecf7c40edcd87bb66ad4f716",
+          "bytes": 241023,
+          "textFile": "originali/ac37be8b00fd40d3.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Tiana-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Tiana-00003/",
+          "status": 200,
+          "file": "originali\\16741d2ebde2dee7.html",
+          "sha256": "179e1a97993795ebbccdbdf2e957077e7332877f1122f724bae462f41987697a",
+          "bytes": 32558,
+          "textFile": "originali/16741d2ebde2dee7.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tiana",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tiana",
+        "status": 200,
+        "file": "originali\\14d575245aac867e.html",
+        "sha256": "2a849027979b0df66ce26d9952554fc399a4647c16772fe3ac46fedd5c031b18",
+        "bytes": 91709,
+        "textFile": "originali/14d575245aac867e.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Tonara",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tonara\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-48.json"
+      ],
+      "newIds": [
+        "sardegna-tonara-autunno-in-barbagia-tonara"
+      ],
+      "existingUpdateIds": [
+        "sardegna-tonara-sagra-del-torrone"
+      ],
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/tonara_programma.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/tonara_programma.pdf",
+          "status": 200,
+          "file": "originali\\295d407dd217a501.pdf",
+          "sha256": "721cd8a77e22a40fc003ad731f1e8d4585c78900e3f5e7f47856ae09c8453830",
+          "bytes": 5734414,
+          "textFile": "originali/295d407dd217a501.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Tonara-00003/",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/paesi/paese/Tonara-00003/",
+          "status": 200,
+          "file": "originali\\a59e47ec9af675a5.html",
+          "sha256": "b8c5aa71ac0dcb1416eb475bf56cb6630302320584f009de67f30f6ad4707be2",
+          "bytes": 31499,
+          "textFile": "originali/a59e47ec9af675a5.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+          "status": 200,
+          "file": "originali\\fac9543d0db9d9d2.html",
+          "sha256": "b9b08a4f71f9461779bd8c3a6eefca49015bda47da1a25ca24c4ae4b994b25dd",
+          "bytes": 21988,
+          "textFile": "originali/fac9543d0db9d9d2.txt"
+        },
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/idea/index.html",
+          "status": 200,
+          "file": "originali\\322d7d24c9baa654.html",
+          "sha256": "ce88c04546c599e1a595a56e3641b69732d049573a2cf60883e311d707e47f54",
+          "bytes": 17506,
+          "textFile": "originali/322d7d24c9baa654.txt"
+        },
+        {
+          "url": "https://www.comune.tonara.nu.it/it/eventi/708639",
+          "finalUrl": "https://www.comune.tonara.nu.it/it/eventi/708639",
+          "status": 200,
+          "file": "originali\\235267c45aac2e5b.html",
+          "sha256": "58e111bf337c087000dce593d5615ddf14f3d231cf218af26e3f46b19da655b8",
+          "bytes": 104806,
+          "textFile": "originali/235267c45aac2e5b.txt"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tonara",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tonara",
+        "status": 200,
+        "file": "originali\\70ff6879da8de7dc.html",
+        "sha256": "609b2d28965ad9f6be465670ffadc719037f963522548d7ac16b06bf3d015380",
+        "bytes": 92403,
+        "textFile": "originali/70ff6879da8de7dc.txt"
+      },
+      "outcome": "Selezionate 1 nuove schede e 1 arricchimento esistente da fonti primarie; date e periodi distinti nei record. Non verificata disponibilità di posteggi.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    },
+    {
+      "city": "Torpè",
+      "currentProvince": "Nuoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Torpè\" sagra fiera mercatino comune espositori"
+      ],
+      "queryEvidence": [
+        ".local/ricerche/nuoro-finale-20261106/nominali-48.json"
+      ],
+      "newIds": [],
+      "existingUpdateIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/torpe",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/torpe",
+        "status": 200,
+        "file": "originali\\ec1c888c73670c4b.html",
+        "sha256": "f75887e1c78b209d698cd645f68a6ba352e2ebd99631d3f9066e02c809a57a93",
+        "bytes": 92295,
+        "textFile": "originali/ec1c888c73670c4b.txt"
+      },
+      "outcome": "Pratas in festa segnalata con date indicative dagli aggregatori; non promossa a data confermata senza fonte primaria selezionata.",
+      "limitations": "Ricerca nominale, pagine regionali e documenti primari selezionati; non lettura integrale degli albi/social né contatto agli organizzatori. Nessuna promessa di completezza o assenza di eventi."
+    }
+  ],
+  "limitations": [
+    "comuni.json conserva province sarde storiche: perimetro ricostruito dalla mappa provinciale effettiva del builder.",
+    "Homepage ASPEN prioritaria per Gadoni/Oniferi; pagine paese discordanti conservate.",
+    "Oliena: corti 11–13 settembre dal programma definitivo, non date discordanti dell’avviso.",
+    "Ollolai: disciplinare 2024 espressamente richiamato dall’avviso 2026 e integrato dall’allegato A 2026.",
+    "Olzai: ore 12 nella pagina e ore 14 nel PDF per la scadenza del 12 ottobre; entrambe passate.",
+    "Timeout del PDF regionale confini conservato nel manifest di tentativo; non dichiarato letto."
+  ]
+}

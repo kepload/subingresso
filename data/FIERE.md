@@ -33,6 +33,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Chiusura Pavia e Nuoro — 6 novembre 2026](fiere-dossier/chiusura-pavia-nuoro-20261106.md): due ricerche isolate, 177 nuove schede, sei aggiornamenti e dieci note economiche; integrazione verificata, pubblicazione in corso.
+
 - [Oristano — 6 novembre 2026](fiere-dossier/oristano-20261106.md): 64 nuove schede in 45 comuni, ricognizione degli 87 comuni e quattro note economiche; pubblicazione verificata, fonti e limiti nel dossier.
 
 - [Ingressi Google nel calendario — 6 novembre 2026](fiere-dossier/123-ingressi-google-calendario-20261106.md): scheda già aperta, ritorno alla ricerca locale, fonti pubbliche e URL indicizzati conservati.

@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": 1,
+  "province": "Nuoro",
+  "checkedAt": "2026-11-06",
+  "baseline": "e622823",
+  "mode": "append-and-explicit-updates",
+  "events": [
+    {
+      "region": "Sardegna",
+      "city": "Bitti",
+      "name": "Autunno in Barbagia - Bitti",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-mappe-paesi/mappa_bitti_26.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mercatino e corti con prodotti agricoli, miele, dolci, libri e manufatti in sughero, legno e ceramica.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-mappe-paesi/mappa_bitti_26.pdf"
+        }
+      ],
+      "id": "sardegna-bitti-autunno-in-barbagia-bitti"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oliena",
+      "name": "Autunno in Barbagia - Oliena",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/oliena_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Cortes con ricami, lavorazioni della pelle e del legno, prodotti agroalimentari e dimostrazioni degli operatori locali.",
+      "participation": {
+        "type": "check",
+        "note": "Il programma definitivo inaugura le corti l’11 settembre e le mantiene fino al 13. Il 10 propone convegno e mostre; non è aggiunto al circuito delle corti. Avviso riservato a operatori ed espositori locali; moduli A e B entro 17 agosto 2026, termine scaduto. Il PDF dell’avviso reca 12–14 settembre, discordante dal programma: adottate le giornate effettive delle corti."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/oliena_programma.pdf"
+        }
+      ],
+      "id": "sardegna-oliena-autunno-in-barbagia-oliena"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Lodine",
+      "name": "Autunno in Barbagia - Lodine",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lodine_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti aperte con preparazione di pane e dolci, tegole artigianali e dimostrazioni dei mestieri del paese.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lodine_programma.pdf"
+        }
+      ],
+      "id": "sardegna-lodine-autunno-in-barbagia-lodine"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sarule",
+      "name": "Autunno in Barbagia - Sarule",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sarule_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "SarulExpo unisce corti, produzioni alimentari, tessitura e lavorazioni del ferro.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sarule_programma.pdf"
+        }
+      ],
+      "id": "sardegna-sarule-autunno-in-barbagia-sarule"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Austis",
+      "name": "Autunno in Barbagia - Austis",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/austis_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso nelle corti tra prodotti del territorio, preparazioni tradizionali e laboratori degli antichi mestieri.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/austis_programma.pdf"
+        }
+      ],
+      "id": "sardegna-austis-autunno-in-barbagia-austis"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Dorgali",
+      "name": "Autunno in Barbagia - Dorgali",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/dorgali_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Itinerari nelle corti dedicati al gusto, oreficeria, ceramica, pelletteria, tessuti, legno, ferro e coltelli.",
+      "participation": {
+        "type": "check",
+        "note": "Il 25 settembre è un’anteprima con mostra e serata; il percorso delle corti apre il 26 e 27 dalle 10 alle 22. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/dorgali_programma.pdf"
+        }
+      ],
+      "id": "sardegna-dorgali-autunno-in-barbagia-dorgali"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Orani",
+      "name": "Autunno in Barbagia - Orani",
+      "months": "9",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orani_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti e botteghe con ricamo, cucito, lavorazioni artistiche e preparazione di dolci della tradizione oranese.",
+      "participation": {
+        "type": "check",
+        "note": "Il 25 settembre propone museo e sfilata; il circuito delle corti apre il 26 e 27. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orani_programma.pdf"
+        }
+      ],
+      "id": "sardegna-orani-autunno-in-barbagia-orani"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Lula",
+      "name": "Autunno in Barbagia - Lula",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/Lula_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con degustazione e vendita di dolci e formaggi, esposizioni e lavorazioni tradizionali.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/Lula_programma.pdf"
+        }
+      ],
+      "id": "sardegna-lula-autunno-in-barbagia-lula"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Meana Sardo",
+      "name": "Autunno in Barbagia - Meana Sardo",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/meanasardo_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Domos aperte con lavorazione del pane decorato, dolci, formaggio e ricotta, mostre e punti ristoro.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/meanasardo_programma.pdf"
+        }
+      ],
+      "id": "sardegna-meana-sardo-autunno-in-barbagia-meana-sardo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Orotelli",
+      "name": "Autunno in Barbagia - Orotelli",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orotelli_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti e dimostrazioni dei mestieri nel paese della tradizione calzaturiera e della lavorazione dell’orbace.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/orotelli_programma.pdf"
+        }
+      ],
+      "id": "sardegna-orotelli-autunno-in-barbagia-orotelli"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sorgono",
+      "name": "Autunno in Barbagia - Sorgono",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sorgono_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con vendemmia tradizionale, lavorazione del rame e del moscato e preparazioni gastronomiche.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/sorgono_programma.pdf"
+        }
+      ],
+      "id": "sardegna-sorgono-autunno-in-barbagia-sorgono"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gavoi",
+      "name": "Autunno in Barbagia - Gavoi",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/gavoi_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti e spazi espositivi con tessitura, oreficeria, formaggi e dimostrazioni gastronomiche.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/gavoi_programma.pdf"
+        }
+      ],
+      "id": "sardegna-gavoi-autunno-in-barbagia-gavoi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Nuoro",
+      "name": "Carreras de Lollobe - Autunno in Barbagia",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lollove_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Nel borgo di Lollove corti e case ospitano produttori, artigiani e hobbisti con prodotti alimentari e manufatti locali.",
+      "participation": {
+        "type": "check",
+        "note": "Disciplinare Carreras de Lollobe 2026: domanda individuale online entro 25 agosto, termine scaduto. Operatori iscritti alla CCIAA di Nuoro; hobbisti residenti nel Comune e nel registro comunale. Spazi subordinati a graduatoria e piano di sicurezza; energia elettrica a carico dell’operatore."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "venue": "Lollove",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/lollove_programma.pdf"
+        }
+      ],
+      "id": "sardegna-nuoro-carreras-de-lollobe-autunno-in-barbagia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Onanì",
+      "name": "Autunno in Barbagia - Onanì",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/onani_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con degustazioni dei prodotti tipici, artigianato locale e dimostrazioni delle preparazioni domestiche.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/onani_programma.pdf"
+        }
+      ],
+      "id": "sardegna-onani-autunno-in-barbagia-onani"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tonara",
+      "name": "Autunno in Barbagia - Tonara",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/tonara_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con dimostrazioni di prodotti alimentari e artigianali, campanacci e mostre della tradizione tonarese.",
+      "participation": {
+        "type": "check",
+        "note": "Il 9 ottobre è previsto un concerto serale; le corti aprono il 10 e 11. Questa tappa è distinta dalla Sagra del Torrone di aprile. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/tonara_programma.pdf"
+        }
+      ],
+      "id": "sardegna-tonara-autunno-in-barbagia-tonara"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Belvì",
+      "name": "Autunno in Barbagia - Belvì",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_belvi.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorsi gastronomici e artigianali dedicati alle preparazioni locali, ai caschettes e alle lavorazioni tradizionali.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_belvi.pdf"
+        }
+      ],
+      "id": "sardegna-belvi-autunno-in-barbagia-belvi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Orgosolo",
+      "name": "Autunno in Barbagia - Orgosolo",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_orgosolo.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso con pane carasau, lavorazione dei gioielli, seta e dimostrazioni gastronomiche.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_orgosolo.pdf"
+        }
+      ],
+      "id": "sardegna-orgosolo-autunno-in-barbagia-orgosolo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Olzai",
+      "name": "Autunno in Barbagia - Olzai",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/olzai_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti ed esposizioni di produzioni agroalimentari e artigiane, tra antiche case e dimostrazioni.",
+      "participation": {
+        "type": "check",
+        "note": "Disciplinare 2026: priorità alle produzioni locali e del territorio; ambulanti solo negli spazi autorizzati. Termine 12 ottobre 2026, scaduto: la pagina indica ore 12, l’art. 9 del PDF ore 14, discrepanza conservata nell’audit. Punti ristoro privati riservati a residenti, nativi e/o originari."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/olzai_programma.pdf"
+        }
+      ],
+      "id": "sardegna-olzai-autunno-in-barbagia-olzai"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ottana",
+      "name": "Autunno in Barbagia - Ottana",
+      "months": "10",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ottana.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con lavorazione delle maschere lignee, ferro, pelle e preparazioni della cucina tradizionale.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ottana.pdf"
+        }
+      ],
+      "id": "sardegna-ottana-autunno-in-barbagia-ottana"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Desulo",
+      "name": "La Montagna Produce - Autunno in Barbagia",
+      "months": "10,11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/desulo_programma.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "La Montagna Produce propone una fiera di prodotti agroalimentari e artigianato tipico e dimostrazioni nei rioni del paese.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/desulo_programma.pdf"
+        }
+      ],
+      "id": "sardegna-desulo-la-montagna-produce-autunno-in-barbagia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Mamoiada",
+      "name": "Autunno in Barbagia - Mamoiada",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_mamoiada.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sas Tappas in Mamujada: circuito enogastronomico, cantine, esposizioni e lavorazioni di camicie, tessuti e candele.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-06",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_mamoiada.pdf"
+        }
+      ],
+      "id": "sardegna-mamoiada-autunno-in-barbagia-mamoiada"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ovodda",
+      "name": "Autunno in Barbagia - Ovodda",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ovodda.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Corti con preparazione del pane, esposizione di produzioni tipiche e lavorazioni artigianali.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_ovodda.pdf"
+        }
+      ],
+      "id": "sardegna-ovodda-autunno-in-barbagia-ovodda"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Nuoro",
+      "name": "Mastros in Nùgoro - Autunno in Barbagia",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_nuoro.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mastros in Nùgoro apre corti, botteghe e spazi espositivi con artigiani, prodotti alimentari e dimostrazioni.",
+      "participation": {
+        "type": "check",
+        "note": "Disciplinare 2026: domanda individuale online con SPID/CIE/eIDAS; selezione per categorie e graduatorie. Suolo pubblico: termine 1 ottobre, scaduto. Riapertura solo per spazi privati fino alle 10 del 21 ottobre, anch’essa scaduta. Ammessi pubblicati con integrazione 4 novembre: non prova disponibilità residua."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_nuoro.pdf"
+        }
+      ],
+      "id": "sardegna-nuoro-mastros-in-nugoro-autunno-in-barbagia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tiana",
+      "name": "Autunno in Barbagia - Tiana",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5361687/Disciplinare_Autunno_Barbagia_2026_corretto.pdf",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tiana, tradizioni che scorrono nell’acqua: circuito nelle corti per valorizzare agroalimentare, artigianato e produzioni locali.",
+      "participation": {
+        "type": "check",
+        "note": "Disciplinare 2026: domande dall’8 al 17 ottobre, termine scaduto; priorità agli espositori locali e offerta coerente con le tradizioni. Punti ristoro riservati ai residenti. Ambulanti vietati nelle strade del centro storico: il suolo pubblico richiede assegnazione autorizzata, non libera spunta."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5361687/Disciplinare_Autunno_Barbagia_2026_corretto.pdf"
+        }
+      ],
+      "id": "sardegna-tiana-autunno-in-barbagia-tiana"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ollolai",
+      "name": "Autunno in Barbagia - Ollolai",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.ollolai.nu.it/media/acfupload/Avviso_Autunno_in_Barbagia_2026.pdf",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Impara s’Arte nella Terra di Ospitone promuove prodotti agroalimentari e artigianato in corti e spazi pubblici autorizzati.",
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026: istanze dal 25 settembre al 25 ottobre, termine scaduto, via PEC in PDF o a mano; hobbisti con tesserino e operatori dell’ingegno con dichiarazione. Priorità ai locali e offerta esterna non concorrenziale. Allegato A 2026: obbligo di apertura entrambe le giornate; ristoro vietato in Piazza Marconi."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.ollolai.nu.it/media/acfupload/Avviso_Autunno_in_Barbagia_2026.pdf"
+        }
+      ],
+      "id": "sardegna-ollolai-autunno-in-barbagia-ollolai"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Atzara",
+      "name": "Autunno in Barbagia - Atzara",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito di promozione delle produzioni locali nelle corti; programma di dettaglio non ancora collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-21",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-atzara-autunno-in-barbagia-atzara"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gadoni",
+      "name": "Autunno in Barbagia - Gadoni",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito nelle corti per la promozione delle produzioni del territorio; programma 2026 di dettaglio non collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "Date 28–29 novembre dal calendario 2026 della homepage ASPEN; la pagina paese conserva 29–30, discordanti. Programma di dettaglio non collegato al controllo. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-gadoni-autunno-in-barbagia-gadoni"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oniferi",
+      "name": "Autunno in Barbagia - Oniferi",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito di promozione delle produzioni locali nelle corti; programma 2026 di dettaglio non collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "Date 28–29 novembre dal calendario 2026 della homepage ASPEN; la pagina paese conserva 29–30, discordanti. Programma di dettaglio non collegato al controllo. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-oniferi-autunno-in-barbagia-oniferi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Fonni",
+      "name": "Autunno in Barbagia - Fonni",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito di promozione delle produzioni locali nelle corti; programma 2026 di dettaglio non collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "Date 6–8 dicembre dal calendario ASPEN; l’estensione 4–8 dicembre citata da aggregatori non è confermata dalla fonte primaria selezionata. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-fonni-autunno-in-barbagia-fonni"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ortueri",
+      "name": "Autunno in Barbagia - Ortueri",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Colores e sabores de Atongiu: circuito delle corti dedicato alle produzioni agroalimentari e all’artigianato del paese.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-ortueri-autunno-in-barbagia-ortueri"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Orune",
+      "name": "Autunno in Barbagia - Orune",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito di promozione delle produzioni locali nelle corti; programma 2026 di dettaglio non collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-orune-autunno-in-barbagia-orune"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Seulo",
+      "name": "Autunno in Barbagia - Seulo",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tappa del circuito di promozione delle produzioni locali nelle corti; programma 2026 di dettaglio non collegato nella pagina consultata.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/it/index.html"
+        }
+      ],
+      "id": "sardegna-seulo-autunno-in-barbagia-seulo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Atzara",
+      "name": "Sagra del Vino",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/atzara",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazioni dedicate ai vini del paese; la fonte regionale indica il mese di maggio.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e bevande",
+      "id": "sardegna-atzara-sagra-del-vino"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Belvì",
+      "name": "Sagra delle Ciliegie",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/belvi",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sagra delle ciliegie e mostra di artigianato, con lavorazioni del legno e del ferro a inizio giugno.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "id": "sardegna-belvi-sagra-delle-ciliegie"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Dualchi",
+      "name": "Sagra del Fico d’India",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sagra dedicata al fico d’India e ai prodotti ricavati dal frutto, tra dolci e liquori.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e bevande",
+      "id": "sardegna-dualchi-sagra-del-fico-d-india"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Dualchi",
+      "name": "Dualchi Produce",
+      "months": "11",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/dualchi",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna delle produzioni del paese indicata dalla fonte regionale nel mese di novembre.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "id": "sardegna-dualchi-dualchi-produce"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Meana Sardo",
+      "name": "Sagra del Formaggio",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/meana-sardo",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione di pecorino e formaggi tradizionali durante le celebrazioni di San Giovanni a fine giugno.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari",
+      "id": "sardegna-meana-sardo-sagra-del-formaggio"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Seulo",
+      "name": "Sagra de Su Casu in Filixi",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/seulo",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sagra dedicata al formaggio tradizionale casu in filixi, indicata dalla fonte regionale nel mese di luglio.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari",
+      "id": "sardegna-seulo-sagra-de-su-casu-in-filixi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Seulo",
+      "name": "Sa Tundimenta Seulese",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/seulo",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Manifestazione di giugno dedicata alla tosatura delle pecore e alla tradizione pastorale.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "id": "sardegna-seulo-sa-tundimenta-seulese"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Silanus",
+      "name": "Sagra de Su Ischidu",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/silanus",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Preparazioni della cucina pastorale e prodotti caseari presso il complesso di Santa Sabina nella prima metà di maggio.",
+      "participation": {
+        "type": "check",
+        "note": "Periodo abituale dalla pagina regionale, senza data di un’edizione specifica. La degustazione non attesta ammissione di banchi esterni. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari",
+      "id": "sardegna-silanus-sagra-de-su-ischidu"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Aritzo",
+      "name": "Sagra della Carapigna e Artigiani in Piazza",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://turismoaritzo.it/eventi/3633737/sagra-carapigna-artigiani-piazza",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Dimostrazioni di carapigna e torrone, intaglio del legno, ferratura e lavorazioni del latte accompagnano il Ferragosto aritzese.",
+      "participation": {
+        "type": "check",
+        "note": "Il contenitore comunale copre 14–16 agosto; il testo colloca la sagra e gli artigiani il 15 agosto. Degustazioni gratuite per i visitatori non equivalgono a posteggi gratuiti. La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-15",
+          "end": "2026-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://turismoaritzo.it/eventi/3633737/sagra-carapigna-artigiani-piazza"
+        }
+      ],
+      "id": "sardegna-aritzo-sagra-della-carapigna-e-artigiani-in-piazza"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Silanus",
+      "name": "Cosas Bonas de Silanos - I Sapori dell’Identità",
+      "months": "12",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.silanus.nu.it/uploads/allegati/Regolamento.pdf",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso enogastronomico con corti, punti ristoro ed esposizione o vendita di produzioni artigianali tradizionali.",
+      "participation": {
+        "type": "check",
+        "note": "Edizione storica 2025, non conferma 2026. Regolamento: associazioni, comitati, gruppi locali e privati con una corte; adesione entro 7 novembre 2025, scaduta; criteri cronologici per prodotti ripetuti. Utenze, allestimento e pulizia a carico dei partecipanti; quota non quantificata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-14",
+          "end": "2025-12-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.silanus.nu.it/uploads/allegati/Regolamento.pdf"
+        }
+      ],
+      "id": "sardegna-silanus-cosas-bonas-de-silanos-i-sapori-dell-identita"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sarule",
+      "name": "Sagra dei Formaggi dell’Area GAL BMG e dei Prodotti Agroalimentari",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.distrettoruraledellabarbagia.it/a-sarule-la-sagra-dei-formaggi-dellarea-gal-bmg-e-dei-prodotti-agroalimentari/",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mercato espositivo di formaggi e prodotti agroalimentari con degustazioni e laboratori di caseificazione.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e bevande",
+      "venue": "Località San Bernardino",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-23",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.distrettoruraledellabarbagia.it/a-sarule-la-sagra-dei-formaggi-dellarea-gal-bmg-e-dei-prodotti-agroalimentari/"
+        }
+      ],
+      "id": "sardegna-sarule-sagra-dei-formaggi-dell-area-gal-bmg-e-dei-prodotti-agroalimentari"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Macomer",
+      "name": "Mostra Nazionale degli Ovini e Rassegna dell’Agroalimentare",
+      "months": "5",
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.macomer.nu.it/notizie/3566197/rassegna-ovini-8-10-maggio-2026",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna zootecnica e agroalimentare al polo fieristico con concessione temporanea delle aree interne ed esterne.",
+      "participation": {
+        "type": "check",
+        "note": "Il Comune pubblica la graduatoria delle concessioni, determina n. 338 del 17 aprile 2026. Non è un avviso di posti disponibili; verificare nuove procedure, settori e tariffe per future edizioni."
+      },
+      "sectors": "Prodotti alimentari, animali e produzioni agricole",
+      "venue": "Polo fieristico, località Monte di Sant’Antonio",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-08",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.macomer.nu.it/notizie/3566197/rassegna-ovini-8-10-maggio-2026"
+        }
+      ],
+      "id": "sardegna-macomer-mostra-nazionale-degli-ovini-e-rassegna-dell-agroalimentare"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Macomer",
+      "name": "Mostra del Libro in Sardegna",
+      "months": "11",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/eventi/mostra-del-libro",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna editoriale con stand degli editori, selezioni di cataloghi, incontri e laboratori.",
+      "participation": {
+        "type": "check",
+        "note": "La Regione conferma gli stand editoriali e il calendario 2026. Le attività gratuite per i visitatori non attestano gratuità degli stand; il vecchio avviso editori 2021 non è una procedura 2026."
+      },
+      "sectors": "Libri",
+      "venue": "Padiglioni del Centro Servizi Culturali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-05",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/eventi/mostra-del-libro"
+        }
+      ],
+      "id": "sardegna-macomer-mostra-del-libro-in-sardegna"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Orosei",
+      "name": "Primavera nel Cuore della Sardegna",
+      "months": "4",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/orosei_broch_2026.pdf",
+        "label": "ASPEN / Camera di Commercio di Nuoro",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso di produzioni e tradizioni locali con esposizioni e iniziative enogastronomiche nel centro storico.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cuoredellasardegna.it/primavera/.galleries/doc-2026/orosei_broch_2026.pdf"
+        }
+      ],
+      "id": "sardegna-orosei-primavera-nel-cuore-della-sardegna"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Siniscola",
+      "name": "Primavera nel Cuore della Sardegna - Siniscolapuntozero",
+      "months": "5",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/sites/default/files/locandine/siniscola_2026.pdf",
+        "label": "Regione Sardegna, SardegnaTurismo",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso enogastronomico e artigianale, esposizioni di ceramiche e arazzi, mercatino dell’usato e libri.",
+      "participation": {
+        "type": "check",
+        "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+      },
+      "sectors": "Prodotti alimentari, artigianato e libri",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-02",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sardegnaturismo.it/sites/default/files/locandine/siniscola_2026.pdf"
+        }
+      ],
+      "id": "sardegna-siniscola-primavera-nel-cuore-della-sardegna-siniscolapuntozero"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Dorgali",
+      "name": "Shopping sotto le Stelle - Mercatini di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mercatini natalizi aperti a commercianti, artigiani, produttori agricoli, artisti, associazioni, collezionisti e hobbisti, anche non residenti.",
+      "participation": {
+        "type": "check",
+        "note": "Edizione storica 2025 in due giornate separate: 8 dicembre in Corso Umberto 16–20; 13 dicembre anche Via Lamarmora 16–22. Modulo al protocollo entro 28 novembre 2025, termine scaduto; criterio cronologico per lo stesso spazio. Allestimento nei 60 minuti prima, rimozione nei 60 successivi; pulizia a carico dell’espositore."
+      },
+      "sectors": "Artigianato e prodotti alimentari",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-08",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf"
+        },
+        {
+          "year": 2025,
+          "start": "2025-12-13",
+          "end": "2025-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.dorgali.nu.it/uploads/allegati/Allegato_A_-_Regolamento_mercatini_di_Natale_2025.pdf"
+        }
+      ],
+      "id": "sardegna-dorgali-shopping-sotto-le-stelle-mercatini-di-natale"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Onifai",
+      "name": "Mercatini di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.onifai.nu.it/it/novita/page/seconda-edizione-dei-mercatini-di-natale",
+        "label": "Comune / ente organizzatore",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Seconda edizione dei mercatini natalizi con proposte agroalimentari, punti ristoro e produzioni artigianali.",
+      "participation": {
+        "type": "check",
+        "note": "Manifestazione di interesse da consegnare a mano o via PEC al Comune entro il 13 novembre 2026. Il modulo richiede gazebo bianco di proprietà e indicazione dei prodotti. Scadenza ancora futura al controllo; non conferma posti disponibili o ammissione automatica. Tariffe e servizi non quantificati. Modulo DOC acquisito, letto con estrazione testuale parziale dello stream Word, senza ricostruzione dell’impaginazione."
+      },
+      "sectors": "Prodotti alimentari, bevande e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.onifai.nu.it/it/novita/page/seconda-edizione-dei-mercatini-di-natale"
+        }
+      ],
+      "id": "sardegna-onifai-mercatini-di-natale"
+    }
+  ],
+  "existingUpdates": [
+    {
+      "id": "sardegna-aritzo-sagra-della-castagna-e-della-nocciola",
+      "initial": {
+        "region": "Sardegna",
+        "name": "Sagra della Castagna e della Nocciola",
+        "city": "Aritzo",
+        "months": "10",
+        "category": "sagra",
+        "source": {
+          "url": "https://comune.aritzo.nu.it/notizie/3648265/realizzazione-54-sagra-castagne-nocciole-anno-2026",
+          "label": "comune.aritzo.nu.it"
+        }
+      },
+      "replacement": {
+        "region": "Sardegna",
+        "name": "Sagra della Castagna e della Nocciola",
+        "city": "Aritzo",
+        "months": "10",
+        "category": "sagra",
+        "source": {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf",
+          "label": "ASPEN / Camera di Commercio di Nuoro",
+          "checkedAt": "2026-11-06"
+        },
+        "summary": "La Sagra della Castagna e della Nocciola coincide con la tappa di Autunno in Barbagia, con stand artigianali e agroalimentari.",
+        "sectors": "Prodotti alimentari e artigianato",
+        "participation": {
+          "type": "check",
+          "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+        },
+        "editions": [
+          {
+            "year": 2026,
+            "start": "2026-10-24",
+            "end": "2026-10-25",
+            "dateType": "confirmed",
+            "sourceUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf"
+          }
+        ]
+      },
+      "reason": "Programma primario 2026 letto: data esatta, natura espositiva e condizioni non equivalenti ad ammissione automatica.",
+      "sources": [
+        {
+          "url": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf",
+          "finalUrl": "https://www.cuoredellasardegna.it/autunnoinbarbagia/.galleries/doc-2026/programma_aritzo.pdf",
+          "status": 200,
+          "file": "originali\\10c1a73e7e36fc41.pdf",
+          "sha256": "52672aa1a81e9fe8adf6b01af12cad7562ae4cb947554609a6d357826b804221",
+          "bytes": 8517344,
+          "textFile": "originali/10c1a73e7e36fc41.txt"
+        }
+      ]
+    },
+    {
+      "id": "sardegna-tonara-sagra-del-torrone",
+      "initial": {
+        "region": "Sardegna",
+        "name": "Sagra del Torrone",
+        "city": "Tonara",
+        "months": "3,4",
+        "category": "sagra",
+        "source": {
+          "url": "https://comune.tonara.nu.it/it/eventi/tonara-06-aprile-45-sagra-del-torrone-edizione-2026",
+          "label": "comune.tonara.nu.it"
+        }
+      },
+      "replacement": {
+        "region": "Sardegna",
+        "name": "Sagra del Torrone",
+        "city": "Tonara",
+        "months": "4",
+        "category": "sagra",
+        "source": {
+          "url": "https://www.comune.tonara.nu.it/it/eventi/708639",
+          "label": "Comune / ente organizzatore",
+          "checkedAt": "2026-11-06"
+        },
+        "summary": "Espositori di torrone, miele, campanacci e manufatti in legno accompagnano le dimostrazioni della produzione tradizionale.",
+        "sectors": "Prodotti alimentari e artigianato",
+        "participation": {
+          "type": "check",
+          "note": "La presenza nel programma non garantisce posteggi a venditori esterni. Verificare con il Comune o l’organizzatore categorie ammesse, selezione, domanda e costi; nessuna disponibilità accertata."
+        },
+        "editions": [
+          {
+            "year": 2026,
+            "start": "2026-04-06",
+            "end": "2026-04-06",
+            "dateType": "confirmed",
+            "sourceUrl": "https://www.comune.tonara.nu.it/it/eventi/708639"
+          }
+        ]
+      },
+      "reason": "Programma primario 2026 letto: data esatta, natura espositiva e condizioni non equivalenti ad ammissione automatica.",
+      "sources": [
+        {
+          "url": "https://www.comune.tonara.nu.it/it/eventi/708639",
+          "finalUrl": "https://www.comune.tonara.nu.it/it/eventi/708639",
+          "status": 200,
+          "file": "originali\\235267c45aac2e5b.html",
+          "sha256": "58e111bf337c087000dce593d5615ddf14f3d231cf218af26e3f46b19da655b8",
+          "bytes": 104806,
+          "textFile": "originali/235267c45aac2e5b.txt"
+        }
+      ]
+    }
+  ]
+}
