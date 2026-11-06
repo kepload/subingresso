@@ -1,0 +1,2532 @@
+{
+  "schemaVersion": 1,
+  "province": "Oristano",
+  "checkedAt": "2026-11-06",
+  "municipalities": [
+    {
+      "city": "Abbasanta",
+      "queryExecuted": true,
+      "queries": [
+        "\"Abbasanta\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-0.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/abbasanta",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/abbasanta",
+        "status": 200,
+        "file": "originali/09c4c0e69841d479.html",
+        "textFile": "originali/09c4c0e69841d479.txt",
+        "sha256": "72dc0b9531bf8e7de1a478fc9e551350f60a9c7d04f9d8ff9107c9cd067ce850",
+        "bytes": 92013,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Aidomaggiore",
+      "queryExecuted": true,
+      "queries": [
+        "\"Aidomaggiore\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-0.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/aidomaggiore",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/aidomaggiore",
+        "status": 200,
+        "file": "originali/f84d93309de29fdd.html",
+        "textFile": "originali/f84d93309de29fdd.txt",
+        "sha256": "8a1c1435ba6db01c904c35f96acad9a4ea37cb46bc56ca0abc9694855e3a4bbb",
+        "bytes": 89223,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Albagiara",
+      "queryExecuted": true,
+      "queries": [
+        "\"Albagiara\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-0.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/albagiara",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/albagiara",
+        "status": 200,
+        "file": "originali/e48b94f8ce9c7d6d.html",
+        "textFile": "originali/e48b94f8ce9c7d6d.txt",
+        "sha256": "4a27f30f4dc7fc8755dcfbd22f092b817bd3eebf23ae2498b4f885db49f7de19",
+        "bytes": 89832,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ales",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ales\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-0.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ales",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ales",
+        "status": 200,
+        "file": "originali/94de79d1c582ad09.html",
+        "textFile": "originali/94de79d1c582ad09.txt",
+        "sha256": "5f0cc757b379bafc1feb00d5308ebc87cffe9871c025dc1143f35b2962d43a27",
+        "bytes": 91398,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Allai",
+      "queryExecuted": true,
+      "queries": [
+        "\"Allai\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-4.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/allai",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/allai",
+        "status": 200,
+        "file": "originali/2855f8e0ebc69220.html",
+        "textFile": "originali/2855f8e0ebc69220.txt",
+        "sha256": "4940dd46755feeca1ce82ea91a704c0c2cc127b5a77446841358c0e8c62addc5",
+        "bytes": 90272,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Arborea",
+      "queryExecuted": true,
+      "queries": [
+        "\"Arborea\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-4.json",
+      "newIds": [
+        "sardegna-arborea-fiera-dell-agricoltura",
+        "sardegna-arborea-sagra-della-polenta",
+        "sardegna-arborea-festa-delle-etnie-e-sagra-dell-anguria"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-arborea-fiera-dell-agricoltura",
+          "sourceUrl": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+          "file": "originali/ca02be51dfcb528c.html",
+          "textFile": "originali/ca02be51dfcb528c.txt",
+          "sha256": "f5c3fffd4e1f3c1e2a9c08e25a876b5b9a29da8bdf06d1d68fbe33bab7b0debf"
+        },
+        {
+          "id": "sardegna-arborea-sagra-della-polenta",
+          "sourceUrl": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+          "file": "originali/ca02be51dfcb528c.html",
+          "textFile": "originali/ca02be51dfcb528c.txt",
+          "sha256": "f5c3fffd4e1f3c1e2a9c08e25a876b5b9a29da8bdf06d1d68fbe33bab7b0debf"
+        },
+        {
+          "id": "sardegna-arborea-festa-delle-etnie-e-sagra-dell-anguria",
+          "sourceUrl": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+          "file": "originali/ca02be51dfcb528c.html",
+          "textFile": "originali/ca02be51dfcb528c.txt",
+          "sha256": "f5c3fffd4e1f3c1e2a9c08e25a876b5b9a29da8bdf06d1d68fbe33bab7b0debf"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/arborea",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/arborea",
+        "status": 200,
+        "file": "originali/8ac37239b1a731ab.html",
+        "textFile": "originali/8ac37239b1a731ab.txt",
+        "sha256": "97886f45da57410b67aa3a16eb5ff331ff727184efc5e8284d0026b09ca26537",
+        "bytes": 91561,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ardauli",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ardauli\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-4.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ardauli",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ardauli",
+        "status": 200,
+        "file": "originali/3ccb7befa8b96cec.html",
+        "textFile": "originali/3ccb7befa8b96cec.txt",
+        "sha256": "44450615e0662c1684bfb625dfe4654b02d20cb1a56651fefa43f25edaa2996b",
+        "bytes": 86776,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Assolo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Assolo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-4.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/assolo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/assolo",
+        "status": 200,
+        "file": "originali/a0ed1f6438aad924.html",
+        "textFile": "originali/a0ed1f6438aad924.txt",
+        "sha256": "f04edc1286b7350ee4605de3bace5c769d416173e50011f9334217b6b4a66176",
+        "bytes": 87206,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Asuni",
+      "queryExecuted": true,
+      "queries": [
+        "\"Asuni\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-8.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/asuni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/asuni",
+        "status": 200,
+        "file": "originali/2cd71d241262345f.html",
+        "textFile": "originali/2cd71d241262345f.txt",
+        "sha256": "944383418427d9d57f73f4cd3992aeb0b8750a6899d31880b24237e9db916445",
+        "bytes": 90168,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Baradili",
+      "queryExecuted": true,
+      "queries": [
+        "\"Baradili\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-8.json",
+      "newIds": [
+        "sardegna-baradili-sagra-de-is-cruguxionis"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-baradili-sagra-de-is-cruguxionis",
+          "sourceUrl": "https://www.galmarmilla.it/il-territorio/i-comuni-del-gal/878-baradili",
+          "file": "originali/ae719b67a3c8a3de.html",
+          "textFile": "originali/ae719b67a3c8a3de.txt",
+          "sha256": "ee72705528d5e35f7489ed2e99c5ee54a39c51978345149af9a4510db8339643"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/baradili",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/baradili",
+        "status": 200,
+        "file": "originali/7dec06576d19ed0c.html",
+        "textFile": "originali/7dec06576d19ed0c.txt",
+        "sha256": "6672d4b7a6a447da34b38d790a67ae319a0edd84a7af5a164767f22747bba300",
+        "bytes": 91250,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Baratili San Pietro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Baratili San Pietro\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-8.json",
+      "newIds": [
+        "sardegna-baratili-san-pietro-sagra-della-vernaccia",
+        "sardegna-baratili-san-pietro-sagra-degli-asparagi"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-baratili-san-pietro-sagra-della-vernaccia",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+          "file": "originali/fb9eaa4e4e742fc2.html",
+          "textFile": "originali/fb9eaa4e4e742fc2.txt",
+          "sha256": "27ef7dc43b7a252030d004734d4234562bd399c599533a73a09f9db2fdbff755"
+        },
+        {
+          "id": "sardegna-baratili-san-pietro-sagra-degli-asparagi",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+          "file": "originali/fb9eaa4e4e742fc2.html",
+          "textFile": "originali/fb9eaa4e4e742fc2.txt",
+          "sha256": "27ef7dc43b7a252030d004734d4234562bd399c599533a73a09f9db2fdbff755"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+        "status": 200,
+        "file": "originali/fb9eaa4e4e742fc2.html",
+        "textFile": "originali/fb9eaa4e4e742fc2.txt",
+        "sha256": "27ef7dc43b7a252030d004734d4234562bd399c599533a73a09f9db2fdbff755",
+        "bytes": 86456,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Baressa",
+      "queryExecuted": true,
+      "queries": [
+        "\"Baressa\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-8.json",
+      "newIds": [
+        "sardegna-baressa-sagra-della-mandorla"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-baressa-sagra-della-mandorla",
+          "sourceUrl": "https://comune.baressa.or.it/portals/2147/SiscomArchivio/6/Avviso%20partecipazione%20espositori_signed.pdf",
+          "file": "originali/e2d9d956e9a72640.pdf",
+          "textFile": "originali/e2d9d956e9a72640.txt",
+          "sha256": "0233b43404f7207117b526e7512448ee98f98024b0115128b097862b8ffcd762"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/baressa",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/baressa",
+        "status": 200,
+        "file": "originali/065f3f4f401e1a6b.html",
+        "textFile": "originali/065f3f4f401e1a6b.txt",
+        "sha256": "1020381c5dde786c2233f9714846424596742322dfdf31448e2bca79fc879832",
+        "bytes": 90727,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Bauladu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bauladu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-12.json",
+      "newIds": [
+        "sardegna-bauladu-sagra-della-pecora-e-del-formaggio"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-bauladu-sagra-della-pecora-e-del-formaggio",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/bauladu",
+          "file": "originali/9b5c79f6ba61ef9c.html",
+          "textFile": "originali/9b5c79f6ba61ef9c.txt",
+          "sha256": "5927d18e30aae09ee1f5ac36ee27f49f46c6a89fd2bea67520807d9c9a79820d"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bauladu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bauladu",
+        "status": 200,
+        "file": "originali/9b5c79f6ba61ef9c.html",
+        "textFile": "originali/9b5c79f6ba61ef9c.txt",
+        "sha256": "5927d18e30aae09ee1f5ac36ee27f49f46c6a89fd2bea67520807d9c9a79820d",
+        "bytes": 90888,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Bidonì",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bidonì\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-12.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bidoni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bidoni",
+        "status": 200,
+        "file": "originali/60d0032fc17a07aa.html",
+        "textFile": "originali/60d0032fc17a07aa.txt",
+        "sha256": "5bcf952d9f2c2ad3dc632bec3554463daf2b978847bf86cc5e0f203e81381cff",
+        "bytes": 93304,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Bonarcado",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bonarcado\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-12.json",
+      "newIds": [
+        "sardegna-bonarcado-sagra-del-torrone",
+        "sardegna-bonarcado-sagra-delle-ciliegie",
+        "sardegna-bonarcado-sagra-del-bovino"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-bonarcado-sagra-del-torrone",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+          "file": "originali/07b98296f84d8eac.html",
+          "textFile": "originali/07b98296f84d8eac.txt",
+          "sha256": "a4a64e6c6ee3584c5bb0455b561df8871269ab28c0f201baaf89544b9b0336fa"
+        },
+        {
+          "id": "sardegna-bonarcado-sagra-delle-ciliegie",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+          "file": "originali/07b98296f84d8eac.html",
+          "textFile": "originali/07b98296f84d8eac.txt",
+          "sha256": "a4a64e6c6ee3584c5bb0455b561df8871269ab28c0f201baaf89544b9b0336fa"
+        },
+        {
+          "id": "sardegna-bonarcado-sagra-del-bovino",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+          "file": "originali/07b98296f84d8eac.html",
+          "textFile": "originali/07b98296f84d8eac.txt",
+          "sha256": "a4a64e6c6ee3584c5bb0455b561df8871269ab28c0f201baaf89544b9b0336fa"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+        "status": 200,
+        "file": "originali/07b98296f84d8eac.html",
+        "textFile": "originali/07b98296f84d8eac.txt",
+        "sha256": "a4a64e6c6ee3584c5bb0455b561df8871269ab28c0f201baaf89544b9b0336fa",
+        "bytes": 92147,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Boroneddu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Boroneddu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-12.json",
+      "newIds": [
+        "sardegna-boroneddu-sagra-degli-asparagi-e-dei-finocchi-selvatici"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-boroneddu-sagra-degli-asparagi-e-dei-finocchi-selvatici",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/boroneddu",
+          "file": "originali/f669d7d867375fa3.html",
+          "textFile": "originali/f669d7d867375fa3.txt",
+          "sha256": "5a95d441ef96cbf6d7eddcd54532097de31d439101d800117c3094895fe93940"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/boroneddu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/boroneddu",
+        "status": 200,
+        "file": "originali/f669d7d867375fa3.html",
+        "textFile": "originali/f669d7d867375fa3.txt",
+        "sha256": "5a95d441ef96cbf6d7eddcd54532097de31d439101d800117c3094895fe93940",
+        "bytes": 90320,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Bosa",
+      "queryExecuted": true,
+      "queries": [
+        "\"Bosa\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-16.json",
+      "newIds": [
+        "sardegna-bosa-sagra-della-fregula-alla-bosana",
+        "sardegna-bosa-attopa-a-camasinu",
+        "sardegna-bosa-primavera-nel-cuore-della-sardegna"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-bosa-sagra-della-fregula-alla-bosana",
+          "sourceUrl": "https://comune.bosa.or.it/evento/sagra-della-fregula-alla-bosana/",
+          "file": "originali/5675256b2903a4b9.html",
+          "textFile": "originali/5675256b2903a4b9.txt",
+          "sha256": "ad8fb502227d9cb9ab95c3f6b8d6bbbc64c6bd4980146eb13812b3cd527b5d81"
+        },
+        {
+          "id": "sardegna-bosa-attopa-a-camasinu",
+          "sourceUrl": "https://comune.bosa.or.it/evento/attopa-a-camasinu/",
+          "file": "originali/924789f68ddaef1e.html",
+          "textFile": "originali/924789f68ddaef1e.txt",
+          "sha256": "3db6789ac7c07250aea1814f788382a74bd6c15d9ce8041b67837e87f7983904"
+        },
+        {
+          "id": "sardegna-bosa-primavera-nel-cuore-della-sardegna",
+          "sourceUrl": "https://comune.bosa.or.it/documento_pubblico/primavera-nel-cuore/",
+          "file": "originali/dd0be728cbc69dda.html",
+          "textFile": "originali/dd0be728cbc69dda.txt",
+          "sha256": "977d4ebb091485d94e8f11447a663d8ff74af7947ce1d745425e5a148ef64581"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bosa",
+        "error": "404 Client Error: Not Found for url: https://www.sardegnaturismo.it/it/esplora/bosa"
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Busachi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Busachi\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-16.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/busachi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/busachi",
+        "status": 200,
+        "file": "originali/1dee9c51ff739ac6.html",
+        "textFile": "originali/1dee9c51ff739ac6.txt",
+        "sha256": "bdd8e6eede4b8133c3965ba6c511ae2ca71537cfbf0b58bcdd2bd402f0b60a0f",
+        "bytes": 91222,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Cabras",
+      "queryExecuted": true,
+      "queries": [
+        "\"Cabras\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-16.json",
+      "newIds": [
+        "sardegna-cabras-festival-della-bottarga"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-cabras-festival-della-bottarga",
+          "sourceUrl": "https://comune.cabras.or.it/it/news/138989/festival-della-bottarga-2026",
+          "file": "originali/8e6aaf26c2e090e8.html",
+          "textFile": "originali/8e6aaf26c2e090e8.txt",
+          "sha256": "024cc4784307395a10fb562d3c23e14017bc0834e5fd8e5c3e2b9addce86f166"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/cabras",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/cabras",
+        "status": 200,
+        "file": "originali/de764348fe12b360.html",
+        "textFile": "originali/de764348fe12b360.txt",
+        "sha256": "7696a663ccf91a12651cb569b034e65108f94d50dc7a4e55f481a0cd7f5a3a0f",
+        "bytes": 92869,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Cuglieri",
+      "queryExecuted": true,
+      "queries": [
+        "\"Cuglieri\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-16.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/cuglieri",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/cuglieri",
+        "status": 200,
+        "file": "originali/b33d236d39955628.html",
+        "textFile": "originali/b33d236d39955628.txt",
+        "sha256": "990bd8ac023830e6dc3abb7ecf515da29033a6f292222f0f7d75999b22af8719",
+        "bytes": 92333,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Curcuris",
+      "queryExecuted": true,
+      "queries": [
+        "\"Curcuris\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-20.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/curcuris",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/curcuris",
+        "status": 200,
+        "file": "originali/f36f9b6d370c1350.html",
+        "textFile": "originali/f36f9b6d370c1350.txt",
+        "sha256": "e1537e8783c1194226aec1043a3395853c471dfcbd8cb51619bb17d08f64c6c5",
+        "bytes": 89365,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Flussio",
+      "queryExecuted": true,
+      "queries": [
+        "\"Flussio\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-20.json",
+      "newIds": [
+        "sardegna-flussio-sagra-de-su-binu-nou"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-flussio-sagra-de-su-binu-nou",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/flussio",
+          "file": "originali/ed1710c89cee95f1.html",
+          "textFile": "originali/ed1710c89cee95f1.txt",
+          "sha256": "9a90ad679f1178d8610bd0484c427e6fe6518b9bb73e1d4d846f42f067325f7b"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/flussio",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/flussio",
+        "status": 200,
+        "file": "originali/ed1710c89cee95f1.html",
+        "textFile": "originali/ed1710c89cee95f1.txt",
+        "sha256": "9a90ad679f1178d8610bd0484c427e6fe6518b9bb73e1d4d846f42f067325f7b",
+        "bytes": 92099,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Fordongianus",
+      "queryExecuted": true,
+      "queries": [
+        "\"Fordongianus\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-20.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/fordongianus",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/fordongianus",
+        "status": 200,
+        "file": "originali/6a347db51e35912a.html",
+        "textFile": "originali/6a347db51e35912a.txt",
+        "sha256": "c7a6d905c3caf8cc3c54a6073c94b5dd9735ab673fa2f4bcd2e2846d5e61817d",
+        "bytes": 93478,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ghilarza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ghilarza\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-20.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ghilarza",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ghilarza",
+        "status": 200,
+        "file": "originali/04de7998952f0977.html",
+        "textFile": "originali/04de7998952f0977.txt",
+        "sha256": "92a31d358b3fde565c5c09d4c557bc74230b6f40662350c564f45fe25a877c4b",
+        "bytes": 91957,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Gonnoscodina",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gonnoscodina\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-24.json",
+      "newIds": [
+        "sardegna-gonnoscodina-sagra-de-sa-fregua"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-gonnoscodina-sagra-de-sa-fregua",
+          "sourceUrl": "https://www.comune.gonnoscodina.oristano.it/Novita/Comunicati/Chiusura-strade-per-la-manifestazione-Sagra-de-Sa-Fregua-domenica-11-ottobre-2026",
+          "file": "originali/ecc502369876ab15.html",
+          "textFile": "originali/ecc502369876ab15.txt",
+          "sha256": "6302f25c030aa93eb87753e07c880e6dbe730adbf9857f7c489d03de2e0bed56"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gonnoscodina",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/gonnoscodina",
+        "status": 200,
+        "file": "originali/fb1f2e7258ff52c2.html",
+        "textFile": "originali/fb1f2e7258ff52c2.txt",
+        "sha256": "9e3b5d88fe5f0f7078554a2c4f1b3994062dd0524ab7aadfcb85c95c95b5377a",
+        "bytes": 91592,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Gonnosnò",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gonnosnò\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-24.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gonnosno",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/gonnosno",
+        "status": 200,
+        "file": "originali/7c95c7ef5745b17d.html",
+        "textFile": "originali/7c95c7ef5745b17d.txt",
+        "sha256": "6628ea2691ecc48c87a5fec40cefae5d4b80b847502c0fb0299d7f5e5243db22",
+        "bytes": 90133,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Gonnostramatza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Gonnostramatza\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-24.json",
+      "newIds": [
+        "sardegna-gonnostramatza-arti-e-mestieri-e-sagra-de-su-gatou"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-gonnostramatza-arti-e-mestieri-e-sagra-de-su-gatou",
+          "sourceUrl": "https://www.comune.gonnostramatza.oristano.it/it/aree-tematiche/turismo-ed-eventi/download/4078_4dd6ef212f8ef553e5f73de96c3e6b78",
+          "file": "originali/92e6e9f68b28e797.pdf",
+          "textFile": "originali/92e6e9f68b28e797.txt",
+          "sha256": "5072d98be20ad3ff6914c1f6266ecba4e7b2c0ac1a7e259b62834782e279998b"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/gonnostramatza",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/gonnostramatza",
+        "status": 200,
+        "file": "originali/b9378baff4780f43.html",
+        "textFile": "originali/b9378baff4780f43.txt",
+        "sha256": "2a1e54994a4751e2846b08f621eff984d1a1c589539d51290b81a8aa1bb574e7",
+        "bytes": 90483,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Laconi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Laconi\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-24.json",
+      "newIds": [
+        "sardegna-laconi-mostra-mercato-del-cavallo",
+        "sardegna-laconi-sagra-del-tartufo"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-laconi-mostra-mercato-del-cavallo",
+          "sourceUrl": "https://www.comune.laconi.or.it/Dettaglionews?IDNews=400421",
+          "file": "originali/660cf7c5d4679055.html",
+          "textFile": "originali/660cf7c5d4679055.txt",
+          "sha256": "7ff4b80bc2c28d55b1047f57e02890c887037882cb8b3190d48236d47aa94342"
+        },
+        {
+          "id": "sardegna-laconi-sagra-del-tartufo",
+          "sourceUrl": "https://www.comune.laconi.or.it/Guidaalpaese?IDCat=9353&IDPagina=61145",
+          "file": "originali/7d3845d2fd048858.html",
+          "textFile": "originali/7d3845d2fd048858.txt",
+          "sha256": "490c2cf129e8b3fe7af03461c1261f428ce8066c8fa086046907484f0bc84396"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/laconi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/laconi",
+        "status": 200,
+        "file": "originali/b14f4d2491890c9f.html",
+        "textFile": "originali/b14f4d2491890c9f.txt",
+        "sha256": "2a7bf02c2795b145ff685b1389fff31834356198cf0dc5d37db96a896cc2609d",
+        "bytes": 93580,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Magomadas",
+      "queryExecuted": true,
+      "queries": [
+        "\"Magomadas\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-28.json",
+      "newIds": [
+        "sardegna-magomadas-sagra-della-malvasia"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-magomadas-sagra-della-malvasia",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/magomadas",
+          "file": "originali/a33834acaf3602d2.html",
+          "textFile": "originali/a33834acaf3602d2.txt",
+          "sha256": "b96c3f264728469de3656c8eace758be0669a251b61f3aa04ea3ef01ac2ae489"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/magomadas",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/magomadas",
+        "status": 200,
+        "file": "originali/a33834acaf3602d2.html",
+        "textFile": "originali/a33834acaf3602d2.txt",
+        "sha256": "b96c3f264728469de3656c8eace758be0669a251b61f3aa04ea3ef01ac2ae489",
+        "bytes": 87299,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Marrubiu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Marrubiu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-28.json",
+      "newIds": [
+        "sardegna-marrubiu-sagra-del-raviolo-marrubiese"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-marrubiu-sagra-del-raviolo-marrubiese",
+          "sourceUrl": "https://comune.marrubiu.or.it/it/eventi/sagra-del-raviolo-marrubiese",
+          "file": "originali/af221dc0be23c949.html",
+          "textFile": "originali/af221dc0be23c949.txt",
+          "sha256": "6ecc07348ecb40ae324b1a3481fc42df8425c55d08e4d916e6eef663ffb601fa"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/marrubiu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/marrubiu",
+        "status": 200,
+        "file": "originali/b4f093b15924f2b0.html",
+        "textFile": "originali/b4f093b15924f2b0.txt",
+        "sha256": "627d90fc90354dd790213666d4ce79f161246694f4b5479d51d8aff55fdabba3",
+        "bytes": 92548,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Masullas",
+      "queryExecuted": true,
+      "queries": [
+        "\"Masullas\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-28.json",
+      "newIds": [
+        "sardegna-masullas-sagra-del-melograno",
+        "sardegna-masullas-sagra-de-su-caboniscu"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-masullas-sagra-del-melograno",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/masullas",
+          "file": "originali/15a21dacb5a15cb5.html",
+          "textFile": "originali/15a21dacb5a15cb5.txt",
+          "sha256": "2f6db682374b3acd1920374be4a51a41c130ea06b6bef886423de425be1a117b"
+        },
+        {
+          "id": "sardegna-masullas-sagra-de-su-caboniscu",
+          "sourceUrl": "https://www.unionecomunipartemontis.it/it/eventi/xii-sagra-su-caboniscu",
+          "file": "originali/639922e8552a0da8.html",
+          "textFile": "originali/639922e8552a0da8.txt",
+          "sha256": "9b9365e4caaf5a767b94f44612d8c418c66e83a8a1a3f471df7b86afff6921a9"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/masullas",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/masullas",
+        "status": 200,
+        "file": "originali/15a21dacb5a15cb5.html",
+        "textFile": "originali/15a21dacb5a15cb5.txt",
+        "sha256": "2f6db682374b3acd1920374be4a51a41c130ea06b6bef886423de425be1a117b",
+        "bytes": 91593,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Milis",
+      "queryExecuted": true,
+      "queries": [
+        "\"Milis\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-28.json",
+      "newIds": [
+        "sardegna-milis-rassegna-dei-vini-novelli-della-sardegna",
+        "sardegna-milis-sagra-degli-agrumi",
+        "sardegna-milis-sagra-dei-ceci"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-milis-rassegna-dei-vini-novelli-della-sardegna",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/milis",
+          "file": "originali/4b7dff01cea6a6a7.html",
+          "textFile": "originali/4b7dff01cea6a6a7.txt",
+          "sha256": "c5765317f0f6b2ef6be967abc595deaa837f032515adc62678012d168f7f9899"
+        },
+        {
+          "id": "sardegna-milis-sagra-degli-agrumi",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/milis",
+          "file": "originali/4b7dff01cea6a6a7.html",
+          "textFile": "originali/4b7dff01cea6a6a7.txt",
+          "sha256": "c5765317f0f6b2ef6be967abc595deaa837f032515adc62678012d168f7f9899"
+        },
+        {
+          "id": "sardegna-milis-sagra-dei-ceci",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/milis",
+          "file": "originali/4b7dff01cea6a6a7.html",
+          "textFile": "originali/4b7dff01cea6a6a7.txt",
+          "sha256": "c5765317f0f6b2ef6be967abc595deaa837f032515adc62678012d168f7f9899"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/milis",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/milis",
+        "status": 200,
+        "file": "originali/4b7dff01cea6a6a7.html",
+        "textFile": "originali/4b7dff01cea6a6a7.txt",
+        "sha256": "c5765317f0f6b2ef6be967abc595deaa837f032515adc62678012d168f7f9899",
+        "bytes": 93355,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Modolo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Modolo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-32.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/modolo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/modolo",
+        "status": 200,
+        "file": "originali/5aad8a70335cb89d.html",
+        "textFile": "originali/5aad8a70335cb89d.txt",
+        "sha256": "e15c60c90183054674cc66d914394c4fc377ca8e2cc6d3070593109079635bd9",
+        "bytes": 87534,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Mogorella",
+      "queryExecuted": true,
+      "queries": [
+        "\"Mogorella\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-32.json",
+      "newIds": [
+        "sardegna-mogorella-sagra-della-pecora"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-mogorella-sagra-della-pecora",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/mogorella",
+          "file": "originali/58224167a45332b6.html",
+          "textFile": "originali/58224167a45332b6.txt",
+          "sha256": "0d1f8ebf080094777ce024a27b4e8120d8f7e603d5d49f8eea278bcbce1c3e8a"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/mogorella",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/mogorella",
+        "status": 200,
+        "file": "originali/58224167a45332b6.html",
+        "textFile": "originali/58224167a45332b6.txt",
+        "sha256": "0d1f8ebf080094777ce024a27b4e8120d8f7e603d5d49f8eea278bcbce1c3e8a",
+        "bytes": 87218,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Mogoro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Mogoro\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-32.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/mogoro",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/mogoro",
+        "status": 200,
+        "file": "originali/b9b45240c398fe2a.html",
+        "textFile": "originali/b9b45240c398fe2a.txt",
+        "sha256": "abd11e9580124d94ae20d1e9d864ef7ce61d03e4401a1af89dd08d3849ac04a1",
+        "bytes": 93334,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Montresta",
+      "queryExecuted": true,
+      "queries": [
+        "\"Montresta\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-32.json",
+      "newIds": [
+        "sardegna-montresta-sagra-de-sos-pipiriolos",
+        "sardegna-montresta-sagra-della-pecora"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-montresta-sagra-de-sos-pipiriolos",
+          "sourceUrl": "https://comune.montresta.or.it/eventi/3316693/sagra-de-sos-pipiriolos",
+          "file": "originali/93e5ddc9142adf1d.html",
+          "textFile": "originali/93e5ddc9142adf1d.txt",
+          "sha256": "97fffca2898ddf61d3133d006a3c5fa525f0d56fd7ba4df6f1b7b68ae04768a2"
+        },
+        {
+          "id": "sardegna-montresta-sagra-della-pecora",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/montresta",
+          "file": "originali/adf78f03f2d230d0.html",
+          "textFile": "originali/adf78f03f2d230d0.txt",
+          "sha256": "084bb0252c0eb89bb1174a0b2ad55494fc7aafdd713bafc774b3e64925a7e3dd"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/montresta",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/montresta",
+        "status": 200,
+        "file": "originali/adf78f03f2d230d0.html",
+        "textFile": "originali/adf78f03f2d230d0.txt",
+        "sha256": "084bb0252c0eb89bb1174a0b2ad55494fc7aafdd713bafc774b3e64925a7e3dd",
+        "bytes": 87222,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Morgongiori",
+      "queryExecuted": true,
+      "queries": [
+        "\"Morgongiori\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-36.json",
+      "newIds": [
+        "sardegna-morgongiori-sagra-delle-lorighittas"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-morgongiori-sagra-delle-lorighittas",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/morgongiori",
+          "file": "originali/1762f3515fb7e03b.html",
+          "textFile": "originali/1762f3515fb7e03b.txt",
+          "sha256": "4750f0123142866813d371c5b340b5aadd8de4086f0c284edd45ac7f47ae9aba"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/morgongiori",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/morgongiori",
+        "status": 200,
+        "file": "originali/1762f3515fb7e03b.html",
+        "textFile": "originali/1762f3515fb7e03b.txt",
+        "sha256": "4750f0123142866813d371c5b340b5aadd8de4086f0c284edd45ac7f47ae9aba",
+        "bytes": 92377,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Narbolia",
+      "queryExecuted": true,
+      "queries": [
+        "\"Narbolia\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-36.json",
+      "newIds": [
+        "sardegna-narbolia-sagra-della-zippola"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-narbolia-sagra-della-zippola",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/narbolia",
+          "file": "originali/9172d6a7a1ac661e.html",
+          "textFile": "originali/9172d6a7a1ac661e.txt",
+          "sha256": "36e0f3ab6af0d7e5acf585d7bac1aac71cf6392ceed15fe08f8a7496ac4076e6"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/narbolia",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/narbolia",
+        "status": 200,
+        "file": "originali/9172d6a7a1ac661e.html",
+        "textFile": "originali/9172d6a7a1ac661e.txt",
+        "sha256": "36e0f3ab6af0d7e5acf585d7bac1aac71cf6392ceed15fe08f8a7496ac4076e6",
+        "bytes": 92840,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Neoneli",
+      "queryExecuted": true,
+      "queries": [
+        "\"Neoneli\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-36.json",
+      "newIds": [
+        "sardegna-neoneli-wine-fregula-e-cassola"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-neoneli-wine-fregula-e-cassola",
+          "sourceUrl": "https://comune.neoneli.or.it/vivere-il-comune/eventi/wine-fregula-e-cassola/",
+          "file": "originali/a3ec38d1e82c3227.html",
+          "textFile": "originali/a3ec38d1e82c3227.txt",
+          "sha256": "725eb597b7529faeeb2b18bfee8da4641b5ad08c1fac66e7e5d97a845e7e4be6"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/neoneli",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/neoneli",
+        "status": 200,
+        "file": "originali/583e0320e62875ba.html",
+        "textFile": "originali/583e0320e62875ba.txt",
+        "sha256": "eb583e0128bf02e9cc54f8d0dadb976324ae1b3bf0d82680b9e40f8cb42ac79c",
+        "bytes": 92811,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Norbello",
+      "queryExecuted": true,
+      "queries": [
+        "\"Norbello\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-36.json",
+      "newIds": [
+        "sardegna-norbello-sagra-della-vendemmia-antica"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-norbello-sagra-della-vendemmia-antica",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/norbello",
+          "file": "originali/05ce2e150efb3ff7.html",
+          "textFile": "originali/05ce2e150efb3ff7.txt",
+          "sha256": "1621a9a736000f83ba119a9d215c6d29b362720ce87097d23425f6967b5a3673"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/norbello",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/norbello",
+        "status": 200,
+        "file": "originali/05ce2e150efb3ff7.html",
+        "textFile": "originali/05ce2e150efb3ff7.txt",
+        "sha256": "1621a9a736000f83ba119a9d215c6d29b362720ce87097d23425f6967b5a3673",
+        "bytes": 93190,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Nughedu Santa Vittoria",
+      "queryExecuted": true,
+      "queries": [
+        "\"Nughedu Santa Vittoria\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-40.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/nughedu-santa-vittoria",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/nughedu-santa-vittoria",
+        "status": 200,
+        "file": "originali/d36e02a09c130f03.html",
+        "textFile": "originali/d36e02a09c130f03.txt",
+        "sha256": "e06bb1c5e5bc3bc0a342c93710cfe99784f16949309f6c39d816458e9ddfc719",
+        "bytes": 92957,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Nurachi",
+      "queryExecuted": true,
+      "queries": [
+        "\"Nurachi\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-40.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/nurachi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/nurachi",
+        "status": 200,
+        "file": "originali/f3275e344827b406.html",
+        "textFile": "originali/f3275e344827b406.txt",
+        "sha256": "22d53417c5cb5f169e78d214a4b3996e7eeee5e28d3f1c43de0ba57bd8a59d61",
+        "bytes": 88014,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Nureci",
+      "queryExecuted": true,
+      "queries": [
+        "\"Nureci\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-40.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/nureci",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/nureci",
+        "status": 200,
+        "file": "originali/970f21f6ad945cab.html",
+        "textFile": "originali/970f21f6ad945cab.txt",
+        "sha256": "973a36a1ed2e18b005382b78e441a1330b806fe8055598951d3bf57fe301408c",
+        "bytes": 91084,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ollastra",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ollastra\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-40.json",
+      "newIds": [
+        "sardegna-ollastra-fiera-di-san-marco"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-ollastra-fiera-di-san-marco",
+          "sourceUrl": "https://comune.ollastra.or.it/eventi/2890537/fiera-festa-san-marco",
+          "file": "originali/7710e1dc4175fd4c.html",
+          "textFile": "originali/7710e1dc4175fd4c.txt",
+          "sha256": "bf0ed36f916880551291864e343c49b7b08176bd4e77c7cee407294c2ea782d0"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ollastra",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ollastra",
+        "status": 200,
+        "file": "originali/9e029f8bb7b4269f.html",
+        "textFile": "originali/9e029f8bb7b4269f.txt",
+        "sha256": "a83920a4bb631f562cc57f1efd49943554a2bfaace569fd76c5aaa0c59cabf54",
+        "bytes": 91729,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Oristano",
+      "queryExecuted": true,
+      "queries": [
+        "\"Oristano\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-44.json",
+      "newIds": [
+        "sardegna-oristano-sartiglia-commercio-ambulante",
+        "sardegna-oristano-mercatino-natalizio",
+        "sardegna-oristano-accensione-dell-albero-di-natale-banchi",
+        "sardegna-oristano-mosta-mostacciolo-e-vernaccia"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-oristano-sartiglia-commercio-ambulante",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Sartiglia-Entro-il-15-gennaio-2026-le-domande-per-il-commercio-ambulante/",
+          "file": "originali/cf58d6aa5f3705b0.html",
+          "textFile": "originali/cf58d6aa5f3705b0.txt",
+          "sha256": "5b426cc635cb1fb343e86caf298ade28b0e6348ac05af4b1cf3495c7517f076f"
+        },
+        {
+          "id": "sardegna-oristano-mercatino-natalizio",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/",
+          "file": "originali/cafb5b9a5f28e8a3.html",
+          "textFile": "originali/cafb5b9a5f28e8a3.txt",
+          "sha256": "2905628351ba13926dfd328355dea357ce91ca8c5b3cbfe6520f6795d835d445"
+        },
+        {
+          "id": "sardegna-oristano-accensione-dell-albero-di-natale-banchi",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/",
+          "file": "originali/cafb5b9a5f28e8a3.html",
+          "textFile": "originali/cafb5b9a5f28e8a3.txt",
+          "sha256": "2905628351ba13926dfd328355dea357ce91ca8c5b3cbfe6520f6795d835d445"
+        },
+        {
+          "id": "sardegna-oristano-mosta-mostacciolo-e-vernaccia",
+          "sourceUrl": "https://www.oristanoinfo.it/eventi/mosta-sagra-del-mostacciolo-e-della-vernaccia/?occurrence=2026-10-10&pskip=8360",
+          "file": "originali/3fe9a6680957d622.html",
+          "textFile": "originali/3fe9a6680957d622.txt",
+          "sha256": "b7dc9247573a82b59f8d8a27d93aef47864a1e38f2cdf34505c91829387ae59e"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/oristano",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/oristano",
+        "status": 200,
+        "file": "originali/fbeef786311452ee.html",
+        "textFile": "originali/fbeef786311452ee.txt",
+        "sha256": "b0aa9076e488e7f166ba80ef0b421556abd344a047a496ffe5af19e67c11b732",
+        "bytes": 97874,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Palmas Arborea",
+      "queryExecuted": true,
+      "queries": [
+        "\"Palmas Arborea\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-44.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/palmas-arborea",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/palmas-arborea",
+        "status": 200,
+        "file": "originali/fe19c20c58385002.html",
+        "textFile": "originali/fe19c20c58385002.txt",
+        "sha256": "126955badabfe29ed43911033f9162f735c28bfcd93b05053873581e45efe4ca",
+        "bytes": 91040,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Pau",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pau\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-44.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/pau",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/pau",
+        "status": 200,
+        "file": "originali/4c0cf9fde3a53715.html",
+        "textFile": "originali/4c0cf9fde3a53715.txt",
+        "sha256": "0e9327c97f0f4a0ab4c06aeef010d828a057c7826088f82a06facfef4943b292",
+        "bytes": 90590,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Paulilatino",
+      "queryExecuted": true,
+      "queries": [
+        "\"Paulilatino\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-44.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/paulilatino",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/paulilatino",
+        "status": 200,
+        "file": "originali/33a630e8c51c4158.html",
+        "textFile": "originali/33a630e8c51c4158.txt",
+        "sha256": "2746fc96c9dbc7839b5e90cfcb1a686f46bbfc2efd0b5f15194976b5c0652a6d",
+        "bytes": 94595,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Pompu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Pompu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-48.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/pompu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/pompu",
+        "status": 200,
+        "file": "originali/fd447ca9faf69f2d.html",
+        "textFile": "originali/fd447ca9faf69f2d.txt",
+        "sha256": "96256ec9613e90f9b6bdb6a5cbf0b733342ce5b8746a2a1a43446c591d5982ce",
+        "bytes": 91193,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Riola Sardo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Riola Sardo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-48.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/riola-sardo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/riola-sardo",
+        "status": 200,
+        "file": "originali/d4d70bc6d01a40c0.html",
+        "textFile": "originali/d4d70bc6d01a40c0.txt",
+        "sha256": "f8289004ed834afd8fef7d357f8b77488d6f561ec580ff14305694bba6e482f6",
+        "bytes": 87718,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ruinas",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ruinas\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-48.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ruinas",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ruinas",
+        "status": 200,
+        "file": "originali/89789eb3cc0c45ef.html",
+        "textFile": "originali/89789eb3cc0c45ef.txt",
+        "sha256": "bba5840054288750fb875408d3860e4ea163a50f340e9b524cd492929066111b",
+        "bytes": 87714,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Sagama",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sagama\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-48.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sagama",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sagama",
+        "status": 200,
+        "file": "originali/fcb2a0f7cf801195.html",
+        "textFile": "originali/fcb2a0f7cf801195.txt",
+        "sha256": "745beefd77234f87952a9a11e12cc00fc3a6b456a29e4f50ece64e2a389cbe6c",
+        "bytes": 87448,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Samugheo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Samugheo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-52.json",
+      "newIds": [
+        "sardegna-samugheo-sagra-del-pane"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-samugheo-sagra-del-pane",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/samugheo",
+          "file": "originali/936a9662e27c2e01.html",
+          "textFile": "originali/936a9662e27c2e01.txt",
+          "sha256": "6d2e3e36e7fecbc741aca79229662612e6264c6284d02f72b705b4b9de65ca02"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/samugheo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/samugheo",
+        "status": 200,
+        "file": "originali/936a9662e27c2e01.html",
+        "textFile": "originali/936a9662e27c2e01.txt",
+        "sha256": "6d2e3e36e7fecbc741aca79229662612e6264c6284d02f72b705b4b9de65ca02",
+        "bytes": 92486,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "San Nicolò d'Arcidano",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Nicolò d'Arcidano\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-52.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/san-nicolo-d-arcidano",
+        "error": "404 Client Error: Not Found for url: https://www.sardegnaturismo.it/it/esplora/san-nicolo-d-arcidano"
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "San Vero Milis",
+      "queryExecuted": true,
+      "queries": [
+        "\"San Vero Milis\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-52.json",
+      "newIds": [
+        "sardegna-san-vero-milis-rassegna-dei-vini-novelli"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-san-vero-milis-rassegna-dei-vini-novelli",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/san-vero-milis",
+          "file": "originali/0bcc27c852c7c51d.html",
+          "textFile": "originali/0bcc27c852c7c51d.txt",
+          "sha256": "e4394d418e0ea7e2dec60568d386677a5f35863f3b3eed7f90b28315be37cf54"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/san-vero-milis",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/san-vero-milis",
+        "status": 200,
+        "file": "originali/0bcc27c852c7c51d.html",
+        "textFile": "originali/0bcc27c852c7c51d.txt",
+        "sha256": "e4394d418e0ea7e2dec60568d386677a5f35863f3b3eed7f90b28315be37cf54",
+        "bytes": 93167,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Santa Giusta",
+      "queryExecuted": true,
+      "queries": [
+        "\"Santa Giusta\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-52.json",
+      "newIds": [
+        "sardegna-santa-giusta-sagra-de-is-malloreddus-a-sa-campidanesa",
+        "sardegna-santa-giusta-sagra-della-pecora"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-santa-giusta-sagra-de-is-malloreddus-a-sa-campidanesa",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+          "file": "originali/d273b27a561a85c3.html",
+          "textFile": "originali/d273b27a561a85c3.txt",
+          "sha256": "49891e981545faefd193ff18f8ee4166f48da2905fffbd07fda62530b8eb8030"
+        },
+        {
+          "id": "sardegna-santa-giusta-sagra-della-pecora",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+          "file": "originali/d273b27a561a85c3.html",
+          "textFile": "originali/d273b27a561a85c3.txt",
+          "sha256": "49891e981545faefd193ff18f8ee4166f48da2905fffbd07fda62530b8eb8030"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+        "status": 200,
+        "file": "originali/d273b27a561a85c3.html",
+        "textFile": "originali/d273b27a561a85c3.txt",
+        "sha256": "49891e981545faefd193ff18f8ee4166f48da2905fffbd07fda62530b8eb8030",
+        "bytes": 93925,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Santu Lussurgiu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Santu Lussurgiu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-56.json",
+      "newIds": [
+        "sardegna-santu-lussurgiu-cavallinfiera"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-santu-lussurgiu-cavallinfiera",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/santu-lussurgiu",
+          "file": "originali/97c01d816314f49c.html",
+          "textFile": "originali/97c01d816314f49c.txt",
+          "sha256": "e1dcaca562d5fce0e5f74506e059feacb57a28802cc5c9c2a1c8baad390dc807"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/santu-lussurgiu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/santu-lussurgiu",
+        "status": 200,
+        "file": "originali/97c01d816314f49c.html",
+        "textFile": "originali/97c01d816314f49c.txt",
+        "sha256": "e1dcaca562d5fce0e5f74506e059feacb57a28802cc5c9c2a1c8baad390dc807",
+        "bytes": 96019,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Scano di Montiferro",
+      "queryExecuted": true,
+      "queries": [
+        "\"Scano di Montiferro\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-56.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/scano-di-montiferro",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/scano-di-montiferro",
+        "status": 200,
+        "file": "originali/ff6e5a83695ec283.html",
+        "textFile": "originali/ff6e5a83695ec283.txt",
+        "sha256": "e2547fffca9d79a4fefcfb2b2f8b180952b255b50fed69efe0c26ee66b5d275d",
+        "bytes": 92906,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Sedilo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sedilo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-56.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sedilo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sedilo",
+        "status": 200,
+        "file": "originali/3360e3927d42d842.html",
+        "textFile": "originali/3360e3927d42d842.txt",
+        "sha256": "9dbb9cf6e30b07dd4c1ed5242e790a238e363ba6c9858650bf20624a019def12",
+        "bytes": 91814,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Seneghe",
+      "queryExecuted": true,
+      "queries": [
+        "\"Seneghe\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-56.json",
+      "newIds": [
+        "sardegna-seneghe-prentzas-apertas"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-seneghe-prentzas-apertas",
+          "sourceUrl": "https://www.comune.seneghe.or.it/wp-content/uploads/2025/10/DISCIPLINARE.pdf",
+          "file": "originali/268a25122bbd6294.pdf",
+          "textFile": "originali/268a25122bbd6294.txt",
+          "sha256": "0e4d4efbeb7490d5c48da673b33a6905fba9f3d42a770d98361048e82e24efbd"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/seneghe",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/seneghe",
+        "status": 200,
+        "file": "originali/5404db015bcda894.html",
+        "textFile": "originali/5404db015bcda894.txt",
+        "sha256": "5c45662b3d4b66f5f30d5edc2429b0322eb66d0ce39bada68e4aaab0cc3fa2ee",
+        "bytes": 94316,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Senis",
+      "queryExecuted": true,
+      "queries": [
+        "\"Senis\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-60.json",
+      "newIds": [
+        "sardegna-senis-sagra-della-lumaca"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-senis-sagra-della-lumaca",
+          "sourceUrl": "https://www.galmarmilla.it/il-territorio/i-comuni-del-gal/901-senis",
+          "file": "originali/1d8e3f8d91105268.html",
+          "textFile": "originali/1d8e3f8d91105268.txt",
+          "sha256": "1d6cab1af382fd23cbd0faae8f335666b63de1eee55587c9600cf37951650ac7"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/senis",
+        "error": "404 Client Error: Not Found for url: https://www.sardegnaturismo.it/it/esplora/senis"
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Sennariolo",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sennariolo\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-60.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sennariolo",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sennariolo",
+        "status": 200,
+        "file": "originali/9239e737077692bc.html",
+        "textFile": "originali/9239e737077692bc.txt",
+        "sha256": "fbc9973b0b1c5c4e10716742d378001f33d92ce60affa6e9c0b66dc07f3d023f",
+        "bytes": 89944,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Siamaggiore",
+      "queryExecuted": true,
+      "queries": [
+        "\"Siamaggiore\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-60.json",
+      "newIds": [
+        "sardegna-siamaggiore-festa-del-carciofo"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-siamaggiore-festa-del-carciofo",
+          "sourceUrl": "https://www.comune.siamaggiore.or.it/Dettaglionews?IDNews=382315",
+          "file": "originali/4460c4d9d895042a.html",
+          "textFile": "originali/4460c4d9d895042a.txt",
+          "sha256": "8a4d2e6c113d738c63a7585077629f1e90747dcdb52ed0a6dc74dc6f433ca256"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siamaggiore",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/siamaggiore",
+        "status": 200,
+        "file": "originali/a9deec4b82e23651.html",
+        "textFile": "originali/a9deec4b82e23651.txt",
+        "sha256": "4161db7dcfca0a7e64f78a164faf697493ba76b0b64443e0080c5a25dd233d85",
+        "bytes": 87371,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Siamanna",
+      "queryExecuted": true,
+      "queries": [
+        "\"Siamanna\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-60.json",
+      "newIds": [
+        "sardegna-siamanna-sagra-dei-ravioli-e-dei-prodotti-tipici"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-siamanna-sagra-dei-ravioli-e-dei-prodotti-tipici",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/siamanna",
+          "file": "originali/1aaacd6c833718f1.html",
+          "textFile": "originali/1aaacd6c833718f1.txt",
+          "sha256": "884d82cac52fa157ff6e49640becda8a99bb7498a35e28d32d73616aac308d20"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siamanna",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/siamanna",
+        "status": 200,
+        "file": "originali/1aaacd6c833718f1.html",
+        "textFile": "originali/1aaacd6c833718f1.txt",
+        "sha256": "884d82cac52fa157ff6e49640becda8a99bb7498a35e28d32d73616aac308d20",
+        "bytes": 88225,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Siapiccia",
+      "queryExecuted": true,
+      "queries": [
+        "\"Siapiccia\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-64.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siapiccia",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/siapiccia",
+        "status": 200,
+        "file": "originali/c1b287efd6cc0197.html",
+        "textFile": "originali/c1b287efd6cc0197.txt",
+        "sha256": "10afc42c4419dc467cbb2ad48266c6fbaf65f9b5d370b0d546b7eff85f9973e3",
+        "bytes": 89891,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Simala",
+      "queryExecuted": true,
+      "queries": [
+        "\"Simala\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-64.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/simala",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/simala",
+        "status": 200,
+        "file": "originali/7bdb9f58808445a7.html",
+        "textFile": "originali/7bdb9f58808445a7.txt",
+        "sha256": "1f5a3dd4f107580a4060cbe867182598123cb4ce32ebfc9c7093df8e52b2d866",
+        "bytes": 91362,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Simaxis",
+      "queryExecuted": true,
+      "queries": [
+        "\"Simaxis\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-64.json",
+      "newIds": [
+        "sardegna-simaxis-sagra-del-riso"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-simaxis-sagra-del-riso",
+          "sourceUrl": "https://comune.simaxis.or.it/eventi/3069041/xxx-edizione-sagra-riso",
+          "file": "originali/8e820a2544f89e63.html",
+          "textFile": "originali/8e820a2544f89e63.txt",
+          "sha256": "976dbc408b1a893ed981cb4881f874ab9cbf08d7c0ebc981de401a8944c15112"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/simaxis",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/simaxis",
+        "status": 200,
+        "file": "originali/3cf7979a3a70f0bf.html",
+        "textFile": "originali/3cf7979a3a70f0bf.txt",
+        "sha256": "3c87cae178c44af6d460825953703efd55d0cc5fe89b3aa56891438f86a1ffe5",
+        "bytes": 91230,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Sini",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sini\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-64.json",
+      "newIds": [
+        "sardegna-sini-sagra-de-su-pani-saba"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-sini-sagra-de-su-pani-saba",
+          "sourceUrl": "https://www.comune.sini.oristano.it/portals/2113/SiscomArchivio/6/Avviso%202026_001.pdf",
+          "file": "originali/f7e9bac2fa9d49c8.pdf",
+          "textFile": "originali/f7e9bac2fa9d49c8.txt",
+          "sha256": "e24d1c599d613e35b89f26d29bf34665553b2354dd09afcc902d33cdd8aa06af"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sini",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sini",
+        "status": 200,
+        "file": "originali/e5d7d920c6f4ba01.html",
+        "textFile": "originali/e5d7d920c6f4ba01.txt",
+        "sha256": "562dca354b326129ed0e5f21babcf9b7822bed4f50c7d42ff779c3aa04078119",
+        "bytes": 90022,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Siris",
+      "queryExecuted": true,
+      "queries": [
+        "\"Siris\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-68.json",
+      "newIds": [
+        "sardegna-siris-sagra-delle-mele-cotogne"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-siris-sagra-delle-mele-cotogne",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/siris",
+          "file": "originali/d7c713c5bef334ee.html",
+          "textFile": "originali/d7c713c5bef334ee.txt",
+          "sha256": "0d21904ea2544d4435f4053df702d2d69b006de45ffd08696a9a93727eceb97d"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siris",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/siris",
+        "status": 200,
+        "file": "originali/d7c713c5bef334ee.html",
+        "textFile": "originali/d7c713c5bef334ee.txt",
+        "sha256": "0d21904ea2544d4435f4053df702d2d69b006de45ffd08696a9a93727eceb97d",
+        "bytes": 90912,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Soddì",
+      "queryExecuted": true,
+      "queries": [
+        "\"Soddì\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-68.json",
+      "newIds": [
+        "sardegna-soddi-sagra-de-su-cazau"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-soddi-sagra-de-su-cazau",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/soddi",
+          "file": "originali/7f9e8b35374e55f1.html",
+          "textFile": "originali/7f9e8b35374e55f1.txt",
+          "sha256": "0d34b4a6eef2602b54dd8d5d99932cc9340612e15c93df850242c290fcfc7835"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/soddi",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/soddi",
+        "status": 200,
+        "file": "originali/7f9e8b35374e55f1.html",
+        "textFile": "originali/7f9e8b35374e55f1.txt",
+        "sha256": "0d34b4a6eef2602b54dd8d5d99932cc9340612e15c93df850242c290fcfc7835",
+        "bytes": 91395,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Solarussa",
+      "queryExecuted": true,
+      "queries": [
+        "\"Solarussa\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-68.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/solarussa",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/solarussa",
+        "status": 200,
+        "file": "originali/7d843ad680ad9e42.html",
+        "textFile": "originali/7d843ad680ad9e42.txt",
+        "sha256": "6a2ee874a20b98749c0a755541728593b226abe09e436b6ec3404ad4dd957103",
+        "bytes": 91576,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Sorradile",
+      "queryExecuted": true,
+      "queries": [
+        "\"Sorradile\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-68.json",
+      "newIds": [
+        "sardegna-sorradile-sagra-dei-dolci-di-mandorle-e-magasinos-apertos"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-sorradile-sagra-dei-dolci-di-mandorle-e-magasinos-apertos",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/sorradile",
+          "file": "originali/925436e614adcbea.html",
+          "textFile": "originali/925436e614adcbea.txt",
+          "sha256": "4364534c79fd54e93a2a5e0630aaabc8cc9289079f88d9e183ec4a785cd90977"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sorradile",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/sorradile",
+        "status": 200,
+        "file": "originali/925436e614adcbea.html",
+        "textFile": "originali/925436e614adcbea.txt",
+        "sha256": "4364534c79fd54e93a2a5e0630aaabc8cc9289079f88d9e183ec4a785cd90977",
+        "bytes": 92894,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Suni",
+      "queryExecuted": true,
+      "queries": [
+        "\"Suni\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-72.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/suni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/suni",
+        "status": 200,
+        "file": "originali/0532c7e5e2b21aa9.html",
+        "textFile": "originali/0532c7e5e2b21aa9.txt",
+        "sha256": "4de68d35683debd35ea634d28ee3d6a2a0d4a6a7991a9dc9b0bb105b5fbab4bf",
+        "bytes": 93078,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Tadasuni",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tadasuni\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-72.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tadasuni",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tadasuni",
+        "status": 200,
+        "file": "originali/76c558674993cae5.html",
+        "textFile": "originali/76c558674993cae5.txt",
+        "sha256": "1dd703832af92fc1762c313aca540b17742c142422c28da2de615694a2c43304",
+        "bytes": 90280,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Terralba",
+      "queryExecuted": true,
+      "queries": [
+        "\"Terralba\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-72.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/terralba",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/terralba",
+        "status": 200,
+        "file": "originali/64c00bab1de98717.html",
+        "textFile": "originali/64c00bab1de98717.txt",
+        "sha256": "3ab00814282ddd10f6724d452cfd21548a86397128d3014752842b859f0f0a7f",
+        "bytes": 93921,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Tinnura",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tinnura\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-72.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tinnura",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tinnura",
+        "status": 200,
+        "file": "originali/6b9376e4ff8b5d8c.html",
+        "textFile": "originali/6b9376e4ff8b5d8c.txt",
+        "sha256": "9804885a731a46cf3c6afcabb10deab291bed40e67e58e0f85d4fe38c5838e46",
+        "bytes": 91999,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Tramatza",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tramatza\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-76.json",
+      "newIds": [
+        "sardegna-tramatza-sagra-della-cipolla",
+        "sardegna-tramatza-festa-del-pane",
+        "sardegna-tramatza-rassegna-del-vino-novello"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-tramatza-sagra-della-cipolla",
+          "sourceUrl": "https://www.comune.tramatza.or.it/index.php/tzente/evento/4",
+          "file": "originali/70c283f0187f8bf7.html",
+          "textFile": "originali/70c283f0187f8bf7.txt",
+          "sha256": "61c09649fbe4cfd46a37e60e06e1cb41b0fd6c2eaca2b14c4e870d48b3f011a7"
+        },
+        {
+          "id": "sardegna-tramatza-festa-del-pane",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+          "file": "originali/0756794922cfa41c.html",
+          "textFile": "originali/0756794922cfa41c.txt",
+          "sha256": "8813e0e8d3a4464670c324194eddccc71fc682117fe3906d94d46191a69b1394"
+        },
+        {
+          "id": "sardegna-tramatza-rassegna-del-vino-novello",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+          "file": "originali/0756794922cfa41c.html",
+          "textFile": "originali/0756794922cfa41c.txt",
+          "sha256": "8813e0e8d3a4464670c324194eddccc71fc682117fe3906d94d46191a69b1394"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+        "status": 200,
+        "file": "originali/0756794922cfa41c.html",
+        "textFile": "originali/0756794922cfa41c.txt",
+        "sha256": "8813e0e8d3a4464670c324194eddccc71fc682117fe3906d94d46191a69b1394",
+        "bytes": 87702,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Tresnuraghes",
+      "queryExecuted": true,
+      "queries": [
+        "\"Tresnuraghes\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-76.json",
+      "newIds": [
+        "sardegna-tresnuraghes-mercatini-di-natale"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-tresnuraghes-mercatini-di-natale",
+          "sourceUrl": "https://www.comune.tresnuraghes.or.it/index.php/tzente/articoli/250",
+          "file": "originali/368aa25d1c6e8a8f.html",
+          "textFile": "originali/368aa25d1c6e8a8f.txt",
+          "sha256": "fad155c687c471299d77aaa0db7ea509f7e5ab8727ed3000ce2ae93f2a5d5873"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tresnuraghes",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/tresnuraghes",
+        "status": 200,
+        "file": "originali/5b07581cc82abcc7.html",
+        "textFile": "originali/5b07581cc82abcc7.txt",
+        "sha256": "4d8438df24b19794bafed191475e3f637a9da5f7d0f8be29ea8c7cef55db6085",
+        "bytes": 91731,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Ulà Tirso",
+      "queryExecuted": true,
+      "queries": [
+        "\"Ulà Tirso\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-76.json",
+      "newIds": [
+        "sardegna-ula-tirso-sagra-de-sos-cannisones"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-ula-tirso-sagra-de-sos-cannisones",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/ula-tirso",
+          "file": "originali/5503b2e5db0449c5.html",
+          "textFile": "originali/5503b2e5db0449c5.txt",
+          "sha256": "3663b6ee2fc4103d33b9d34d3cdf6b51f0a2d1cdd2f358479b332df84203421b"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ula-tirso",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/ula-tirso",
+        "status": 200,
+        "file": "originali/5503b2e5db0449c5.html",
+        "textFile": "originali/5503b2e5db0449c5.txt",
+        "sha256": "3663b6ee2fc4103d33b9d34d3cdf6b51f0a2d1cdd2f358479b332df84203421b",
+        "bytes": 92115,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Uras",
+      "queryExecuted": true,
+      "queries": [
+        "\"Uras\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-76.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/uras",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/uras",
+        "status": 200,
+        "file": "originali/a6f0c35081372c4d.html",
+        "textFile": "originali/a6f0c35081372c4d.txt",
+        "sha256": "16e0b066f1872a099df2a1e324c8bcefb582e2e95a0288205b473dd663be47c8",
+        "bytes": 91290,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Usellus",
+      "queryExecuted": true,
+      "queries": [
+        "\"Usellus\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-80.json",
+      "newIds": [
+        "sardegna-usellus-sagra-della-pecora"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-usellus-sagra-della-pecora",
+          "sourceUrl": "https://www.comune.usellus.or.it/Guidaalpaese?IDCat=6481&IDPagina=41086",
+          "file": "originali/d714c26decef857b.html",
+          "textFile": "originali/d714c26decef857b.txt",
+          "sha256": "a2459b51732e0092a23005c9793d2d3040ada6f703fe43fad7d226e0a652a0e1"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/usellus",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/usellus",
+        "status": 200,
+        "file": "originali/a5cc55fccba6eed5.html",
+        "textFile": "originali/a5cc55fccba6eed5.txt",
+        "sha256": "e1b861ee99bd857293aafc73ae38e368d826878a7db180aad4ea2d75a70f230c",
+        "bytes": 89247,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Villa Sant'Antonio",
+      "queryExecuted": true,
+      "queries": [
+        "\"Villa Sant'Antonio\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-80.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/villa-sant-antonio",
+        "error": "404 Client Error: Not Found for url: https://www.sardegnaturismo.it/it/esplora/villa-sant-antonio"
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Villa Verde",
+      "queryExecuted": true,
+      "queries": [
+        "\"Villa Verde\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-80.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/villa-verde",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/villa-verde",
+        "status": 200,
+        "file": "originali/57aaee9cd570958a.html",
+        "textFile": "originali/57aaee9cd570958a.txt",
+        "sha256": "a6df451e8c3a743dfa431d963d6a442ce8ec0198d2b2ff5fb76b0125890241a5",
+        "bytes": 91812,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Villanova Truschedu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Villanova Truschedu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-80.json",
+      "newIds": [],
+      "sources": [],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/villanova-truschedu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/villanova-truschedu",
+        "status": 200,
+        "file": "originali/25ef0363a62026b3.html",
+        "textFile": "originali/25ef0363a62026b3.txt",
+        "sha256": "f15c9725b6bf92a5ab803ca3d4ca05aec5a151f8e6ff065185f1b8cee88908bc",
+        "bytes": 93835,
+        "links": []
+      },
+      "outcome": "Nessuna nuova scheda selezionata dopo la ricerca nominale e il controllo della pagina regionale accessibile; non prova assenza di eventi. Date, natura commerciale o mese non sufficientemente documentati nelle fonti selezionate.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Villaurbana",
+      "queryExecuted": true,
+      "queries": [
+        "\"Villaurbana\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-84.json",
+      "newIds": [
+        "sardegna-villaurbana-sagra-de-su-pani-fattu-in-domu"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-villaurbana-sagra-de-su-pani-fattu-in-domu",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/villaurbana",
+          "file": "originali/81705f1d14cac609.html",
+          "textFile": "originali/81705f1d14cac609.txt",
+          "sha256": "cdba2a0033fdc851ede0607a792ffad5eb03d1a7e1ed2093616060a1fd3ed5f5"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/villaurbana",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/villaurbana",
+        "status": 200,
+        "file": "originali/81705f1d14cac609.html",
+        "textFile": "originali/81705f1d14cac609.txt",
+        "sha256": "cdba2a0033fdc851ede0607a792ffad5eb03d1a7e1ed2093616060a1fd3ed5f5",
+        "bytes": 87793,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Zeddiani",
+      "queryExecuted": true,
+      "queries": [
+        "\"Zeddiani\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-84.json",
+      "newIds": [
+        "sardegna-zeddiani-sagra-del-pomodoro"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-zeddiani-sagra-del-pomodoro",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/zeddiani",
+          "file": "originali/c631450cf8ac974b.html",
+          "textFile": "originali/c631450cf8ac974b.txt",
+          "sha256": "207eddd8f7ff6fe5dc51bd436ba7984c359f6c1d222a559bd93a569084c8d3b7"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/zeddiani",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/zeddiani",
+        "status": 200,
+        "file": "originali/c631450cf8ac974b.html",
+        "textFile": "originali/c631450cf8ac974b.txt",
+        "sha256": "207eddd8f7ff6fe5dc51bd436ba7984c359f6c1d222a559bd93a569084c8d3b7",
+        "bytes": 87067,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    },
+    {
+      "city": "Zerfaliu",
+      "queryExecuted": true,
+      "queries": [
+        "\"Zerfaliu\" sagra fiera mercatino comune"
+      ],
+      "queryEvidence": ".local\\ricerche\\oristano-20261106\\nominali-84.json",
+      "newIds": [
+        "sardegna-zerfaliu-sagra-degli-agrumi",
+        "sardegna-zerfaliu-sagra-della-pecora"
+      ],
+      "sources": [
+        {
+          "id": "sardegna-zerfaliu-sagra-degli-agrumi",
+          "sourceUrl": "https://comune.zerfaliu.or.it/notizie/3265185/sagra-agrumi-2024",
+          "file": "originali/09ca88de68dcd628.html",
+          "textFile": "originali/09ca88de68dcd628.txt",
+          "sha256": "86f55217939920533f0344cba47f609655f00cb0218dc159554435726caaa95c"
+        },
+        {
+          "id": "sardegna-zerfaliu-sagra-della-pecora",
+          "sourceUrl": "https://www.sardegnaturismo.it/it/esplora/zerfaliu",
+          "file": "originali/3e101c7e8897e71d.html",
+          "textFile": "originali/3e101c7e8897e71d.txt",
+          "sha256": "f0662d50e370dc3ecbd500c662d726743763be26fa3a7ca33fd665224b366d87"
+        }
+      ],
+      "regionalPage": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/zerfaliu",
+        "finalUrl": "https://www.sardegnaturismo.it/it/esplora/zerfaliu",
+        "status": 200,
+        "file": "originali/3e101c7e8897e71d.html",
+        "textFile": "originali/3e101c7e8897e71d.txt",
+        "sha256": "f0662d50e370dc3ecbd500c662d726743763be26fa3a7ca33fd665224b366d87",
+        "bytes": 87809,
+        "links": []
+      },
+      "outcome": "Aggiunte solo schede documentate; date, periodi e limiti nei record.",
+      "limitations": "Ricognizione delle fonti indicizzate e delle pagine accessibili; non lettura integrale di albi, allegati e social. Nessun contatto a terzi."
+    }
+  ],
+  "limitations": [
+    "87 comuni secondo l’anagrafica attuale del catalogo. La ricognizione nominale salvata è stata recuperata alla ripresa e integrata con le pagine regionali scaricate.",
+    "Ricerca conclusa con limiti, non censimento certificato. Pavia riservata; nessuna altra provincia o automazione.",
+    "Mogoro e Tessingiu Samugheo, già presenti, restano invariati.",
+    "Esclusi mercati settimanali, programmi solo religiosi/culturali, esiti fuori provincia e date suggerite da aggregatori senza prova selezionata.",
+    "Sagre gastronomiche interne non attestano apertura ai venditori esterni. Nessuna affluenza o notorietà aggiunta."
+  ],
+  "exclusions": [
+    {
+      "city": "Santu Lussurgiu",
+      "reason": "Bando 13 posteggi del martedì e venerdì: mercato settimanale, escluso. Artes e Sabores: date discordanti tra aggregatori, nessuna conferma primaria selezionata."
+    },
+    {
+      "city": "Simaxis",
+      "reason": "Convegno 18 ottobre 2026 non adottato come data della sagra completa; conservata edizione 2024."
+    },
+    {
+      "city": "Milis",
+      "reason": "7–8 novembre 2026 segnalati da stampa e aggregatori; qui conservato novembre da fonte regionale, nessuna conferma primaria letta delle date."
+    },
+    {
+      "city": "Busachi",
+      "reason": "Sagra Su Succu documentata ma mese non selezionato con prova primaria sufficiente."
+    },
+    {
+      "city": "Cuglieri",
+      "reason": "Panadas documentate ma mese non ricavato con certezza dalla pagina regionale."
+    },
+    {
+      "city": "Uras",
+      "reason": "Sa Coxina Antiga: mostra mercato descritta dalla Pro Loco, mese non attestato nel testo letto. Non dedotto da anni diversi."
+    }
+  ]
+}

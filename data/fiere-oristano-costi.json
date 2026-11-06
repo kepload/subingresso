@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "province": "Oristano",
+  "checkedAt": "2026-11-06",
+  "events": {
+    "sardegna-seneghe-prentzas-apertas": {
+      "kind": "conditional",
+      "label": "spazio pubblico 25 €; privato gratuito",
+      "period": "2025",
+      "sourceUrl": "https://www.comune.seneghe.or.it/wp-content/uploads/2025/10/DISCIPLINARE.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Disciplinare 22–23 novembre 2025: 25 € IVA inclusa per stallo pubblico 4×4 m (16 m²), spese organizzative comprese. Chi dispone di spazio privato partecipa gratuitamente ma presenta comunque adesione. Allestimento e assicurazione a carico del partecipante; gazebo vietati su area pubblica. Altri eventuali oneri non quantificati. Termine 13 novembre 2025, scaduto: non tariffa 2026."
+    },
+    "sardegna-baressa-sagra-della-mandorla": {
+      "kind": "partial",
+      "label": "bollo 16 €; quota banco non quantificata",
+      "period": "2026",
+      "sourceUrl": "https://comune.baressa.or.it/portals/2147/SiscomArchivio/6/Avviso%20partecipazione%20espositori_signed.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso per gli spazi del 12–13 settembre 2026: marca da bollo di 16 € sulla domanda, con documenti e titolo per la vendita/esposizione. Domanda entro 28 agosto 2026, scaduta. Il bollo non è il prezzo del banco: canone, servizi e altri eventuali oneri non quantificati nell’avviso letto."
+    },
+    "sardegna-laconi-mostra-mercato-del-cavallo": {
+      "kind": "partial",
+      "label": "bollo 16 € + 16 € se accolta",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.laconi.or.it/Dettaglionews?IDNews=400421",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso 27–28 giugno 2026: bollo di 16 € annullato allegato alla domanda; se accettata, ulteriore bollo di 16 € per il rilascio dell’autorizzazione. Non è una tariffa banco di 32 €: canone, servizi e ulteriori oneri non quantificati nella notizia. Domande entro il 21 giugno 2026, scadute."
+    },
+    "sardegna-siamaggiore-festa-del-carciofo": {
+      "kind": "partial",
+      "label": "bollo 16 € più canone da determinare",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.siamaggiore.or.it/Dettaglionews?IDNews=382315",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso per il 14–15 marzo 2026: marca da bollo di 16 € sulla domanda. In caso di accoglimento, il Comune invia il versamento CBill/PagoPA del Canone Unico Patrimoniale, necessario per l’autorizzazione. Il canone dipende dalle tariffe comunali allegate, non calcolato qui senza le caratteristiche del banco. Domanda entro 27 febbraio 2026, scaduta. Non è un totale di partecipazione."
+    }
+  }
+}

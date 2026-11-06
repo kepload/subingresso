@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "province": "Oristano",
+  "checkedAt": "2026-11-06",
+  "baseline": "e4b06a3",
+  "mode": "append-only",
+  "events": [
+    {
+      "region": "Sardegna",
+      "city": "Arborea",
+      "name": "Fiera dell'Agricoltura",
+      "months": "4,5",
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+        "label": "comune.arborea.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Esposizione agrozootecnica con macchinari agricoli, bovini, ortovivaismo e iniziative gastronomiche, fra cui la sagra delle fragole.",
+      "sectors": "Macchine agricole, ortovivaismo, animali, prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "venue": "Centro fieristico, Strada 19 Est",
+      "id": "sardegna-arborea-fiera-dell-agricoltura"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Arborea",
+      "name": "Sagra della Polenta",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+        "label": "comune.arborea.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "La tradizione dei coloni del Nord Italia incontra i prodotti locali: polenta in diverse preparazioni, stand di prodotti tipici e artigianato.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-arborea-sagra-della-polenta"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Arborea",
+      "name": "Festa delle Etnie e Sagra dell’Anguria",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.arborea.or.it/luoghi/2264951/manifestazioni-sagre-eventi",
+        "label": "comune.arborea.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna di cucine delle comunità presenti ad Arborea, con piatti sardi, veneti, friulani, romagnoli e laziali e degustazione di anguria.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "venue": "Piazza Maria Ausiliatrice",
+      "id": "sardegna-arborea-festa-delle-etnie-e-sagra-dell-anguria"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Baradili",
+      "name": "Sagra de Is Cruguxionis",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.galmarmilla.it/il-territorio/i-comuni-del-gal/878-baradili",
+        "label": "galmarmilla.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Il raviolo lavorato a mano è protagonista delle degustazioni, con ripieni di ricotta, limone, spinaci o patate.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-baradili-sagra-de-is-cruguxionis"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Baratili San Pietro",
+      "name": "Sagra della Vernaccia",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione della vernaccia locale accompagnata dalle preparazioni gastronomiche del paese, nel periodo delle celebrazioni di San Salvatore.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-baratili-san-pietro-sagra-della-vernaccia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Baratili San Pietro",
+      "name": "Sagra degli Asparagi",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/baratili-san-pietro",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento di inizio maggio dedicato agli asparagi e ai sapori locali, segnalato dal portale turistico regionale.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-baratili-san-pietro-sagra-degli-asparagi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bauladu",
+      "name": "Sagra della Pecora e del Formaggio",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bauladu",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "La tradizione agropastorale di Bauladu viene proposta attraverso pecora bollita, formaggi e vino nel periodo di San Giovanni.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-bauladu-sagra-della-pecora-e-del-formaggio"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bonarcado",
+      "name": "Sagra del Torrone",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Nel periodo delle celebrazioni mariane di settembre viene valorizzato il torrone preparato con miele del territorio.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-bonarcado-sagra-del-torrone"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bonarcado",
+      "name": "Sagra delle Ciliegie",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna gastronomica di giugno dedicata alle ciliegie, fra le produzioni agricole caratteristiche del paese.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-bonarcado-sagra-delle-ciliegie"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bonarcado",
+      "name": "Sagra del Bovino",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/bonarcado",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento gastronomico di inizio agosto dedicato alla carne bovina e alla tradizione locale.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-bonarcado-sagra-del-bovino"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Boroneddu",
+      "name": "Sagra degli Asparagi e dei Finocchi Selvatici",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/boroneddu",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sagra primaverile dedicata alle erbe spontanee, con preparazioni a base di asparagi e finocchi selvatici.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-boroneddu-sagra-degli-asparagi-e-dei-finocchi-selvatici"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bosa",
+      "name": "Sagra della Fregula alla Bosana",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.bosa.or.it/evento/sagra-della-fregula-alla-bosana/",
+        "label": "comune.bosa.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Serata gastronomica dedicata alla fregula preparata secondo la tradizione bosana.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale del 13 agosto 2026, edizione passata. La gratuità indicata per il pubblico non prova gratuità o disponibilità dei banchi. Ammissioni di operatori esterni e costi da verificare."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-13",
+          "end": "2026-08-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.bosa.or.it/evento/sagra-della-fregula-alla-bosana/"
+        }
+      ],
+      "venue": "Piazzale Passino",
+      "id": "sardegna-bosa-sagra-della-fregula-alla-bosana"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bosa",
+      "name": "Attopa a Camasinu",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.bosa.or.it/evento/attopa-a-camasinu/",
+        "label": "comune.bosa.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso enogastronomico nelle cantine del centro storico di Bosa.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Data del calendario comunale: 17 agosto 2026, passata. I campi costo della pagina sono contraddittori: nessun prezzo dedotto per visitatori o espositori. Partecipazione commerciale da verificare con l’organizzatore."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-17",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.bosa.or.it/evento/attopa-a-camasinu/"
+        }
+      ],
+      "venue": "Corso Vittorio Emanuele II",
+      "id": "sardegna-bosa-attopa-a-camasinu"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Bosa",
+      "name": "Primavera nel Cuore della Sardegna",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.bosa.or.it/documento_pubblico/primavera-nel-cuore/",
+        "label": "comune.bosa.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso nel centro storico con produzioni tipiche, dimostrazioni di mestieri, degustazioni e spazi per esposizione, vendita e somministrazione.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Avviso comunale 2026 per artigiani, produttori, hobbisti coerenti con la tradizione sarda, alimentari e somministrazione. Adesioni entro il 10 maggio 2026, termine scaduto; selezione per coerenza e qualità. Date 23–24 maggio anche nei documenti collegati. Non prova spazi attualmente disponibili; costi da verificare nel disciplinare."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-23",
+          "end": "2026-05-24",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.bosa.or.it/documento_pubblico/primavera-nel-cuore/"
+        }
+      ],
+      "id": "sardegna-bosa-primavera-nel-cuore-della-sardegna"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Cabras",
+      "name": "Festival della Bottarga",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cabras.or.it/it/news/138989/festival-della-bottarga-2026",
+        "label": "comune.cabras.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Tre giorni attorno alla bottarga del Sinis, fra degustazioni, cucina, produttori, laboratori e incontri culturali.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Edizione comunale documentata 18–20 settembre 2026, passata. Le iniziative gastronomiche e gli incontri con produttori non attestano un mercato aperto a tutti: verificare gli avvisi specifici per ristoratori ed espositori."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-18",
+          "end": "2026-09-20",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.cabras.or.it/it/news/138989/festival-della-bottarga-2026"
+        }
+      ],
+      "id": "sardegna-cabras-festival-della-bottarga"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Flussio",
+      "name": "Sagra de Su Binu Nou",
+      "months": "12",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/flussio",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione del vino nuovo nel periodo della festa di Santa Lucia, a metà dicembre.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-flussio-sagra-de-su-binu-nou"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gonnoscodina",
+      "name": "Sagra de Sa Fregua",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.gonnoscodina.oristano.it/Novita/Comunicati/Chiusura-strade-per-la-manifestazione-Sagra-de-Sa-Fregua-domenica-11-ottobre-2026",
+        "label": "comune.gonnoscodina.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Manifestazione dedicata alla fregua nelle vie del centro storico, documentata dall’ordinanza comunale sulla viabilità.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Sagra dell’11 ottobre 2026. Chiusure del 10 e 12 ottobre limitate all’allestimento in via Scuole Elementari: non sono ulteriori giorni di fiera. L’ordinanza non contiene un bando commerciale né quote per gli espositori."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.gonnoscodina.oristano.it/Novita/Comunicati/Chiusura-strade-per-la-manifestazione-Sagra-de-Sa-Fregua-domenica-11-ottobre-2026"
+        }
+      ],
+      "id": "sardegna-gonnoscodina-sagra-de-sa-fregua"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Gonnostramatza",
+      "name": "Arti e Mestieri e Sagra de Su Gatou",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.gonnostramatza.oristano.it/it/aree-tematiche/turismo-ed-eventi/download/4078_4dd6ef212f8ef553e5f73de96c3e6b78",
+        "label": "comune.gonnostramatza.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Manifestazione del primo maggio che affianca mestieri tradizionali e dolce di mandorle nelle vie e piazze del paese.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Ordinanza comunale del 30 aprile 2026: manifestazione del 1° maggio dalle 10 alle 22. Le chiusure stradali non costituiscono assegnazione di posteggi. Requisiti, disponibilità e quote da verificare con il Comune."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.gonnostramatza.oristano.it/it/aree-tematiche/turismo-ed-eventi/download/4078_4dd6ef212f8ef553e5f73de96c3e6b78"
+        }
+      ],
+      "id": "sardegna-gonnostramatza-arti-e-mestieri-e-sagra-de-su-gatou"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Laconi",
+      "name": "Mostra Mercato del Cavallo",
+      "months": "6",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.comune.laconi.or.it/Dettaglionews?IDNews=400421",
+        "label": "comune.laconi.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna e mercato del cavallo nella località Su Dominariu, Santa Sofia.",
+      "sectors": "Animali",
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026 per occupazione del suolo: domanda dallo sportello online entro il 21 giugno, termine scaduto. Bollo sulla domanda e ulteriore bollo in caso di accoglimento; eventuale canone e servizi da verificare. Nessuna assegnazione o disponibilità attuale attestata."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-27",
+          "end": "2026-06-28",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.laconi.or.it/Dettaglionews?IDNews=400421"
+        }
+      ],
+      "venue": "Su Dominariu, Santa Sofia",
+      "id": "sardegna-laconi-mostra-mercato-del-cavallo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Laconi",
+      "name": "Sagra del Tartufo",
+      "months": "6,7",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.laconi.or.it/Guidaalpaese?IDCat=9353&IDPagina=61145",
+        "label": "comune.laconi.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna del tartufo segnalata dal Comune tra gli appuntamenti gastronomici di fine giugno e luglio.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-laconi-sagra-del-tartufo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Magomadas",
+      "name": "Sagra della Malvasia",
+      "months": "5,8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/magomadas",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazioni della malvasia in concomitanza con le celebrazioni di Nostra Signora del Mare, a maggio e agosto.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-magomadas-sagra-della-malvasia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Marrubiu",
+      "name": "Sagra del Raviolo Marrubiese",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.marrubiu.or.it/it/eventi/sagra-del-raviolo-marrubiese",
+        "label": "comune.marrubiu.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Su Cruguxioni de Arrascottu: appuntamento gastronomico dedicato al raviolo marrubiese in piazza Amsicora.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Edizione storica 22–23 luglio 2023: l’aggiornamento della pagina nel 2024 non cambia l’anno dell’evento. I ticket da 15 e 8 euro riguardano il pubblico, non il banco. Nessuna conferma 2026 o quota espositore dedotta."
+      },
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-07-22",
+          "end": "2023-07-23",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.marrubiu.or.it/it/eventi/sagra-del-raviolo-marrubiese"
+        }
+      ],
+      "id": "sardegna-marrubiu-sagra-del-raviolo-marrubiese"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Masullas",
+      "name": "Sagra del Melograno",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/masullas",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "All’inizio di novembre il melograno viene valorizzato in marmellate, liquori e piatti della cucina locale.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-masullas-sagra-del-melograno"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Masullas",
+      "name": "Sagra de Su Caboniscu",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.unionecomunipartemontis.it/it/eventi/xii-sagra-su-caboniscu",
+        "label": "unionecomunipartemontis.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mostra mercato di produzioni agroalimentari della Marmilla e degustazione del piatto tradizionale di gallina con pane fritto all’uovo.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Programma storico della dodicesima edizione, 2 giugno 2017, con mostra mercato dalle 16. L’anno è documentato nella locandina collegata e nel programma. Non è conferma di una nuova edizione né di disponibilità per esterni."
+      },
+      "editions": [
+        {
+          "year": 2017,
+          "start": "2017-06-02",
+          "end": "2017-06-02",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.unionecomunipartemontis.it/it/eventi/xii-sagra-su-caboniscu"
+        }
+      ],
+      "id": "sardegna-masullas-sagra-de-su-caboniscu"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Milis",
+      "name": "Rassegna dei Vini Novelli della Sardegna",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/milis",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna enologica di novembre accompagnata da iniziative gastronomiche e culturali. La tradizione del vino novello è segnalata dal portale regionale.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-milis-rassegna-dei-vini-novelli-della-sardegna"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Milis",
+      "name": "Sagra degli Agrumi",
+      "months": "2",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/milis",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento di febbraio dedicato agli agrumi, fra le produzioni caratteristiche del territorio di Milis.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-milis-sagra-degli-agrumi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Milis",
+      "name": "Sagra dei Ceci",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/milis",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione dei ceci nel periodo di San Giuseppe, a metà marzo, secondo la tradizione locale.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-milis-sagra-dei-ceci"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Mogorella",
+      "name": "Sagra della Pecora",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/mogorella",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione della pecora accompagnata dal vino locale durante le celebrazioni di San Lorenzo di maggio.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-mogorella-sagra-della-pecora"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Montresta",
+      "name": "Sagra de Sos Pipiriolos",
+      "months": "7",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.montresta.or.it/eventi/3316693/sagra-de-sos-pipiriolos",
+        "label": "comune.montresta.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Pasta fresca tradizionale con sugo di carne, pane locale, seadas e prodotti da acquistare nell’area dedicata.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Edizione storica del 27 luglio 2024: la revisione della pagina nel marzo 2025 non cambia la data dell’evento. I 15 euro sono il menù, non la quota banco. L’area di vendita interna non prova ammissione libera di operatori esterni."
+      },
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-07-27",
+          "end": "2024-07-27",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.montresta.or.it/eventi/3316693/sagra-de-sos-pipiriolos"
+        }
+      ],
+      "id": "sardegna-montresta-sagra-de-sos-pipiriolos"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Montresta",
+      "name": "Sagra della Pecora",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/montresta",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Pecora e pane bistoccu nel periodo delle celebrazioni del Sacro Cuore, a metà agosto nella località Su Casteddu.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-montresta-sagra-della-pecora"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Morgongiori",
+      "name": "Sagra delle Lorighittas",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/morgongiori",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "La pasta intrecciata ad anello di Morgongiori viene preparata e proposta in degustazione durante la sagra estiva.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-morgongiori-sagra-delle-lorighittas"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Narbolia",
+      "name": "Sagra della Zippola",
+      "months": "2,3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/narbolia",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Sagra del dolce fritto legata al Carnevale di Narbolia.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Il portale regionale collega la sagra al Carnevale. Febbraio–marzo rappresentano il periodo stagionale di ricerca, non date confermate o durata continuativa. Vendita esterna e tariffe da verificare."
+      },
+      "id": "sardegna-narbolia-sagra-della-zippola"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Neoneli",
+      "name": "Wine, Fregula e Cassola",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.neoneli.or.it/vivere-il-comune/eventi/wine-fregula-e-cassola/",
+        "label": "comune.neoneli.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso dedicato a vino, fregula e cassola, con valorizzazione delle produzioni e della cultura gastronomica della comunità.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 23–25 ottobre 2026, edizione passata. La manifestazione coinvolge la comunità e gli operatori locali; non prova ammissione automatica di venditori esterni. Requisiti, domanda e costi da verificare."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-23",
+          "end": "2026-10-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.neoneli.or.it/vivere-il-comune/eventi/wine-fregula-e-cassola/"
+        }
+      ],
+      "id": "sardegna-neoneli-wine-fregula-e-cassola"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Norbello",
+      "name": "Sagra della Vendemmia Antica",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/norbello",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rievocazione della vendemmia tradizionale nel calendario delle iniziative di settembre del paese.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-norbello-sagra-della-vendemmia-antica"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ollastra",
+      "name": "Fiera di San Marco",
+      "months": "4",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.ollastra.or.it/eventi/2890537/fiera-festa-san-marco",
+        "label": "comune.ollastra.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna zootecnica e mercato per valorizzare produzioni agropastorali e artigianali, nel periodo della festa di San Marco.",
+      "sectors": "Animali, prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Il calendario comunale copre l’intero programma 19–26 aprile 2026, comprendente iniziative diverse: non attesta otto giorni continuativi di mercato. Date dei singoli banchi, assegnazioni e tariffe devono essere verificate nel programma e negli avvisi dedicati; edizione passata."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-26",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.ollastra.or.it/eventi/2890537/fiera-festa-san-marco"
+        }
+      ],
+      "id": "sardegna-ollastra-fiera-di-san-marco"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oristano",
+      "name": "Sartiglia - Commercio Ambulante",
+      "months": "2",
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oristano.it/it/novita/notizia/Sartiglia-Entro-il-15-gennaio-2026-le-domande-per-il-commercio-ambulante/",
+        "label": "comune.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Posteggi commerciali collegati alla Sartiglia per alimentari, non alimentari, artigianato, creatori, hobbisti e collezionisti.",
+      "sectors": "Prodotti alimentari, non alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Avviso comunale per graduatoria dei posteggi del 15 e 17 febbraio 2026: due giornate distinte. Domande al Settore Polizia Locale con modulo 16 bis entro il 15 gennaio 2026, termine scaduto. Nessuna disponibilità attuale dedotta; quote non quantificate nella notizia."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Sartiglia-Entro-il-15-gennaio-2026-le-domande-per-il-commercio-ambulante/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-17",
+          "end": "2026-02-17",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Sartiglia-Entro-il-15-gennaio-2026-le-domande-per-il-commercio-ambulante/"
+        }
+      ],
+      "id": "sardegna-oristano-sartiglia-commercio-ambulante"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oristano",
+      "name": "Mercatino Natalizio",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/",
+        "label": "comune.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mercatino di Natale con operatori ambulanti dei settori alimentare e non alimentare in piazza Manno.",
+      "sectors": "Prodotti alimentari e non alimentari",
+      "participation": {
+        "type": "check",
+        "note": "Avviso storico 2025: domande entro il 25 novembre 2025 al protocollo comunale o via PEC. Non conferma l’edizione 2026 né disponibilità attuale. Tariffa banco non indicata nella notizia."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-01",
+          "end": "2025-12-24",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/"
+        }
+      ],
+      "venue": "Piazza Manno",
+      "id": "sardegna-oristano-mercatino-natalizio"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oristano",
+      "name": "Accensione dell’Albero di Natale - Banchi",
+      "months": "11",
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/",
+        "label": "comune.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Spazi per pasticceria, dolciumi, torroni e frutta secca durante la serata dell’accensione dell’albero in piazza Eleonora.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Avviso storico per la sola serata del 29 novembre 2025. Domande di occupazione del suolo al Comando di Polizia Locale entro il 24 novembre 2025, termine scaduto. Non esteso al mercatino di piazza Manno; costi non quantificati."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-29",
+          "end": "2025-11-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.oristano.it/it/novita/notizia/Natale-Presentazione-delle-istanze-di-partecipazione-alle-iniziative-commerciali-di-novembre-e-dicembre/"
+        }
+      ],
+      "venue": "Piazza Eleonora",
+      "id": "sardegna-oristano-accensione-dell-albero-di-natale-banchi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Oristano",
+      "name": "MOSTA - Mostacciolo e Vernaccia",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.oristanoinfo.it/eventi/mosta-sagra-del-mostacciolo-e-della-vernaccia/?occurrence=2026-10-10&pskip=8360",
+        "label": "oristanoinfo.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Due giorni dedicati al mostacciolo e alla vernaccia, con degustazioni, cantine, street food, artigiani ed espositori nel centro storico.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Calendario Oristano Turismo 10–11 ottobre 2026. Il villaggio con artigiani ed espositori è indicato domenica 11; lo spettacolo del sabato ha biglietteria separata. Non dedotti due giorni di apertura di ogni banco né quote espositore dai biglietti."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.oristanoinfo.it/eventi/mosta-sagra-del-mostacciolo-e-della-vernaccia/?occurrence=2026-10-10&pskip=8360"
+        }
+      ],
+      "id": "sardegna-oristano-mosta-mostacciolo-e-vernaccia"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Samugheo",
+      "name": "Sagra del Pane",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/samugheo",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna di ottobre dedicata alla lavorazione del pane e alla tradizione gastronomica di Samugheo.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-samugheo-sagra-del-pane"
+    },
+    {
+      "region": "Sardegna",
+      "city": "San Vero Milis",
+      "name": "Rassegna dei Vini Novelli",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/san-vero-milis",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna del vino nuovo nel calendario autunnale di San Vero Milis, paese legato alla produzione della vernaccia.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-san-vero-milis-rassegna-dei-vini-novelli"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Santa Giusta",
+      "name": "Sagra de Is Malloreddus a Sa Campidanesa",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione dei malloreddus nella tradizione dei festeggiamenti per Santa Severa, a fine settembre.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-santa-giusta-sagra-de-is-malloreddus-a-sa-campidanesa"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Santa Giusta",
+      "name": "Sagra della Pecora",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/santa-giusta",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento gastronomico associato alla festa di San Giovanni Battista, a fine giugno.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-santa-giusta-sagra-della-pecora"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Santu Lussurgiu",
+      "name": "Cavallinfiera",
+      "months": "6",
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/santu-lussurgiu",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Fiera legata al cavallo e alla tradizione artigianale delle attrezzature equestri, segnalata a inizio giugno dal portale regionale.",
+      "sectors": "Animali, artigianato e attrezzature per cavalli",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-santu-lussurgiu-cavallinfiera"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Seneghe",
+      "name": "Prentzas Apertas",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.seneghe.or.it/wp-content/uploads/2025/10/DISCIPLINARE.pdf",
+        "label": "comune.seneghe.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso dell’olio fra frantoi, produttori, botteghe temporanee e produzioni gastronomiche e artigianali del centro storico.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Disciplinare dell’edizione 2025, nonostante il progetto finanziatore sia denominato “Seneghe 2026”. Domande entro le 12 del 13 novembre 2025, termine scaduto. Area pubblica 4×4 metri con quota; spazi privati gratuiti previa adesione. Vietati i gazebo pubblici; somministrazione con pratica SUAPE e documentazione richiesta."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-22",
+          "end": "2025-11-23",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.seneghe.or.it/wp-content/uploads/2025/10/DISCIPLINARE.pdf"
+        }
+      ],
+      "id": "sardegna-seneghe-prentzas-apertas"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Senis",
+      "name": "Sagra della Lumaca",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.galmarmilla.it/il-territorio/i-comuni-del-gal/901-senis",
+        "label": "galmarmilla.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione delle lumache preparate secondo le ricette del paese durante l’appuntamento estivo di agosto.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-senis-sagra-della-lumaca"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Siamaggiore",
+      "name": "Festa del Carciofo",
+      "months": "3",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.siamaggiore.or.it/Dettaglionews?IDNews=382315",
+        "label": "comune.siamaggiore.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna del carciofo con confronto sulla filiera, degustazioni ed esposizioni nel centro abitato.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Avviso comunale: 14–15 marzo 2026; domanda di suolo pubblico entro il 27 febbraio 2026, termine scaduto, a mano, email o PEC. Istanza in bollo; dopo l’accoglimento il pagamento CUP è condizione per l’autorizzazione. Non è una concessione attuale di posteggio."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-15",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.siamaggiore.or.it/Dettaglionews?IDNews=382315"
+        }
+      ],
+      "id": "sardegna-siamaggiore-festa-del-carciofo"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Siamanna",
+      "name": "Sagra dei Ravioli e dei Prodotti Tipici",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siamanna",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Ravioli secondo le ricette delle massaie e degustazioni dei prodotti locali nel periodo della festa patronale di agosto.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-siamanna-sagra-dei-ravioli-e-dei-prodotti-tipici"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Simaxis",
+      "name": "Sagra del Riso",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.simaxis.or.it/eventi/3069041/xxx-edizione-sagra-riso",
+        "label": "comune.simaxis.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna del riso oristanese con degustazioni, incontri sulla filiera e iniziative nel paese.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Calendario storico 12–13 ottobre 2024. L’avviso comunale del 2026 documenta il solo convegno del 18 ottobre, non l’intero calendario commerciale: non aggiunto come edizione completa della sagra. Gratuità del pubblico e degustazioni non definiscono quote banco."
+      },
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-10-12",
+          "end": "2024-10-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.simaxis.or.it/eventi/3069041/xxx-edizione-sagra-riso"
+        }
+      ],
+      "id": "sardegna-simaxis-sagra-del-riso"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sini",
+      "name": "Sagra de Su Pani Saba",
+      "months": "4",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.sini.oristano.it/portals/2113/SiscomArchivio/6/Avviso%202026_001.pdf",
+        "label": "comune.sini.oristano.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Percorso nel centro storico e nei cortili dedicato al dolce con sapa, con laboratori, produzioni agroalimentari e artigianato.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Avviso 2026 per operatori agroalimentari, artigiani e hobbisti secondo i criteri comunali. Domanda entro il 14 aprile 2026, termine scaduto. Previsti bollo e canone di occupazione, salvo esenzioni; importi non quantificati nel documento. Non significa partecipazione gratuita."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.sini.oristano.it/portals/2113/SiscomArchivio/6/Avviso%202026_001.pdf"
+        }
+      ],
+      "id": "sardegna-sini-sagra-de-su-pani-saba"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Siris",
+      "name": "Sagra delle Mele Cotogne",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/siris",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Prodotti autunnali e preparazioni locali attorno alle mele cotogne, frutto caratteristico del territorio di Siris.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-siris-sagra-delle-mele-cotogne"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Soddì",
+      "name": "Sagra de Su Cazau",
+      "months": "4,5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/soddi",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento della tradizione locale segnalato fra aprile e maggio nel calendario del piccolo centro del Barigadu.",
+      "sectors": "",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-soddi-sagra-de-su-cazau"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Sorradile",
+      "name": "Sagra dei Dolci di Mandorle e Magasinos Apertos",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/sorradile",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Dolci a base di mandorle e apertura dei magasinos nel periodo delle celebrazioni di metà maggio.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-sorradile-sagra-dei-dolci-di-mandorle-e-magasinos-apertos"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tramatza",
+      "name": "Sagra della Cipolla",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.tramatza.or.it/index.php/tzente/evento/4",
+        "label": "comune.tramatza.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione della cipolla tramatzese in diverse preparazioni, con serata musicale al campo sportivo.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la sagra ma il calendario riporta un ampio intervallo 1–10 agosto 2025, non univoco per la singola serata. Conservato soltanto il mese, coerente con il portale regionale. Non è un mercato di dieci giorni; banchi e quote da verificare."
+      },
+      "id": "sardegna-tramatza-sagra-della-cipolla"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tramatza",
+      "name": "Festa del Pane",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento di maggio dedicato al pane nella tradizione agricola di Tramatza.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-tramatza-festa-del-pane"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tramatza",
+      "name": "Rassegna del Vino Novello",
+      "months": "11",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/tramatza",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Rassegna di novembre legata alla produzione vinicola e alla tradizione agricola del paese.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-tramatza-rassegna-del-vino-novello"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Tresnuraghes",
+      "name": "Mercatini di Natale",
+      "months": "12",
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.tresnuraghes.or.it/index.php/tzente/articoli/250",
+        "label": "comune.tresnuraghes.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Esposizione di creazioni nella piazza Giovanni XXIII durante la serata natalizia.",
+      "sectors": "Artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Avviso storico 2025: inizio alle 16 del 20 dicembre, adesioni entro il 10 dicembre a mano, email o PEC con modulo comunale. Nessuna conferma 2026 o prezzo banco pubblicato nella notizia."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-20",
+          "end": "2025-12-20",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.tresnuraghes.or.it/index.php/tzente/articoli/250"
+        }
+      ],
+      "venue": "Piazza Giovanni XXIII",
+      "id": "sardegna-tresnuraghes-mercatini-di-natale"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Ulà Tirso",
+      "name": "Sagra de Sos Cannisones",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/ula-tirso",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Appuntamento gastronomico di agosto dedicato ai cannisones, la pasta caratteristica del paese.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-ula-tirso-sagra-de-sos-cannisones"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Usellus",
+      "name": "Sagra della Pecora",
+      "months": "5",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.usellus.or.it/Guidaalpaese?IDCat=6481&IDPagina=41086",
+        "label": "comune.usellus.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione di pecora bollita e formaggio nel periodo delle celebrazioni di Sant’Isidoro, a metà maggio.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-usellus-sagra-della-pecora"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Villaurbana",
+      "name": "Sagra de Su Pani Fattu in Domu",
+      "months": "10",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/villaurbana",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mostra mercato del pane fatto in casa, con laboratori del gusto e artigianato, compresi i cestini locali.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-villaurbana-sagra-de-su-pani-fattu-in-domu"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Zeddiani",
+      "name": "Sagra del Pomodoro",
+      "months": "8",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/zeddiani",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "A metà agosto il pomodoro coltivato nel territorio viene valorizzato attraverso piatti e degustazioni locali.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-zeddiani-sagra-del-pomodoro"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Zerfaliu",
+      "name": "Sagra degli Agrumi",
+      "months": "2",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.zerfaliu.or.it/notizie/3265185/sagra-agrumi-2024",
+        "label": "comune.zerfaliu.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Manifestazione dedicata agli agrumi con avviso comunale per la partecipazione degli espositori.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "Il percorso web contiene “2024”, ma titolo e testo documentano 22–23 febbraio 2025. Domande per gli espositori entro il 14 febbraio 2025, termine scaduto. Il mese marzo della pagina generale dell’Unione non prevale sull’avviso specifico. Nessuna conferma 2026."
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-02-22",
+          "end": "2025-02-23",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.zerfaliu.or.it/notizie/3265185/sagra-agrumi-2024"
+        }
+      ],
+      "id": "sardegna-zerfaliu-sagra-degli-agrumi"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Zerfaliu",
+      "name": "Sagra della Pecora",
+      "months": "6",
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sardegnaturismo.it/it/esplora/zerfaliu",
+        "label": "SardegnaTurismo, Regione Sardegna",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Degustazione della pecora bollita e dei malloreddus in occasione della festa di San Giovanni, a fine giugno.",
+      "sectors": "Prodotti alimentari e bevande",
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive il periodo abituale, senza confermare una specifica edizione. La sagra e il suo ristoro non attestano ammissione di venditori esterni: verificare avviso, settori, domanda e costi con il Comune o l’organizzatore."
+      },
+      "id": "sardegna-zerfaliu-sagra-della-pecora"
+    },
+    {
+      "region": "Sardegna",
+      "city": "Baressa",
+      "name": "Sagra della Mandorla",
+      "months": "9",
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.baressa.or.it/portals/2147/SiscomArchivio/6/Avviso%20partecipazione%20espositori_signed.pdf",
+        "label": "comune.baressa.or.it",
+        "checkedAt": "2026-11-06"
+      },
+      "summary": "Mostra mercato di produzioni agroalimentari, mandorle e artigianato con botteghe dei mestieri nelle vie del borgo.",
+      "sectors": "Prodotti alimentari e artigianato",
+      "participation": {
+        "type": "check",
+        "note": "Il programma generale apre l’11 settembre 2026; l’avviso per gli spazi e la mostra mercato riguardano soltanto il 12–13. Operatori locali agroalimentari e artigianali e hobbisti secondo i criteri comunali; domande entro il 28 agosto 2026, scaduto, con titolo, documento e bollo. Non attesta posti oggi disponibili."
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.baressa.or.it/portals/2147/SiscomArchivio/6/Avviso%20partecipazione%20espositori_signed.pdf"
+        }
+      ],
+      "id": "sardegna-baressa-sagra-della-mandorla"
+    }
+  ]
+}

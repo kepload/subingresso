@@ -33,6 +33,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Oristano — 6 novembre 2026](fiere-dossier/oristano-20261106.md): 64 nuove schede in 45 comuni, ricognizione degli 87 comuni e quattro note economiche; verifica di pubblicazione in corso.
+
 - [Ingressi Google nel calendario — 6 novembre 2026](fiere-dossier/123-ingressi-google-calendario-20261106.md): scheda già aperta, ritorno alla ricerca locale, fonti pubbliche e URL indicizzati conservati.
 
 - [Caltanissetta — 6 novembre 2026](fiere-dossier/caltanissetta-20261106.md): +16 schede in 11 comuni e una nota economica; ricognizione dei 22 comuni con limiti, pubblicata e verificata online.
