@@ -41474,5 +41474,876 @@
       "note": "Il decreto di liquidazione riguarda la quinta edizione svoltasi il 10–11 agosto 2025. La pubblicazione regionale nel 2026 non è conferma di un’edizione 2026. Partecipazione commerciale e costi da verificare."
     },
     "id": "sicilia-serradifalco-sagra-dei-grani-antichi-e-della-pizza-tradizionale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Agrigento",
+    "name": "Mercatini di Natale",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2025/10/Avviso-Natale-2025_signed_signed.pdf",
+      "label": "Comune di Agrigento, avviso 2025 conservato su Intradata",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Casette natalizie nelle aree individuate dall’avviso comunale 2025.",
+    "sectors": "Artigianato, opere dell’ingegno e prodotti alimentari natalizi",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2025 recuperato nella copia Intradata del sito comunale; URL comunale attuale non recuperabile. Domande scadute il 16 novembre 2025. Nessun calendario 2026 dedotto; giorni di apertura non indicati nel bando."
+    },
+    "id": "sicilia-agrigento-mercatini-di-natale",
+    "editions": [
+      {
+        "year": 2025,
+        "label": "Natale 2025 — giorni di apertura non specificati nell’avviso",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2025/10/Avviso-Natale-2025_signed_signed.pdf",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Agrigento",
+    "name": "Fiera del Mandorlo in Fiore",
+    "months": "3",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-FIERA-MANDORLO-IN-FIORE-2026.pdf",
+      "label": "Comune di Agrigento, bando 2026 conservato su Intradata",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatini artigianali e alimentari associati alla Sagra del Mandorlo in Fiore.",
+    "sectors": "Artigianato, hobbisti, dolciumi, prodotti tipici e street food",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2026 nella copia Intradata del Comune; date 7–15 marzo anche nel programma comunale corrente. Domande scadute il 6 febbraio 2026. Casette richieste salvo eccezioni per dolciumi; abbigliamento escluso."
+    },
+    "id": "sicilia-agrigento-fiera-del-mandorlo-in-fiore",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-07",
+        "end": "2026-03-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-FIERA-MANDORLO-IN-FIORE-2026.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alessandria della Rocca",
+    "name": "Sagra della froscia e della ’ncannellata",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.alessandriadellarocca.ag.it/novita/avvisi/novita_47.html",
+      "label": "Comune di Alessandria della Rocca",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso enogastronomico dedicato alle specialità locali, con invito comunale alle aziende.",
+    "sectors": "Prodotti tipici, froscia e dolci tradizionali",
+    "participation": {
+      "type": "check",
+      "note": "Edizione storica 2025, 9–11 maggio. L’avviso invita aziende e attività commerciali alla riunione preparatoria del 14 aprile; non è un bando corrente per posteggi. Seconda edizione rintracciata negli atti, senza nuove date attribuite."
+    },
+    "id": "sicilia-alessandria-della-rocca-sagra-della-froscia-e-della-ncannellata",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-05-09",
+        "end": "2025-05-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.alessandriadellarocca.ag.it/novita/avvisi/novita_47.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bivona",
+    "name": "Sagra della Pescabivona IGP",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.bivona.ag.it/novita/avvisi/novita_147.html",
+      "label": "Comune di Bivona",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Villaggio della Pesca con vendita e degustazioni, nel centro di Bivona.",
+    "sectors": "Pesca di Bivona IGP, prodotti agroalimentari e vino",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale della 39ª edizione, 8–9 agosto 2026. Vendita della pesca esplicita. Degustazioni gratuite per il pubblico non equivalgono a gratuità dello stand; ammissione e quota espositore non verificate."
+    },
+    "id": "sicilia-bivona-sagra-della-pescabivona-igp",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bivona.ag.it/novita/avvisi/novita_147.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Campobello di Licata",
+    "name": "Sagra di lu ’Mpurnatu e la ’Mpanata",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.campobellodilicata.ag.it/it/eventi/sagra-di-lu-mpurnatu-e-di-la-mpanata-viaggio-nei-sapori-di-un-tempo",
+      "label": "Comune di Campobello di Licata",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand gastronomici e artigianali in Piazza XX Settembre.",
+    "sectors": "Prodotti tipici, street food e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale della XIII edizione, 8–10 maggio 2026. Ingresso gratuito riferito ai visitatori; nessuna disponibilità o quota banco pubblicata nella pagina consultata."
+    },
+    "id": "sicilia-campobello-di-licata-sagra-di-lu-mpurnatu-e-la-mpanata",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-08",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.campobellodilicata.ag.it/it/eventi/sagra-di-lu-mpurnatu-e-di-la-mpanata-viaggio-nei-sapori-di-un-tempo"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Canicattì",
+    "name": "Fiera del Rosario",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.canicatti.ag.it/it/eventi/fiera-del-rosario",
+      "label": "Comune di Canicattì",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Bancarelle e aree ristoro nella zona artigianale.",
+    "sectors": "Commercio ambulante, alimentare e non alimentare",
+    "participation": {
+      "type": "check",
+      "note": "Edizione storica comunale 18–20 ottobre 2025. Il campo luogo del template indica il Municipio ma la descrizione colloca la fiera nella zona artigianale. Nessun giorno 2026 dedotto; accesso gratuito del pubblico distinto dagli oneri dei fieristi."
+    },
+    "id": "sicilia-canicatti-fiera-del-rosario",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-18",
+        "end": "2025-10-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.canicatti.ag.it/it/eventi/fiera-del-rosario"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Casteltermini",
+    "name": "Sagra della cuccìa e Mercatino di Santa Lucia",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://prolococasteltermini.it/news/11a-sagra-della-cuccia-e-mercatino-di-santa-lucia-12-e-13-dicembre-2026/",
+      "label": "Pro Loco Chiuddia Casteltermini, pagina e bando 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatino natalizio tra Piazza Duomo, via Roma e Corso Umberto I.",
+    "sectors": "Artigianato, oggettistica e prodotti gastronomici natalizi",
+    "participation": {
+      "type": "check",
+      "note": "11ª edizione annunciata per il 12–13 dicembre 2026. Bando originale collegato dalla Pro Loco: adesioni entro 5 dicembre, senza garanzia di posto. Il bando indica apertura domenicale alle 9, mentre la pagina riporta le 10."
+    },
+    "id": "sicilia-casteltermini-sagra-della-cuccia-e-mercatino-di-santa-lucia",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-12",
+        "end": "2026-12-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://prolococasteltermini.it/news/11a-sagra-della-cuccia-e-mercatino-di-santa-lucia-12-e-13-dicembre-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Casteltermini",
+    "name": "Fiera e mercatino della Sagra del Tataratà",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.sagradeltatarata.it/come-godersi-la-sagra/",
+      "label": "Pro Loco Casteltermini, portale della Sagra del Tataratà",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercatino di via Roma e fiera del bestiame collegati alla Festa di Santa Croce.",
+    "sectors": "Bestiame e commercio ambulante",
+    "participation": {
+      "type": "check",
+      "note": "La guida della Pro Loco documenta mercatino e fiera domenicale; il sito ufficiale della Sagra annuncia 29–31 maggio 2026. Le date sono della festa complessiva; il bestiame è previsto la domenica mattina. Nessuna quota banco verificata."
+    },
+    "id": "sicilia-casteltermini-fiera-e-mercatino-della-sagra-del-tatarata",
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Festa 29–31 maggio 2026; fiera del bestiame la domenica mattina",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sagradeltatarata.it/come-godersi-la-sagra/",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castrofilippo",
+    "name": "Sagra della Cipolla Paglina",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.castrofilippo.ag.it/novita/avvisi/novita_87.html",
+      "label": "Comune di Castrofilippo",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione dedicata alla cipolla locale in viale Bonfiglio.",
+    "sectors": "Cipolla paglina e prodotti agroalimentari",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale per gli spettacoli della XXXII edizione, 7–10 agosto 2026. La selezione riguarda artisti e spettacoli, non l’assegnazione dei banchi: condizioni espositore da verificare separatamente."
+    },
+    "id": "sicilia-castrofilippo-sagra-della-cipolla-paglina",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.castrofilippo.ag.it/novita/avvisi/novita_87.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Cattolica Eraclea",
+    "name": "Fiera del Rosario",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.cattolicaeraclea.ag.it/novita/notizie/novita_83.html",
+      "label": "Comune di Cattolica Eraclea",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera con partecipazione di operatori mercatali, documentata dall’avviso comunale.",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 28 settembre 2026: esenzione dell’occupazione per domenica 11 e lunedì 12 ottobre. Conservate soltanto queste giornate documentate, senza aggiungere il sabato dai portali. Altri oneri e modalità di assegnazione non precisati."
+    },
+    "id": "sicilia-cattolica-eraclea-fiera-del-rosario",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-11",
+        "end": "2026-10-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cattolicaeraclea.ag.it/novita/notizie/novita_83.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Cianciana",
+    "name": "Festa di San Martino",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.cianciana.ag.it/evento/festa-di-san-martino-seconda-edizione/",
+      "label": "Comune di Cianciana, evento Pro Loco 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Degustazioni di vino novello e specialità locali nel Chiostro del Convento.",
+    "sectors": "Vino, pane cunzatu, formaggi e dolci tipici",
+    "participation": {
+      "type": "check",
+      "note": "Seconda edizione storica il 10 novembre 2024 dalla pagina comunale. Il Municipio compare come luogo del template, ma il testo indica il Chiostro. Nessun 2026 dedotto; pagina non documenta una procedura aperta per venditori esterni."
+    },
+    "id": "sicilia-cianciana-festa-di-san-martino",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-11-10",
+        "end": "2024-11-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.cianciana.ag.it/evento/festa-di-san-martino-seconda-edizione/"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Comitini",
+    "name": "Sagra del Cacciatore",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/system/files/2025-05/Decreto%20liquidazione%20Ass%20Pro%20Loco%20Terra%20dello%20Zolfo%20anno%202024.pdf",
+      "label": "Regione Siciliana, DRS 4042/2025 su evento 2024",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Evento di promozione agroalimentare organizzato dalla Pro Loco Terra dello Zolfo.",
+    "sectors": "Prodotti agricoli e agroalimentari",
+    "participation": {
+      "type": "check",
+      "note": "Quarta edizione storica svolta il 20–21 luglio 2024, attestata dalla liquidazione regionale 4042 del 15 maggio 2025. Il contributo pubblico liquidato all’organizzatore non è un prezzo espositore. Nessuna edizione 2026 dedotta."
+    },
+    "id": "sicilia-comitini-sagra-del-cacciatore",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-07-20",
+        "end": "2024-07-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/system/files/2025-05/Decreto%20liquidazione%20Ass%20Pro%20Loco%20Terra%20dello%20Zolfo%20anno%202024.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Favara",
+    "name": "Fiera dei Fiori",
+    "months": "10,11",
+    "category": "mercatino",
+    "source": {
+      "url": "https://favara.comune.digital/news/i/bab9bf822240faab988d5587de5828c2/da-domani-30-ottobre-e-fino-al-prossimo-1-novembre-dalle-7-alle-22-torna-piazza-della-pace-la-tradizionale-fiera-d",
+      "label": "Comune di Favara, comunicazione ufficiale del 29 ottobre 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Vendita floreale in Piazza della Pace per la commemorazione dei defunti.",
+    "sectors": "Fiori e piante",
+    "participation": {
+      "type": "check",
+      "note": "Comunicazione del Comune nell’app ufficiale, 29 ottobre 2026: dal 30 ottobre al 1 novembre, ore 7–22. Posteggi, quote e requisiti non precisati nel testo consultato."
+    },
+    "id": "sicilia-favara-fiera-dei-fiori",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://favara.comune.digital/news/i/bab9bf822240faab988d5587de5828c2/da-domani-30-ottobre-e-fino-al-prossimo-1-novembre-dalle-7-alle-22-torna-piazza-della-pace-la-tradizionale-fiera-d"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Joppolo Giancaxio",
+    "name": "Sagra del Melone Giallo",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.joppologiancaxio.ag.it/halley//ht/eg138/TMPI659419.pdf",
+      "label": "Comune di Joppolo Giancaxio",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Manifestazione estiva dedicata al melone giallo e alle preparazioni locali.",
+    "sectors": "Melone giallo e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Edizione storica 2–3 agosto 2025 dal PDF comunale di acquisto meloni, letto visivamente. L’avviso seleziona fornitori di frutta, non espositori; il prezzo di acquisto del melone non è una quota banco."
+    },
+    "id": "sicilia-joppolo-giancaxio-sagra-del-melone-giallo",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-02",
+        "end": "2025-08-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.joppologiancaxio.ag.it/halley//ht/eg138/TMPI659419.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Licata",
+    "name": "Fiera di Maggio",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.licata.ag.it/novita/fiera-di-maggio-2026/",
+      "label": "Comune di Licata",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale collegata al santo patrono Sant’Angelo.",
+    "sectors": "Alimentare e non alimentare",
+    "participation": {
+      "type": "check",
+      "note": "Avviso 2026 datato 23 ottobre 2025: domanda entro 30 dicembre 2025 tramite Impresainungiorno. Il PDF non indica i giorni di svolgimento; mantenuto soltanto maggio 2026. La quota di partecipazione è richiesta ma non quantificata."
+    },
+    "id": "sicilia-licata-fiera-di-maggio",
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Maggio 2026 — giorni di svolgimento non indicati nell’avviso",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.licata.ag.it/novita/fiera-di-maggio-2026/",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Licata",
+    "name": "Mercatini di Natale",
+    "months": "12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.licata.ag.it/wp-content/uploads/2026/07/Avviso-Pubblico-–-Mercatini-di-Natale-2025.pdf",
+      "label": "Comune di Licata",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Casette natalizie nelle aree comunali indicate dal bando di gestione.",
+    "sectors": "Dolciumi, prodotti tipici, giocattoli, libri, artigianato e collezionismo",
+    "participation": {
+      "type": "check",
+      "note": "Programma storico previsto dal 6 al 28 dicembre 2025. L’avviso sceglie l’organizzatore; suolo gratuito a quest’ultimo non significa stand gratuito ai singoli espositori. Nessuna conferma 2026 dedotta."
+    },
+    "id": "sicilia-licata-mercatini-di-natale",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-06",
+        "end": "2025-12-28",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.licata.ag.it/wp-content/uploads/2026/07/Avviso-Pubblico-–-Mercatini-di-Natale-2025.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Lucca Sicula",
+    "name": "Fiera del Crocifisso",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.luccasicula.ag.it/it/page/festa-del-crocifisso",
+      "label": "Comune di Lucca Sicula",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di bestiame, prodotti e utensili legati ad allevamento e lavorazioni locali.",
+    "sectors": "Bestiame, attrezzi agricoli e utensili",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale aggiornata nel 2023: festa indicata l’11–13 settembre con fiera collegata. Il testo usa “quest’anno” senza una data annuale di edizione affidabile: conservato soltanto settembre, senza date 2026."
+    },
+    "id": "sicilia-lucca-sicula-fiera-del-crocifisso"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Lucca Sicula",
+    "name": "Festa dell’Olio",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.luccasicula.ag.it/it/page/festa-olio",
+      "label": "Comune di Lucca Sicula",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand dedicati all’olio locale e ad altri prodotti tipici.",
+    "sectors": "Olio extravergine e prodotti agroalimentari",
+    "participation": {
+      "type": "check",
+      "note": "Il Comune descrive la ricorrenza solitamente a novembre; pagina aggiornata nel marzo 2023. Nessun giorno o anno corrente confermato, né condizioni economiche del singolo banco."
+    },
+    "id": "sicilia-lucca-sicula-festa-dell-olio"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Menfi",
+    "name": "Inycon — Villaggio delle Tipicità e Area Espositiva",
+    "months": "10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.menfi.ag.it/wp-content/uploads/2026/09/Avviso-per-partecipazione-villaggio-tipicita-e-area-Expo-aggionato.pdf",
+      "label": "Comune di Menfi",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Aree espositive agroalimentari e artigianali nel centro di Menfi.",
+    "sectors": "Prodotti agroalimentari, vino, artigianato, ceramica, libri, antiquariato e collezionismo",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale aggiornato della 28ª edizione: 2–4 ottobre 2026. Domande entro 16 settembre; selezione affidata all’organizzazione. Villaggio delle Tipicità e Area Espositiva hanno condizioni economiche distinte."
+    },
+    "id": "sicilia-menfi-inycon-villaggio-delle-tipicita-e-area-espositiva",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.menfi.ag.it/wp-content/uploads/2026/09/Avviso-per-partecipazione-villaggio-tipicita-e-area-Expo-aggionato.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Montevago",
+    "name": "Festa del Vino",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.montevago.ag.it/novita/avvisi/novita_260.html",
+      "label": "Comune di Montevago",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Spazi di esposizione e presentazione delle produzioni del territorio.",
+    "sectors": "Vino e produzioni territoriali",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale 2026 e originale allegato: 25–27 settembre, richieste entro 21 settembre ore 12. Occupazione gratuita, con oneri amministrativi distinti. Non confusa con una diversa edizione autunnale dedotta dai portali."
+    },
+    "id": "sicilia-montevago-festa-del-vino",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.montevago.ag.it/novita/avvisi/novita_260.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Naro",
+    "name": "Fiera di San Calogero",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitnaro.net/tradizioni.php",
+      "label": "Visit Naro, portale turistico locale — tradizioni",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera mercato lungo viale Umberto durante i festeggiamenti patronali.",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Il portale turistico locale descrive la fiera nell’ottavario della festa di giugno. Nessuna edizione annuale o costo corrente ricavati dalla pagina. Non confusa con la fiera omonima di Agrigento."
+    },
+    "id": "sicilia-naro-fiera-di-san-calogero"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Racalmuto",
+    "name": "Fiera Maria SS. del Monte",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://trasparenza.comune.racalmuto.ag.it/zf/index.php/trasparenza/index/visualizza-documento-generico/categoria/313/documento/1852",
+      "label": "Comune di Racalmuto",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera alimentare e non alimentare in via Garibaldi, viale Hamilton e vie adiacenti.",
+    "sectors": "Alimentare e non alimentare",
+    "participation": {
+      "type": "check",
+      "note": "Bando storico 2025: cadenza seconda domenica di luglio, 59 posteggi. Domanda tramite Impresainungiorno; concessione e requisiti previsti dal bando. Nessun giorno 2026 calcolato. Originale recuperato con limite di validazione del certificato TLS dichiarato nel dossier."
+    },
+    "id": "sicilia-racalmuto-fiera-maria-ss-del-monte",
+    "editions": [
+      {
+        "year": 2025,
+        "label": "Luglio 2025 — seconda domenica secondo il bando; nessun giorno corrente dedotto",
+        "dateType": "confirmed",
+        "sourceUrl": "https://trasparenza.comune.racalmuto.ag.it/zf/index.php/trasparenza/index/visualizza-documento-generico/categoria/313/documento/1852",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Raffadali",
+    "name": "Fastuca Fest",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.fastucafest.it/programma2026/",
+      "label": "Associazione Fastuca, programma ufficiale 2026",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Percorso del Gusto e area Expo del mercato del Pistacchio di Raffadali DOP.",
+    "sectors": "Pistacchio, prodotti agroalimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma dell’organizzatore: 17–20 settembre 2026. Area Expo in Piazza Progresso e percorso in via Nazionale. Prenotazioni e costi delle singole esperienze non sono tariffe espositore; nessuna quota banco verificata."
+    },
+    "id": "sicilia-raffadali-fastuca-fest",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-17",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.fastucafest.it/programma2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Raffadali",
+    "name": "Fiera del Rosario e Sagra del Maccu",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.raffadali.ag.it/f/cms_pagine_summernote/2024/11/34503_00_relazione_ppc_completa_di_schede.pdf",
+      "label": "Comune di Raffadali",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Mercato collegato alla festa del Rosario, con prodotti agricoli e allevamento.",
+    "sectors": "Agricoltura, allevamento e gastronomia del maccu",
+    "participation": {
+      "type": "check",
+      "note": "Il piano comunale di protezione civile, p. 45, descrive la ricorrenza nel primo weekend di ottobre. Non è un avviso annuale per banchi: nessuna data 2026, quota o disponibilità aggiunta."
+    },
+    "id": "sicilia-raffadali-fiera-del-rosario-e-sagra-del-maccu"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Ribera",
+    "name": "Fiera dei Morti",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.ribera.ag.it/wp-content/uploads/2025/07/2.-RFMS-2020-2025-signed.pdf",
+      "label": "Comune di Ribera",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera tradizionale dell’1 e 2 novembre ricordata nella relazione comunale di mandato.",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza storica, non conferma delle giornate 2026. Radio Studio 5 del 4 novembre 2026 riferisce riproposizione il 5–6 dicembre dopo il maltempo: informazione di stampa, atto comunale non recuperato; nessuna edizione 2026 aggiunta come confermata."
+    },
+    "id": "sicilia-ribera-fiera-dei-morti"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sambuca di Sicilia",
+    "name": "Aziende in Fiera",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://comune.sambucadisicilia.ag.it/wp-content/uploads/2026/09/Avviso-Aziende-in-Fiera-2026.pdf",
+      "label": "Comune di Sambuca di Sicilia",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Rassegna di produzioni agricole, agroalimentari ed enogastronomiche locali.",
+    "sectors": "Agricoltura, prodotti agroalimentari e gastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale originale letto visivamente: 19–21 settembre 2026, adesioni entro 16 settembre per produttori, operatori agroalimentari e pubblici esercizi del territorio. Nessun prezzo o posto disponibile dedotto."
+    },
+    "id": "sicilia-sambuca-di-sicilia-aziende-in-fiera",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.sambucadisicilia.ag.it/wp-content/uploads/2026/09/Avviso-Aziende-in-Fiera-2026.pdf"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Giovanni Gemini",
+    "name": "Fiera di Ottobre — Madonna della Provvidenza",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.sangiovannigemini.ag.it/novita/avvisi/novita_186.html",
+      "label": "Comune di San Giovanni Gemini",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Posteggi commerciali nelle vie e piazze individuate dal decreto sindacale.",
+    "sectors": "Alimentare e non alimentare, abbigliamento, calzature, utensili e attrezzi agricoli",
+    "participation": {
+      "type": "check",
+      "note": "Decreto sindacale 22 e ordinanza 45 dell’8 ottobre 2026: fiera 10–12 ottobre, 120 posteggi previsti. Priorità agli operatori con partecipazioni precedenti; non è prova di posti ancora liberi. Nessuna tariffa desunta."
+    },
+    "id": "sicilia-san-giovanni-gemini-fiera-di-ottobre-madonna-della-provvidenza",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sangiovannigemini.ag.it/novita/avvisi/novita_186.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Giovanni Gemini",
+    "name": "Fiera di Giugno — Gesù Nazareno",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://trasparenza.comune.sangiovannigemini.ag.it/sanggemini/zf/index.php/atti-amministrativi/legge-regionale-sicilia-11-2015/estratto-decreti/table-estratto-decreti-page/3",
+      "label": "Comune di San Giovanni Gemini",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale con aree e settori individuati dal decreto sindacale 13/2026.",
+    "sectors": "Commercio su aree pubbliche; settori specifici da verificare",
+    "participation": {
+      "type": "check",
+      "note": "L’estratto comunale del decreto 13 del 9 giugno 2026 attesta la fiera di giugno, senza pubblicare qui i giorni o l’allegato integrale. Non trasformata la data del decreto in data dell’evento; costi non verificati."
+    },
+    "id": "sicilia-san-giovanni-gemini-fiera-di-giugno-gesu-nazareno",
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Giugno 2026 — giorni non specificati nell’estratto comunale",
+        "dateType": "confirmed",
+        "sourceUrl": "https://trasparenza.comune.sangiovannigemini.ag.it/sanggemini/zf/index.php/atti-amministrativi/legge-regionale-sicilia-11-2015/estratto-decreti/table-estratto-decreti-page/3",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sant'Angelo Muxaro",
+    "name": "Sagra della Ricotta",
+    "months": "1",
+    "category": "sagra",
+    "source": {
+      "url": "https://livingagrigento.it/it_it/eventi/main/evento?id=1534_agrigento---visualizza-il-calendario-degli-eventi-in-provincia",
+      "label": "Living Agrigento, portale turistico provinciale — calendario tradizionale",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Festa pastorale con degustazioni di ricotta, formaggi e prodotti locali.",
+    "sectors": "Ricotta, formaggi, miele e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Calendario turistico provinciale: ricorrenza di gennaio. Le ordinanze 2026 sono indicizzate ma i vecchi URL restituiscono 404: non usate per attestare lettura integrale o per aggiungere una data annuale."
+    },
+    "id": "sicilia-sant-angelo-muxaro-sagra-della-ricotta"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Margherita di Belice",
+    "name": "Fiera di Settembre",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/fiera-di-settembre/",
+      "label": "Comune di Santa Margherita di Belice",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Esposizioni commerciali, agricole, artigianali e gastronomiche nel centro cittadino.",
+    "sectors": "Agricoltura, alimentare, artigianato e commercio",
+    "participation": {
+      "type": "check",
+      "note": "Il Comune indica la ricorrenza annuale del 3–5 settembre, senza una conferma di edizione 2026. La mostra della pecora è trattata nel contesto della stessa fiera, senza creare una seconda identità."
+    },
+    "id": "sicilia-santa-margherita-di-belice-fiera-di-settembre"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Margherita di Belice",
+    "name": "Fiera di Novembre — Fera di li Ficu",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/fiera-di-novembre/",
+      "label": "Comune di Santa Margherita di Belice",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera di prodotti autunnali, artigianato e merceria nel Quartiere San Giuseppe.",
+    "sectors": "Prodotti agroalimentari, artigianato e merceria",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale: prime due domeniche di novembre, senza anno di edizione. Nessuna data calcolata per il 2026; ingresso pubblico gratuito distinto dagli oneri degli espositori."
+    },
+    "id": "sicilia-santa-margherita-di-belice-fiera-di-novembre-fera-di-li-ficu"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Margherita di Belice",
+    "name": "Ficodindia Fest",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.santamargheritadibelice.ag.it/vivere-il-comune/eventi/ficodindia-fest/",
+      "label": "Comune di Santa Margherita di Belice",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand gastronomici e artigianali in Piazza Matteotti e vie limitrofe.",
+    "sectors": "Ficodindia, marmellate, dolci, liquori e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Il Comune indica il secondo weekend di ottobre senza anno di edizione. Nessuna data 2026 dedotta. Ticket di pranzo e cena riguardano il pubblico, non il prezzo degli stand."
+    },
+    "id": "sicilia-santa-margherita-di-belice-ficodindia-fest"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santo Stefano Quisquina",
+    "name": "Sagra del Formaggio e dei prodotti tipici quisquinesi",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.santostefanoquisquina.ag.it/novita/comunicati_stampa/novita_492.html",
+      "label": "Comune di Santo Stefano Quisquina",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Stand di formaggi, produzioni tipiche e artigianato nel centro storico.",
+    "sectors": "Formaggi, prodotti tipici e artigianato",
+    "participation": {
+      "type": "check",
+      "note": "Programma e moduli comunali della XXIV edizione, 30–31 maggio 2026. Modulo A per ditte con stand proprio e A1 per attività locali distinti. Documentazione sanitaria richiesta per produzione, vendita o somministrazione alimentare."
+    },
+    "id": "sicilia-santo-stefano-quisquina-sagra-del-formaggio-e-dei-prodotti-tipici-quisquinesi",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-30",
+        "end": "2026-05-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.santostefanoquisquina.ag.it/novita/comunicati_stampa/novita_492.html"
+      }
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sciacca",
+    "name": "Fiera di Ferragosto",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://servizi.comune.sciacca.ag.it/de/attachment.php?serialDocumento=04OROG020268A&p7m=1&mosdoc=0",
+      "label": "Comune di Sciacca",
+      "checkedAt": "2026-11-06"
+    },
+    "summary": "Fiera commerciale in viale della Vittoria, attestata dagli atti sui servizi dell’area.",
+    "sectors": "Commercio ambulante; categorie da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Determina 672/2026: servizi igienici per le giornate 12–17 agosto 2026. È la finestra del servizio, non prova dei giorni esatti di apertura dei banchi: mantenuto solo agosto 2026. Importi dell’appalto non sono quote banco."
+    },
+    "id": "sicilia-sciacca-fiera-di-ferragosto",
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Agosto 2026 — servizi della fiera documentati per il 12–17 agosto, aperture da verificare",
+        "dateType": "confirmed",
+        "sourceUrl": "https://servizi.comune.sciacca.ag.it/de/attachment.php?serialDocumento=04OROG020268A&p7m=1&mosdoc=0",
+        "periodOnly": true
+      }
+    ]
   }
 ]
