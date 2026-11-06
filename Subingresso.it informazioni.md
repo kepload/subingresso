@@ -105,6 +105,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 — filtri fiere:** pubblicato `e92df8f`; «Tipologia di articolo» spostata in «Altri filtri», principali solo Quando/Dove. Indicatore delle tipologie attive a sezione chiusa. SEO, ingressi e selezioni/URL/azzera verificati; Chromium1440/820/320 e WebKit390 locali/online passati. Catalogo invariato. Prove `.local/verifiche/fiere-tipologia-secondari/`.
+
+
 - **6 novembre 2026 - Potenza:** pubblicato `34d1bed`, Vercel Ready `dpl_FGiuw5uR51RQ5pAoyMxbx6nouUL9`; +83 schede e 2 note storiche, ricognizione 100/100. Catalogo live identico, 10.119 schede/471 note precedenti invariate; build/settori/SEO/SSR e browser locali/online passati; 10.202 ID recensioni sincronizzati e 83 letture API riuscite. [Fonti e limiti](data/fiere-dossier/potenza-20261106.md). Potenza ultima delle tre, 6.1 sol low, sessione fermata alla conclusione; nessuna altra provincia autorizzata o prosecuzione automatica.
 
 - **6 novembre 2026 - Campobasso:** pubblicato `e494dd3`, Vercel Ready `dpl_H7yYjcoixfLkZ6vcifqqc85xGNaQ`; +226 schede e 9 note, ricognizione 84/84. Catalogo live identico, 9.893 schede/462 note precedenti invariate, due build/settori/SEO e browser locali/online passati; 10.119 ID recensioni sincronizzati e 226 letture API riuscite. [Fonti e limiti](data/fiere-dossier/campobasso-20261106.md): 197 schede storiche 2021, 10 con edizioni 2026. Richiesta corrente: una sola provincia aggiuntiva, 6.1 sol low; Potenza ferma, nessuna prosecuzione automatica.
