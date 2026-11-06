@@ -140,3 +140,46 @@ button.fiere-reputation{text-decoration:none}
 .fiere-review-average { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .fiere-review-count { font-size: 12px; font-weight: 400; white-space: nowrap; color: var(--ad-muted, #52637a); }
 @media (max-width: 640px) { .fiere-card-reviews { min-height: 44px; } }
+
+/* Shared fair detail: the visitor can apply or return to the local calendar. */
+#fair-dialog { width: min(660px, calc(100% - 32px)); padding: 28px; border-radius: 16px; background: var(--ad-panel, #fff); color: var(--ad-ink, #0f172a); }
+#fair-dialog[open] { position: fixed; inset: 0; margin: auto; }
+#fair-dialog::backdrop { background: #0f172a70; backdrop-filter: none; }
+body:has(#fair-dialog:modal) { overflow: hidden; }
+#fair-dialog .fiere-dialog-top { position: sticky; top: -28px; z-index: 2; padding: 12px 0; margin: -12px 0 12px; background: var(--ad-panel, #fff); }
+#fair-dialog #close-detail { width: 44px; height: 44px; flex: 0 0 44px; background: var(--ad-raised, #f1f5f9); color: inherit; }
+#fair-dialog #detail-title { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.025em; line-height: 1.2; overflow-wrap: anywhere; }
+#fair-dialog #detail-location { margin-top: 8px; font-size: 16px; color: var(--ad-muted, #475569); }
+.fiere-detail-overview { margin: 24px 0; display: grid; gap: 18px; }
+.fiere-detail-overview span { display: block; font-size: 14px; font-weight: 600; color: var(--ad-muted, #475569); margin-bottom: 4px; }
+.fiere-detail-overview strong { display: block; font-size: 20px; font-weight: 700; line-height: 1.4; }
+.fiere-detail-overview p { font-size: 14px; line-height: 1.6; margin: 0; }
+.fiere-detail-overview strong + p { margin-top: 6px; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-primary { min-height: 48px; padding: 13px 18px; font-size: 16px; font-weight: 700; border-radius: 8px; background: var(--ad-control-primary, #102b52); color: #fff; text-decoration: none; }
+#fair-dialog .fiere-primary:hover { background: var(--ad-control-primary-hover, #21497e); }
+#fair-dialog .fiere-detail-apply-note { font-size: 13px; line-height: 1.6; color: var(--ad-muted, #475569); margin-top: 10px; }
+#fair-dialog .fiere-detail-explore { display: flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 12px; padding: 10px; border: 1px solid var(--ad-line, #cbd5e1); border-radius: 8px; color: var(--ad-link, #1d4ed8); font-size: 15px; font-weight: 700; text-align: center; }
+#fair-dialog .fiere-detail-explore:hover { background: var(--ad-hover, #edf3fa); }
+#fair-dialog .sf-fair-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+#fair-dialog .sf-fair-actions > a { padding: 12px 0; margin-left: auto; color: var(--ad-link, #1d4ed8); font-size: 14px; }
+#fair-dialog .fiere-detail-info { padding: 24px 0; border-bottom: 1px solid var(--ad-line, #e2e8f0); }
+#fair-dialog .fiere-detail-info h3 { font-size: 17px; font-weight: 700; }
+#fair-dialog .fiere-detail-info p, #fair-dialog .fiere-contacts p { font-size: 14px; line-height: 1.7; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-link, #fair-dialog .fiere-contacts a, #fair-dialog .fiere-edition a { font-size: 14px; color: var(--ad-link, #1d4ed8); }
+#fair-dialog .fiere-edition strong { font-size: 14px; }
+#fair-dialog .fiere-source-label { font-size: 13px; text-align: left; }
+.fiere-detail-more { border-bottom: 1px solid var(--ad-line, #e2e8f0); }
+.fiere-detail-more > summary { min-height: 48px; padding: 20px 0; font-size: 16px; font-weight: 700; cursor: pointer; }
+.fiere-detail-more > p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+#fair-dialog .fiere-detail-period { background: var(--ad-raised, #f1f5f9); }
+#fair-dialog .fiere-detail-period > span { font-size: 13px; text-transform: none; letter-spacing: 0; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-facts { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+#fair-dialog :is(a, button, summary):focus-visible { outline: 2px solid var(--ad-link, #1d4ed8); outline-offset: 3px; }
+@media (max-width: 640px) {
+    #fair-dialog { padding: 20px; width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+    #fair-dialog .fiere-dialog-top { top: -20px; }
+    #fair-dialog #detail-title { font-size: 24px; }
+    #fair-dialog .sf-fair-actions > a { margin-left: 0; }
+    #fair-dialog .fiere-detail-facts { grid-template-columns: 1fr; gap: 4px; }
+    #fair-dialog .fiere-detail-facts dd { margin-bottom: 12px; }
+}

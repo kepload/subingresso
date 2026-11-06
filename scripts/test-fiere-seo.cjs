@@ -35,12 +35,12 @@ for (const area of territories) {
 }
 for(const slug of ['novembre','lombardia-alimentare','regione-inesistente']) assert.equal(render(slug).code,404);
 const detail=render(sample.id).html;
-assert(detail.includes('Prima di candidarti'));
-assert(detail.includes('Candidatura, eventuale prenotazione e assegnazione'));
+assert(detail.includes('id="detail-apply"'));
+assert(detail.includes('Il posto è confermato solo dopo l’assegnazione'));
 assert(detail.includes('href="'+sample.source.url+'" data-fiere-id='));
 assert(detail.includes('target="_blank" rel="noopener noreferrer"'));
 assert(!detail.includes('schema.org/Event'));
 assert(detail.includes('data-save-fair')&&detail.includes('data-remind-fair'));
-assert(detail.indexOf('Prima di candidarti')<detail.indexOf('Salva e ricontrolla'));
+assert(detail.indexOf('id="detail-apply"')<detail.indexOf('id="detail-save-fair"'));
 // Source and catalogue data are read-only; this test creates no real applications.
 console.log('SEO quality exclusions, regional pagination/completeness, canonical, schema and public application path passed.');

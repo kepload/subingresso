@@ -516,6 +516,11 @@
     }
     function readURL() {
         const params = new URLSearchParams(location.search);
+        const initial = initialFair() || (!landingDismissed && state.events.find(event => event.id === params.get('fiera')));
+        if (initial) {
+            if (!params.has('provincia') && !params.has('regione')) params.set('provincia', initial.province);
+            if (!params.has('mesi')) params.set('mesi', initial.months.join(','));
+        }
         state.months = [...new Set((params.get('mesi') || '').split(',').map(Number).filter(n => Number.isInteger(n) && n >= 1 && n <= 12))];
         state.province = Object.values(REGION_PROVINCES).some(provinces => provinces.includes(params.get('provincia'))) ? params.get('provincia') || '' : '';
         state.region = !state.province && Object.hasOwn(REGION_PROVINCES, params.get('regione')) ? params.get('regione') : '';
@@ -900,76 +905,21 @@
         global.SiteAnalytics?.track('fair_open', {region: event.region || '', province: event.province || ''}, event.managedEventId || event.id);
         state.selected = event.id;
         renderMap(filterEvents(state.events, state));
-        $('detail-category').textContent = CATEGORIES[event.category];
-        $('detail-category').dataset.category = event.category;
-        $('detail-title').textContent = event.name;
-        $('detail-page-link').href = event.managedEventId ? '/evento?id=' + encodeURIComponent(event.managedEventId) : '/fiere/' + encodeURIComponent(event.id);
-        const saveFair = $('detail-save-fair');
-        saveFair.dataset.fairKind = event.managedEventId ? 'organizer' : 'catalog';
-        saveFair.dataset.fairId = event.managedEventId || event.id;
-        saveFair.closest('.sf-fair-actions').querySelectorAll('[data-remind-fair]').forEach(button => {
-            button.dataset.fairKind = saveFair.dataset.fairKind; button.dataset.fairId = saveFair.dataset.fairId;
+        const landing = Boolean($('fair-dialog').dataset.landingFair);
+        const reviews = $('detail-reviews');
+        $('fair-dialog').innerHTML = global.FairDetail.render(event, api, '', landing);
+        if (reviews) $('detail-reviews').replaceWith(reviews);
+        $('fair-dialog').querySelectorAll('[data-fiere-guest]').forEach(element => {
+            element.hidden = document.querySelector('.fiere-access[data-fiere-guest]')?.hidden ?? true;
         });
-        global.SavedFairs?.setFair(saveFair, saveFair.dataset.fairKind, saveFair.dataset.fairId);
-        $('detail-location').textContent = event.city + ' · ' + event.province;
-        $('detail-months').textContent = periodLabel(event);
-        $('detail-frequency').textContent = event.frequencyNote || '';
-        $('detail-frequency').hidden = !event.frequencyNote;
-        let availability = $('detail-availability');
-        if (!availability) { availability = node('p', 'fiere-availability'); availability.id = 'detail-availability'; $('detail-title').after(availability); }
-        availability.hidden = !event.managedAvailability;
-        if (event.managedAvailability) { const count = event.managedAvailability; availability.textContent = count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity; availability.dataset.soldOut = String(count.available === 0); }
-        $('detail-description').textContent = event.summary || '';
-        $('detail-description').hidden = !event.summary;
         renderAttendanceDetail(event);
-        const editions = document.createDocumentFragment();
-        for (const edition of event.editions || []) {
-            const item = node('div', 'fiere-edition');
-            item.append(appendEditionDate(node('strong', ''), edition));
-            const source = node('a', '', 'Fonte delle date ↗');
-            source.href = edition.sourceUrl; source.target = '_blank'; source.rel = 'noopener noreferrer';
-            item.append(source); editions.append(item);
-        }
-        $('detail-editions').replaceChildren(editions);
-        $('detail-editions-empty').hidden = Boolean(event.editions?.length);
-        const facts = document.createDocumentFragment();
-        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Categorie', event.merchandiseSectors.map(sector => SECTORS[sector]).join(' · ') || 'Settori da verificare'], ['Tipologie di articolo', articleTypes(event).map(key => ARTICLE_TYPES[key].label).join(' · ')], ['Settori nella fonte', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
-            if (!value) continue;
-            facts.append(node('dt', '', label), node('dd', '', value));
-        }
-        $('detail-facts').replaceChildren(facts);
-        const participation = event.participation;
-        const labels = { public: 'Fiera su area pubblica', selected: 'Ammissione tramite organizzatore', exhibitors: 'Partecipazione come espositore', check: 'Condizioni da verificare' };
-        $('detail-participation-label').textContent = labels[participation.type];
-        $('detail-participation-note').textContent = participation.note;
-        $('detail-deadline').textContent = deadlineStatus(participation);
-        $('detail-deadline').hidden = !$('detail-deadline').textContent;
-        $('detail-costs').textContent = event.pricing?.details || participation.costs || 'Importo non verificato per questa fiera. Chiedi all’organizzatore la quota del banco, il canone e gli eventuali servizi aggiuntivi.';
-        $('detail-costs-meta').hidden = !event.pricing;
-        if (event.pricing) $('detail-costs-meta').textContent = (event.pricing.period ? 'Tariffe ' + event.pricing.period : 'Fonte senza anno tariffario esplicito: conferma l’edizione') + ' · fonte consultata il ' + dateLabel(event.pricing.checkedAt);
-        const costSource = event.pricing?.sourceUrl || (participation.costs ? participation.url : '');
-        $('detail-costs-source').hidden = !costSource;
-        if (costSource) $('detail-costs-source').href = costSource;
-        $('detail-participation-link').hidden = !participation.url;
-        if (participation.url) $('detail-participation-link').href = participation.url;
-        const contacts = document.createDocumentFragment();
-        for (const [type, value] of Object.entries(event.contacts || {})) {
-            if (!['phone', 'email', 'pec'].includes(type) || !value) continue;
-            const contact = node('p', '');
-            contact.append(node('span', '', ({ phone: 'Telefono', email: 'Email', pec: 'PEC' })[type] + ': '));
-            const link = node('a', '', value);
-            link.href = type === 'phone' ? 'tel:' + value.replace(/[^\d+]/g, '') : 'mailto:' + value;
-            contact.append(link); contacts.append(contact);
-        }
-        $('detail-contacts').replaceChildren(contacts);
-        $('detail-source').href = event.source.url;
-        $('detail-source-label').textContent = event.source.label + (event.source.checkedAt ? ' · consultata il ' + dateLabel(event.source.checkedAt) : ' · date dell’edizione da verificare');
-        $('detail-calendar-source').hidden = !event.calendarSource || event.calendarSource.url === event.source.url;
-        if (event.calendarSource) { $('detail-calendar-source').href = event.calendarSource.url; $('detail-calendar-source').textContent = event.calendarSource.label + ' ↗'; }
-        $('detail-annunci').href = '/annunci?regione=' + encodeURIComponent(event.region);
+        const saveFair = $('detail-save-fair');
+        global.SavedFairs?.setFair(saveFair, saveFair.dataset.fairKind, saveFair.dataset.fairId);
         global.FairReviews?.mount($('detail-reviews'), { kind: event.managedEventId ? 'organizer' : 'catalog', id: event.managedEventId || event.id, name: event.name, city: event.city, editions: event.editions });
         prepareSources($('fair-dialog'), event);
-        $('fair-dialog').showModal();
+        if (!$('fair-dialog').open) $('fair-dialog').showModal();
+        $('fair-dialog').scrollTop = 0;
+        $('close-detail').focus({preventScroll: true});
     }
     function render() {
         const events = sortEvents(filterEvents(state.events, state), todayInRome(), state.months);
@@ -1071,8 +1021,11 @@
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
             state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
-            const requested = state.events.find(event => event.id === new URLSearchParams(location.search).get('fiera'));
-            if (requested && global.FiereAccess) { openDetail(requested); global.FiereAccess.resume(requested); }
+            const requested = state.events.find(event => event.id === (initialFair()?.id || new URLSearchParams(location.search).get('fiera')));
+            if (requested && !landingDismissed) {
+                if (!$('fair-dialog').open || state.selected !== requested.id) openDetail(requested);
+                global.FiereAccess?.resume(requested);
+            }
             loadManagedEvents();
         } catch (error) {
             $('catalog-error').hidden = false;
@@ -1153,7 +1106,56 @@
         map.addEventListener('click', event => { if (moved) { event.preventDefault(); event.stopImmediatePropagation(); } }, true);
         map.addEventListener('dblclick', event => { event.preventDefault(); zoom(.5, point(event.clientX, event.clientY)); });
     }
+    let landingDismissed = false;
+    function initialFair() {
+        const data = $('initial-fair');
+        if (!data || landingDismissed) return null;
+        try { return JSON.parse(data.textContent); } catch (_) { return null; }
+    }
+    function dismissDetail(explore = false) {
+        const initial = initialFair();
+        $('fair-dialog').close();
+        if (explore && state.ready) {
+            const event = state.events.find(event => event.id === state.selected);
+            if (event) {
+                state.province = event.province; state.region = ''; state.query = '';
+                if (!state.months.length) state.months = event.months.slice();
+                $('province-filter').value = state.province; $('fair-search').value = '';
+                changed(true);
+            }
+        }
+        if (initial || new URLSearchParams(location.search).has('fiera')) {
+            landingDismissed = true;
+            delete $('fair-dialog').dataset.landingFair;
+            if (!state.ready && initial) {
+                state.province = initial.province; state.months = initial.months.slice();
+            }
+            const url = new URL(location.href); url.pathname = '/fiere';
+            for (const key of ['fiera', 'fonte']) url.searchParams.delete(key);
+            history.replaceState(null, '', url.pathname + url.search);
+            syncURL();
+            document.title = 'Calendario fiere in Italia: mappa e mesi — Subingresso.it';
+            document.querySelector('link[rel="canonical"]').href = 'https://subingresso.it/fiere';
+            document.querySelector('meta[property="og:url"]').content = 'https://subingresso.it/fiere';
+            const description = 'Fiere e mercatini in Italia: date, contatti e informazioni per partecipare. Filtra per mese, regione, provincia e settore.';
+            document.querySelector('meta[name="description"]').content = description;
+            document.querySelector('meta[property="og:description"]').content = description;
+            document.querySelector('meta[property="og:title"]').content = document.title;
+            document.querySelector('#fiera-breadcrumbs')?.remove();
+            $('initial-fair')?.remove();
+            if ($('page-title').tagName === 'H2') {
+                const title = node('h1', 'fiere-page-title', 'Fiere e mercatini');
+                title.id = 'page-title'; $('page-title').replaceWith(title);
+                const detailTitle = node('h2', '', $('detail-title').textContent);
+                detailTitle.id = 'detail-title'; $('detail-title').replaceWith(detailTitle);
+            }
+            document.querySelector('meta[name="robots"]')?.remove();
+            if (state.ready) { $('province-filter').focus({preventScroll:true}); }
+        }
+    }
     function init() {
+        const initial = initialFair();
+        if (initial) { window.scrollTo(0, 0); $('fair-dialog').close(); openDetail(initial); }
         initMapGestures();
         initArticles();
         for (let i = 0; i < 12; i++) {
@@ -1190,7 +1192,12 @@
         $('map-zoom-in').addEventListener('click', () => zoom(0.7));
         $('map-zoom-out').addEventListener('click', () => zoom(1 / 0.7));
         $('map-home').addEventListener('click', () => { state.view = HOME.slice(); $('map-popup').hidden = true; renderMap(filterEvents(state.events, state)); });
-        $('close-detail').addEventListener('click', () => $('fair-dialog').close());
+        $('fair-dialog').addEventListener('click', event => {
+            if (event.target.closest('#close-detail, #detail-explore')) {
+                event.preventDefault(); dismissDetail(Boolean(event.target.closest('#detail-explore')));
+            }
+        });
+        $('fair-dialog').addEventListener('cancel', event => { event.preventDefault(); dismissDetail(); });
         $('close-article-fit').addEventListener('click', () => $('article-fit-dialog').close());
         $('article-fit-dialog').addEventListener('click', event => {
             if (event.target !== $('article-fit-dialog')) return;
@@ -1199,7 +1206,7 @@
         });
         $('fair-dialog').addEventListener('click', event => { if (event.target === $('fair-dialog')) {
             const rect = $('fair-dialog').getBoundingClientRect();
-            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('fair-dialog').close();
+            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dismissDetail();
         } });
         $('retry-catalog').addEventListener('click', loadCatalog);
         $('retry-organizer-catalog')?.addEventListener('click', loadManagedEvents);

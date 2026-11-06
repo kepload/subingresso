@@ -73,18 +73,18 @@ async function initialSessionChecks(context, base, width) {
             assert.equal(await page.locator('[data-fiere-guest]:not([hidden])').count(), 0, state + ': invitation hidden while session is pending');
             assert.deepEqual(await page.evaluate(() => qaGuestFrames), [], state + ': no guest frame before authentication');
             if (route === '/fiere') await page.waitForSelector('.fiere-card-button');
-            const content = page.locator(route === '/fiere' ? '.fiere-card-button' : 'main > section:not(.fiere-access)').first();
+            const content = page.locator(route === '/fiere' ? '.fiere-card-button' : '#fair-dialog .fiere-detail-info').first();
             const before = await content.boundingBox();
             if (state === 'late-read') await page.evaluate(() => qaLogin());
             await page.evaluate(() => qaReleaseSessions());
             if (state === 'guest') {
-                await page.locator('.fiere-access').waitFor({ state: 'visible' });
+                await page.locator(route === '/fiere' ? '.fiere-access' : '#fair-dialog .fiere-access-note').waitFor({ state: 'visible' });
                 assert.equal(await page.locator('.fiere-access-register').innerText(), 'Registrati gratis');
                 assert.equal(await page.locator('#fiere-access-title').innerText(), 'Trova le fiere per il tuo banco');
                 await page.evaluate(() => qaLogin());
-                assert.equal(await page.locator('.fiere-access').isVisible(), false);
+                assert.equal(await page.locator(route === '/fiere' ? '.fiere-access' : '#fair-dialog .fiere-access-note').isVisible(), false);
                 await page.evaluate(() => qaSetSession(null));
-                assert(await page.locator('.fiere-access').isVisible(), 'Logout restores the invitation');
+                assert(await page.locator(route === '/fiere' ? '.fiere-access' : '#fair-dialog .fiere-access-note').isVisible(), 'Logout restores the invitation');
             } else {
                 await frames();
                 assert.deepEqual(await page.evaluate(() => qaGuestFrames), [], state + ': invitation never appears');
@@ -146,7 +146,7 @@ async function run(engine, name, width, height, base) {
         const tariff = page.locator('a').filter({hasText:'Fonte delle tariffe'});
         assert.equal(await tariff.getAttribute('href'), sample.pricing.sourceUrl);
         assert.equal(await tariff.getAttribute('target'), '_blank');
-        await page.locator('[data-fiere-login]').first().click();
+        await page.locator('#fair-dialog [data-fiere-login]').click();
         assert(await page.locator('#loginForm').isVisible()); await close();
         await page.evaluate(() => qaLogin());
         assert.equal(await page.locator('[data-fiere-guest]').first().isVisible(), false);
@@ -156,7 +156,7 @@ async function run(engine, name, width, height, base) {
         const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height } });
         const staticPage = await nojs.newPage(); await staticPage.goto(base + '/fiere/' + sample.id);
         assert.equal(await staticPage.locator('.fiere-access').isVisible(), false, 'HTML starts with invitation hidden even without JavaScript');
-        assert(await staticPage.locator('main a[href^="https://"]').count() > 0);
+        assert(await staticPage.locator('#fair-dialog a[href^="https://"]').count() > 0);
         assert.equal(await staticPage.locator('h1').innerText(), sample.name);
         const unavailable = await browser.newContext({ viewport: { width, height } });
         await unavailable.route('**/*', route => {

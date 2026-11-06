@@ -33,6 +33,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Ingressi Google nel calendario — 6 novembre 2026](fiere-dossier/123-ingressi-google-calendario-20261106.md): scheda già aperta, ritorno alla ricerca locale, fonti pubbliche e URL indicizzati conservati.
+
 - [Caltanissetta — 6 novembre 2026](fiere-dossier/caltanissetta-20261106.md): +16 schede in 11 comuni e una nota economica; ricognizione dei 22 comuni con limiti, pubblicata e verificata online.
 
 - [Rieti — 5 novembre 2026](fiere-dossier/rieti-20261105.md): +69 schede in 53 comuni e una quota espositore documentata, verificate online; ricognizione dei 73 comuni con limiti.

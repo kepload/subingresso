@@ -11,7 +11,7 @@ const SITE              = 'https://subingresso.it';
 const { CAPOLUOGHI } = require('./_capoluoghi.js');
 const { events: fairEvents, fairPath, isIndexable, catalog: fairCatalog, territories } = require('./_fiere.js');
 // Actual revision of the fair templates/SEO policy, not the time of every fetch.
-const FAIR_UPDATED_AT = [fairCatalog.catalogUpdatedAt, '2026-10-31'].sort().at(-1);
+const FAIR_UPDATED_AT = [fairCatalog.catalogUpdatedAt, '2026-11-06'].sort().at(-1);
 
 // "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
