@@ -21,10 +21,10 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **6 novembre 2026**: **106 province concluse e 4 aperte su 110**,
+Ultimo esito **6 novembre 2026**: **107 province concluse e 3 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Pubblicate le quattro ricerche
 isolate: L'Aquila +30, Cosenza +40, Catanzaro +52 e Reggio Calabria +31.
-Catalogo **10.119** dopo Campobasso (+226 in 70 comuni, 9 note economiche); tutte le 9.893 schede e 462 note precedenti invariate, Agrigento inclusa.
+Catalogo **10.202** dopo Potenza (+83 in 55 comuni, 2 note economiche storiche); tutte le 10.119 schede e 471 note precedenti invariate, Agrigento e Campobasso incluse.
 Sessioni terminate dopo la propria provincia; ricerca con limiti espliciti.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -105,6 +105,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 - Potenza:** pubblicato `34d1bed`, Vercel Ready `dpl_FGiuw5uR51RQ5pAoyMxbx6nouUL9`; +83 schede e 2 note storiche, ricognizione 100/100. Catalogo live identico, 10.119 schede/471 note precedenti invariate; build/settori/SEO/SSR e browser locali/online passati; 10.202 ID recensioni sincronizzati e 83 letture API riuscite. [Fonti e limiti](data/fiere-dossier/potenza-20261106.md). Potenza ultima delle tre, 6.1 sol low, sessione fermata alla conclusione; nessuna altra provincia autorizzata o prosecuzione automatica.
+
 - **6 novembre 2026 - Campobasso:** pubblicato `e494dd3`, Vercel Ready `dpl_H7yYjcoixfLkZ6vcifqqc85xGNaQ`; +226 schede e 9 note, ricognizione 84/84. Catalogo live identico, 9.893 schede/462 note precedenti invariate, due build/settori/SEO e browser locali/online passati; 10.119 ID recensioni sincronizzati e 226 letture API riuscite. [Fonti e limiti](data/fiere-dossier/campobasso-20261106.md): 197 schede storiche 2021, 10 con edizioni 2026. Richiesta corrente: una sola provincia aggiuntiva, 6.1 sol low; Potenza ferma, nessuna prosecuzione automatica.
 
 - **6 novembre 2026 — Agrigento:** pubblicato `3fdaa4c`, Vercel Ready `dpl_8GrHAbAfLaYrmAkTQ5bxMxErMAdy`; +34 schede e 8 note, ricognizione 43 comuni. Catalogo live identico, dati precedenti invariati, build/settori/SEO e Chromium1440/320 + WebKit390 locali/online passati; 9.893 ID recensioni sincronizzati e 34 letture API riuscite. [Fonti e limiti](data/fiere-dossier/agrigento-20261106.md). Richiesta corrente: chiudere soltanto una provincia con 6.1 sol low; Potenza e Campobasso ferme, prosecuzione da decidere dopo controllo quota, nessuna ripresa automatica.
@@ -125,22 +127,10 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
   [Fonti e limiti](data/fiere-dossier/caltanissetta-20261106.md).
   Sessione conclusa dopo questa provincia; Pavia riservata, nessun loop avviato.
 
-- **5 novembre 2026 — Rieti:** +69 schede in 53 comuni, ricognizione 73/73
-  e quota Greccio 2026/2027 documentata. Pubblicato `6b97ee7`, Vercel Ready;
-  9.774 schede e 452 note precedenti invariate, Vibo inclusa. Build, settori,
-  SEO/SSR e Chromium 1440/320 e WebKit 390 locali/online passati; 9.843 ID
-  recensioni sincronizzati e 69 letture API riuscite. [Fonti e limiti](data/fiere-dossier/rieti-20261105.md).
-  Entrambe le sessioni concluse; Pavia riservata, nessuna prosecuzione.
-
-- **5 novembre 2026 — Vibo Valentia:** +23 schede in 10 comuni e quattro note
-  economiche; ricognizione dei 50 comuni con limiti. Pubblicato `c5bc603`,
-  Vercel Ready; catalogo online identico, 9.751 schede e 448 note precedenti
-  invariate. Build ripetibili, settori, SEO/SSR, Chromium 1440/320 e WebKit 390
-  locali/online passati; 9.774 ID recensioni sincronizzati, 23 letture API reali
-  riuscite. [Fonti e limiti](data/fiere-dossier/vibo-valentia-20261105.md).
-  Rieti prosegue separatamente; nessuna altra provincia o automazione avviata.
 
 Esiti precedenti (Crotone e attività del 4–5 novembre) conservati
 [nello snapshot del 5 novembre](docs/archivio/informazioni-esiti-20261105.md).
 
 Avvii delle sessioni conservati nello [snapshot dedicato](docs/archivio/informazioni-avvii-20261106.md).
+
+Esiti Rieti/Vibo conservati nello [snapshot del 6 novembre](docs/archivio/informazioni-esiti-pre-potenza-20261106.md).
