@@ -7,10 +7,10 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 
 ## Stato e vincoli da conservare
 
-- [Checklist unica](../docs/fiere-province.md): aggiornata il 6 novembre,
-  108 concluse e 2 aperte su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
+- [Checklist unica](../docs/fiere-province.md): aggiornata il 7 novembre,
+  110 concluse e nessuna aperta su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
-  Pavia riservata, automazioni ferme.
+  Pavia e Nuoro concluse e verificate online; automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
 - Verificare dati e commit effettivi, preservare ID, fonti e province estranee.
   Non rigenerare da snapshot precedenti. Build: `scripts/build-fiere.py`;
@@ -33,7 +33,7 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
-- [Chiusura Pavia e Nuoro — 6 novembre 2026](fiere-dossier/chiusura-pavia-nuoro-20261106.md): due ricerche isolate, 177 nuove schede, sei aggiornamenti e dieci note economiche; integrazione verificata, pubblicazione in corso.
+- [Chiusura Pavia e Nuoro — 6 novembre 2026](fiere-dossier/chiusura-pavia-nuoro-20261106.md): due ricerche isolate, 177 nuove schede, sei aggiornamenti e dieci note economiche; pubblicazione e controlli online verificati. Tutte le 110 province concluse con limiti espliciti.
 
 - [Oristano — 6 novembre 2026](fiere-dossier/oristano-20261106.md): 64 nuove schede in 45 comuni, ricognizione degli 87 comuni e quattro note economiche; pubblicazione verificata, fonti e limiti nel dossier.
 

@@ -72,5 +72,32 @@ superate. I test provinciali operano sui dati effettivi e i controlli combinati
 dimostrano la conservazione delle province estranee.
 
 Prove centrali: `.local/verifiche/ultime-province-20261106/`.
-Verifiche nei browser, pubblicazione e chiusura della checklist saranno
-registrate qui soltanto dopo l'esito reale.
+Verifiche nei browser, pubblicazione e chiusura della checklist sono
+registrate sotto dopo l'esito reale.
+
+## Pubblicazione e chiusura verificate ? 7 novembre 2026
+
+Commit **`d461abd`**, [check Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/CB8T2iqZ9UTh9ivNuq7kNoLXhVdi). Catalogo sul dominio
+**subingresso.it identico** al locale: **10.443 schede e 487 note**.
+Tutti gli ID precedenti conservati; 10.260 schede non interessate e 477 note
+precedenti identiche. Sei aggiornamenti circoscritti alle proposte documentate.
+
+Tutte le **183 schede nuove o aggiornate** rispondono HTTP 200 con URL canonico
+coerente; 183 letture reali delle API recensioni riuscite. Filtri e lista sulle
+186 schede complessive Pavia/Nuoro, 48 campioni di dettaglio e pagina compresi
+tutti i nuovi costi e tutti gli aggiornamenti, senza overflow o errori nelle
+prove Chromium 1440/320 e WebKit 390, sia locali sia online. Build ripetibile,
+settori, SEO/SSR e gitleaks centrali superati. Sincronizzati 10.443 ID recensioni,
+senza creare iscrizioni, recensioni, domande, acquisti o invii reali di prova.
+
+Le sessioni provinciali hanno segnalato il binario gitleaks assente nei propri
+checkout: nessun bypass manuale. Il commit centrale è stato controllato dal
+vero hook presente nella root, con esito senza segreti. Il controllo Vercel è
+stato letto tramite GitHub, senza usare la credenziale CLI locale non valida.
+
+Checklist aggiornata soltanto dopo queste verifiche: **110 province concluse
+su 110, nessuna aperta**. Ricerche concluse con i limiti documentati, senza
+promettere un censimento esaustivo o disponibilità di posteggi. Entrambe le
+sessioni terminate, nessun altro lavoro o ciclo avviato automaticamente.
+
+Prima esecuzione live WebKit interrotta da un errore di trasporto HTTP2 sulla pagina Mastros in N?goro, dopo filtri/dettagli di entrambe le province e 28 pagine campione gi? passati. Ripetute in nuovi contesti le 20 pagine campione rimanenti, tutte riuscite. Errore e recupero conservati in `browser-initial-failure.json` e `browser-live-retry.json`, senza modifiche al sito o ai dati.

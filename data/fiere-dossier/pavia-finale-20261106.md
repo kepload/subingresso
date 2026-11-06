@@ -61,3 +61,7 @@ Esito: 10.394 schede, 134 Pavia, quattro aggiornamenti autorizzati; tutti gli ID
 Il test generale con fixture storiche segnalate nell’incarico non è stato alterato o usato per forzare modifiche estranee. La validazione significativa di questa consegna è il test provinciale con il builder reale.
 
 Al coordinatore: aggiungere i 128 `events` di `data/fiere-pavia-finale-delta.json` a `data/fiere-fonti.json` e i quattro `existingUpdates.after` come override editoriali, verificando prima i rispettivi record iniziali; i quattro non sono nuove schede. Aggiungere le quattro note da `data/fiere-pavia-finale-costi.json` solo se gli ID non hanno già note, controllando `initialState`. Rigenerare con il builder invariato, integrare separatamente Nuoro e ripetere i controlli di conservazione. Checklist, memoria, indici condivisi, sincronizzazione degli ID recensioni, pubblicazione e verifica live spettano al coordinatore dopo l’integrazione. Nessuna scrittura DB in questa sessione.
+
+## Integrazione e pubblicazione centrale
+
+La consegna di ricerca sopra è stata integrata dal coordinatore insieme all’altra ultima provincia. Pubblicazione e controlli locali/online conclusi: [esito di chiusura delle 110 province](chiusura-pavia-nuoro-20261106.md). Originali privati conservati nel worktree provinciale indicato nel dossier centrale.

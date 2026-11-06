@@ -173,3 +173,7 @@ Il test generale storico non è stato modificato o usato per mascherare fixture
 non aggiornate (omonimia Crocifisso e date Brescia, limiti già noti
 nell'incarico). Integrazione, sync degli ID recensioni, push, deploy e verifica
 live restano al coordinatore. Nessuna checklist condivisa spuntata qui.
+
+## Integrazione e pubblicazione centrale
+
+La consegna di ricerca sopra è stata integrata dal coordinatore insieme all’altra ultima provincia. Pubblicazione e controlli locali/online conclusi: [esito di chiusura delle 110 province](chiusura-pavia-nuoro-20261106.md). Originali privati conservati nel worktree provinciale indicato nel dossier centrale.

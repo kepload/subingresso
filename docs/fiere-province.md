@@ -1,11 +1,11 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **6 novembre 2026**: **108 concluse, 2 aperte su 110**.
+Stato aggiornato il **7 novembre 2026**: **110 concluse, nessuna aperta su 110**.
 L'Aquila, Cosenza, Catanzaro e Reggio Calabria verificati online il 5 novembre;
 le altre caselle conservano gli esiti precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
 
-**Automazioni ferme. Pavia riservata.**
+**Ricerca conclusa: 110/110. Automazioni ferme.**
 Matera e Medio Campidano completati su richieste singole. Ogliastra e Sulcis
 Iglesiente completati da due sessioni parallele isolate, entrambe terminate
 dopo la propria provincia come richiesto. Nessuna prosecuzione automatica.
@@ -49,7 +49,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **13. Venezia**
 - [x] **14. Mantova**
 - [x] **15. Cremona**
-- [ ] **16. Pavia**
+- [x] **16. Pavia**
 - [x] **17. Novara**
 - [x] **18. Cuneo**
 - [x] **19. Trento**
@@ -127,7 +127,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **91. Rieti**
 - [x] **92. Agrigento**
 - [x] **93. Oristano**
-- [ ] **94. Nuoro**
+- [x] **94. Nuoro**
 - [x] **95. Vibo Valentia**
 - [x] **96. Crotone**
 - [x] **97. Caltanissetta**
@@ -158,3 +158,5 @@ Campobasso: +226 schede in 70 comuni e 9 note, ricognizione 84/84; 197 schede da
 Potenza: +83 schede in 55 comuni e 2 note storiche; ricognizione 100/100, limiti espliciti, verificata online il 6 novembre 2026. [Fonti e limiti](../data/fiere-dossier/potenza-20261106.md). Ultima delle tre sessioni conclusa; nessuna altra provincia autorizzata.
 
 Oristano: +64 schede in 45 comuni e quattro note economiche; ricognizione 87/87 con limiti espliciti, pubblicata e verificata online il 6 novembre 2026. [Fonti e limiti](../data/fiere-dossier/oristano-20261106.md). Rimangono Pavia (riservata) e Nuoro; sessione conclusa, nessuna prosecuzione automatica.
+
+**Chiusura delle ultime due province, 7 novembre 2026:** Pavia +128 schede in 70 comuni, quattro aggiornamenti e quattro note; Nuoro +49 in 38 comuni, due aggiornamenti e sei note. Ricerche svolte in due sessioni isolate contemporanee; catalogo 10.443 schede/487 note, pubblicazione `d461abd` e percorsi verificati online. Tutte le 110 province concluse con limiti espliciti; nessun ciclo riavviato. [Fonti, limiti e verifiche](../data/fiere-dossier/chiusura-pavia-nuoro-20261106.md).
