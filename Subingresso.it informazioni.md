@@ -105,6 +105,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 ? filtro unico fiere:** pubblicato `991d795`; rimosso ?Cosa vendi?, quattro settori integrati in ?Tipologia di articolo?, con conteggi, articoli compatibili, un solo indicatore e azzeramento completo. Link precedenti conservati; classificazioni e catalogo invariati. Selezioni/URL/azzera e menu in chiaro/scuro: Chromium1440/820/320 e WebKit390 locali/online passati; SEO e ingressi locali passati. Prove `.local/verifiche/fiere-filtro-unificato/`.
+
+
 - **6 novembre 2026 — filtri fiere:** pubblicato `e92df8f`; «Tipologia di articolo» spostata in «Altri filtri», principali solo Quando/Dove. Indicatore delle tipologie attive a sezione chiusa. SEO, ingressi e selezioni/URL/azzera verificati; Chromium1440/820/320 e WebKit390 locali/online passati. Catalogo invariato. Prove `.local/verifiche/fiere-tipologia-secondari/`.
 
 
