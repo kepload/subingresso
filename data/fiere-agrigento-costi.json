@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "province": "Agrigento",
+  "checkedAt": "2026-11-06",
+  "events": {
+    "sicilia-agrigento-mercatini-di-natale": {
+      "kind": "partial",
+      "label": "Bollo 16 € e istruttoria 15 € per il singolo operatore",
+      "period": "2025",
+      "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2025/10/Avviso-Natale-2025_signed_signed.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso 2025, pp. 2–3: domanda in bollo da 16 € e 15 € di istruttoria per gli operatori singoli; 31 € per questi soli oneri. CUP e TARI da pagare prima dell’autorizzazione, importi non specificati. Allacciamento elettrico e servizi a carico dei partecipanti; IVA non precisata. Non è il prezzo totale del banco. Originale recuperato dalla copia Intradata del Comune."
+    },
+    "sicilia-agrigento-fiera-del-mandorlo-in-fiore": {
+      "kind": "partial",
+      "label": "Bollo 16 € e istruttoria 15 € per il singolo operatore",
+      "period": "2026",
+      "sourceUrl": "https://www.intradata.it/comune.agrigento.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-FIERA-MANDORLO-IN-FIORE-2026.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Bando 2026, pp. 2–3: 16 € di bollo e 15 € di istruttoria per il singolo operatore. CUP, TARI, casetta, allaccio elettrico e altri servizi non quantificati; IVA non specificata. I 31 € sono soltanto oneri amministrativi, non il costo complessivo del posteggio. Copia Intradata del documento comunale."
+    },
+    "sicilia-casteltermini-sagra-della-cuccia-e-mercatino-di-santa-lucia": {
+      "kind": "fee",
+      "label": "25 € per modulo fino a 3 metri di fronte, uno o due giorni",
+      "period": "2026",
+      "sourceUrl": "https://drive.google.com/uc?export=download&id=1DL10oDtfIwJSkgdHtZdEdKhjRt7zwU9F",
+      "checkedAt": "2026-11-06",
+      "details": "Bando Pro Loco 2026, p. 1: contributo organizzativo di 25 € per modulo fino a 3 metri lineari di fronte; stessa quota per uno o entrambi i giorni. Spazi maggiori con aumento proporzionale. Gazebo e attrezzature non forniti. Versamento alla prima giornata; IVA e altri eventuali oneri non precisati. Domanda entro 5 dicembre 2026, assegnazione a discrezione della Pro Loco."
+    },
+    "sicilia-cattolica-eraclea-fiera-del-rosario": {
+      "kind": "conditional",
+      "label": "Esenzione occupazione suolo nelle giornate 11–12 ottobre",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.cattolicaeraclea.ag.it/novita/notizie/novita_83.html",
+      "checkedAt": "2026-11-06",
+      "details": "Il Comune esenta i mercatisti dalla tassa di occupazione del suolo per l’11 e 12 ottobre 2026. Non è dichiarata la gratuità complessiva della partecipazione: bolli, istruttoria, IVA e servizi non sono quantificati dalla pagina."
+    },
+    "sicilia-licata-fiera-di-maggio": {
+      "kind": "partial",
+      "label": "Diritti istruttoria SUAP 30 €, oltre bollo e quota non quantificati",
+      "period": "2026",
+      "sourceUrl": "https://comune.licata.ag.it/wp-content/uploads/2026/07/Fiera-di-Maggio-2026-–-Avviso-Pubblico.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso Fiera di Maggio 2026, pagina unica letta visivamente: diritti SUAP di 30 € e richiesta in bollo, senza importo del bollo specificato. Quota di partecipazione distinta, da pagare entro l’8 febbraio, ma senza importo. Canone, IVA e servizi non quantificati. I 30 € non sono il costo totale del banco; domanda scaduta il 30 dicembre 2025."
+    },
+    "sicilia-menfi-inycon-villaggio-delle-tipicita-e-area-espositiva": {
+      "kind": "conditional",
+      "label": "Villaggio selezionato gratuito; Area Espositiva 200 € per tre giorni",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.menfi.ag.it/wp-content/uploads/2026/09/Avviso-per-partecipazione-villaggio-tipicita-e-area-Expo-aggionato.pdf",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso 2026, artt. 2 e 6: Villaggio delle Tipicità gratuito per aziende selezionate, con stand/casetta, banco e corrente ove necessaria e tecnicamente disponibile. Area Espositiva: 200 € complessivi per le tre giornate per lo spazio. Trasferta, trasporto e materiali a carico dell’espositore; IVA e altri eventuali oneri non precisati. Nessuna gratuità generalizzata."
+    },
+    "sicilia-montevago-festa-del-vino": {
+      "kind": "partial",
+      "label": "Suolo gratuito; bollo 16 € e diritti 5,16 €",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.montevago.ag.it/novita/avvisi/novita_260.html",
+      "checkedAt": "2026-11-06",
+      "details": "Avviso espositori Festa del Vino 2026: occupazione del suolo destinata all’esposizione gratuita; domanda con bollo 16 € e diritti di segreteria 5,16 €, totale 21,16 € per questi soli oneri. Casette, servizi e IVA non quantificati. Non è una partecipazione complessivamente gratuita. Termine del 21 settembre 2026 già trascorso."
+    },
+    "sicilia-santo-stefano-quisquina-sagra-del-formaggio-e-dei-prodotti-tipici-quisquinesi": {
+      "kind": "unit",
+      "label": "Suolo 1,03 €/m²; punto luce separato 50 €",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.santostefanoquisquina.ag.it/novita/comunicati_stampa/novita_492.html",
+      "checkedAt": "2026-11-06",
+      "details": "Modulo comunale A della XXIV Sagra 2026: suolo calcolato come superficie in m² × 1,03 €, senza moltiplicatore giornaliero esplicitato. Punto luce richiesto separatamente: forfait 50 €. Stand personale. Il diverso modulo A1 per attività locali non esplicita questi importi: nessuna esenzione dedotta. IVA e altri oneri non precisati. Moduli originali DOCX scaricati dal collegamento comunale."
+    }
+  },
+  "limitations": [
+    "Tariffe riferite alle sole fonti ed edizioni indicate; nessun preventivo onnicomprensivo dedotto.",
+    "Bolli, diritti, occupazione, IVA e servizi distinti; ingressi e contributi pubblici esclusi."
+  ]
+}
