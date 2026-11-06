@@ -105,6 +105,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **6 novembre 2026 — finiture ricerca fiere:** pubblicato `a03c064`; X centrata con SVG e titolo «Trova la fiera giusta per te» sopra Quando. Centro verificato in chiaro/scuro su Chromium1440/320 e WebKit390; percorso calendario verificato anche online. Catalogo invariato, pubblicazione sotto mutex. Prove `.local/verifiche/fiere-titolo-chiudi/`.
+
+
 - **6 novembre 2026 — ingressi Google nelle fiere:** pubblicato `b843e2c`; URL indicizzati conservati, calendario con scheda aperta, provincia/mesi coerenti e ritorno alla ricerca. Procedura ufficiale in evidenza e favicon ripristinato. Verifiche locali e online Chromium1440/768/320 e WebKit390; recensioni, accesso e promemoria simulati passati. Catalogo invariato; integrazione isolata sotto mutex. [Contratto e limiti](data/fiere-dossier/123-ingressi-google-calendario-20261106.md).
 
 
