@@ -137,3 +137,5 @@ Esiti precedenti (Crotone e attività del 4–5 novembre) conservati
 Avvii delle sessioni conservati nello [snapshot dedicato](docs/archivio/informazioni-avvii-20261106.md).
 
 Esiti Rieti/Vibo conservati nello [snapshot del 6 novembre](docs/archivio/informazioni-esiti-pre-potenza-20261106.md).
+
+- **6 novembre 2026 — Oristano, avvio parziale:** scelta una sola provincia su richiesta corrente; backup remoto verificato, ricerca preliminare salvata in `.local/ricerche/oristano-20261106/RIPRESA.md`. Nessuna modifica al catalogo o pubblicazione; provincia ancora aperta. Nessun ciclo avviato.
