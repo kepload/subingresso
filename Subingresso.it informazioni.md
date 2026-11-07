@@ -115,7 +115,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **7 novembre 2026 — mappa fiere:** pubblicato `b321487`, Vercel riuscito e tre asset identici ai blob Git. Rimossi titolo, istruzione, mare e menu; mappa estesa a destra e intera nel viewport desktop anche durante lo scroll. 13 combinazioni browser/tema locali e online, sette regressioni periodi e gesti/ridimensionamenti passati. [Contratto e prove](data/fiere-dossier/127-mappa-desktop-20261107.md).
+- **7 novembre 2026 — mappa fiere:** correzione `1adfc5d` pubblicata e verificata: quadrata, più stretta a destra (massimo44%), colonna sinistra prevalente. Intera nel viewport desktop; titolo, istruzioni, mare e menu rimossi. Vercel riuscito, HTML/CSS identici e13 combinazioni browser/tema locali e online passate; gesti/ridimensionamenti verificati. [Contratto e prove](data/fiere-dossier/127-mappa-desktop-20261107.md).
 
 - **7 novembre 2026 — calendario fiere:** pubblicato `dff17c9`: titolo «Il calendario delle fiere», testi date/zona uniformi400 e riflesso sui campi vuoti, fermo dopo scelta e con movimento ridotto. Dal/Al in riga a48px; periodi mese/3/6 mesi, prodotto rimosso. Vercel riuscito, quattro asset identici e sette combinazioni più quattro controlli animazione passati anche online. Backup originali e correzioni conservati. [Comportamento, backup e prove](data/fiere-dossier/126-ricerca-periodo-iphone-20261107.md).
 

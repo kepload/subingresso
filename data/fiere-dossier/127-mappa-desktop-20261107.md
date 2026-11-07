@@ -71,4 +71,8 @@ più larga, superficie interna completa, scroll, zoom e filtri. Controllati
 anche trascinamento, cinque ridimensionamenti consecutivi e tastiera.
 Inspector1440/768/390: nessun overflow né font mancante; rilievi sugli stili
 preesistenti come sopra. Catalogo e funzioni conservati.
-Esito della pubblicazione da registrare dopo il deploy.
+Correzione pubblicata `1adfc5d5d0ebf85e73127ca323668799d062a63f`;
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/EEchH6FhupAkY5deRJgiqNMYU7Fp).
+HTML e CSS identici online ai blob Git; tutte le13 combinazioni browser/tema
+passate anche sul sito, senza overflow o errori JS. Ricevute `published.json`
+e `live.json` nella sottocartella `quadrata/`. Anteprima locale chiusa.
