@@ -9,13 +9,15 @@ selettore a scorrimento in stile iPhone e versione precedente ripristinabile.
   Giorno, mese e anno scorrono con inerzia e scatto alla riga; disponibili anche
   tocco, clic, rotella, trascinamento con mouse e tastiera. Un solo pulsante
   «Mostra fiere» applica le due date. Chiusura, sfondo ed Escape annullano.
-- Scorciatoie Questo weekend, Questo mese e Tutti i periodi. Il conteggio dei
+- Scorciatoie Questo mese, Da oggi a 3 mesi e Da oggi a 6 mesi. Gli ultimi due
+  intervalli partono da oggi e arrivano alla stessa data dopo tre/sei mesi,
+  limitata all’ultimo giorno valido quando necessario. Il conteggio dei
   giorni comprende gli estremi. Cambio mese/anno limita il giorno all’ultimo
   valido; se un estremo supera l’altro, entrambi si riallineano alla data scelta.
 - Un intervallo include soltanto edizioni con date pubblicate che lo
   intersecano, estremi compresi. Nessuna proiezione di vecchie edizioni su
   anni nuovi. Periodi complessivi e date di calendario conservano i loro limiti
-  nelle schede. «Tutti i periodi» conserva l’intero catalogo.
+  nelle schede. «Azzera filtri» torna all’intero catalogo.
 - Lista, ordinamento, dettaglio e mappa usano lo stesso intervallo. Parametri
   condivisibili `dal=AAAA-MM-GG&al=AAAA-MM-GG`, mantenuti al ricaricamento.
   Le scelte durante il caricamento non si perdono.
@@ -66,3 +68,15 @@ SSR/accesso; anche caricamento tardivo e gesti passati. Ricevute `published.json
 `live-results.json`, `live-gestures.json` e screenshot nella cartella prove.
 Catalogo, fonti e note economiche invariati rispetto al backup. Anteprima locale
 chiusa. La versione online resta una prova in attesa del giudizio dell’utente.
+
+## Correzione delle scorciatoie e delle altezze — 7 novembre, sera
+
+Su richiesta: sostituiti weekend/tutti i periodi con un orizzonte a tre/sei
+mesi; etichette esplicite «Da oggi a 3 mesi» e «Da oggi a 6 mesi». Restano tre
+scorciatoie su una sola riga anche a320px. Campi Dal/Al ridotti da86 a64px
+(prima82px sui telefoni più stretti), senza ridurre la leggibilità del testo.
+Aggiornati versioni degli asset e testo del risultato vuoto.
+
+Backup remoto prima della correzione:
+`backup/session-20261107-195835-fiere-periodi-lunghi` → `7d07c8b`.
+Prove della correzione in `.local/verifiche/fiere-periodo-20261107/periodi-lunghi/`.

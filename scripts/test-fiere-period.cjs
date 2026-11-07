@@ -27,9 +27,11 @@ assert.equal(api.filterEvents([multi], { ...range('2027-01-01', '2027-01-01'), p
 assert.equal(picker.daysInMonth(2028, 2), 29);
 assert.equal(picker.daysInMonth(2029, 2), 28);
 assert.deepEqual(picker.preset('month', '2028-02-12'), ['2028-02-01', '2028-02-29']);
-assert.deepEqual(picker.preset('weekend', '2026-11-07'), ['2026-11-07', '2026-11-08']);
-assert.deepEqual(picker.preset('weekend', '2026-11-08'), ['2026-11-08', '2026-11-08']);
-assert.deepEqual(picker.preset('weekend', '2026-12-31'), ['2027-01-02', '2027-01-03']);
+assert.deepEqual(picker.preset('three-months', '2026-11-07'), ['2026-11-07', '2027-02-07']);
+assert.deepEqual(picker.preset('six-months', '2026-11-07'), ['2026-11-07', '2027-05-07']);
+assert.deepEqual(picker.preset('three-months', '2026-01-31'), ['2026-01-31', '2026-04-30']);
+assert.deepEqual(picker.preset('six-months', '2026-08-31'), ['2026-08-31', '2027-02-28']);
+assert.deepEqual(picker.preset('six-months', '2027-08-31'), ['2027-08-31', '2028-02-29']);
 for (const state of [range('2026-11-07', '2026-11-08'), range('2026-12-30', '2027-01-04'), range('2028-02-29', '2028-02-29')]) {
     const expected = catalog.filter(e => e.editions.some(d => d.start && (d.end || d.start) >= state.dateFrom && d.start <= state.dateTo));
     assert.deepEqual(api.filterEvents(catalog, state).map(e => e.id), expected.map(e => e.id));
@@ -48,7 +50,7 @@ async function browserChecks() {
     });
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
     const base = process.env.FIERE_PERIOD_BASE_URL || 'http://127.0.0.1:' + server.address().port;
-    const output = path.join(root, '.local/verifiche/fiere-periodo-20261107');
+    const output = process.env.FIERE_PERIOD_OUTPUT || path.join(root, '.local/verifiche/fiere-periodo-20261107');
     fs.mkdirSync(output, { recursive: true });
     const report = [];
     try {
@@ -86,6 +88,10 @@ async function browserChecks() {
                 }
                 await page.goto(base + '/fiere'); await ready();
                 assert.equal(await page.locator('#article-filter, #month-bar, #month-from').count(), 0);
+                assert.deepEqual(await page.locator('[data-period]').allTextContents(), ['Questo mese', 'Da oggi a 3 mesi', 'Da oggi a 6 mesi']);
+                assert(await page.locator('#date-from').evaluate(el => el.getBoundingClientRect().height <= 66), 'Date fields are compact');
+                const presetTops = await page.locator('[data-period]').evaluateAll(els => els.map(el => el.getBoundingClientRect().top));
+                assert(presetTops.every(top => Math.abs(top - presetTops[0]) < 1), 'Presets stay on one row');
                 await overflow();
                 await page.locator('#date-from').click();
                 assert(await page.locator('#period-dialog').evaluate(el => el.matches(':modal')));
@@ -103,9 +109,9 @@ async function browserChecks() {
                 await page.locator('#period-day').focus(); await page.keyboard.press('ArrowUp');
                 await page.locator('#period-apply').click(); await verifyResults();
                 await page.locator('#province-filter').selectOption('Brescia'); await verifyResults();
-                await page.locator('[data-period=all]').click();
+                await page.locator('#reset-filters').click();
                 assert.equal(new URL(page.url()).searchParams.has('dal'), false);
-                assert.equal(new URL(page.url()).searchParams.get('provincia'), 'Brescia');
+                assert.equal(new URL(page.url()).searchParams.has('provincia'), false);
                 await page.locator('#reset-filters').click();
                 assert.equal(await page.locator('#list-count').innerText(), String(catalog.length));
                 await page.goto(base+'/fiere?dal=2028-01-31&al=2028-03-02'); await ready();
@@ -130,7 +136,11 @@ async function browserChecks() {
                 assert.equal(new URL(page.url()).searchParams.has('settore'), false);
                 assert.equal(new URL(page.url()).searchParams.has('articoli'), false);
                 await page.locator('#date-from').click(); await page.locator('#period-apply').click(); await verifyResults();
-                await page.locator('[data-period=weekend]').click(); await verifyResults();
+                for (const kind of ['three-months', 'six-months']) {
+                    await page.locator('[data-period="' + kind + '"]').click(); await verifyResults();
+                    const params = new URL(page.url()).searchParams;
+                    assert.deepEqual([params.get('dal'), params.get('al')], picker.preset(kind, params.get('dal')));
+                }
                 if(engine === 'chromium' && width === 1440 && !dark) {
                     let releaseCatalog;
                     const held = new Promise(resolve => { releaseCatalog = resolve; });

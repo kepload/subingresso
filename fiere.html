@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="/css/fair-reviews.css?v=2">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/admin-theme.css?v=7">
-    <link rel="stylesheet" href="/css/fair-date-picker.css?v=1">
+    <link rel="stylesheet" href="/css/fair-date-picker.css?v=2">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -45,9 +45,9 @@
             <button type="button" id="date-to" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Al</span><strong>Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
         </div>
         <div class="fair-period-presets" role="group" aria-label="Periodi rapidi">
-            <button type="button" data-period="weekend" aria-pressed="false">Questo weekend</button>
             <button type="button" data-period="month" aria-pressed="false">Questo mese</button>
-            <button type="button" data-period="all" aria-pressed="true">Tutti i periodi</button>
+            <button type="button" data-period="three-months" aria-pressed="false">Da oggi a 3 mesi</button>
+            <button type="button" data-period="six-months" aria-pressed="false">Da oggi a 6 mesi</button>
         </div>
         <p id="period-note" class="fair-period-note" hidden></p>
         <div class="fiere-main-fields">
@@ -86,7 +86,7 @@
         <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><section class="fiere-access" data-fiere-guest hidden aria-labelledby="fiere-access-title">
         <div class="fiere-access-copy"><span class="fiere-access-kicker">Gratis per gli ambulanti</span><h2 id="fiere-access-title">Trova le fiere per il tuo banco</h2><p>Cerca per periodo e zona. Registrati per salvare le fiere, scegliere un promemoria e aprire i siti ufficiali.</p><ul><li>Salva le fiere che ti interessano</li><li>Scegli un promemoria via email</li><li>Attiva dal profilo gli avvisi per bandi e posteggi</li></ul></div>
         <div class="fiere-access-actions"><a href="/fiere?iscrizione=1" class="fiere-access-register" data-fiere-register>Registrati gratis</a><a href="/fiere?iscrizione=1" class="fiere-access-login" data-fiere-login>Hai già un account? Accedi</a><small>Nessun abbonamento.</small></div>
-    </section><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un periodo più ampio o un’altra zona. Con “Tutti i periodi” trovi anche le fiere senza una prossima data pubblicata.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
+    </section><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un periodo più ampio o un’altra zona. Azzera i filtri per vedere anche le fiere senza una prossima data pubblicata.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
     </div>
     <details class="fiere-note"><summary>Informazioni sul calendario</summary><p><strong id="catalog-count">…</strong> fiere e mercatini in 20 regioni. <span id="catalog-info">Fonti dei Comuni e degli organizzatori.</span></p><p>La copertura è più ampia in Liguria, Piemonte, Marche, Lombardia, Veneto ed Emilia-Romagna. I mesi indicano la ricorrenza: sono consultabili anche edizioni concluse o senza una prossima data pubblicata. Controlla le date e il programma nella scheda. I posteggi dichiarati non indicano posti disponibili: consulta la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></details>
     <section aria-labelledby="territori-title"><h2 id="territori-title">Fiere per territorio</h2><p>Cerca dove partecipare come venditore o espositore: date pubblicate o periodi abituali, prodotti e procedure nelle schede.</p><ul><li><a href="/fiere/lombardia">Fiere per ambulanti in Lombardia</a></li><li><a href="/fiere/piemonte">Fiere per ambulanti in Piemonte</a></li><li><a href="/fiere/emilia-romagna">Fiere per ambulanti in Emilia-Romagna</a></li></ul><p>Apri la scheda, verifica la compatibilità del banco e consulta la procedura ufficiale esterna. Candidatura e assegnazione del posto sono distinte.</p></section><p><a href="/fiere/elenco">Elenco fiere per ambulanti ed espositori →</a></p>
@@ -136,7 +136,7 @@
 <script src="/js/fiere-access.js?v=6"></script>
 <script src="/js/fair-review-editions.js?v=1"></script><script src="/js/fair-reviews.js?v=3"></script>
 <script src="/js/fair-detail.js?v=5"></script>
-<script src="/js/fair-date-picker.js?v=1"></script>
+<script src="/js/fair-date-picker.js?v=2"></script>
 <script src="/js/pages/fiere.js?v=167"></script>
 <script type="module" src="/js/saved-fairs.js?v=4"></script>
 </body>

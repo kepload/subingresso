@@ -16,11 +16,13 @@
         return date.toISOString().slice(0, 10);
     }
     function preset(kind, reference = today()) {
-        const [year, month] = reference.split('-').map(Number);
+        const [year, month, day] = reference.split('-').map(Number);
         if (kind === 'month') return [iso(year, month, 1), iso(year, month, daysInMonth(year, month))];
-        const weekday = new Date(reference + 'T12:00:00Z').getUTCDay();
-        const start = weekday === 0 ? reference : addDays(reference, (6 - weekday + 7) % 7);
-        return [start, addDays(start, weekday === 0 ? 0 : 1)];
+        const months = { 'three-months': 3, 'six-months': 6 }[kind];
+        if (!months) return ['', ''];
+        const end = new Date(Date.UTC(year, month - 1 + months, 1));
+        const endYear = end.getUTCFullYear(), endMonth = end.getUTCMonth() + 1;
+        return [reference, iso(endYear, endMonth, Math.min(day, daysInMonth(endYear, endMonth)))];
     }
     const label = value => new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z'));
 
@@ -185,7 +187,7 @@
         });
         $('period-apply').addEventListener('click', () => { flush(); const range = draft.slice(); close(); onChange(...range); });
         document.querySelectorAll('[data-period]').forEach(button => button.addEventListener('click', () => {
-            onChange(...(button.dataset.period === 'all' ? ['', ''] : preset(button.dataset.period)));
+            onChange(...preset(button.dataset.period));
         }));
         return {
             sync({ dateFrom = '', dateTo = '', monthsLabel = '' }) {
@@ -200,8 +202,9 @@
                 note.hidden = !saved[0] && !monthsLabel;
                 note.textContent = saved[0] ? 'Fiere con date pubblicate nel periodo.' : monthsLabel ? 'Periodo abituale: ' + monthsLabel : '';
                 document.querySelectorAll('[data-period]').forEach(button => {
-                    const kind = button.dataset.period, range = kind === 'all' ? ['', ''] : preset(kind);
+                    const range = preset(button.dataset.period);
                     button.setAttribute('aria-pressed', String(!monthsLabel && saved.every((date, index) => date === range[index])));
+                    button.setAttribute('aria-label', button.textContent + ': ' + label(range[0]) + ' – ' + label(range[1]));
                 });
             }
         };
