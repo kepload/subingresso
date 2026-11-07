@@ -19,18 +19,21 @@
     function prepare(container, id) {
         container.dataset.fiereId = id;
         container.querySelectorAll('a').forEach(link => {
-            const url = link.getAttribute('href') || '';
-            delete link.dataset.fiereSource;
-            delete link.dataset.fiereId;
+            const href = link.getAttribute('href') || '';
+            const url = /^https:\/\//i.test(href) ? href : link.dataset.fiereSource || href;
             if (!/^https:\/\//i.test(url)) return;
             // Organizer events point to an internal page, not an editorial source.
-            if (['https://subingresso.it', location.origin].includes(new URL(url).origin)) return;
-            // Official sources are public; authentication is for saving/reminders.
+            if (['https://subingresso.it', location.origin].includes(new URL(url).origin)) {
+                delete link.dataset.fiereSource;
+                delete link.dataset.fiereId;
+                return;
+            }
+            // Keep modifier clicks and missing JavaScript on the internal access path.
             link.dataset.fiereSource = url;
             link.dataset.fiereId = id;
-            link.href = url;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
+            link.href = fallback(id, url);
+            link.removeAttribute('target');
+            link.removeAttribute('rel');
         });
     }
     function feedback(text, trigger) {
@@ -42,8 +45,10 @@
             message.className = 'fiere-access-feedback';
             message.dataset.fiereFeedback = '';
             message.setAttribute('role', 'status');
-            (trigger?.parentElement || root).append(message);
         }
+        // A resumed source may live in a collapsed details element. Keep any
+        // subsequent error beside the action that the visitor actually used.
+        (trigger?.parentElement || root).append(message);
         message.textContent = text;
         message.hidden = !text;
     }
@@ -69,7 +74,7 @@
         window.__onLoginSuccess = callback;
         window.openAuthModal(tab, request?.context || (request
             ? 'Registrati gratis o accedi per consultare la fonte e verificare come partecipare. Dopo l’accesso apriamo la fonte che hai scelto.'
-            : 'Registrati gratis per salvare le fiere e scegliere un promemoria via email. Fonti e procedure restano consultabili liberamente.'), 'direct');
+            : 'Registrati gratis per salvare le fiere e scegliere un promemoria via email.'), 'direct');
         // The site's auth modal is outside the native fair dialog's top layer.
         const overlay = document.getElementById('authOverlay');
         overlay.setAttribute('role', 'dialog');
@@ -125,11 +130,7 @@
     document.addEventListener('click', event => {
         const trigger = event.target.closest('a[data-fiere-source], [data-fiere-register], [data-fiere-login]');
         if (!trigger) return;
-        if (trigger.hasAttribute('data-fiere-source') && /^https:\/\//i.test(trigger.getAttribute('href') || '')
-            && trigger.href === trigger.dataset.fiereSource) {
-            window.SiteAnalytics?.track('fair_source', {success: true}, trigger.dataset.fiereId);
-            return; // Native link: works without a session, including modifier clicks.
-        }
+        if (trigger.hasAttribute('data-fiere-source') && (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)) return;
         event.preventDefault();
         if (trigger.getAttribute('aria-busy') === 'true') return;
         if (trigger.hasAttribute('data-fiere-source')) {
@@ -169,7 +170,7 @@
         if (query.get('fiera') !== event.id || !url || !/^https:\/\//i.test(url)) return;
         query.delete('fiera'); query.delete('fonte');
         history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + location.hash);
-        const trigger = document.querySelector('#detail-source');
+        const trigger = document.querySelector('#detail-apply');
         openSource({ id: event.id, url }, trigger);
     } };
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

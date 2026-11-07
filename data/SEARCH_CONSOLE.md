@@ -1,5 +1,18 @@
 # Google Search Console diretto — Subingresso
 
+## Verifica fiere — 7 novembre 2026
+
+Rapporto aggiornato `2026-11-07T09:59:50.877Z`, Italia/web: 8 ottobre–4 novembre
+contro 10 settembre–7 ottobre, 28 giorni con dati in entrambi i periodi.
+Fiere: **16 clic e 1.837 impressioni**, posizione media 12,54, contro zero clic
+precedenti. Scheda Vittoria/San Martino: 1 clic, 43 impressioni, media 7,33.
+Le misure precedono il passaggio al calendario con scheda aperta del 6 novembre:
+non consentono di stabilire l’effetto del nuovo percorso su traffico e posizioni.
+Il controllo tecnico conserva URL/canonical e contenuto SSR; dal 7 novembre
+i filtri iniziali non vengono aggiunti automaticamente all’URL della scheda.
+Rapporto privato `.local/search-console/reports/2026-11-07T09-59-50-877Z-335b05/`.
+Nessuna richiesta di indicizzazione o reinvio sitemap eseguiti in questa sessione.
+
 ## Verifica fiere — 31 ottobre 2026
 
 Rapporto rinnovato `2026-10-30T23:07:28Z`: Italia/web, 30 settembre–27 ottobre,

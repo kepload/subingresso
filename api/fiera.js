@@ -10,7 +10,7 @@ function link(url, label, external = false) {
 }
 function sourceLink(event, url, label) {
     if (!url || !/^https:\/\//i.test(url)) return '';
-    return `<a href="${esc(url)}" data-fiere-id="${esc(event.id)}" data-fiere-source="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+    return `<a href="${esc('/fiere?fiera=' + encodeURIComponent(event.id) + '&fonte=' + encodeURIComponent(url))}" data-fiere-id="${esc(event.id)}" data-fiere-source="${esc(url)}">${esc(label)}</a>`;
 }
 const sourceLinks = event => (url, label, external = false) => external ? sourceLink(event, url, label) : link(url, label);
 function section(title, content) { return `<section><h2>${esc(title)}</h2>${content}</section>`; }

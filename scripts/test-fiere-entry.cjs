@@ -63,8 +63,11 @@ const server = http.createServer((req,res) => {
             assert.equal(await page.locator('#province-filter').inputValue(),fair.province);
             assert.deepEqual(await page.locator('#month-bar [aria-pressed="true"]').evaluateAll(els=>els.map(e=>Number(e.dataset.month))),fair.months);
             assert(await page.locator('#detail-apply').isVisible());
-            assert.equal(await page.locator('#detail-apply').getAttribute('href'),fair.participation.url || fair.source.url);
-            assert.equal(await page.locator('#detail-apply').getAttribute('target'),'_blank');
+            assert.equal(await page.locator('#detail-apply').getAttribute('data-fiere-source'),fair.participation.url || fair.source.url);
+            assert((await page.locator('#detail-apply').getAttribute('href')).startsWith('/fiere?fiera='));
+            assert.equal(await page.locator('#detail-apply').getAttribute('target'),null);
+            assert.equal(new URL(page.url()).search, '', 'landing URL stays clean while local filters are initialized');
+            assert(await page.locator('#fair-dialog').evaluate(el => el.querySelector('#detail-explore').compareDocumentPosition(el.querySelector('#detail-apply')) & Node.DOCUMENT_POSITION_FOLLOWING));
             assert(await page.locator('#detail-explore').isVisible());
             await page.waitForFunction(()=>document.querySelector('#map-markers').children.length>0);
             assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
@@ -117,7 +120,7 @@ const server = http.createServer((req,res) => {
             const staticPage = await nojs.newPage();
             await staticPage.goto(base+'/fiere/'+fair.id);
             assert.equal(await staticPage.locator('h1').innerText(),fair.name);
-            assert.equal(await staticPage.locator('#detail-apply').getAttribute('href'),fair.participation.url || fair.source.url);
+            assert((await staticPage.locator('#detail-apply').getAttribute('href')).startsWith('/fiere?fiera='));
             assert(await staticPage.locator('#detail-explore').isVisible());
             console.log(engine+' '+width+': SSR, modal, sources, local filters, close/reload, retry, no-JS and overflow passed.');
         } finally { await browser.close(); }

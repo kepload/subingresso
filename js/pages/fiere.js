@@ -503,6 +503,8 @@
         return !state.months.length ? 'Nessun mese selezionato' : state.months.length === 12 ? 'Tutti i mesi' : state.months.map(month => MONTHS[month - 1]).join(', ');
     }
     function syncURL() {
+        // The fair's canonical URL stays clean while its landing detail is open.
+        if (initialFair()) return;
         const url = new URL(location.href);
         for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'articoli', 'rinomatezza', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
@@ -919,11 +921,14 @@
     }
     function prepareSources(dialog, event) {
         if (global.FiereAccess) { global.FiereAccess.prepare(dialog, event.id); return; }
-        // Documentary links remain usable even if authentication is unavailable.
+        // Fail closed if the access script is unavailable, including modifier clicks.
         dialog.querySelectorAll('a[href^="https://"]').forEach(link => {
             if (new URL(link.href).origin === 'https://subingresso.it') return;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
+            link.dataset.fiereSource = link.href;
+            link.dataset.fiereId = event.id;
+            link.href = '/fiere?fiera=' + encodeURIComponent(event.id) + '&fonte=' + encodeURIComponent(link.href);
+            link.removeAttribute('target');
+            link.removeAttribute('rel');
         });
     }
     function openDetail(event) {
@@ -1144,7 +1149,7 @@
             const event = state.events.find(event => event.id === state.selected);
             if (event) {
                 state.province = event.province; state.region = ''; state.query = '';
-                if (!state.months.length) state.months = event.months.slice();
+                state.months = event.months.slice();
                 $('province-filter').value = state.province; $('fair-search').value = '';
                 changed(true);
             }

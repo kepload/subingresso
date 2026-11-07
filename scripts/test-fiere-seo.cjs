@@ -37,10 +37,11 @@ for(const slug of ['novembre','lombardia-alimentare','regione-inesistente']) ass
 const detail=render(sample.id).html;
 assert(detail.includes('id="detail-apply"'));
 assert(detail.includes('Il posto è confermato solo dopo l’assegnazione'));
-assert(detail.includes('href="'+sample.source.url+'" data-fiere-id='));
-assert(detail.includes('target="_blank" rel="noopener noreferrer"'));
+assert(detail.includes('data-fiere-source="'+sample.source.url+'"'));
+assert(detail.includes('href="/fiere?fiera='+sample.id+'&amp;fonte='));
 assert(!detail.includes('schema.org/Event'));
 assert(detail.includes('data-save-fair')&&detail.includes('data-remind-fair'));
-assert(detail.indexOf('id="detail-apply"')<detail.indexOf('id="detail-save-fair"'));
+assert(detail.indexOf('id="detail-explore"')<detail.indexOf('id="detail-save-fair"'));
+assert(detail.indexOf('id="detail-apply"')>detail.indexOf('id="detail-reviews"'));
 // Source and catalogue data are read-only; this test creates no real applications.
-console.log('SEO quality exclusions, regional pagination/completeness, canonical, schema and public application path passed.');
+console.log('SEO quality exclusions, regional pagination/completeness, canonical, schema, internal search first and gated source path passed.');
