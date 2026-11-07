@@ -42,3 +42,33 @@ ridimensionamenti consecutivi della stessa finestra, ripristino e selezione
 della provincia da tastiera passati nella verifica aggiuntiva. Catalogo
 invariato; nessuna scrittura o email reale durante le prove. Ricevute
 `published.json`, `live.json`, `resize.json` e screenshot nella cartella prove.
+
+## Correzione: mappa quadrata e priorità alla colonna sinistra
+
+L’utente ha chiesto di stringere la mappa: quadrata, ben allineata a destra,
+con più spazio a sinistra per le informazioni principali. Superato quindi il
+modello precedente con colonna sinistra limitata a560px e mappa espansa.
+
+Da721px la mappa occupa al massimo il44% della larghezza interna della pagina;
+il lato non supera l’altezza disponibile sotto l’header (100dvh−112px,
+fallback100vh). Rapporto1:1 e bordo destro allineato al margine della pagina;
+la colonna sinistra prende tutto lo spazio restante. A1440×900 mappa609×609px
+e sinistra747px, rispetto a796×788px e560px prima della correzione.
+A1920×1080 mappa820×820px e sinistra1016px. Su finestre1280×600 la mappa
+si riduce a488×488px, senza richiedere scroll per vederla tutta.
+
+Superficie interna ancorata ai quattro lati del pannello: evita differenze
+WebKit nel risolvere l’altezza percentuale dentro un contenitore quadrato.
+La larghezza esplicita100% conserva il pannello mobile entro il suo spazio,
+con le altezze precedenti370/360px. Filtri, titolo e finiture delle date
+delle sessioni successive conservati. Asset CSS aggiornato nei riferimenti.
+
+Backup remoto verificato:
+`backup/session-20261107-204350-fiere-mappa-quadrata` → `61874a7`.
+Prove della correzione in `.local/verifiche/fiere-mappa-20261107/quadrata/`.
+Passate13 combinazioni browser/formato/tema: mappa quadrata, colonna sinistra
+più larga, superficie interna completa, scroll, zoom e filtri. Controllati
+anche trascinamento, cinque ridimensionamenti consecutivi e tastiera.
+Inspector1440/768/390: nessun overflow né font mancante; rilievi sugli stili
+preesistenti come sopra. Catalogo e funzioni conservati.
+Esito della pubblicazione da registrare dopo il deploy.

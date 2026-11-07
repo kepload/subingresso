@@ -160,8 +160,10 @@ pannelli colorati. Recensioni nel flusso, fonte discreta in fondo e solo la
 documentazione aggiuntiva eventualmente apribile. Nessun link alla stessa
 scheda o gruppo di ricerche equivalenti. Contratto: `data/fiere-dossier/125-schede-minimali-20261107.md`.
 
-Nel calendario fiere la mappa occupa lo spazio a destra dei filtri fino al
-margine della pagina. Da721px resta sotto l’header e interamente nel viewport,
+Nel calendario fiere la mappa è quadrata, allineata al margine destro, con
+larghezza massima del44% e ridotta quando serve per entrare nell’altezza della
+finestra. La colonna sinistra ha più spazio per filtri ed elenco. Da721px la
+mappa resta sotto l’header e interamente nel viewport,
 anche scorrendo l’elenco; sul telefono segue i filtri. Nessun titolo, istruzione,
 nome del mare o menu sotto la mappa. Crediti nelle informazioni sul calendario.
 

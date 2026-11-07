@@ -6,9 +6,9 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-skip{position:fixed;top:-60px;left:16px;z-index:100;background:white;padding:12px}.fiere-skip:focus{top:8px}
 .fiere-main{width:100%;margin:auto;padding:16px 28px 48px}
 .fiere-page-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.fiere-explorer{display:grid;grid-template-columns:minmax(0,min(46%,560px)) minmax(0,1fr);gap:0 28px;align-items:start}
+.fiere-explorer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(44%,calc(100vh - 112px)));grid-template-columns:minmax(0,1fr) minmax(0,min(44%,calc(100dvh - 112px)));gap:0 28px;align-items:start}
 .fiere-search-panel{grid-column:1;min-width:0}.fiere-list-panel{grid-column:1;grid-row:2}
-.fiere-map-panel{grid-column:2;grid-row:1 / span 2;position:sticky;top:96px;height:calc(100vh - 112px);height:calc(100dvh - 112px);min-width:0}
+.fiere-map-panel{grid-column:2;grid-row:1 / span 2;position:sticky;top:96px;width:100%;aspect-ratio:1;min-width:0}
 .fiere-filters,.fiere-map-panel,.fiere-list-panel{background:white;border:1px solid #e2e8f0;border-radius:18px}
 .fiere-filters{padding:20px}.fiere-period-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px}
 .fiere-period-heading h2,.fiere-place>label{font-size:16px;font-weight:800;display:flex;gap:10px;align-items:center}
@@ -60,7 +60,7 @@ button.fiere-reputation{text-decoration:none}
 .fiere-map-panel,.fiere-list-panel{overflow:hidden}.fiere-panel-heading{padding:15px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #edf2f7;gap:10px}
 .fiere-panel-heading h2{font-size:14px;font-weight:800}.fiere-panel-heading p{font-size:12px;color:#64748b}
 .fiere-count{font-size:12px;font-weight:800;color:#2563eb;background:#eff6ff;padding:5px 10px;border-radius:7px}
-.fiere-map-stage{position:relative;background:radial-gradient(ellipse at 55% 35%,#f4f9ff,#eaf2fa);height:100%;overflow:hidden}
+.fiere-map-stage{position:absolute;inset:0;background:radial-gradient(ellipse at 55% 35%,#f4f9ff,#eaf2fa);overflow:hidden}
 .fiere-map-stage svg{display:block;width:100%;height:100%;touch-action:none;user-select:none;cursor:grab}.fiere-map-stage svg.is-dragging,.fiere-map-stage svg.is-dragging *{cursor:grabbing}
 .fiere-province{fill:#fff;stroke:#cbd8e5;stroke-width:1;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .15s}.fiere-province:hover,.fiere-province:focus-visible{fill:#dbeafe}.fiere-province.is-selected{fill:#dbeafe;stroke:#60a5fa}
 .fiere-province:focus{outline:none}.fiere-province:focus-visible{stroke:#2563eb;stroke-width:2}
