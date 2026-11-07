@@ -1,0 +1,62 @@
+# Ricerca fiere per intervallo — prova del 7 novembre 2026
+
+Richiesta: togliere il filtro prodotto e pubblicare una prova con date Dal/Al,
+selettore a scorrimento in stile iPhone e versione precedente ripristinabile.
+
+## Comportamento
+
+- Dal/Al aprono un dialog: pannello dal basso sul telefono, centrato sul desktop.
+  Giorno, mese e anno scorrono con inerzia e scatto alla riga; disponibili anche
+  tocco, clic, rotella, trascinamento con mouse e tastiera. Un solo pulsante
+  «Mostra fiere» applica le due date. Chiusura, sfondo ed Escape annullano.
+- Scorciatoie Questo weekend, Questo mese e Tutti i periodi. Il conteggio dei
+  giorni comprende gli estremi. Cambio mese/anno limita il giorno all’ultimo
+  valido; se un estremo supera l’altro, entrambi si riallineano alla data scelta.
+- Un intervallo include soltanto edizioni con date pubblicate che lo
+  intersecano, estremi compresi. Nessuna proiezione di vecchie edizioni su
+  anni nuovi. Periodi complessivi e date di calendario conservano i loro limiti
+  nelle schede. «Tutti i periodi» conserva l’intero catalogo.
+- Lista, ordinamento, dettaglio e mappa usano lo stesso intervallo. Parametri
+  condivisibili `dal=AAAA-MM-GG&al=AAAA-MM-GG`, mantenuti al ricaricamento.
+  Le scelte durante il caricamento non si perdono.
+- I vecchi link `mesi=` restano ricerche sui periodi abituali, indicati sotto
+  le date. Una nuova scelta Dal/Al li sostituisce. Provincia, regione, ricerca
+  per nome/comune e tipo di evento restano disponibili.
+- Rimosso il controllo prodotto; vecchi parametri settore/articoli ignorati e
+  rimossi dall’URL. Classificazioni, fonti e dati nelle schede restano conservati.
+  Nessuna modifica a catalogo, database, consensi, email o promemoria.
+
+## Backup e ripristino
+
+Base `2a8042fd1ad4e1a355f7c984366f76548195af76`.
+Tag remoto verificato `backup/session-20261107-162002-fiere-periodo-iphone`.
+Archivio locale `.local/backup/fiere-prima-periodo-20261107-162002/ricerca-precedente.zip`:
+HTML, JS e CSS precedenti, integrità ZIP verificata, istruzioni accanto.
+
+Se la prova viene rifiutata, ripristinare soltanto i file della ricerca dal
+backup in un nuovo commit, togliendo i riferimenti ai nuovi asset. Preservare
+eventuali modifiche successive; nessun reset dell’intero repository.
+
+## Verifiche
+
+`scripts/test-fiere-period.cjs`: estremi inclusivi, anni bisestili, fine mese,
+passaggio d’anno, date invalide/mancanti, vecchie edizioni, filtri geografici e
+confronto indipendente con il catalogo reale. Browser Chromium1440/768/320,
+WebKit390 e orizzontale844×390, temi chiaro/scuro, tastiera, annullo, reset,
+scorciatoie, URL/ricaricamento, dettaglio coerente e assenza di overflow.
+`scripts/test-fiere-entry.cjs`: ingressi SSR, fonti e accesso, chiusura/ricaricamento,
+catalogo tardivo, errore/riprova, assenza JS e quattro formati/browser.
+
+Gesti: rotella, trascinamento mouse e tastiera su Chromium e WebKit; tocco
+simulato CDP su Chromium con cambio del giorno e sfondo fermo. Applicazione
+immediata legge la posizione visibile prima del debounce. Nessun iPhone fisico
+disponibile: WebKit e tocco simulato non attestano una prova hardware Safari.
+
+Screenshot prima/dopo e prove in `.local/verifiche/fiere-periodo-20261107/`.
+Inspector eseguito a1440/768/390: nessun overflow orizzontale; rileva anche
+microtesti/gradienti/colori e overlay preesistenti del calendario e dell’accesso,
+fuori da questa modifica. I nuovi controlli hanno testo minimo12px, focus,
+movimento ridotto e temi condivisi. Nessun invio o account reale di prova.
+
+Stato iniziale: verifiche locali riuscite; pubblicazione e riscontro online
+da registrare a conclusione.

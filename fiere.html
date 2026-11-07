@@ -4,14 +4,14 @@
     <meta charset="UTF-8"><script src="/js/admin-theme.js?v=8"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiere per ambulanti ed espositori: calendario — Subingresso.it</title>
-    <meta name="description" content="Cerca fiere e mercatini dove partecipare con il tuo banco. Date, prodotti, domande e costi nelle schede per ambulanti ed espositori. Filtra per mese e provincia.">
+    <meta name="description" content="Cerca fiere e mercatini dove partecipare con il tuo banco. Scegli il periodo e la zona: date, domande e costi nelle schede per ambulanti ed espositori.">
     <link rel="canonical" href="https://subingresso.it/fiere">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Subingresso.it">
     <meta property="og:locale" content="it_IT">
     <meta property="og:url" content="https://subingresso.it/fiere">
     <meta property="og:title" content="Fiere per ambulanti ed espositori: calendario — Subingresso.it">
-    <meta property="og:description" content="Cerca fiere e mercatini dove partecipare con il tuo banco. Date, prodotti, domande e costi nelle schede per ambulanti ed espositori. Filtra per mese e provincia.">
+    <meta property="og:description" content="Cerca fiere e mercatini dove partecipare con il tuo banco. Scegli il periodo e la zona: date, domande e costi nelle schede per ambulanti ed espositori.">
     <meta property="og:image" content="https://subingresso.it/og/og-home.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/css/fair-reviews.css?v=2">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/admin-theme.css?v=7">
+    <link rel="stylesheet" href="/css/fair-date-picker.css?v=1">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -39,7 +40,16 @@
             <h2><i class="fa-regular fa-calendar" aria-hidden="true"></i> Quando</h2>
             <button type="button" id="reset-filters" class="fiere-reset">Azzera filtri</button>
         </div>
-        <div id="month-bar" class="fiere-months" role="group" aria-label="Mesi dell’anno"></div>
+        <div class="fair-period-fields" role="group" aria-label="Periodo della ricerca">
+            <button type="button" id="date-from" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Dal</span><strong>Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+            <button type="button" id="date-to" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Al</span><strong>Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="fair-period-presets" role="group" aria-label="Periodi rapidi">
+            <button type="button" data-period="weekend" aria-pressed="false">Questo weekend</button>
+            <button type="button" data-period="month" aria-pressed="false">Questo mese</button>
+            <button type="button" data-period="all" aria-pressed="true">Tutti i periodi</button>
+        </div>
+        <p id="period-note" class="fair-period-note" hidden></p>
         <div class="fiere-main-fields">
         <div class="fiere-place">
             <label for="province-filter"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dove</label>
@@ -48,24 +58,11 @@
         </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
-            <div class="fiere-place">
-                <span id="article-filter-label" class="fiere-place-label"><i class="fa-solid fa-tags" aria-hidden="true"></i> Tipologia di articolo</span>
-                <details id="article-filter" class="fiere-article-filter">
-                    <summary id="article-summary" aria-labelledby="article-filter-label article-summary-text"><span id="article-summary-text">Tutte le tipologie</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
-                    <div class="fiere-article-menu">
-                        <div class="fiere-article-toolbar"><span>Settore o singoli articoli</span><button type="button" id="clear-articles" disabled>Deseleziona tutte</button></div>
-                        <fieldset id="article-sector-options" class="fiere-article-group"><legend>Settori</legend></fieldset>
-                        <div id="article-options"></div>
-                    </div>
-                </details>
-                <div id="selected-articles" class="fiere-selected-articles" aria-label="Tipologie selezionate" hidden></div>
-            </div>
             <div class="fiere-filter-row">
                 <label for="type-filter">Tipo di evento<select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select></label>
             </div>
             <div class="fiere-filter-row">
                 <label for="fair-search">Nome o comune<input id="fair-search" type="search" placeholder="Es. San Martino, Brescia" autocomplete="off" maxlength="100"></label>
-                <div class="fiere-interval"><label for="month-from">Dal mese<select id="month-from" aria-label="Mese iniziale"><option value="">—</option></select></label><label for="month-to">Al mese<select id="month-to" aria-label="Mese finale"><option value="">—</option></select></label></div>
             </div>
         </details>
     </section>
@@ -87,9 +84,9 @@
             <p class="fiere-map-credit">Puntini sul comune, non sull’ingresso della fiera. Confini: <a href="https://github.com/guglielmo/geojson-italy" target="_blank" rel="noopener noreferrer">ISTAT / geojson-italy</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, semplificati.</p></details>
         </section>
         <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><section class="fiere-access" data-fiere-guest hidden aria-labelledby="fiere-access-title">
-        <div class="fiere-access-copy"><span class="fiere-access-kicker">Gratis per gli ambulanti</span><h2 id="fiere-access-title">Trova le fiere per il tuo banco</h2><p>Cerca per mese e zona. Registrati per salvare le fiere, scegliere un promemoria e aprire i siti ufficiali.</p><ul><li>Salva le fiere che ti interessano</li><li>Scegli un promemoria via email</li><li>Attiva dal profilo gli avvisi per bandi e posteggi</li></ul></div>
+        <div class="fiere-access-copy"><span class="fiere-access-kicker">Gratis per gli ambulanti</span><h2 id="fiere-access-title">Trova le fiere per il tuo banco</h2><p>Cerca per periodo e zona. Registrati per salvare le fiere, scegliere un promemoria e aprire i siti ufficiali.</p><ul><li>Salva le fiere che ti interessano</li><li>Scegli un promemoria via email</li><li>Attiva dal profilo gli avvisi per bandi e posteggi</li></ul></div>
         <div class="fiere-access-actions"><a href="/fiere?iscrizione=1" class="fiere-access-register" data-fiere-register>Registrati gratis</a><a href="/fiere?iscrizione=1" class="fiere-access-login" data-fiere-login>Hai già un account? Accedi</a><small>Nessun abbonamento.</small></div>
-    </section><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un altro settore, mese o zona.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
+    </section><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un periodo più ampio o un’altra zona. Con “Tutti i periodi” trovi anche le fiere senza una prossima data pubblicata.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
     </div>
     <details class="fiere-note"><summary>Informazioni sul calendario</summary><p><strong id="catalog-count">…</strong> fiere e mercatini in 20 regioni. <span id="catalog-info">Fonti dei Comuni e degli organizzatori.</span></p><p>La copertura è più ampia in Liguria, Piemonte, Marche, Lombardia, Veneto ed Emilia-Romagna. I mesi indicano la ricorrenza: sono consultabili anche edizioni concluse o senza una prossima data pubblicata. Controlla le date e il programma nella scheda. I posteggi dichiarati non indicano posti disponibili: consulta la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></details>
     <section aria-labelledby="territori-title"><h2 id="territori-title">Fiere per territorio</h2><p>Cerca dove partecipare come venditore o espositore: date pubblicate o periodi abituali, prodotti e procedure nelle schede.</p><ul><li><a href="/fiere/lombardia">Fiere per ambulanti in Lombardia</a></li><li><a href="/fiere/piemonte">Fiere per ambulanti in Piemonte</a></li><li><a href="/fiere/emilia-romagna">Fiere per ambulanti in Emilia-Romagna</a></li></ul><p>Apri la scheda, verifica la compatibilità del banco e consulta la procedura ufficiale esterna. Candidatura e assegnazione del posto sono distinte.</p></section><p><a href="/fiere/elenco">Elenco fiere per ambulanti ed espositori →</a></p>
@@ -97,6 +94,27 @@
     <noscript><p>Per usare i filtri e la mappa abilita JavaScript nel browser. Le singole schede sono consultabili nell’elenco anche senza JavaScript.</p></noscript>
 </main>
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title"></dialog>
+<dialog id="period-dialog" class="fair-period-dialog" aria-labelledby="period-title">
+    <div class="fair-period-sheet">
+        <div class="fair-period-sheet-heading"><h2 id="period-title">Scegli il periodo</h2><button type="button" id="period-close" aria-label="Annulla e chiudi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+        <div class="fair-period-tabs" role="tablist" aria-label="Date del periodo">
+            <button type="button" id="period-start" role="tab" aria-selected="true" aria-controls="period-wheel-panel"><span>Dal</span><strong></strong></button>
+            <button type="button" id="period-end" role="tab" aria-selected="false" aria-controls="period-wheel-panel" tabindex="-1"><span>Al</span><strong></strong></button>
+        </div>
+        <div id="period-wheel-panel" role="tabpanel" aria-labelledby="period-start">
+            <div class="fair-wheel-labels" aria-hidden="true"><span>Giorno</span><span>Mese</span><span>Anno</span></div>
+            <div class="fair-date-wheels">
+                <div class="fair-wheel-selection" aria-hidden="true"></div>
+                <div id="period-day" class="fair-date-wheel" role="spinbutton" tabindex="0" aria-label="Giorno" aria-valuemin="1" aria-valuemax="31" aria-valuenow="1"></div>
+                <div id="period-month" class="fair-date-wheel" role="spinbutton" tabindex="0" aria-label="Mese" aria-valuemin="1" aria-valuemax="12" aria-valuenow="1"></div>
+                <div id="period-year" class="fair-date-wheel" role="spinbutton" tabindex="0" aria-label="Anno" aria-valuemin="2021" aria-valuemax="2036" aria-valuenow="2026"></div>
+            </div>
+        </div>
+        <p id="period-duration" class="fair-period-duration" role="status" aria-live="polite"></p>
+        <button type="button" id="period-apply" class="fair-period-apply">Mostra fiere</button>
+        <p class="fair-period-disclaimer">Nel periodo scelto, fiere con date pubblicate.</p>
+    </div>
+</dialog>
 <dialog id="article-fit-dialog" class="fiere-dialog fiere-fit-dialog" aria-labelledby="fit-title" aria-describedby="fit-description">
     <div class="fiere-dialog-top"><h2 id="fit-title">Affinità con l’articolo</h2><button type="button" id="close-article-fit" aria-label="Chiudi la valutazione">×</button></div>
     <p id="fit-event-name"></p>
@@ -118,7 +136,8 @@
 <script src="/js/fiere-access.js?v=6"></script>
 <script src="/js/fair-review-editions.js?v=1"></script><script src="/js/fair-reviews.js?v=3"></script>
 <script src="/js/fair-detail.js?v=5"></script>
-<script src="/js/pages/fiere.js?v=166"></script>
+<script src="/js/fair-date-picker.js?v=1"></script>
+<script src="/js/pages/fiere.js?v=167"></script>
 <script type="module" src="/js/saved-fairs.js?v=4"></script>
 </body>
 </html>

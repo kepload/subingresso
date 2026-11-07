@@ -115,6 +115,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **7 novembre 2026 — ricerca fiere per periodo:** prova richiesta con Dal/Al a scorrimento e filtro prodotto rimosso. Backup remoto `backup/session-20261107-162002-fiere-periodo-iphone`, ZIP in `.local/backup/fiere-prima-periodo-20261107-162002/`; ripristino mirato se la prova viene rifiutata. [Comportamento, verifiche e pubblicazione](data/fiere-dossier/126-ricerca-periodo-iphone-20261107.md).
+
 - **7 novembre 2026 — SEO fiere:** pubblicato `6fe7f4d`, Vercel riuscito; titoli e testi orientati ad ambulanti/espositori. 10.443 schede e 5.546 voci sitemap verificate; tre asset identici online, sette pagine e quattro formati browser passati. Posizioni future da misurare. [Contratto e limiti](data/SEARCH_CONSOLE.md).
 
 - **7 novembre 2026 — schede fiere essenziali:** pubblicato `f8e86ba`, Vercel riuscito; un solo pulsante di ricerca, informazioni aperte, iscrizione in una riga, costi senza box e fonti deduplicate. Rimossi permalink e rimando alle recensioni. Corretto il catalogo tardivo che poteva coprire l’accesso. 10.443 schede controllate; suite funzionali, Chromium/WebKit e due temi passati. Online cinque asset identici, sei risposte SSR e percorsi1440/768/320/390 verificati. Catalogo e consensi invariati, prove senza scritture/email reali. [Modello e prove](data/fiere-dossier/125-schede-minimali-20261107.md).

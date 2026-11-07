@@ -75,7 +75,7 @@ const server = http.createServer((req,res) => {
             await page.waitForFunction(()=>document.querySelector('#fair-list').getAttribute('aria-busy')==='false');
             assert.equal(await page.locator('#detail-title').innerText(),fair.name);
             assert.equal(await page.locator('#province-filter').inputValue(),fair.province);
-            assert.deepEqual(await page.locator('#month-bar [aria-pressed="true"]').evaluateAll(els=>els.map(e=>Number(e.dataset.month))),fair.months);
+            assert((await page.locator('#period-note').innerText()).includes(fair.months.map(month=>globalThis.FiereCalendar.MONTHS[month-1]).join(', ')));
             assert(await page.locator('#detail-apply').isVisible());
             assert.equal(await page.locator('#detail-apply').getAttribute('data-fiere-source'),fair.participation.url || fair.source.url);
             assert((await page.locator('#detail-apply').getAttribute('href')).startsWith('/fiere?fiera='));

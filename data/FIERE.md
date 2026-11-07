@@ -33,6 +33,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Ricerca per periodo con date a scorrimento — 7 novembre 2026](fiere-dossier/126-ricerca-periodo-iphone-20261107.md): prova Dal/Al pubblicabile e ripristinabile; filtro prodotto rimosso, intervalli su date pubblicate e vecchi link per mese compatibili.
+
 - [Schede fiere essenziali — 7 novembre 2026](fiere-dossier/125-schede-minimali-20261107.md): un’unica ricerca, informazioni aperte, costi senza box, nessun rimando alle recensioni o link alla stessa scheda; fonti deduplicate in fondo, sempre con account.
 
 - [Ricerca interna, iscrizione e fonti — 7 novembre 2026](fiere-dossier/124-conversione-iscrizioni-20261107.md): ricerca locale in primo piano, iscrizione visibile, siti esterni in fondo e apertura con account; supera il precedente accesso libero alle fonti dalle schede.
