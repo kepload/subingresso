@@ -22,9 +22,9 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 18. 🟠 Fiere per abbigliamento, casalinghi e alimentari in Lombardia: dove la tua merce è ammessa e dove è esclusa
 19. 🟠 Fine fiera: torno l'anno prossimo? Il registro scaricabile di vendite, invenduto e ore lavorate
 20. 🟢 Posteggio d'angolo o centrale: confronto sul campo tra passaggi, soste e acquisti, con scheda di rilevazione
-21. 🔴 Comprare un posteggio a rate o pagare subito? Il simulatore di anticipo, interessi e costo totale
-22. 🔴 Quanto costa lo stesso banco in Comuni diversi? Canoni mercatali lombardi a confronto, con calcolatore
-23. 🔴 Autonegozio usato incluso nella vendita: checklist di impianti, portata e documenti da controllare prima di firmare
+21. 🔴 Comprare un posteggio a rate o pagare subito? Il simulatore di anticipo, interessi e costo totale — [pubblicato il 07/11/2026](https://subingresso.it/blog?post=comprare-posteggio-rate-pagare-subito); [testo](data/blog/comprare-posteggio-rate-pagare-subito.html), [fonti](data/blog/comprare-posteggio-rate-pagare-subito.fonti.md) e [file gratuito](downloads/simulatore-rate-posteggio.xlsx).
+22. 🔴 Quanto costa lo stesso banco in Comuni diversi? Canoni mercatali lombardi a confronto, con calcolatore — [pubblicato il 07/11/2026](https://subingresso.it/blog?post=canoni-mercatali-lombardia-confronto); [testo](data/blog/canoni-mercatali-lombardia-confronto.html), [fonti](data/blog/canoni-mercatali-lombardia-confronto.fonti.md) e [file gratuito](downloads/calcolatore-canoni-mercatali.xlsx).
+23. 🔴 Autonegozio usato incluso nella vendita: checklist di impianti, portata e documenti da controllare prima di firmare — [pubblicato il 07/11/2026](https://subingresso.it/blog?post=autonegozio-usato-controlli-prima-firmare); [testo](data/blog/autonegozio-usato-controlli-prima-firmare.html), [fonti](data/blog/autonegozio-usato-controlli-prima-firmare.fonti.md) e [file gratuito](downloads/checklist-autonegozio-usato.xlsx).
 24. 🟠 Compro un banco con dipendenti: stipendi, ferie e TFR nella scheda da verificare con il consulente
 25. 🟠 Banco in un market privato o posteggio comunale: costi, durata e possibilità di cessione a confronto
 26. 🟠 Fiera trovata sui social: verifica organizzatore e pagamento con la checklist e i registri ufficiali

@@ -117,3 +117,8 @@ Il browser web non recuperava il blog; catalogo controllato tramite API
 pubblica in sola lettura. Nessun articolo dedicato allo stesso confronto,
 distinto da costi generici e guida canone/TARI già presenti.
 Prove SSR/browser e verifica di pubblicazione a cura del coordinatore.
+
+
+## Pubblicazione coordinata verificata
+
+Pubblicato il 7 novembre 2026, ID `637cc31c-7efd-496f-ba2b-262e731caaa2`, materiali commit `14f917b`. Vercel riuscito `9v34mUXL8vYTwRdF2Aw8bqv79ikF`; copertina e file XLSX online identici SHA256. Canonical, NewsArticle, indice e sitemap verificati; Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript passati, download reale WebKit identico. Due ADS acquisto pertinenti e spazio Vetrine conservato. Verifiche automatiche senza scritture di prova. Tutti i 128 articoli precedenti invariati; tre nuovi articoli, totale 131. Prove coordinate in `.local/lavori/articoli/tre-articoli-20261107/`.

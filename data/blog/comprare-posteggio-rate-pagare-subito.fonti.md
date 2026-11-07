@@ -30,3 +30,8 @@ Ricognizione pubblica via API prima della scrittura: **128 articoli**, nessun ti
 Copertina originale con **imagegen integrato**, WebP 1600×900, senza scritte. Scena inventata di due operatori che valutano un acquisto al mercato, dichiarata IA nel testo. Prompt integrale nel file `.prompt.md`, originale PNG nel dossier privato. Nessuna immagine riutilizzata di una trattativa reale.
 
 Backup preventivo comune eseguito e verificato dal coordinatore: tag `backup/session-20261107-103514-tre-articoli-blog-21-22-23`, ramo remoto `backup/pre-tre-articoli-blog-20261107-103518`. Pubblicazione e riscontri online a cura della sessione coordinatrice.
+
+
+## Pubblicazione coordinata verificata
+
+Pubblicato il 7 novembre 2026, ID `7e3e5edb-1ae8-4225-9240-873683c037cc`, materiali commit `14f917b`. Vercel riuscito `9v34mUXL8vYTwRdF2Aw8bqv79ikF`; copertina e file XLSX online identici SHA256. Canonical, NewsArticle, indice e sitemap verificati; Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript passati, download reale WebKit identico. Due ADS acquisto pertinenti e spazio Vetrine conservato. Verifiche automatiche senza scritture di prova. Tutti i 128 articoli precedenti invariati; tre nuovi articoli, totale 131. Prove coordinate in `.local/lavori/articoli/tre-articoli-20261107/`.
