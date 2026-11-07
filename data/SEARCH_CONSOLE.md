@@ -1,5 +1,34 @@
 # Google Search Console diretto — Subingresso
 
+## Intento delle fiere — 7 novembre 2026
+
+Obiettivo confermato dall’utente: intercettare chi cerca fiere dove partecipare
+come ambulante, venditore o espositore. Le ricerche generiche sul nome dell’evento
+non dimostrano da sole né pubblico professionale né pubblico di visitatori.
+Rapporto aggiornato prima dell’intervento; estrazioni e query restano private in
+`.local/search-console/reports/2026-11-07T10-50-35-213Z-eaf44a/`.
+
+Calendario, raccolte regionali ed elenco usano titoli, descrizioni e collegamenti
+orientati agli ambulanti. Le singole schede distinguono posteggi per ambulanti,
+partecipazione come espositore e partecipazione con il banco ancora da verificare,
+secondo il tipo già documentato nel catalogo. Intestazioni condivise tra SSR e
+calendario; metadati coerenti anche dopo la chiusura della scheda.
+Nessun elenco di meta-keywords, disponibilità presunta o requisito inventato.
+Conservati indirizzi, canonical, esclusioni editoriali, catalogo, fonti e accessi.
+
+Verifiche: 10.443 schede, 5.546 voci sitemap; suite SEO, pagine e ingresso
+Chromium1440/768/320 e WebKit390 riuscite. La suite generale del catalogo ha
+un errore preesistente a `scripts/test-fiere.cjs:636`: cerca la prima «Fiera del
+Crocifisso» senza distinguere il Comune e trova mesi diversi. Riprodotto anche
+con il JavaScript precedente; nessuna correzione dei dati per far passare il test.
+Inspector prima/dopo e screenshot: stili preesistenti fuori ambito, verifica
+dei testi senza ridisegno. Prove `.local/verifiche/seo-fiere-ambulanti-20261107/`.
+
+Il miglioramento delle posizioni non è ancora misurabile: Google deve ripetere
+scansione ed elaborazione; gli esiti si valutano con un futuro rapporto, senza
+promesse di prima posizione né controlli automatici aggiunti.
+[Titoli descrittivi e tempi di acquisizione](https://developers.google.com/search/docs/appearance/title-link?hl=it).
+
 ## Verifica fiere — 7 novembre 2026
 
 Rapporto aggiornato `2026-11-07T09:59:50.877Z`, Italia/web: 8 ottobre–4 novembre

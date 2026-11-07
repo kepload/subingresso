@@ -20,8 +20,12 @@ const path = require('node:path');
 const FairDetail = require('../js/fair-detail');
 const explorerTemplate = fs.readFileSync(path.join(__dirname, '..', 'fiere.html'), 'utf8');
 function detail(event) {
-    const title = `${event.name} a ${event.city}: date e partecipazione`;
-    const description = `${event.name} a ${event.city}, ${event.province}: date disponibili, informazioni per partecipare, costi e fonti. Scopri anche altre fiere in zona.`;
+    const publicFair = event.participation?.type === 'public';
+    const exhibitorFair = ['selected', 'exhibitors'].includes(event.participation?.type);
+    const intent = publicFair ? 'posteggi per ambulanti' : exhibitorFair ? 'partecipare come espositore' : 'partecipare con il banco';
+    const audience = publicFair ? 'ambulanti' : exhibitorFair ? 'espositori' : 'ambulanti ed espositori';
+    const title = `${event.name} a ${event.city}: ${intent}`;
+    const description = `${event.name} a ${event.city}, ${event.province}: informazioni per ${audience} su date, prodotti e partecipazione. Consulta modalità di domanda, costi e fonte ufficiale.`;
     const url = SITE + fairPath(event);
     const breadcrumbs = {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Fiere',item:SITE+'/fiere'},{'@type':'ListItem',position:2,name:event.name,item:url}]};
     const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
@@ -35,7 +39,7 @@ function detail(event) {
         .replace(/<meta property="og:title" content="[^"]*">/, () => `<meta property="og:title" content="${esc(title)}">`)
         .replace(/<meta property="og:description" content="[^"]*">/, () => `<meta property="og:description" content="${esc(description)}">`)
         .replace('</head>', () => `<script id="fiera-breadcrumbs" type="application/ld+json">${json(breadcrumbs)}</script></head>`)
-        .replace('<h1 id="page-title" class="fiere-page-title">Fiere e mercatini</h1>', '<h2 id="page-title" class="fiere-page-title">Fiere e mercatini</h2>')
+        .replace('<h1 id="page-title" class="fiere-page-title">Fiere per ambulanti</h1>', '<h2 id="page-title" class="fiere-page-title">Fiere per ambulanti</h2>')
         .replace('<dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title"></dialog>', () => `<dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title" open data-landing-fair="${esc(event.id)}">${markup}</dialog>`)
         .replace('</body>', () => `<script id="initial-fair" type="application/json">${json(event)}</script><noscript><style>#calendario{display:none}#close-detail{display:none}#fair-dialog[open]{position:relative;inset:auto;max-height:none;margin:24px auto}#fair-dialog .sf-fair-actions{display:none}</style></noscript></body>`);
 }
@@ -49,7 +53,7 @@ function dateSummary(event) {
     return state + ': ' + calendar.editionLabel(edition);
 }
 function territoryLinks() {
-    return section('Cerca per territorio', '<p>Prime raccolte regionali con documentazione sufficiente. Le altre zone restano consultabili nel calendario e nell’elenco.</p><ul>' + territories.map(area => `<li>${link('/fiere/'+area.slug, 'Fiere e mercatini in '+area.name)}</li>`).join('') + '</ul>');
+    return section('Cerca per territorio', '<p>Fiere e mercatini per ambulanti ed espositori, con prodotti e procedure nelle schede. Le altre zone restano consultabili nel calendario e nell’elenco.</p><ul>' + territories.map(area => `<li>${link('/fiere/'+area.slug, 'Fiere per ambulanti in '+area.name)}</li>`).join('') + '</ul>');
 }
 function territory(area, page) {
     const all = events.filter(event => event.region === area.name && isIndexable(event));
@@ -59,8 +63,8 @@ function territory(area, page) {
     const pagePath = n => '/fiere/'+area.slug+(n > 1 ? '?pagina='+n : '');
     const provinces = [...new Set(all.map(e => e.province))].sort((a,b)=>a.localeCompare(b,'it'));
     const rows = sorted.slice((page-1)*60,page*60).map(event => `<li><h3>${link(fairPath(event),event.name)}</h3><p>${esc(event.city)} (${esc(event.province)}) · ${esc(calendar.CATEGORIES[event.category] || 'Fiera')}</p><p>${esc(dateSummary(event))}</p><p>${esc(event.sectors)}.</p>${event.summary ? `<p>${esc(event.summary)}</p>` : ''}<p class="muted">Fonte verificata il ${esc(event.source.checkedAt)} · ${esc(calendar.deadlineStatus(event.participation || {}) || 'Apertura candidature da verificare nella scheda e nella fonte.')}</p></li>`).join('');
-    const body = `<nav aria-label="Percorso">${link('/fiere','Fiere')} / ${esc(area.name)}</nav><h1>Fiere e mercatini in ${esc(area.name)}</h1><p>${esc(area.intro)}</p>${area.source ? '<p>'+link(area.source,area.label+' ↗',true)+'</p>' : ''}<p>${all.length} schede documentate in ${provinces.length} province. La raccolta non è un censimento completo; non certifica posti disponibili. Le date passate restano come riferimento e non vengono proiettate sull’anno successivo.</p>${section('Province nella raccolta', '<details><summary>Apri le province documentate</summary><ul>'+provinces.map(province=>`<li>${link('/fiere?provincia='+encodeURIComponent(province),province+' · '+all.filter(e=>e.province===province).length+' schede documentate; apri la mappa')}</li>`).join('')+'</ul></details>')}<h2>Edizioni e periodi documentati</h2><p>Prima le edizioni non concluse; seguono periodi abituali e riferimenti passati. Apri la scheda per requisiti, costi, fonti e candidatura.</p><ol class="territory-fairs" start="${(page-1)*60+1}">${rows}</ol><nav aria-label="Pagine della regione">${page>1 ? link(pagePath(page-1),'← Precedente') : ''}<span>Pagina ${page} di ${pages}</span>${page<pages ? link(pagePath(page+1),'Successiva →') : ''}</nav>${section('Dalla scelta alla domanda', '<p>Controlla data, prodotti e operatore ammesso. Leggi avviso, scadenza, costi e servizi; presenta poi la domanda nel canale ufficiale esterno. La fonte può richiedere una propria autenticazione. Salva la fiera dalla scheda e imposta un promemoria per ricontrollare: non equivale a prenotare un banco.</p>')}${territoryLinks()}`;
-    return shell(`Fiere e mercatini in ${area.name}${page>1 ? ' — pagina '+page : ''}`,`Fiere documentate in ${area.name}: date pubblicate o periodi abituali, prodotti, fonti e procedure per partecipare con il banco.`,pagePath(page),body);
+    const body = `<nav aria-label="Percorso">${link('/fiere','Fiere')} / ${esc(area.name)}</nav><h1>Fiere per ambulanti in ${esc(area.name)}</h1><p>${esc(area.intro)}</p>${area.source ? '<p>'+link(area.source,area.label+' ↗',true)+'</p>' : ''}<p>${all.length} schede documentate in ${provinces.length} province. La raccolta non è un censimento completo; non certifica posti disponibili. Le date passate restano come riferimento e non vengono proiettate sull’anno successivo.</p>${section('Province nella raccolta', '<details><summary>Apri le province documentate</summary><ul>'+provinces.map(province=>`<li>${link('/fiere?provincia='+encodeURIComponent(province),province+' · '+all.filter(e=>e.province===province).length+' schede documentate; apri la mappa')}</li>`).join('')+'</ul></details>')}<h2>Edizioni e periodi documentati</h2><p>Prima le edizioni non concluse; seguono periodi abituali e riferimenti passati. Apri la scheda per requisiti, costi, fonti e candidatura.</p><ol class="territory-fairs" start="${(page-1)*60+1}">${rows}</ol><nav aria-label="Pagine della regione">${page>1 ? link(pagePath(page-1),'← Precedente') : ''}<span>Pagina ${page} di ${pages}</span>${page<pages ? link(pagePath(page+1),'Successiva →') : ''}</nav>${section('Dalla scelta alla domanda', '<p>Per partecipare come venditore o espositore, controlla data, prodotti e operatore ammesso. Leggi avviso, scadenza, costi e servizi; presenta poi la domanda nel canale ufficiale esterno. La fonte può richiedere una propria autenticazione. Salva la fiera dalla scheda e imposta un promemoria per ricontrollare: non equivale a prenotare un banco.</p>')}${territoryLinks()}`;
+    return shell(`Fiere per ambulanti in ${area.name}${page>1 ? ' — pagina '+page : ''}`,`Fiere e mercatini in ${area.name} per ambulanti ed espositori: date, prodotti, requisiti e procedure di domanda per partecipare con il banco.`,pagePath(page),body);
 }
 function listing(page) {
     const sorted = [...events].sort((a,b) => a.name.localeCompare(b.name,'it') || a.id.localeCompare(b.id));
@@ -68,7 +72,7 @@ function listing(page) {
     if (!Number.isInteger(page) || page < 1 || page > pages) return null;
     const pagePath = n => '/fiere/elenco' + (n > 1 ? '?pagina=' + n : '');
     const items = sorted.slice((page-1)*100,page*100).map(event => `<li>${link(fairPath(event),event.name)}<span class="muted"> · ${esc(event.city)} (${esc(event.province)})</span></li>`).join('');
-    return shell(`Elenco fiere e mercatini in Italia — pagina ${page}`, 'Sfoglia le schede delle fiere: date disponibili, fonti e informazioni per partecipare. Archivio in aggiornamento.',pagePath(page),`<h1>Fiere e mercatini in Italia</h1><p>${link('/fiere','Cerca sulla mappa per mese e zona →')}</p><p>L’archivio viene completato progressivamente. Le informazioni mancanti sono indicate nelle singole schede.</p>${page === 1 ? territoryLinks() : ''}<ul>${items}</ul><nav aria-label="Pagine dell’elenco">${page > 1 ? link(pagePath(page-1),'← Precedente') : ''} <span>Pagina ${page} di ${pages}</span> ${page < pages ? link(pagePath(page+1),'Successiva →') : ''}</nav>`);
+    return shell(`Elenco fiere per ambulanti ed espositori — pagina ${page}`, 'Fiere e mercatini dove partecipare con il banco: sfoglia le schede per ambulanti ed espositori e consulta date, prodotti, modalità di domanda e fonti.',pagePath(page),`<h1>Fiere per ambulanti in Italia</h1><p>${link('/fiere','Cerca sulla mappa per mese e zona →')}</p><p>Cerca le fiere dove partecipare come venditore o espositore. Le informazioni mancanti sono indicate nelle singole schede.</p>${page === 1 ? territoryLinks() : ''}<ul>${items}</ul><nav aria-label="Pagine dell’elenco">${page > 1 ? link(pagePath(page-1),'← Precedente') : ''} <span>Pagina ${page} di ${pages}</span> ${page < pages ? link(pagePath(page+1),'Successiva →') : ''}</nav>`);
 }
 module.exports = function handler(req,res) {
     const slug = typeof req.query?.slug === 'string' ? req.query.slug : '';

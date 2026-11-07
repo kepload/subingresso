@@ -77,6 +77,9 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 - SEO: collegamento diretto Search Console, niente intermediari obbligatori.
   `node scripts/search-console.cjs status`; se configurato aggiornare `report`
   prima delle analisi. Referrer e ricerche pubbliche non certificano posizioni.
+  Fiere orientate a chi partecipa come ambulante/venditore/espositore;
+  impressioni generiche non equivalgono a interesse professionale. Nessuna
+  posizione garantita; contratto e verifiche in `data/SEARCH_CONSOLE.md`.
 - File privati in `.local/`, esclusi da Git/deploy. Ultima revisione pulizia
   documentata il 27 ottobre; proposta mensile al primo lavoro utile, senza
   cancellazioni automatiche. Regole complete in AGENTS.

@@ -1144,10 +1144,10 @@
             for (const key of ['fiera', 'fonte']) url.searchParams.delete(key);
             history.replaceState(null, '', url.pathname + url.search);
             syncURL();
-            document.title = 'Calendario fiere in Italia: mappa e mesi — Subingresso.it';
+            document.title = 'Fiere per ambulanti ed espositori: calendario — Subingresso.it';
             document.querySelector('link[rel="canonical"]').href = 'https://subingresso.it/fiere';
             document.querySelector('meta[property="og:url"]').content = 'https://subingresso.it/fiere';
-            const description = 'Fiere e mercatini in Italia: date, contatti e informazioni per partecipare. Filtra per mese, regione, provincia e settore.';
+            const description = 'Cerca fiere e mercatini dove partecipare con il tuo banco. Date, prodotti, domande e costi nelle schede per ambulanti ed espositori. Filtra per mese e provincia.';
             document.querySelector('meta[name="description"]').content = description;
             document.querySelector('meta[property="og:description"]').content = description;
             document.querySelector('meta[property="og:title"]').content = document.title;
