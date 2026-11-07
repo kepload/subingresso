@@ -96,3 +96,10 @@ freccia omessa e testo13px. Rotelle e scorciatoie invariate.
 Backup `backup/session-20261107-201521-fiere-date-su-riga` → `84d8c2a`.
 Sette combinazioni locali Chromium/WebKit e chiaro/scuro riuscite; prove
 in `.local/verifiche/fiere-periodo-20261107/date-su-riga/`.
+
+Pubblicato `25400031f98921f61b584b6f2ae67b7d21d30258`,
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/BLsqV8YMQyoPshx2L2h6fJnK79qs).
+HTML/CSS identici al commit; cinque combinazioni online Chromium1440/768/320
+e WebKit390 nei due temi passate con date vuote e giorni a due cifre.
+Confermati allineamento, testo completo,48px e assenza di errori pagina;
+ricevuta `date-su-riga/published.json`. Modifica della mappa precedente conservata.
