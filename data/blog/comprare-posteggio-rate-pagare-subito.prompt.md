@@ -1,0 +1,7 @@
+# Copertina: comprare un posteggio a rate o pagare subito
+
+Generata il 7 novembre 2026 con **imagegen integrato**, use case `photorealistic-natural`. Immagine originale inventata, dichiarata IA nel testo; nessuna trattativa reale documentata. Consegna WebP 1600×900: `images/blog/comprare-posteggio-rate-pagare-subito.webp`. Originale e verifiche in `.local/lavori/articoli/comprare-posteggio-rate-pagare-subito/`.
+
+## Prompt integrale
+
+Use case: photorealistic-natural. Asset type: landscape editorial blog cover for Italian street-market business marketplace Subingresso.it, 16:9. Primary request: a believable Italian market trader deciding whether to buy an established market stall by instalments or paying upfront. Scene: quiet late morning at a modest Italian open-air clothing market; at a small clean table beside the stall, two ordinary middle-aged traders calmly review a few blank-looking papers with a simple pocket calculator; folded clothing, muted blue awning, a compact delivery van softly out of focus behind them. Natural candid editorial photography, dignified everyday working people, realistic hands and proportions, warm daylight, restrained colors, no posed stock-photo smiles. Wide balanced composition with people and calculator inside central safe crop. Constraints: an invented illustrative scene, no real identifiable location, no text, no logos, no watermark, no readable numbers, no banknotes, no coins, no luxury styling, no charts, no promises of financial success.
