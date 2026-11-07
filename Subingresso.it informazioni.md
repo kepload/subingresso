@@ -58,6 +58,9 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 - Recensioni fiere: tre schermate essenziali e account solo alla fine;
   bozza locale per 30 giorni, recensioni pubbliche nelle schede e nel calendario.
   Contratto e sincronizzazione dei nuovi ID: `data/FIERE_RECENSIONI.md`.
+- Schede fiere: ricerca per periodo/provincia e iscrizione in primo piano;
+  siti esterni in fondo, apertura con account obbligatorio. Supera l’accesso
+  libero alle fonti del 6 novembre. [Contratto](data/fiere-dossier/124-conversione-iscrizioni-20261107.md).
 - Vetrine: giorni acquistati conservati, selezione esplicita fino a 10 posteggi,
   sconto progressivo; giorni evidenti, opzioni e totale leggibili. Contratti
   `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md`.
@@ -106,6 +109,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **7 novembre 2026 — iscrizioni dalle fiere:** pubblicato `7c63ddf`, Vercel riuscito e sei asset identici ai blob Git. Ricerca locale principale, iscrizione visibile, fonti in fondo con accesso verificato; URL della fiera pulito, canonical/SSR conservati. 10.443 schede e 5.546 voci fiere sitemap verificate; percorsi locali/online Chromium1440/820/768/320 e WebKit390, annullo/ripresa, sessioni scadute/errori, Ctrl+clic e temi passati. Registrazioni/email simulate; catalogo invariato. Search Console aggiornato: 16 clic/1.837 impressioni fiere, dati fino al 4 novembre, antecedenti al cambio del 6. [Dettagli e prove](data/fiere-dossier/124-conversione-iscrizioni-20261107.md).
 
 - **7 novembre 2026 — tre guide del blog:** priorità 21/22/23 completate in tre sessioni separate: rate e pagamento immediato, canoni lombardi, autonegozio usato. Fonti ufficiali, tre copertine originali IA e tre file XLSX gratuiti; 47 scenari sui fogli superati. Materiali `14f917b`, Vercel riuscito; pagine, download identici, SEO/indice/sitemap e Chromium1440/768/320, WebKit390, senzaJS verificati. 128 articoli precedenti invariati, 131 totali; elenco priorità aggiornato. Testi/fonti/prompt in `data/blog/`, prove e ricevute `.local/lavori/articoli/tre-articoli-20261107/`. Nessun nuovo ciclo o invio attivato.
 

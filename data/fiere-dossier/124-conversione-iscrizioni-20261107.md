@@ -64,3 +64,12 @@ segnala dispositivi grafici e microtesti del calendario preesistente; il dialog
 è una sovrapposizione voluta. Font e colori seguono DESIGN.md. L’intervento
 aggiunge testi 13–17px, azioni di almeno 48px e nessun gradiente.
 Backup remoto di sessione e ramo pre-intervento verificati prima delle modifiche.
+
+Pubblicato `7c63ddf3f5a2a73577fd0b792966d408f26bca25`, controllo
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/7cMiq9xCjgh786QdPJzvnhqRi8G9).
+Sei asset online identici ai blob Git; sei risposte SSR su tre fiere con/senza
+parametri, canonical e ordine dei comandi corretti; API anonima401/metodo405.
+Suite di ingresso/accesso ripetute online nei formati previsti; prova con
+SDK/icone reali e due temi a quattro larghezze. Ctrl+clic reale: nuova scheda
+interna, registrazione necessaria e annullo con ripristino della fiera.
+Ricevuta privata `published.json` e screenshot in `live/` nel percorso prove.
