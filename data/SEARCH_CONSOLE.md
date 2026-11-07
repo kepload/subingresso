@@ -16,6 +16,11 @@ calendario; metadati coerenti anche dopo la chiusura della scheda.
 Nessun elenco di meta-keywords, disponibilità presunta o requisito inventato.
 Conservati indirizzi, canonical, esclusioni editoriali, catalogo, fonti e accessi.
 
+Pubblicato `6fe7f4d868c444d6a2245aa2fba2230d79de10d0`, Vercel riuscito;
+tre asset identici al commit, sette pagine SSR con metadati verificati e quattro
+formati browser online passati, incluso ritorno ai metadati del calendario.
+Ricevuta privata `published.json` nella cartella delle prove sotto indicata.
+
 Verifiche: 10.443 schede, 5.546 voci sitemap; suite SEO, pagine e ingresso
 Chromium1440/768/320 e WebKit390 riuscite. La suite generale del catalogo ha
 un errore preesistente a `scripts/test-fiere.cjs:636`: cerca la prima «Fiera del
