@@ -59,3 +59,12 @@ Prove private `.local/verifiche/fiere-minimali-20261107/`. Inspector e detector
 estesi includono anche gradienti, microtesti e pannelli preesistenti del calendario;
 la sovrapposizione è il dialog richiesto, il font è quello di DESIGN.md.
 Backup remoto di sessione e ramo pre-intervento verificati prima delle modifiche.
+
+Pubblicato `f8e86ba528256a1b085f0d36bf9a2cd81eab7179`, controllo
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3KcMQ2VvgVqqZsVveN8razHEboiA).
+Cinque asset online identici ai blob Git; sei risposte SSR su tre fiere con/senza
+parametri, canonical, singola ricerca e deduplica corretti. Suite ingresso
+ripetuta online Chromium1440/768/320 e WebKit390, compreso catalogo tardivo
+durante l’accesso. Prova con SDK/icone reali nei due temi a quattro larghezze;
+controllo specifico di costi e fonte in fondo su due schede mobili scure.
+Ricevuta `published.json`, screenshot e misure nella cartella privata delle prove.
