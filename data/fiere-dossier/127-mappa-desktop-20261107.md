@@ -76,3 +76,12 @@ Correzione pubblicata `1adfc5d5d0ebf85e73127ca323668799d062a63f`;
 HTML e CSS identici online ai blob Git; tutte le13 combinazioni browser/tema
 passate anche sul sito, senza overflow o errori JS. Ricevute `published.json`
 e `live.json` nella sottocartella `quadrata/`. Anteprima locale chiusa.
+
+## Ripristino della versione ampia
+
+Su richiesta «rimetti come prima», annullata la sola correzione quadrata.
+CSS identico alla versione `61874a7`: colonna sinistra fino a560px e mappa
+estesa nello spazio restante, altezza entro il viewport. Conservati titolo
+del calendario e finiture delle date. Riferimento CSS aggiornato per la cache.
+Backup remoto `backup/session-20261107-204948-ripristino-mappa-fiere` → `c2ea2e6`.
+Prove in `.local/verifiche/fiere-mappa-20261107/ripristino/`.
