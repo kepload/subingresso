@@ -85,3 +85,8 @@ estesa nello spazio restante, altezza entro il viewport. Conservati titolo
 del calendario e finiture delle date. Riferimento CSS aggiornato per la cache.
 Backup remoto `backup/session-20261107-204948-ripristino-mappa-fiere` → `c2ea2e6`.
 Prove in `.local/verifiche/fiere-mappa-20261107/ripristino/`.
+Ripristino pubblicato `67bddf81a87ca7b02f8358321a3370e4f183b182`;
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/FPMn2u1J27S8e3Gu6YEsSrTKvfYx).
+HTML/CSS identici ai blob Git, CSS identico anche alla versione ampia originale.
+13 combinazioni browser/tema locali passate; controllo online1440 chiaro/scuro
+con mappa796×788px, visibilità completa, scroll, zoom e filtri riuscito.
