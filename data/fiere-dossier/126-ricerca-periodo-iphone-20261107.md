@@ -126,3 +126,11 @@ controlli aggiuntivi di animazione nei due motori/temi verificano il movimento
 e il cambiamento reale dei pixel sul testo, senza duplicare «Tutta Italia».
 Controllati selezione/reset, font identici, menu nativo e movimento ridotto.
 Prove `.local/verifiche/fiere-periodo-20261107/riflesso-campi/`.
+
+Pubblicato `dff17c9de98525869fe581e87389782cd658215e`,
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/8mBbd14QGzMe3ixnSSZZWhfRCUy4).
+Quattro asset identici online; sette combinazioni funzionali e quattro controlli
+del riflesso ripetuti sul sito pubblicato, tutti riusciti. Verificato il
+cambiamento reale dei pixel in entrambe le scritte delle date e nella zona,
+font identici400, arresto dopo scelta, reset e movimento ridotto. Ricevute
+`published.json`, `live-results.json`, `live-shimmer.json` nella cartella prove.
