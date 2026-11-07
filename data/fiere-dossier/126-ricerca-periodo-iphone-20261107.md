@@ -58,5 +58,11 @@ microtesti/gradienti/colori e overlay preesistenti del calendario e dell’acces
 fuori da questa modifica. I nuovi controlli hanno testo minimo12px, focus,
 movimento ridotto e temi condivisi. Nessun invio o account reale di prova.
 
-Stato iniziale: verifiche locali riuscite; pubblicazione e riscontro online
-da registrare a conclusione.
+Pubblicato `d1b45b45e3a5ab6ef46d37f961f3718265e6a706`, controllo
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DqazYniVmmxsu1MrejpFS45knFM8).
+Quattro asset online identici ai file del commit. Ripetute online tutte le
+sette combinazioni browser/formato/tema del selettore e i quattro percorsi
+SSR/accesso; anche caricamento tardivo e gesti passati. Ricevute `published.json`,
+`live-results.json`, `live-gestures.json` e screenshot nella cartella prove.
+Catalogo, fonti e note economiche invariati rispetto al backup. Anteprima locale
+chiusa. La versione online resta una prova in attesa del giudizio dell’utente.
