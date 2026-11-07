@@ -80,3 +80,9 @@ Aggiornati versioni degli asset e testo del risultato vuoto.
 Backup remoto prima della correzione:
 `backup/session-20261107-195835-fiere-periodi-lunghi` → `7d07c8b`.
 Prove della correzione in `.local/verifiche/fiere-periodo-20261107/periodi-lunghi/`.
+
+Correzione pubblicata `6328cf89dc5ad857b1029d8e6f0bf3dfbc956584`,
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/4NtSeycPpiLzQu3z6JXBzvq7HEmF).
+Tre asset identici online; sette combinazioni browser/formato/tema passate
+localmente e online, con altezze ≤66px, tre scorciatoie sulla stessa riga,
+intervalli esatti, fine mese e anni bisestili. Nessuna modifica ai dati.
