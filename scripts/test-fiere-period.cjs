@@ -89,7 +89,15 @@ async function browserChecks() {
                 await page.goto(base + '/fiere'); await ready();
                 assert.equal(await page.locator('#article-filter, #month-bar, #month-from').count(), 0);
                 assert.deepEqual(await page.locator('[data-period]').allTextContents(), ['Questo mese', 'Da oggi a 3 mesi', 'Da oggi a 6 mesi']);
-                assert(await page.locator('#date-from').evaluate(el => el.getBoundingClientRect().height <= 66), 'Date fields are compact');
+                const inlineDates = () => page.locator('.fair-period-field').evaluateAll(fields => fields.every(field => {
+                    const label = field.querySelector('span').getBoundingClientRect();
+                    const value = field.querySelector('strong').getBoundingClientRect();
+                    const box = field.getBoundingClientRect();
+                    const arrow = field.querySelector('svg');
+                    const edge = getComputedStyle(arrow).display === 'none' ? box.right - 6 : arrow.getBoundingClientRect().left - 2;
+                    return box.height >= 44 && box.height <= 50 && Math.abs((label.top + label.bottom - value.top - value.bottom) / 2) < 2 && value.right <= edge;
+                }));
+                assert(await inlineDates(), 'Both labels and full values share one line, without overlaps');
                 const presetTops = await page.locator('[data-period]').evaluateAll(els => els.map(el => el.getBoundingClientRect().top));
                 assert(presetTops.every(top => Math.abs(top - presetTops[0]) < 1), 'Presets stay on one row');
                 await overflow();
@@ -115,6 +123,7 @@ async function browserChecks() {
                 await page.locator('#reset-filters').click();
                 assert.equal(await page.locator('#list-count').innerText(), String(catalog.length));
                 await page.goto(base+'/fiere?dal=2028-01-31&al=2028-03-02'); await ready();
+                assert(await inlineDates(), 'Full dates with two-digit days fit on one line');
                 await page.locator('#date-from').click();
                 await page.locator('#period-month').focus(); await page.keyboard.press('ArrowDown');
                 assert.equal(await page.locator('#period-day').getAttribute('aria-valuenow'), '29');
@@ -138,6 +147,7 @@ async function browserChecks() {
                 await page.locator('#date-from').click(); await page.locator('#period-apply').click(); await verifyResults();
                 for (const kind of ['three-months', 'six-months']) {
                     await page.locator('[data-period="' + kind + '"]').click(); await verifyResults();
+                    assert(await inlineDates(), 'Selected dates remain complete and on one line');
                     const params = new URL(page.url()).searchParams;
                     assert.deepEqual([params.get('dal'), params.get('al')], picker.preset(kind, params.get('dal')));
                 }

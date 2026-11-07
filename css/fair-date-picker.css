@@ -1,8 +1,8 @@
 /* The period control shares the site's light and dark theme tokens. */
-.fair-period-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.fair-period-field { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; min-height: 64px; padding: 8px 28px 8px 14px; border: 1px solid var(--ad-line, #dce4ee); border-radius: 12px; background: var(--ad-field, #f7f9fc); color: var(--ad-ink, #102b52); text-align: left; transition: background-color 150ms ease, border-color 150ms ease, transform 150ms cubic-bezier(.23, 1, .32, 1); }
-.fair-period-field > span { font-size: 13px; line-height: 1.4; color: var(--ad-muted, #52637a); }
-.fair-period-field > strong { font-size: 16px; font-weight: 700; letter-spacing: -.025em; line-height: 1.5; }
+.fair-period-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; container: fair-period / inline-size; }
+.fair-period-field { position: relative; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 48px; padding: 10px 28px 10px 14px; border: 1px solid var(--ad-line, #dce4ee); border-radius: 12px; background: var(--ad-field, #f7f9fc); color: var(--ad-ink, #102b52); text-align: left; transition: background-color 150ms ease, border-color 150ms ease, transform 150ms cubic-bezier(.23, 1, .32, 1); }
+.fair-period-field > span { flex: none; font-size: 13px; line-height: 1.4; color: var(--ad-muted, #52637a); }
+.fair-period-field > strong { flex: none; white-space: nowrap; font-size: 16px; font-weight: 700; letter-spacing: -.025em; line-height: 1.5; }
 .fair-period-field > svg { position: absolute; right: 11px; top: calc(50% - 7px); width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; color: var(--ad-muted, #52637a); }
 .fair-period-field[data-selected=true] { background: var(--ad-info, #eff6ff); border-color: var(--ad-link, #2563eb); }
 .fair-period-presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
@@ -49,6 +49,8 @@ html.admin-dark .fair-period-apply { background: #93c5fd; color: #0b2444; }
     .fair-period-dialog { width: 100%; max-width: none; margin: auto 0 0; max-height: calc(100dvh - 16px); border: 0; border-radius: 26px 26px 0 0; }
     .fair-period-sheet { padding: 24px 22px max(22px, env(safe-area-inset-bottom)); }
 }
-@media (max-width: 359px) { .fair-period-field { padding: 8px 22px 8px 11px; } .fair-period-field > strong { font-size: 14px; } .fair-period-sheet { padding-left: 18px; padding-right: 18px; } .fair-period-tabs button { padding: 11px; } .fair-period-tabs strong { font-size: 14px; } #period-month .fair-wheel-row { font-size: 19px; } }
+@container fair-period (max-width: 360px) { .fair-period-field { gap: 6px; padding: 10px 24px 10px 12px; } .fair-period-field > strong { font-size: 14px; } }
+@container fair-period (max-width: 320px) { .fair-period-field { gap: 4px; padding: 10px 8px; } .fair-period-field > span { font-size: 12px; } .fair-period-field > strong { font-size: 13px; } .fair-period-field > svg { display: none; } }
+@media (max-width: 359px) { .fair-period-sheet { padding-left: 18px; padding-right: 18px; } .fair-period-tabs button { padding: 11px; } .fair-period-tabs strong { font-size: 14px; } #period-month .fair-wheel-row { font-size: 19px; } }
 @media (max-height: 550px) { .fair-period-sheet { padding-top: 16px; padding-bottom: 16px; } .fair-period-sheet-heading { margin-bottom: 12px; } .fair-wheel-labels { margin-top: 12px; } .fair-period-duration { margin: 5px 0 10px; } }
 @media (prefers-reduced-motion: reduce) { .fair-period-dialog[open] .fair-period-sheet { animation: none; } .fair-period-field, .fair-period-apply, .fair-period-tabs button, .fair-period-presets button { transition: none; } }

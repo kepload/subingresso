@@ -86,3 +86,13 @@ Correzione pubblicata `6328cf89dc5ad857b1029d8e6f0bf3dfbc956584`,
 Tre asset identici online; sette combinazioni browser/formato/tema passate
 localmente e online, con altezze ≤66px, tre scorciatoie sulla stessa riga,
 intervalli esatti, fine mese e anni bisestili. Nessuna modifica ai dati.
+
+## Etichetta e data su una sola riga — 7 novembre, sera
+
+Su correzione dell’utente: Dal/Al e valore affiancati, altezza48px anziché64px.
+Adattamento alla larghezza del gruppo, anche nella colonna stretta dei tablet;
+testo completo senza troncamento o sovrapposizione. Nei gruppi più stretti
+freccia omessa e testo13px. Rotelle e scorciatoie invariate.
+Backup `backup/session-20261107-201521-fiere-date-su-riga` → `84d8c2a`.
+Sette combinazioni locali Chromium/WebKit e chiaro/scuro riuscite; prove
+in `.local/verifiche/fiere-periodo-20261107/date-su-riga/`.
