@@ -33,4 +33,12 @@ preesistente, conservato nel perimetro richiesto. Il rilevatore layout segnala
 l’assenza di padding nel pannello: intenzionale, è la superficie cartografica
 a tutta area; controlli e popup mantengono i loro rientri.
 
-Pubblicazione e verifica online da registrare dopo il deploy.
+Pubblicato `b321487b73b279fc93e09611f870049bbf472c08`;
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/HnSW9xDZuyJvSy76hFmnTi1su6BV).
+HTML, CSS e JS online identici ai blob Git del commit (confronto binario;
+le copie Windows hanno terminatori diversi). Tutte le13 combinazioni della
+mappa passate anche online, nessun errore JS. Trascinamento, cinque
+ridimensionamenti consecutivi della stessa finestra, ripristino e selezione
+della provincia da tastiera passati nella verifica aggiuntiva. Catalogo
+invariato; nessuna scrittura o email reale durante le prove. Ricevute
+`published.json`, `live.json`, `resize.json` e screenshot nella cartella prove.

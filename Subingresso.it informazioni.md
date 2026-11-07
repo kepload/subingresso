@@ -115,6 +115,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **7 novembre 2026 — mappa fiere:** pubblicato `b321487`, Vercel riuscito e tre asset identici ai blob Git. Rimossi titolo, istruzione, mare e menu; mappa estesa a destra e intera nel viewport desktop anche durante lo scroll. 13 combinazioni browser/tema locali e online, sette regressioni periodi e gesti/ridimensionamenti passati. [Contratto e prove](data/fiere-dossier/127-mappa-desktop-20261107.md).
+
 - **7 novembre 2026 — ricerca fiere per periodo:** prova `d1b45b4`, corretta con `6328cf8`: Dal/Al a64px, scorciatoie Questo mese/Da oggi a3 mesi/Da oggi a6 mesi, prodotto rimosso. Vercel riuscito, asset identici e sette combinazioni browser/tema passate anche online. Backup originale remoto e ZIP locale conservati; backup prima della correzione `backup/session-20261107-195835-fiere-periodi-lunghi`. [Comportamento, backup e prove](data/fiere-dossier/126-ricerca-periodo-iphone-20261107.md).
 
 - **7 novembre 2026 — SEO fiere:** pubblicato `6fe7f4d`, Vercel riuscito; titoli e testi orientati ad ambulanti/espositori. 10.443 schede e 5.546 voci sitemap verificate; tre asset identici online, sette pagine e quattro formati browser passati. Posizioni future da misurare. [Contratto e limiti](data/SEARCH_CONSOLE.md).
