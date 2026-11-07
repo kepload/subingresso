@@ -872,7 +872,7 @@
         for (const marker of $('map-markers').children) {
             marker.classList.toggle('is-preview', Boolean(previewEvent) && marker.dataset.events.split(',').includes(previewEvent));
         }
-        $('map-caption').textContent = previewProvince || (previewEvent ? card.dataset.city : 'Trascina e ingrandisci');
+        $('italy-map').setAttribute('aria-label', previewProvince ? `Mappa delle fiere: ${previewProvince}` : previewEvent ? `Mappa delle fiere: ${card.dataset.city}` : 'Mappa interattiva delle fiere per provincia in Italia');
     }
     function renderMap(events) {
         clearTimeout(mapMarkerTimer);

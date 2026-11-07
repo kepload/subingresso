@@ -924,7 +924,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('.fiere-province.is-preview').count(),1);
         assert(await previewPath.evaluate(p => p.classList.contains('is-preview')));
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.fiere-province.is-preview')).fill === 'rgb(147, 197, 253)');
-        assert.equal(await page.locator('#map-caption').textContent(),previewProvince);
+        assert.equal(await page.locator('#italy-map').getAttribute('aria-label'),'Mappa delle fiere: ' + previewProvince);
         assert.equal(await page.locator('#province-filter').inputValue(),'');
         assert.equal(await page.locator('.fiere-marker.is-preview').count(),0);
         assert.equal(page.url(),initialURL);
@@ -941,7 +941,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('.fiere-province.is-preview').getAttribute('data-province'),previewProvince);
         await page.locator('#province-filter').focus();
         assert.equal(await page.locator('.fiere-province.is-preview').count(),0);
-        assert.equal(await page.locator('#map-caption').textContent(),'Trascina e ingrandisci');
+        assert.equal(await page.locator('#italy-map').getAttribute('aria-label'),'Mappa interattiva delle fiere per provincia in Italia');
         await page.locator('#load-more').click();
         assert.equal(await page.locator('.fiere-card').count(),62);
         await page.goto(base + '/fiere?mesi=' + allMonths);
@@ -969,7 +969,7 @@ async function run(engine,name,viewport,base) {
             assert((await highlightedMarker.getAttribute('data-events')).split(',').includes(eventId));
             assert.equal(await highlightedMarker.locator('.preview-ring').evaluate(r => getComputedStyle(r).opacity),'1');
             assert.equal(await highlightedMarker.locator('.pin').evaluate(p => getComputedStyle(p).fill),'rgb(37, 99, 235)');
-            assert.equal(await page.locator('#map-caption').textContent(),provincialEvent.city);
+            assert.equal(await page.locator('#italy-map').getAttribute('aria-label'),'Mappa delle fiere: ' + provincialEvent.city);
             assert.equal(await page.locator('.fiere-province.is-preview').count(),0);
             assert.equal(await page.locator('#province-filter').inputValue(),province);
             assert.equal(page.url(),provincialURL);
