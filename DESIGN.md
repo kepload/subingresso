@@ -153,6 +153,13 @@ conserva geometria, focus, ombre assenti e variante chiara.
 
 ## Shapes
 
+Le schede delle fiere seguono un modello essenziale: informazioni già aperte,
+un solo pulsante per altre fiere nel periodo e nella provincia, Salva/campanella
+e iscrizione in una riga. Partecipazione e costi sono testo normale, senza
+pannelli colorati. Recensioni nel flusso, fonte discreta in fondo e solo la
+documentazione aggiuntiva eventualmente apribile. Nessun link alla stessa
+scheda o gruppo di ricerche equivalenti. Contratto: `data/fiere-dossier/125-schede-minimali-20261107.md`.
+
 Angoli moderati: pannelli e schede usano `panel`; campi e FAQ `control`; il pulsante interno alla ricerca `control-tight`. I preferiti restano circolari. Le immagini sono ritagliate nel contenitore, senza cornici o sfondi aggiunti alle fotografie.
 
 ## Components

@@ -13,7 +13,7 @@ function render(event) {
     handler({query:{slug:event.id}}, {setHeader(){},status(n){assert.equal(n,200);return this;},send(s){html=s;}});
     return html;
 }
-for (const event of [fair, events.find(isIndexable), events.find(e => !isIndexable(e)), events.find(e => e.pricing)]) {
+for (const event of [fair, events.find(isIndexable), events.find(e => !isIndexable(e)), events.find(e => e.pricing), events.find(e => e.venue && e.hours), events.find(e => e.attendance), events.find(e => e.articleResearch)]) {
     const html = render(event);
     assert(html.includes('id="italy-map"'));
     assert(html.includes('open data-landing-fair="'+event.id+'"'));
@@ -21,6 +21,20 @@ for (const event of [fair, events.find(isIndexable), events.find(e => !isIndexab
     assert(html.includes('rel="icon"'));
     assert(html.includes(isIndexable(event) ? 'content="index,follow"' : 'content="noindex,follow"'));
     assert.equal(JSON.parse(html.match(/<script id="initial-fair" type="application\/json">(.*?)<\/script>/s)[1]).id,event.id);
+    const dom = new (require('jsdom').JSDOM)(html), detail = dom.window.document.querySelector('#fair-dialog');
+    assert.equal(detail.querySelectorAll('a[href^="/fiere?"]:not([data-fiere-source]):not([data-fiere-register])').length, 1, 'One local fair search');
+    assert.equal(detail.querySelectorAll('#detail-page-link, #detail-annunci, a[href="#detail-reviews"], .fiere-detail-cost-box').length, 0, 'No duplicate navigation or colored cost box');
+    assert.equal(detail.querySelectorAll('details:not(.fiere-detail-sources)').length, 0, 'Fair information is already open');
+    const sources = [...detail.querySelectorAll('[data-fiere-source]')].map(link => link.dataset.fiereSource);
+    assert.equal(new Set(sources).size, sources.length, 'One link per documentary URL');
+    assert.equal(detail.querySelectorAll('footer').length, 0, 'Only the site footer is filled by shared navigation');
+    if (event.venue) assert(detail.querySelector('#detail-facts').textContent.includes(event.venue));
+    if (event.hours) assert(detail.querySelector('#detail-facts').textContent.includes(event.hours));
+    if (event.attendance) {
+        assert(detail.querySelector('#detail-attendance').textContent.includes(globalThis.FiereCalendar.attendanceInfo(event).total));
+        assert(detail.querySelector('.fiere-detail-sources').textContent.includes(event.attendance.note));
+    }
+    dom.window.close();
 }
 const original = fair.summary;
 try {
@@ -69,11 +83,15 @@ const server = http.createServer((req,res) => {
             assert.equal(new URL(page.url()).search, '', 'landing URL stays clean while local filters are initialized');
             assert(await page.locator('#fair-dialog').evaluate(el => el.querySelector('#detail-explore').compareDocumentPosition(el.querySelector('#detail-apply')) & Node.DOCUMENT_POSITION_FOLLOWING));
             assert(await page.locator('#detail-explore').isVisible());
+            assert.equal(await page.locator('#fair-dialog details:not(.fiere-detail-sources)').count(), 0);
+            if (await page.locator('#detail-facts').count()) assert(await page.locator('#detail-facts').isVisible());
+            assert.equal(await page.locator('#detail-costs').evaluate(el => getComputedStyle(el.parentElement).backgroundColor), 'rgba(0, 0, 0, 0)');
             await page.waitForFunction(()=>document.querySelector('#map-markers').children.length>0);
             assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
             assert(await page.locator('#fair-dialog').evaluate(el=>el.scrollWidth<=el.clientWidth));
             await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));
             assert.equal(await page.locator('#fair-dialog').evaluate(el=>getComputedStyle(el).color),'rgb(241, 245, 249)');
+            assert.equal(await page.locator('#detail-costs').evaluate(el => getComputedStyle(el.parentElement).backgroundColor), 'rgba(0, 0, 0, 0)', 'Costs stay flat in dark mode');
             await page.evaluate(()=>document.documentElement.classList.remove('admin-dark'));
             if (process.env.FIERE_ENTRY_QA_DIR) {
                 fs.mkdirSync(process.env.FIERE_ENTRY_QA_DIR,{recursive:true});
@@ -96,6 +114,22 @@ const server = http.createServer((req,res) => {
             await page.goto(base+'/fiere?fiera='+fair.id);
             await page.waitForFunction(()=>document.querySelector('#fair-dialog').matches(':modal'));
             assert.equal(await page.locator('#province-filter').inputValue(),fair.province);
+            // A late catalogue must not cover registration opened from the SSR sheet.
+            await page.locator('#close-detail').click();
+            assert(!new URL(page.url()).searchParams.has('fiera'));
+            let releaseCatalog;
+            const heldCatalog = new Promise(resolve => { releaseCatalog = resolve; });
+            await page.route('**/data/fiere.json*', async route => { await heldCatalog; await route.continue(); });
+            await page.goto(base + '/fiere/' + fair.id);
+            await page.locator('#fair-dialog .fiere-detail-register').click();
+            await page.locator('#registerForm').waitFor({state:'visible'});
+            releaseCatalog();
+            await page.waitForFunction(() => document.querySelector('#fair-list').getAttribute('aria-busy') === 'false');
+            assert.equal(await page.locator('#fair-dialog').isVisible(), false, 'Catalogue load cannot reopen the sheet above registration');
+            assert(await page.locator('#registerForm').isVisible());
+            await page.keyboard.press('Escape');
+            await page.locator('#fair-dialog').waitFor({state:'visible'});
+            await page.unroute('**/data/fiere.json*');
             await page.locator('#close-detail').click();
             assert(!new URL(page.url()).searchParams.has('fiera'));
             await page.goto(base+'/fiere?q='+encodeURIComponent(fair.city));

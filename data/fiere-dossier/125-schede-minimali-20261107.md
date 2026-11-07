@@ -1,0 +1,61 @@
+# Schede fiere essenziali — 7 novembre 2026
+
+Nuova richiesta: una scheda generale leggibile scorrendo, con pochi comandi,
+spaziature uniformi e nessuna ripetizione. Supera la disposizione con pannello
+iscrizione e ricerche multiple del dossier 124; conserva l’accesso obbligatorio
+prima dell’apertura di una fonte esterna.
+
+## Modello comune
+
+- Titolo, città/provincia, date con il loro stato e prodotti; descrizione,
+  luogo, orari e altri dati presenti sono già aperti, senza riquadri colorati.
+- Un solo pulsante «Cerca altre fiere in zona»: provincia e mesi della scheda.
+  Rimosse le alternative per regione, provincia senza mesi e annunci.
+- Salva e promemoria conservano le due icone. L’iscrizione è una riga semplice,
+  senza pannello promozionale o secondo comando Accedi; l’accesso resta nel
+  modulo abituale. Nessun avviso o consenso attivato implicitamente.
+- Partecipazione e costi sono sezioni di testo con stessi titoli e spaziature.
+  Prezzi e limiti verificati restano integri; in assenza di importi, soltanto
+  «Da verificare con l’organizzatore». Nessun riquadro vuoto o tariffa inventata.
+- La descrizione non viene ripetuta quando è già il prefisso esatto della nota
+  di partecipazione. La data principale compare una volta; altre edizioni sono
+  una lista semplice, quando esistono. Articoli documentati e affluenza sono aperti.
+- Le recensioni si raggiungono scorrendo, senza il rimando aggiuntivo in alto.
+  Rimosso il link che riapriva la stessa scheda.
+- Una fonte principale discreta in fondo. Eventuali documenti distinti e note
+  metodologiche sono nell’unico approfondimento «Fonti»; URL duplicati rimossi,
+  inclusa l’eventuale coincidenza tra procedura, calendario e tariffe.
+
+## Implementazione e vincoli
+
+`js/fair-detail.js` contiene il modello comune a SSR e calendario, inclusa
+l’affluenza. Rimossi i due renderer separati di quest’ultima. Stili del dettaglio
+in `css/fiere.css`, con token e temi esistenti; eliminata la classe che attivava
+il riquadro azzurro dei costi. Il calendario esterno al dettaglio non è ridisegnato.
+I collegamenti agli eventi degli organizzatori rimangono interni.
+
+Corretta anche una sovrapposizione emersa durante la registrazione da campanella:
+il caricamento tardivo del catalogo non riapre più la fiera già selezionata sopra
+il modulo di accesso o promemoria. Prova ripetibile con catalogo trattenuto fino
+all’apertura della registrazione, seguita da rilascio e annullo.
+
+Catalogo/ID, recensioni, salvataggi, avvisi, consensi, API e database conservati.
+Le fonti esterne seguono il percorso interno e la verifica account del dossier124;
+anche Ctrl+clic e assenza di JavaScript non producono un link esterno diretto.
+Contenuto SSR, indirizzi/canonical, condizioni di indicizzabilità e filtri
+restano quelli esistenti. Nessuna nuova ricerca editoriale o automazione.
+
+## Verifiche
+
+Suite ingresso, fonti/accesso, tutte le pagine/SEO, articoli/filtri,
+organizzatori, salvataggi e recensioni, con browser e API simulate dove si scrive.
+10.443 pagine e 5.546 voci fiere sitemap al controllo. Verificati un solo percorso
+di ricerca, informazioni aperte, assenza del permalink/rimando recensioni,
+deduplica fonti, conservazione di luogo/orari e note d’affluenza, costi senza
+sfondo anche nel tema scuro. Prova visuale reale Vittoria a1440/768/390/320,
+tema chiaro/scuro; percorsi Chromium e WebKit secondo suite.
+
+Prove private `.local/verifiche/fiere-minimali-20261107/`. Inspector e detector
+estesi includono anche gradienti, microtesti e pannelli preesistenti del calendario;
+la sovrapposizione è il dialog richiesto, il font è quello di DESIGN.md.
+Backup remoto di sessione e ramo pre-intervento verificati prima delle modifiche.

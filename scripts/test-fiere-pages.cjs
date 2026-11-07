@@ -75,9 +75,9 @@ const server=http.createServer((req,res)=>{
             await page.locator('.fiere-card-button').first().click();
             assert(await page.locator('#fair-dialog').isVisible());
             assert.equal(new URL(page.url()).pathname,'/fiere');
-            const destination=await page.locator('#detail-page-link').getAttribute('href');
-            await page.locator('#detail-page-link').click();
-            assert.equal(new URL(page.url()).pathname,destination);
+            assert.equal(await page.locator('#detail-page-link').count(),0, 'No redundant link to the same fair');
+            await page.locator('#detail-explore').click();
+            assert.equal(await page.locator('#fair-dialog').isVisible(),false);
             console.log(engine+' '+width+': detail, missing data, prices, no-JS navigation, calendar modal and overflow passed');
         }finally{await browser.close();}
     }

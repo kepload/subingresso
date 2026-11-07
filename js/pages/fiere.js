@@ -474,27 +474,6 @@
         }
         return badge;
     }
-    function renderAttendanceDetail(event) {
-        const section = $('detail-attendance'), info = attendanceInfo(event);
-        section.replaceChildren(); section.hidden = !info;
-        if (!info) return;
-        section.append(node('h3', '', 'Affluenza'));
-        const badge = attendanceBadge(event);
-        if (badge) section.append(badge);
-        section.append(node('p', '', info.total + ' · edizione ' + info.year), node('p', 'fiere-attendance-meta', info.status));
-        const details = node('details', 'fiere-attendance-evidence');
-        details.append(node('summary', '', 'Dato, fonte e criterio'), node('p', '', info.record.note), node('p', '', info.comparison));
-        const source = node('a', 'fiere-detail-link', info.record.source.label + ' ↗');
-        source.href = info.record.source.url; source.target = '_blank'; source.rel = 'noopener noreferrer';
-        details.append(source);
-        for (const item of info.record.additionalSources || []) {
-            if (!/^https:\/\/[^/\s]+/.test(item.url || '') || !item.label) continue;
-            const extra = node('a', 'fiere-detail-link', item.label + ' ↗');
-            extra.href = item.url; extra.target = '_blank'; extra.rel = 'noopener noreferrer'; details.append(extra);
-        }
-        details.append(node('p', '', 'Periodo: ' + dateLabel(info.record.start) + ' – ' + dateLabel(info.record.end) + '. Fonte consultata il ' + dateLabel(info.record.checkedAt) + '.'), node('p', '', attendanceCriteria()));
-        section.append(details);
-    }
     function periodLabel(event) {
         if (event.months.length === 12) return 'Tutto l’anno';
         return event.months.map(month => MONTHS[month - 1]).join(' / ');
@@ -942,7 +921,6 @@
         $('fair-dialog').querySelectorAll('[data-fiere-guest]').forEach(element => {
             element.hidden = document.querySelector('.fiere-access[data-fiere-guest]')?.hidden ?? true;
         });
-        renderAttendanceDetail(event);
         const saveFair = $('detail-save-fair');
         global.SavedFairs?.setFair(saveFair, saveFair.dataset.fairKind, saveFair.dataset.fairId);
         global.FairReviews?.mount($('detail-reviews'), { kind: event.managedEventId ? 'organizer' : 'catalog', id: event.managedEventId || event.id, name: event.name, city: event.city, editions: event.editions });
@@ -1053,7 +1031,9 @@
             state.ready = true; $('province-filter').disabled = false; fitProvince(); render();
             const requested = state.events.find(event => event.id === (initialFair()?.id || new URLSearchParams(location.search).get('fiera')));
             if (requested && !landingDismissed) {
-                if (!$('fair-dialog').open || state.selected !== requested.id) openDetail(requested);
+                // Auth and reminders temporarily close the selected fair. A late
+                // catalogue response must not reopen it above the active form.
+                if (state.selected !== requested.id) openDetail(requested);
                 global.FiereAccess?.resume(requested);
             }
             loadManagedEvents();

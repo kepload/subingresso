@@ -33,6 +33,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Schede fiere essenziali — 7 novembre 2026](fiere-dossier/125-schede-minimali-20261107.md): un’unica ricerca, informazioni aperte, costi senza box, nessun rimando alle recensioni o link alla stessa scheda; fonti deduplicate in fondo, sempre con account.
+
 - [Ricerca interna, iscrizione e fonti — 7 novembre 2026](fiere-dossier/124-conversione-iscrizioni-20261107.md): ricerca locale in primo piano, iscrizione visibile, siti esterni in fondo e apertura con account; supera il precedente accesso libero alle fonti dalle schede.
 
 - [Chiusura Pavia e Nuoro — 6 novembre 2026](fiere-dossier/chiusura-pavia-nuoro-20261106.md): due ricerche isolate, 177 nuove schede, sei aggiornamenti e dieci note economiche; pubblicazione e controlli online verificati. Tutte le 110 province concluse con limiti espliciti.

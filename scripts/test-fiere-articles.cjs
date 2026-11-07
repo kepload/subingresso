@@ -237,10 +237,10 @@ async function run(engine, engineName, width, height, base) {
         await page.goto(base + '/fiere?articoli=calzature&q=' + encodeURIComponent(shoes.name) + '&provincia=' + encodeURIComponent(shoes.province));
         await count(api.filterEvents(events, { articles: ['calzature'], query: shoes.name, province: shoes.province, months: [] }).length);
         await page.locator('.fiere-card[data-event-id="' + shoes.id + '"] .fiere-card-button').click();
-        await page.locator('#detail-facts').locator('..').locator('summary').click();
+        assert(await page.locator('#detail-facts').isVisible());
         assert((await page.locator('#detail-facts').innerText()).includes('Calzature'));
-        await page.locator('#detail-page-link').click();
-        await page.locator('#detail-facts').locator('..').locator('summary').click();
+        await page.goto(base + '/fiere/' + shoes.id);
+        assert(await page.locator('#detail-facts').isVisible());
         assert((await page.locator('#detail-facts').innerText()).includes('Calzature'));
         assert.equal(new URL(page.url()).pathname, '/fiere/' + shoes.id);
         // Every choice fits a touch target and the menu scrolls on short screens.

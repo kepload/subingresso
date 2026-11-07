@@ -58,9 +58,11 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 - Recensioni fiere: tre schermate essenziali e account solo alla fine;
   bozza locale per 30 giorni, recensioni pubbliche nelle schede e nel calendario.
   Contratto e sincronizzazione dei nuovi ID: `data/FIERE_RECENSIONI.md`.
-- Schede fiere: ricerca per periodo/provincia e iscrizione in primo piano;
-  siti esterni in fondo, apertura con account obbligatorio. Supera l’accesso
-  libero alle fonti del 6 novembre. [Contratto](data/fiere-dossier/124-conversione-iscrizioni-20261107.md).
+- Schede fiere essenziali: informazioni già aperte, un solo pulsante di ricerca
+  per periodo/provincia, iscrizione in una riga, costi senza riquadro. Niente
+  rimandi alle recensioni, link alla stessa scheda o ricerche equivalenti.
+  Fonte in fondo con account obbligatorio; documentazione aggiuntiva deduplicata.
+  [Contratto corrente](data/fiere-dossier/125-schede-minimali-20261107.md).
 - Vetrine: giorni acquistati conservati, selezione esplicita fino a 10 posteggi,
   sconto progressivo; giorni evidenti, opzioni e totale leggibili. Contratti
   `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md`.

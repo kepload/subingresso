@@ -142,54 +142,59 @@ button.fiere-reputation{text-decoration:none}
 .fiere-review-count { font-size: 12px; font-weight: 400; white-space: nowrap; color: var(--ad-muted, #52637a); }
 @media (max-width: 640px) { .fiere-card-reviews { min-height: 44px; } }
 
-/* Shared fair detail: the visitor can apply or return to the local calendar. */
+/* Shared fair sheet: readable information, one local search, quiet source footer. */
 #fair-dialog { width: min(660px, calc(100% - 32px)); padding: 28px; border-radius: 16px; background: var(--ad-panel, #fff); color: var(--ad-ink, #0f172a); }
 #fair-dialog[open] { position: fixed; inset: 0; margin: auto; }
 #fair-dialog::backdrop { background: #0f172a70; backdrop-filter: none; }
 body:has(#fair-dialog:modal) { overflow: hidden; }
 #fair-dialog .fiere-dialog-top { position: sticky; top: -28px; z-index: 2; padding: 12px 0; margin: -12px 0 12px; background: var(--ad-panel, #fff); }
+#fair-dialog .fiere-detail-category { font-size: 13px; color: var(--ad-muted, #475569); }
 #fair-dialog #close-detail { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; line-height: 1; background: var(--ad-raised, #f1f5f9); color: inherit; }
 #fair-dialog #close-detail svg { display: block; flex: none; pointer-events: none; }
 .fiere-filters .fiere-search-title { margin: 0 0 20px; color: var(--ad-ink, #102b52); font-size: 24px; font-weight: 800; letter-spacing: -.025em; line-height: 1.25; }
 #fair-dialog #detail-title { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.025em; line-height: 1.2; overflow-wrap: anywhere; }
-#fair-dialog #detail-location { margin-top: 8px; font-size: 16px; color: var(--ad-muted, #475569); }
-.fiere-detail-overview { margin: 24px 0; display: grid; gap: 18px; }
-.fiere-detail-overview span { display: block; font-size: 14px; font-weight: 600; color: var(--ad-muted, #475569); margin-bottom: 4px; }
-.fiere-detail-overview strong { display: block; font-size: 20px; font-weight: 700; line-height: 1.4; }
-.fiere-detail-overview p { font-size: 14px; line-height: 1.6; margin: 0; }
-.fiere-detail-overview strong + p { margin-top: 6px; color: var(--ad-muted, #475569); }
-#fair-dialog .fiere-primary { min-height: 48px; padding: 13px 18px; font-size: 16px; font-weight: 700; border-radius: 8px; background: var(--ad-control-primary, #102b52); color: #fff; text-decoration: none; }
+#fair-dialog #detail-location { margin: 8px 0 0; font-size: 16px; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-overview { margin: 24px 0; display: grid; gap: 18px; }
+#fair-dialog .fiere-detail-overview span { display: block; font-size: 14px; font-weight: 600; color: var(--ad-muted, #475569); margin-bottom: 4px; }
+#fair-dialog .fiere-detail-overview strong { display: block; font-size: 20px; font-weight: 700; line-height: 1.4; }
+#fair-dialog .fiere-detail-overview p { font-size: 14px; line-height: 1.65; margin: 0; }
+#fair-dialog .fiere-detail-overview strong + p { margin-top: 6px; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-about { margin: 0 0 24px; }
+#fair-dialog .fiere-detail-about p { margin: 0 0 14px; font-size: 14px; line-height: 1.7; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-facts { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 8px 16px; margin: 0; font-size: 14px; line-height: 1.65; }
+#fair-dialog .fiere-detail-facts dt { color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-facts dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+#fair-dialog .fiere-primary { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border-radius: 8px; background: var(--ad-control-primary, #102b52); color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5; text-align: center; text-decoration: none; }
 #fair-dialog .fiere-primary:hover { background: var(--ad-control-primary-hover, #21497e); }
-#fair-dialog .fiere-detail-account { margin: 16px 0 0; padding: 18px; background: var(--ad-raised, #edf3fa); color: var(--ad-ink, #102b52); border: 0; border-radius: 8px; }
-#fair-dialog .fiere-detail-account h3 { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.4; }
-#fair-dialog .fiere-detail-account p { margin: 6px 0 14px; font-size: 14px; line-height: 1.6; color: var(--ad-muted, #475569); }
-#fair-dialog .fiere-detail-register { display: flex; justify-content: center; align-items: center; min-height: 48px; padding: 10px 16px; border: 1px solid var(--ad-line, #b5c6db); border-radius: 8px; background: var(--ad-panel, #fff); color: var(--ad-link, #1d4ed8); font-size: 15px; text-decoration: none; }
-#fair-dialog .fiere-detail-register:hover { background: var(--ad-hover, #e2eaf5); }
-#fair-dialog .fiere-detail-login { display: block; width: fit-content; margin: 4px auto -8px; padding: 12px 0; font-size: 13px; color: var(--ad-link, #1d4ed8); }
-#fair-dialog .fiere-detail-apply-note { font-size: 13px; line-height: 1.6; color: var(--ad-muted, #475569); margin-top: 10px; }
-#fair-dialog .fiere-detail-explore { display: flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 12px; padding: 10px; border: 1px solid var(--ad-line, #cbd5e1); border-radius: 8px; color: var(--ad-link, #1d4ed8); font-size: 15px; font-weight: 700; text-align: center; }
-#fair-dialog .fiere-detail-explore:hover { background: var(--ad-hover, #edf3fa); }
-#fair-dialog .sf-fair-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
-#fair-dialog .sf-fair-actions > a { padding: 12px 0; margin-left: auto; color: var(--ad-link, #1d4ed8); font-size: 14px; }
-#fair-dialog .fiere-detail-info { padding: 24px 0; border-bottom: 1px solid var(--ad-line, #e2e8f0); }
-#fair-dialog .fiere-detail-info h3 { font-size: 17px; font-weight: 700; }
-#fair-dialog .fiere-detail-info p, #fair-dialog .fiere-contacts p { font-size: 14px; line-height: 1.7; color: var(--ad-muted, #475569); }
-#fair-dialog .fiere-detail-link, #fair-dialog .fiere-contacts a, #fair-dialog .fiere-edition a { font-size: 14px; color: var(--ad-link, #1d4ed8); }
-#fair-dialog .fiere-edition strong { font-size: 14px; }
-#fair-dialog .fiere-source-label { font-size: 13px; text-align: left; }
-.fiere-detail-more { border-bottom: 1px solid var(--ad-line, #e2e8f0); }
-.fiere-detail-more > summary { min-height: 48px; padding: 20px 0; font-size: 16px; font-weight: 700; cursor: pointer; }
-.fiere-detail-more > p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
-#fair-dialog .fiere-detail-period { background: var(--ad-raised, #f1f5f9); }
-#fair-dialog .fiere-detail-period > span { font-size: 13px; text-transform: none; letter-spacing: 0; color: var(--ad-muted, #475569); }
-#fair-dialog .fiere-detail-facts { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+#fair-dialog .fiere-detail-tools { display: flex; align-items: center; gap: 16px; margin: 14px 0 4px; }
+#fair-dialog .sf-fair-actions { display: flex; align-items: center; gap: 8px; margin: 0; flex: none; }
+#fair-dialog .fiere-detail-account { margin: 0; padding: 0; background: transparent; border: 0; border-radius: 0; font-size: 14px; line-height: 1.6; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-register { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 0; color: var(--ad-link, #1d4ed8); text-underline-offset: 3px; }
+#fair-dialog .fiere-detail-info { margin: 24px 0 0; padding: 0; border: 0; background: transparent; }
+#fair-dialog .fiere-detail-info h3 { margin: 0 0 8px; font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--ad-ink, #0f172a); }
+#fair-dialog .fiere-detail-info p, #fair-dialog .fiere-detail-info li { margin: 6px 0 0; font-size: 14px; line-height: 1.7; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-info p:empty { display: none; }
+#fair-dialog .fiere-detail-info ul { margin: 0; padding-left: 20px; list-style: disc; }
+#fair-dialog .fiere-detail-info .fiere-detail-meta { font-size: 13px; }
+#fair-dialog .fiere-detail-info .fiere-detail-deadline { font-weight: 700; color: var(--ad-ink, #0f172a); }
+#fair-dialog .fiere-contacts { margin-top: 12px; }
+#fair-dialog .fiere-contacts a { font-size: 14px; color: var(--ad-link, #1d4ed8); }
+#fair-dialog #detail-reviews { margin-top: 28px; }
+#fair-dialog .fiere-detail-footer { margin: 28px 0 0; padding: 18px 0 0; border: 0; border-top: 1px solid var(--ad-line, #e2e8f0); background: transparent; text-align: left; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-footer a { display: inline-block; padding: 9px 0; font-size: 14px; line-height: 1.7; color: var(--ad-link, #1d4ed8); text-underline-offset: 3px; overflow-wrap: anywhere; }
+#fair-dialog .fiere-detail-footer p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--ad-muted, #475569); }
+#fair-dialog .fiere-detail-source-access { display: inline-block; margin-left: 12px; font-size: 12px; }
+#fair-dialog .fiere-detail-source-access[hidden] { display: none; }
+#fair-dialog .fiere-detail-sources { margin-top: 8px; }
+#fair-dialog .fiere-detail-sources summary { width: fit-content; padding: 12px 0; font-size: 13px; cursor: pointer; }
+#fair-dialog .fiere-detail-sources p + p { margin-top: 8px; }
 #fair-dialog :is(a, button, summary):focus-visible { outline: 2px solid var(--ad-link, #1d4ed8); outline-offset: 3px; }
 @media (max-width: 640px) {
     #fair-dialog { padding: 20px; width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
     #fair-dialog .fiere-dialog-top { top: -20px; }
     #fair-dialog #detail-title { font-size: 24px; }
     .fiere-filters .fiere-search-title { font-size: 22px; margin-bottom: 18px; }
-    #fair-dialog .sf-fair-actions > a { margin-left: 0; }
-    #fair-dialog .fiere-detail-facts { grid-template-columns: 1fr; gap: 4px; }
-    #fair-dialog .fiere-detail-facts dd { margin-bottom: 12px; }
+    #fair-dialog .fiere-detail-facts { grid-template-columns: 1fr; gap: 2px; }
+    #fair-dialog .fiere-detail-facts dd + dt { margin-top: 10px; }
+    #fair-dialog .fiere-detail-tools { gap: 12px; }
 }

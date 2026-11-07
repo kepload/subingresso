@@ -8,19 +8,7 @@ function link(url, label, external = false) {
     if (!url || (external && !/^https:\/\//i.test(url))) return '';
     return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${esc(label)}</a>`;
 }
-function sourceLink(event, url, label) {
-    if (!url || !/^https:\/\//i.test(url)) return '';
-    return `<a href="${esc('/fiere?fiera=' + encodeURIComponent(event.id) + '&fonte=' + encodeURIComponent(url))}" data-fiere-id="${esc(event.id)}" data-fiere-source="${esc(url)}">${esc(label)}</a>`;
-}
-const sourceLinks = event => (url, label, external = false) => external ? sourceLink(event, url, label) : link(url, label);
 function section(title, content) { return `<section><h2>${esc(title)}</h2>${content}</section>`; }
-function attendanceSection(event) {
-    const link = sourceLinks(event);
-    const info = calendar.attendanceInfo(event);
-    if (!info) return '';
-    const a = info.record;
-    return section('Affluenza', `${info.level ? `<p class="fiere-attendance" data-attendance="${esc(info.level)}">${esc(info.label)}</p>` : ''}<p>${esc(info.total)} · edizione ${esc(info.year)}</p><p class="muted">${esc(info.status)}</p><details><summary>Dato, fonte e criterio</summary><p>${esc(a.note)}</p><p>${esc(info.comparison)}</p><p>${link(a.source.url,a.source.label,true)}</p>${(a.additionalSources || []).map(source => '<p>' + link(source.url,source.label,true) + '</p>').join('')}<p>Periodo: ${esc(a.start)} – ${esc(a.end)}. Fonte consultata il ${esc(a.checkedAt)}.</p><p>${esc(calendar.attendanceCriteria())}</p></details>`);
-}
 function shell(title, description, path, body, indexable = true) {
     const breadcrumbs = {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{ '@type':'ListItem',position:1,name:'Fiere',item:SITE+'/fiere'},{'@type':'ListItem',position:2,name:title,item:SITE+path}]};
     return `<!doctype html><html lang="it"><head><meta charset="utf-8"><script src="/js/admin-theme.js?v=8"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} — Subingresso.it</title><meta name="description" content="${esc(description)}"><meta name="robots" content="${indexable ? 'index,follow' : 'noindex,follow'}"><link rel="canonical" href="${SITE}${esc(path)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${SITE}${esc(path)}"><meta property="og:type" content="website"><script type="application/ld+json">${JSON.stringify(breadcrumbs).replace(/</g, "\\u003c")}</script><link rel="icon" type="image/svg+xml" href="/favicon-v2.svg"><link rel="stylesheet" href="/css/fiera.css?v=4"><link rel="stylesheet" href="/css/design-system.css?v=15"><link rel="stylesheet" href="/css/admin-theme.css?v=7"></head><body><header><a href="/" aria-label="Subingresso.it, pagina iniziale" class="brand site-brand flex items-center flex-shrink-0"><span class="site-wordmark">Subingresso<span>.it</span></span></a><nav aria-label="Navigazione principale">${link('/fiere','Calendario fiere')} ${link('/annunci','Posteggi in vendita')}</nav></header><main>${body}</main><footer>${link('/fiere','Calendario e mappa')} · ${link('/fiere/elenco','Tutte le fiere')} · ${link('/contatti','Contatti')} · ${link('/privacy','Privacy')}</footer></body></html>`;
@@ -38,8 +26,7 @@ function detail(event) {
     const breadcrumbs = {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Fiere',item:SITE+'/fiere'},{'@type':'ListItem',position:2,name:event.name,item:url}]};
     const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
     const reviews = FairReviews.sectionHTML('catalog', event.id, event.name, event.city, event.editions).replace('id="fair-reviews"', 'id="detail-reviews"');
-    let markup = FairDetail.render(event, calendar, reviews, true);
-    markup = markup.replace('<section id="detail-attendance" class="fiere-detail-info" hidden></section>', attendanceSection(event));
+    const markup = FairDetail.render(event, calendar, reviews, true);
     return explorerTemplate
         .replace(/<title>[^<]*<\/title>/, () => `<title>${esc(title)} — Subingresso.it</title>`)
         .replace(/<meta name="description" content="[^"]*">/, () => `<meta name="description" content="${esc(description)}"><meta name="robots" content="${isIndexable(event) ? 'index,follow' : 'noindex,follow'}">`)
