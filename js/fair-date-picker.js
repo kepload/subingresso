@@ -194,10 +194,18 @@
                 saved = validDate(dateFrom) && validDate(dateTo) && dateFrom <= dateTo ? [dateFrom, dateTo] : ['', ''];
                 for (let i = 0; i < 2; i++) {
                     const button = $(i ? 'date-to' : 'date-from');
-                    button.querySelector('strong').textContent = saved[i] ? label(saved[i]) : 'Scegli data';
+                    const value = button.querySelector('strong');
+                    value.textContent = saved[i] ? label(saved[i]) : 'Scegli data';
+                    value.classList.toggle('fair-choice-prompt', !saved[i]);
+                    if (saved[i]) delete value.dataset.prompt;
+                    else value.dataset.prompt = 'Scegli data';
                     button.dataset.selected = String(Boolean(saved[i]));
                     button.setAttribute('aria-label', (i ? 'Al: ' : 'Dal: ') + (saved[i] ? label(saved[i]) : 'scegli data'));
                 }
+                const place = $('province-filter'), placeControl = $('province-control');
+                placeControl.dataset.empty = String(!place.value);
+                placeControl.dataset.ready = String(!place.disabled);
+                placeControl.querySelector('.fair-place-placeholder > span').classList.toggle('fair-choice-prompt', !place.value && !place.disabled);
                 const note = $('period-note');
                 note.hidden = !saved[0] && !monthsLabel;
                 note.textContent = saved[0] ? 'Fiere con date pubblicate nel periodo.' : monthsLabel ? 'Periodo abituale: ' + monthsLabel : '';

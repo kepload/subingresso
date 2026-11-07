@@ -87,6 +87,15 @@ async function browserChecks() {
                     return expected;
                 }
                 await page.goto(base + '/fiere'); await ready();
+                assert.equal(await page.locator('.fiere-search-title').innerText(), 'Il calendario delle fiere');
+                assert.equal(await page.locator('.fair-choice-prompt').count(), 3);
+                const typeStyles = await page.locator('#date-from > strong, #date-to > strong, .fair-place-placeholder, #province-filter').evaluateAll(els => els.map(el => {
+                    const s = getComputedStyle(el); return [s.fontFamily, s.fontSize, s.fontWeight, s.letterSpacing, s.lineHeight];
+                }));
+                assert(typeStyles.every(style => JSON.stringify(style) === JSON.stringify(typeStyles[0])), 'Date and location text use the same typography');
+                assert.equal(typeStyles[0][2], '400');
+                assert.equal(await page.locator('#province-filter').evaluate(el => getComputedStyle(el).color), 'rgba(0, 0, 0, 0)', 'Only the prompt layer paints the default location text');
+                assert.equal(await page.locator('#date-from > strong').evaluate(el => getComputedStyle(el, '::after').animationName), 'none', 'Reduced motion disables shimmer');
                 assert.equal(await page.locator('#article-filter, #month-bar, #month-from').count(), 0);
                 assert.deepEqual(await page.locator('[data-period]').allTextContents(), ['Questo mese', 'Da oggi a 3 mesi', 'Da oggi a 6 mesi']);
                 const inlineDates = () => page.locator('.fair-period-field').evaluateAll(fields => fields.every(field => {
@@ -117,11 +126,14 @@ async function browserChecks() {
                 await page.locator('#period-day').focus(); await page.keyboard.press('ArrowUp');
                 await page.locator('#period-apply').click(); await verifyResults();
                 await page.locator('#province-filter').selectOption('Brescia'); await verifyResults();
+                assert.equal(await page.locator('#province-control').getAttribute('data-empty'), 'false');
+                assert.equal(await page.locator('.fair-choice-prompt').count(), 0, 'Completed date and location prompts stop shimmering');
                 await page.locator('#reset-filters').click();
                 assert.equal(new URL(page.url()).searchParams.has('dal'), false);
                 assert.equal(new URL(page.url()).searchParams.has('provincia'), false);
                 await page.locator('#reset-filters').click();
                 assert.equal(await page.locator('#list-count').innerText(), String(catalog.length));
+                assert.equal(await page.locator('.fair-choice-prompt').count(), 3, 'Reset restores incomplete prompts');
                 await page.goto(base+'/fiere?dal=2028-01-31&al=2028-03-02'); await ready();
                 assert(await inlineDates(), 'Full dates with two-digit days fit on one line');
                 await page.locator('#date-from').click();

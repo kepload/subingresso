@@ -959,7 +959,6 @@
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));
-        $('province-filter').style.fontWeight = state.region ? '700' : '400';
         syncURL();
     }
     function changed(refit) {

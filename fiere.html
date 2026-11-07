@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="/css/fair-reviews.css?v=2">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/admin-theme.css?v=7">
-    <link rel="stylesheet" href="/css/fair-date-picker.css?v=3">
+    <link rel="stylesheet" href="/css/fair-date-picker.css?v=4">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -35,14 +35,14 @@
     <div class="fiere-explorer">
     <div class="fiere-search-panel">
     <section class="fiere-filters" aria-label="Filtra le fiere">
-        <h2 class="fiere-search-title">Trova la fiera per il tuo banco</h2>
+        <h2 class="fiere-search-title">Il calendario delle fiere</h2>
         <div class="fiere-period-heading">
             <h2><i class="fa-regular fa-calendar" aria-hidden="true"></i> Quando</h2>
             <button type="button" id="reset-filters" class="fiere-reset">Azzera filtri</button>
         </div>
         <div class="fair-period-fields" role="group" aria-label="Periodo della ricerca">
-            <button type="button" id="date-from" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Dal</span><strong>Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
-            <button type="button" id="date-to" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Al</span><strong>Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+            <button type="button" id="date-from" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Dal</span><strong class="fair-choice-prompt" data-prompt="Scegli data">Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+            <button type="button" id="date-to" class="fair-period-field" aria-haspopup="dialog" aria-controls="period-dialog"><span>Al</span><strong class="fair-choice-prompt" data-prompt="Scegli data">Scegli data</strong><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
         </div>
         <div class="fair-period-presets" role="group" aria-label="Periodi rapidi">
             <button type="button" data-period="month" aria-pressed="false">Questo mese</button>
@@ -53,7 +53,11 @@
         <div class="fiere-main-fields">
         <div class="fiere-place">
             <label for="province-filter"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dove</label>
-            <select id="province-filter" aria-label="Regione o provincia" disabled><option value="">Tutta Italia</option></select>
+            <div id="province-control" class="fair-place-control" data-empty="true" data-ready="false">
+                <select id="province-filter" aria-label="Regione o provincia" disabled><option value="">Tutta Italia</option></select>
+                <span class="fair-place-placeholder" aria-hidden="true"><span class="fair-choice-prompt" data-prompt="Tutta Italia">Tutta Italia</span></span>
+                <svg class="fair-place-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
         </div>
         </div>
         <details id="extra-filters" class="fiere-extra-filters">
@@ -132,8 +136,8 @@
 <script src="/js/fiere-access.js?v=6"></script>
 <script src="/js/fair-review-editions.js?v=1"></script><script src="/js/fair-reviews.js?v=3"></script>
 <script src="/js/fair-detail.js?v=5"></script>
-<script src="/js/fair-date-picker.js?v=2"></script>
-<script src="/js/pages/fiere.js?v=168"></script>
+<script src="/js/fair-date-picker.js?v=3"></script>
+<script src="/js/pages/fiere.js?v=169"></script>
 <script type="module" src="/js/saved-fairs.js?v=4"></script>
 </body>
 </html>

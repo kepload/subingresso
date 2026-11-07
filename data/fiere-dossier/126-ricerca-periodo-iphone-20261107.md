@@ -103,3 +103,26 @@ HTML/CSS identici al commit; cinque combinazioni online Chromium1440/768/320
 e WebKit390 nei due temi passate con date vuote e giorni a due cifre.
 Confermati allineamento, testo completo,48px e assenza di errori pagina;
 ricevuta `date-su-riga/published.json`. Modifica della mappa precedente conservata.
+
+## Titolo, testi uniformi e riflesso sui campi vuoti — 7 novembre, sera
+
+Richiesta: titolo visibile «Il calendario delle fiere»; «Scegli data» e
+«Tutta Italia» con lo stesso carattere, dimensione, peso normale400 e spaziatura.
+Le dimensioni condivise16/14/13px seguono lo spazio del pannello; Dal/Al restano
+affiancati al valore e i campi rimangono compatti.
+
+Riflesso obliquo richiesto dall’utente: una striscia azzurra attraversa solo
+il testo, circa1,3s ogni7s, con avvii sfalsati. Il testo di base rimane fermo
+e leggibile. Disattivato dopo la scelta, durante l’interazione e con movimento
+ridotto; nessun riflesso sulla zona mentre il controllo è disabilitato.
+
+La zona conserva il select nativo e il relativo menu; lo strato di testo
+decorativo è escluso dall’accessibilità e dai clic. Font selezionato normale
+anche sulle regioni. Valori di opzioni e filtri geografici invariati.
+
+Backup verificato `backup/session-20261107-202931-fiere-riflesso-campi` → `9898a8a`.
+Sette combinazioni locali Chromium/WebKit, formati e temi passate; quattro
+controlli aggiuntivi di animazione nei due motori/temi verificano il movimento
+e il cambiamento reale dei pixel sul testo, senza duplicare «Tutta Italia».
+Controllati selezione/reset, font identici, menu nativo e movimento ridotto.
+Prove `.local/verifiche/fiere-periodo-20261107/riflesso-campi/`.
