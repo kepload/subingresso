@@ -193,4 +193,9 @@ compresi1280×600,320×400 e844×390: disposizione verticale, allineamento
 alle date e pulsante nel viewport verificati con nuove asserzioni nella suite
 esistente. Inspector con le tre eccezioni preesistenti: zero errori, quattro
 avvisi esterni al selettore. Prove nella sottocartella `verticale/`.
-Pubblicazione della correzione da verificare.
+Correzione pubblicata `8f529a9c4cac37c43287e63ebbd58b469fe35a91`,
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/33T6APsukDdLfy8ypX7E2ggTTsaB).
+Tre asset identici ai blob Git;16 controlli layout online nei due motori
+passati, con ridimensionamento continuo e loop conservato. Ricevute
+`verticale/published.json` e `verticale/live-layout.json`; immagini esaminate.
+Anteprima locale chiusa.
