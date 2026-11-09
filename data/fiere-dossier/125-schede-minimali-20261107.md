@@ -68,3 +68,33 @@ ripetuta online Chromium1440/768/320 e WebKit390, compreso catalogo tardivo
 durante l’accesso. Prova con SDK/icone reali nei due temi a quattro larghezze;
 controllo specifico di costi e fonte in fondo su due schede mobili scure.
 Ricevuta `published.json`, screenshot e misure nella cartella privata delle prove.
+
+## Schede utili anche ai visitatori — 9 novembre 2026
+
+Intervento richiesto soltanto sulle schede aperte, senza estendere il lavoro a
+home, calendario, elenchi, SEO o nuove funzioni. Modello comune SSR/client in
+`js/fair-detail.js`, riferimento cache aggiornato in `fiere.html`.
+Etichetta della disponibilità allineata anche nell'aggiornamento della scheda
+gestita in `js/pages/fiere.js`, compreso singolare/plurale; cache aggiornata.
+
+- Prima date e stato, descrizione, luogo/orari, «Prodotti e settori», articoli e
+  organizzatore. Rimossa l'etichetta «Per il tuo banco»; i campi assenti non
+  producono informazioni o sezioni vuote. Valori e descrizioni conservati.
+- Altre edizioni e affluenza documentata precedono le informazioni professionali.
+- Organico dei posteggi e disponibilità degli eventi gestiti sono dentro la
+  partecipazione degli espositori. Esaurimento esplicitamente riferito ai
+  posteggi; scadenze precedute da «Iscrizioni espositori».
+- «Costi per esporre» indica le tariffe del banco. Nessuna deduzione sul costo
+  d'ingresso del pubblico. Condizioni, importi, note, fonti e date restano integri.
+- Ricerca locale, Salva/campanella, accesso alle fonti e recensioni professionali
+  conservati. Nessuna modifica al catalogo, alle API o al database.
+
+Backup remoto `backup/session-20261109-200131-schede-fiere-visitatori` verificato.
+Suite ingresso Chromium1440/768/320 e WebKit390 passata; suite pagine con
+10.443 schede e 5.546 voci fiere sitemap passata, inclusi dati mancanti, prezzi,
+assenza JS e escaping. Suite SEO passata. Controllo visivo su tre fiere a
+1440/768/390/320 nei due temi, senza overflow. Inspector conserva le stesse
+segnalazioni del calendario preesistente e della sovrapposizione del dialog;
+nessun ridisegno fuori perimetro. La preview statica non serve le API delle
+recensioni: eventuali errori locali di quel blocco non sono dati di produzione.
+Prove private `.local/verifiche/schede-fiere-visitatori-20261109/`.

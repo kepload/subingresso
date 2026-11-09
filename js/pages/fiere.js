@@ -1009,7 +1009,7 @@
             if ($('fair-dialog').open && state.selected?.startsWith('organizzatore-')) {
                 const current = managed.find(event => event.id === state.selected);
                 const availability = $('detail-availability');
-                if (current?.managedAvailability && availability) { const count = current.managedAvailability; availability.textContent = count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity; availability.dataset.soldOut = String(count.available === 0); }
+                if (current?.managedAvailability && availability) { const count = current.managedAvailability; availability.textContent = count.available === 0 ? 'Posteggi esauriti per gli espositori' : count.available + (count.available === 1 ? ' posteggio disponibile' : ' posteggi disponibili') + ' su ' + count.capacity; availability.dataset.soldOut = String(count.available === 0); }
                 if (!current && availability) { availability.hidden = false; availability.textContent = 'Evento non più disponibile. Ricarica la pagina.'; }
             }
         } catch (_) { if (request === managedRequest) $('organizer-catalog-error').hidden = false; }

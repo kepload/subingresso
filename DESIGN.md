@@ -160,6 +160,13 @@ pannelli colorati. Recensioni nel flusso, fonte discreta in fondo e solo la
 documentazione aggiuntiva eventualmente apribile. Nessun link alla stessa
 scheda o gruppo di ricerche equivalenti. Contratto: `data/fiere-dossier/125-schede-minimali-20261107.md`.
 
+Dal 9 novembre le schede aperte servono anche ai visitatori: prima date,
+descrizione, luogo, orari, prodotti e organizzatore; poi le informazioni per
+esporre. «Prodotti e settori» sostituisce «Per il tuo banco». Posteggi,
+disponibilità e iscrizioni sono nella sezione professionale; «Costi per esporre»
+distingue il banco dall'ingresso del pubblico. Dati, funzioni e calendario
+esterno alla scheda conservano il comportamento esistente.
+
 Nel calendario fiere la mappa occupa lo spazio a destra dei filtri fino al
 margine della pagina. Da721px resta sotto l’header e interamente nel viewport,
 anche scorrendo l’elenco; sul telefono segue i filtri. Nessun titolo, istruzione,
