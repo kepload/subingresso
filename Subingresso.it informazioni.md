@@ -68,6 +68,9 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
   `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md`.
 - Email: consensi, deduplica e consegne reali; `data/VETRINA_EMAIL.md`,
   `data/EMAIL_CONVERSION_ANALYTICS.md`. Nessun invio implicito dai TODO.
+- Profili eliminati: contatore automatico aggregato dal 9 novembre 2026,
+  inizializzato con una cancellazione verificata; storico anteriore incompleto.
+  Fonte live e controllo esclusione dalle email in `data/ACCOUNT_DELETIONS.md`.
 - ADS interne al sito: pochi indicatori principali e grafico generale;
   niente pulsante Aggiorna, nuovi numeri al ricaricamento. Contratti
   `data/PERSONAL_ADS.md`, `data/PERSONAL_AD_CONTEXT.md`,
@@ -114,6 +117,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **9 novembre 2026 — contatore cancellazioni e verifica email:** l'account appena eliminato non compare nelle iscrizioni email, negli avvisi, nei permessi promozionali o nelle consegne collegate; non idoneo alle promozioni. Contatore automatico aggregato inizializzato a una cancellazione verificata, senza identita personali e con storico precedente dichiarato incompleto. [Fonte e criteri](data/ACCOUNT_DELETIONS.md).
 
 - **9 novembre 2026 — cancellazione account richiesta in chat:** su istruzione esplicita eliminati accesso, profilo, chat di supporto e dati collegati dell'account individuato dalla richiesta e dalle risposte del gestore. Nessun annuncio, pagamento o segnalazione; verifica separata: account/profilo/chat assenti, nessun riferimento residuo all'ID nelle colonne verificate. Nessun invio. Ricevuta minima privata in `.local/lavori/cancellazione-account-20261109/receipt.json`.
 
