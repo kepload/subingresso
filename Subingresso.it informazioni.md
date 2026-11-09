@@ -115,7 +115,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **9 novembre 2026 — selettore periodo fiere:** giorni e mesi ciclici, anni finiti; frase rimossa e pannello completo senza barra su desktop e smartphone. Dieci combinazioni locali più gesti e ingressi passati; pubblicazione in corso. [Contratto e prove](data/fiere-dossier/126-ricerca-periodo-iphone-20261107.md).
+- **9 novembre 2026 — selettore periodo fiere:** pubblicato `aa519cf`, Vercel riuscito e tre asset identici. Giorni/mesi ciclici, anni finiti; frase rimossa e pannello completo senza barra. Dieci combinazioni locali/online e gesti nei due motori passati. [Contratto e prove](data/fiere-dossier/126-ricerca-periodo-iphone-20261107.md).
 
 - **7 novembre 2026 — mappa fiere:** su richiesta annullata la variante quadrata `1adfc5d`; ripristino `67bddf8` pubblicato e verificato. Mappa ampia a destra, intera nel viewport desktop; titolo, istruzioni, mare e menu rimossi. Vercel riuscito, HTML/CSS identici,13 combinazioni locali e desktop chiaro/scuro online passati. [Contratto e prove](data/fiere-dossier/127-mappa-desktop-20261107.md).
 

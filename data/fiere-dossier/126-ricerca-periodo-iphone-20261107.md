@@ -171,4 +171,9 @@ Controllo visivo: testo e date completi, mesi/giorni continui, azione sempre
 raggiungibile, nessuna barra o sovrapposizione nel pannello. Nessuna nuova
 immagine, dato dimostrativo o modifica a catalogo, consensi ed email.
 
-Pubblicazione e verifica online da completare.
+Pubblicato `aa519cf0095fec9984c6330422e3f08c5723d803`,
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3SBCJR7uo5YbH8YqbMSsXtAj8oGu).
+HTML, CSS e JS online identici ai blob Git. Ripetute online tutte le dieci
+combinazioni browser/formato/tema e le prove gesti nei due motori: riuscite,
+nessun errore JS. Ricevute `published.json`, `live-results.json`,
+`live-gestures.json` e screenshot nella cartella prove. Anteprima locale chiusa.
