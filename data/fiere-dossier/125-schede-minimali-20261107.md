@@ -98,3 +98,11 @@ segnalazioni del calendario preesistente e della sovrapposizione del dialog;
 nessun ridisegno fuori perimetro. La preview statica non serve le API delle
 recensioni: eventuali errori locali di quel blocco non sono dati di produzione.
 Prove private `.local/verifiche/schede-fiere-visitatori-20261109/`.
+
+Pubblicato `805c3808352e07f8b9906dd36a47cd6bc12d8e35`, controllo
+[Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DoSt8jc4JG8tfKr5YABb841h2zD8).
+Tre asset online identici ai blob Git; tre schede SSR con nuove etichette
+verificate. Suite ingresso ripetuta online Chromium1440/768/320 e WebKit390,
+passata anche senza JS e con catalogo tardivo. Controllo visivo online con
+SDK/icone reali a1440/390 nei due temi, senza overflow. Ricevuta `published.json`
+e catture online nella cartella delle prove. Catalogo e dati persistenti invariati.
