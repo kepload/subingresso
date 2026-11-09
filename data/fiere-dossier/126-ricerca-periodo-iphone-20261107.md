@@ -177,3 +177,20 @@ HTML, CSS e JS online identici ai blob Git. Ripetute online tutte le dieci
 combinazioni browser/formato/tema e le prove gesti nei due motori: riuscite,
 nessun errore JS. Ricevute `published.json`, `live-results.json`,
 `live-gestures.json` e screenshot nella cartella prove. Anteprima locale chiusa.
+
+### Correzione richiesta: rotelle sempre sotto Dal/Al
+
+L’utente ha rifiutato lo spostamento laterale nelle finestre basse: rimossa
+la disposizione a due colonne. Ordine sempre verticale come nella versione
+precedente: Dal/Al, rotelle, durata e pulsante a tutta larghezza. Cinque righe
+quando entrano, tre soltanto sotto550px di altezza. Spazi più compatti nelle
+finestre molto basse, senza spostare le rotelle né affiancare il pulsante.
+Loop, anni finiti e frase rimossa conservati.
+
+Backup remoto `backup/session-20261109-115045-fiere-rotelle-sotto-date`
+→ `abff360`. Dieci combinazioni locali Chromium/WebKit e temi passate,
+compresi1280×600,320×400 e844×390: disposizione verticale, allineamento
+alle date e pulsante nel viewport verificati con nuove asserzioni nella suite
+esistente. Inspector con le tre eccezioni preesistenti: zero errori, quattro
+avvisi esterni al selettore. Prove nella sottocartella `verticale/`.
+Pubblicazione della correzione da verificare.

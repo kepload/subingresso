@@ -72,33 +72,23 @@ html.admin-dark .fair-period-apply { background: #93c5fd; color: #0b2444; }
 @container fair-filters (max-width: 320px) { .fair-period-field, .fair-place-control { --fair-choice-size: 13px; } }
 @media (max-width: 359px) { .fair-period-sheet { padding-left: 18px; padding-right: 18px; } .fair-period-tabs button { padding: 11px; } .fair-period-tabs strong { font-size: 14px; } #period-month .fair-wheel-row { font-size: 19px; } }
 @media (max-height: 700px) {
-    .fair-period-dialog { --fair-wheel-padding: var(--fair-wheel-row); }
     .fair-period-sheet { padding-top: 16px; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
     .fair-period-sheet-heading { margin-bottom: 12px; }
     .fair-wheel-labels { margin-top: 12px; }
     .fair-period-duration { margin: 5px 0 10px; }
     .fair-period-apply { min-height: 48px; padding: 11px 16px; }
 }
-@media (min-width: 641px) and (max-height: 700px) {
-    .fair-period-dialog { width: min(680px, calc(100% - 32px)); --fair-wheel-padding: calc(var(--fair-wheel-row) * 2); }
-    .fair-period-sheet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px 24px; align-items: center; }
-    .fair-period-sheet-heading { grid-column: 1 / -1; margin: 0; }
-    #period-wheel-panel { grid-column: 2; grid-row: 2 / 5; }
-    .fair-wheel-labels { margin: 0 0 4px; }
-    .fair-period-duration { margin: 0; }
-    .fair-period-apply { grid-column: 1; }
-}
-@media (min-width: 641px) and (max-height: 360px) { .fair-period-dialog { --fair-wheel-padding: var(--fair-wheel-row); } }
-@media (max-width: 640px) and (max-height: 520px) {
-    .fair-period-sheet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px; padding-top: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
-    .fair-period-sheet-heading, .fair-period-tabs, #period-wheel-panel { grid-column: 1 / -1; }
-    .fair-period-sheet-heading, .fair-period-duration { margin: 0; }
+@media (max-height: 550px) { .fair-period-dialog { --fair-wheel-padding: var(--fair-wheel-row); } }
+@media (max-height: 520px) {
+    .fair-period-sheet { padding-top: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+    .fair-period-sheet-heading { margin-bottom: 8px; }
     .fair-wheel-labels { margin: 0 0 4px; }
     .fair-period-tabs button { min-height: 60px; padding: 8px 10px; }
 }
-@media (max-width: 640px) and (max-height: 440px) {
+@media (max-height: 440px) {
     .fair-period-dialog { --fair-wheel-row: 36px; }
-    .fair-period-sheet { gap: 6px; padding-top: 8px; padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+    .fair-period-sheet { padding-top: 8px; padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+    .fair-period-sheet-heading { margin-bottom: 6px; }
     .fair-period-sheet-heading > button { width: 36px; height: 36px; margin: 0; }
     .fair-period-tabs button { flex-direction: row; align-items: center; gap: 8px; min-height: 36px; padding: 6px 10px; }
     .fair-period-apply { min-height: 44px; padding: 9px 12px; }

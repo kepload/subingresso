@@ -120,7 +120,9 @@ async function browserChecks() {
                 assert.equal(await centeredValue('#period-day'), await page.locator('#period-day').getAttribute('aria-valuenow'));
                 assert(await page.locator('#period-dialog').evaluate(el => {
                     const box = el.getBoundingClientRect(), apply = el.querySelector('#period-apply').getBoundingClientRect();
-                    return el.scrollHeight <= el.clientHeight + 1 && box.top >= 0 && box.bottom <= innerHeight + 1 && apply.bottom <= box.bottom - 6;
+                    const tabs = el.querySelector('.fair-period-tabs').getBoundingClientRect(), wheels = el.querySelector('#period-wheel-panel').getBoundingClientRect();
+                    return el.scrollHeight <= el.clientHeight + 1 && box.top >= 0 && box.bottom <= innerHeight + 1 && apply.bottom <= box.bottom - 6
+                        && wheels.top >= tabs.bottom - 1 && Math.abs(wheels.left - tabs.left) <= 1 && Math.abs(wheels.right - tabs.right) <= 1 && apply.top >= wheels.bottom;
                 }), 'The whole picker and apply button fit without scrolling');
                 assert.equal(await page.locator('.fair-period-disclaimer').count(), 0);
                 const originalYear = await page.locator('#period-year').getAttribute('aria-valuenow');
