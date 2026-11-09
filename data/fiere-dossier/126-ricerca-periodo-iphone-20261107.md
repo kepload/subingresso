@@ -134,3 +134,41 @@ del riflesso ripetuti sul sito pubblicato, tutti riusciti. Verificato il
 cambiamento reale dei pixel in entrambe le scritte delle date e nella zona,
 font identici400, arresto dopo scelta, reset e movimento ridotto. Ricevute
 `published.json`, `live-results.json`, `live-shimmer.json` nella cartella prove.
+
+## Giorni e mesi ciclici, pannello adattivo — 9 novembre 2026
+
+Su richiesta: giorni e mesi continuano in entrambe le direzioni (dicembre →
+gennaio, ultimo giorno → primo); le righe successive restano visibili anche
+agli estremi. Ogni rotella conserva la propria unità: il giro dei mesi non
+cambia l’anno, quello dei giorni non cambia il mese. Anni con estremi finiti.
+Conservati il limite all’ultimo giorno valido e il riallineamento Dal/Al.
+Rimossa la frase «Nel periodo scelto, fiere con date pubblicate.».
+
+Il dialogo si adatta all’altezza disponibile: cinque righe normalmente, tre
+nelle finestre basse, disposizione su due colonne in orizzontale e pulsante
+affiancato alla durata sui telefoni più bassi. Margine di sicurezza mobile
+conservato. Nessuno scorrimento verticale del pannello né contenuto tagliato;
+rotelle ancora scorrevoli. Ridimensionamento e orientamento conservano la
+data selezionata e la sua posizione centrale. Stile e mappa preesistenti.
+
+Backup remoto verificato:
+`backup/session-20261109-110723-fiere-rotelle-loop-adattamento` → `9071011`.
+Prove `.local/verifiche/fiere-loop-responsive-20261109/`.
+Suite periodi: dieci combinazioni Chromium/WebKit, chiaro/scuro, da320×400
+a1440×900 e telefono844×390; pannello e pulsante integralmente nel viewport,
+nessun overflow, wrap avanti/indietro, anni finiti e date valide verificati.
+Gesti aggiuntivi nei due motori: rotella, trascinamento mouse, tocco di una
+riga, cinque giri completi, quattro ridimensionamenti e applicazione prima
+del debounce. Tocco con trascinamento simulato anche via CDP Chromium;
+nessuna prova su iPhone fisico. Suite ingressi/schede su quattro formati passata.
+
+Inspector1440/768/390 eseguito e tutte le immagini esaminate. Consentiti i tre
+rilievi già presenti prima dell’intervento (`gradient`, `button-fx`, `tiny-text`)
+sulla mappa, sull’iscrizione e sulle categorie delle schede: zero errori
+restanti. Quattro avvisi su etichetta iscrizione, contrasto delle note,
+colonne della pagina e colore restano fuori dal selettore modificato.
+Controllo visivo: testo e date completi, mesi/giorni continui, azione sempre
+raggiungibile, nessuna barra o sovrapposizione nel pannello. Nessuna nuova
+immagine, dato dimostrativo o modifica a catalogo, consensi ed email.
+
+Pubblicazione e verifica online da completare.

@@ -32,11 +32,14 @@
         let saved = ['', ''], draft = [], active = 0, opener, wheels = [], frame;
         const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function wheel(element, onSelect) {
+        function wheel(element, onSelect, loop = false) {
             let values = [], selected, timer, paintFrame, drag, dragged = false;
-            const nearest = () => Math.max(0, Math.min(values.length - 1, Math.round(element.scrollTop / ROW)));
+            const rowHeight = () => element.firstElementChild?.offsetHeight || ROW;
+            const nearest = () => Math.max(0, Math.min(element.children.length - 1, Math.round(element.scrollTop / rowHeight())));
+            const valueAt = index => values[index % values.length];
+            const middle = index => loop ? values.length * 3 + index % values.length : index;
             function paint() {
-                const position = element.scrollTop / ROW;
+                const position = element.scrollTop / rowHeight();
                 for (let i = 0; i < element.children.length; i++) {
                     const distance = Math.min(3, Math.abs(i - position));
                     element.children[i].style.opacity = String(Math.max(.12, 1 - distance * .34));
@@ -45,14 +48,15 @@
             }
             function settle() {
                 clearTimeout(timer);
-                const index = nearest(), value = values[index];
-                element.scrollTop = index * ROW;
+                const index = nearest(), value = valueAt(index);
+                // Identical neighbouring cycles keep the wrap invisible in both directions.
+                element.scrollTop = middle(index) * rowHeight();
                 if (value !== selected) { selected = value; onSelect(value); }
                 paint();
             }
             function go(index, smooth = true) {
-                index = Math.max(0, Math.min(values.length - 1, index));
-                element.scrollTo({ top: index * ROW, behavior: smooth && !reduced() ? 'smooth' : 'instant' });
+                index = Math.max(0, Math.min(element.children.length - 1, index));
+                element.scrollTo({ top: index * rowHeight(), behavior: smooth && !reduced() ? 'smooth' : 'instant' });
                 if (!smooth || reduced()) settle();
             }
             element.addEventListener('scroll', () => {
@@ -66,7 +70,7 @@
             });
             element.addEventListener('keydown', event => {
                 const index = nearest();
-                const next = { ArrowUp: index - 1, ArrowDown: index + 1, PageUp: index - 5, PageDown: index + 5, Home: 0, End: values.length - 1 }[event.key];
+                const next = { ArrowUp: index - 1, ArrowDown: index + 1, PageUp: index - 5, PageDown: index + 5, Home: middle(0), End: middle(values.length - 1) }[event.key];
                 if (next === undefined) return;
                 event.preventDefault(); go(next, false);
             });
@@ -95,15 +99,22 @@
             element.addEventListener('pointerup', release);
             element.addEventListener('pointercancel', release);
             return {
-                value: () => values[nearest()],
+                value: () => valueAt(nearest()),
                 flush: settle,
                 stop() { clearTimeout(timer); cancelAnimationFrame(paintFrame); },
+                resize() {
+                    if (!values.length) return;
+                    element.scrollTop = middle(Math.max(0, values.indexOf(selected))) * rowHeight();
+                    paint();
+                },
                 set(items, value, text) {
                     clearTimeout(timer);
-                    if (items.length !== values.length || items.some((item, i) => item !== values[i])) {
+                    const changed = items.length !== values.length || items.some((item, i) => item !== values[i]);
+                    const reposition = changed || selected !== value;
+                    if (changed) {
                         values = items;
                         const fragment = document.createDocumentFragment();
-                        values.forEach((item, index) => {
+                        Array.from({ length: values.length * (loop ? 7 : 1) }, (_, index) => valueAt(index)).forEach((item, index) => {
                             const row = document.createElement('div');
                             row.className = 'fair-wheel-row'; row.dataset.wheelIndex = String(index);
                             row.setAttribute('aria-hidden', 'true'); row.textContent = text(item); fragment.append(row);
@@ -115,7 +126,7 @@
                     element.setAttribute('aria-valuemax', String(values[values.length - 1]));
                     element.setAttribute('aria-valuenow', String(value));
                     element.setAttribute('aria-valuetext', text(value));
-                    element.scrollTop = Math.max(0, values.indexOf(value)) * ROW;
+                    if (reposition) element.scrollTop = middle(Math.max(0, values.indexOf(value))) * rowHeight();
                     paint();
                 }
             };
@@ -147,7 +158,8 @@
             if (draft[0] > draft[1]) draft[1 - active] = draft[active];
             syncWheels();
         }
-        wheels = [wheel($('period-day'), value => updateDate(2, value)), wheel($('period-month'), value => updateDate(1, value)), wheel($('period-year'), value => updateDate(0, value))];
+        wheels = [wheel($('period-day'), value => updateDate(2, value), true), wheel($('period-month'), value => updateDate(1, value), true), wheel($('period-year'), value => updateDate(0, value))];
+        new ResizeObserver(() => { if (dialog.open) wheels.forEach(item => item.resize()); }).observe(dialog);
         function flush() {
             const day = wheels[0].value(), month = wheels[1].value(), year = wheels[2].value();
             draft[active] = iso(year, month, Math.min(day, daysInMonth(year, month)));

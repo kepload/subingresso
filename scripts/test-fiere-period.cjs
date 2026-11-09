@@ -54,7 +54,7 @@ async function browserChecks() {
     fs.mkdirSync(output, { recursive: true });
     const report = [];
     try {
-        for (const [engine, width, height, dark] of [['chromium',1440,900,false],['chromium',768,900,false],['chromium',320,700,false],['chromium',1440,900,true],['webkit',390,844,false],['webkit',390,844,true],['webkit',844,390,false]]) {
+        for (const [engine, width, height, dark] of [['chromium',1440,900,false],['chromium',768,900,false],['chromium',320,700,false],['chromium',1440,900,true],['chromium',1280,600,true],['chromium',320,480,false],['chromium',320,400,true],['webkit',390,844,false],['webkit',390,844,true],['webkit',844,390,false]]) {
             const browser = await pw[engine].launch({ headless: true });
             try {
                 const context = await browser.newContext({ viewport:{width,height}, hasTouch:width<800, reducedMotion:'reduce' });
@@ -113,7 +113,36 @@ async function browserChecks() {
                 await page.locator('#date-from').click();
                 assert(await page.locator('#period-dialog').evaluate(el => el.matches(':modal')));
                 if(dark) assert.equal(await page.locator('#period-dialog').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(21, 32, 51)');
-                assert.equal(await page.locator('#period-day').evaluate(el => Math.round(el.scrollTop / 44) + 1), Number(await page.locator('#period-day').getAttribute('aria-valuenow')));
+                const centeredValue = selector => page.locator(selector).evaluate(el => {
+                    const row = el.children[Math.round(el.scrollTop / el.firstElementChild.offsetHeight)];
+                    return row.textContent;
+                });
+                assert.equal(await centeredValue('#period-day'), await page.locator('#period-day').getAttribute('aria-valuenow'));
+                assert(await page.locator('#period-dialog').evaluate(el => {
+                    const box = el.getBoundingClientRect(), apply = el.querySelector('#period-apply').getBoundingClientRect();
+                    return el.scrollHeight <= el.clientHeight + 1 && box.top >= 0 && box.bottom <= innerHeight + 1 && apply.bottom <= box.bottom - 6;
+                }), 'The whole picker and apply button fit without scrolling');
+                assert.equal(await page.locator('.fair-period-disclaimer').count(), 0);
+                const originalYear = await page.locator('#period-year').getAttribute('aria-valuenow');
+                await page.locator('#period-month').focus(); await page.keyboard.press('End');
+                assert.equal(await centeredValue('#period-month'), 'Dicembre');
+                assert.equal(await page.locator('#period-month').evaluate(el => el.children[Math.round(el.scrollTop / el.firstElementChild.offsetHeight) + 1].textContent), 'Gennaio');
+                await page.keyboard.press('ArrowDown');
+                assert.equal(await centeredValue('#period-month'), 'Gennaio');
+                assert.equal(await page.locator('#period-month').getAttribute('aria-valuenow'), '1');
+                await page.keyboard.press('ArrowUp');
+                assert.equal(await centeredValue('#period-month'), 'Dicembre');
+                assert.equal(await page.locator('#period-year').getAttribute('aria-valuenow'), originalYear, 'Month wrap preserves the year');
+                await page.locator('#period-day').focus(); await page.keyboard.press('End');
+                assert.equal(await centeredValue('#period-day'), '31');
+                assert.equal(await page.locator('#period-day').evaluate(el => el.children[Math.round(el.scrollTop / el.firstElementChild.offsetHeight) + 1].textContent), '1');
+                await page.keyboard.press('ArrowDown'); assert.equal(await centeredValue('#period-day'), '1');
+                await page.keyboard.press('ArrowUp'); assert.equal(await centeredValue('#period-day'), '31');
+                assert.equal(await page.locator('#period-month').getAttribute('aria-valuenow'), '12', 'Day wrap preserves the month');
+                await page.locator('#period-year').focus(); await page.keyboard.press('Home'); await page.keyboard.press('ArrowUp');
+                assert.equal(await page.locator('#period-year').getAttribute('aria-valuenow'), await page.locator('#period-year').getAttribute('aria-valuemin'));
+                await page.keyboard.press('End'); await page.keyboard.press('ArrowDown');
+                assert.equal(await page.locator('#period-year').getAttribute('aria-valuenow'), await page.locator('#period-year').getAttribute('aria-valuemax'), 'Years remain bounded');
                 const shot = `${process.env.FIERE_PERIOD_BASE_URL ? 'live' : 'local'}-${engine}-${width}-${height}-${dark?'dark':'light'}`;
                 await page.screenshot({path:path.join(output,shot+'-picker.png')});
                 assert(await page.locator('#period-dialog').evaluate(el => el.scrollWidth <= el.clientWidth + 1));
