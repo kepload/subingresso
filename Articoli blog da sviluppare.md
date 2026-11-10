@@ -32,7 +32,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 28. 🟠 Organizzo un mercatino: quanti espositori servono per coprire i costi? Il budget compilabile
 29. 🟠 Cerco espositori per un mercatino: portali, gruppi social e annunci a pagamento a confronto, con tabella per misurare le iscrizioni
 30. 🟢 Corrente per il banco: allaccio, batteria o generatore? Calcola autonomia e costo per giornata
-31. 🔴 Annuncio gratuito o in evidenza per vendere un posteggio: il foglio per confrontare costo e qualità dei contatti
+31. 🔴 Annuncio gratuito o in evidenza per vendere un posteggio: il foglio per confrontare costo e qualità dei contatti — [pubblicato il 10/11/2026](https://subingresso.it/blog?post=annuncio-gratuito-evidenza-contatti); [testo](data/blog/annuncio-gratuito-evidenza-contatti.html), [fonti](data/blog/annuncio-gratuito-evidenza-contatti.fonti.md) e [foglio gratuito](downloads/confronto-annuncio-gratuito-evidenza.xlsx).
 32. 🔴 Affitto il mio posteggio: come confronto due candidati? La scheda di requisiti, documenti e garanzie da verificare
 33. 🔴 Caparra per comprare un posteggio: verifiche, scadenze e condizioni nella scheda da portare al notaio
 34. 🟠 Compro il banco e il venditore mi affianca: il programma compilabile delle prime quattro settimane

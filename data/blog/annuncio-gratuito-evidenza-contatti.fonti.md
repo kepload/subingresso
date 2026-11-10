@@ -32,4 +32,8 @@ Copertina originale creata con la skill imagegen e lo strumento integrato, senza
 
 Prima della scrittura rilevati **131 articoli**, nessun duplicato pertinente; contenuti precedenti salvati privatamente per il confronto dopo l'inserimento. Schema corrente verificato, slug univoco e nessun trigger sulla tabella `blog_posts`. Backup remoto preventivo `backup/session-20261110-220139-articolo-annuncio-gratuito-evidenza` verificato su origin, HEAD `775c2ab`.
 
-Anteprima passata in Chromium 1440/768/320 e WebKit 390, più lettura senza JavaScript: copertina, sei sezioni, collegamento al file, canonical, NewsArticle, due ADS pertinenti e nessun overflow. Tutte le scritture del browser intercettate; nessuna email, contatto o acquisto di prova. Pubblicazione e riscontri online da registrare al completamento.
+Anteprima passata in Chromium 1440/768/320 e WebKit 390, più lettura senza JavaScript: copertina, sei sezioni, collegamento al file, canonical, NewsArticle, due ADS pertinenti e nessun overflow. Tutte le scritture del browser intercettate; nessuna email, contatto o acquisto di prova.
+
+## Pubblicazione verificata
+
+Pubblicato il **10 novembre 2026**, ID `349aedf3-7b36-45cd-8650-811b8f0fc0c2`, [pagina pubblica](https://subingresso.it/blog?post=annuncio-gratuito-evidenza-contatti). Materiali commit `f91377b`; Vercel riuscito `CKB7NCbDh1SgzrdjpoPUj35H84TV`. Copertina e file XLSX online HTTP 200, identici SHA256. Verificati titolo, descrizione, canonical, NewsArticle, presenza nell'indice e nella sitemap. Tutti e cinque i percorsi dell'anteprima ripetuti online con successo; download effettivo WebKit identico al file locale. Due ADS per venditori pertinenti, spazio Vetrine conservato e nessun errore JavaScript o overflow. I 131 articoli precedenti sono invariati in ogni campo letto; 132 totali. Elenco editoriale aggiornato. Ricevute e screenshot nel dossier privato indicato sopra.
