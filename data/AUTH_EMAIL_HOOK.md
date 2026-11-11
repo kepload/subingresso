@@ -110,3 +110,27 @@ Fonti ufficiali consultate l'11 novembre 2026:
 [Supabase Send Email Hook](https://supabase.com/docs/guides/auth/auth-hooks/send-email-hook),
 [Standard Webhooks: specifica](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md),
 [Standard Webhooks: libreria JavaScript](https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries/javascript).
+
+## Esito di distribuzione — 11 novembre 2026
+
+Il coordinatore ha integrato la correzione senza sovrapposizioni con C-07 e
+ripetuto i 64 test locali. Il signing secret canonico da 32 byte è stato
+predisposto nelle due API prima del deploy; le altre impostazioni Auth sono
+rimaste invariate. Edge `send-auth-email` v12 ACTIVE, `verify_jwt=false`.
+Online: no-op firmato 200 `{}`, firma errata/assente/scaduta 401; nessuna
+azione di invio inclusa nei payload di controllo. Il bundle distribuito
+contiene il verificatore previsto. Deno check e cinque smoke nativi senza
+rete sono passati nel worktree della sessione C-01.
+
+Due controlli preliminari del coordinatore si sono arrestati prima del deploy:
+GET Edge espone il digest in `value`, mentre il valore Auth mascherato non ha
+un contratto documentato `sha256(secret)`. Le verifiche sono state corrette
+senza riusare valori mascherati come chiavi; POST/PATCH hanno accettato lo
+stesso valore canonico, il digest Edge è stato verificato e il no-op firmato
+ha confermato il verificatore Edge. Queste prove **non verificano il signer
+Auth end-to-end né una consegna reale**. Nessun account o invio di prova.
+
+Ricevute, backup binario e log privati:
+`.local/lavori/bugfix-paralleli-20261111-1714/C01-deployment.json` e materiali
+collegati. La Management API non documenta una modalità per rileggere il
+secret Auth originale: [Get Auth config](https://supabase.com/docs/reference/api/v1-get-auth-service-config).

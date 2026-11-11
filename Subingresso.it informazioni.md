@@ -100,6 +100,99 @@ sicurezza, rinnovi, statistiche, performance e catalogo editoriale.
 storiche degli articoli non riflettono le pubblicazioni successive: verificare
 `Articoli blog da sviluppare.md`, contenuti effettivi e registro.
 
+## Bug da correggere — audit dell'11 novembre 2026
+
+**Audit originale: 30 rilievi, 2 P1, 24 P2 e 4 P3.** Su successiva richiesta
+dell'11 novembre, **C-07 e C-01 corretti e applicati** con due sessioni isolate
+e integrazione sequenziale. Restano **28 aperti: 24 P2 e 4 P3**. Verifica dei
+permessi SQL e rifiuti HTTP online, comportamento completo con fixture locali;
+nessuna email reale di prova né verifica end-to-end del mittente Auth.
+
+### P1 — sicurezza: corretti l'11 novembre 2026
+
+| ID | Problema |
+|---|---|
+| C-07 | Corretto: cinque RPC con controllo admin su profilo autorevole e grant anonimi revocati; definizioni e permessi live verificati. Contratto `data/ADMIN_AUTHORIZATION.md`. |
+| C-01 | Corretto: verifica firma e timestamp prima degli invii; segreto configurato sui due lati, Edge v12 attiva. No-op firmato 200, richieste non autentiche/scadute 401. Contratto `data/AUTH_EMAIL_HOOK.md`. |
+
+### P2 — difetti funzionali o condizionali, per categoria
+
+Ordine iniziale suggerito dal riesame: **C-03/C-09**, poi **A-01/A-05**,
+poi **A-07/A-09/B-04**; gli altri restano P2 senza una graduatoria ulteriore
+certificata. Un problema condizionale non implica un guasto per tutti gli utenti.
+
+**Account, comunicazioni e servizi — 8**
+
+| ID | Problema |
+|---|---|
+| C-03 | Dopo il logout da un'altra scheda si può riaprire il profilo con i dati dell'account precedente. |
+| C-09 | Il digest settimanale acquirenti interroga una colonna inesistente e interpreta l'errore come «zero annunci». |
+| C-02 | L'invio email Auth dichiara successo anche quando il provider fallisce. |
+| C-04 | Ricaricare la pagina interrompe il recupero password già inizializzato. |
+| C-05 | La registrazione diretta via API accetta il telefono obbligatorio mancante. |
+| C-08 | Il mittente può falsificare la conferma di lettura dei propri messaggi. |
+| C-10 | Il riepilogo venditori confronta la settimana con il totale storico anziché con la settimana precedente dichiarata. |
+| C-11 | Durante la rotazione dei segreti Stripe, firme multiple valide possono causare il rifiuto di notifiche legittime in base all'ordine delle firme. |
+
+**Annunci, ricerca e marketplace — 9**
+
+| ID | Problema |
+|---|---|
+| A-01 | Dopo una risposta persa, riprovare la pubblicazione può creare un secondo annuncio. |
+| A-05 | Modificare campi o foto durante il salvataggio può perdere modifiche o confermare dati diversi da quelli visibili. |
+| A-07 | Le pagine città/provincia escludono alcune località o frazioni valide anche con provincia nota; un caso confermato online. |
+| A-09 | Alle pagine città mancano navigazione e footer condivisi. |
+| A-02 | Memoria del browser piena o bloccata: la ricerca si interrompe e conserva risultati precedenti. |
+| A-03 | La nuova ricerca non aggiorna l'URL: ricaricamento e condivisione ripristinano la ricerca precedente. |
+| A-04 | Dopo un errore, applicare filtri può nascondere errore e «Riprova», mostrando dati precedenti. |
+| A-08 | Le fasce prezzo delle pagine città mescolano prezzo totale di vendita e canone annuo di affitto. |
+| A-10 | Il dettaglio annuncio renderizzato dal server perde il nome del contatto e il contatore dei preferiti. |
+
+**Fiere, recensioni e organizzatori — 4**
+
+| ID | Problema |
+|---|---|
+| B-04 | Lo zoom della mappa ingrandisce i bordi dei puntini fino a rendere illeggibili i conteggi dei gruppi; confermato online. |
+| B-01 | Un errore di rilettura dopo un salvataggio riuscito nasconde tutta l'area organizzatore, compreso il messaggio d'errore. |
+| B-02 | Le funzioni delle recensioni non rispettano sempre il ritiro dell'evento o la sospensione dell'organizzatore. |
+| B-03 | Una nuova recensione durante la lettura può bloccare «Mostra altre» in un ciclo senza avanzamento. |
+
+**Accessibilità e moduli — 3**
+
+| ID | Problema |
+|---|---|
+| C-06 | Il modulo di accesso/registrazione presenta problemi di focus, etichette e contrasto. |
+| A-11 | Nei filtri mobile il focus resta dietro il pannello e non viene contenuto; Escape non chiude. |
+| A-15 | Quattro campi dell'editor non hanno etichette accessibili associate. |
+
+### P3 — difetti minori
+
+| ID | Categoria | Problema |
+|---|---|---|
+| A-06 | Foto | Riprovare una modifica può ricaricare foto già inviate, lasciando file non associati. |
+| A-12 | SEO | Il canonical del dettaglio viene riscritto includendo tracking e frammenti. |
+| A-13 | SEO | Un annuncio inesistente risponde HTTP 200 senza noindex, come pagina valida e indicizzabile. |
+| A-14 | Layout | L'editor supera la larghezza dello schermo a 320 px. |
+
+**Prove e limiti.** Riproduzioni sensibili locali con dati fittizi; codice e
+configurazioni online confrontati separatamente. Non sono dimostrati incidenti
+già avvenuti, account sottratti o pagamenti persi. C-11 deriva dal confronto di
+una prova locale già raccolta con il contratto ufficiale Stripe: nessuna rotazione
+reale verificata; il controllo aggiuntivo C è stato fermato da un blocco automatico
+e il riesame è rimasto documentale, senza ulteriori test. Test obsoleti, verifiche
+incomplete e sospetti esclusi restano nei rapporti, non sono ulteriori bug.
+L'audit originale non autorizzava modifiche. Il successivo incarico ha riguardato
+soltanto le correzioni C-07/C-01; gli altri rilievi non autorizzano nuovi interventi.
+
+Fonti private sotto `.local/verifiche/audit-tre-sessioni-20261111/`:
+[sintesi e priorità](.local/verifiche/audit-tre-sessioni-20261111/sintesi.md),
+[A — marketplace](.local/verifiche/audit-tre-sessioni-20261111/A-marketplace/report.md),
+[B — fiere e contenuti](.local/verifiche/audit-tre-sessioni-20261111/B-fiere-contenuti/report.md),
+[C — account e servizi](.local/verifiche/audit-tre-sessioni-20261111/C-account-servizi/report.md),
+[integrazione C-11](.local/verifiche/audit-tre-sessioni-20261111/riesame-stripe.md).
+ID originali e materiali conservati. Le due sessioni di correzione successive
+sono registrate nel riepilogo recente e nel coordinamento privato.
+
 ## Come trovare i dettagli
 
 | Necessità | Aprire soltanto quando pertinente |
@@ -117,6 +210,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **11 novembre 2026 — corretti i due P1 C-07/C-01:** due sessioni parallele in worktree distinti, sei file senza sovrapposizione; integrazione e interventi live eseguiti dal coordinatore in sequenza. C-07: cinque RPC corrette, definizioni/permessi live conformi e 17 gruppi PostgreSQL locali PASS. C-01: secret predisposto, Edge v12 attiva, 64 test locali e cinque smoke Deno PASS; online no-op firmato 200, firma errata/assente/scaduta 401. Nessuna email o mutazione dei dati reali di prova; mittente Auth end-to-end non testato. Due arresti preliminari dei controlli metadati risolti prima del deploy. Backup, rapporti e ricevute in `.local/lavori/bugfix-paralleli-20261111-1714/COORDINAMENTO.md`. Restano 28 rilievi aperti.
 
 - **11 novembre 2026 — filtri e ordinamenti annunci.** Pubblicato `e979626`, Vercel riuscito. Giorni mobile attivi solo con «Mostra risultati», chiusura e azzeramento coerenti, contatore comprensivo dei giorni come unico gruppo. Data/prezzo/superficie rispettati anche con Vetrine, scaduti in fondo. Test Chromium/WebKit desktop/mobile locali e sui due file pubblicati passati; asset online identici. Contratto `data/VETRINE_PREMIUM.md`, prove `.local/verifiche/annunci-bugfix-20261111/published-results.json`; dati simulati, nessuna scrittura esterna di prova.
 
