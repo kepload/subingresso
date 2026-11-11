@@ -118,7 +118,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **11 novembre 2026 — regola pulizia Vercel:** autorizzata ogni dieci giorni con dieci versioni di produzione riuscite conservate, più ogni versione usata da domini. Implementazione locale Windows e controlli in [docs/VERCEL_CLEANUP.md](docs/VERCEL_CLEANUP.md). GitHub richiedeva un token che l'accesso CLI non può creare (403); attivazione e prova finale in corso.
+- **11 novembre 2026 — regola pulizia Vercel:** task Windows attivo ogni dieci giorni; prossima scadenza 21 novembre 10:03, PC acceso e utente connesso, recupero delle scadenze saltate. Due prove reali con esito 0: 24 copie eliminate, dieci versioni di produzione READY e due anteprime con domini protette; home/fiere/blog HTTP 200. Passati 17 test mirati e 35 controlli build. Regola, limiti e prove in [docs/VERCEL_CLEANUP.md](docs/VERCEL_CLEANUP.md). GitHub richiedeva un token che l'accesso CLI non può creare (403).
 
 - **11 novembre 2026 — spazio Vercel:** su richiesta eliminato un solo deploy, `dpl_EEchH6FhupAkY5deRJgiqNMYU7Fp` del 7 novembre (`1adfc5d`, mappa ristretta già rifiutata e ripristinata con `67bddf8`), privo di alias attivi. Rimozione confermata dalla CLI e assenza dall'elenco API; versione online `f91377b` e due precedenti READY verificate, home/fiere/blog HTTP 200. MB recuperati da verificare in Usage.
 

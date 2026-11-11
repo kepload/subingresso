@@ -49,3 +49,19 @@ Stato e prossima esecuzione con `Get-ScheduledTaskInfo -TaskName
 'Subingresso - Pulizia versioni Vercel'`. Per sospendere la regola usare
 `Disable-ScheduledTask` con lo stesso nome. Ripresa soltanto su istruzione
 dell'utente.
+
+## Attivazione verificata l'11 novembre 2026
+
+Task attivo, intervallo XML verificato di dieci giorni e prossima scadenza
+21 novembre 2026 alle 10:03, ora di Roma. Due esecuzioni reali dello stesso task
+con risultato Windows 0 hanno rimosso complessivamente 24 vecchi deploy.
+La seconda ha riallineato il conteggio dopo la pubblicazione concorrente
+dell'ultima revisione dello script. Esito finale con dieci versioni di
+produzione READY e due anteprime protette dai rispettivi domini di ramo.
+Home, fiere e blog verificati con HTTP 200.
+
+Superati 17 test mirati, inclusi paginazione, cambio dominio, interruzioni,
+ritentativi, nuove pubblicazioni concorrenti e rinnovo sequenziale delle
+credenziali; passati anche i 35 controlli esistenti sulla regola di build.
+Prove private in `.local/verifiche/vercel-cleanup/`, con definizione XML del
+task e resoconti JSON delle simulazioni e delle esecuzioni.
