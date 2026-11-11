@@ -6,21 +6,56 @@
 //  Supabase Dashboard → Authentication → Hooks → Send Email
 //  → HTTP → URL: .../functions/v1/send-auth-email
 //  IMPORTANTE: "Verify JWT" deve essere DISATTIVATO
+//  SEND_EMAIL_HOOK_SECRET deve corrispondere al secret dell'Auth Hook.
+//  Firma e timestamp sono verificati prima di usare il payload o inviare email.
 // ============================================================
+
+import { Webhook } from 'npm:standardwebhooks@1.0.0';
 
 const RESEND_API_KEY    = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL      = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_ANON_KEY = Deno.env.get('SB_PUBLISHABLE_KEY') ?? Deno.env.get('SUPABASE_ANON_KEY')!;
 const FROM              = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL          = 'https://subingresso.it';
+const authHook          = createHookVerifier(Deno.env.get('SEND_EMAIL_HOOK_SECRET'));
+
+type AuthEmailPayload = {
+  user?: { email?: string };
+  email_data?: {
+    token_hash: string;
+    token_hash_new?: string;
+    redirect_to?: string;
+    email_action_type: string;
+  };
+};
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { status: 200 });
   }
 
+  if (req.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST, OPTIONS' } });
+  }
+  if (!authHook) return hookError(503, 'Email hook unavailable');
+
+  let payload: AuthEmailPayload;
   try {
-    const { user, email_data } = await req.json();
+    const timestamp = req.headers.get('webhook-timestamp');
+    // La libreria usa parseInt: rifiutare suffissi, decimali e valori non canonici.
+    if (!timestamp || !/^[1-9]\d*$/.test(timestamp) || !Number.isSafeInteger(Number(timestamp))) {
+      return hookError(401, 'Invalid webhook');
+    }
+    // Non leggere req.json() e non riserializzare: la firma copre il body originale.
+    const rawBody = await req.text();
+    payload = authHook.verify(rawBody, Object.fromEntries(req.headers)) as AuthEmailPayload;
+  } catch {
+    // Non registrare body, header, token o secret delle richieste respinte.
+    return hookError(401, 'Invalid webhook');
+  }
+
+  try {
+    const { user, email_data } = payload;
     if (!user?.email || !email_data) return ok();
 
     const { token_hash, token_hash_new, redirect_to, email_action_type } = email_data;
@@ -117,6 +152,26 @@ Deno.serve(async (req) => {
 });
 
 const ok = () => new Response('{}', { status: 200, headers: { 'Content-Type': 'application/json' } });
+
+function hookError(status: number, message: string) {
+  return new Response(JSON.stringify({ error: { http_code: status, message } }), {
+    status, headers: { 'Content-Type': 'application/json' },
+  });
+}
+
+function createHookVerifier(value: string | undefined): Webhook | null {
+  try {
+    // Formato Dashboard: v1,whsec_<base64>; accettati anche whsec_<base64> e base64.
+    const secret = (value || '').trim().replace(/^v1,/, '').replace(/^whsec_/, '');
+    if (!/^[A-Za-z0-9+/]+={0,2}$/.test(secret)) throw new Error('Invalid hook secret');
+    const bytes = atob(secret).length;
+    if (bytes < 24 || bytes > 64) throw new Error('Invalid hook secret length');
+    return new Webhook(secret);
+  } catch {
+    console.error('send-auth-email: missing or invalid hook signing secret');
+    return null;
+  }
+}
 
 function template({ title, body, cta, ctaLink, footer }: {
   title: string; body: string; cta: string; ctaLink: string; footer: string;
