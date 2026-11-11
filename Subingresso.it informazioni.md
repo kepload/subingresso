@@ -118,6 +118,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **11 novembre 2026 — spazio Vercel:** su richiesta eliminato un solo deploy, `dpl_EEchH6FhupAkY5deRJgiqNMYU7Fp` del 7 novembre (`1adfc5d`, mappa ristretta già rifiutata e ripristinata con `67bddf8`), privo di alias attivi. Rimozione confermata dalla CLI e assenza dall'elenco API; versione online `f91377b` e due precedenti READY verificate, home/fiere/blog HTTP 200. MB recuperati da verificare in Usage.
+
 - **10 novembre 2026 — articolo annuncio gratuito o in evidenza:** priorità 31 pubblicata, materiali `f91377b`, Vercel riuscito; foglio XLSX con 56 scenari superati e copertina IA originale. Pagina, download identico, SEO/indice/sitemap e quattro formati browser più lettura senza JS verificati. 131 articoli precedenti invariati, 132 totali. [Fonti e prove](data/blog/annuncio-gratuito-evidenza-contatti.fonti.md).
 
 - **9 novembre 2026 — schede fiere anche per visitatori:** pubblicato `805c380`, Vercel riuscito. Dati comuni prima, «Prodotti e settori» neutro; posteggi/iscrizioni/costi distinti per espositori. Solo schede aperte. 10.443 schede controllate; tre asset identici e tre SSR online, percorsi Chromium/WebKit e due temi verificati. [Contratto e prove](data/fiere-dossier/125-schede-minimali-20261107.md).
