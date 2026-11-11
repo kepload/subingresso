@@ -11,6 +11,9 @@ const fixtures = [
     { id: 'typo', titolo: 'Licenza ambulante', comune: 'terranova Bracciolini', regione: 'Toscana', prezzo: 5000, superficie: 20 },
     { id: 'described', titolo: 'Licenza mercato', comune: 'Chioggia', regione: 'Veneto', provincia: 'Venezia', descrizione: 'Banco di scarpe ortopediche e ricambi esclusivi.', prezzo: 8000, superficie: 25 },
     { id: 'extra', titolo: 'Mercato comune', comune: 'Milano', regione: 'Lombardia', dettagli_extra: JSON.stringify({ descrizione: 'Giacche impermeabili artigianali' }), prezzo: 18000, superficie: 30 },
+    { id: 'sort-featured', titolo: 'Posteggio Milano in Vetrina', comune: 'Milano', provincia: 'Milano', regione: 'Lombardia', prezzo: 30000, superficie: 30, created_at: '2025-01-01T12:00:00Z', featured: true, featured_until: '2099-01-01T00:00:00Z' },
+    { id: 'sort-recent', titolo: 'Posteggio Milano recente', comune: 'Milano', provincia: 'Milano', regione: 'Lombardia', prezzo: 500, superficie: 80, created_at: '2026-10-01T12:00:00Z' },
+    { id: 'sort-expired', titolo: 'Posteggio Milano scaduto', comune: 'Milano', provincia: 'Milano', regione: 'Lombardia', prezzo: 5, superficie: 500, created_at: '2090-01-01T12:00:00Z', expires_at: '2020-01-01T00:00:00Z', featured: true, featured_until: '2099-01-01T00:00:00Z' },
     { id: 'sold', titolo: 'Venduto Rivoltella', comune: 'Rivoltella', regione: 'Lombardia', status: 'sold' },
     { id: 'pending', titolo: 'In attesa Rivoltella', comune: 'Rivoltella', regione: 'Lombardia', status: 'pending' },
     { id: 'deleted', titolo: 'Eliminato Rivoltella', comune: 'Rivoltella', regione: 'Lombardia', status: 'deleted' }
@@ -52,6 +55,87 @@ function mutations(value) {
         }
     }
     return [...variants];
+}
+
+async function checkMobileDays(page) {
+    await page.evaluate(async () => { clearFilters(); await applyFilters(); });
+    const allIds = publicListings.map(row => row.id).sort();
+    const matchingDays = publicListings.filter(row => String(row.giorni || '').split(',')
+        .some(day => ['domenica', 'martedi'].includes(sandbox.window.ComuniItaliani.normalize(day))))
+        .map(row => row.id).sort();
+    const resultIds = () => page.locator('#resultsGrid article').evaluateAll(rows => rows.map(row => row.dataset.id).sort());
+    await page.waitForFunction(count => document.querySelectorAll('#resultsGrid article').length === count, allIds.length);
+
+    await page.locator('button[onclick="openMobileFilters()"]').click();
+    await page.locator('#dayChipsMobile [data-day="Domenica"]').click();
+    await page.locator('#mobileFiltersSheet button[onclick="closeMobileFilters()"]').click();
+    await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
+    await page.selectOption('#sortBy', 'prezzoAsc');
+    await page.waitForTimeout(200);
+    assert.deepEqual(await resultIds(), allIds, 'chiudere con X scarta i giorni non applicati');
+    assert.equal(await page.locator('#filterBadge').isVisible(), false);
+
+    await page.locator('button[onclick="openMobileFilters()"]').click();
+    assert.equal(await page.locator('#dayChipsMobile .selected').count(), 0);
+    await page.locator('#dayChipsMobile [data-day="Domenica"]').click();
+    await page.locator('#dayChipsMobile [data-day="Martedì"]').click();
+    await page.locator('#mobileFiltersSheet button[onclick="applyMobileFilters()"]').click();
+    await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
+    await page.waitForFunction(count => document.querySelectorAll('#resultsGrid article').length === count, matchingDays.length);
+    assert.deepEqual(await resultIds(), matchingDays);
+    assert.equal(await page.locator('#filterBadge').innerText(), '1', 'più giorni sono un solo gruppo di filtri');
+
+    await page.locator('button[onclick="openMobileFilters()"]').click();
+    await page.locator('#dayChipsMobile [data-day="Domenica"]').click();
+    await page.locator('#mobileFiltersOverlay').click({ position: { x: 10, y: 10 } });
+    await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
+    await page.selectOption('#sortBy', 'prezzoDesc');
+    await page.waitForTimeout(200);
+    assert.deepEqual(await resultIds(), matchingDays, 'chiudere dallo sfondo conserva i giorni già applicati');
+
+    await page.locator('button[onclick="openMobileFilters()"]').click();
+    assert.equal(await page.locator('#dayChipsMobile .selected').count(), 2);
+    await page.locator('#mobileFiltersSheet button[onclick="resetMobileFilters()"]').click();
+    await page.locator('#mobileFiltersSheet button[onclick="closeMobileFilters()"]').click();
+    await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
+    await page.selectOption('#sortBy', 'data');
+    await page.waitForTimeout(200);
+    assert.deepEqual(await resultIds(), matchingDays, 'azzera seguito da X conserva i filtri applicati');
+
+    await page.locator('button[onclick="openMobileFilters()"]').click();
+    assert.equal(await page.locator('#dayChipsMobile .selected').count(), 2);
+    await page.locator('#mobileFiltersSheet button[onclick="resetMobileFilters()"]').click();
+    await page.locator('#mobileFiltersSheet button[onclick="applyMobileFilters()"]').click();
+    await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
+    await page.waitForFunction(count => document.querySelectorAll('#resultsGrid article').length === count, allIds.length);
+    assert.deepEqual(await resultIds(), allIds, 'azzera e applica rimuovono i giorni');
+    assert.equal(await page.locator('#filterBadge').isVisible(), false);
+}
+
+async function checkOrdering(page) {
+    for (const [sort, expected] of [
+        ['pertinenza', ['sort-featured', 'sort-recent', 'sort-expired']],
+        ['prezzoAsc', ['sort-recent', 'sort-featured', 'sort-expired']],
+        ['prezzoDesc', ['sort-featured', 'sort-recent', 'sort-expired']],
+        ['superficie', ['sort-recent', 'sort-featured', 'sort-expired']],
+        ['data', ['sort-recent', 'sort-featured', 'sort-expired']]
+    ]) {
+        await page.selectOption('#sortBy', sort);
+        await page.waitForTimeout(200);
+        const actual = await page.locator('#resultsGrid article').evaluateAll(rows => rows.map(row => row.dataset.id).filter(id => id.startsWith('sort-')));
+        assert.deepEqual(actual, expected, 'ordine ' + sort + ': Vetrina, annuncio recente e scaduto');
+        const ordered = await page.locator('#resultsGrid article').evaluateAll(rows => rows.map(row => {
+            const listing = LISTINGS.find(listing => listing.id === row.dataset.id);
+            return { price: listing.prezzo, expired: isListingExpired(listing) };
+        }));
+        const expiration = ordered.map(row => row.expired);
+        const firstExpired = expiration.indexOf(true);
+        assert(firstExpired < 0 || expiration.slice(firstExpired).every(Boolean), 'gli scaduti restano in fondo con ' + sort);
+        if (sort === 'prezzoAsc') for (const expired of [false, true]) {
+            const prices = ordered.filter(row => row.expired === expired && row.price != null).map(row => row.price);
+            assert.deepEqual(prices, prices.slice().sort((a, b) => a - b));
+        }
+    }
 }
 
 async function checkBrowser(engine, name, mobile, base) {
@@ -135,21 +219,22 @@ async function checkBrowser(engine, name, mobile, base) {
         });
         assert.deepEqual(filterChecks,[]);
         if (mobile) {
-            await page.evaluate(() => { document.getElementById('m_fPrezzoMin').value='10.000';document.getElementById('m_fPrezzoMax').value='20.000';applyMobileFilters(); });
+            await page.locator('button[onclick="openMobileFilters()"]').click();
+            await page.locator('#m_fPrezzoMin').fill('10.000');
+            await page.locator('#m_fPrezzoMax').fill('20.000');
+            await page.locator('#mobileFiltersSheet button[onclick="applyMobileFilters()"]').click();
+            await page.locator('#mobileFiltersOverlay').waitFor({ state: 'hidden' });
             await page.waitForFunction(()=>[...document.querySelectorAll('[data-id]')].every(el=>{const price=LISTINGS.find(row=>row.id===el.dataset.id).prezzo;return price!=null&&price>=10000&&price<=20000;}));
             await page.evaluate(() => clearFilters());
+            await checkMobileDays(page);
         }
-        await page.selectOption('#sortBy','prezzoAsc');
-        const ordered = await page.evaluate(async () => {
-            await applyFilters();await new Promise(resolve=>setTimeout(resolve,180));
-            return [...document.querySelectorAll('[data-id]')].map(el=>LISTINGS.find(row=>row.id===el.dataset.id))
-                .map(row=>({price:row.prezzo,expired:isListingExpired(row)}));
-        });
-        assert(ordered.every((row,index)=>!row.expired||ordered.slice(index).every(other=>other.expired)), 'gli scaduti restano in fondo');
-        for (const expired of [false,true]) {
-            const prices=ordered.filter(row=>row.expired===expired&&row.price!=null).map(row=>row.price);
-            assert.deepEqual(prices,prices.slice().sort((a,b)=>a-b));
-        }
+        await page.evaluate(() => clearFilters());
+        await checkOrdering(page);
+        await page.locator('#searchBar').fill('Milano');
+        await page.getByRole('option').filter({hasText:'Milano (MI)'}).first().click();
+        await page.waitForFunction(() => document.getElementById('radiusRow').classList.contains('visible'));
+        await checkOrdering(page);
+        await page.evaluate(() => clearFilters());
         await page.evaluate(async () => { window.TEST_EMPTY=true;await loadListings(); });
         await page.locator('#emptyState').waitFor({state:'visible'});
         assert.equal(await page.evaluate(()=>LISTINGS.length),0,'una risposta vuota cancella i risultati precedenti');

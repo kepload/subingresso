@@ -214,8 +214,8 @@ async function applyFilters() {
         if (sortVal === 'prezzoAsc')       results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
         else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
         else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
-
-        results.sort((a, b) => {
+        else if (sortVal === 'data')       results.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0));
+        else results.sort((a, b) => {
             if (q && sortVal === 'pertinenza' && !searchRecord) {
                 const relevance = ListingSearch.score(b, qRaw) - ListingSearch.score(a, qRaw);
                 if (relevance) return relevance;
@@ -269,7 +269,7 @@ async function applyFilters() {
         doRender();
     }
 
-    const activeCount = [regione, tipo, stato, q, (prezzoMin > 0 ? 1 : 0), (prezzoMax < Infinity ? 1 : 0), (supMin > 0 ? 1 : 0)].filter(Boolean).length;
+    const activeCount = [regione, tipo, stato, q, (prezzoMin > 0 ? 1 : 0), (prezzoMax < Infinity ? 1 : 0), (supMin > 0 ? 1 : 0), selectedDays.length].filter(Boolean).length;
     const badge = document.getElementById('filterBadge');
     if (badge) {
         if (activeCount > 0) { badge.textContent = activeCount; badge.classList.remove('hidden'); }
@@ -418,17 +418,15 @@ function _clearAllDayChips() {
 function toggleDayChip(btn) {
     if (!btn) return;
     btn.classList.toggle('selected');
-    // Sincronizza l'altro container (desktop ↔ mobile) se il chip omologo esiste
+    // Le scelte mobile diventano attive solo con «Mostra risultati».
+    if (btn.parentElement?.id === 'dayChipsMobile') return;
     const day = btn.dataset.day;
-    const isMobile = btn.parentElement && btn.parentElement.id === 'dayChipsMobile';
-    const otherId  = isMobile ? 'dayChipsDesktop' : 'dayChipsMobile';
-    const other = document.getElementById(otherId);
+    const other = document.getElementById('dayChipsMobile');
     if (other && day) {
         const twin = other.querySelector('.day-chip[data-day="' + day + '"]');
         if (twin) twin.classList.toggle('selected', btn.classList.contains('selected'));
     }
-    // Auto-apply solo se siamo in modalità desktop (mobile applica al "Mostra risultati")
-    if (!isMobile) applyFilters();
+    applyFilters();
 }
 window.toggleDayChip = toggleDayChip;
 
