@@ -73,7 +73,9 @@ utili e non duplicate. Le regole comuni si aggiornano soltanto qui.
 - Proporre una revisione della pulizia ogni mese, al primo lavoro utile sul
   progetto; se rinviata, riproporla entro due mesi dall'ultima revisione.
   Consultare la data nel registro, senza ripetere la domanda a ogni sessione.
-  Niente cancellazioni, nuovi loop, task pianificati o riattivazioni automatiche.
+  Nuove cancellazioni, loop, task pianificati e riattivazioni richiedono una
+  richiesta esplicita. La pulizia Vercel ogni dieci giorni, con dieci versioni
+  conservate, è autorizzata dall'11 novembre 2026: [regola e controlli](docs/VERCEL_CLEANUP.md).
   Backup, fonti, dati e lavoro altrui richiedono sempre una valutazione specifica.
 
 ## Prima di modificare e workflow Git

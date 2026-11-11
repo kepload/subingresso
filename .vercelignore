@@ -10,6 +10,9 @@ setup-database.sql
 .vercel
 node_modules
 scripts/.bin
+scripts/vercel-deployment-cleanup.cjs
+scripts/vercel-deployment-cleanup.ps1
+scripts/test-vercel-deployment-cleanup.cjs
 supabase/.temp
 .impeccable
 .taste-skill
