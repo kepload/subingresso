@@ -13,6 +13,8 @@ richiesta, una sola esecuzione alla volta, due tentativi aggiuntivi a distanza
 di quindici minuti in caso di errore. Il PC deve essere acceso e l'utente deve
 aver effettuato l'accesso. Vercel CLI usa l'autenticazione locale e il suo
 rinnovo automatico. Logout o revoca dell'accesso interrompono la pulizia.
+Le chiamate CLI sono sequenziali per evitare rinnovi concorrenti della stessa
+credenziale a ogni esecuzione dopo giorni di inattività.
 
 La prima opzione valutata, GitHub Actions, richiedeva un token dedicato.
 L'accesso CLI disponibile ha rifiutato la creazione con HTTP 403,

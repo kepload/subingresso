@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { PROJECT_ID, listAll, planCleanup, runCleanup } = require('./vercel-deployment-cleanup.cjs');
+const { PROJECT_ID, listAll, planCleanup, fetchSnapshot, runCleanup } = require('./vercel-deployment-cleanup.cjs');
 
 function fixtures(count = 13) {
     const deployments = Array.from({ length: count }, (_, index) => ({
@@ -125,6 +125,25 @@ test('dry-run checks the site and performs zero removals', async () => {
     assert.equal(report.complete, true);
     assert.equal(client.removals.length, 0);
     assert.deepEqual(checks, [['/', '/fiere', '/blog'], ['/', '/fiere', '/blog']]);
+});
+
+test('CLI reads are sequential so rotating login credentials can renew safely', async () => {
+    const client = fakeClient(fixtures());
+    const originalGet = client.get;
+    let inProgress = 0;
+    let maximumConcurrent = 0;
+    client.get = async (...args) => {
+        inProgress++;
+        maximumConcurrent = Math.max(maximumConcurrent, inProgress);
+        await new Promise(resolve => setImmediate(resolve));
+        try {
+            return await originalGet(...args);
+        } finally {
+            inProgress--;
+        }
+    };
+    await fetchSnapshot(client);
+    assert.equal(maximumConcurrent, 1);
 });
 
 test('apply deletes oldest first, verifies each removal, and leaves ten versions', async () => {

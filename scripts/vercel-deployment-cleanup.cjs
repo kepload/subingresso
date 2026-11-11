@@ -118,11 +118,11 @@ function planCleanup(deployments, aliases, project) {
 }
 
 async function fetchSnapshot(client) {
-    const [deployments, aliases, project] = await Promise.all([
-        listAll(client, '/v6/deployments', 'deployments'),
-        listAll(client, '/v4/aliases', 'aliases'),
-        client.get(`/v9/projects/${PROJECT_ID}`)
-    ]);
+    // CLI processes share a rotating OAuth refresh token. Run them sequentially
+    // so a scheduled run can renew expired access without competing refreshes.
+    const deployments = await listAll(client, '/v6/deployments', 'deployments');
+    const aliases = await listAll(client, '/v4/aliases', 'aliases');
+    const project = await client.get(`/v9/projects/${PROJECT_ID}`);
     return planCleanup(deployments, aliases, project);
 }
 
