@@ -73,7 +73,16 @@ function getWeekStart(): string {
   return d.toISOString().slice(0, 10);
 }
 
+function digestFailure(stage: string, error?: { code?: string } | null): Response {
+  // Non esporre messaggi DB/provider: possono contenere dati personali o token.
+  const code = error?.code && /^(?:[0-9A-Z]{5}|PGRST\d{3})$/.test(error.code) ? error.code : undefined;
+  const diagnostic = { error: 'Digest failed', stage, ...(code ? { code } : {}) };
+  console.error('weekly-buyer-digest error:', diagnostic);
+  return new Response(JSON.stringify(diagnostic), { status: 500, headers: { 'Content-Type': 'application/json' } });
+}
+
 Deno.serve(async (req) => {
+  let stage = 'initialization';
   try {
     const auth = req.headers.get('authorization') || '';
     if (auth !== `Bearer ${SB_SECRET_KEY}`) {
@@ -81,44 +90,53 @@ Deno.serve(async (req) => {
     }
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
     const weekStart = getWeekStart();
+    stage = 'recent_offers';
     const recentOffers = await recentVetrinaRecipients(supabase);
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
     // Annunci nuovi della settimana (active, creati ultimi 7gg)
-    const { data: recentAnnunci } = await supabase
+    stage = 'annunci';
+    const { data: recentAnnunci, error: annunciError } = await supabase
       .from('annunci')
-      .select('id, titolo, prezzo, tipo, merce, comune, regione, user_id, created_at, img_urls')
+      .select('id, titolo, prezzo, tipo, settore, comune, regione, user_id, created_at, img_urls')
       .eq('status', 'active')
       .gte('created_at', sevenDaysAgo)
       .order('created_at', { ascending: false });
 
+    if (annunciError) return digestFailure(stage, annunciError);
     if (!recentAnnunci || recentAnnunci.length < MIN_ANNUNCI) {
       return new Response(`Skip: solo ${recentAnnunci?.length || 0} annunci nuovi`, { status: 200 });
     }
 
     // Tutti gli alert con email_digest attivo
-    const { data: alerts } = await supabase
+    stage = 'alerts';
+    const { data: alerts, error: alertsError } = await supabase
       .from('alerts')
       .select('user_id, comune, lat, lng');
 
+    if (alertsError) return digestFailure(stage, alertsError);
     if (!alerts || alerts.length === 0) {
       return new Response('No alerts', { status: 200 });
     }
 
     // Preferenze digest dei profili coinvolti
     const alertUids = [...new Set(alerts.map(a => a.user_id))];
-    const { data: profiles } = await supabase
+    stage = 'profiles';
+    const { data: profiles, error: profilesError } = await supabase
       .from('profiles')
       .select('id, email_digest, unsub_token')
       .in('id', alertUids);
 
+    if (profilesError) return digestFailure(stage, profilesError);
     const prefMap = new Map(profiles?.map(p => [p.id, p]) || []);
 
     // Già inviato questa settimana? Fetcha log
-    const { data: alreadySent } = await supabase
+    stage = 'digest_log_read';
+    const { data: alreadySent, error: logError } = await supabase
       .from('weekly_digest_log')
       .select('user_id')
       .eq('week_start', weekStart);
+    if (logError) return digestFailure(stage, logError);
     const sentSet = new Set(alreadySent?.map(r => r.user_id) || []);
 
     let totalSent = 0;
@@ -143,7 +161,9 @@ Deno.serve(async (req) => {
       if (matched.length < MIN_ANNUNCI) continue;
 
       // Prendi email
-      const { data: userData } = await supabase.auth.admin.getUserById(uid);
+      stage = 'recipient';
+      const { data: userData, error: userError } = await supabase.auth.admin.getUserById(uid);
+      if (userError) return digestFailure(stage, userError);
       const email = userData?.user?.email;
       if (!email) continue;
 
@@ -192,6 +212,7 @@ Deno.serve(async (req) => {
           </div>
         </div>`;
 
+      stage = 'provider';
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
@@ -199,16 +220,17 @@ Deno.serve(async (req) => {
       });
 
       if (res.ok) {
-        await supabase.from('weekly_digest_log').upsert({ user_id: uid, week_start: weekStart });
+        stage = 'digest_log_write';
+        const { error: writeError } = await supabase.from('weekly_digest_log').upsert({ user_id: uid, week_start: weekStart });
+        if (writeError) return digestFailure(stage, writeError);
         totalSent++;
       } else {
-        console.error(`Resend error ${email}:`, await res.text());
+        console.error('weekly-buyer-digest provider error:', { status: res.status });
       }
     }
 
     return new Response(`OK — ${totalSent} digest inviati`, { status: 200 });
-  } catch (e) {
-    console.error('weekly-buyer-digest error:', e);
-    return new Response('Error', { status: 500 });
+  } catch {
+    return digestFailure(stage);
   }
 });
