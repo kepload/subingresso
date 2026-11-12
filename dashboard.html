@@ -1263,7 +1263,7 @@
 <script src="js/vetrina-pricing.js?v=3"></script>
 <script src="js/vetrina-premium.js?v=4"></script>
 <script src="js/admin-email-analytics.js?v=2"></script>
-<script src="js/vetrina-account.js?v=4"></script>
+<script src="js/vetrina-account.js?v=5"></script>
 <script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=30"></script>
 <link rel="stylesheet" href="css/listing-outcome.css?v=1">
@@ -1299,14 +1299,58 @@
 <script src="js/blog-generator.js?v=3"></script>
 <script src="js/event-data.js?v=2"></script>
 <script src="js/organizzatori.js?v=12"></script>
-<script src="js/profile-switch.js?v=5"></script>
+<script src="js/profile-switch.js?v=6"></script>
 <script>
 
 let _currentUser = null;
 let _isAdmin = false;
 let _profileReady = false;
+let _profileOwnerId = null;
+let _dashboardSessionVersion = 0;
+let _dashboardAuthUserId;
+let _dashboardInvalidated = false;
+let _profileOpenRequest = 0;
 let _myListingsVersion = 0;
 let _listingOutcomeRows = new Map();
+
+// Uscita e cambio identità revocano subito anche le copie nel DOM.
+function invalidateDashboardSession() {
+    ++_dashboardSessionVersion;
+    ++_profileOpenRequest;
+    ++_myListingsVersion;
+    _currentUser = null;
+    _profileReady = false;
+    _profileOwnerId = null;
+    _isAdmin = false;
+    _dashboardInvalidated = true;
+    ProfileSwitcher.invalidate();
+    VetrinaAccount.clear();
+    document.querySelectorAll('#profiloModal input').forEach(input => {
+        if (input.type === 'checkbox') input.checked = input.defaultChecked = false;
+        else { input.value = ''; input.defaultValue = ''; }
+    });
+    ['userEmailDisplay','userEmail','profileNameDisplay','pTelefonoHint','profileMsg'].forEach(id => {
+        const node = document.getElementById(id); if (node) node.textContent = '';
+    });
+    document.getElementById('welcomeTitle').textContent = 'Ciao!';
+    ['avatarContainer','welcomeAvatar'].forEach(id => { document.getElementById(id).innerHTML = '<i class="fas fa-user"></i>'; });
+    document.getElementById('deleteAccountConfirm').classList.add('hidden');
+    document.getElementById('deleteAccountSection').classList.remove('hidden');
+    _avatarUploadOriginalAvatarHTML = null;
+    _hideAvatarUploadOverlay();
+    document.getElementById('loadingState').classList.add('hidden');
+    document.getElementById('dashContent').classList.add('hidden');
+    document.getElementById('notLoggedIn').classList.remove('hidden');
+}
+
+_supabase.auth.onAuthStateChange((event, session) => {
+    const nextId = session?.user?.id || null;
+    if (event === 'SIGNED_OUT' || (_currentUser && nextId !== _currentUser.id) ||
+        (_dashboardAuthUserId !== undefined && nextId !== _dashboardAuthUserId)) invalidateDashboardSession();
+    _dashboardAuthUserId = nextId;
+    // Il callback SDK resta sincrono: il nuovo account riparte da dati verificati.
+    if (nextId && _dashboardInvalidated) setTimeout(() => location.reload(), 0);
+});
 
 // ── Toast "vetrina annullata" da querystring ─────────────
 (() => {
@@ -1319,7 +1363,14 @@ let _listingOutcomeRows = new Map();
 
 // ── Init ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
+    const version = _dashboardSessionVersion;
     const { data: { user } } = await _supabase.auth.getUser();
+    if (version !== _dashboardSessionVersion) return;
+    if (_dashboardAuthUserId !== undefined && _dashboardAuthUserId !== (user?.id || null)) {
+        invalidateDashboardSession();
+        if (_dashboardAuthUserId) setTimeout(() => location.reload(), 0);
+        return;
+    }
     
     if (!user) {
         document.getElementById('loadingState').classList.add('hidden');
@@ -1333,12 +1384,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     _currentUser = user;
+    _dashboardAuthUserId = user.id;
+    const current = () => version === _dashboardSessionVersion && _currentUser?.id === user.id;
     document.getElementById('loadingState').classList.add('hidden');
     document.getElementById('dashContent').classList.remove('hidden');
 
     // Fetch profile first — necessario per il check admin
     const { data: profile } = await _supabase.from('profiles').select('id,nome,cognome,avatar_url,is_admin,email_digest,email_stats').eq('id', user.id).single();
-    try {const own=await _supabase.rpc('get_my_profile');if(own.error||!profile||!own.data)throw Error('Profilo non disponibile');profile.telefono=own.data.telefono||'';_profileReady=true;} catch(_) {showToast('I dati del profilo non sono stati caricati completamente. Ricarica la pagina prima di modificarli.','warning');}
+    if (!current()) return;
+    if (profile && profile.id !== user.id) { invalidateDashboardSession(); return; }
+    try {
+        const own = await _supabase.rpc('get_my_profile');
+        if (!current()) return;
+        if (own.error || !profile || profile.id !== user.id || !own.data) throw Error('Profilo non disponibile');
+        profile.telefono = own.data.telefono || '';
+        _profileReady = true;
+    } catch (_) {
+        if (!current()) return;
+        showToast('I dati del profilo non sono stati caricati completamente. Ricarica la pagina prima di modificarli.','warning');
+    }
+    if (!current()) return;
     const nome = profile?.nome || 'Utente';
 
     // Admin check via DB (non più email hardcodata)
@@ -1387,6 +1452,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     document.getElementById('userEmailDisplay').textContent = user.email;
+    _profileOwnerId = user.id;
     VetrinaAccount.fillProfile(user);
     window.VetrinaJourney?.start(user);
     window.SavedFairs?.start(user);
@@ -2883,6 +2949,9 @@ function _hideAvatarUploadOverlay() {
 }
 
 async function uploadAvatar() {
+    if (!_currentUser || _profileOwnerId !== _currentUser.id) return;
+    const user = _currentUser, version = _dashboardSessionVersion;
+    const current = () => version === _dashboardSessionVersion && _currentUser?.id === user.id;
     const file = document.getElementById('avatarInput').files[0];
     if (!file) return;
     if (!['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif'].includes(file.type) || file.size > 20 * 1024 * 1024) {
@@ -2892,7 +2961,7 @@ async function uploadAvatar() {
     }
 
     const fileExt = file.name.split('.').pop();
-    const filePath = `${_currentUser.id}/${Math.random()}.${fileExt}`;
+    const filePath = `${user.id}/${Math.random()}.${fileExt}`;
 
     _showAvatarUploadOverlay();
 
@@ -2901,6 +2970,7 @@ async function uploadAvatar() {
             .from('avatars')
             .upload(filePath, file);
 
+        if (!current()) return;
         if (uploadError) throw uploadError;
 
         const { data: { publicUrl } } = _supabase.storage
@@ -2909,8 +2979,9 @@ async function uploadAvatar() {
 
         const { error: dbError } = await _supabase
             .from('profiles')
-            .upsert({ id: _currentUser.id, avatar_url: publicUrl });
+            .upsert({ id: user.id, avatar_url: publicUrl });
 
+        if (!current()) return;
         if (dbError) throw dbError;
 
         const img = `<img src="${escapeHTML(getOptimizedImageUrl(publicUrl, 192))}" decoding="async" class="w-full h-full object-cover">`;
@@ -2924,6 +2995,7 @@ async function uploadAvatar() {
         });
         if (typeof showToast === 'function') showToast('Foto profilo aggiornata', 'success');
     } catch (err) {
+        if (!current()) return;
         console.error("uploadAvatar error:", err);
         // Ripristina avatar originale se l'upload fallisce
         const welcomeAvatar = document.getElementById('welcomeAvatar');
@@ -2933,16 +3005,33 @@ async function uploadAvatar() {
         }
         showToast('Errore caricamento immagine: ' + (err.message || 'errore sconosciuto'), 'error');
     } finally {
-        _hideAvatarUploadOverlay();
-        // Reset input cosi se l'utente seleziona di nuovo lo stesso file riparte
-        const input = document.getElementById('avatarInput');
-        if (input) input.value = '';
+        if (current()) {
+            _hideAvatarUploadOverlay();
+            // Reset input cosi se l'utente seleziona di nuovo lo stesso file riparte
+            const input = document.getElementById('avatarInput');
+            if (input) input.value = '';
+        }
     }
 }
 
 // ── Modal Profilo ─────────────────────────────────────────
 let _profilePhoneBound = false;
-function goToProfilo(mode = null) {
+async function goToProfilo(mode = null) {
+    const userId = _currentUser?.id, version = _dashboardSessionVersion, opening = ++_profileOpenRequest;
+    if (!userId || _profileOwnerId !== userId) { openAuthModal('login'); return; }
+    try {
+        const { data, error } = await _supabase.auth.getUser();
+        if (opening !== _profileOpenRequest || version !== _dashboardSessionVersion || _currentUser?.id !== userId) return;
+        if (error || data?.user?.id !== userId) {
+            invalidateDashboardSession();
+            if (data?.user?.id) location.reload();
+            else openAuthModal('login');
+            return;
+        }
+    } catch (_) {
+        if (opening === _profileOpenRequest && version === _dashboardSessionVersion) invalidateDashboardSession();
+        return;
+    }
     document.getElementById('profiloModal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     ProfileSwitcher.open(_currentUser, typeof mode === 'string' ? mode : null);
@@ -2953,6 +3042,7 @@ function goToProfilo(mode = null) {
     }
 }
 function closeProfiloModal() {
+    ++_profileOpenRequest;
     document.getElementById('profiloModal').classList.add('hidden');
     document.body.style.overflow = '';
     ProfileSwitcher.close();
@@ -4718,6 +4808,7 @@ async function deleteAlert(id) {
 // ── Save Profile ─────────────────────────────────────────
 async function saveProfile(e) {
     e.preventDefault();
+    if (!_currentUser || _profileOwnerId !== _currentUser.id) return;
     if(!_profileReady){showToast('Ricarica la pagina: prima di salvare servono i dati attuali del profilo.','warning');return;}
     const btn = document.querySelector('#profileForm button[type="submit"]');
     if(btn?.disabled)return;
@@ -4733,16 +4824,19 @@ async function saveProfile(e) {
     const _tel = _telRaw ? normalizePhone(_telRaw) : '';
     const profileSnapshot = ProfileSwitcher.snapshot();
     const profileView = ProfileSwitcher.viewToken();
+    const userId = _currentUser.id, version = _dashboardSessionVersion;
+    const current = () => version === _dashboardSessionVersion && _currentUser?.id === userId;
     if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Salvataggio…'; }
     try {
     const { data: savedProfile, error } = await _supabase.from('profiles').upsert({
-        id: _currentUser.id,
+        id: userId,
         nome:     document.getElementById('pNome').value.trim(),
         cognome:  document.getElementById('pCognome').value.trim(),
         telefono: _tel,
         email_digest: document.getElementById('pEmailDigest').checked,
         email_stats:  document.getElementById('pEmailStats').checked
     }).select('id').single();
+    if (!current()) return;
     if (btn) { btn.disabled = false; btn.textContent = 'Salva modifiche'; }
     if (!error && savedProfile) {
         ProfileSwitcher.setBaseline(profileSnapshot);
@@ -4752,8 +4846,8 @@ async function saveProfile(e) {
     } else {
         showToast('Errore nel salvataggio. Riprova.', 'error');
     }
-    } catch (_) { showToast('Errore di connessione. Riprova.','error'); }
-    finally { if(btn){btn.disabled=false;btn.textContent='Salva modifiche';} }
+    } catch (_) { if (current()) showToast('Errore di connessione. Riprova.','error'); }
+    finally { if(current() && btn){btn.disabled=false;btn.textContent='Salva modifiche';} }
 }
 
 // ── Custom Confirm Dialog ─────────────────────────────────

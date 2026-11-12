@@ -173,12 +173,19 @@
     });
     _supabase.auth.onAuthStateChange((_event, session) => {
         if (!userId || session?.user?.id === userId) return;
+        invalidate();
+    });
+    function invalidate() {
         closeProfiloModal();
         userId = null;
-    });
+        baseline = null;
+        defaultStatus.hidden = true;
+        track.removeAttribute('aria-busy');
+    }
     window.ProfileSwitcher = {
         startDashboard,
         open(user, mode = null) {
+            if (!user?.id) { invalidate(); return; }
             userId = user?.id || null;
             const opener = document.activeElement;
             returnFocus = opener && opener !== document.body && opener !== document.documentElement && !modal.contains(opener) ? opener : document.querySelector('.dashboard-user button');
@@ -195,6 +202,7 @@
             returnFocus = null;
             gesture = null;
         },
+        invalidate,
         snapshot,
         viewToken: () => request,
         setBaseline(saved = snapshot()) { baseline = saved; }

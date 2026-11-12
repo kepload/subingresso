@@ -1,6 +1,6 @@
 // Area acquisti privata. Nessuna cache persistente di ordini o ricevute.
 window.VetrinaAccount = (() => {
-    let days = 30, offset = 0, status = 'all', request = 0, data = null, charts = [], listings = [], authWatcher = false;
+    let days = 30, offset = 0, status = 'all', request = 0, data = null, charts = [], listings = [], authWatcher = false, profileUserId = null, profileRequest = 0;
     const el = id => document.getElementById(id);
     const esc = value => escapeHTML(String(value ?? ''));
     const number = value => Number(value || 0).toLocaleString('it-IT');
@@ -144,17 +144,22 @@ window.VetrinaAccount = (() => {
         } catch { showToast('Esportazione non riuscita. Riprova.','error'); }
         finally { button.disabled = false; }
     }
+    function clear() {
+        ++request; ++profileRequest;
+        data = null; listings = []; profileUserId = null; destroyCharts();
+        ['vetrinaAccountOrders','vetrinaAccountCampaigns','vetrinaAccountSummary','vetrinaAccountPages',
+            'profileMemberSince','profileEmailStatus','profileLoginMethod','profileSecurityMessage'].forEach(id => { if (el(id)) el(id).textContent = ''; });
+        el('vetrinaAccountChooser')?.remove();
+        el('profilePublicLink')?.removeAttribute('href');
+        if (el('profilePasswordButton')) el('profilePasswordButton').disabled = false;
+    }
     function fillProfile(user) {
+        if (profileUserId !== user.id) ++profileRequest;
+        profileUserId = user.id;
         if (!authWatcher && typeof _supabase.auth.onAuthStateChange === 'function') {
             authWatcher = true;
             _supabase.auth.onAuthStateChange((event,session) => {
-                if (event === 'SIGNED_OUT' || (session?.user && session.user.id !== user.id)) {
-                    request++; data = null; listings = []; destroyCharts();
-                    ['vetrinaAccountOrders','vetrinaAccountCampaigns','vetrinaAccountSummary','vetrinaAccountPages'].forEach(id => { if (el(id)) el(id).innerHTML = ''; });
-                    el('vetrinaAccountChooser')?.remove();
-                    if (event === 'SIGNED_OUT') _currentUser = null;
-                    else window.location.reload();
-                }
+                if (event === 'SIGNED_OUT' || (profileUserId && session?.user?.id !== profileUserId)) clear();
             });
         }
         el('profileMemberSince').textContent = date(user.created_at);
@@ -164,14 +169,17 @@ window.VetrinaAccount = (() => {
     }
     async function resetPassword(button) {
         if (!_currentUser?.email) return;
+        const user = _currentUser, version = profileRequest;
+        const current = () => version === profileRequest && profileUserId === user.id && _currentUser?.id === user.id;
         button.disabled = true;
         try {
-            const result = await _supabase.auth.resetPasswordForEmail(_currentUser.email,{redirectTo:'https://subingresso.it/reset-password'});
+            const result = await _supabase.auth.resetPasswordForEmail(user.email,{redirectTo:'https://subingresso.it/reset-password'});
+            if (!current()) return;
             if (result.error) throw new Error('reset');
             el('profileSecurityMessage').textContent = 'Link inviato alla tua email. Controlla anche la cartella spam.';
-        } catch { el('profileSecurityMessage').textContent = 'Invio non riuscito. Attendi un minuto e riprova.'; button.disabled = false; }
+        } catch { if (current()) { el('profileSecurityMessage').textContent = 'Invio non riuscito. Attendi un minuto e riprova.'; button.disabled = false; } }
     }
-    return { load,receipt,exportOrders,chooseListing,promote,fillProfile,resetPassword,
+    return { load,receipt,exportOrders,chooseListing,promote,fillProfile,resetPassword,clear,
         setDays(value) { days = [7,30,90].includes(Number(value)) ? Number(value) : 30; load(); },
         setStatus(value) { status = ['all','succeeded','pending','failed','refunded'].includes(value) ? value : 'all'; offset = 0; load(); },
         page(delta) { offset = Math.max(0,offset + delta * 50); load(); },
