@@ -102,11 +102,12 @@ storiche degli articoli non riflettono le pubblicazioni successive: verificare
 
 ## Bug da correggere — audit dell'11 novembre 2026
 
-**Audit originale: 30 rilievi, 2 P1, 24 P2 e 4 P3.** Su successiva richiesta
-dell'11 novembre, **C-07 e C-01 corretti e applicati** con due sessioni isolate
-e integrazione sequenziale. Restano **28 aperti: 24 P2 e 4 P3**. Verifica dei
-permessi SQL e rifiuti HTTP online, comportamento completo con fixture locali;
-nessuna email reale di prova né verifica end-to-end del mittente Auth.
+**Audit originale: 30 rilievi, 2 P1, 24 P2 e 4 P3.** Corretti e applicati
+**C-07/C-01 l'11 novembre e C-03/C-09 il 12 novembre**, con sessioni isolate
+e integrazione sequenziale. Restano **26 aperti: 22 P2 e 4 P3**. Permessi SQL,
+rifiuti HTTP, bundle e asset pubblicati verificati; comportamento con fixture
+in browser e provider simulati. Nessun account o invio reale di prova, né
+verifica end-to-end del mittente Auth o delle consegne del digest.
 
 ### P1 — sicurezza: corretti l'11 novembre 2026
 
@@ -115,18 +116,23 @@ nessuna email reale di prova né verifica end-to-end del mittente Auth.
 | C-07 | Corretto: cinque RPC con controllo admin su profilo autorevole e grant anonimi revocati; definizioni e permessi live verificati. Contratto `data/ADMIN_AUTHORIZATION.md`. |
 | C-01 | Corretto: verifica firma e timestamp prima degli invii; segreto configurato sui due lati, Edge v12 attiva. No-op firmato 200, richieste non autentiche/scadute 401. Contratto `data/AUTH_EMAIL_HOOK.md`. |
 
-### P2 — difetti funzionali o condizionali, per categoria
+### P2 — corretti il 12 novembre 2026
 
-Ordine iniziale suggerito dal riesame: **C-03/C-09**, poi **A-01/A-05**,
-poi **A-07/A-09/B-04**; gli altri restano P2 senza una graduatoria ulteriore
+| ID | Esito |
+|---|---|
+| C-03 | Logout/cambio identità svuotano il profilo e revocano le risposte tardive; apertura con identità verificata. 244 controlli browser e asset pubblicati conformi. `data/DASHBOARD_SESSION_ISOLATION.md`. |
+| C-09 | Query su `settore` e stop sugli errori DB; Edge v19 verificata, cron conservato. 51 scenari locali, nessuna esecuzione live di prova. `data/WEEKLY_BUYER_DIGEST.md`. |
+
+### P2 — difetti ancora aperti, per categoria
+
+Prossimi nell'ordine iniziale del riesame: **A-01/A-05**, poi
+**A-07/A-09/B-04**; gli altri restano P2 senza una graduatoria ulteriore
 certificata. Un problema condizionale non implica un guasto per tutti gli utenti.
 
-**Account, comunicazioni e servizi — 8**
+**Account, comunicazioni e servizi — 6**
 
 | ID | Problema |
 |---|---|
-| C-03 | Dopo il logout da un'altra scheda si può riaprire il profilo con i dati dell'account precedente. |
-| C-09 | Il digest settimanale acquirenti interroga una colonna inesistente e interpreta l'errore come «zero annunci». |
 | C-02 | L'invio email Auth dichiara successo anche quando il provider fallisce. |
 | C-04 | Ricaricare la pagina interrompe il recupero password già inizializzato. |
 | C-05 | La registrazione diretta via API accetta il telefono obbligatorio mancante. |
@@ -181,8 +187,9 @@ una prova locale già raccolta con il contratto ufficiale Stripe: nessuna rotazi
 reale verificata; il controllo aggiuntivo C è stato fermato da un blocco automatico
 e il riesame è rimasto documentale, senza ulteriori test. Test obsoleti, verifiche
 incomplete e sospetti esclusi restano nei rapporti, non sono ulteriori bug.
-L'audit originale non autorizzava modifiche. Il successivo incarico ha riguardato
-soltanto le correzioni C-07/C-01; gli altri rilievi non autorizzano nuovi interventi.
+L'audit originale non autorizzava modifiche. I due incarichi successivi hanno
+riguardato soltanto C-07/C-01 e C-03/C-09; gli altri rilievi non autorizzano
+nuovi interventi.
 
 Fonti private sotto `.local/verifiche/audit-tre-sessioni-20261111/`:
 [sintesi e priorità](.local/verifiche/audit-tre-sessioni-20261111/sintesi.md),
@@ -190,7 +197,7 @@ Fonti private sotto `.local/verifiche/audit-tre-sessioni-20261111/`:
 [B — fiere e contenuti](.local/verifiche/audit-tre-sessioni-20261111/B-fiere-contenuti/report.md),
 [C — account e servizi](.local/verifiche/audit-tre-sessioni-20261111/C-account-servizi/report.md),
 [integrazione C-11](.local/verifiche/audit-tre-sessioni-20261111/riesame-stripe.md).
-ID originali e materiali conservati. Le due sessioni di correzione successive
+ID originali e materiali conservati. Le sessioni di correzione successive
 sono registrate nel riepilogo recente e nel coordinamento privato.
 
 ## Come trovare i dettagli
@@ -210,6 +217,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **12 novembre 2026 — corretti C-03/C-09:** altre due sessioni isolate, otto file distinti senza collisioni; integrazione e pubblicazione sequenziali del coordinatore. Materiali `cb4a034`, Vercel riuscito e tre asset pubblici identici. C-03: 244 controlli browser PASS, più acquisti/statistiche; vecchia suite profilo incompleta per fixture parziale, limite documentato. C-09: Edge v19 ACTIVE, schema/bundle/cron/segreti verificati; 51 scenari e regressione email PASS. Nessun account/email di prova o digest live invocato; consegne future non certificate. Backup, rapporti e ricevute in `.local/lavori/bugfix-paralleli-20261112-0750/COORDINAMENTO.md`. Restano 26 rilievi aperti; nessuna prosecuzione automatica.
 
 - **11 novembre 2026 — corretti i due P1 C-07/C-01:** due sessioni parallele in worktree distinti, sei file senza sovrapposizione; integrazione e interventi live eseguiti dal coordinatore in sequenza. C-07: cinque RPC corrette, definizioni/permessi live conformi e 17 gruppi PostgreSQL locali PASS. C-01: secret predisposto, Edge v12 attiva, 64 test locali e cinque smoke Deno PASS; online no-op firmato 200, firma errata/assente/scaduta 401. Nessuna email o mutazione dei dati reali di prova; mittente Auth end-to-end non testato. Due arresti preliminari dei controlli metadati risolti prima del deploy. Backup, rapporti e ricevute in `.local/lavori/bugfix-paralleli-20261111-1714/COORDINAMENTO.md`. Restano 28 rilievi aperti.
 

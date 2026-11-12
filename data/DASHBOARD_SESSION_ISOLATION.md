@@ -37,3 +37,23 @@ email, upload o record reale di prova. Screenshot e risultati in
 solo sulla baseline precedente al fix. La vecchia `test-profile-switch.cjs`
 estrae funzioni isolate senza il bootstrap della dashboard e non inizializza
 il nuovo stato di sessione: il suo timeout non sostituisce la suite completa.
+
+## Pubblicazione verificata — 12 novembre 2026
+
+Il coordinatore ha integrato il fix senza sovrapposizioni con C-09, ripetuto
+i 244 controlli sui quattro formati, le sei combinazioni acquisti e i controlli
+delle statistiche. Materiali `cb4a034`, Vercel riuscito. Dashboard e due JS
+scaricati dal dominio pubblico coincidono con i sorgenti testati, normalizzando
+soltanto CRLF/LF; riferimenti runtime v6/v5 confermati.
+
+La stessa suite completa ha poi passato altri 244 controlli usando quei tre
+file effettivamente scaricati dal sito, con SDK e provider intercettati.
+Nessun account reale, reset email, upload o record di prova è stato creato.
+Questo conferma il comportamento dei file pubblicati nelle condizioni della
+fixture, senza affermare un collaudo con account reali. Il limite della vecchia
+suite isolata resta esplicito.
+
+Prove private del coordinatore:
+`.local/lavori/bugfix-paralleli-20261112-0750/C03-published-assets.json`,
+`published-assets/`, `C03-published-browser/results.json`; prove dell'integrazione
+nel relativo worktree, `.local/verifiche/c03-dashboard-session/`.
