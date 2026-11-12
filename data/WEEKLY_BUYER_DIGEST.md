@@ -74,3 +74,19 @@ stato ACTIVE, versione e configurazione; riconfermare cron invariato.
 Non invocare il digest live, nemmeno come smoke test; non leggere destinatari,
 consegne o log personali. La presenza del bundle corretto conferma il deploy,
 non certifica consegne future. Nessun arretrato viene recuperato manualmente.
+
+## Esito del coordinatore — 12 novembre 2026
+
+Correzione integrata e distribuita come Edge `weekly-buyer-digest` v19 ACTIVE,
+con `verify_jwt=false` e secret preesistenti conservati. Il coordinatore ha
+ripetuto i 51 scenari sul vero handler e la regressione email Vetrina; tutti
+passati. Schema, sorgente e bundle sono stati riletti prima e dopo il deploy:
+`settore` presente, `merce` assente nella query, guardie errori distribuite.
+Cron sempre `0 9 * * 1`, active=true; versioni delle altre Edge invariate.
+
+Nessuna invocazione live del job, email o dato di prova reale. La correzione
+riporta il job già attivo al percorso previsto alle sue scadenze; non sono
+stati aggiunti invii, recuperi o retry. Non si certificano consegne future.
+Backup binario, metadati e ricevuta privati:
+`.local/lavori/bugfix-paralleli-20261112-0750/C09-before.eszip`,
+`C09-before.json`, `C09-after.json`, `C09-deployment.json`.
