@@ -95,3 +95,11 @@ URL previsto, **non ancora pubblicato**:
 `https://subingresso.it/blog?post=affitto-posteggio-confrontare-candidati`.
 Materiali, controlli e stato finale nel dossier privato indicato sopra;
 la voce 32 va spuntata soltanto dopo inserimento e verifica della pagina live.
+
+**Materiali salvati e distribuiti:** commit `70142c0` su origin/main,
+Vercel riuscito `8nuyXZoHHtJwTsnP9iDDzVBdQBrS`. Copertina e XLSX online
+HTTP 200 con SHA256 identici ai file locali. Il successo del deploy dei file
+non equivale alla pubblicazione dell'articolo nel database. Ultima verifica
+servizi alle **22:29 UTC del 12 novembre**: REST 522, SQL 544 per timeout,
+blog 503. Non eseguiti INSERT, controlli live di indice/sitemap del nuovo post
+o confronto finale completo degli articoli preesistenti. Nessun ciclo attivato.
