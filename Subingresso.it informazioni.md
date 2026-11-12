@@ -218,7 +218,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **12 novembre 2026 — articolo caparra prima dell'acquisto, punto 33:** testo, copertina IA e scheda XLSX con sei fogli pronti; cinque percorsi browser locali PASS, fonti ufficiali raggiunte e file verificato. **DA PUBBLICARE:** REST 522, SQL 544 e blog 503; nessun INSERT, controllo duplicati live da completare e nessuna riparazione dei servizi. Punto 32 e dati estranei preservati. [Fonti ed esito](data/blog/caparra-comprare-posteggio-verifiche-notaio.fonti.md).
+- **12 novembre 2026 — articolo caparra prima dell'acquisto, punto 33:** materiali `d232448`, integrati con main e push `0302bf2`; Vercel riuscito, copertina e scheda XLSX online identiche. Sei fogli, cinque percorsi browser locali e download WebKit PASS. **DA PUBBLICARE:** ultimo riscontro 23:33 CET, REST 522/SQL 544/blog 503; nessun INSERT, duplicati/schema/trigger live da verificare. Punto 32 e dati estranei preservati, nessuna riparazione dei servizi. [Fonti ed esito](data/blog/caparra-comprare-posteggio-verifiche-notaio.fonti.md).
 
 - **12 novembre 2026 — articolo confronto candidati affitto (32):** materiali `70142c0`, Vercel riuscito; copertina e XLSX online identici. Scheda con 14 voci, modello vuoto ed esempio separato, nessun punteggio; quattro formati browser e lettura senza JS riusciti. **Post da pubblicare:** Supabase REST 522/SQL 544 e blog 503 durante incidente ufficiale; nessun INSERT, duplicati/schema/trigger live ancora da verificare. Voce 14 aperta, voce 33 di un'altra sessione. [Fonti e stato](data/blog/affitto-posteggio-confrontare-candidati.fonti.md); prove `.local/lavori/articoli/affitto-confronto-candidati-20261112/`.
 

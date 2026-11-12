@@ -30,3 +30,11 @@ Prima prova diretta alle **23:27 CET**: REST **522**, Management SQL **544** anc
 Backup remoto preventivo verificato: `backup/session-20261112-232224-articolo-caparra-posteggio-33`, HEAD `ed172fe`. Worktree `.local/worktrees/articolo-caparra-posteggio-20261112`, ramo `articolo/caparra-posteggio-20261112`. Materiali e verifiche private nella root principale, `.local/lavori/articoli/caparra-posteggio-20261112/`.
 
 URL previsto, **non ancora pubblicato**: `https://subingresso.it/blog?post=caparra-comprare-posteggio-verifiche-notaio`. Nessun ID articolo assegnato.
+
+## Materiali distribuiti, articolo ancora da pubblicare
+
+Materiali `d232448`, integrazione di origin/main fino a `04d1013` e push `0302bf2`. Conservati il punto 32, il suo registro aggiornato e tutti i suoi oggetti Git; il punto 14 è invariato. Gitleaks superato sul commit dei materiali e sull'integrazione. Vercel **success**, deploy `79oD19AKq4XRLgtJxanhcdrAxbJc`: copertina e XLSX online HTTP 200, SHA256 identici ai file verificati. Download effettivo del foglio in WebKit 390 sull'anteprima riuscito e identico.
+
+Ultima prova alle **23:33 CET (22:33 UTC) del 12 novembre 2026**: REST **522**, Management SQL **544**, blog **503**, dopo due prove precedenti con lo stesso esito. **Nessun INSERT eseguito e nessun ID assegnato.** Non verificabili duplicati/schema/trigger correnti, pagina pubblica del nuovo post, indice/sitemap o conservazione completa del DB. Nessuna riparazione, automazione o ciclo di riprova avviato. Il successo del deploy delle risorse non equivale alla pubblicazione dell'articolo.
+
+Per la ripresa: dossier privato `consegna.md`, `esito-finale.json`, `verifica-pubblicazione.cjs`, ricevute `stato-live-*.json`, screenshot e copie delle fonti. Al ripristino servono prima letture vive e controlli; non segnare pubblicato prima dell'inserimento e della verifica reale.
