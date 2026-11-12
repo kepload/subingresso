@@ -1,0 +1,7 @@
+# Copertina originale
+
+Creata il 12 novembre 2026 con skill imagegen e strumento integrato. Scena inventata, dichiarata nel testo. WebP finale 1600 × 900; originale privato in `.local/lavori/articoli/caparra-posteggio-20261112/copertina-originale.png` nella root principale.
+
+## Prompt integrale
+
+Use case: photorealistic-natural. Asset type: original editorial cover for an Italian article about checks before paying a deposit to buy a street-market business. Primary request: two adult traders review a small dossier together at the corner of a tidy clothing stall in a real-looking Italian piazza, before any agreement is signed. Scene: softly blurred modest weekly street market, folded textiles and blue awning. Subject: close view of natural human hands pointing at an open cream folder with an unfilled checklist and a small paper calendar, plain capped pen resting beside it; no money, no handshake, no signature in progress. Composition: wide horizontal 16:9, professional documentary photography, hands and dossier inside central 70 percent of frame, enough environmental context to understand the market. Lighting: soft morning daylight, calm and careful mood, realistic textures, restrained blue and warm beige tones. Constraints: no readable text, no letters, no numbers, no logos, no watermarks, no scales of justice, no gavels, no suggestion of a real listing or real transaction. Natural anatomy and credible stall details.
