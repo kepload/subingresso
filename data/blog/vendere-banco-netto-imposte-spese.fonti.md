@@ -1,6 +1,6 @@
 # Fonti e verifiche: netto della vendita del banco
 
-Priorità **42**, sviluppata il **13 novembre 2026** in una nuova sessione pulita. Un solo articolo. Preparazione completata; pubblicazione e controlli online da registrare sotto soltanto dopo l'inserimento verificato.
+Priorità **42**, sviluppata e **pubblicata il 13 novembre 2026** in una nuova sessione pulita. Un solo articolo.
 
 ## Scelta del tema e duplicati
 
@@ -35,3 +35,13 @@ Copertina originale con skill imagegen e strumento integrato; scena inventata di
 Articolo di circa 476 parole, sei sezioni brevi e tre risposte iniziali. Due slot ADS contestuali esistenti e spazio Vetrine conservati; nessuna modifica ai template. Anteprima con rendering corrente: **Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript PASS**. Titolo, descrizione, canonical, NewsArticle, copertina, download, due ADS per venditori e assenza di overflow/errori JavaScript verificati. Screenshot desktop/mobile esaminati visivamente. Regole ADS correnti lette dall'API; scritture browser intercettate.
 
 Backup remoto preventivo verificato: `backup/session-20261113-020301-articolo-fiere-domande-41`, HEAD `3da23e6`. Baseline, generatori, test, ricevute, originali, HTML e screenshot privati: `.local/lavori/articoli/netto-vendita-banco-20261113/`. Modifiche estranee preservate.
+
+## Pubblicazione verificata
+
+Materiali nel commit `d691d07`, push su main e deploy Vercel **success**, identificativo `Aujx4X2hi2pwQh67jcG4hSHKxUdR`. Copertina e XLSX online **HTTP 200**, SHA256 identici ai file locali. Prima dell'inserimento riletti schema, trigger e record correnti; vincolo UNIQUE sullo slug, nessun trigger applicativo. Eseguito un solo INSERT, nessun aggiornamento di post precedenti.
+
+[Articolo pubblico](https://subingresso.it/blog?post=vendere-banco-netto-imposte-spese), ID `f5b2f38e-508e-48ed-a407-971900953163`, pubblicato alle **01:12:22 UTC**. I **134 record precedenti sono invariati** in tutti i nove campi della tabella verificata, **135 totali**. Nessun invio o intervento sui servizi.
+
+Pagina HTTP 200, titolo, descrizione, canonical e NewsArticle verificati; presenza nell'indice e nella sitemap confermata. Collegamenti a pubblicazione annunci e ricerca HTTP 200. **Cinque percorsi online PASS**: Chromium 1440/768/320, WebKit 390 e Chromium senza JavaScript. Copertina caricata, due ADS contestuali per venditori, nessun overflow o errore JavaScript; download effettivo in WebKit identico all'XLSX locale. Scritture browser intercettate. Prima misura senza JS interrotta durante caricamento del layout; controllo ripetuto dopo rete e font pronti, senza modificare il sito: larghezza documento 390 su viewport 390, esito finale PASS.
+
+La ricevuta strutturale dell'XLSX è stata riallineata e nuovamente verificata dopo l'aggiunta delle cache dei risultati: struttura, formule, anteprima, file distribuito e download hanno tutti SHA256 finale `c1dc050bc3695557e13cde271975caecec36ef0de1908f34403f23b251921834`. Il vecchio hash resta soltanto come riferimento esplicito alla fase precedente alle cache. Ricevute finali `esito-finale.json`, `vendere-banco-netto-imposte-spese-esito.json` e `vendere-banco-netto-imposte-spese-online-verificato.json` nel dossier privato.

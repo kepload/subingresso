@@ -42,8 +42,8 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 38. 🟠 Gazebo per mercatini: comprare o noleggiare? Il calcolatore con trasporto, zavorre e giorni di utilizzo
 39. 🟠 Organizzo un mercatino: il file per gestire posteggi, conferme e lista d'attesa degli espositori
 40. 🟢 POS per ambulanti: batteria e connessione a confronto nella prova sul campo durante una giornata di mercato
-41. 🔴 Fiere lombarde: quante domande arrivano per ogni posteggio? I dati degli esiti ufficiali a confronto
-42. 🔴 Vendo il banco: quanto mi resta dopo imposte e spese? Il prospetto da compilare con il commercialista
+41. 🔴 Fiere lombarde: quante domande arrivano per ogni posteggio? I dati degli esiti ufficiali a confronto — ancora aperto: verifica del 13/11/2026, vecchi PDF Brescia 410, Rescaldina 403 alle richieste dirette, Grosio senza numero preciso delle domande; confronto quantitativo non sufficientemente verificato. [Limiti e criterio di scelta](data/blog/vendere-banco-netto-imposte-spese.fonti.md).
+42. 🔴 Vendo il banco: quanto mi resta dopo imposte e spese? Il prospetto da compilare con il commercialista — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=vendere-banco-netto-imposte-spese); [testo](data/blog/vendere-banco-netto-imposte-spese.html), [fonti e verifiche](data/blog/vendere-banco-netto-imposte-spese.fonti.md), [prospetto gratuito](downloads/prospetto-netto-vendita-banco.xlsx).
 43. 🔴 Domande respinte alle fiere: gli errori negli esiti comunali, con checklist prima dell'invio
 44. 🟠 Vendere il posteggio da soli o con un intermediario: costi, servizi e vincoli degli incarichi a confronto
 45. 🟠 Attrezzature per ambulanti all'asta o usate da un privato: calcola il costo finale con commissioni, ritiro e riparazioni
