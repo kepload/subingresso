@@ -677,6 +677,7 @@ let _photoSaveVersion = 0;
 let _autoTitle = '';
 let _autoTitleSignature = '';
 let _comunePicker = null;
+let _publicationOperation = null;
 
 // ── Step 6: scelta pubblicazione ──────────────────────────
 // _pubChoice: 'free' | '10d' | '30d' | '90d'. Default 'free' (preselezionato).
@@ -856,6 +857,8 @@ function _saveDraft() {
         titolo:      document.getElementById('fTitolo').value.trim(),
         descrizione: document.getElementById('fDescrizione').value.trim(),
         step:        _step,
+        pubChoice: _pubChoice,
+        publication: _publicationOperation,
         _userId: _draftOwner === 'guest' ? null : _draftOwner,
         savedAt: Date.now(),
         photoCount: _files.length,
@@ -905,6 +908,8 @@ function _persistDraftPhotos() {
 async function _applyPendingDraft(d) {
     window.SiteAnalytics?.track('publish_resume', {step: Number(d.step) || 1, resumed: true});
     _draftReady = false;
+    _publicationOperation = d.publication || null;
+    _pubChoice = Object.hasOwn(_PUB_OPTIONS, d.pubChoice) ? d.pubChoice : 'free';
     if (d.stato === 'Affitto mensile') document.getElementById('statoAffitto').checked = true;
     else document.getElementById('statoVendita').checked = true;
     // Riprende gli altri dati anche se l'elenco comuni è temporaneamente offline.
@@ -1783,7 +1788,7 @@ async function _directInsertAnnuncio(form, accessToken, timeoutMs) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id`, {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id,user_id,status`, {
             method: 'POST',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
@@ -1795,26 +1800,73 @@ async function _directInsertAnnuncio(form, accessToken, timeoutMs) {
             body: JSON.stringify(form),
             signal: controller.signal
         });
-        clearTimeout(timer);
         if (!res.ok) {
             let detail = `HTTP ${res.status}`;
             try {
                 const errBody = await res.json();
                 detail = errBody?.message || errBody?.error_description || JSON.stringify(errBody).slice(0, 160);
-                return { data: null, error: { code: errBody?.code, message: detail } };
+                return { data: null, error: { code: errBody?.code, message: detail, uncertain: res.status >= 500 || res.status === 408 } };
             } catch (_) {
-                return { data: null, error: { code: String(res.status), message: detail } };
+                return { data: null, error: { code: String(res.status), message: detail, uncertain: res.status >= 500 || res.status === 408 } };
             }
         }
         const data = await res.json();
+        if (data?.id !== form.id || data?.user_id !== form.user_id || !data?.status) {
+            return { data: null, error: { code: 'INVALID_RESPONSE', message: 'Risposta di pubblicazione incompleta. Riprova.', uncertain: true } };
+        }
         return { data, error: null };
     } catch (err) {
-        clearTimeout(timer);
         if (err.name === 'AbortError') {
-            return { data: null, error: { code: 'TIMEOUT', message: 'Pubblicazione scaduta (server lento, riprova)' } };
+            return { data: null, error: { code: 'TIMEOUT', message: 'Pubblicazione scaduta (server lento, riprova)', uncertain: true } };
         }
-        return { data: null, error: { code: 'FETCH_ERROR', message: err.message || 'Errore di rete' } };
+        return { data: null, error: { code: 'FETCH_ERROR', message: err.message || 'Errore di rete', uncertain: true } };
+    } finally { clearTimeout(timer); }
+}
+
+function _isCurrentPublication(operation) {
+    return operation === _publicationOperation && operation.owner === _draftOwner && operation.owner === _currentDraftOwner();
+}
+
+function _assertPublicationOwner(operation) {
+    if (!_isCurrentPublication(operation)) throw { code: 'ACCOUNT_CHANGED', message: 'Account cambiato. Riapri la tua bozza.' };
+}
+
+function _getPublicationOperation(owner) {
+    if (!_publicationOperation) _publicationOperation = { id: crypto.randomUUID(), owner, attempted: false };
+    const operation = _publicationOperation;
+    if (operation.owner !== owner || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(operation.id)) {
+        throw { code: 'INVALID_OPERATION', message: 'Bozza non riconosciuta. Controlla i tuoi annunci nella dashboard prima di ricominciare.' };
     }
+    _assertPublicationOwner(operation);
+    _saveDraft();
+    if (_draftWriteFailed) throw { code: 'DRAFT_STORAGE', message: 'La bozza non si è salvata. Tieni aperta questa pagina e riprova.' };
+    return operation;
+}
+
+// Una risposta persa non prova il fallimento dell'INSERT. La lettura non modifica
+// l'annuncio: verifica ID, proprietario e stato anche in caso di conflitto.
+async function _findPublishedOperation(operation, accessToken, timeoutMs = 10000) {
+    _assertPublicationOwner(operation);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+        const query = new URLSearchParams({ select: 'id,user_id,status', id: 'eq.' + operation.id, user_id: 'eq.' + operation.owner });
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/annunci?${query}`, {
+            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${accessToken}`, 'Cache-Control': 'no-cache' },
+            cache: 'no-store', signal: controller.signal
+        });
+        if (!res.ok) throw new Error('Lettura non disponibile');
+        const rows = await res.json();
+        _assertPublicationOwner(operation);
+        if (!Array.isArray(rows) || rows.length > 1) throw new Error('Risposta incompleta');
+        if (!rows.length) return null;
+        const row = rows[0];
+        if (row.id !== operation.id || row.user_id !== operation.owner || !row.status) throw new Error('Esito non riconosciuto');
+        return row;
+    } catch (err) {
+        _assertPublicationOwner(operation);
+        throw { code: 'VERIFY_PUBLICATION', message: 'Non riusciamo a verificare la pubblicazione. Riprova tra poco: la bozza è conservata.', uncertain: true };
+    } finally { clearTimeout(timer); }
 }
 
 async function _getSessionForSubmit() {
@@ -1854,10 +1906,100 @@ async function _getSessionForSubmit() {
     return refreshed || session;
 }
 
+async function _finishPublication(inserted, operation, user, _currentSession, form, btn) {
+    _assertPublicationOwner(operation);
+    if (inserted.id !== operation.id || inserted.user_id !== user.id) throw { code: 'INVALID_RESPONSE', message: 'Esito non riconosciuto.', uncertain: true };
+    if (!['active', 'pending'].includes(inserted.status)) throw { code: 'ALREADY_SAVED', message: 'Questo annuncio è già salvato. Controlla il suo stato nella dashboard.' };
+    // Da qui l'annuncio esiste: nessun errore di cache deve farlo pubblicare due volte.
+    _clearDraft();
+
+    // Collega eventuale valutazione precedente a questo annuncio (fire-and-forget)
+    if (inserted?.id) {
+        window.SiteAnalytics?.track('publish_success', {success: true, photos: operation.photoCount || 0}, inserted.id);
+        void (async () => { try { await _supabase.rpc('link_valutatore_to_annuncio', { p_annuncio_id: inserted.id }); } catch (_) {} })();
+    }
+
+    // Salva nome/tel per pre-fill ai prossimi annunci (cache locale SCOPE per user_id)
+    const _ownerId = (inserted && inserted.user_id) || (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
+    if (_ownerId) {
+        try {
+        if (form.contatto) localStorage.setItem(_userKey('_vc_nome', _ownerId), form.contatto);
+        if (form.tel)      localStorage.setItem(_userKey('_vc_tel',  _ownerId), form.tel);
+        } catch (_) {}
+    }
+    // Aggiorna SOLO i campi profilo vuoti — preserva il profilo quando il
+    // venditore inserisce contatti diversi dai propri (es. admin che pubblica
+    // per conto di un utente, o un secondo numero ad-hoc per il singolo annuncio).
+    // I contatti dell'annuncio sono già salvati su annunci.contatto/annunci.tel.
+    if (form.contatto) {
+        _supabase.from('profiles')
+            .update({ nome: form.contatto })
+            .eq('id', user.id)
+            .or('nome.is.null,nome.eq.')
+            .then(() => {}).catch(() => {});
+    }
+    if (form.tel) {
+        _supabase.from('profiles')
+            .update({ telefono: form.tel })
+            .eq('id', user.id)
+            .or('telefono.is.null,telefono.eq.')
+            .then(() => {}).catch(() => {});
+    }
+
+    // Promozione facoltativa, offerta 90 giorni riservata alla pubblicazione.
+    if (_pubChoice !== 'free' && inserted?.id) {
+        window.VetrinaJourney?.record('checkout_attempt', {source:'vendi',tier:_pubChoice,count:1});
+        try {
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Apertura pagamento sicuro…';
+            // Ri-deriva un token fresco: durante l'INSERT può essere
+            // scattato un refresh JWT e _currentSession resterebbe stale,
+            // facendo fallire il checkout.
+            let _tok = null;
+            try { _tok = (await _getSessionForSubmit())?.access_token || null; } catch (_) {}
+            _assertPublicationOwner(operation);
+            if (!_tok) _tok = _currentSession?.access_token || null;
+            if (!_tok) throw new Error('Sessione mancante');
+            const coRes = await _withTimeout(fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type':  'application/json',
+                    'Authorization': `Bearer ${_tok}`,
+                    'apikey':        SUPABASE_ANON_KEY,
+                },
+                body: JSON.stringify({ annuncio_id: inserted.id, tier: _pubChoice, source: 'vendi_creation', expected_amount_cents: _PUB_OPTIONS[_pubChoice].amountCents,
+                    ...(_pubChoice === VetrinaPricing.publicationOffer.tier ? { offer: VetrinaPricing.publicationOffer.id } : {}) }),
+            }), 15000, 'Timeout checkout');
+            const coData = await coRes.json().catch(() => ({}));
+            _assertPublicationOwner(operation);
+            if (coRes.ok && coData.url) {
+                const paymentUrl = new URL(coData.url);
+                if (paymentUrl.protocol !== 'https:' || paymentUrl.hostname !== 'checkout.stripe.com') throw new Error('Pagamento non disponibile');
+                window.location.href = paymentUrl.href;
+                return;
+            }
+            throw new Error(coData.error || 'Checkout non disponibile');
+        } catch (coErr) {
+            if (!_isCurrentPublication(operation)) return;
+            window.VetrinaJourney?.record('checkout_error', {source:'vendi',tier:_pubChoice,count:1});
+            console.warn('Checkout vetrina fallito (annuncio comunque pubblicato):', coErr);
+            if (typeof showToast === 'function') {
+                showToast('Annuncio pubblicato. Non siamo riusciti ad avviare il pagamento della Vetrina: puoi attivarla quando vuoi dalla dashboard.', 'warning');
+            }
+            // prosegue mostrando il successo standard (annuncio pubblicato)
+        }
+    }
+
+    _assertPublicationOwner(operation);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('formWrapper').classList.add('hidden');
+    const successEl = document.getElementById('successMsg');
+    successEl.classList.remove('hidden');
+}
+
 const _uploadedPhotos = new WeakMap();
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
-    if (btn.disabled || dropzone.getAttribute('aria-busy') === 'true') return;
+    if (btn.disabled || _draftCompleted || dropzone.getAttribute('aria-busy') === 'true') return;
     window.SiteAnalytics?.track('publish_attempt', {step: _step});
     const orig = btn.dataset.origHtml || btn.innerHTML;
     btn.dataset.origHtml = orig;
@@ -1898,6 +2040,25 @@ async function submitAnnuncio() {
     // Valida ogni passo prima di bloccare l'intero form per l'upload.
     await _withTimeout(prefillContactFromSession(), 1800, 'Profilo non disponibile').catch(() => null);
     await _syncDraftOwner();
+    if (user.id !== _draftOwner || user.id !== _currentDraftOwner()) { _resetBtn(); return; }
+    let operation;
+    try {
+        operation = _getPublicationOperation(user.id);
+        if (operation.attempted) {
+            // Prima di validare o ricaricare foto: il commit può essere già avvenuto,
+            // anche se nel frattempo la bozza è stata ricaricata o modificata.
+            const recovered = await _findPublishedOperation(operation, _currentSession.access_token);
+            if (recovered) {
+                await _finishPublication(recovered, operation, user, _currentSession, {}, btn);
+                return;
+            }
+        }
+    } catch (err) {
+        if (operation && !_isCurrentPublication(operation)) return;
+        _err(err.message);
+        _resetBtn();
+        return;
+    }
     for (let step = 2; step <= 5; step++) {
         if (_validateStep(step)) continue;
         const message = document.getElementById('stepErrorMsg').textContent;
@@ -1936,11 +2097,12 @@ async function submitAnnuncio() {
     let lastPost = 0;
     try { lastPost = parseInt(localStorage.getItem(lastPostKey)) || 0; } catch (_) {}
     const now = Date.now();
-    if (lastPost && (now - lastPost) < 60 * 1000) {
+    if (lastPost && (now - lastPost) < 60 * 1000 && !(operation.attempted && operation.postTime === lastPost)) {
         _resetBtn();
         _err('Puoi pubblicare un annuncio ogni minuto. Riprova tra poco.');
         return;
     }
+    operation.postTime = now;
     try { localStorage.setItem(lastPostKey, now); } catch (_) {}
 
     try {
@@ -1955,6 +2117,7 @@ async function submitAnnuncio() {
         const location = _comunePicker && _comunePicker.getValue();
         if (!location) throw new Error('Comune non valido: torna allo step 2 e sceglilo dall’elenco.');
         const form = {
+            id:          operation.id,
             titolo:      document.getElementById('fTitolo').value.trim(),
             regione:     location.regione,
             provincia:   location.provincia,
@@ -1976,12 +2139,14 @@ async function submitAnnuncio() {
         let failedUploads = 0;
         const accessTokenForUpload = _currentSession?.access_token || SUPABASE_ANON_KEY;
         for (let i = 0; i < _files.length; i++) {
+            _assertPublicationOwner(operation);
             const file = _files[i];
             const cached = _uploadedPhotos.get(file);
             if (cached?.owner === user.id) { imageUrls.push(cached.url); continue; }
             try {
                 btn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Caricamento foto ${i+1}/${_files.length}...`;
                 const prepared = await _prepareListingImage(file);
+                _assertPublicationOwner(operation);
                 const storagePath = `${user.id}/${prepared.path}`;
                 // Upload diretto (bypassa il client supabase-js per evitare lock interni)
                 const upCtrl = new AbortController();
@@ -2036,118 +2201,57 @@ async function submitAnnuncio() {
         const accessToken = _currentSession?.access_token;
         if (!accessToken) throw new Error('Token sessione mancante. Ricarica la pagina e riloggati.');
 
+        _assertPublicationOwner(operation);
+        operation.attempted = true;
+        operation.photoCount = imageUrls.length;
+        _saveDraft();
+        if (_draftWriteFailed) throw { code: 'DRAFT_STORAGE', message: 'La bozza non si è salvata. Tieni aperta questa pagina e riprova.' };
         let { data: inserted, error } = await _directInsertAnnuncio(form, accessToken, 30000);
+        _assertPublicationOwner(operation);
 
-        if (error && /expires_at/i.test(error.message || '')) {
+        if (error && !error.uncertain && /expires_at/i.test(error.message || '')) {
             delete form.expires_at;
             const r = await _directInsertAnnuncio(form, accessToken, 30000);
             inserted = r.data; error = r.error;
         }
-        if (error && /img_urls/i.test(error.message || '')) {
+        _assertPublicationOwner(operation);
+        if (error && !error.uncertain && /img_urls/i.test(error.message || '')) {
             delete form.img_urls;
             const r = await _directInsertAnnuncio(form, accessToken, 30000);
             inserted = r.data; error = r.error;
         }
 
         // Auth error → tenta refresh JWT una sola volta e ripeti
-        if (error && /jwt|JWT|expired|auth|RLS|permission|policy|unauthor/i.test(error.message || '')) {
+        _assertPublicationOwner(operation);
+        if (error && !error.uncertain && /jwt|JWT|expired|auth|RLS|permission|policy|unauthor/i.test(error.message || '')) {
             console.warn('Auth error sull\'INSERT, provo refresh sessione:', error);
             const refreshed = await _refreshSessionIfNeeded({ ...(_currentSession || {}), expires_at: 0 });
-            if (refreshed?.access_token) {
+            _assertPublicationOwner(operation);
+            if (refreshed?.access_token && refreshed.user?.id === user.id) {
+                _currentSession = refreshed;
                 const r = await _directInsertAnnuncio(form, refreshed.access_token, 30000);
                 inserted = r.data; error = r.error;
             }
         }
 
-        if (error) throw error;
-
-        // Da qui l'annuncio esiste: nessun errore di cache deve farlo pubblicare due volte.
-        _clearDraft();
-
-        // Collega eventuale valutazione precedente a questo annuncio (fire-and-forget)
-        if (inserted?.id) {
-            window.SiteAnalytics?.track('publish_success', {success: true, photos: imageUrls.length}, inserted.id);
-            _supabase.rpc('link_valutatore_to_annuncio', { p_annuncio_id: inserted.id })
-                .then(() => {}).catch(() => {});
+        if (error) {
+            const recovered = await _findPublishedOperation(operation, _currentSession.access_token);
+            if (!recovered) throw error;
+            inserted = recovered;
         }
 
-        // Salva nome/tel per pre-fill ai prossimi annunci (cache locale SCOPE per user_id)
-        const _ownerId = (inserted && inserted.user_id) || (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
-        if (_ownerId) {
-            try {
-            if (form.contatto) localStorage.setItem(_userKey('_vc_nome', _ownerId), form.contatto);
-            if (form.tel)      localStorage.setItem(_userKey('_vc_tel',  _ownerId), form.tel);
-            } catch (_) {}
-        }
-        // Aggiorna SOLO i campi profilo vuoti — preserva il profilo quando il
-        // venditore inserisce contatti diversi dai propri (es. admin che pubblica
-        // per conto di un utente, o un secondo numero ad-hoc per il singolo annuncio).
-        // I contatti dell'annuncio sono già salvati su annunci.contatto/annunci.tel.
-        if (form.contatto) {
-            _supabase.from('profiles')
-                .update({ nome: form.contatto })
-                .eq('id', user.id)
-                .or('nome.is.null,nome.eq.')
-                .then(() => {}).catch(() => {});
-        }
-        if (form.tel) {
-            _supabase.from('profiles')
-                .update({ telefono: form.tel })
-                .eq('id', user.id)
-                .or('telefono.is.null,telefono.eq.')
-                .then(() => {}).catch(() => {});
-        }
-
-        // Promozione facoltativa, offerta 90 giorni riservata alla pubblicazione.
-        if (_pubChoice !== 'free' && inserted?.id) {
-            window.VetrinaJourney?.record('checkout_attempt', {source:'vendi',tier:_pubChoice,count:1});
-            try {
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Apertura pagamento sicuro…';
-                // Ri-deriva un token fresco: durante l'INSERT può essere
-                // scattato un refresh JWT e _currentSession resterebbe stale,
-                // facendo fallire il checkout.
-                let _tok = null;
-                try { _tok = (await _getSessionForSubmit())?.access_token || null; } catch (_) {}
-                if (!_tok) _tok = _currentSession?.access_token || null;
-                if (!_tok) throw new Error('Sessione mancante');
-                const coRes = await _withTimeout(fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type':  'application/json',
-                        'Authorization': `Bearer ${_tok}`,
-                        'apikey':        SUPABASE_ANON_KEY,
-                    },
-                    body: JSON.stringify({ annuncio_id: inserted.id, tier: _pubChoice, source: 'vendi_creation', expected_amount_cents: _PUB_OPTIONS[_pubChoice].amountCents,
-                        ...(_pubChoice === VetrinaPricing.publicationOffer.tier ? { offer: VetrinaPricing.publicationOffer.id } : {}) }),
-                }), 15000, 'Timeout checkout');
-                const coData = await coRes.json().catch(() => ({}));
-                if (coRes.ok && coData.url) {
-                    const paymentUrl = new URL(coData.url);
-                    if (paymentUrl.protocol !== 'https:' || paymentUrl.hostname !== 'checkout.stripe.com') throw new Error('Pagamento non disponibile');
-                    window.location.href = paymentUrl.href;
-                    return;
-                }
-                throw new Error(coData.error || 'Checkout non disponibile');
-            } catch (coErr) {
-                window.VetrinaJourney?.record('checkout_error', {source:'vendi',tier:_pubChoice,count:1});
-                console.warn('Checkout vetrina fallito (annuncio comunque pubblicato):', coErr);
-                if (typeof showToast === 'function') {
-                    showToast('Annuncio pubblicato. Non siamo riusciti ad avviare il pagamento della Vetrina: puoi attivarla quando vuoi dalla dashboard.', 'warning');
-                }
-                // prosegue mostrando il successo standard (annuncio pubblicato)
-            }
-        }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.getElementById('formWrapper').classList.add('hidden');
-        const successEl = document.getElementById('successMsg');
-        successEl.classList.remove('hidden');
-
+        _assertPublicationOwner(operation);
+        await _finishPublication(inserted, operation, user, _currentSession, form, btn);
 
     } catch (err) {
+        if (!_isCurrentPublication(operation)) return;
         window.SiteAnalytics?.track(err?.code === 'PHOTO_UPLOAD' ? 'photo_error' : 'publish_error', {step: _step, error_code: window.SiteAnalytics.errorCode(err), field: err?.code === 'PHOTO_UPLOAD' ? 'fileInput' : 'form'});
         console.error('Pubblicazione fallita:', err);
-        try { localStorage.removeItem(lastPostKey); } catch (_) {}
+        // Conserva il limite in caso di esito incerto; solo questa operazione
+        // può riprovare con lo stesso ID. Non cancellare il timestamp di altri invii.
+        if (!operation.attempted || (!err.uncertain && err.code !== 'ALREADY_SAVED')) {
+            try { if (Number(localStorage.getItem(lastPostKey)) === operation.postTime) localStorage.removeItem(lastPostKey); } catch (_) {}
+        }
         const code = err?.code ? ` [${err.code}]` : '';
         const detail = (err?.message || err?.error_description || err?.hint || '').toString().slice(0, 160);
         if (err?.code === 'PHOTO_UPLOAD') {
@@ -2179,6 +2283,7 @@ function resetForm() {
     _draftReady = false;
     _draftStarted = false;
     _draftCompleted = false;
+    _publicationOperation = null;
     _draftWriteFailed = false;
     _photosUnsaved = false;
     _photoWriteFailed = false;

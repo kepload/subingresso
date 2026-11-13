@@ -85,6 +85,7 @@ const server = http.createServer((req, res) => {
     const browser = await playwright[process.env.FORM_TEST_BROWSER || 'chromium'].launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}) });
     const errors = [];
     const inserts = [];
+    const published = new Map();
     let uploads = 0;
     let failUpload = false;
     let locationReply = true;
@@ -121,7 +122,14 @@ const server = http.createServer((req, res) => {
             if (url.includes('/annunci') && request.method() === 'POST') {
                 if(rejectLocationInsert) { rejectLocationInsert=false; return route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({code:'23514',message:'Controlla i dati dell’annuncio: localita'})}); }
                 inserts.push(request.postDataJSON());
-                return route.fulfill({contentType:'application/json',body:JSON.stringify({id:'test-listing-id'})});
+                const form = request.postDataJSON();
+                const row = { id: form.id, user_id: form.user_id, status: 'pending' };
+                published.set(form.id, row);
+                return route.fulfill({contentType:'application/json',body:JSON.stringify(row)});
+            }
+            if (url.includes('/annunci?') && request.method() === 'GET') {
+                const id = new URL(url).searchParams.get('id')?.replace(/^eq\./, '');
+                return route.fulfill({contentType:'application/json',body:JSON.stringify(published.has(id) ? [published.get(id)] : [])});
             }
             const own=url.includes('/rpc/get_my_profile');
             return route.fulfill({contentType:'application/json',body:own?'{"nome":"Profilo","cognome":"Test","telefono":"3471234567"}':'[{"nome":"Profilo","cognome":"Test","telefono":"3471234567"}]'});
