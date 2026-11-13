@@ -2,7 +2,7 @@
 
 Ruolo **C**, priorità effettiva **52**, 13 novembre 2026. Un solo articolo; ripiego 63 non utilizzato.
 
-**Stato: materiali pronti; pubblicazione e controlli live a cura del coordinatore.** Nessun inserimento o aggiornamento nel database eseguito da questa sessione.
+**Pubblicato e verificato il 13 novembre 2026.** Nessun inserimento o aggiornamento nel database eseguito da questa sessione.
 
 ## Tema e ambito
 
@@ -37,4 +37,15 @@ Articolo **568 parole** nel rendering, sei H2, hook, tre punti iniziali, slot AD
 
 Ricevuta `acquisto-attivita-ambulante-debiti-fiscali-anteprima-verificata.json`, HTML SSR e screenshot nel dossier C. Il primo tentativo da cwd errata è stato corretto; download annullato su risposte intercettate HTTPS risolto verificando il trasferimento reale con un server locale. Nessuna modifica al rendering di produzione.
 
-Il coordinatore deve ancora integrare, distribuire gli asset, inserire il post e verificare pagina pubblica, download, indice e sitemap. Questo dossier non dichiara il post pubblicato.
+Il coordinatore ha completato integrazione, distribuzione, inserimento e verifiche pubbliche; esiti sotto.
+
+
+## Pubblicazione verificata il 13 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=acquisto-attivita-ambulante-debiti-fiscali), ID `67335ab2-160a-4d35-80d0-da92d7925f17`. Preparato nella nuova sessione Codex 6 e pubblicato dal coordinatore. Materiali integrati `0c710b2`, Vercel riuscito `6QnGn7Cfa3NdRpbB1TSkgFyMZBwk`; copertina e XLSX online HTTP 200 con hash identici alle consegne.
+
+Prima degli inserimenti: lettura dei 135 articoli correnti, controllo duplicati, schema e vincoli; nessun trigger applicativo. Quattro soli nuovi post inseriti in sequenza. I 135 precedenti sono invariati in tutti i campi letti; totale 139. Nessun invio o modifica ai servizi.
+
+Pagina HTTP 200, titolo, descrizione, canonical, NewsArticle, indice e sitemap verificati. Cinque percorsi online PASS: Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript; download WebKit identico, due ADS contestuali, nessun overflow o errore JavaScript. Scritture del browser intercettate.
+
+Ricevute di inserimento, HTML, screenshot, esito del singolo post ed `esito-finale.json` nel dossier del coordinatore `.local/lavori/articoli/quattro-articoli-20261113-1853/`. La consegna iniziale dell’autore resta conservata come prova della fase precedente alla pubblicazione.

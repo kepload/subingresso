@@ -1,6 +1,6 @@
 # Fonti e verifiche: dossier per vendere il banco
 
-Ruolo **B**, mandato `quattro-articoli-20261113-1853`. Priorità effettiva **62**, ripiego esclusivo del tema 51. Un solo articolo. **Materiali pronti; pubblicazione e controlli live a cura del coordinatore.** Nessun inserimento nel database, modifica di main o modifica di articoli altrui eseguito dall'autore.
+Ruolo **B**, mandato `quattro-articoli-20261113-1853`. Priorità effettiva **62**, ripiego esclusivo del tema 51. Un solo articolo. **Pubblicato e verificato il 13 novembre 2026.** Nessun inserimento nel database, modifica di main o modifica di articoli altrui eseguito dall'autore.
 
 ## Perché il tema 51 resta aperto
 
@@ -49,4 +49,15 @@ Backup remoto preventivo verificato: `backup/session-20261113-185718-quattro-art
 
 ## Stato della consegna
 
-**prepared: true; published: false.** Commit e branch esatti riportati in `consegna.json` e `consegna.md` nel dossier privato B. Il coordinatore integra, pubblica le risorse, inserisce il post e verifica URL, indice, sitemap, download pubblico e conservazione degli articoli precedenti. Elenco editoriale e registro comune riservati al coordinatore.
+**prepared: true; published: true.** Commit e branch esatti riportati in `consegna.json` e `consegna.md` nel dossier privato B. Il coordinatore ha completato integrazione, pubblicazione e verifiche pubbliche, aggiornando elenco e registro; esiti sotto.
+
+
+## Pubblicazione verificata il 13 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=vendere-banco-dossier-documenti-acquirenti), ID `3e2793b4-fea4-489b-bcb8-eff1fdb68a01`. Preparato nella nuova sessione Codex 5 e pubblicato dal coordinatore. Materiali integrati `0c710b2`, Vercel riuscito `6QnGn7Cfa3NdRpbB1TSkgFyMZBwk`; copertina e XLSX online HTTP 200 con hash identici alle consegne.
+
+Prima degli inserimenti: lettura dei 135 articoli correnti, controllo duplicati, schema e vincoli; nessun trigger applicativo. Quattro soli nuovi post inseriti in sequenza. I 135 precedenti sono invariati in tutti i campi letti; totale 139. Nessun invio o modifica ai servizi.
+
+Pagina HTTP 200, titolo, descrizione, canonical, NewsArticle, indice e sitemap verificati. Cinque percorsi online PASS: Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript; download WebKit identico, due ADS contestuali, nessun overflow o errore JavaScript. Scritture del browser intercettate.
+
+Ricevute di inserimento, HTML, screenshot, esito del singolo post ed `esito-finale.json` nel dossier del coordinatore `.local/lavori/articoli/quattro-articoli-20261113-1853/`. La consegna iniziale dell’autore resta conservata come prova della fase precedente alla pubblicazione.

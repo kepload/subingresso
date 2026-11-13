@@ -1,6 +1,6 @@
 # Fonti e verifiche: comprare un banco ancora affittato
 
-Priorità **53**, ruolo **D**. **Materiali pronti; pubblicazione e controlli live a cura del coordinatore.** `prepared:true`, `published:false`. Un solo articolo; ripiego 6 non utilizzato.
+Priorità **53**, ruolo **D**. **Pubblicato e verificato il 13 novembre 2026.** `prepared:true`, `published:true`. Un solo articolo; ripiego 6 non utilizzato.
 
 ## Ambito e duplicati
 
@@ -38,7 +38,7 @@ Copertina originale con skill imagegen e strumento integrato `image_gen`, nessun
 
 **Cinque percorsi PASS:** Chromium 1440/768/320, WebKit 390, Chromium 390 senza JavaScript. Verificati titolo, descrizione, canonical, NewsArticle, copertina caricata, sei sezioni, due ADS, assenza di overflow/errori JavaScript, lettura senza JS e download effettivo. Quattro screenshot conservati; desktop e WebKit esaminati visivamente. Richieste di scrittura browser intercettate, letture Supabase isolate per la preview; nessun account, invio o dato reale modificato.
 
-**Correzione alla prova:** il primo tentativo di download con intercettazione della pagina pubblica ha ottenuto il documento HTML del sito per un asset non ancora online, anziché l'XLSX locale (2.681 byte). Il controllo hash lo ha respinto. L'anteprima finale usa un server HTTP locale in sola lettura e il click WebKit scarica correttamente **18.275 byte**. Non era un difetto del file XLSX; prova finale riuscita e nessun post inserito.
+**Correzione alla prova:** il primo tentativo di download con intercettazione della pagina pubblica ha ottenuto il documento HTML del sito per un asset non ancora online, anziché l'XLSX locale (2.681 byte). Il controllo hash lo ha respinto. L'anteprima finale usa un server HTTP locale in sola lettura e il click WebKit scarica correttamente **18.275 byte**. Non era un difetto del file XLSX; prova finale riuscita prima dell’inserimento del post.
 
 ## Consegna e pubblicazione coordinata
 
@@ -46,4 +46,15 @@ Backup remoto preventivo verificato: `backup/session-20261113-185723-articolo-d-
 
 Dossier: `.local/lavori/articoli/quattro-articoli-20261113-1853/D/`. Ricevuta anteprima: `comprare-banco-ancora-affittato-anteprima-verificata.json`, con hash di contenuto, copertina e risorsa. Generatore e verifica della risorsa, script solo anteprima, fonti e screenshot conservati. L'autore non modifica registro/elenco editoriale e non esegue INSERT/UPDATE/DELETE nel DB. URL previsto: <https://subingresso.it/blog?post=comprare-banco-ancora-affittato>.
 
-**Materiali pronti; pubblicazione e controlli live a cura del coordinatore.** L'URL previsto non costituisce prova di pubblicazione.
+**Pubblicato e verificato il 13 novembre 2026.** La pagina pubblica e le risorse sono state verificate; esiti sotto.
+
+
+## Pubblicazione verificata il 13 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=comprare-banco-ancora-affittato), ID `78b8459b-62e1-4d4e-b531-ac8d25794742`. Preparato nella nuova sessione Codex 7 e pubblicato dal coordinatore. Materiali integrati `0c710b2`, Vercel riuscito `6QnGn7Cfa3NdRpbB1TSkgFyMZBwk`; copertina e XLSX online HTTP 200 con hash identici alle consegne.
+
+Prima degli inserimenti: lettura dei 135 articoli correnti, controllo duplicati, schema e vincoli; nessun trigger applicativo. Quattro soli nuovi post inseriti in sequenza. I 135 precedenti sono invariati in tutti i campi letti; totale 139. Nessun invio o modifica ai servizi.
+
+Pagina HTTP 200, titolo, descrizione, canonical, NewsArticle, indice e sitemap verificati. Cinque percorsi online PASS: Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript; download WebKit identico, due ADS contestuali, nessun overflow o errore JavaScript. Scritture del browser intercettate.
+
+Ricevute di inserimento, HTML, screenshot, esito del singolo post ed `esito-finale.json` nel dossier del coordinatore `.local/lavori/articoli/quattro-articoli-20261113-1853/`. La consegna iniziale dell’autore resta conservata come prova della fase precedente alla pubblicazione.

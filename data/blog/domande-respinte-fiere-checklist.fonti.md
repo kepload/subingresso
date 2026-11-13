@@ -1,6 +1,6 @@
 # Fonti e verifiche: domande respinte alle fiere
 
-Priorità **43**, ruolo A, 13 novembre 2026. **Materiali pronti; pubblicazione e controlli live a cura del coordinatore.** `prepared:true,published:false`. Nessun ricorso al ripiego 61.
+Priorità **43**, ruolo A, 13 novembre 2026. **Pubblicato e verificato il 13 novembre 2026.** `prepared:true,published:true`. Nessun ricorso al ripiego 61.
 
 ## Ambito e duplicati
 
@@ -43,4 +43,15 @@ L'anteprima usa un server locale temporaneo su loopback per servire i file del w
 
 Worktree `.local/worktrees/quattro-articoli-20261113-1853-a`, branch `articolo/quattro-a-20261113-1853`. Backup preventivo remoto verificato: `backup/session-20261113-185719-quattro-articoli-a-domande-fiere`, base `2d3cc91`. Nessuna modifica al checkout principale, ai file editoriali comuni, ai template o ai dati del database.
 
-Dossier privato: `.local/lavori/articoli/quattro-articoli-20261113-1853/A/`. Contiene originali, ricevute, baseline, generatori, controlli, screenshot e `consegna.json` / `consegna.md`. Il coordinatore integra i sei file pubblici, esegue deploy, inserimento DB e controlli sui veri URL prima di dichiarare pubblicato.
+Dossier privato: `.local/lavori/articoli/quattro-articoli-20261113-1853/A/`. Contiene originali, ricevute, baseline, generatori, controlli, screenshot e `consegna.json` / `consegna.md`. Il coordinatore ha completato integrazione, deploy, inserimento DB e controlli sui veri URL; esiti sotto.
+
+
+## Pubblicazione verificata il 13 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=domande-respinte-fiere-checklist), ID `57b40695-f0cf-4c3b-a53f-edc12be7f595`. Preparato nella nuova sessione Codex 4 e pubblicato dal coordinatore. Materiali integrati `0c710b2`, Vercel riuscito `6QnGn7Cfa3NdRpbB1TSkgFyMZBwk`; copertina e XLSX online HTTP 200 con hash identici alle consegne.
+
+Prima degli inserimenti: lettura dei 135 articoli correnti, controllo duplicati, schema e vincoli; nessun trigger applicativo. Quattro soli nuovi post inseriti in sequenza. I 135 precedenti sono invariati in tutti i campi letti; totale 139. Nessun invio o modifica ai servizi.
+
+Pagina HTTP 200, titolo, descrizione, canonical, NewsArticle, indice e sitemap verificati. Cinque percorsi online PASS: Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript; download WebKit identico, due ADS contestuali, nessun overflow o errore JavaScript. Scritture del browser intercettate.
+
+Ricevute di inserimento, HTML, screenshot, esito del singolo post ed `esito-finale.json` nel dossier del coordinatore `.local/lavori/articoli/quattro-articoli-20261113-1853/`. La consegna iniziale dell’autore resta conservata come prova della fase precedente alla pubblicazione.

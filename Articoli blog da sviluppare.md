@@ -44,7 +44,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 40. 🟢 POS per ambulanti: batteria e connessione a confronto nella prova sul campo durante una giornata di mercato
 41. 🔴 Fiere lombarde: quante domande arrivano per ogni posteggio? I dati degli esiti ufficiali a confronto — ancora aperto: verifica del 13/11/2026, vecchi PDF Brescia 410, Rescaldina 403 alle richieste dirette, Grosio senza numero preciso delle domande; confronto quantitativo non sufficientemente verificato. [Limiti e criterio di scelta](data/blog/vendere-banco-netto-imposte-spese.fonti.md).
 42. 🔴 Vendo il banco: quanto mi resta dopo imposte e spese? Il prospetto da compilare con il commercialista — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=vendere-banco-netto-imposte-spese); [testo](data/blog/vendere-banco-netto-imposte-spese.html), [fonti e verifiche](data/blog/vendere-banco-netto-imposte-spese.fonti.md), [prospetto gratuito](downloads/prospetto-netto-vendita-banco.xlsx).
-43. 🔴 Domande respinte alle fiere: gli errori negli esiti comunali, con checklist prima dell'invio
+43. 🔴 Domande respinte alle fiere: gli errori negli esiti comunali, con checklist prima dell'invio — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=domande-respinte-fiere-checklist); [testo](data/blog/domande-respinte-fiere-checklist.html), [fonti e verifiche](data/blog/domande-respinte-fiere-checklist.fonti.md), [file gratuito](downloads/checklist-domanda-fiera-prima-invio.xlsx).
 44. 🟠 Vendere il posteggio da soli o con un intermediario: costi, servizi e vincoli degli incarichi a confronto
 45. 🟠 Attrezzature per ambulanti all'asta o usate da un privato: calcola il costo finale con commissioni, ritiro e riparazioni
 46. 🟠 Quanta merce porto in fiera? Il foglio per pianificare scorte e riassortimenti per prodotto e taglia
@@ -52,9 +52,9 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 48. 🟠 Street food in fiera: quante porzioni puoi servire in un'ora? La prova cronometrata con scheda per cottura, cassa e consegna
 49. 🟠 Organizzo un mercatino: come trovo sponsor tra i negozi locali? Modello di proposta e scheda per misurare i risultati
 50. 🟢 Comprare un banco in due: il foglio per confrontare capitale investito, ore lavorate e ripartizione degli utili
-51. 🔴 Compro un banco in un mercato che si svuota? Posteggi assegnati e liberi in dieci mercati lombardi a confronto
-52. 🔴 Compro un'attività ambulante: quali debiti fiscali rischio? Certificati e controlli nella scheda per il commercialista
-53. 🔴 Compro un banco ancora affittato: quando posso usarlo? Scadenze e condizioni nella scheda da verificare col notaio
+51. 🔴 Compro un banco in un mercato che si svuota? Posteggi assegnati e liberi in dieci mercati lombardi a confronto — ancora aperto: fonti consultate il 13/11/2026 insufficienti per distinguere assegnati e liberi in dieci mercati attuali; consistenza MERCap, fotografie storiche e bandi non sono equivalenti. [Fonti e limiti](data/blog/vendere-banco-dossier-documenti-acquirenti.fonti.md).
+52. 🔴 Compro un'attività ambulante: quali debiti fiscali rischio? Certificati e controlli nella scheda per il commercialista — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=acquisto-attivita-ambulante-debiti-fiscali); [testo](data/blog/acquisto-attivita-ambulante-debiti-fiscali.html), [fonti e verifiche](data/blog/acquisto-attivita-ambulante-debiti-fiscali.fonti.md), [file gratuito](downloads/scheda-debiti-fiscali-acquisto-ambulante.xlsx).
+53. 🔴 Compro un banco ancora affittato: quando posso usarlo? Scadenze e condizioni nella scheda da verificare col notaio — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=comprare-banco-ancora-affittato); [testo](data/blog/comprare-banco-ancora-affittato.html), [fonti e verifiche](data/blog/comprare-banco-ancora-affittato.fonti.md), [file gratuito](downloads/scheda-acquisto-banco-affittato.xlsx).
 54. 🟠 Rinuncio a una fiera già prenotata: quanto perdo? Termini e penali nei regolamenti lombardi a confronto
 55. 🟠 Rifornire il banco: consegna del grossista o ritiro in magazzino? Il foglio per confrontare minimi d'ordine, trasporto e ore
 56. 🟠 Assumere un aiuto al banco per le fiere conviene? Calcola le vendite aggiuntive necessarie con il costo verificato dal consulente del lavoro
@@ -64,7 +64,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 60. 🟢 Street food senza allaccio idrico: quanta acqua serve davvero? La scheda per misurare consumi e autonomia durante il servizio
 
 61. 🔴 Riconsegno un banco preso in affitto: il verbale compilabile per confrontare attrezzature, scorte e danni con l'inventario iniziale
-62. 🔴 Vendo il banco: quali documenti mostrare e a chi? Il dossier per acquirenti con dati da oscurare e registro delle condivisioni
+62. 🔴 Vendo il banco: quali documenti mostrare e a chi? Il dossier per acquirenti con dati da oscurare e registro delle condivisioni — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=vendere-banco-dossier-documenti-acquirenti); [testo](data/blog/vendere-banco-dossier-documenti-acquirenti.html), [fonti e verifiche](data/blog/vendere-banco-dossier-documenti-acquirenti.fonti.md), [file gratuito](downloads/dossier-vendita-banco-condivisioni.xlsx).
 63. 🔴 Compro il banco ma il venditore riapre nello stesso mercato: la scheda su concorrenza e accordi da verificare con il professionista
 64. 🟠 Banco refrigerato per il mercato: confronta costo d'acquisto e consumi misurati durante una giornata di lavoro
 65. 🟠 Street food: quanto incidono vaschette, bicchieri e posate su ogni ordine? Il calcolatore con preventivi e quantità minime a confronto
