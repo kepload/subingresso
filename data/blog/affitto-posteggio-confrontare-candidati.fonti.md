@@ -1,6 +1,6 @@
 # Fonti e limiti: confronto dei candidati all'affitto
 
-Preparato il **12 novembre 2026**, priorità **32** dell'elenco editoriale,
+Preparato il **12 novembre 2026** e **pubblicato il 13 novembre 2026**, priorità **32** dell'elenco editoriale,
 su incarico di sviluppare un solo articolo. Il tema 14 resta aperto: il confronto
 aggiornato tra ricerche e offerta non è acquisibile durante il disservizio e
 le ricerche geografiche non documentano una domanda per settore.
@@ -78,28 +78,33 @@ nessun overflow o errore JavaScript. Scritture browser intercettate.
 Regole contestuali vuote come fixture dichiarata, con selezione predefinita:
 le regole live non sono certificate durante l'indisponibilità del database.
 
-## Stato della pubblicazione
+## Preparazione e blocco del 12 novembre
 
-**In attesa del database: non dichiarato pubblicato.**
-REST Supabase HTTP 522; query Management, anche `SELECT 1`, HTTP 544 per
-timeout di connessione; blog pubblico HTTP 503. Progetto segnalato
-ACTIVE_HEALTHY dall'API di gestione, dato che non prova la disponibilità SQL.
-[Incidente ufficiale Supabase: Database Connection Errors](https://status.supabase.com/incidents/01M78QJT3GQX4V7VV88MBTQ5X3)
-in corso durante i controlli. Nessun riavvio, modifica di configurazione
-o aggiramento del servizio tentato.
+Materiali `70142c0` distribuiti con Vercel riuscito
+`8nuyXZoHHtJwTsnP9iDDzVBdQBrS`; copertina e XLSX HTTP 200 e identici.
+La pubblicazione del testo era rimasta sospesa: REST 522, SQL 544 anche
+per `SELECT 1`, blog 503 alle 22:29 UTC. Il progetto ACTIVE_HEALTHY non
+dimostrava disponibilità SQL. L'[incidente ufficiale Supabase](https://status.supabase.com/incidents/01M78QJT3GQX4V7VV88MBTQ5X3)
+impediva i controlli live: nessun INSERT, riavvio, modifica ai servizi o ciclo
+automatico durante il blocco. Le letture e le verifiche mancanti sono state
+completate il giorno successivo prima dell'inserimento.
 
-Lo snapshot del 10 novembre e il registro non mostrano il tema tra gli
-articoli precedenti; manca ancora il controllo live completo di duplicati,
-schema e trigger. Nessun INSERT eseguito prima di tali verifiche.
-URL previsto, **non ancora pubblicato**:
-`https://subingresso.it/blog?post=affitto-posteggio-confrontare-candidati`.
-Materiali, controlli e stato finale nel dossier privato indicato sopra;
-la voce 32 va spuntata soltanto dopo inserimento e verifica della pagina live.
+## Pubblicazione verificata il 13 novembre 2026
 
-**Materiali salvati e distribuiti:** commit `70142c0` su origin/main,
-Vercel riuscito `8nuyXZoHHtJwTsnP9iDDzVBdQBrS`. Copertina e XLSX online
-HTTP 200 con SHA256 identici ai file locali. Il successo del deploy dei file
-non equivale alla pubblicazione dell'articolo nel database. Ultima verifica
-servizi alle **22:29 UTC del 12 novembre**: REST 522, SQL 544 per timeout,
-blog 503. Non eseguiti INSERT, controlli live di indice/sitemap del nuovo post
-o confronto finale completo degli articoli preesistenti. Nessun ciclo attivato.
+[Articolo pubblico](https://subingresso.it/blog?post=affitto-posteggio-confrontare-candidati),
+ID `c18537f2-cc5f-4fc9-9dca-29de6cf2fe66`, inserito alle 00:54:56 UTC.
+Prima dell'inserimento: lettura dei 132 articoli correnti, esame dei titoli
+per duplicati, schema e vincolo UNIQUE sullo slug, nessun trigger applicativo.
+Contenuti e risorse corrispondono all'anteprima già verificata.
+
+Pagina HTTP 200, titolo, descrizione, canonical e NewsArticle verificati;
+presenza nell'indice e nella sitemap confermata. Copertina e XLSX identici
+SHA256, deploy dei materiali `45ab266` riuscito. Chromium 1440/768/320,
+WebKit 390 e lettura senza JavaScript: cinque percorsi PASS, download
+WebKit identico, due ADS contestuali live, nessun errore JS o overflow.
+Le scritture del browser sono state intercettate.
+
+Dopo l'inserimento anche del distinto articolo sulla caparra, i 132 post
+precedenti sono invariati in tutti i campi letti e i post totali sono 134.
+Nessuna email o modifica ai servizi. Ricevute di inserimento, confronto,
+HTML, screenshot e `esito-finale.json` nel dossier privato indicato sopra.

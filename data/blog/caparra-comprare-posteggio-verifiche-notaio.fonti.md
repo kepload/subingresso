@@ -1,6 +1,6 @@
 # Fonti ed esito: caparra per comprare un posteggio
 
-Priorità **33**, sviluppata il **12 novembre 2026** in sessione e worktree separati. Articolo completo con risorsa gratuita; **DA PUBBLICARE**. Il punto 14 resta aperto e il punto 32 appartiene all'altra sessione. Questa nota non certifica una pubblicazione del testo nel database.
+Priorità **33**, sviluppata il **12 novembre 2026** in sessione e worktree separati e **pubblicata il 13 novembre 2026** dopo il ripristino di Supabase. Articolo completo con risorsa gratuita. Il punto 14 resta aperto; il distinto articolo 32 è stato pubblicato nella stessa ripresa.
 
 ## Fonti primarie e limiti
 
@@ -19,22 +19,28 @@ Checklist, ordine dei controlli e domande sono proposte redazionali da adattare 
 
 Copertina originale con skill imagegen e strumento integrato, WebP 1600×900, scena inventata dichiarata nel testo. Prompt integrale nel file omonimo `.prompt.md`; originale nel dossier privato. Risorsa definitiva: `images/blog/caparra-comprare-posteggio-verifiche-notaio.webp`. SHA256: `bc8b83a206fd4bdd96330ba84c4d1f9ed3b10c12d87f67656a6d67a40c94ef0c`.
 
-## Verifiche e blocco della pubblicazione
+## Verifiche e preparazione del 12 novembre
 
 Testo di **594 parole**, sei sezioni brevi, tre punti iniziali, due slot ADS contestuali esistenti e spazio Vetrine conservato. Nessuna modifica ai template. Anteprima isolata con rendering SSR corrente: Chromium 1440/768/320, WebKit 390 e Chromium senza JavaScript **PASS**. Verificati titolo, descrizione, canonical, NewsArticle, copertina, download, due ADS pertinenti all'acquisto e assenza di overflow/errori JavaScript. Tutte le scritture browser intercettate. Le regole contestuali usate nell'anteprima sono una fixture vuota esplicita, con selezione dal catalogo esistente: non una certificazione delle regole o del database live.
 
-Ricerca duplicati: nessun precedente titolo/slug su caparra/preliminare nella baseline storica di 131 articoli del 10 novembre e nei metadati locali; il nuovo titolo stesso è escluso dal confronto. **Controllo duplicati live ancora da eseguire**. La baseline storica non prova lo stato corrente.
+Ricerca iniziale dei duplicati: nessun precedente titolo/slug su caparra/preliminare nella baseline storica di 131 articoli del 10 novembre e nei metadati locali; il nuovo titolo stesso è escluso dal confronto. Il controllo live, impossibile durante il blocco, è stato completato il 13 novembre prima della pubblicazione.
 
 Prima prova diretta alle **23:27 CET**: REST **522**, Management SQL **544** anche per `SELECT 1`, pagina blog **503**. Nessun INSERT, nessun aggiornamento di articoli precedenti e nessun intervento sui servizi. Schema e trigger correnti non verificabili: lo script di pubblicazione richiede letture vive, duplicati, schema e trigger prima di un eventuale inserimento. Nuove prove ed esiti Git/Vercel vengono aggiunti sotto.
 
 Backup remoto preventivo verificato: `backup/session-20261112-232224-articolo-caparra-posteggio-33`, HEAD `ed172fe`. Worktree `.local/worktrees/articolo-caparra-posteggio-20261112`, ramo `articolo/caparra-posteggio-20261112`. Materiali e verifiche private nella root principale, `.local/lavori/articoli/caparra-posteggio-20261112/`.
 
-URL previsto, **non ancora pubblicato**: `https://subingresso.it/blog?post=caparra-comprare-posteggio-verifiche-notaio`. Nessun ID articolo assegnato.
+[Articolo pubblico](https://subingresso.it/blog?post=caparra-comprare-posteggio-verifiche-notaio), ID `96355d9d-2b66-4229-9c1a-debffc5e0c4d`, inserito il 13 novembre alle 00:55:18 UTC.
 
-## Materiali distribuiti, articolo ancora da pubblicare
+## Distribuzione dei materiali e blocco del 12 novembre
 
 Materiali `d232448`, integrazione di origin/main fino a `04d1013` e push `0302bf2`. Conservati il punto 32, il suo registro aggiornato e tutti i suoi oggetti Git; il punto 14 è invariato. Gitleaks superato sul commit dei materiali e sull'integrazione. Vercel **success**, deploy `79oD19AKq4XRLgtJxanhcdrAxbJc`: copertina e XLSX online HTTP 200, SHA256 identici ai file verificati. Download effettivo del foglio in WebKit 390 sull'anteprima riuscito e identico.
 
-Ultima prova alle **23:33 CET (22:33 UTC) del 12 novembre 2026**: REST **522**, Management SQL **544**, blog **503**, dopo due prove precedenti con lo stesso esito. **Nessun INSERT eseguito e nessun ID assegnato.** Non verificabili duplicati/schema/trigger correnti, pagina pubblica del nuovo post, indice/sitemap o conservazione completa del DB. Nessuna riparazione, automazione o ciclo di riprova avviato. Il successo del deploy delle risorse non equivale alla pubblicazione dell'articolo.
+Ultima prova del 12 novembre alle **23:33 CET (22:33 UTC)**: REST **522**, Management SQL **544**, blog **503**, dopo due prove precedenti con lo stesso esito. A quella data nessun INSERT eseguito e nessun ID assegnato; non verificabili duplicati/schema/trigger correnti, pagina pubblica del nuovo post, indice/sitemap o conservazione completa del DB. Nessuna riparazione, automazione o ciclo di riprova avviato. Il solo deploy delle risorse non era una pubblicazione dell'articolo.
 
-Per la ripresa: dossier privato `consegna.md`, `esito-finale.json`, `verifica-pubblicazione.cjs`, ricevute `stato-live-*.json`, screenshot e copie delle fonti. Al ripristino servono prima letture vive e controlli; non segnare pubblicato prima dell'inserimento e della verifica reale.
+Storico e prove nel dossier privato: `consegna.md`, `esito-finale.json`, `verifica-pubblicazione.cjs`, ricevute `stato-live-*.json`, screenshot e copie delle fonti.
+
+## Pubblicazione verificata il 13 novembre 2026
+
+Prima dell'inserimento sono stati letti tutti i titoli correnti, lo schema, i vincoli e i trigger: nessun duplicato del tema, vincolo UNIQUE sullo slug, nessun trigger applicativo. La baseline di 133 post comprendeva il distinto articolo 32 appena pubblicato. Un solo inserimento del punto 33; tutti i 133 record precedenti invariati in ogni campo letto, 134 totali. Anche il confronto con la baseline iniziale dei 132 post prima di entrambi gli inserimenti è riuscito.
+
+Pagina pubblica HTTP 200, titolo, descrizione, canonical, NewsArticle, presenza nell'indice e nella sitemap verificati. Copertina e XLSX HTTP 200 con hash identici, deploy dei materiali `45ab266` riuscito. Verifica online Chromium 1440/768/320, WebKit 390 e lettura senza JavaScript: cinque percorsi PASS, download WebKit identico al file locale, due ADS contestuali per acquirenti, nessun overflow o errore JavaScript. Tutte le scritture del browser intercettate; nessuna email o modifica ai servizi. Ricevute dell'inserimento e delle verifiche, HTML, screenshot ed esito finale nel dossier privato già indicato.
