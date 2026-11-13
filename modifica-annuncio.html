@@ -204,6 +204,7 @@
                     Salva Modifiche
                 </button>
             </form>
+            <p id="saveStatus" role="status" tabindex="-1" class="text-sm font-bold text-slate-600 mt-4" hidden></p>
         </div>
     </div>
 </main>
@@ -219,6 +220,13 @@
 const params = new URLSearchParams(location.search);
 const listingId = params.get('id');
 let _comunePicker = null;
+let _isSaving = false;
+const _pendingPhotoReads = new Set();
+
+document.getElementById('annuncioForm').addEventListener('submit', event => {
+    event.preventDefault();
+    updateAnnuncio();
+});
 
 document.addEventListener('DOMContentLoaded', async () => {
     if (!listingId) { location.href = '/dashboard'; return; }
@@ -314,10 +322,11 @@ let _currentExtra = {};
 const _maxPhotos = 5;
 const _photoFiles = new WeakMap();
 
-dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('click', () => { if (!_isSaving) fileInput.click(); });
 fileInput.addEventListener('change', e => { handleFiles(e.target.files); fileInput.value = ''; });
 
 function handleFiles(files) {
+    if (_isSaving) return;
     for (let f of files) {
         if (_newFiles.length + _currentImageUrls.length >= _maxPhotos) {
             showToast(`Puoi aggiungere fino a ${_maxPhotos} foto.`, 'warning');
@@ -333,9 +342,28 @@ function handleFiles(files) {
             continue;
         }
         _newFiles.push(f);
+        // Riserva subito il posto: l'ordine non dipende dalla velocità di lettura.
+        const div = addPreview('', false, f);
         const reader = new FileReader();
-        reader.onload = e => { if (_newFiles.includes(f)) addPreview(e.target.result, false, f); };
-        reader.readAsDataURL(f);
+        let finishRead;
+        const pending = new Promise(resolve => { finishRead = resolve; });
+        _pendingPhotoReads.add(pending);
+        const finish = ok => { _pendingPhotoReads.delete(pending); finishRead(ok); };
+        reader.onload = e => {
+            if (div.isConnected) div.querySelector('img').src = e.target.result;
+            finish(true);
+        };
+        const failRead = () => {
+            const wasSelected = div.isConnected;
+            const idx = _newFiles.indexOf(f);
+            if (idx !== -1 && wasSelected) _newFiles.splice(idx, 1);
+            div.remove();
+            if (wasSelected) showToast('Una foto non si è aperta. Prova a sceglierla di nuovo.', 'warning');
+            finish(!wasSelected);
+        };
+        reader.onerror = failRead;
+        reader.onabort = failRead;
+        try { reader.readAsDataURL(f); } catch (_) { failRead(); }
     }
 }
 
@@ -345,15 +373,17 @@ function addPreview(src, isExisting, file = null) {
     div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
     if (isExisting) div.dataset.originalSrc = src;
     div.innerHTML = `
-        <img src="${escapeHTML(isExisting ? getOptimizedImageUrl(src, 192) : src)}" class="w-full h-full object-cover">
+        <img ${src ? `src="${escapeHTML(isExisting ? getOptimizedImageUrl(src, 192) : src)}"` : ''} class="w-full h-full object-cover">
         <button type="button" aria-label="Rimuovi foto" style="width:32px;height:32px" class="absolute top-1 right-1 bg-red-500 text-white rounded-full text-[10px] flex items-center justify-center transition" onclick="removePreview(this, ${isExisting})">
             <i class="fas fa-times"></i>
         </button>`;
     preview.appendChild(div);
     if (file) _photoFiles.set(div, file);
+    return div;
 }
 
 function removePreview(btn, isExisting) {
+    if (_isSaving) return;
     const div = btn.parentElement;
     if (isExisting) {
         // Rimuovi dalle URL correnti (bisogna trovare l'indice corretto tra le URL esistenti)
@@ -367,7 +397,10 @@ function removePreview(btn, isExisting) {
 }
 
 async function updateAnnuncio() {
+    if (_isSaving) return;
     const btn = document.querySelector('button[onclick="updateAnnuncio()"]');
+    const form = document.getElementById('annuncioForm');
+    const status = document.getElementById('saveStatus');
 
     // Validazione campi obbligatori
     const titolo = document.getElementById('fTitolo').value.trim();
@@ -413,17 +446,29 @@ async function updateAnnuncio() {
         showToast('Scrivi una descrizione da 40 a 10.000 caratteri.', 'warning');
         return;
     }
-    if (btn.disabled) return;
+    const stato = document.querySelector('input[name="stato"]:checked').value;
+    const imageUrls = [..._currentImageUrls];
+    const newFiles = [..._newFiles];
+    const extra = { ..._currentExtra };
+    _isSaving = true;
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Salvataggio...';
+    form.inert = true;
+    form.setAttribute('aria-busy', 'true');
+    status.textContent = 'Salvataggio...';
+    status.hidden = false;
+    status.focus({ preventScroll: true });
 
     try {
+        // Anche le letture locali iniziate prima del clic fanno parte della revisione.
+        const photoReads = await Promise.all([..._pendingPhotoReads]);
+        if (photoReads.includes(false)) throw new Error('Controlla le foto e salva di nuovo.');
         const user = await getCurrentUser();
         if (!user) throw new Error('Accedi nuovamente per salvare le modifiche.');
 
         // 1. Upload nuove foto
         const newUrls = [];
-        for (let file of _newFiles) {
+        for (let file of newFiles) {
             const uploadFile = file;
             if (uploadFile.size > 20 * 1024 * 1024) throw new Error('Ogni foto deve pesare al massimo 20 MB.');
             const fileExt = uploadFile.name.split('.').pop();
@@ -439,7 +484,7 @@ async function updateAnnuncio() {
             }
         }
 
-        const finalImages = [..._currentImageUrls, ...newUrls];
+        const finalImages = [...imageUrls, ...newUrls];
 
         const updated = {
             titolo,
@@ -451,9 +496,9 @@ async function updateAnnuncio() {
             descrizione,
             contatto: nome,
             tel: normalizePhone(tel),
-            stato: document.querySelector('input[name="stato"]:checked').value,
+            stato,
             dettagli_extra: {
-                ..._currentExtra,
+                ...extra,
                 images: finalImages
             },
             img_urls: finalImages,
@@ -464,13 +509,20 @@ async function updateAnnuncio() {
         if (error) throw error;
         if (!saved) throw new Error('Modifiche non salvate. Controlla l’accesso e riprova.');
         
+        form.removeAttribute('aria-busy');
+        status.textContent = 'Modifiche inviate per revisione.';
         showToast('Modifiche inviate per revisione. L\'annuncio tornerà online dopo l\'approvazione admin.', 'success');
         setTimeout(() => { window.location.href = '/dashboard'; }, 1200);
 
     } catch (err) {
         showToast('Errore: ' + err.message, 'error');
+        _isSaving = false;
+        form.inert = false;
+        form.removeAttribute('aria-busy');
+        status.hidden = true;
         btn.disabled = false;
         btn.innerHTML = 'Salva Modifiche';
+        btn.focus({ preventScroll: true });
     }
 }
 </script>

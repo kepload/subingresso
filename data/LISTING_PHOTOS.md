@@ -31,6 +31,27 @@ Nessuna conversione/cancellazione delle foto già pubblicate.
 La modifica degli annunci esistenti conserva il proprio selettore e limite
 precedente di 20 MiB. La richiesta riguarda il modulo di creazione.
 
+## Salvataggio della modifica — 13 novembre 2026 (A-05)
+
+`modifica-annuncio.html` salva una sola revisione di campi, tipo di annuncio,
+contatti e foto. Prima di ogni attesa copia i valori e gli array delle foto;
+il modulo diventa `inert`, con stato di salvataggio annunciato fuori dal modulo
+e focus sullo stato. Sono bloccati anche aggiunta/rimozione foto e richiami
+duplicati, inclusi i callback tardivi del selettore file. L'upload attende le
+anteprime già in lettura: i posti sono riservati subito, nell'ordine di scelta,
+e una foto rimossa non ricompare. Se una foto selezionata non si apre, il
+salvataggio si interrompe prima degli upload e permette di sceglierla di nuovo.
+
+Successo: modulo bloccato fino al ritorno alla dashboard, senza altri UPDATE.
+Errore di accesso, lettura foto, upload o UPDATE: sblocco con valori/foto rimasti
+nel modulo e focus su Salva; la regione automatica resta disabilitata. Il retry
+acquisisce una nuova revisione. Nessun cambiamento a query, schema, provider o
+pubblicazione iniziale. La cache degli upload al retry resta fuori da A-05
+(rilievo A-06); restano invariati selettore, formati e limite di 20 MiB.
+
+Prove con provider simulati: `scripts/test-listing-edit-save.cjs`, Chromium e
+WebKit; `A05_PROOFS` salva gli esiti, `FORM_TEST_HTML` verifica l'HTML pubblicato.
+
 Verifiche: `scripts/test-listing-photo-formats.cjs` con Playwright e
 `HEIC_TEST_FILE` per un campione HEIC; browser Chromium/WebKit, integrità
 SHA256, anteprime reali, MIME assente, file falsi, soglia esatta e +1 byte,
