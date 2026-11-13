@@ -103,8 +103,8 @@ storiche degli articoli non riflettono le pubblicazioni successive: verificare
 ## Bug da correggere — audit dell'11 novembre 2026
 
 **Audit originale: 30 rilievi, 2 P1, 24 P2 e 4 P3.** Corretti e applicati
-**C-07/C-01 l'11 novembre, C-03/C-09 il 12 novembre e A-01 il 13 novembre**, con sessioni isolate
-e integrazione sequenziale. Restano **25 aperti: 21 P2 e 4 P3**. Permessi SQL,
+**C-07/C-01 l'11 novembre, C-03/C-09 il 12 novembre e A-01/A-05 il 13 novembre**, con sessioni isolate
+e integrazione sequenziale. Restano **24 aperti: 20 P2 e 4 P3**. Permessi SQL,
 rifiuti HTTP, bundle e asset pubblicati verificati; comportamento con fixture
 in browser e provider simulati. Nessun account o invio reale di prova, né
 verifica end-to-end del mittente Auth o delle consegne del digest.
@@ -123,16 +123,17 @@ verifica end-to-end del mittente Auth o delle consegne del digest.
 | C-03 | Logout/cambio identità svuotano il profilo e revocano le risposte tardive; apertura con identità verificata. 244 controlli browser e asset pubblicati conformi. `data/DASHBOARD_SESSION_ISOLATION.md`. |
 | C-09 | Query su `settore` e stop sugli errori DB; Edge v19 verificata, cron conservato. 51 scenari locali, nessuna esecuzione live di prova. `data/WEEKLY_BUYER_DIGEST.md`. |
 
-### P2 — corretto il 13 novembre 2026
+### P2 — corretti il 13 novembre 2026
 
 | ID | Esito |
 |---|---|
 | A-01 | ID stabile nella bozza e riconciliazione per ID/proprietario: risposta persa, timeout e retry dopo ricaricamento non creano un secondo annuncio. 50 scenari Chromium/WebKit PASS, schema e asset online verificati. Limite preesistente del runtime WebKit su foto IndexedDB; contratto `data/LISTING_PUBLICATION.md`. |
+| A-05 | Modulo bloccato durante il salvataggio, snapshot unico e ordine foto conservato anche con letture lente; errore con ripresa e focus su Salva. 48 scenari locali e due online Chromium/WebKit PASS, provider simulati e HTML pubblicato identico. Contratto `data/LISTING_PHOTOS.md`; A-06/A-14/A-15 invariati. |
 
 ### P2 — difetti ancora aperti, per categoria
 
-Prossimi nell'ordine iniziale del riesame: **A-05**, poi
-**A-07/A-09/B-04**; gli altri restano P2 senza una graduatoria ulteriore
+Prossimi nell'ordine iniziale del riesame: **A-07/A-09/B-04**;
+gli altri restano P2 senza una graduatoria ulteriore
 certificata. Un problema condizionale non implica un guasto per tutti gli utenti.
 
 **Account, comunicazioni e servizi — 6**
@@ -146,11 +147,10 @@ certificata. Un problema condizionale non implica un guasto per tutti gli utenti
 | C-10 | Il riepilogo venditori confronta la settimana con il totale storico anziché con la settimana precedente dichiarata. |
 | C-11 | Durante la rotazione dei segreti Stripe, firme multiple valide possono causare il rifiuto di notifiche legittime in base all'ordine delle firme. |
 
-**Annunci, ricerca e marketplace — 8**
+**Annunci, ricerca e marketplace — 7**
 
 | ID | Problema |
 |---|---|
-| A-05 | Modificare campi o foto durante il salvataggio può perdere modifiche o confermare dati diversi da quelli visibili. |
 | A-07 | Le pagine città/provincia escludono alcune località o frazioni valide anche con provincia nota; un caso confermato online. |
 | A-09 | Alle pagine città mancano navigazione e footer condivisi. |
 | A-02 | Memoria del browser piena o bloccata: la ricerca si interrompe e conserva risultati precedenti. |
@@ -193,7 +193,7 @@ reale verificata; il controllo aggiuntivo C è stato fermato da un blocco automa
 e il riesame è rimasto documentale, senza ulteriori test. Test obsoleti, verifiche
 incomplete e sospetti esclusi restano nei rapporti, non sono ulteriori bug.
 L'audit originale non autorizzava modifiche. Gli incarichi successivi hanno
-riguardato soltanto C-07/C-01, C-03/C-09 e A-01; gli altri rilievi non autorizzano
+riguardato soltanto C-07/C-01, C-03/C-09 e A-01/A-05; gli altri rilievi non autorizzano
 nuovi interventi.
 
 Fonti private sotto `.local/verifiche/audit-tre-sessioni-20261111/`:
@@ -222,6 +222,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **13 novembre 2026 — corretto A-05:** modifica annunci con campi/foto bloccati fino all'esito, ordine delle anteprime stabile e ripresa da errore con focus su Salva. Materiali `629a1a8`, Vercel `dpl_6anH15EFLD6s5LYpTVoghLrw6gYb` READY e HTML identico; 48 scenari locali e due sul sito pubblico PASS, provider simulati. A-01: 50 regressioni PASS e quattro asset invariati. Nessuna mutazione di dati reali di prova, modifica SQL/Edge o intervento sugli altri bug. Restano 24 rilievi aperti; nessuna prosecuzione autonoma. [Contratto](data/LISTING_PHOTOS.md), rapporto e prove `.local/lavori/bugfix-sequenziali-20261113-2137/A-05-esito.md`.
 
 - **13 novembre 2026 — corretto A-01:** pubblicazione idempotente con ID salvato nella bozza e recupero dell'esito per ID/proprietario, senza upsert o modifiche SQL/Edge. Materiali `c46a43e`, Vercel `dpl_CA1E7AYhUKGo7HPEDF5ZVMF78Tj7` READY e quattro asset identici. 50 scenari A-01 Chromium/WebKit PASS, regressione completa Chromium e località WebKit PASS; errore foto IndexedDB del runtime WebKit riprodotto anche sull'HTML precedente. Nessun dato/email/pagamento di prova online. Restano 25 rilievi aperti; nessuna prosecuzione autonoma. [Contratto](data/LISTING_PUBLICATION.md), rapporto e prove `.local/lavori/bugfix-sequenziali-20261113-2137/A-01-esito.md`.
 
