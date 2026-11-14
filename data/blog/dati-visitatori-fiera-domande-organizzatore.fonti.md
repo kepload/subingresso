@@ -1,6 +1,6 @@
 # «Migliaia di visitatori»: fonti e verifiche
 
-Priorità **17**, singolo articolo. **Preparato il 14 novembre 2026; non pubblicato in questa fase.** Slug `dati-visitatori-fiera-domande-organizzatore`. Il secondo turno sarà avviato dal coordinatore nell'ordine concordato. Nessuna modifica a documenti comuni, main, DB, template, CSS, JS o servizi.
+Priorità **17**, singolo articolo. **Preparato e poi pubblicato e verificato il 14 novembre 2026**, in due turni coordinati. Slug `dati-visitatori-fiera-domande-organizzatore`. La prima fase comprendeva solo i sei materiali propri; la pubblicazione è stata autorizzata separatamente dal coordinatore. Nessuna modifica a template, CSS, JS, schema o servizi.
 
 ## Ricerca e duplicati
 
@@ -48,4 +48,18 @@ Adattamenti della sola prova: `NewsArticle.image` è l'array prodotto dal templa
 
 Worktree `.local/worktrees/accelera1-20261114-1721-17`, branch `articolo/accelera1-20261114-1721-17`, baseline `83194ff753205aa22d61df6cf96ac75615dc2a20`. Backup di sessione eseguito dalla root principale e verificato su origin: `backup/session-20261114-172500-articolo-17-dati-visitatori-preparazione`, destinazione `0378eebc5971145158b405da119f6e92932861f6` (HEAD della root, distinta dalla baseline del worktree). Lavoro altrui preservato; nessuna pulizia aggiuntiva.
 
-Dossier privato: `.local/lavori/articoli/accelerazione-codex1-20261114-1721/articolo-17/` nella root principale. Contiene checkpoint, fonti, script di generazione e test, originali e screenshot. Consegna del turno in `prepared.json` e `prepared.md`, con commit dei soli sei materiali e hash definitivi. **Nessun INSERT/UPDATE/DELETE, push a main o pubblicazione eseguito.** Verifiche online, schema/trigger e nuovo baseline LIVE spettano al secondo turno, dopo integrazione sequenziale di `origin/main` secondo mandato; non vanno dichiarate già superate.
+Dossier privato: `.local/lavori/articoli/accelerazione-codex1-20261114-1721/articolo-17/` nella root principale. Contiene checkpoint, fonti, script di generazione e test, originali e screenshot. La consegna della preparazione resta in `prepared.json` e `prepared.md`, con commit dei soli sei materiali e hash definitivi; a quel momento non erano stati eseguiti INSERT, push a main o pubblicazione. Il secondo turno autorizzato e i suoi esiti sono documentati sotto.
+
+## Pubblicazione verificata — 14 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=dati-visitatori-fiera-domande-organizzatore), ID `e8e14a46-f066-4340-b2c7-217af1b5d797`. Pubblicazione DB: **14 novembre 2026, 17:01:11 UTC** (18:01 in Italia). Materiali `f77b091cd0052daf5d58ce50174b96adf41ae3a2`; integrato `origin/main` indicato dal coordinatore (`f76f277`) tramite merge senza conflitti, commit `01797b42ce40311e9f75a0e12af7fbf57a167dbe`. Contributi degli autori precedenti preservati.
+
+Nuovo backup del worktree prima dell'integrazione: `backup/session-20261114-175744-articolo-17-pubblicazione`, destinazione `f77b091`, verificato su origin. Solo cleanup locale standard dell'helper; riferimenti remoti conservati, nessun'altra pulizia. Hook non bypassato; scansione Gitleaks con binario condiviso e configurazione del progetto sul commit proprio, exit 0 e nessun segreto.
+
+Push a main verificato; deploy Vercel **HojR4bZg1TzZ9YeuH225jd6aT2ro riuscito**, copertina e XLSX pubblici HTTP 200 con SHA256 identici alla preparazione prima dell'INSERT. Nuove letture LIVE di schema, vincoli, trigger e duplicati; nove colonne, unicità dello slug, RLS attiva e nessun trigger applicativo al controllo. Eseguito **un solo INSERT** del nuovo post, con controllo di assenza e ricevute prima/dopo. Nessun UPDATE/DELETE o modifica a post precedenti.
+
+Confronto LIVE su tutte le nove colonne: **146 post precedenti invariati, 147 totali**. Pagina SSR pubblica HTTP 200, titolo, descrizione, canonical, NewsArticle e data effettiva verificati; presenza nell'indice e nella sitemap pubblici. Copertina e XLSX online identici agli hash sopra.
+
+**Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. Testo e copertina leggibili, sei sezioni, due ADS fiere con ID distinti, assenza di overflow/errori JS. **Quattro download effettivi** tramite click, tutti identici all'XLSX definitivo. Screenshot desktop, WebKit e senza JS esaminati. Scritture browser analytics/provider intercettate; letture browser Supabase isolate. Nessun account, email, annuncio o pagamento reale di prova.
+
+Ricevute private: `push-main-prima.json`, `push-main-dopo.json`, `deploy-01797b4.json`, `schema-prima-insert.json`, `blog-prima-insert.json`, `insert-prima.json`, `insert-dopo.json`, `invarianza-post.json`, `online-verificato.json`, HTML/indice/sitemap pubblici, screenshot e download. Elenco e memoria aggiornati solo per l'articolo 17; consegna conclusiva in `result.json` e `result.md`.
