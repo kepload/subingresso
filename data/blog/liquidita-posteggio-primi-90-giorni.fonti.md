@@ -1,6 +1,6 @@
 # Liquidità dopo l’acquisto del posteggio — fonti e preparazione
 
-Priorità **15**, articolo unico. Preparato il **14 novembre 2026**, **non pubblicato** in questa fase. Nessun inserimento nel database, push su main o modifica ai documenti comuni. Slug originale: `liquidita-posteggio-primi-90-giorni`.
+Priorità **15**, articolo unico. Preparato il **14 novembre 2026**, **pubblicato e verificato il 14 novembre 2026** nel secondo turno autorizzato dal coordinatore. La preparazione aveva lasciato invariati DB, main e documenti comuni. Slug originale: `liquidita-posteggio-primi-90-giorni`.
 
 ## Promessa e controllo duplicati
 
@@ -47,10 +47,25 @@ Cinque percorsi PASS: **Chromium 1440/768/320**, **WebKit 390**, **Chromium 390 
 
 Le prime due esecuzioni dello script di anteprima avevano asserzioni troppo strette: immagine NewsArticle attesa singola anziché array e `naturalWidth` confuso con la larghezza binaria sotto `srcset`. Corrette soltanto le asserzioni. Copertina e template erano corretti; l’esecuzione finale completa è passata. Le ricevute finali descrivono solo questa esecuzione riuscita.
 
-## Ripresa e pubblicazione coordinata
+## Consegna della preparazione e ordine di pubblicazione
 
 Dossier privato: `.local/lavori/articoli/accelerazione-codex1-20261114-1721/articolo-15/` nella root principale. Contiene ricevute fonti, baseline live, contenuti dei due post affini, generatori, test, cache, screenshot e `prepared.json`/`prepared.md` con commit e hash definitivi.
 
 Backup remoto preventivo verificato: `backup/session-20261114-172502-articolo-15-cassa-90-giorni`, commit **`83194ff753205aa22d61df6cf96ac75615dc2a20`**. Il primo push del tag è stato rifiutato; il secondo è riuscito e il tag remoto dereferenziato coincide con HEAD iniziale.
 
-La pubblicazione e tutte le verifiche online sono riservate al secondo turno avviato dal coordinatore, dopo articolo 8 e autori precedenti. Prima di qualsiasi mutazione: recuperare e integrare origin/main con merge, rileggere lo stato live e verificare duplicati/schema/vincoli/trigger. Dopo il deploy verificare asset, download, SSR, indice e sitemap pubblici. Nessuna presenza online, deploy o conservazione dei record precedenti dopo un inserimento è dichiarata in questa preparazione.
+La consegna iniziale riservava pubblicazione e verifiche online al secondo turno, dopo articolo 8 e autori precedenti. Il coordinatore ha autorizzato quel turno; i relativi controlli e gli esiti effettivi sono riportati sotto. `prepared.json` e `prepared.md` restano conservati come ricevute della preparazione.
+
+
+## Pubblicazione verificata il 14 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=liquidita-posteggio-primi-90-giorni), record **`4d5c7e56-fd37-43e1-ab59-4b1c3fa4ebf4`**, data DB **2026-11-14T16:44:33.179922+00:00**. Un solo INSERT; nessun UPDATE/DELETE di post. Tutti i **144 record precedenti invariati nei nove campi**, **145 totali**: confronto integrale delle righe prima e dopo, ripetuto alla verifica online.
+
+Materiali preparati `a89a70713799fa5f55f94e8bd562d1a78c569ef2`; integrato con merge origin/main `ed11e17d4964ae38a3b52d7295d5644f4273b00e`, senza conflitti né perdita dei contributi precedenti. Push materiali `e311eaee2e4decbd2cfe1dd2c4b133d2ce69412d`; [deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3qLAdYeVDkTpMDHKD6jfNNN5G4Jw). Backup preventivo del secondo turno `backup/session-20261114-174044-pubblica-articolo-15-cassa`, verificato remoto. Gitleaks della root principale eseguito esplicitamente sul lavoro da pubblicare, nessun segreto; hook non alterato o bypassato.
+
+Prima dell’inserimento: schema, vincoli, trigger e duplicati live nuovamente verificati; nove colonne, PK id e slug univoco, nessun trigger applicativo. Copertina e XLSX pubblici **HTTP 200** e hash identici ai definitivi prima dell’INSERT e dopo. Contenuto HTML, metadati, copertina e XLSX invariati rispetto alla preparazione: nessuna rigenerazione o ripetizione dei test di formule necessaria.
+
+**Cinque percorsi online PASS**: Chromium **1440/768/320**, WebKit **390**, Chromium **390 senza JavaScript**. Copertina caricata, sei sezioni e testo effettivamente visibili, due ADS presenti; nessun overflow o errore JavaScript. Quattro screenshot online conservati, desktop e WebKit esaminati visivamente. Scaricamento effettivo WebKit: **53.176 byte**, SHA256 **`4cbfc69dacf90d8474b4b80823428f45d5248df30ba74c569587e12981dc4d41`**, identico alla risorsa finale. Scritture analytics/provider intercettate, nessun account o invio reale di prova.
+
+SSR, titolo, descrizione, canonical e NewsArticle conformi; nuovo slug presente nell’indice e nella sitemap pubblici. La prima asserzione di visibilità senza JS era anticipata rispetto all’animazione CSS: il solo verificatore è stato corretto con osservazioni separate del processo, fino all’opacità effettiva 1. Ricevuta `nojs-visibilita.json`; nessuna modifica al sito per ottenere il passaggio.
+
+Ricevute nel dossier: `schema-prima-insert.json`, `blog-immediatamente-prima-insert.json`, `insert-ricevuta.json`, `blog-immediatamente-dopo-insert.json`, `post-precedenti-preservati.json`, `deploy-materiali.json`, `verifica-online.json`, `download-pubblico.json`, push e scansioni Gitleaks. Elenco aggiornato solo alla voce 15; nota propria nella memoria. Consegna finale privata `result.json`/`result.md` con commit finale e stato verificato.
