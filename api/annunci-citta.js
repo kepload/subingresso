@@ -9,6 +9,7 @@ const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 const { getOptimizedImageUrl } = require('../js/image-urls.js');
+const { resolveListingLocation } = require('../lib/listing-location.cjs');
 
 const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 
@@ -17,15 +18,12 @@ const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 // pagina /annunci?q=<nome> (UX coerente con il resto del sito), invece di 404.
 const COMUNI_ALL = require('../data/comuni.json');
 const COMUNI_BY_SLUG_ALL = Object.create(null);
-const COMUNI_BY_NAME_ALL = Object.create(null);
 function _normName(s) {
     if (!s) return '';
     return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 }
 for (const c of COMUNI_ALL) {
     COMUNI_BY_SLUG_ALL[c.slug] = c;
-    const k = _normName(c.nome);
-    if (k && !COMUNI_BY_NAME_ALL[k]) COMUNI_BY_NAME_ALL[k] = c;
 }
 
 function haversineKm(lat1, lng1, lat2, lng2) {
@@ -348,12 +346,11 @@ module.exports = async function handler(req, res) {
 
     // ─── Fetch tutti gli annunci attivi ─────────────────────────
     // Volumi attuali bassi (<50). Cache 1h già attiva. Più flessibile della
-    // query con filtro server-side perché ci serve anche il match per provincia
-    // (l'annuncio ha solo `comune`, non `provincia` → join lato JS via comuni.json).
+    // query con filtro server-side perché ci servono provincia e dintorni.
     let allActive = [];
     try {
         const r = await fetch(
-            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at,featured,expires_at&order=featured.desc,created_at.desc&limit=500`,
+            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,regione,prezzo,img_urls,created_at,featured,expires_at&order=featured.desc,created_at.desc&limit=500`,
             {
                 headers: {
                     'apikey':        SUPABASE_ANON_KEY,
@@ -366,15 +363,16 @@ module.exports = async function handler(req, res) {
 
     // Annota ogni annuncio con il record comune (provincia/lat/lng) e la distanza.
     const annotated = allActive.map(l => {
-        const ci = l.comune ? COMUNI_BY_NAME_ALL[_normName(l.comune)] : null;
+        const { provincia, location: ci } = resolveListingLocation(l);
         const distance = (ci && targetLat != null && targetLng != null)
             ? haversineKm(targetLat, targetLng, ci.lat, ci.lng)
             : Infinity;
-        return Object.assign({}, l, { _ci: ci, _distance: distance });
+        return Object.assign({}, l, { _provincia: _normName(provincia), _distance: distance });
     });
 
     // Tier 1: comune esatto (es. comune = "Brescia").
-    const tier1 = annotated.filter(l => _normName(l.comune) === cityNameNorm);
+    const tier1 = annotated.filter(l => _normName(l.comune) === cityNameNorm &&
+        (!provinciaNorm || l._provincia === provinciaNorm));
     const tier1Ids = new Set(tier1.map(l => l.id));
 
     // Espansione (provincia + radius) SOLO per i 137 capoluoghi indicizzati.
@@ -388,7 +386,7 @@ module.exports = async function handler(req, res) {
     const tier2 = (allowExpansion && cityIsCapoluogoDiProvincia)
         ? annotated.filter(l =>
             !tier1Ids.has(l.id) &&
-            l._ci && _normName(l._ci.provincia) === provinciaNorm
+            l._provincia === provinciaNorm
         )
         : [];
     const tier2Ids = new Set(tier2.map(l => l.id));

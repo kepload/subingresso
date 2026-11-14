@@ -34,6 +34,34 @@ La selezione usa `geonames:ID`; nei dati dell'annuncio si conserva
 `Località (Comune)` nel campo `comune` esistente, per distinguere gli omonimi
 anche nella stessa provincia e recuperare bozze e annunci senza cambiare schema.
 
+## Pagine città e provincia (A-07, 14 novembre 2026)
+
+`api/annunci-citta.js` usa `lib/listing-location.cjs`: anagrafica corrente
+`comuni-picker.json` e `localita.json`, condivisa con il selettore. La provincia
+esplicita (nome o sigla riconosciuti) determina l'appartenenza provinciale anche
+se il nome è nuovo, parziale o ambiguo; non richiede coordinate. Se manca, si
+ricava soltanto da un luogo univoco, usando anche la regione se disponibile.
+Una provincia esplicita ignota non viene sostituita con quella dedotta dal nome.
+
+Per i dintorni si risolvono nomi e alias esatti nel contesto geografico indicato:
+le località usano le proprie coordinate; i comuni quelle ISTAT disponibili in
+`comuni.json` per codice o nome e sigla. I vecchi nomi comunali restano un fallback
+esatto, come nel resolver client. Nessuna scelta fuzzy, primo omonimo o centro
+comunale assegnato a una frazione sconosciuta. Nomi ancora ambigui e comuni senza
+coordinate note non entrano nel raggio; una provincia nota resta utilizzabile.
+Il match del comune esatto non può ignorare una provincia diversa.
+
+Restano gli ambiti delle landing esistenti: espansione solo per le città già
+abilitate, provincia solo per i relativi capoluoghi, raggio 200 km come fallback
+sotto sei risultati, massimo 50 schede e query pubblica active con limite 500.
+Ordine dei tier, Vetrine/data all'interno dei tier, distanze e scaduti in fondo,
+redirect/placeholder, SEO e cache restano invariati. Nessun asset browser cambiato.
+
+Regressione: `node scripts/test-city-locations.cjs` (40 scenari, vero handler e
+Chromium/WebKit, rete simulata; `PLAYWRIGHT_MODULE` per un runtime già installato,
+`A07_PROOFS` per le prove). Esito e verifiche pubbliche in
+`.local/lavori/bugfix-sequenziali-20261113-2137/A-07-esito.md`.
+
 Il selettore restituisce le regioni `Trentino-Alto Adige` e `Valle d'Aosta`.
 La validazione server degli annunci riconosce anche questi nomi brevi rispetto
 alle denominazioni bilingui dell'anagrafica privata; comune e provincia devono
