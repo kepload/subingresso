@@ -103,8 +103,8 @@ storiche degli articoli non riflettono le pubblicazioni successive: verificare
 ## Bug da correggere — audit dell'11 novembre 2026
 
 **Audit originale: 30 rilievi, 2 P1, 24 P2 e 4 P3.** Corretti e applicati
-**C-07/C-01 l'11 novembre, C-03/C-09 il 12 novembre e A-01/A-05 il 13 novembre**, con sessioni isolate
-e integrazione sequenziale. Restano **24 aperti: 20 P2 e 4 P3**. Permessi SQL,
+**C-07/C-01 l'11 novembre, C-03/C-09 il 12, A-01/A-05 il 13 e A-07 il 14 novembre**, con sessioni isolate
+e integrazione sequenziale. Restano **23 aperti: 19 P2 e 4 P3**. Permessi SQL,
 rifiuti HTTP, bundle e asset pubblicati verificati; comportamento con fixture
 in browser e provider simulati. Nessun account o invio reale di prova, né
 verifica end-to-end del mittente Auth o delle consegne del digest.
@@ -130,9 +130,15 @@ verifica end-to-end del mittente Auth o delle consegne del digest.
 | A-01 | ID stabile nella bozza e riconciliazione per ID/proprietario: risposta persa, timeout e retry dopo ricaricamento non creano un secondo annuncio. 50 scenari Chromium/WebKit PASS, schema e asset online verificati. Limite preesistente del runtime WebKit su foto IndexedDB; contratto `data/LISTING_PUBLICATION.md`. |
 | A-05 | Modulo bloccato durante il salvataggio, snapshot unico e ordine foto conservato anche con letture lente; errore con ripresa e focus su Salva. 48 scenari locali e due online Chromium/WebKit PASS, provider simulati e HTML pubblicato identico. Contratto `data/LISTING_PHOTOS.md`; A-06/A-14/A-15 invariati. |
 
+### P2 — corretto il 14 novembre 2026
+
+| ID | Esito |
+|---|---|
+| A-07 | Pagine città: provincia esplicita e anagrafica corrente, coordinate solo per luoghi univoci. 40 scenari locali e due browser online PASS; campione prima escluso ora presente a Brescia, tre pagine conformi al vero handler. Contratto `data/LOCALITA.md`; ambiti, limiti e SEO conservati. |
+
 ### P2 — difetti ancora aperti, per categoria
 
-Prossimi nell'ordine iniziale del riesame: **A-07/A-09/B-04**;
+Prossimi nell'ordine iniziale del riesame: **A-09/B-04**;
 gli altri restano P2 senza una graduatoria ulteriore
 certificata. Un problema condizionale non implica un guasto per tutti gli utenti.
 
@@ -147,11 +153,10 @@ certificata. Un problema condizionale non implica un guasto per tutti gli utenti
 | C-10 | Il riepilogo venditori confronta la settimana con il totale storico anziché con la settimana precedente dichiarata. |
 | C-11 | Durante la rotazione dei segreti Stripe, firme multiple valide possono causare il rifiuto di notifiche legittime in base all'ordine delle firme. |
 
-**Annunci, ricerca e marketplace — 7**
+**Annunci, ricerca e marketplace — 6**
 
 | ID | Problema |
 |---|---|
-| A-07 | Le pagine città/provincia escludono alcune località o frazioni valide anche con provincia nota; un caso confermato online. |
 | A-09 | Alle pagine città mancano navigazione e footer condivisi. |
 | A-02 | Memoria del browser piena o bloccata: la ricerca si interrompe e conserva risultati precedenti. |
 | A-03 | La nuova ricerca non aggiorna l'URL: ricaricamento e condivisione ripristinano la ricerca precedente. |
@@ -193,7 +198,7 @@ reale verificata; il controllo aggiuntivo C è stato fermato da un blocco automa
 e il riesame è rimasto documentale, senza ulteriori test. Test obsoleti, verifiche
 incomplete e sospetti esclusi restano nei rapporti, non sono ulteriori bug.
 L'audit originale non autorizzava modifiche. Gli incarichi successivi hanno
-riguardato soltanto C-07/C-01, C-03/C-09 e A-01/A-05; gli altri rilievi non autorizzano
+riguardato soltanto C-07/C-01, C-03/C-09, A-01/A-05 e A-07; gli altri rilievi non autorizzano
 nuovi interventi.
 
 Fonti private sotto `.local/verifiche/audit-tre-sessioni-20261111/`:
@@ -222,6 +227,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **14 novembre 2026 — corretto A-07:** materiali `377dcc0`, Vercel `dpl_BQsUKdbeoqgxP52a5b6LNY57SSBV` READY sul dominio. Provincia esplicita e località correnti nelle landing; nessuna coordinata assegnata a omonimi irrisolti. 40 scenari locali PASS, 63.182 voci senza provincia errata; tre pagine online conformi all'handler e due browser PASS. Brescia include ora il campione «Villaggio Badia (Roncadelle)»: 10 schede invece di 9. Asset A-01/A-05 invariati; nessuna scrittura di prova online o modifica a DB/servizi. Restano 23 aperti; nessuna prosecuzione autonoma. [Contratto](data/LOCALITA.md), prove e limiti `.local/lavori/bugfix-sequenziali-20261113-2137/A-07-esito.md`.
 
 - **13 novembre 2026 — corretto A-05:** modifica annunci con campi/foto bloccati fino all'esito, ordine delle anteprime stabile e ripresa da errore con focus su Salva. Materiali `629a1a8`, Vercel `dpl_6anH15EFLD6s5LYpTVoghLrw6gYb` READY e HTML identico; 48 scenari locali e due sul sito pubblico PASS, provider simulati. A-01: 50 regressioni PASS e quattro asset invariati. Nessuna mutazione di dati reali di prova, modifica SQL/Edge o intervento sugli altri bug. Restano 24 rilievi aperti; nessuna prosecuzione autonoma. [Contratto](data/LISTING_PHOTOS.md), rapporto e prove `.local/lavori/bugfix-sequenziali-20261113-2137/A-05-esito.md`.
 
