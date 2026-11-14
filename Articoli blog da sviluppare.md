@@ -63,7 +63,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 59. 🟠 Organizzo un mercatino: troppi banchi con gli stessi prodotti? La griglia per confrontare le proposte e motivare le selezioni
 60. 🟢 Street food senza allaccio idrico: quanta acqua serve davvero? La scheda per misurare consumi e autonomia durante il servizio
 
-61. 🔴 Riconsegno un banco preso in affitto: il verbale compilabile per confrontare attrezzature, scorte e danni con l'inventario iniziale
+61. 🔴 Riconsegno un banco preso in affitto: il verbale compilabile per confrontare attrezzature, scorte e danni con l'inventario iniziale — [pubblicato il 14/11/2026](https://subingresso.it/blog?post=riconsegnare-banco-affitto-verbale-inventario); [testo](data/blog/riconsegnare-banco-affitto-verbale-inventario.html), [fonti e verifiche](data/blog/riconsegnare-banco-affitto-verbale-inventario.fonti.md), [verbale gratuito](downloads/verbale-riconsegna-banco-affitto.xlsx).
 62. 🔴 Vendo il banco: quali documenti mostrare e a chi? Il dossier per acquirenti con dati da oscurare e registro delle condivisioni — [pubblicato il 13/11/2026](https://subingresso.it/blog?post=vendere-banco-dossier-documenti-acquirenti); [testo](data/blog/vendere-banco-dossier-documenti-acquirenti.html), [fonti e verifiche](data/blog/vendere-banco-dossier-documenti-acquirenti.fonti.md), [file gratuito](downloads/dossier-vendita-banco-condivisioni.xlsx).
 63. 🔴 Compro il banco ma il venditore riapre nello stesso mercato: la scheda su concorrenza e accordi da verificare con il professionista
 64. 🟠 Banco refrigerato per il mercato: confronta costo d'acquisto e consumi misurati durante una giornata di lavoro
