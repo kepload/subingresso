@@ -50,3 +50,13 @@ Copertina originale generata con strumento integrato `image_gen` e skill imagege
 Verificatore adattato da `netto-vendita-banco-20261113`, senza eseguire i vecchi modi mutativi. Anteprima: Chromium **1440/768/320**, WebKit **390**, Chromium **390 senza JavaScript**. Sei h2, tre punti iniziali, 580 parole visibili, due ADS distinti, titolo/descrizione/canonical/NewsArticle e spazio Vetrine. Nessun overflow o errore JavaScript; download effettivo WebKit identico al file definitivo tramite server locale. Provider e scritture analytics intercettati. Screenshot desktop, 320 e copertina esaminati; visibilità effettiva senza JS verificata, compresi opacità e testo visibile.
 
 Dossier privato: `.local/lavori/articoli/ciclo-quote-20261114-1305/articolo-07/` nella root principale. Checkpoint JSON/Markdown e `operations.jsonl` aggiornati prima/dopo le operazioni remote; ricevute di fonti, formule, anteprima e pubblicazione nello stesso dossier.
+
+## Pubblicazione verificata il 14 novembre 2026
+
+Materiali commit `7db16170296e61a0efbbbd19ab4d7ec45754affd`, push da worktree esclusivo con main remoto ancora coincidente con la base attesa. Hook pre-commit e scansione gitleaks effettivi, senza rilievi. Deploy Vercel **success**, [ricevuta](https://vercel.com/kycykuardit-9234s-projects/subingresso/emfxLyPoK4GuJnb5aBLFTvCU65nX). Prima dell'INSERT, copertina e XLSX pubblici HTTP 200 e SHA256 identici ai definitivi sopra riportati.
+
+Schema, vincoli, trigger e duplicati LIVE riletti subito prima dell'inserimento: nove colonne, PK id, slug univoco, nessun trigger applicativo. **Un solo INSERT**, nessun UPDATE/DELETE, record `3936d55c-e87c-4a52-ad00-06a64b0cc4fe`, `published_at` **2026-11-14 13:48:39.257274+00** (14:48:39 in Italia). [Articolo pubblico](https://subingresso.it/blog?post=comprare-giro-mercati-margini-ore-chilometri).
+
+Cinque percorsi browser **online PASS**: Chromium 1440/768/320, WebKit 390, Chromium 390 senza JS. Download effettivo WebKit identico al definitivo; nessun overflow o errore JavaScript. Lettura senza JS verificata nella visibilità effettiva, con testo e copertina caricata; SSR, titolo, descrizione, canonical, NewsArticle, indice e sitemap conformi. Scritture analytics/provider intercettate. Tutti i **142 post precedenti invariati nei nove campi**, **143 totali**; nessun dato reale di prova o invio.
+
+Ricevute principali: `push-materials.json`, `deploy-materiali.json`, `schema-prima-inserimento.json`, `prima-inserimento.json`, `pubblicazione.json`, `integrita-dopo-inserimento.json`, `asset-pubblici.json`, `verifica-pubblica.json`, file `*-anteprima-verificata.json` e `*-online-verificato.json`. Memoria ed elenco aggiornati esclusivamente per il punto 7; consegna finale `result.json`/`result.md` nel dossier privato.

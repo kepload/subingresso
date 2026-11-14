@@ -228,6 +228,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **14 novembre 2026 — articolo 7, comprare un giro di mercati:** [pubblicato e verificato](https://subingresso.it/blog?post=comprare-giro-mercati-margini-ore-chilometri), materiali `7db1617`, Vercel riuscito. XLSX: 878 scenari formule PASS; cinque percorsi online, lettura senza JS, download identico, SEO/indice/sitemap verificati. I 142 post precedenti invariati, 143 totali. [Fonti e prove](data/blog/comprare-giro-mercati-margini-ore-chilometri.fonti.md); consegna privata `ciclo-quote-20261114-1305/articolo-07/result.json`. Solo punto 7, nessun invio.
+
 - **14 novembre 2026 — articolo 6, canone d'affitto sostenibile:** [pubblicato e verificato](https://subingresso.it/blog?post=affittare-posteggio-canone-margine), materiali `8eef1f2`, Vercel riuscito. Foglio XLSX: 264 casi formule PASS; cinque percorsi online, download identico, SEO/indice/sitemap verificati. I 141 post precedenti invariati, 142 totali. [Fonti e prove](data/blog/affittare-posteggio-canone-margine.fonti.md); consegna privata `ciclo-quote-20261114-1305/articolo-06/result.json`. Solo punto 6, nessun invio.
 
 - **14 novembre 2026 — articolo 63, concorrenza dopo l'acquisto:** [pubblicato e verificato](https://subingresso.it/blog?post=comprare-banco-venditore-riapre-stesso-mercato), materiali `850d922`, Vercel riuscito. Scheda XLSX: 71 controlli PASS; cinque percorsi online, download identico, SEO/indice/sitemap verificati. I 140 post precedenti invariati, 141 totali. [Fonti e prove](data/blog/comprare-banco-venditore-riapre-stesso-mercato.fonti.md); consegna privata `ciclo-quote-20261114-1305/articolo-63/result.json`. Solo punto 63, nessun invio.
