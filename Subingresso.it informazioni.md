@@ -134,7 +134,7 @@ verifica end-to-end del mittente Auth o delle consegne del digest.
 
 | ID | Esito |
 |---|---|
-| A-07 | Pagine città: provincia esplicita e anagrafica corrente, coordinate solo per luoghi univoci. 40 scenari locali e due browser online PASS; campione prima escluso ora presente a Brescia, tre pagine conformi al vero handler. Contratto `data/LOCALITA.md`; ambiti, limiti e SEO conservati. |
+| A-07 | Pagine città: provincia esplicita e anagrafica corrente, coordinate solo per luoghi univoci. 41 scenari locali e due browser online PASS; campione prima escluso ora presente a Brescia, tre pagine conformi al vero handler. Contratto `data/LOCALITA.md`; ambiti, limiti e SEO conservati. |
 
 ### P2 — difetti ancora aperti, per categoria
 
@@ -228,7 +228,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **14 novembre 2026 — corretto A-07:** materiali `377dcc0`, Vercel `dpl_BQsUKdbeoqgxP52a5b6LNY57SSBV` READY sul dominio. Provincia esplicita e località correnti nelle landing; nessuna coordinata assegnata a omonimi irrisolti. 40 scenari locali PASS, 63.182 voci senza provincia errata; tre pagine online conformi all'handler e due browser PASS. Brescia include ora il campione «Villaggio Badia (Roncadelle)»: 10 schede invece di 9. Asset A-01/A-05 invariati; nessuna scrittura di prova online o modifica a DB/servizi. Restano 23 aperti; nessuna prosecuzione autonoma. [Contratto](data/LOCALITA.md), prove e limiti `.local/lavori/bugfix-sequenziali-20261113-2137/A-07-esito.md`.
+- **14 novembre 2026 — corretto A-07:** materiali `377dcc0`/`605d076`, Vercel `dpl_8cCxScwr8jTTm8NqQEoMGgcax5hC` READY sul dominio. Provincia esplicita e località correnti nelle landing; nessuna coordinata assegnata a omonimi irrisolti, compatibilità dei comuni univoci con regione storica errata conservata. 41 scenari locali PASS, 63.182 voci senza provincia errata; tre pagine online conformi all'handler e due browser PASS. Brescia include ora il campione «Villaggio Badia (Roncadelle)»: 10 schede invece di 9. Asset A-01/A-05 invariati; nessuna scrittura di prova online o modifica a DB/servizi. Restano 23 aperti; nessuna prosecuzione autonoma. [Contratto](data/LOCALITA.md), prove e limiti `.local/lavori/bugfix-sequenziali-20261113-2137/A-07-esito.md`.
 
 - **13 novembre 2026 — corretto A-05:** modifica annunci con campi/foto bloccati fino all'esito, ordine delle anteprime stabile e ripresa da errore con focus su Salva. Materiali `629a1a8`, Vercel `dpl_6anH15EFLD6s5LYpTVoghLrw6gYb` READY e HTML identico; 48 scenari locali e due sul sito pubblico PASS, provider simulati. A-01: 50 regressioni PASS e quattro asset invariati. Nessuna mutazione di dati reali di prova, modifica SQL/Edge o intervento sugli altri bug. Restano 24 rilievi aperti; nessuna prosecuzione autonoma. [Contratto](data/LISTING_PHOTOS.md), rapporto e prove `.local/lavori/bugfix-sequenziali-20261113-2137/A-05-esito.md`.
 
