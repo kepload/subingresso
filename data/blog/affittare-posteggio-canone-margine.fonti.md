@@ -49,6 +49,12 @@ Copertina originale generata con lo strumento integrato `image_gen`, skill image
 
 Verificatore privato adattato dal dossier `netto-vendita-banco-20261113`, senza eseguire i vecchi modi mutativi. Cinque percorsi di anteprima **PASS**: Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. Sei h2, tre punti iniziali, 601 parole visibili, due slot ADS distinti, titolo/descrizione/canonical/NewsArticle, copertina e risorsa funzionanti. Nessun overflow o errore JavaScript; download effettivo WebKit identico al definitivo. Screenshot desktop e 320 esaminati. Provider e scritture analytics intercettati; nessun dato reale di prova.
 
-Schema, vincoli, trigger e duplicati LIVE verificati prima della pubblicazione: nove colonne, PK id, slug univoco, nessun trigger applicativo; 141 post precedenti invariati. Pubblicazione e verifica online saranno registrate qui solo dopo esecuzione effettiva.
+## Pubblicazione verificata il 14 novembre 2026
+
+Materiali commit `8eef1f2cbcc69afb3483bff79a73d8ea7c7d4c3a`, push da worktree esclusivo con main remoto ancora coincidente con la base attesa; nessun reset, rebase o force push. Hook pre-commit e scansione gitleaks effettivi, senza rilievi. Deploy Vercel **success**, [ricevuta del deploy](https://vercel.com/kycykuardit-9234s-projects/subingresso/AU3kiAyL3ojsXtW441XHxPUusDUc); prima dell'INSERT copertina e risorsa pubbliche HTTP 200 con SHA256 identici al definitivo.
+
+Schema, vincoli, trigger e duplicati LIVE riletti immediatamente prima dell'inserimento: nove colonne, PK id, slug univoco, nessun trigger applicativo; 141 post precedenti invariati. **Un solo INSERT** del post `63fbaaac-0af5-485b-a3fb-eb27d8653ab6`, senza UPDATE/DELETE. Data effettiva nella ricevuta privata `pubblicazione.json`. [Articolo pubblico](https://subingresso.it/blog?post=affittare-posteggio-canone-margine).
+
+Cinque percorsi browser **online PASS**, stessi formati dell'anteprima; download effettivo WebKit identico al definitivo, nessun overflow o errore JavaScript, lettura senza JS e due slot ADS verificati. SSR, titolo, descrizione, canonical, NewsArticle, indice e sitemap conformi. Tutti i **141 post precedenti invariati** nei nove campi della tabella, **142 totali**; nessun dato reale di prova o invio. Copertina e file pubblico hanno gli stessi hash riportati sopra.
 
 Dossier privato: `.local/lavori/articoli/ciclo-quote-20261114-1305/articolo-06/` nella root principale. Ricevute: `fonti-ricevute.json`, `verifica-formule.json`, `schema-prima-inserimento.json`, file di anteprima, checkpoint JSON/Markdown e `operations.jsonl`. Nessuna cancellazione o modifica a servizi condivisi.
