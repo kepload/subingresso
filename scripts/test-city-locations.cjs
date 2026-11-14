@@ -69,6 +69,7 @@ async function main() {
     await inclusion('Località con accenti e spazi', fixture('normalized', ' RIVOLTÈLLA (Desenzano del Garda) ', '  brèscia '), true);
     await inclusion('Località univoca senza provincia', fixture('no-province', 'Rivoltella (Desenzano del Garda)', null), true);
     await inclusion('Comune univoco senza provincia', fixture('unique-city', 'Desenzano del Garda', ''), true);
+    await inclusion('Comune ufficiale univoco con regione legacy errata', fixture('legacy-region', 'Desenzano del Garda', null, { regione: 'Sicilia' }), true);
     await inclusion('Omonimo con provincia Brescia', fixture('bare-bs', 'Rivoltella', 'Brescia'), true);
     await inclusion('Omonimo con provincia Pavia escluso dal tier provinciale', fixture('bare-pv', 'Rivoltella', 'Pavia'), false);
     await inclusion('Omonimo senza contesto escluso', fixture('ambiguous', 'Rivoltella', null), false);

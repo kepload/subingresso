@@ -41,6 +41,8 @@ anche nella stessa provincia e recuperare bozze e annunci senza cambiare schema.
 esplicita (nome o sigla riconosciuti) determina l'appartenenza provinciale anche
 se il nome è nuovo, parziale o ambiguo; non richiede coordinate. Se manca, si
 ricava soltanto da un luogo univoco, usando anche la regione se disponibile.
+Come nel client, un comune ufficiale univoco senza provincia resta riconosciuto
+anche con una vecchia regione errata; la deroga non si applica agli omonimi.
 Una provincia esplicita ignota non viene sostituita con quella dedotta dal nome.
 
 Per i dintorni si risolvono nomi e alias esatti nel contesto geografico indicato:
@@ -57,7 +59,7 @@ sotto sei risultati, massimo 50 schede e query pubblica active con limite 500.
 Ordine dei tier, Vetrine/data all'interno dei tier, distanze e scaduti in fondo,
 redirect/placeholder, SEO e cache restano invariati. Nessun asset browser cambiato.
 
-Regressione: `node scripts/test-city-locations.cjs` (40 scenari, vero handler e
+Regressione: `node scripts/test-city-locations.cjs` (41 scenari, vero handler e
 Chromium/WebKit, rete simulata; `PLAYWRIGHT_MODULE` per un runtime già installato,
 `A07_PROOFS` per le prove). Esito e verifiche pubbliche in
 `.local/lavori/bugfix-sequenziali-20261113-2137/A-07-esito.md`.
