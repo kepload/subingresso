@@ -1,6 +1,6 @@
 # Fonti e verifiche: il venditore riapre nello stesso mercato
 
-Punto **63**, ciclo editoriale del 14 novembre 2026. Articolo preparato nella sessione nuova Codex 2, nel solo worktree assegnato. Stato iniziale: verifiche locali superate, pubblicazione da verificare.
+Punto **63**, ciclo editoriale del 14 novembre 2026. **Pubblicato e verificato il 14 novembre 2026** nella sessione nuova Codex 2, nel solo worktree assegnato.
 
 ## Ambito e duplicati
 
@@ -45,3 +45,17 @@ Gli script del dossier netto-vendita del 13 novembre sono stati adattati a sole 
 Backup remoto verificato `backup/session-20261114-135705-articolo-63-concorrenza`, HEAD iniziale `bb23f3b6b2f6ee02464a11eb137354b31d3c8a3e`; ramo del coordinatore `backup/pre-articoli-quote-20261114-1305` verificato. Nessun riferimento remoto eliminato.
 
 Dossier privato: `.local/lavori/articoli/ciclo-quote-20261114-1305/articolo-63/` nella root principale. Checkpoint prima e dopo le operazioni remote, ricevute e script conservati per controlli e ripresa. URL assegnato: <https://subingresso.it/blog?post=comprare-banco-venditore-riapre-stesso-mercato>.
+
+## Pubblicazione verificata il 14 novembre 2026
+
+Materiali nel commit `850d92245600dc126c64e5b7d0636d10fc1896e7`, push da questo worktree su main dopo controllo dell'antenato e assenza di avanzamenti inattesi. Vercel **success**, deploy `FtpYfpwR1XfU6ndfu8uufZ7AyrYh`. Copertina e XLSX **HTTP 200 e hash identici** prima dell'inserimento.
+
+Schema, vincoli e duplicati riletti LIVE subito prima: nove colonne, PK e slug univoco, nessun trigger applicativo. **Un solo INSERT**, nessun UPDATE/DELETE. Record `e5d7a144-ca65-4708-bb55-4ca1df161002`, pubblicato alle **14:09:45 italiane** del 14 novembre 2026 (timestamp DB `2026-11-14 13:09:45.295702+00`). I **140 post precedenti invariati in tutti i nove campi**, totale **141**. Nessun invio o account/dato reale di prova.
+
+[Pagina pubblica](https://subingresso.it/blog?post=comprare-banco-venditore-riapre-stesso-mercato) HTTP 200, contenuto DB uguale al sorgente. Titolo, descrizione, canonical, NewsArticle, indice e sitemap verificati. **Cinque percorsi online PASS**: Chromium1440/768/320, WebKit390 e Chromium390 senza JS. Due ADS contestuali distinte per visita, copertina caricata, sei sezioni, nessun overflow/errore JS. Download effettivo WebKit identico al definitivo; scritture browser/provider intercettate. Screenshot online 320 esaminato visivamente, oltre a desktop e WebKit dell'anteprima.
+
+Il confronto preliminare fra API pubblica e API SQL si era fermato sul diverso formato del timestamp (`T`/spazio e `+00:00`/`+00`): verificata l'identità di tutti gli altri valori, normalizzata soltanto questa rappresentazione senza perdere i microsecondi. I confronti dopo l'INSERT e online usano ciascuno lo stesso canale della relativa baseline.
+
+L'hook iniziale aveva segnalato il binario Gitleaks assente nel worktree. Copiato il binario già esistente nel progetto nella cartella ignorata prevista, **scansione effettiva del commit senza rilievi prima del push**; hook attivo anche per il commit documentale finale. Nessun bypass o riscrittura della history.
+
+Ricevute: `deploy-850d922.json`, `schema-prima-inserimento.json`, `pubblicazione.json`, `record-verificato.json`, `comprare-banco-venditore-riapre-stesso-mercato-online-verificato.json`, `esito-finale.json`, `gitleaks-contenuti.json`; consegna `result.json` e `result.md`. Checkpoint e cronologia operazioni nel medesimo dossier. Materiali privati conservati per fonti, verifica e ripresa; nessuna pulizia aggiuntiva.
