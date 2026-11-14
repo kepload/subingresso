@@ -1,6 +1,6 @@
 # Fonti e verifiche — due fiere nello stesso fine settimana
 
-Priorità **16**. Preparazione completata il **14 novembre 2026**. Articolo non pubblicato: questo turno comprende soltanto i sei materiali propri e le verifiche locali. Nessuna modifica a documenti comuni, main, template o database.
+Priorità **16**. **Pubblicato e verificato il 14 novembre 2026.** Preparazione conclusa nella prima fase con i soli sei materiali propri; in quella fase nessuna modifica a documenti comuni, main, template o database. Pubblicazione autorizzata dal coordinatore nel secondo turno e verificata come descritto sotto.
 
 ## Ambito e controllo duplicati
 
@@ -42,6 +42,22 @@ SEO, title, description, canonical e NewsArticle verificati sull'HTML SSR; indic
 
 Diagnostica dei test: corretta l'attesa iniziale che presumeva `naturalWidth=1600` nonostante srcset; download provato via HTTP locale reale dopo annullamento della risposta simulata; controllo senza JS eseguito dopo il primo paint e la conclusione dell'animazione CSS esistente. Nessun cambiamento ai file condivisi per questi adeguamenti del test.
 
-## Passo successivo riservato al secondo turno
+## Separazione delle due fasi
 
-Il coordinatore stabilisce l'ordine. Prima della pubblicazione: integrare origin/main aggiornato con merge, ricontrollare asset e prove, duplicati/schema/vincoli/trigger LIVE, deploy e inserimento idempotente del solo post. Verificare online pagina, download, SEO, indice e sitemap, conservando invariati i post precedenti. In preparazione questi controlli live di pubblicazione non sono eseguiti né dichiarati superati.
+La consegna iniziale riservava pubblicazione e verifiche online al secondo turno, dopo articolo 8 e autori precedenti. Il coordinatore ha autorizzato quel turno per questo stesso articolo. `prepared.json` e `prepared.md` restano ricevute immutate della prima fase; gli esiti di pubblicazione sono riportati qui sotto.
+
+## Pubblicazione verificata il 14 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=due-fiere-stesso-fine-settimana-scegliere), record **`027f57b8-7f82-42a6-9ef7-b869aed0c8f9`**, data DB **2026-11-14T16:52:58.024697+00:00**. **Un solo INSERT**, protetto dall'assenza dello slug; nessun UPDATE/DELETE di post. Tutti i **145 record precedenti invariati nei nove campi**, **146 totali**: confronto integrale delle righe immediatamente prima/dopo l'inserimento e alla verifica online.
+
+Materiali preparati `c42642f85ecb73b10bdf64c9c95ef6a8d6f8348a`; merge di `origin/main` **`9c4a11ed5d35fd15106896bf148c94aedd82440f`** senza conflitti, conservando articoli 8 e 15. Commit di integrazione e push materiali **`b8abddbacf3f5972dfc98bff6480cb2353d9dcab`**. [Deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3gdSPeypQnfxKJWQcrpZYT8CuD3v), stato GitHub Vercel success verificato prima dell'INSERT. Backup remoto del secondo turno: `backup/session-20261114-174902-articolo16-pubblicazione`, dereferenziato al commit preparato. L'helper ha rimosso vecchi tag locali; i tag remoti sono conservati, nessuna ulteriore pulizia eseguita.
+
+Schema, vincoli, trigger e duplicati LIVE controllati prima del push e di nuovo immediatamente prima dell'INSERT: nove colonne, PK UUID, slug univoco, nessun trigger applicativo. Copertina e XLSX **HTTP 200** con hash identici ai definitivi prima dell'inserimento e dopo. Contenuto HTML, metadati e due risorse invariati dalla preparazione: nessuna rigenerazione o ripetizione dei 352 scenari necessaria. Nessuna modifica a template, CSS, JavaScript, API, schema o servizi.
+
+**Cinque percorsi online PASS**: Chromium **1440/768/320**, WebKit **390**, Chromium **390 senza JavaScript**. Testo effettivamente visibile e copertina caricata, sei sezioni, tre punti iniziali, due ADS distinte, nessun overflow o errore JavaScript. Screenshot conservati; desktop e WebKit esaminati visivamente. Senza JS, visibilità verificata dopo il primo paint e il completamento dell'animazione CSS esistente, senza alterare la pagina.
+
+**Quattro download effettivi online PASS**, uno per percorso con JS: **19.863 byte**, SHA256 **`55f8998dbb7ff12ea3356fc73d1cba1f6104e19beadb318787de1da2a360d820`**. Lettura senza JS verificata separatamente. Scritture analytics/provider intercettate; nessun account, invio o dato reale di prova.
+
+SSR, titolo, descrizione, canonical e NewsArticle conformi; nuovo slug presente nell'indice e nella sitemap pubblici. Gitleaks 8.21.2 eseguito esplicitamente con l'eseguibile condiviso della root principale sul lavoro pubblicato, nessun segreto; hook non modificato né bypassato.
+
+Ricevute nel dossier: `schema-publication-baseline.json`, `schema-immediatamente-prima-insert.json`, `blog-immediatamente-prima-insert.json`, `insert-ricevuta.json`, `blog-immediatamente-dopo-insert.json`, `post-precedenti-preservati.json`, `verifica-dati-finale.json`, `deploy-materiali.json`, `asset-pubblici.json`, `verifica-online.json`, screenshot e download. Elenco aggiornato soltanto alla voce 16 e nota propria nel registro. Consegna privata `result.json`/`result.md` con commit finale e ricevute dei push.
