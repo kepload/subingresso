@@ -57,3 +57,12 @@ Passati anche i controlli delle 10.443 pagine fiera, navigazione senza JS,
 sitemap, dettaglio e intervalli di ricerca. I vecchi test affluenza e articoli
 hanno aspettative superate (`Dato, fonte e criterio` e `#article-summary`, già
 assenti prima della modifica): limiti registrati, nessun intervento estraneo.
+
+## Pubblicazione verificata
+
+Implementazione `05baf58`, Vercel `dpl_12miimRALXiUCpbmk8mvw6MKrDNt` READY e
+associata a `subingresso.it` il 15 novembre 2026. HTML e tre asset pubblicati
+identici ai sorgenti. Ripetute con esito PASS tutte e cinque le configurazioni
+del test specifico sul dominio pubblico, con gli stessi provider simulati.
+Scansione gitleaks dell'intero commit PASS. Catalogo, SQL, servizi e dati degli
+organizzatori non modificati.
