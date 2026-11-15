@@ -451,6 +451,33 @@
         badge.title = 'Spunta prevista nelle modalità di partecipazione. Requisiti e termini nella scheda; assegnazione solo sui posti liberi.';
         return badge;
     }
+    function updateFairBadges(container, event) {
+        const badges = [];
+        const spunta = spuntaBadge(event);
+        if (spunta) badges.push(spunta);
+        const edition = selectEdition(event, todayInRome(), state.months, state);
+        for (const info of global.FairBadges?.get(event, { edition }) || []) {
+            const badge = node('span', 'fiere-badge', info.label);
+            badge.dataset.badge = info.kind;
+            badge.title = info.title;
+            badges.push(badge);
+        }
+        container.replaceChildren(...badges);
+        container.hidden = badges.length === 0;
+    }
+    function fairBadges(event) {
+        const container = node('span', 'fiere-badges');
+        container.dataset.fairBadges = event.id;
+        updateFairBadges(container, event);
+        return container;
+    }
+    function refreshFairBadges() {
+        const events = new Map(state.events.map(event => [event.id, event]));
+        document.querySelectorAll('[data-fair-badges]').forEach(container => {
+            const event = events.get(container.dataset.fairBadges);
+            if (event) updateFairBadges(container, event);
+        });
+    }
     function svgNode(tag, attrs) {
         const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
         for (const [key, value] of Object.entries(attrs || {})) element.setAttribute(key, value);
@@ -770,8 +797,7 @@
             const foot = node('div', 'fiere-card-foot');
             const tags = node('div', 'fiere-card-tags');
             tags.append(category);
-            const spunta = spuntaBadge(event);
-            if (spunta) tags.append(spunta);
+            tags.append(fairBadges(event));
             foot.append(tags, button);
             const body = node('div', 'fiere-card-body');
             const content = node('div', 'fiere-card-content');
@@ -920,8 +946,7 @@
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
             const attendance = attendanceBadge(event);
             if (attendance) button.append(attendance);
-            const spunta = spuntaBadge(event);
-            if (spunta) button.append(spunta);
+            button.append(fairBadges(event));
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }
@@ -1235,9 +1260,9 @@
         } });
         $('retry-catalog').addEventListener('click', loadCatalog);
         $('retry-organizer-catalog')?.addEventListener('click', loadManagedEvents);
-        setInterval(() => { if (!document.hidden && state.ready) loadManagedEvents(); }, 30000);
-        window.addEventListener('focus', () => { if (state.ready) loadManagedEvents(); });
-        document.addEventListener('visibilitychange', () => { if (!document.hidden && state.ready) loadManagedEvents(); });
+        setInterval(() => { if (!document.hidden && state.ready) { loadManagedEvents(); refreshFairBadges(); } }, 30000);
+        window.addEventListener('focus', () => { if (state.ready) { loadManagedEvents(); refreshFairBadges(); } });
+        document.addEventListener('visibilitychange', () => { if (!document.hidden && state.ready) { loadManagedEvents(); refreshFairBadges(); } });
         $('retry-map').addEventListener('click', loadMap);
         let resizeTimer;
         window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (state.ready) renderMap(filterEvents(state.events, state)); }, 100); });
