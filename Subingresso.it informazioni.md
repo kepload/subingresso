@@ -33,10 +33,23 @@ con account/modello correnti, per 20 fiere nuove secondo il metodo e senza
 doppioni. Zona dell'utente: **Brescia**; rispettare l'area della singola richiesta.
 Primo incarico A/B concluso: **40/40 controllate**, con lacune documentate;
 prove in `.local/ricerche/fiere-20/20261115-1155/`.
-Incarichi C/D conclusi: altre **40/40** fiere vicino a Brescia, **80/80**
-ricerche complessive. Ultimo rapporto D:
-`.local/ricerche/fiere-20/20261115-1439-brescia/D/rapporto.md`.
-Campi irrisolti e prove storiche espliciti; catalogo e servizi invariati.
+Incarichi C/D/E conclusi: altre **60/60** ricerche vicino a Brescia, **100/100**
+complessive, su ID disgiunti. Ultimo rapporto E, 20 eventi in 11 comuni:
+`.local/ricerche/fiere-20/20261115-1535-brescia/E/rapporto.md`.
+Controllo finale del coordinatore superato; spunta non verificata per tutti i
+20 eventi E. Campi irrisolti e prove storiche espliciti; catalogo e servizi
+invariati. Nessun ulteriore gruppo automatico.
+
+**Preferenza permanente del 15 novembre 2026:** tutte le ricerche fiere e gli
+aggiornamenti separatamente autorizzati devono procedere **dalla più vicina
+a Brescia alla più lontana**, escludendo gli eventi già assegnati. Distanza
+indicativa in linea d'aria; con più schede ripartire la lista ordinata in
+gruppi disgiunti che procedono ciascuno in ordine crescente. Regola completa
+nel metodo. Avviate e verificate attive altre **40 ricerche, 20 per ciascuna di due nuove
+schede parallele F/G**, in 16 comuni, circa 0,6–20,3 km da Brescia; assegnazioni
+riservate in `.local/ricerche/fiere-20/20261115-2010-brescia/`. Possibile alias
+storico di Roncadelle escluso con motivazione. Stato effettivo nel registro
+privato e negli `stato.json`; nessuna integrazione automatica nel sito.
 
 Ultimo esito **7 novembre 2026**: **110 province concluse, nessuna aperta**.
 Le ultime due, Pavia e Nuoro, completate in due sessioni separate contemporanee:
@@ -244,6 +257,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **15 novembre 2026 — concluse e verificate altre 20 ricerche vicino a Brescia:** incarico E, 11 comuni, 100 campi: 7 confermati, 24 parziali, 67 non verificati e 2 storici. Spunta non verificata per tutti i 20; 58 fonti, contrasti di date e condizioni economiche documentati. Registro e memoria aggiornati, controllo del coordinatore in `.local/ricerche/fiere-20/20261115-1535-brescia/E/coordinamento/verifica-finale.json`; catalogo e altri file versionati invariati rispetto all'avvio, nessun invio o pubblicazione.
 
 - **15 novembre 2026 — altri bollini fiere pubblicati:** «Iscrizioni aperte», «In scadenza» (ultimi sette giorni, alternativo al primo) e «Hobbisti ammessi»; esclusa la corrente. 91 ammissioni hobbisti e 23 finestre documentate; fonte/nota, edizione e fuso Roma governano gli stati senza dedurre disponibilità. `9f95cb3`, Vercel `dpl_65LdXCcdYQtML3Ddbogcxgs3ADMb` READY, cinque asset conformi; cinque configurazioni browser locali/online e 10.443 pagine PASS. [Regola e verifiche](data/FIERE_BADGES.md).
 

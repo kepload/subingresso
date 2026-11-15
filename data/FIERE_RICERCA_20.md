@@ -20,6 +20,21 @@ in uso** e affidarle altre 20 fiere con questo metodo.
 - Rispettare l'area indicata dall'utente e conservare il contesto della richiesta.
   Riferimento geografico dichiarato dall'utente: **Brescia**. Il gruppo richiesto
   il 15 novembre dopo i primi 40 riguarda Brescia e i comuni vicini.
+- **Ordine geografico permanente, salvato il 15 novembre 2026:** per tutte
+  queste ricerche partire dalla fiera più vicina a **Brescia** e proseguire
+  fino alla più lontana; lo stesso ordine vale per gli aggiornamenti quando
+  autorizzati separatamente. Ordinare prima tutti gli eventi ancora da
+  assegnare, poi prendere i più vicini nel perimetro richiesto. Usare la
+  distanza indicativa in linea d'aria dalle coordinate del catalogo al centro
+  di Brescia (45.5416, 10.2118), dichiarandone il limite; a parità usare l'ID.
+  Coordinate mancanti o incoerenti vanno risolte o segnalate, non considerate
+  eventi lontani per comodità. Controllare anche possibili alias di eventi
+  già ricercati e documentare le esclusioni. Con due sessioni parallele
+  assegnare alternativamente i ranghi della lista ordinata a due gruppi
+  disgiunti; ciascuna ricerca procede in ordine crescente, senza saltare
+  eventi difficili. Registrare rango e distanza nell'assegnazione e mantenere
+  lo stesso ordine nei risultati. Non richiede di rifare le ricerche concluse
+  e non estende il perimetro autorizzato.
 - La formula autorizza il singolo nuovo gruppo di ricerca e la registrazione
   degli esiti; mantiene i limiti del metodo. Non avvia altri gruppi alla fine
   e non autorizza modifiche al sito/catalogo, contatti a terzi o pubblicazioni.

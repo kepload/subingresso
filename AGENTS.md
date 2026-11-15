@@ -18,6 +18,13 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   nel Codex attualmente in uso**, mantenendo account e modello correnti,
   per 20 fiere nuove secondo [il metodo](data/FIERE_RICERCA_20.md).
   Escludere gli ID già assegnati nel registro; rispettare la zona richiesta.
+- Per tutte le ricerche fiere e gli aggiornamenti separatamente autorizzati,
+  procedere **dalla più vicina a Brescia alla più lontana**. Prima scegliere
+  gli eventi non ancora assegnati in ordine di distanza; con più sessioni
+  distribuire la lista ordinata fra gruppi disgiunti e mantenere l'ordine
+  crescente in ciascun gruppo. Distanze indicative in linea d'aria, criterio
+  e possibili duplicati esclusi documentati nel registro. Questa preferenza
+  non autorizza da sola aggiornamenti del sito o nuove ricerche automatiche.
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
   senza richiesta esplicita. Wizard `vendi.html`, trigger annunci e schema
   email/Resend si modificano solo se necessari al lavoro autorizzato.
