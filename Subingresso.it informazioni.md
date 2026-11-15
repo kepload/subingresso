@@ -21,6 +21,15 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
+**Dal 15 novembre 2026, nuovo metodo permanente:** ricerche operative per
+**20 fiere a sessione**, solo su richiesta, con prove per categorie ammesse,
+composizione reale, accesso/concessioni, spunta e costi. Nessuna deduzione da
+assenze di dati; nessuna modifica implicita al sito. Leggere il
+[metodo](data/FIERE_RICERCA_20.md) e il registro privato
+`.local/ricerche/fiere-20/registro.json` per evitare sovrapposizioni e ripetizioni.
+Primo incarico: due sessioni disgiunte A/B da 20 ciascuna; assegnazioni, stato e
+prove in `.local/ricerche/fiere-20/20261115-1155/`.
+
 Ultimo esito **7 novembre 2026**: **110 province concluse, nessuna aperta**.
 Le ultime due, Pavia e Nuoro, completate in due sessioni separate contemporanee:
 **177 nuove schede, sei aggiornamenti espliciti e dieci nuove note economiche**.

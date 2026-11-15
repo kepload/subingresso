@@ -7,6 +7,11 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 
 ## Stato e vincoli da conservare
 
+- **Ricerca operativa in gruppi da 20, dal 15 novembre 2026:** seguire
+  [metodo permanente](FIERE_RICERCA_20.md) e registro privato
+  `.local/ricerche/fiere-20/registro.json` prima di scegliere nuovi ID.
+  Solo gruppi richiesti dall'utente, prove per ogni dato e lacune esplicite;
+  ricerca distinta da modifiche al catalogo o pubblicazione.
 - [Checklist unica](../docs/fiere-province.md): aggiornata il 7 novembre,
   110 concluse e nessuna aperta su 110; L'Aquila, Cosenza, Catanzaro e Reggio Calabria
   verificate online il 5 novembre su richiesta circoscritta,
