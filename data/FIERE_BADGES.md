@@ -61,3 +61,13 @@ pagamenti e dati incerti, edizione, scadenza e prove modificate, lista/mappa,
 focus, contrasto almeno 4,5:1 e layout a 1440/768/390/320 px Chromium e
 390 px WebKit. Prove private sotto
 `.local/worktrees/bollino-spunte-20261115/.local/verifiche/spunta/`.
+
+## Pubblicazione verificata
+
+Implementazione `9f95cb3`, Vercel `dpl_65LdXCcdYQtML3Ddbogcxgs3ADMb` READY
+su `subingresso.it` il 15 novembre 2026. HTML e quattro asset conformi ai
+sorgenti; tutte le cinque configurazioni del test PASS sia localmente sia sul
+dominio pubblico, con orologio e provider isolati. PASS anche intervalli di
+ricerca, 10.443 pagine fiera, navigazione senza JS, sitemap e gitleaks.
+Catalogo, SQL e servizi non modificati. Stato e verifica degli asset in
+`.local/verifiche/bollini/deployment.json` nel medesimo worktree.

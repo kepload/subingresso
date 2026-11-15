@@ -245,7 +245,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **15 novembre 2026 — altri bollini fiere autorizzati:** «Iscrizioni aperte», «In scadenza» (ultimi sette giorni, alternativo al primo) e «Hobbisti ammessi»; escluso il bollino corrente. Prima copertura da dati documentati: 91 ammissioni hobbisti e 23 finestre di domanda. Fonte/nota esatte, edizione, fuso Roma e scadenza governano la visualizzazione; nessuna disponibilità dedotta. [Regola e verifiche](data/FIERE_BADGES.md).
+- **15 novembre 2026 — altri bollini fiere pubblicati:** «Iscrizioni aperte», «In scadenza» (ultimi sette giorni, alternativo al primo) e «Hobbisti ammessi»; esclusa la corrente. 91 ammissioni hobbisti e 23 finestre documentate; fonte/nota, edizione e fuso Roma governano gli stati senza dedurre disponibilità. `9f95cb3`, Vercel `dpl_65LdXCcdYQtML3Ddbogcxgs3ADMb` READY, cinque asset conformi; cinque configurazioni browser locali/online e 10.443 pagine PASS. [Regola e verifiche](data/FIERE_BADGES.md).
 
 - **15 novembre 2026 — bollino spunta pubblicato:** «Spunte ammesse» verde tenue nella lista e nella mappa; 168 conferme esplicite, incluse le nove fiere comunali di Brescia. Nessun bollino per divieti o dati incerti; ID, fonte e nota devono coincidere, senza dedurre posti liberi o iscrizioni aperte. `05baf58`, Vercel `dpl_12miimRALXiUCpbmk8mvw6MKrDNt` READY, quattro asset conformi; cinque configurazioni browser locali e online PASS, 10.443 pagine verificate. [Regola e limiti](data/FIERE_SPUNTA.md).
 
