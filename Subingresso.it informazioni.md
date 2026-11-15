@@ -27,8 +27,14 @@ composizione reale, accesso/concessioni, spunta e costi. Nessuna deduzione da
 assenze di dati; nessuna modifica implicita al sito. Leggere il
 [metodo](data/FIERE_RICERCA_20.md) e il registro privato
 `.local/ricerche/fiere-20/registro.json` per evitare sovrapposizioni e ripetizioni.
-Primo incarico: due sessioni disgiunte A/B da 20 ciascuna; assegnazioni, stato e
+**Comando permanente:** «altre 20», «ancora 20» e formule equivalenti nel
+contesto fiere significano aprire **una nuova sessione/finestra del Codex in uso**,
+con account/modello correnti, per 20 fiere nuove secondo il metodo e senza
+doppioni. Zona dell'utente: **Brescia**; rispettare l'area della singola richiesta.
+Primo incarico A/B concluso: **40/40 controllate**, con lacune documentate;
 prove in `.local/ricerche/fiere-20/20261115-1155/`.
+Nuovo incarico C: altre 20 fiere di Brescia e comuni vicini, sola ricerca;
+assegnazione e stato in `.local/ricerche/fiere-20/20261115-1320-brescia/`.
 
 Ultimo esito **7 novembre 2026**: **110 province concluse, nessuna aperta**.
 Le ultime due, Pavia e Nuoro, completate in due sessioni separate contemporanee:

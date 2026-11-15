@@ -13,6 +13,11 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   messaggi ordinari sulle bozze o passaggi di conferma superflui.
 - Agire nel perimetro richiesto. Vecchi TODO, cron e autorizzazioni di altre
   attività non autorizzano nuovi interventi, invii o contatti a terzi.
+- Nel contesto delle ricerche fiere, «altre 20», «ancora 20», «fanne altre 20»
+  e richieste equivalenti significano avviare **una nuova sessione/finestra
+  nel Codex attualmente in uso**, mantenendo account e modello correnti,
+  per 20 fiere nuove secondo [il metodo](data/FIERE_RICERCA_20.md).
+  Escludere gli ID già assegnati nel registro; rispettare la zona richiesta.
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
   senza richiesta esplicita. Wizard `vendi.html`, trigger annunci e schema
   email/Resend si modificano solo se necessari al lavoro autorizzato.

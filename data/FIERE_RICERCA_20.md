@@ -3,6 +3,27 @@
 Metodo richiesto dall'utente il **15 novembre 2026** per questa ricerca e le
 future sessioni. Non riattiva i precedenti cicli provinciali o altre automazioni.
 
+## Significato di «altre 20»
+
+Decisione esplicita dell'utente del **15 novembre 2026**: nel contesto delle
+ricerche fiere, «altre 20», «ancora 20», «fanne altre 20» e formule equivalenti
+sono l'istruzione di **aprire una nuova sessione/finestra del Codex attualmente
+in uso** e affidarle altre 20 fiere con questo metodo.
+
+- Usare la creazione di una nuova sessione nell'app corrente, mantenendo account
+  e modello correnti; non passare ad altra installazione/account o riutilizzare
+  una vecchia sessione. Non dichiarare una nuova finestra aperta se è stato
+  preparato soltanto un incarico senza avviarlo.
+- Leggere prima il registro, riservare 20 ID nuovi e una cartella esclusiva,
+  quindi avviare la sessione e verificarne lo stato. Preparazione, coordinamento
+  e memoria restano al coordinatore; la nuova sessione esegue i controlli.
+- Rispettare l'area indicata dall'utente e conservare il contesto della richiesta.
+  Riferimento geografico dichiarato dall'utente: **Brescia**. Il gruppo richiesto
+  il 15 novembre dopo i primi 40 riguarda Brescia e i comuni vicini.
+- La formula autorizza il singolo nuovo gruppo di ricerca e la registrazione
+  degli esiti; mantiene i limiti del metodo. Non avvia altri gruppi alla fine
+  e non autorizza modifiche al sito/catalogo, contatti a terzi o pubblicazioni.
+
 ## Perimetro e continuità
 
 - Ogni sessione controlla **20 fiere identificate prima dell'avvio**, con gli ID
