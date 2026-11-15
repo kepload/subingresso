@@ -33,8 +33,10 @@ con account/modello correnti, per 20 fiere nuove secondo il metodo e senza
 doppioni. Zona dell'utente: **Brescia**; rispettare l'area della singola richiesta.
 Primo incarico A/B concluso: **40/40 controllate**, con lacune documentate;
 prove in `.local/ricerche/fiere-20/20261115-1155/`.
-Nuovo incarico C: altre 20 fiere di Brescia e comuni vicini, sola ricerca;
-assegnazione e stato in `.local/ricerche/fiere-20/20261115-1320-brescia/`.
+Incarichi C/D conclusi: altre **40/40** fiere vicino a Brescia, **80/80**
+ricerche complessive. Ultimo rapporto D:
+`.local/ricerche/fiere-20/20261115-1439-brescia/D/rapporto.md`.
+Campi irrisolti e prove storiche espliciti; catalogo e servizi invariati.
 
 Ultimo esito **7 novembre 2026**: **110 province concluse, nessuna aperta**.
 Le ultime due, Pavia e Nuoro, completate in due sessioni separate contemporanee:
@@ -242,6 +244,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **15 novembre 2026 — concluse 20 nuove ricerche vicino a Brescia:** sessione D, **20/20** in 11 comuni; 100 campi controllati, spunta confermata per quattro fiere bresciane, nessuna scheda interamente confermata. Corretti prima della consegna quattro importi trascritti dall’elenco anonimo di San Zeno. Registro, rapporto e prove in `.local/ricerche/fiere-20/20261115-1439-brescia/`; nessuna integrazione nel sito, modifica ai servizi o invio.
 
 - **14 novembre 2026 — articolo 17, dati sui visitatori della fiera:** [pubblicato e verificato](https://subingresso.it/blog?post=dati-visitatori-fiera-domande-organizzatore), materiali `f77b091`, integrazione `01797b4`, Vercel riuscito. Scheda XLSX e modello email: 73 controlli PASS; cinque percorsi online, lettura senza JS, quattro download identici, SEO/indice/sitemap verificati. I 146 post precedenti invariati, 147 totali. [Fonti e prove](data/blog/dati-visitatori-fiera-domande-organizzatore.fonti.md); consegna privata `accelerazione-codex1-20261114-1721/articolo-17/result.json`. Solo punto 17, nessun invio.
 
