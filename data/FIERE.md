@@ -38,6 +38,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Bollino «Spunte ammesse» — 15 novembre 2026](FIERE_SPUNTA.md): verde tenue nella lista e nella mappa, solo per conferme esplicite della singola fiera; nessun bollino per dati incerti o ammissione esclusa.
+
 - [Ricerca per periodo con date a scorrimento — 7 novembre 2026](fiere-dossier/126-ricerca-periodo-iphone-20261107.md): prova Dal/Al pubblicata e ripristinabile; filtro prodotto rimosso, intervalli su date pubblicate e vecchi link per mese compatibili.
 
 - [Schede fiere essenziali — 7 novembre 2026](fiere-dossier/125-schede-minimali-20261107.md): un’unica ricerca, informazioni aperte, costi senza box, nessun rimando alle recensioni o link alla stessa scheda; fonti deduplicate in fondo, sempre con account.

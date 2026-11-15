@@ -445,6 +445,12 @@
         if (text !== undefined) element.textContent = text;
         return element;
     }
+    function spuntaBadge(event) {
+        if (!global.FairSpunta?.allows(event)) return null;
+        const badge = node('span', 'fiere-spunta', 'Spunte ammesse');
+        badge.title = 'Spunta prevista nelle modalità di partecipazione. Requisiti e termini nella scheda; assegnazione solo sui posti liberi.';
+        return badge;
+    }
     function svgNode(tag, attrs) {
         const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
         for (const [key, value] of Object.entries(attrs || {})) element.setAttribute(key, value);
@@ -762,7 +768,11 @@
             button.setAttribute('aria-label', 'Apri scheda: ' + event.name + ', ' + event.city);
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
-            foot.append(category, button);
+            const tags = node('div', 'fiere-card-tags');
+            tags.append(category);
+            const spunta = spuntaBadge(event);
+            if (spunta) tags.append(spunta);
+            foot.append(tags, button);
             const body = node('div', 'fiere-card-body');
             const content = node('div', 'fiere-card-content');
             const side = node('div', 'fiere-card-side');
@@ -910,6 +920,8 @@
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
             const attendance = attendanceBadge(event);
             if (attendance) button.append(attendance);
+            const spunta = spuntaBadge(event);
+            if (spunta) button.append(spunta);
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }

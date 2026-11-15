@@ -245,6 +245,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **15 novembre 2026 — bollino spunta nelle anteprime:** «Spunte ammesse» verde tenue nella lista e nella mappa, con tema scuro e disposizione mobile. Conferme esplicite per 168 schede, incluse le nove comunali di Brescia; nessun bollino per divieti o dati incerti. ID, fonte e nota devono coincidere con la conferma; nessuna disponibilità o iscrizione aperta dedotta. Cinque configurazioni browser e 10.443 pagine verificate localmente; dettagli e limiti in [FIERE_SPUNTA.md](data/FIERE_SPUNTA.md).
+
 - **15 novembre 2026 — concluse 20 nuove ricerche vicino a Brescia:** sessione D, **20/20** in 11 comuni; 100 campi controllati, spunta confermata per quattro fiere bresciane, nessuna scheda interamente confermata. Corretti prima della consegna quattro importi trascritti dall’elenco anonimo di San Zeno. Registro, rapporto e prove in `.local/ricerche/fiere-20/20261115-1439-brescia/`; nessuna integrazione nel sito, modifica ai servizi o invio.
 
 - **14 novembre 2026 — articolo 17, dati sui visitatori della fiera:** [pubblicato e verificato](https://subingresso.it/blog?post=dati-visitatori-fiera-domande-organizzatore), materiali `f77b091`, integrazione `01797b4`, Vercel riuscito. Scheda XLSX e modello email: 73 controlli PASS; cinque percorsi online, lettura senza JS, quattro download identici, SEO/indice/sitemap verificati. I 146 post precedenti invariati, 147 totali. [Fonti e prove](data/blog/dati-visitatori-fiera-domande-organizzatore.fonti.md); consegna privata `accelerazione-codex1-20261114-1721/articolo-17/result.json`. Solo punto 17, nessun invio.
