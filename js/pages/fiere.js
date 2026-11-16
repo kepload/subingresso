@@ -453,10 +453,11 @@
     }
     function updateFairBadges(container, event) {
         const badges = [];
-        const spunta = spuntaBadge(event);
-        if (spunta) badges.push(spunta);
         const edition = selectEdition(event, todayInRome(), state.months, state);
-        for (const info of global.FairBadges?.get(event, { edition }) || []) {
+        const facts = global.FairBadges?.get(event, { edition }) || [];
+        const spunta = facts.some(info => info.kind === 'no-spunta') ? null : spuntaBadge(event);
+        if (spunta) badges.push(spunta);
+        for (const info of facts) {
             const badge = node('span', 'fiere-badge', info.label);
             badge.dataset.badge = info.kind;
             badge.title = info.title;

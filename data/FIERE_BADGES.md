@@ -4,6 +4,48 @@ Decisione del 15 novembre 2026: aggiungere «Iscrizioni aperte», «In scadenza�
 e «Hobbisti ammessi». Escluso il bollino della corrente. Restano i bollini
 «Spunte ammesse» e le informazioni già presenti sulle schede.
 
+## Divieti espliciti - 16 novembre 2026
+
+Richiesta corrente: rendere immediatamente visibili anche «No spunte» e
+«No hobbisti» nei casi già documentati. La prima copertura comprende cinque
+divieti di spunta e due esclusioni degli hobbisti, riesaminati sulle fonti
+primarie; non è un'inferenza dall'assenza dei bollini positivi.
+
+| Bollino | Fiera | Edizione autorizzata dalla prova |
+|---|---|---|
+| No spunte | San Martino, Gattinara | 10 novembre 2026 |
+| No spunte | Gran Balòn, Torino | 11 ottobre 2026, regolamento 284 art. 11.4 |
+| No spunte | Lo Martchià de Tsalende, Nus | 6 dicembre 2026, decreto 1/2026 punto 3 |
+| No spunte | Immacolata Concezione, Popoli Terme | 8 dicembre 2026, avviso punto 10 |
+| No spunte | Sant'Agostino, San Gimignano | 29 agosto 2026, divieto comunale specifico |
+| No hobbisti | Mostra dell'Usaa, Azzate | 25 ottobre 2026 |
+| No hobbisti | Castello in Fiera, Fénis | 11-12 aprile 2026 |
+
+`denialRecords` in `js/fair-badges.js` conserva ID, fonte e nota esatte del
+catalogo, snapshot delle edizioni, chiavi delle singole date, URL della prova,
+localizzatore, data di consultazione e ambito. Le pagine di Comune/organizzatore
+e i PDF sono stati riletti; per Nus, Popoli e Torino anche controllo visivo.
+Copie e decisioni private: `.local/verifiche/divieti/` in questo worktree.
+Il testo al passaggio del puntatore specifica data e ambito del divieto.
+
+Il bollino negativo richiede l'edizione selezionata esatta. Non si trasferisce
+al 2027, a una nuova data del 2026 o alle precedenti edizioni di Azzate.
+Se cambiano fonte, nota o elenco delle edizioni, sparisce fino alla revisione.
+Gli eventi degli organizzatori restano esclusi. Un divieto positivo e il suo
+opposto non vengono mostrati insieme.
+
+Esclusi dai bollini generici: Lucca (restrizione condizionata all'iscrizione
+CCIAA), Spazio4 (solo SpazioStore e alcune categorie), Ozieri (soli stalli
+esterni), Patrica (regolamento storico non riconfermato), saloni di Cremona
+(«nessuna spunta automatica» non dimostra un divieto). Domanda preventiva,
+posti esauriti o mancata menzione degli hobbisti non producono bollini negativi.
+
+Stesso renderer di lista e mappa, rosso tenue e parole esplicite, senza nuove
+icone o azioni. Tema scuro, contrasto minimo 4,5:1 e impaginazione stretta
+sono controllati nel test esistente `scripts/test-fiere-spunta.cjs` insieme
+alla conservazione dei bollini positivi, all'invalidazione delle prove e
+all'isolamento di data/edizione.
+
 ## Dati e significato
 
 `js/fair-badges.js` contiene conferme esplicite legate a ID, URL della fonte

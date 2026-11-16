@@ -1,8 +1,10 @@
 # Bollino «Spunte ammesse» nelle anteprime
 
 Richiesta del 15 novembre 2026: nelle anteprime delle fiere che prevedono la
-spunta mostrare un bollino verde tenue «Spunte ammesse». Nessun bollino
-negativo; l'assenza comprende anche informazioni insufficienti.
+spunta mostrare un bollino verde tenue «Spunte ammesse». Dal 16 novembre
+sono autorizzati anche i divieti espliciti «No spunte», descritti in
+[FIERE_BADGES.md](FIERE_BADGES.md). L'assenza di bollini comprende anche
+informazioni insufficienti e non prova un divieto.
 
 ## Regola dei dati
 

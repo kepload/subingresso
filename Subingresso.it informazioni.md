@@ -41,6 +41,11 @@ certificano 60 manifestazioni indipendenti. Rapporti e controllo finale in
 `.local/ricerche/fiere-20/20261116-0935-brescia/`; registro comune aggiornato.
 Catalogo e servizi non modificati; nessun invio o ulteriore gruppo automatico.
 
+**16 novembre 2026 - in corso:** due nuove sessioni pulite Codex 2 K/L,
+20 fiere ciascuna, 40 ID nuovi disgiunti dai 200 precedenti. Ordine crescente
+da Brescia; 23 comuni, circa 31,4-39,1 km indicativi. Assegnazioni e stati in
+`.local/ricerche/fiere-20/20261116-2206-brescia/`. Nessun nuovo gruppo automatico.
+
 **Preferenza permanente del 15 novembre 2026:** tutte le ricerche fiere e gli
 aggiornamenti separatamente autorizzati devono procedere **dalla più vicina
 a Brescia alla più lontana**, escludendo gli eventi già assegnati. Distanza
@@ -254,6 +259,9 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **16 novembre 2026 - avviate altre 40 ricerche e preparati i bollini negativi:** due nuove sessioni pulite K/L, 20 ID ciascuna, ordine crescente da Brescia e nessuna sovrapposizione con i 200 precedenti; gruppo `.local/ricerche/fiere-20/20261116-2206-brescia/`. In parallelo il coordinatore implementa No spunte/No hobbisti solo da prove esplicite, in worktree isolato. Ricerca ancora in corso, pubblicazione dei bollini non ancora dichiarata.
+
 
 - **16 novembre 2026 - concluse e controllate altre 60 ricerche fiere:** H/I/J, 20 per ciascuna di tre nuove schede Codex 2; ID disgiunti dai 140 precedenti, 29 comuni, ordine crescente da Brescia. 300 campi: 9 confermati, 71 parziali, 211 non verificati, 2 contraddittori, 7 storici; nessuna scheda interamente confermata. 132 riferimenti a 129 URL; alias/palinsesti, annullamento TorreCon e condizioni di annate diverse espliciti. Rapporti e controlli in `.local/ricerche/fiere-20/20261116-0935-brescia/`. Catalogo, servizi e file estranei invariati; nessun invio, pubblicazione o nuovo gruppo automatico.
 

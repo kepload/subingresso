@@ -59,6 +59,32 @@ for (const event of [null, {}, { ...sarcedo, managedEventId: 'organizer' }, { ..
 assert.deepEqual(kinds({ ...sarcedo, participation: { ...sarcedo.participation, deadline: '2027-12-03' } }, '2026-11-15T10:00:00Z'), ['hobby']);
 console.log('PASS new badges: explicit admission, Rome midnight/closing hour, 7-day threshold, before opening, year isolation, payment/uncertain deadline exclusions and stale evidence.');
 
+const noSpuntaIds = ['piemonte-gattinara-fiera-di-san-martino', 'piemonte-torino-gran-balon', 'valle-d-aosta-nus-lo-martchia-de-tsalende', 'abruzzo-popoli-fiera-dell-immacolata-concezione', 'toscana-san-gimignano-fiera-di-sant-agostino'];
+const noHobbyIds = ['lombardia-azzate-mostra-dell-usaa', 'valle-d-aosta-fenis-castello-in-fiera'];
+for (const [kind, ids] of [['no-spunta', noSpuntaIds], ['no-hobby', noHobbyIds]]) {
+    for (const id of ids) {
+        const event = byId(id), edition = event.editions.at(-1);
+        assert(kinds(event, '2026-11-16T12:00:00Z', edition).includes(kind), id);
+        assert(!kinds(event, '2026-11-16T12:00:00Z', { ...edition, year: 2027 }).includes(kind), id + ' other year');
+        assert(!kinds(event, '2026-11-16T12:00:00Z', { ...edition, start: '2026-01-01' }).includes(kind), id + ' other date');
+        for (const changed of [
+            { ...event, source: { ...event.source, url: 'https://example.com/changed' } },
+            { ...event, participation: { ...event.participation, note: event.participation.note + ' Updated.' } },
+            { ...event, editions: [...event.editions, { year: 2027, start: '2027-01-01', end: '2027-01-01' }] },
+            { ...event, managedEventId: 'organizer' }
+        ]) assert(!kinds(changed, '2026-11-16T12:00:00Z', edition).includes(kind), id + ' stale evidence');
+        assert(!badges.get(event, { edition: null }).some(b => b.kind === kind), id + ' no selected edition');
+        if (kind === 'no-spunta') assert.equal(spunta.allows(event), false, id + ' conflicting positive');
+        if (kind === 'no-hobby') assert(!kinds(event, '2026-11-16T12:00:00Z').includes('hobby'), id + ' conflicting positive');
+    }
+}
+const azzate = byId('lombardia-azzate-mostra-dell-usaa');
+assert(!kinds(azzate, '2026-11-16T12:00:00Z', azzate.editions[0]).includes('no-hobby'), 'October rule not copied to March');
+for (const id of ['emilia-romagna-piacenza-il-mercatino-di-spazio4', 'toscana-lucca-mercato-antiquario', 'lazio-patrica-mercatino-dell-usato', 'lombardia-cremona-bid-cremona', 'sardegna-ozieri-fiera-zootecnica-e-agroalimentare']) {
+    assert(!kinds(byId(id), '2026-11-16T12:00:00Z').some(kind => kind.startsWith('no-')), id + ' partial/historical/unknown');
+}
+console.log('PASS denials: 5 no spunta, 2 no hobby, exact editions, no year/date transfer, stale evidence and scoped/historical exclusions.');
+
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
     const file = path.resolve(root, '.' + (url.pathname === '/fiere' ? '/fiere.html' : url.pathname));
@@ -176,6 +202,33 @@ function contrast(foreground, background) {
             assert.equal(await application.locator('[data-badge=closing]').count(), 0);
             assert.equal(await page.locator('#popup-events [data-badge=closing]').count(), 0);
             assert.equal(await application.locator('[data-badge=hobby]').count(), 1);
+            for (const fixture of [
+                { id: 'valle-d-aosta-nus-lo-martchia-de-tsalende', query: 'provincia=Aosta&q=Nus&mesi=12', kind: 'no-spunta', label: 'No spunte' },
+                { id: azzate.id, query: 'provincia=Varese&q=Usaa&mesi=10', kind: 'no-hobby', label: 'No hobbisti' }
+            ]) {
+                await page.goto(base + '/fiere?' + fixture.query);
+                const restrictionCard = page.locator('.fiere-card[data-event-id="' + fixture.id + '"]');
+                await restrictionCard.waitFor();
+                const restriction = restrictionCard.locator('[data-badge=' + fixture.kind + ']');
+                assert.equal(await restriction.textContent(), fixture.label);
+                assert.match(await restriction.getAttribute('title'), /2026/);
+                assert.equal(await restrictionCard.locator(fixture.kind === 'no-spunta' ? '.fiere-spunta' : '[data-badge=hobby]').count(), 0);
+                for (const dark of [false, true]) {
+                    await page.evaluate(value => document.documentElement.classList.toggle('admin-dark', value), dark);
+                    const colors = await restriction.evaluate(element => ({ foreground: getComputedStyle(element).color, background: getComputedStyle(element).backgroundColor }));
+                    assert(contrast(colors.foreground, colors.background) >= 4.5);
+                    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+                    const overlap = await restrictionCard.evaluate(element => {
+                        const action = element.querySelector('.fiere-card-button').getBoundingClientRect();
+                        return [...element.querySelectorAll('.fiere-badge')].some(badge => { const r = badge.getBoundingClientRect(); return r.right > action.left && r.left < action.right && r.bottom > action.top && r.top < action.bottom; });
+                    });
+                    assert.equal(overlap, false);
+                    await restrictionCard.screenshot({ path: path.join(out, engine + '-' + width + '-' + fixture.kind + (dark ? '-dark' : '') + '.png') });
+                }
+                await page.locator('.fiere-marker[data-events*="' + fixture.id + '"]').click();
+                await page.locator('#map-popup').waitFor({ state: 'visible' });
+                assert.equal(await page.locator('#popup-events [data-badge=' + fixture.kind + ']').textContent(), fixture.label);
+            }
             assert.deepEqual(errors, []);
             console.log('PASS ' + engine + ' ' + width + ': all badges in list/map, opening/closing/expiry without focus loss, absent cases, details, contrast and mobile layout in light/dark.');
         } finally { await browser.close(); }

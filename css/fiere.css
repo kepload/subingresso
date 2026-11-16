@@ -89,8 +89,10 @@ button.fiere-reputation{text-decoration:none}
 .fiere-spunta,.fiere-badge{display:inline-flex;align-items:center;flex-shrink:0;padding:4px 7px;border-radius:6px;font-size:11px;font-weight:600;line-height:1.5;white-space:nowrap}
 .fiere-spunta{background:#edf7f0;color:#286043}
 .fiere-badge[data-badge=open]{background:#edf5ff;color:#245b95}.fiere-badge[data-badge=closing]{background:#fff5df;color:#835410}.fiere-badge[data-badge=hobby]{background:#edf2f6;color:#40516b}
+.fiere-badge[data-badge=no-spunta],.fiere-badge[data-badge=no-hobby]{background:#faefed;color:#873d38}
 html.admin-dark .fiere-spunta{background:#183a2b;color:#b6dfc5}
 html.admin-dark .fiere-badge[data-badge=open]{background:#1c344c;color:#bad8f7}html.admin-dark .fiere-badge[data-badge=closing]{background:#493719;color:#f1d59b}html.admin-dark .fiere-badge[data-badge=hobby]{background:#2d3b4e;color:#ced9e7}
+html.admin-dark .fiere-badge[data-badge=no-spunta],html.admin-dark .fiere-badge[data-badge=no-hobby]{background:#48282b;color:#f1c1c1}
 .fiere-popup-event .fiere-badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.fiere-popup-event .fiere-badges[hidden]{display:none}
 .fiere-date-warning{margin-left:5px}.fiere-date-warning-button{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;width:24px;min-height:24px;padding:0;border:0;border-radius:50%;background:#fef3c7;color:#92400e;font-size:13px;font-weight:800;line-height:1;cursor:pointer}.fiere-date-warning-button:hover,.fiere-date-warning-button[aria-expanded=true]{background:#fde68a}.fiere-date-note{display:block;margin:6px 0;padding:8px 10px;border-radius:8px;background:#fffbeb;color:#92400e;font-size:11px;font-weight:400;line-height:1.6;overflow-wrap:anywhere}
 .fiere-tag{font-size:10px;font-weight:600;border-radius:6px;background:#f1f5f9;color:#475569;padding:5px 7px;display:inline-block}

@@ -1008,13 +1008,127 @@
     ]
 ];
     const confirmations = new Map(records.map(([id, sourceUrl, note, facts]) => [id, { sourceUrl, note, ...facts }]));
+    // Explicit denials, reviewed per edition; never inferred from missing data.
+    const denialRecords = [
+    {
+        "id": "piemonte-gattinara-fiera-di-san-martino",
+        "sourceUrl": "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044",
+        "note": "Fai domanda solo sullo sportello online del Comune con SPID o CIE. Non presentarti alla spunta: serve l’assegnazione prima della fiera.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-11-10\",\"end\":\"2026-11-10\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044\"}]",
+        "editionKeys": [
+            "2026|2026-11-10|2026-11-10"
+        ],
+        "kind": "no-spunta",
+        "scope": "Fiera del 10 novembre 2026: nessun posteggio in spunta, neppure presentandosi la mattina.",
+        "evidenceUrl": "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044",
+        "locator": "Sezione NON SARANNO ASSEGNATI POSTEGGI IN SPUNTA",
+        "checkedAt": "2026-11-16",
+        "proofKey": "gattinara"
+    },
+    {
+        "id": "piemonte-torino-gran-balon",
+        "sourceUrl": "https://www.balon.it/portfolio/gran-balon-ottobre-2026/",
+        "note": "Mercato periodico tematico, con requisiti e selezione del soggetto attuatore. Verificare categoria professionale/occasionale ammessa, candidatura, quota e disponibilità. Nessuna concessione o spunta automatica.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-10-11\",\"end\":\"2026-10-11\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.balon.it/portfolio/gran-balon-ottobre-2026/\"}]",
+        "editionKeys": [
+            "2026|2026-10-11|2026-10-11"
+        ],
+        "kind": "no-spunta",
+        "scope": "Gran Balon, edizione documentata dell'11 ottobre 2026. Il regolamento esclude l'assegnazione dei posti vacanti; prenotazioni e disdette anticipate restano distinte.",
+        "evidenceUrl": "https://www.comune.torino.it/media/11811",
+        "locator": "Regolamento 284, art. 11 comma 4, pagina PDF 8; versione esecutiva 12 luglio 2026",
+        "checkedAt": "2026-11-16",
+        "proofKey": "gran-balon"
+    },
+    {
+        "id": "valle-d-aosta-nus-lo-martchia-de-tsalende",
+        "sourceUrl": "https://comune.nus.ao.it/wp-content/uploads/2026/10/bando-mostra-mercato-natale-2026.pdf",
+        "note": "Decreto 1/2026: 6 dicembre ore 10–18, domanda 9 novembre. Cinquanta postazioni 3 × 3 m sono capienza, non disponibilità; graduatoria cronologica, spunta NON ammessa. Non professionisti con permesso, professionisti e associazioni/scuole per finalità previste; alimentari solo professionisti con registrazione sanitaria. Domanda e autorizzazione in bollo, importi non specificati nel decreto.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-12-06\",\"end\":\"2026-12-06\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://comune.nus.ao.it/wp-content/uploads/2026/10/bando-mostra-mercato-natale-2026.pdf\"}]",
+        "editionKeys": [
+            "2026|2026-12-06|2026-12-06"
+        ],
+        "kind": "no-spunta",
+        "scope": "Mostra mercato del 6 dicembre 2026: la spunta non e ammessa.",
+        "evidenceUrl": "https://comune.nus.ao.it/wp-content/uploads/2026/10/bando-mostra-mercato-natale-2026.pdf",
+        "locator": "Decreto 1/2026, pagina 2, punto 3",
+        "checkedAt": "2026-11-16",
+        "proofKey": "nus"
+    },
+    {
+        "id": "abruzzo-popoli-fiera-dell-immacolata-concezione",
+        "sourceUrl": "https://www.comune.popoli.pe.it/moduli/output_immagine.php?id=4817",
+        "note": "Avviso originale 2026 di Popoli Terme: 91 posteggi NON alimentari, graduatoria con anzianità e prelazione degli esercizi nelle aree della fiera. Domanda entro 16 novembre 2026 con bollo 16 €, carta di esercizio e attestazione annuale; CUP da pagare dopo assegnazione entro 30 novembre, importo individuale non pubblicato. Non è prevista la spunta il giorno della fiera. Le 91 posizioni sono l’organico, non posti attualmente liberi. Ingresso operatori 7:00–8:00; uscita non prima delle 14:00.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-12-08\",\"end\":\"2026-12-08\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.comune.popoli.pe.it/moduli/output_immagine.php?id=4817\"}]",
+        "editionKeys": [
+            "2026|2026-12-08|2026-12-08"
+        ],
+        "kind": "no-spunta",
+        "scope": "Fiera dell'Immacolata dell'8 dicembre 2026: non e prevista la spunta il giorno della fiera.",
+        "evidenceUrl": "https://www.comune.popoli.pe.it/moduli/output_immagine.php?id=4817",
+        "locator": "Avviso 2026, pagina 1, punto 10",
+        "checkedAt": "2026-11-16",
+        "proofKey": "popoli"
+    },
+    {
+        "id": "toscana-san-gimignano-fiera-di-sant-agostino",
+        "sourceUrl": "https://www.comune.sangimignano.si.it/it/news/132950/divieto-di-presenza-degli-operatori-commerciali-non-assegnatari-fissi-alla-fiera-di-santagostino-del-29-agosto",
+        "note": "Fiera comunale documentata per il 2026. L’assegnazione di concessioni è distinta dall’accesso occasionale e dalle variazioni del mercato settimanale; costo non quantificato nella fonte. Nell’edizione del 29 agosto è espressamente vietata la partecipazione degli spuntisti e l’assegnazione a spunta per concomitanza con Festival SANGIN.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-08-29\",\"end\":\"2026-08-29\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.comune.sangimignano.si.it/it/news/132950/divieto-di-presenza-degli-operatori-commerciali-non-assegnatari-fissi-alla-fiera-di-santagostino-del-29-agosto\"}]",
+        "editionKeys": [
+            "2026|2026-08-29|2026-08-29"
+        ],
+        "kind": "no-spunta",
+        "scope": "Solo Fiera di Sant'Agostino del 29 agosto 2026: vietate la partecipazione degli spuntisti e l'assegnazione a spunta.",
+        "evidenceUrl": "https://www.comune.sangimignano.si.it/it/news/132950/divieto-di-presenza-degli-operatori-commerciali-non-assegnatari-fissi-alla-fiera-di-santagostino-del-29-agosto",
+        "locator": "Avviso del 21 agosto 2026, descrizione, delibera 163/2026",
+        "checkedAt": "2026-11-16",
+        "proofKey": "san-gimignano"
+    },
+    {
+        "id": "lombardia-azzate-mostra-dell-usaa",
+        "sourceUrl": "https://www.proazzate.org/news.php?n=74",
+        "note": "Riservata esclusivamente a privati: esclusi professionisti, antiquari e hobbisti. Abbigliamento/scarpe/borse massimo 25% dello spazio. Pagamento espositori in contanti all’ingresso, importo da chiedere. Telefono solo lun–ven della settimana precedente, 17:30–18:30, senza WhatsApp.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-03-29\",\"end\":\"2026-03-29\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.varesedoyoulake.it/sites/default/files/evento/attachments/105073/fvw_calendario_eventi-marzo-2026.pdf\"},{\"year\":2026,\"start\":\"2026-04-26\",\"end\":\"2026-04-26\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.varesedoyoulake.it/sites/default/files/evento/attachments/105121/fvw_calendario_eventi-aprile-2026.pdf\"},{\"year\":2026,\"start\":\"2026-05-31\",\"end\":\"2026-05-31\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.varesedoyoulake.it/sites/default/files/evento/attachments/105241/fvw_calendario_eventi-maggio-2026.pdf\"},{\"year\":2026,\"start\":\"2026-10-25\",\"end\":\"2026-10-25\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.proazzate.org/news.php?n=74\"}]",
+        "editionKeys": [
+            "2026|2026-10-25|2026-10-25"
+        ],
+        "kind": "no-hobby",
+        "scope": "Solo Mostra dell'Usaa del 25 ottobre 2026: l'organizzatore esclude gli hobbisti; ammessi privati secondo il regolamento.",
+        "evidenceUrl": "https://www.proazzate.org/news.php?n=74",
+        "locator": "Notizia del 28 settembre 2026, paragrafo La manifestazione e solo ed esclusivamente per PRIVATI",
+        "checkedAt": "2026-11-16",
+        "proofKey": "azzate"
+    },
+    {
+        "id": "valle-d-aosta-fenis-castello-in-fiera",
+        "sourceUrl": "https://www.acoteduchateau.com/area-espositori",
+        "note": "Area espositori 2026: professionisti e artigiani iscritti all’Albo valdostano, hobbisti esclusi. Adesione entro 28 febbraio ore 12, selezione 12 marzo, pagamento 1–5 aprile: termini scaduti. Gazebo 3 × 3 m, tavolo/juta, illuminazione e sorveglianza inclusi; bevande riservate all’organizzatore.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-04-11\",\"end\":\"2026-04-12\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.acoteduchateau.com/area-espositori\"}]",
+        "editionKeys": [
+            "2026|2026-04-11|2026-04-12"
+        ],
+        "kind": "no-hobby",
+        "scope": "Castello in Fiera, 11-12 aprile 2026: hobbisti non ammessi.",
+        "evidenceUrl": "https://www.acoteduchateau.com/area-espositori",
+        "locator": "Area espositori 2026, Chi puo partecipare",
+        "checkedAt": "2026-11-16",
+        "proofKey": "fenis"
+    }
+];
+    const denials = new Map(denialRecords.map(record => [record.id, record]));
     const formatter = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
     function get(event, { now = new Date(), edition = null } = {}) {
         if (!event || event.managedEventId) return [];
         const confirmation = confirmations.get(event.id);
-        if (!confirmation || confirmation.sourceUrl !== event.source?.url || confirmation.note !== event.participation?.note) return [];
+        const denial = denials.get(event.id);
+        const matches = record => record && record.sourceUrl === event.source?.url && record.note === event.participation?.note;
         const badges = [];
-        if (confirmation.hobby) badges.push({ kind: 'hobby', label: 'Hobbisti ammessi', title: 'Hobbisti previsti nelle modalità di partecipazione. Requisiti, tesserino e prodotti ammessi nella scheda.' });
+        if (matches(denial) && edition && denial.editions === JSON.stringify(event.editions) && denial.editionKeys.includes([edition.year, edition.start, edition.end].join('|'))) {
+            badges.push({ kind: denial.kind, label: denial.kind === 'no-spunta' ? 'No spunte' : 'No hobbisti', title: denial.scope, sourceUrl: denial.evidenceUrl });
+        }
+        if (!matches(confirmation)) return badges;
+        if (confirmation.hobby && !badges.some(badge => badge.kind === 'no-hobby')) badges.push({ kind: 'hobby', label: 'Hobbisti ammessi', title: 'Hobbisti previsti nelle modalità di partecipazione. Requisiti, tesserino e prodotti ammessi nella scheda.' });
         const window = confirmation.window;
         if (!window || event.participation.deadline !== window.deadline || !edition || !window.years.includes(edition.year)) return badges;
         const instant = new Date(now);
