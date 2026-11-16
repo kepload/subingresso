@@ -31,20 +31,16 @@ assenze di dati; nessuna modifica implicita al sito. Leggere il
 contesto fiere significano aprire **una nuova sessione/finestra del Codex in uso**,
 con account/modello correnti, per 20 fiere nuove secondo il metodo e senza
 doppioni. Zona dell'utente: **Brescia**; rispettare l'area della singola richiesta.
-Incarichi A/B/C/D/E/F/G/H/I/J conclusi: **200/200 schede ricercate**, su ID disgiunti.
-Ultimo gruppo H/I/J: **60/60**, 20 per ciascuna di tre nuove schede Codex 2,
-in 29 comuni, circa 20,3-30,7 km indicativi da Brescia, in ordine crescente.
-Su 300 campi: **9 confermati, 71 parziali, 211 non verificati, 2 contraddittori
-e 7 storici**. Nessuna scheda interamente confermata. Sovrapposizioni fra
-palinsesti e rassegne collegate (Salo/Desenzano) documentate: 60 ID non
-certificano 60 manifestazioni indipendenti. Rapporti e controllo finale in
-`.local/ricerche/fiere-20/20261116-0935-brescia/`; registro comune aggiornato.
-Catalogo e servizi non modificati; nessun invio o ulteriore gruppo automatico.
-
-**16 novembre 2026 - in corso:** due nuove sessioni pulite Codex 2 K/L,
-20 fiere ciascuna, 40 ID nuovi disgiunti dai 200 precedenti. Ordine crescente
-da Brescia; 23 comuni, circa 31,4-39,1 km indicativi. Assegnazioni e stati in
-`.local/ricerche/fiere-20/20261116-2206-brescia/`. Nessun nuovo gruppo automatico.
+Incarichi A/B/C/D/E/F/G/H/I/J/K/L conclusi: **240/240 schede ricercate**,
+su ID disgiunti. Ultimo gruppo K/L: **40/40**, 20 per ciascuna di due nuove
+sessioni pulite Codex 2; 23 comuni, circa 31,4-39,1 km indicativi da Brescia,
+in ordine crescente. Su 200 campi: **12 confermati, 51 parziali, 130 non verificati, 1 contraddittorio, 6 storici**.
+Nessuna scheda interamente confermata. Ricerche, prove e controllo del coordinatore in
+`.local/ricerche/fiere-20/20261116-2206-brescia/`; registro comune aggiornato.
+I risultati K/L restano privati. Separatamente pubblicati cinque «No spunte»
+e due «No hobbisti» da prove precedenti, con vincolo alla singola edizione;
+contratto nel worktree bollino-spunte-20261115/data/FIERE_BADGES.md.
+Catalogo e servizi invariati; nessun invio o ulteriore gruppo automatico.
 
 **Preferenza permanente del 15 novembre 2026:** tutte le ricerche fiere e gli
 aggiornamenti separatamente autorizzati devono procedere **dalla più vicina
@@ -260,7 +256,10 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **16 novembre 2026 - avviate altre 40 ricerche e preparati i bollini negativi:** due nuove sessioni pulite K/L, 20 ID ciascuna, ordine crescente da Brescia e nessuna sovrapposizione con i 200 precedenti; gruppo `.local/ricerche/fiere-20/20261116-2206-brescia/`. In parallelo il coordinatore implementa No spunte/No hobbisti solo da prove esplicite, in worktree isolato. Ricerca ancora in corso, pubblicazione dei bollini non ancora dichiarata.
+- **16 novembre 2026 - bollini No spunte e No hobbisti online:** cinque divieti di spunta e due esclusioni degli hobbisti da fonti primarie rilette, legati alla singola edizione e invalidati da modifiche a fonte/nota/date. Rosso tenue, lista e mappa, chiaro/scuro; nessun divieto dedotto da informazioni mancanti o restrizioni parziali. `27b2d93`, Vercel `dpl_3h4Z9i6o5FitmrFWxkTfH4KrkFb8` READY, cinque asset conformi e test locali/online PASS in cinque configurazioni browser. Catalogo e servizi invariati. Contratto e prove in `.local/worktrees/bollino-spunte-20261115/data/FIERE_BADGES.md` e relativa `.local/verifiche/divieti/`.
+
+
+- **16 novembre 2026 - concluse altre 40 ricerche fiere:** due sessioni nuove pulite K/L, 20 ciascuna; 40 ID disgiunti dai 200 precedenti, 23 comuni, ordine crescente da Brescia. 200 campi: 12 confermati, 51 parziali, 130 non verificati, 1 contraddittorio, 6 storici; 0 schede interamente confermate. 104 riferimenti a 101 URL distinti. Rapporti e controlli in `.local/ricerche/fiere-20/20261116-2206-brescia/`. Risultati privati, nessuna importazione nel sito, nessun invio o nuovo gruppo automatico. I bollini negativi pubblicati dal coordinatore sono registrati separatamente.
 
 
 - **16 novembre 2026 - concluse e controllate altre 60 ricerche fiere:** H/I/J, 20 per ciascuna di tre nuove schede Codex 2; ID disgiunti dai 140 precedenti, 29 comuni, ordine crescente da Brescia. 300 campi: 9 confermati, 71 parziali, 211 non verificati, 2 contraddittori, 7 storici; nessuna scheda interamente confermata. 132 riferimenti a 129 URL; alias/palinsesti, annullamento TorreCon e condizioni di annate diverse espliciti. Rapporti e controlli in `.local/ricerche/fiere-20/20261116-0935-brescia/`. Catalogo, servizi e file estranei invariati; nessun invio, pubblicazione o nuovo gruppo automatico.

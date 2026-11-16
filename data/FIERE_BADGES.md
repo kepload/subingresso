@@ -46,6 +46,18 @@ sono controllati nel test esistente `scripts/test-fiere-spunta.cjs` insieme
 alla conservazione dei bollini positivi, all'invalidazione delle prove e
 all'isolamento di data/edizione.
 
+### Pubblicazione dei divieti
+
+Implementazione `27b2d93`, Vercel `dpl_3h4Z9i6o5FitmrFWxkTfH4KrkFb8`
+READY e associata a `subingresso.it` il 16 novembre 2026. HTML e quattro
+asset identici ai sorgenti. PASS le cinque configurazioni del test specifico
+sia localmente sia sul dominio: Chromium 1440/768/390/320 e WebKit 390,
+temi chiaro/scuro, lista/mappa, contrasto e assenza di sovrapposizioni.
+Controllate anche 10.443 pagine, navigazione senza JavaScript e intervalli
+di ricerca. Provider isolati: nessun account, invio o scrittura di prova.
+Catalogo e servizi invariati. Ricevuta privata:
+`.local/verifiche/divieti/deployment.json` nel worktree dei bollini.
+
 ## Dati e significato
 
 `js/fair-badges.js` contiene conferme esplicite legate a ID, URL della fonte
