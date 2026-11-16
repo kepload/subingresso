@@ -31,20 +31,15 @@ assenze di dati; nessuna modifica implicita al sito. Leggere il
 contesto fiere significano aprire **una nuova sessione/finestra del Codex in uso**,
 con account/modello correnti, per 20 fiere nuove secondo il metodo e senza
 doppioni. Zona dell'utente: **Brescia**; rispettare l'area della singola richiesta.
-Incarichi A/B/C/D/E/F/G conclusi: **140/140 ricerche** su ID disgiunti.
-Ultimo incarico F/G: **40/40 schede ricercate e controllate**, 20 per ciascuna
-di due schede parallele, in 16 comuni, circa 0,6–20,3 km indicativi da Brescia.
-Su 200 campi: **8 confermati, 60 parziali, 122 non verificati, 4 contraddittori
-e 6 storici**. Nessuna scheda interamente confermata; lacune e contrasti
-espliciti. Rapporti, fonti e controllo finale del coordinatore in
-`.local/ricerche/fiere-20/20261115-2010-brescia/`; registro comune aggiornato.
+Incarichi A/B/C/D/E/F/G/H/I/J conclusi: **200/200 schede ricercate**, su ID disgiunti.
+Ultimo gruppo H/I/J: **60/60**, 20 per ciascuna di tre nuove schede Codex 2,
+in 29 comuni, circa 20,3-30,7 km indicativi da Brescia, in ordine crescente.
+Su 300 campi: **9 confermati, 71 parziali, 211 non verificati, 2 contraddittori
+e 7 storici**. Nessuna scheda interamente confermata. Sovrapposizioni fra
+palinsesti e rassegne collegate (Salo/Desenzano) documentate: 60 ID non
+certificano 60 manifestazioni indipendenti. Rapporti e controllo finale in
+`.local/ricerche/fiere-20/20261116-0935-brescia/`; registro comune aggiornato.
 Catalogo e servizi non modificati; nessun invio o ulteriore gruppo automatico.
-
-**16 novembre 2026 - in corso:** altre 60 ricerche autorizzate nelle tre
-nuove schede Codex 2 H/I/J (20 ciascuna), su ID disgiunti dai 140 precedenti.
-Ordine crescente da Brescia; 29 comuni, circa 20,3-30,7 km in linea d'aria.
-Assegnazioni e stati: `.local/ricerche/fiere-20/20261116-0935-brescia/`.
-Solo ricerca, senza nuovi gruppi automatici.
 
 **Preferenza permanente del 15 novembre 2026:** tutte le ricerche fiere e gli
 aggiornamenti separatamente autorizzati devono procedere **dalla più vicina
@@ -260,7 +255,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **16 novembre 2026 - avviate altre 60 ricerche fiere in Codex 2:** tre nuove schede H/I/J, 20 ID ciascuna, disgiunti dai 140 precedenti. Ordine crescente da Brescia, 29 comuni, circa 20,3-30,7 km indicativi. In corso; assegnazioni, stati e ricevuta in `.local/ricerche/fiere-20/20261116-0935-brescia/`, registro aggiornato. Solo ricerca, nessuna modifica al sito o invio, nessun altro gruppo automatico.
+- **16 novembre 2026 - concluse e controllate altre 60 ricerche fiere:** H/I/J, 20 per ciascuna di tre nuove schede Codex 2; ID disgiunti dai 140 precedenti, 29 comuni, ordine crescente da Brescia. 300 campi: 9 confermati, 71 parziali, 211 non verificati, 2 contraddittori, 7 storici; nessuna scheda interamente confermata. 132 riferimenti a 129 URL; alias/palinsesti, annullamento TorreCon e condizioni di annate diverse espliciti. Rapporti e controlli in `.local/ricerche/fiere-20/20261116-0935-brescia/`. Catalogo, servizi e file estranei invariati; nessun invio, pubblicazione o nuovo gruppo automatico.
 
 
 - **15 novembre 2026 — concluse e verificate altre 40 ricerche per vicinanza a Brescia:** F/G, 20 per scheda parallela, 40 ID disgiunti dai 100 precedenti; 16 comuni, 200 campi (8 confermati, 60 parziali, 122 non verificati, 4 contraddittori, 6 storici). Ordine crescente verificato, 114 riferimenti a 113 URL distinti; termine ambiguo di Montichiari corretto e artefatti UTF-8 rimossi. Preferenza geografica permanente salvata. Rapporti e controllo finale `.local/ricerche/fiere-20/20261115-2010-brescia/`; catalogo, servizi e file estranei invariati rispetto all’avvio. Nessun invio o nuovo gruppo automatico.
