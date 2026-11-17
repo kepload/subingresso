@@ -103,3 +103,14 @@ Limite preesistente: `scripts/test-fiere.cjs:636` si ferma sulla Fiera del
 Crocifisso, aspettando il mese 10 mentre il catalogo contiene il mese 9.
 Riprodotto anche con il catalogo iniziale `6693de5`, senza le 26 modifiche;
 la scheda è estranea e rimane identica. Nessuna correzione fuori ambito.
+
+Pubblicazione verificata: commit `89776a1`, Vercel
+`dpl_A9Wd51qSy21vDgtQiBXnH3vJ7eHh` READY e dominio `subingresso.it` associato.
+Catalogo, HTML e tre moduli identici ai sorgenti; tutte le 26 note verificate
+nella risposta HTML delle rispettive pagine pubbliche. PASS il test bollini
+sia locale sia online in Chromium 1440/768/390/320 e WebKit 390, inclusi
+Lavis e Levico, mappa, dettaglio, contrasto e temi. PASS 10.443 pagine e i
+percorsi browser delle schede a 1440/320/390. Gitleaks PASS. Nessuna richiesta
+di partecipazione, iscrizione, email o scrittura reale di prova.
+Ricevuta: `.local/lavori/fiere-26/deployment.json`; fonti originali e hash
+nella sottocartella `fonti/`, voti personali anche in CSV nella stessa area privata.
