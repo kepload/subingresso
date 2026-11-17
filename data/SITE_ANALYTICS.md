@@ -8,6 +8,11 @@ Dal 27 ottobre anche i due account interni configurati sono esclusi dalla
 raccolta e dai report commerciali, senza limitarne le funzioni personali.
 Regole comuni e limiti dello storico: `ANALYTICS_EXCLUSIONS.md`.
 
+Dal 17 novembre 2026, le nuove pagine e gli eventi generali escludono i
+crawler Google tramite IP ufficiali e user-agent, prima del salvataggio.
+Scansione e visite provenienti da Google restano operative; storico invariato.
+Ambito, verifiche e manutenzione: `GOOGLE_CRAWLER_ANALYTICS.md`.
+
 ## Raccolta e significato
 
 `js/site-analytics.js` è caricato in modo sincrono dopo il tracker visite,

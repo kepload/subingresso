@@ -256,6 +256,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **17 novembre 2026 - filtro Googlebot attivo:** nuove visualizzazioni ed eventi generali esclusi prima del salvataggio tramite 317 intervalli IP ufficiali IPv4/IPv6 e user-agent. Due trigger DB applicati alle 17:53; 24 casi SQL prima/dopo e controlli API reali PASS, nessuna riga di prova; pagine accessibili a Googlebot HTTP 200. Storico e contatori indipendenti invariati. [Ambito, manutenzione e prove](data/GOOGLE_CRAWLER_ANALYTICS.md).
+
 - **16 novembre 2026 - bollini No spunte e No hobbisti online:** cinque divieti di spunta e due esclusioni degli hobbisti da fonti primarie rilette, legati alla singola edizione e invalidati da modifiche a fonte/nota/date. Rosso tenue, lista e mappa, chiaro/scuro; nessun divieto dedotto da informazioni mancanti o restrizioni parziali. `27b2d93`, Vercel `dpl_3h4Z9i6o5FitmrFWxkTfH4KrkFb8` READY, cinque asset conformi e test locali/online PASS in cinque configurazioni browser. Catalogo e servizi invariati. Contratto e prove in `.local/worktrees/bollino-spunte-20261115/data/FIERE_BADGES.md` e relativa `.local/verifiche/divieti/`.
 
 
