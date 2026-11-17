@@ -4551,7 +4551,7 @@
       ],
       "participation": {
         "type": "check",
-        "note": "Calendario regionale: chiedere all’organizzatore ammissione professionale, giornate dei banchi, domanda e costi. Le attività gastronomiche della festa non equivalgono a posteggi disponibili.",
+        "note": "Il calendario regionale comprende anche il 7 e l’8 dicembre, oltre al 6 dicembre del riepilogo: giorni effettivi dei banchi da confermare. Per un banco di bigiotteria commerciale chiedere ammissione professionale e merceologie, presenza di un’area hobbisti, eventuale spunta e quota; il tema artigianale non costituisce un divieto documentato.",
         "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98"
       },
       "organizer": "Associazione Percorsi Valeggio",
@@ -4561,6 +4561,13 @@
       "sectors": "Artigianato; Alimentari e gastronomia",
       "contacts": {
         "email": "info@percorsivaleggio.it"
+      },
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
       }
     },
     {
@@ -5095,7 +5102,7 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione e i settori. Chiedere all’organizzatore giorni dei banchi, ammissione professionale, disponibilità, domanda e costi; non è un bando né una conferma di posti liberi.",
+        "note": "Riepilogo raccolto: 19–22 e 26–29 novembre 2026; il registro regionale indica invece il periodo generale 12–29 novembre. Giornate effettive dei banchi da riconfermare. Il tema agricolo e gastronomico non documenta un posteggio per bigiotteria commerciale: verificare categorie, domanda, eventuale spunta e costi.",
         "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98"
       },
       "months": [
@@ -5104,6 +5111,13 @@
       "organizer": "Pro Loco Veronella APS",
       "contacts": {
         "email": "info@prolocoveronella.it"
+      },
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
       }
     },
     {
@@ -5128,7 +5142,7 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione e i settori. Chiedere all’organizzatore giorni dei banchi, ammissione professionale, disponibilità, domanda e costi; non è un bando né una conferma di posti liberi.",
+        "note": "Il riepilogo non conferma l’ammissione della bigiotteria commerciale. Il tema olio e prodotti alimentari non dimostra né un divieto né l’esistenza di posteggi non alimentari: chiedere a Pro Loco requisiti, disponibilità, eventuale spunta e costi del 2026.",
         "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98"
       },
       "months": [
@@ -5138,6 +5152,13 @@
       "contacts": {
         "email": "info@brenzone.it",
         "phone": "0457420076"
+      },
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
       }
     },
     {
@@ -5163,7 +5184,7 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione e i settori. Chiedere all’organizzatore giorni dei banchi, ammissione professionale, disponibilità, domanda e costi; non è un bando né una conferma di posti liberi.",
+        "note": "Il registro descrive un mercatino artigianale nel periodo 5–8 dicembre. L’ammissione della bigiotteria commerciale non è confermata: chiedere se siano accettati rivenditori o soltanto produzioni proprie, e verificare giornate dei banchi, hobbisti, domanda, eventuale spunta e costi.",
         "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98"
       },
       "months": [
@@ -5173,6 +5194,13 @@
       "contacts": {
         "email": "bonfantemarzia734@gmail.com",
         "phone": "3496109909"
+      },
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
       }
     },
     {
@@ -6081,7 +6109,7 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Periodo 2026–2027 del portale turistico territoriale, aggiornato rispetto al registro regionale. Richiedere a Fondazione Bardolino Top selezione, costi e calendario effettivo delle casette; non garantite aperture quotidiane.",
+        "note": "Per la bigiotteria commerciale verificare con Fondazione Bardolino Top selezione dell’assortimento, durata minima della presenza, costi e calendario delle casette. Il riepilogo non documenta una spunta ordinaria né l’ammissione degli hobbisti; non è un divieto accertato.",
         "url": "https://www.lagodigardaveneto.com/it/scopri/le-localita-lago-di-garda-veneto/bardolino/eventi-bardolino"
       },
       "months": [
@@ -6093,7 +6121,14 @@
         "email": "info@bardolinotop.it",
         "phone": "0456212586"
       },
-      "organizer": "Fondazione Bardolino Top"
+      "organizer": "Fondazione Bardolino Top",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "city": "Cerro Veronese",
@@ -6350,13 +6385,20 @@
       ],
       "participation": {
         "type": "public",
-        "note": "Date del calendario fieristico regionale 2026. Evento per operatori e pubblico con vendita: richiedere al Comune la procedura di assegnazione, settori e tariffa. Moduli di altre edizioni non sono bandi 2026.",
+        "note": "Per l’edizione 13–15 novembre 2026 già trascorsa non è stata confermata una procedura di accesso per la bigiotteria commerciale. Il calendario documenta la fiera, senza provare posteggi disponibili, ammissione degli hobbisti o spunta: verificare ogni nuova edizione con il Comune.",
         "url": "https://sharing.regione.veneto.it/index.php/s/9sYrZYncT46HKfN/download"
       },
       "months": [
         11
       ],
-      "organizer": "Comune di Arcole"
+      "organizer": "Comune di Arcole",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "city": "Sommacampagna",
@@ -6574,15 +6616,35 @@
       ],
       "participation": {
         "type": "exhibitors",
-        "note": "Manifestazione espositiva specializzata: richiedere ammissione, contratto e preventivo all’organizzatore dell’evento. Vendita e categorie dipendono dal regolamento; una licenza ambulante non autorizza da sola uno stand.",
-        "url": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/"
+        "note": "Edizione 20–22 novembre 2026: domanda espositore e regolamento firmati da inviare a zuanazzi@veronafiere.it entro il 15 ottobre 2026, termine trascorso; dopo tale data domande accettate con riserva. Accesso tramite contratto espositivo, distinto dalla spunta delle fiere ambulanti. Verificare conformità della propria bigiotteria alle categorie del salone, disponibilità e preventivo; il titolo ambulante da solo non autorizza uno stand.",
+        "url": "https://www.veronamineralshow.com/it/per-esporre/",
+        "deadline": "2026-10-15",
+        "deadlineYear": 2026,
+        "deadlineLabel": "Edizione novembre 2026: termine ordinario 15 ottobre; successive domande con riserva."
       },
       "months": [
         5,
         11
       ],
       "organizer": "Veronafiere / organizzatore della manifestazione",
-      "venue": "Quartiere fieristico, Viale del Lavoro 8"
+      "venue": "Quartiere fieristico, Viale del Lavoro 8",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "accesso-espositore-su-domanda",
+        "hobbyists": "da-verificare"
+      },
+      "contacts": {
+        "email": "zuanazzi@veronafiere.it"
+      },
+      "additionalSources": [
+        {
+          "url": "https://www.veronamineralshow.com/it/per-esporre/",
+          "label": "Organizzatore: domanda novembre 2026, termine e tardive con riserva",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     },
     {
       "city": "Verona",
@@ -6707,7 +6769,7 @@
       ],
       "participation": {
         "type": "public",
-        "note": "Calendario regionale dei mercati 2026: mercato stagionale quotidiano dal 6 al 12 dicembre. Chiedere al Comune bando, requisiti, disponibilità e canone per il proprio settore; posti riservati e assegnati nel registro non descrivono le vacanze attuali.",
+        "note": "Il calendario regionale 2026 indica un mercato stagionale quotidiano dal 6 al 12 dicembre. Nell’elenco posteggi pubblicato dal Comune la bigiotteria è esplicitamente prevista fra le merceologie non alimentari; documento senza riconferma specifica dell’assegnazione 2026. Organico del registro: 20 posteggi, 10 non alimentari, non posti attualmente disponibili. Chiedere bando, riserve, canone, eventuale spunta e obbligo di presenza per l’intera durata.",
         "url": "https://elezioni2020.regione.veneto.it/documents/10713/12114597/Calendario%2Bregionale%2Bmarcati%2B2026.pdf/be79e5c1-ceae-4e76-8207-3b49630ae080"
       },
       "months": [
@@ -6716,7 +6778,21 @@
       "venue": "Via Duomo, Via Roma e Piazza Garibaldi",
       "hours": "10–22",
       "stallCount": 20,
-      "stallCountNote": "Organico del registro: 10 alimentari e 10 non alimentari; non sono 20 posti liberi."
+      "stallCountNote": "Organico del registro: 10 alimentari e 10 non alimentari; non sono 20 posti liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "prevista-elenco-comunale-assegnazione-2026-da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      },
+      "additionalSources": [
+        {
+          "url": "https://www.comune.legnago.vr.it/wp-content/uploads/2024/08/109-regolamenti-elenco-posteggi-fiera-di-santa-lucia.pdf",
+          "label": "Comune di Legnago: elenco posteggi e merceologie, senza nuova assegnazione 2026",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     },
     {
       "city": "Malcesine",
@@ -6732,24 +6808,43 @@
       "editions": [
         {
           "year": 2026,
-          "start": "2026-12-06",
+          "start": "2026-12-05",
           "end": "2027-01-06",
-          "dateType": "calendar",
-          "sourceUrl": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comunemalcesine.it/novita/avviso-pubblico-per-la-scelta-dei-soggetti-assegnatari-di-concessioni-temporaneecasette-per-manifestazione-natalea-malcesine-20262027",
           "periodOnly": true
         }
       ],
       "participation": {
         "type": "selected",
-        "note": "Registro regionale: periodo generale dal 6 dicembre al 6 gennaio. Chiedere al Comune o al gestore date operative delle casette, ammissione, disponibilità e costi; non confermate aperture quotidiane.",
-        "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98"
+        "note": "Avviso comunale 2026/2027: selezione per circa 13 casette, per prodotti natalizi ed enogastronomia e artigianato locale. Domanda entro il 2 ottobre 2026 ore 12, termine trascorso. Periodo generale 5 dicembre 2026–6 gennaio 2027, con aperture da verificare; non è un mercato quotidiano. Bigiotteria commerciale da sottoporre a selezione; nessuna spunta ordinaria documentata e nessun divieto generico dedotto.",
+        "url": "https://www.comunemalcesine.it/novita/avviso-pubblico-per-la-scelta-dei-soggetti-assegnatari-di-concessioni-temporaneecasette-per-manifestazione-natalea-malcesine-20262027",
+        "deadline": "2026-10-02",
+        "deadlineYear": 2026,
+        "deadlineLabel": "Domanda casette 2026/2027 entro il 2 ottobre 2026 ore 12; termine trascorso."
       },
       "months": [
         1,
         12
       ],
       "venue": "Piazza Statuto",
-      "organizer": "Comune di Malcesine"
+      "organizer": "Comune di Malcesine",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      },
+      "stallCount": 13,
+      "stallCountNote": "Circa 13 casette oggetto della selezione 2026/2027; non disponibilità attuale.",
+      "additionalSources": [
+        {
+          "url": "https://www.comunemalcesine.it/novita/avviso-pubblico-per-la-scelta-dei-soggetti-assegnatari-di-concessioni-temporaneecasette-per-manifestazione-natalea-malcesine-20262027",
+          "label": "Comune di Malcesine: avviso casette 2026/2027",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     }
   ]
 }

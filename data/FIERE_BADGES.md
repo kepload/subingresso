@@ -58,6 +58,18 @@ di ricerca. Provider isolati: nessun account, invio o scrittura di prova.
 Catalogo e servizi invariati. Ricevuta privata:
 `.local/verifiche/divieti/deployment.json` nel worktree dei bollini.
 
+## Consolidamento del 18 novembre 2026
+
+Aggiunti «No hobbisti» a Levico Terme (modulo espositori 2026) e «Hobbisti
+ammessi» alla sola area separata della Fiera dei Ciucioi di Lavis, con ambito
+esplicito nel testo del bollino. Entrambi dipendono dall’edizione documentata
+e dalle prove esatte: non si trasferiscono a nuove date o all’anno seguente.
+Per Lavis `hobbyEditionKeys`, `editions` e `hobbyScope` delimitano la conferma;
+i record precedenti senza queste proprietà mantengono il comportamento esistente.
+Spunta commerciale di Lavis da confermare; scadenze della sola area hobbisti
+non trasferite al resto della fiera. Condizioni, limiti e aggiornamento delle
+26 schede nel [dossier](fiere-dossier/consolidamento-26-fiere-20261118.md).
+
 ## Dati e significato
 
 `js/fair-badges.js` contiene conferme esplicite legate a ID, URL della fonte

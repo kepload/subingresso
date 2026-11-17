@@ -786,7 +786,7 @@
     [
         "trentino-alto-adige-rovereto-fiera-della-festa-d-oro",
         "https://tnconfesercenti.it/wp-content/uploads/2026/06/20260368094945_Doppia_PaginaFiere_2026.pdf",
-        "Operatori con titolo abilitante per il commercio su area pubblica. Moduli del Consorzio Comuni Trentini da presentare via PEC per l’inserimento nella graduatoria di spunta. Il servizio generale ammette una data diversa stabilita annualmente: per il 2026 si segue il calendario ANVA."
+        "Operatori con titolo abilitante per il commercio su area pubblica. Moduli del Consorzio Comuni Trentini da presentare via PEC per l’inserimento nella graduatoria di spunta. Il servizio generale ammette una data diversa stabilita annualmente: per il 2026 si segue il calendario ANVA. Termine ordinario della graduatoria spuntisti: 30 settembre 2026, trascorso. Verificare eventuali alternative e ammissione della bigiotteria commerciale. Il calendario ANVA già documentato indica il 20 dicembre 2026; riconfermare eventuali variazioni con il Comune."
     ],
     [
         "trentino-alto-adige-rovereto-fiera-di-san-marco",
@@ -811,12 +811,12 @@
     [
         "trentino-alto-adige-trento-fiera-di-santa-lucia",
         "https://albo.comune.trento.it/AttiVisualizzatore/download/determina/1478170?fId=1478227&sbustato=true",
-        "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione."
+        "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione. Domanda ordinaria per la spunta entro il 31 ottobre 2026, termine trascorso. Bigiotteria commerciale e riserve merceologiche da confermare; la graduatoria non garantisce il posteggio."
     ],
     [
         "trentino-alto-adige-trento-fiera-festa-d-oro",
         "https://albo.comune.trento.it/AttiVisualizzatore/download/determina/1478170?fId=1478227&sbustato=true",
-        "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione."
+        "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione. Domanda ordinaria per la spunta entro il 31 ottobre 2026, termine trascorso. Nel riepilogo raccolto risultano 125 posteggi, di cui 103 non alimentari: quantità da riconfermare, non posti liberi. Bigiotteria commerciale e riserve merceologiche da verificare."
     ],
     [
         "umbria-marsciano-fiera-verde",

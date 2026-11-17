@@ -38,6 +38,8 @@ Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 
 ## Ricerche e contratti completi
 
+- [Consolidamento di 26 fiere — 18 novembre 2026](fiere-dossier/consolidamento-26-fiere-20261118.md): note operative dal riepilogo dell’utente, dubbi espliciti; «No hobbisti» a Levico e hobbisti solo nell’area separata di Lavis. Voti personali conservati privatamente; non è una nuova verifica completa.
+
 - [Bollini iscrizioni e hobbisti — 15 novembre 2026](FIERE_BADGES.md): iscrizioni aperte oppure in scadenza per l'edizione mostrata e hobbisti ammessi solo da conferme esplicite; esclusa la corrente.
 
 - [Bollino «Spunte ammesse» — 15 novembre 2026](FIERE_SPUNTA.md): verde tenue nella lista e nella mappa, solo per conferme esplicite della singola fiera; nessun bollino per dati incerti o ammissione esclusa.

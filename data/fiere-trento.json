@@ -4586,12 +4586,19 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Fiera tradizionale del calendario ANVA, edizione del 15 novembre 2026 già trascorsa. Posteggi non alimentari, ammissione della bigiotteria commerciale, procedura di domanda, spunta e costi restano da verificare con il Comune; il formato della fiera non dimostra l’ammissione del singolo prodotto."
       },
       "contacts": {
         "phone": "0463 662020"
       },
-      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi."
+      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4617,12 +4624,26 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Riepilogo raccolto il 18 novembre 2026: mercato patronale commerciale distinto dall’area hobbisti; distinzione da riconfermare per il 2026. Per la bigiotteria commerciale richiedere un posteggio nell’area commerciale e verificare assortimento ammesso, disponibilità, domanda, eventuale spunta e costi. Il programma comunale reperito è del 2025 e non conferma le ammissioni 2026. Contatto comunale: 0461 658524, interno 5."
       },
       "contacts": {
         "phone": "0461 658524"
       },
-      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi."
+      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "area-separata-segnalata-da-riconfermare"
+      },
+      "additionalSources": [
+        {
+          "url": "https://www.comune.roveredellaluna.tn.it/Vivere-il-comune/Eventi/Sagra-di-Santa-Caterina",
+          "label": "Comune: programma storico 2025 e contatto, non ammissioni 2026",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4725,12 +4746,19 @@
       ],
       "participation": {
         "type": "check",
-        "note": "Non è ancora disponibile una scheda operativa verificata. Consulta la fonte e chiedi al Comune o all’organizzatore se sono previsti posteggi per il tuo settore, come presentare domanda e quali sono i costi."
+        "note": "Riepilogo raccolto il 18 novembre 2026: spunta prevista dalla disciplina comunale, con procedura 2026 da riconfermare. Chiedere registrazione preventiva, orario della chiamata, ammissione della bigiotteria commerciale e canone; nessun posteggio garantito."
       },
       "contacts": {
         "phone": "0464 573888"
       },
-      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi."
+      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "segnalata-procedura-da-riconfermare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4756,12 +4784,27 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Area hobbisti separata nel Piazzale delle Scuole Don Grazioli: avviso comunale 2026 per 24 spazi, domande dal 12 ottobre al 2 novembre, termine trascorso; assegnazione in ordine di protocollo e canone di 10 € per il solo spazio hobbisti. La fiera commerciale e la relativa spunta hanno procedure distinte, ancora da confermare, insieme all’ammissione della bigiotteria commerciale. Gli oltre 130 banchi citati nel riepilogo sono un dato da riconfermare, non posti liberi."
       },
       "contacts": {
-        "phone": "0461 246668"
+        "phone": "0461 248142",
+        "email": "commercio@comunelavis.it"
       },
-      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi."
+      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "ammessi-area-separata-2026"
+      },
+      "additionalSources": [
+        {
+          "url": "https://comune.lavis.tn.it/it/news/fiera-dei-ciucioi-2025-mercatino-dell-hobbismo?type=3",
+          "label": "Comune di Lavis: avviso 2026 per la sola area hobbisti",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4787,12 +4830,19 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Riepilogo raccolto il 18 novembre 2026: circa 60 bancarelle, quantità da riconfermare. Chiedere all’Ufficio Commercio disponibilità di posteggi non alimentari, ammissione della bigiotteria commerciale, domanda, eventuale spunta e costi."
       },
       "contacts": {
         "phone": "0461 780010"
       },
-      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi."
+      "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4818,7 +4868,7 @@
       ],
       "participation": {
         "type": "public",
-        "note": "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione.",
+        "note": "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione. Domanda ordinaria per la spunta entro il 31 ottobre 2026, termine trascorso. Bigiotteria commerciale e riserve merceologiche da confermare; la graduatoria non garantisce il posteggio.",
         "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
         "deadline": "2026-10-31",
         "deadlineYear": 2026,
@@ -4838,7 +4888,14 @@
           "label": "www.comune.trento.it",
           "checkedAt": "2026-10-16"
         }
-      ]
+      ],
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "prevista-con-graduatoria",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4864,7 +4921,7 @@
       ],
       "participation": {
         "type": "public",
-        "note": "Operatori con titolo abilitante per il commercio su area pubblica. Moduli del Consorzio Comuni Trentini da presentare via PEC per l’inserimento nella graduatoria di spunta. Il servizio generale ammette una data diversa stabilita annualmente: per il 2026 si segue il calendario ANVA.",
+        "note": "Operatori con titolo abilitante per il commercio su area pubblica. Moduli del Consorzio Comuni Trentini da presentare via PEC per l’inserimento nella graduatoria di spunta. Il servizio generale ammette una data diversa stabilita annualmente: per il 2026 si segue il calendario ANVA. Termine ordinario della graduatoria spuntisti: 30 settembre 2026, trascorso. Verificare eventuali alternative e ammissione della bigiotteria commerciale. Il calendario ANVA già documentato indica il 20 dicembre 2026; riconfermare eventuali variazioni con il Comune.",
         "url": "https://www.comune.rovereto.tn.it/Servizi/Vendere-ai-mercati-saltuari",
         "deadline": "2026-09-30",
         "deadlineYear": 2026,
@@ -4884,7 +4941,14 @@
           "label": "www.comune.rovereto.tn.it",
           "checkedAt": "2026-10-16"
         }
-      ]
+      ],
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "prevista-con-graduatoria",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -4910,7 +4974,7 @@
       ],
       "participation": {
         "type": "public",
-        "note": "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione.",
+        "note": "Spuntisti: domanda di concessione, documento e SCIA via PEC; occorre essere inseriti nella graduatoria della singola fiera. Concessione degli eventuali posti liberi la mattina del mercato, senza garanzia di assegnazione. Domanda ordinaria per la spunta entro il 31 ottobre 2026, termine trascorso. Nel riepilogo raccolto risultano 125 posteggi, di cui 103 non alimentari: quantità da riconfermare, non posti liberi. Bigiotteria commerciale e riserve merceologiche da verificare.",
         "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
         "deadline": "2026-10-31",
         "deadlineYear": 2026,
@@ -4927,7 +4991,14 @@
           "label": "www.comune.trento.it",
           "checkedAt": "2026-10-16"
         }
-      ]
+      ],
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "prevista-con-graduatoria",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5283,11 +5354,18 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Per un banco di bigiotteria commerciale sono da verificare selezione, categorie ammesse, durata della presenza e quota. Il riepilogo non conferma hobbisti o accesso a spunta; il programma delle aperture selezionate non è un bando per posteggi liberi.",
         "url": "https://www.mercatininatalearco.com/it"
       },
       "venue": "Centro storico",
-      "sectors": "Artigianato, articoli natalizi e alimentare"
+      "sectors": "Artigianato, articoli natalizi e alimentare",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5409,11 +5487,18 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Mercatino nel borgo di Canale: prima di candidare bigiotteria commerciale verificare se siano richieste produzioni artigianali proprie e quali categorie siano selezionate. Il riepilogo non documenta ammissione degli hobbisti, spunta o costi; le aperture restano quelle delle singole date pubblicate.",
         "url": "https://www.mercatinodicanaleditenno.it/it"
       },
       "venue": "Borgo di Canale",
-      "sectors": "Artigianato e prodotti alimentari"
+      "sectors": "Artigianato e prodotti alimentari",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5542,7 +5627,7 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Per il Carosello di Cimego verificare la compatibilità della bigiotteria commerciale con i prodotti selezionati, l’eventuale requisito di produzione propria e la quota. Ammissione degli hobbisti e possibilità di spunta non confermate nel riepilogo; periodo e singole aperture non equivalgono a disponibilità di banco.",
         "url": "https://www.visittrentino.info/it/guida/mercatini-di-natale"
       },
       "venue": "Quartinago, Cimego",
@@ -5553,7 +5638,14 @@
           "label": "www.mercatinonatalecimego.it",
           "checkedAt": "2026-10-16"
         }
-      ]
+      ],
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5616,11 +5708,18 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Per la bigiotteria commerciale chiedere all’organizzatore requisiti dei prodotti, selezione degli espositori, durata minima e quota. Il riepilogo non dimostra che hobbisti o ambulanti possano accedere a spunta: condizioni 2026 da verificare, senza dedurre un divieto dal formato natalizio.",
         "url": "https://www.mercatinodilavarone.com/"
       },
       "venue": "Bertoldi Veci",
-      "sectors": "Artigianato e prodotti tipici"
+      "sectors": "Artigianato e prodotti tipici",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5720,11 +5819,31 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
-        "url": "https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/"
+        "note": "Modulo espositori 2026: partita IVA obbligatoria; hobbisti e operatori del proprio ingegno esclusi. Candidabili anche commercianti, con assortimento dettagliato sottoposto a selezione: la bigiotteria commerciale non è automaticamente ammessa. Domanda ordinaria entro il 31 maggio 2026, termine trascorso; costi, disponibilità e possibili candidature tardive da chiedere all’organizzatore.",
+        "url": "https://visitlevicoterme.it/sei-un-espositore/",
+        "deadline": "2026-05-31",
+        "deadlineYear": 2026,
+        "deadlineLabel": "Domanda ordinaria espositori 2026 entro il 31 maggio; termine trascorso."
       },
       "venue": "Parco degli Asburgo",
-      "sectors": "Artigianato e prodotti alimentari"
+      "sectors": "Artigianato e prodotti alimentari",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "esclusi-2026"
+      },
+      "contacts": {
+        "email": "info@visitlevicoterme.it"
+      },
+      "additionalSources": [
+        {
+          "url": "https://visitlevicoterme.it/wp-content/uploads/2026/03/RICHIESTA-PARTECIPAZIONE-web-Mercatino-di-Natale-2026.pdf",
+          "label": "Organizzatore: modulo espositori 2026, esclusione hobbisti e scadenza",
+          "checkedAt": "2026-11-18"
+        }
+      ]
     },
     {
       "region": "Trentino-Alto Adige",
@@ -5846,7 +5965,7 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Il riepilogo indica 4–30 dicembre, mentre il calendario già documentato comprende aperture fino al 6 gennaio 2027: riconfermare il programma definitivo. Per la bigiotteria commerciale verificare selezione, eventuale requisito di produzione artigianale propria e quota; hobbisti e spunta non documentati nel riepilogo.",
         "url": "https://www.fassa.com/it/eventi/mercatini-di-natale-a-vigo"
       },
       "venue": "Vigo di Fassa",
@@ -5858,6 +5977,13 @@
         "label": "mapcarta.com",
         "checkedAt": "2026-10-16",
         "note": "Centro di Vigo, non posizione esatta dei banchi"
+      },
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
       }
     },
     {
@@ -5928,11 +6054,18 @@
       ],
       "participation": {
         "type": "selected",
-        "note": "Mercatino a cura dell’organizzatore locale: la pubblicazione del programma non apre automaticamente posteggi. Verificare selezione, settori ammessi, disponibilità e quota; bando operativo corrente non reperito.",
+        "note": "Per il Mercatino della Stella di Faedo verificare con l’organizzatore se siano ammessi rivenditori di bigiotteria commerciale o soltanto produzioni locali e artigianali. Il riepilogo non conferma hobbisti, spunta, costi o disponibilità; considerare le singole aperture, non tutto il periodo come continuativo.",
         "url": "https://viverefaedo.it/"
       },
       "venue": "Faedo",
-      "sectors": "Artigianato e prodotti agricoli locali"
+      "sectors": "Artigianato e prodotti agricoli locali",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -6160,11 +6293,18 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Per il mercatino di Cogolo, distinto da Peio Fonti, verificare se la bigiotteria commerciale sia ammessa insieme ai prodotti artigianali e tipici. Il riepilogo non documenta accesso hobbisti o spunta; chiedere all’organizzatore requisiti, calendario operativo, domanda, disponibilità e quota."
       },
       "venue": "Piazza Monari, Cogolo",
       "sectors": "Artigianato e prodotti tipici",
-      "hours": "16:00–19:00"
+      "hours": "16:00–19:00",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",
@@ -6236,11 +6376,18 @@
       ],
       "participation": {
         "type": "check",
-        "note": "La fonte documenta la manifestazione, non posteggi disponibili. Verificare con il Comune o l’organizzatore ammissione del proprio settore, domanda, costi e disponibilità prima di partecipare."
+        "note": "Il riepilogo considera il 6 dicembre a Piazzola; il catalogo documenta anche 27 dicembre a Piazzola e 1 gennaio a San Bernardo. Per la bigiotteria commerciale chiedere ammissione e requisiti dei prodotti per la singola località, domanda e quota. Hobbisti, spunta e posti liberi non confermati."
       },
       "venue": "Piazzola il 6 e 27 dicembre; San Bernardo il 1 gennaio",
       "sectors": "Artigianato e prodotti tipici",
-      "hours": "15:00–18:00"
+      "hours": "15:00–18:00",
+      "operationalUpdate": {
+        "collectedAt": "2026-11-18",
+        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "jewelryAdmission": "da-verificare",
+        "spunta": "da-verificare",
+        "hobbyists": "da-verificare"
+      }
     },
     {
       "region": "Trentino-Alto Adige",

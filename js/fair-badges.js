@@ -1005,6 +1005,20 @@
                 "closesAt": "23:59"
             }
         }
+    ],
+    [
+        "trentino-alto-adige-lavis-fiera-dei-ciucioi",
+        "https://tnconfesercenti.it/wp-content/uploads/2026/06/20260368094945_Doppia_PaginaFiere_2026.pdf",
+        "Area hobbisti separata nel Piazzale delle Scuole Don Grazioli: avviso comunale 2026 per 24 spazi, domande dal 12 ottobre al 2 novembre, termine trascorso; assegnazione in ordine di protocollo e canone di 10 € per il solo spazio hobbisti. La fiera commerciale e la relativa spunta hanno procedure distinte, ancora da confermare, insieme all’ammissione della bigiotteria commerciale. Gli oltre 130 banchi citati nel riepilogo sono un dato da riconfermare, non posti liberi.",
+        {
+            "hobby": true,
+            "hobbyScope": "Solo area hobbisti separata, 24 spazi: domande 2026 chiuse il 2 novembre. Non è un’ammissione alla fiera commerciale.",
+            "hobbyEditionKeys": [
+                "2026|2026-12-06|2026-12-06"
+            ],
+            "editions": "[{\"year\":2026,\"start\":\"2026-12-06\",\"end\":\"2026-12-06\",\"dateType\":\"calendar\",\"sourceUrl\":\"https://tnconfesercenti.it/wp-content/uploads/2026/06/20260368094945_Doppia_PaginaFiere_2026.pdf\"}]",
+            "evidenceUrl": "https://comune.lavis.tn.it/it/news/fiera-dei-ciucioi-2025-mercatino-dell-hobbismo?type=3"
+        }
     ]
 ];
     const confirmations = new Map(records.map(([id, sourceUrl, note, facts]) => [id, { sourceUrl, note, ...facts }]));
@@ -1114,6 +1128,26 @@
         "locator": "Area espositori 2026, Chi puo partecipare",
         "checkedAt": "2026-11-16",
         "proofKey": "fenis"
+    },
+    {
+        "id": "trentino-alto-adige-levico-terme-mercatino-di-natale-asburgico",
+        "sourceUrl": "https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/",
+        "note": "Modulo espositori 2026: partita IVA obbligatoria; hobbisti e operatori del proprio ingegno esclusi. Candidabili anche commercianti, con assortimento dettagliato sottoposto a selezione: la bigiotteria commerciale non è automaticamente ammessa. Domanda ordinaria entro il 31 maggio 2026, termine trascorso; costi, disponibilità e possibili candidature tardive da chiedere all’organizzatore.",
+        "editions": "[{\"year\":2026,\"start\":\"2026-11-21\",\"end\":\"2026-11-22\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"},{\"year\":2026,\"start\":\"2026-11-27\",\"end\":\"2026-11-29\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"},{\"year\":2026,\"start\":\"2026-12-04\",\"end\":\"2026-12-08\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"},{\"year\":2026,\"start\":\"2026-12-11\",\"end\":\"2026-12-13\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"},{\"year\":2026,\"start\":\"2026-12-18\",\"end\":\"2026-12-24\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"},{\"year\":2026,\"start\":\"2026-12-26\",\"end\":\"2027-01-06\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.visitvalsugana.it/it/eventi-valsugana/mercatino-di-natale-asburgico_2882_ide/\"}]",
+        "editionKeys": [
+            "2026|2026-11-21|2026-11-22",
+            "2026|2026-11-27|2026-11-29",
+            "2026|2026-12-04|2026-12-08",
+            "2026|2026-12-11|2026-12-13",
+            "2026|2026-12-18|2026-12-24",
+            "2026|2026-12-26|2027-01-06"
+        ],
+        "kind": "no-hobby",
+        "scope": "Mercatino Asburgico 2026/2027: hobbisti e operatori del proprio ingegno esclusi; partita IVA obbligatoria. Commercianti soggetti a selezione.",
+        "evidenceUrl": "https://visitlevicoterme.it/wp-content/uploads/2026/03/RICHIESTA-PARTECIPAZIONE-web-Mercatino-di-Natale-2026.pdf",
+        "locator": "Modulo espositori 2026, pagina 1, nota alla partita IVA",
+        "checkedAt": "2026-11-18",
+        "proofKey": "levico-2026"
     }
 ];
     const denials = new Map(denialRecords.map(record => [record.id, record]));
@@ -1128,7 +1162,10 @@
             badges.push({ kind: denial.kind, label: denial.kind === 'no-spunta' ? 'No spunte' : 'No hobbisti', title: denial.scope, sourceUrl: denial.evidenceUrl });
         }
         if (!matches(confirmation)) return badges;
-        if (confirmation.hobby && !badges.some(badge => badge.kind === 'no-hobby')) badges.push({ kind: 'hobby', label: 'Hobbisti ammessi', title: 'Hobbisti previsti nelle modalità di partecipazione. Requisiti, tesserino e prodotti ammessi nella scheda.' });
+        const hobbyEditionMatches = !confirmation.hobbyEditionKeys || (edition
+            && confirmation.editions === JSON.stringify(event.editions)
+            && confirmation.hobbyEditionKeys.includes([edition.year, edition.start, edition.end].join('|')));
+        if (confirmation.hobby && hobbyEditionMatches && !badges.some(badge => badge.kind === 'no-hobby')) badges.push({ kind: 'hobby', label: 'Hobbisti ammessi', title: confirmation.hobbyScope || 'Hobbisti previsti nelle modalità di partecipazione. Requisiti, tesserino e prodotti ammessi nella scheda.' });
         const window = confirmation.window;
         if (!window || event.participation.deadline !== window.deadline || !edition || !window.years.includes(edition.year)) return badges;
         const instant = new Date(now);

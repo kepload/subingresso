@@ -60,7 +60,7 @@ assert.deepEqual(kinds({ ...sarcedo, participation: { ...sarcedo.participation, 
 console.log('PASS new badges: explicit admission, Rome midnight/closing hour, 7-day threshold, before opening, year isolation, payment/uncertain deadline exclusions and stale evidence.');
 
 const noSpuntaIds = ['piemonte-gattinara-fiera-di-san-martino', 'piemonte-torino-gran-balon', 'valle-d-aosta-nus-lo-martchia-de-tsalende', 'abruzzo-popoli-fiera-dell-immacolata-concezione', 'toscana-san-gimignano-fiera-di-sant-agostino'];
-const noHobbyIds = ['lombardia-azzate-mostra-dell-usaa', 'valle-d-aosta-fenis-castello-in-fiera'];
+const noHobbyIds = ['lombardia-azzate-mostra-dell-usaa', 'valle-d-aosta-fenis-castello-in-fiera', 'trentino-alto-adige-levico-terme-mercatino-di-natale-asburgico'];
 for (const [kind, ids] of [['no-spunta', noSpuntaIds], ['no-hobby', noHobbyIds]]) {
     for (const id of ids) {
         const event = byId(id), edition = event.editions.at(-1);
@@ -83,7 +83,35 @@ assert(!kinds(azzate, '2026-11-16T12:00:00Z', azzate.editions[0]).includes('no-h
 for (const id of ['emilia-romagna-piacenza-il-mercatino-di-spazio4', 'toscana-lucca-mercato-antiquario', 'lazio-patrica-mercatino-dell-usato', 'lombardia-cremona-bid-cremona', 'sardegna-ozieri-fiera-zootecnica-e-agroalimentare']) {
     assert(!kinds(byId(id), '2026-11-16T12:00:00Z').some(kind => kind.startsWith('no-')), id + ' partial/historical/unknown');
 }
-console.log('PASS denials: 5 no spunta, 2 no hobby, exact editions, no year/date transfer, stale evidence and scoped/historical exclusions.');
+console.log('PASS denials: 5 no spunta, 3 no hobby, exact editions, no year/date transfer, stale evidence and scoped/historical exclusions.');
+
+// The Ciucioi admission concerns its separate hobby area and this exact edition.
+const lavis = byId('trentino-alto-adige-lavis-fiera-dei-ciucioi');
+const lavisEdition = lavis.editions[0];
+assert.deepEqual(kinds(lavis, '2026-11-18T12:00:00Z', lavisEdition), ['hobby']);
+assert.match(badges.get(lavis, { edition: lavisEdition })[0].title, /Solo area hobbisti separata/);
+assert.equal(spunta.allows(lavis), false, 'Hobby area does not prove commercial spunta');
+for (const edition of [null, { ...lavisEdition, year: 2027 }, { ...lavisEdition, start: '2026-12-07' }]) {
+    assert(!badges.get(lavis, { edition }).some(item => item.kind === 'hobby'));
+}
+for (const changed of [
+    { ...lavis, participation: { ...lavis.participation, note: lavis.participation.note + ' Updated.' } },
+    { ...lavis, source: { ...lavis.source, url: 'https://example.com/changed' } },
+    { ...lavis, editions: [...lavis.editions, { year: 2027, start: '2027-12-05', end: '2027-12-05' }] },
+    { ...lavis, managedEventId: 'organizer' }
+]) assert(!badges.get(changed, { edition: lavisEdition }).some(item => item.kind === 'hobby'));
+for (const id of ['trentino-alto-adige-trento-fiera-di-santa-lucia', 'trentino-alto-adige-trento-fiera-festa-d-oro', 'trentino-alto-adige-rovereto-fiera-della-festa-d-oro']) {
+    const event = byId(id);
+    assert(spunta.allows(event), id + ' existing spunta preserved');
+    assert(!kinds(event, '2026-11-18T12:00:00Z').some(kind => ['open', 'closing', 'no-spunta'].includes(kind)), id + ' expired deadline is not a spunta ban');
+}
+const levico = byId('trentino-alto-adige-levico-terme-mercatino-di-natale-asburgico');
+for (const edition of levico.editions) assert(kinds(levico, '2026-11-18T12:00:00Z', edition).includes('no-hobby'), 'Every documented 2026/2027 opening is covered');
+for (const id of ['veneto-verona-verona-mineral-show', 'veneto-malcesine-natale-a-malcesine-mercatini']) {
+    const event = byId(id);
+    assert(!kinds(event, '2026-11-18T12:00:00Z').some(kind => ['open', 'closing', 'no-spunta'].includes(kind)), id + ' selection and late applications are not a generic spunta ban');
+}
+console.log('PASS consolidation: separate hobby area, edition/source/note isolation, preserved spunta, expired applications and no inferred bans.');
 
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
@@ -204,7 +232,9 @@ function contrast(foreground, background) {
             assert.equal(await application.locator('[data-badge=hobby]').count(), 1);
             for (const fixture of [
                 { id: 'valle-d-aosta-nus-lo-martchia-de-tsalende', query: 'provincia=Aosta&q=Nus&mesi=12', kind: 'no-spunta', label: 'No spunte' },
-                { id: azzate.id, query: 'provincia=Varese&q=Usaa&mesi=10', kind: 'no-hobby', label: 'No hobbisti' }
+                { id: azzate.id, query: 'provincia=Varese&q=Usaa&mesi=10', kind: 'no-hobby', label: 'No hobbisti' },
+                { id: levico.id, query: 'provincia=Trento&q=Asburgico&mesi=12', kind: 'no-hobby', label: 'No hobbisti', detail: /hobbisti e operatori del proprio ingegno esclusi/ },
+                { id: lavis.id, query: 'provincia=Trento&q=Ciucioi&mesi=12', kind: 'hobby', label: 'Hobbisti ammessi', detail: /solo spazio hobbisti/ }
             ]) {
                 await page.goto(base + '/fiere?' + fixture.query);
                 const restrictionCard = page.locator('.fiere-card[data-event-id="' + fixture.id + '"]');
@@ -212,7 +242,8 @@ function contrast(foreground, background) {
                 const restriction = restrictionCard.locator('[data-badge=' + fixture.kind + ']');
                 assert.equal(await restriction.textContent(), fixture.label);
                 assert.match(await restriction.getAttribute('title'), /2026/);
-                assert.equal(await restrictionCard.locator(fixture.kind === 'no-spunta' ? '.fiere-spunta' : '[data-badge=hobby]').count(), 0);
+                const opposite = fixture.kind === 'no-spunta' ? '.fiere-spunta' : fixture.kind === 'hobby' ? '[data-badge=no-hobby], .fiere-spunta' : '[data-badge=hobby]';
+                assert.equal(await restrictionCard.locator(opposite).count(), 0);
                 for (const dark of [false, true]) {
                     await page.evaluate(value => document.documentElement.classList.toggle('admin-dark', value), dark);
                     const colors = await restriction.evaluate(element => ({ foreground: getComputedStyle(element).color, background: getComputedStyle(element).backgroundColor }));
@@ -223,11 +254,17 @@ function contrast(foreground, background) {
                         return [...element.querySelectorAll('.fiere-badge')].some(badge => { const r = badge.getBoundingClientRect(); return r.right > action.left && r.left < action.right && r.bottom > action.top && r.top < action.bottom; });
                     });
                     assert.equal(overlap, false);
-                    await restrictionCard.screenshot({ path: path.join(out, engine + '-' + width + '-' + fixture.kind + (dark ? '-dark' : '') + '.png') });
+                    await restrictionCard.screenshot({ path: path.join(out, engine + '-' + width + '-' + fixture.id + (dark ? '-dark' : '') + '.png') });
                 }
                 await page.locator('.fiere-marker[data-events*="' + fixture.id + '"]').click();
                 await page.locator('#map-popup').waitFor({ state: 'visible' });
                 assert.equal(await page.locator('#popup-events [data-badge=' + fixture.kind + ']').textContent(), fixture.label);
+                if (fixture.detail) {
+                    await page.locator('#close-popup').click();
+                    await restrictionCard.locator('.fiere-card-button').click();
+                    assert.match(await page.locator('#detail-participation-note').textContent(), fixture.detail);
+                    await page.keyboard.press('Escape');
+                }
             }
             assert.deepEqual(errors, []);
             console.log('PASS ' + engine + ' ' + width + ': all badges in list/map, opening/closing/expiry without focus loss, absent cases, details, contrast and mobile layout in light/dark.');
