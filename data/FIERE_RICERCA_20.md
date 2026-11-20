@@ -20,24 +20,34 @@ in uso** e affidarle altre 20 fiere con questo metodo.
 - Rispettare l'area indicata dall'utente e conservare il contesto della richiesta.
   Riferimento geografico dichiarato dall'utente: **Brescia**. Il gruppo richiesto
   il 15 novembre dopo i primi 40 riguarda Brescia e i comuni vicini.
-- **Ordine geografico permanente, salvato il 15 novembre 2026:** per tutte
-  queste ricerche partire dalla fiera più vicina a **Brescia** e proseguire
-  fino alla più lontana; lo stesso ordine vale per gli aggiornamenti quando
-  autorizzati separatamente. Ordinare prima tutti gli eventi ancora da
-  assegnare, poi prendere i più vicini nel perimetro richiesto. Usare la
-  distanza indicativa in linea d'aria dalle coordinate del catalogo al centro
-  di Brescia (45.5416, 10.2118), dichiarandone il limite; a parità usare l'ID.
+- **Priorità permanente aggiornata il 16 novembre 2026: prima il periodo,
+  poi la vicinanza a Brescia.** Il sito deve servire soprattutto all'uso
+  personale dell'utente. Per le prossime ricerche dare priorità alle fiere
+  da **oggi ai prossimi 5 mesi** a Brescia e nelle province vicine: finestra
+  mobile, ricalcolata alla data di avvio di ogni ricerca, non mesi fissi.
+  Una fiera a Trento a breve va analizzata prima di una a Brescia in agosto
+  fuori dalla finestra, anche se quest'ultima è più vicina. All'interno della
+  fascia prioritaria ordinare gli eventi dalla più vicina a **Brescia** alla
+  più lontana; gli eventi fuori finestra restano secondari. Non attribuire
+  una data futura certa a edizioni non confermate; rendere esplicite le date
+  incerte. Lo stesso criterio vale per gli aggiornamenti autorizzati
+  separatamente. Ordinare gli eventi ancora da assegnare secondo queste
+  priorità e rispettare il perimetro richiesto. Usare la distanza indicativa
+  in linea d'aria dalle coordinate del catalogo al centro di Brescia
+  (45.5416, 10.2118), dichiarandone il limite; a parità usare l'ID.
   Coordinate mancanti o incoerenti vanno risolte o segnalate, non considerate
   eventi lontani per comodità. Controllare anche possibili alias di eventi
   già ricercati e documentare le esclusioni. Con due sessioni parallele
   assegnare alternativamente i ranghi della lista ordinata a due gruppi
-  disgiunti; ciascuna ricerca procede in ordine crescente, senza saltare
-  eventi difficili. Registrare rango e distanza nell'assegnazione e mantenere
-  lo stesso ordine nei risultati. Non richiede di rifare le ricerche concluse
+  disgiunti; ciascuna ricerca mantiene la priorità temporale e poi geografica,
+  senza saltare eventi difficili. Registrare finestra temporale, data o
+  periodo dell'edizione, rango e distanza nell'assegnazione e mantenere lo
+  stesso ordine nei risultati. Non richiede di rifare le ricerche concluse
   e non estende il perimetro autorizzato.
-- La formula autorizza il singolo nuovo gruppo di ricerca e la registrazione
-  degli esiti; mantiene i limiti del metodo. Non avvia altri gruppi alla fine
-  e non autorizza modifiche al sito/catalogo, contatti a terzi o pubblicazioni.
+- La formula autorizza il singolo nuovo gruppo di ricerca, la registrazione
+  degli esiti e, dal 20 novembre 2026, applicazione e pubblicazione dei bollini
+  documentati secondo la procedura sotto. Non avvia altri gruppi alla fine
+  e non autorizza altre modifiche al sito/catalogo, contatti o invio di domande.
 
 ## Perimetro e continuità
 
@@ -53,10 +63,11 @@ in uso** e affidarle altre 20 fiere con questo metodo.
 - Assegnazioni disgiunte e una cartella privata esclusiva per sessione:
   `.local/ricerche/fiere-20/<gruppo>/<sessione>/`. Nessuna sostituzione silenziosa
   delle fiere più difficili con altre più facili.
-- L'autorizzazione alla ricerca comprende dossier e prove locali; **non**
-  comprende aggiornamento del catalogo, build, importazioni, database, sito,
-  deploy, contatti a terzi o invio di domande. Eventuali integrazioni sono
-  un incarico distinto. Il coordinatore può aggiornare la memoria documentale.
+- L'autorizzazione alla ricerca comprende dossier, prove locali e applicazione
+  dei bollini documentati, inclusi dati strettamente necessari, build, controlli
+  e pubblicazione secondo la procedura sotto. Altri aggiornamenti del catalogo,
+  importazioni, database o modifiche al sito restano un incarico distinto.
+  Nessun contatto a terzi o invio di domande. Il coordinatore aggiorna la memoria.
 - Ogni nuovo gruppo richiede una nuova richiesta dell'utente. Niente loop,
   rinnovi automatici, nuove sessioni aggiuntive o riprese dalle vecchie quote.
 
@@ -122,6 +133,101 @@ in uso** e affidarle altre 20 fiere con questo metodo.
 - Il criterio è pubblicare eventualmente solo affermazioni documentate, non
   promettere copertura completa o certezza commerciale al 100%.
 
+## Prove necessarie per un bollino
+
+**Correzione permanente del 20 novembre 2026:** cercare risposte operative
+documentate; non aggiungere bollini di incertezza. «Spunta da verificare» e
+«Hobbisti da verificare» sono esclusi dall'interfaccia. Le lacune restano nel
+dossier privato. Usare solo gli spazi compatti già esistenti in basso nelle
+anteprime, senza nuove sezioni centrali; nella scheda conservare le condizioni
+nel testo della partecipazione.
+
+Prima di proporre ogni singolo bollino:
+
+1. Aprire una **fonte primaria competente** (Comune/SUAP/Polizia locale o
+   organizzatore) e leggere l'atto, il regolamento o il modulo integrale.
+   Risultati di ricerca, calendari turistici e articoli sono piste. Verificare
+   anno e oggetto dentro il documento, non solo nel titolo o nell'URL.
+2. Salvare in `bollini.md` affermazione esatta, URL, ente/titolo, data di
+   lettura, passaggio testuale e pagina/articolo/paragrafo, copia locale o
+   motivo dell'indisponibilità. Registrare edizione/date, sede, area,
+   categoria, requisiti e termini. Un regolamento generale richiede anche
+   prova della sua applicabilità alla fiera e all'edizione selezionata.
+3. Cercare rettifiche, proroghe, graduatorie, chiusure o annullamenti successivi
+   sul sito competente e negli allegati. Per lacune consultare anche il portale
+   SUAP/albo o l'area espositori dell'organizzatore, con ricerche mirate per
+   nome, Comune, anno e sinonimi della procedura; registrare i tentativi falliti.
+   Non sostituire la fiera difficile con una più facile né colmare lacune per
+   raggiungere una quota di bollini. Nessun contatto o invio a terzi implicito.
+4. Eseguire un **secondo riesame separato**: riaprire le prove e confrontare
+   parola per parola etichetta proposta e condizioni. Registrare l'esito per
+   ogni bollino. Lo stesso documento ripreso da due siti non è una conferma
+   indipendente. Un PDF scansionato o una tabella richiede controllo visivo.
+5. Pubblicare solo l'affermazione che supera entrambi i controlli. Una prova
+   parziale è utilizzabile solo se conferma interamente un fatto circoscritto,
+   la cui limitazione resta leggibile nella scheda. Scadenza della domanda,
+   ammissione e posto libero sono fatti diversi. Fonti discordanti, vecchie
+   edizioni o condizioni non risolte comportano **nessun nuovo bollino**.
+
+La consegna distingue fiere ricercate, singoli fatti confermati e bollini
+effettivamente pubblicati. Venti ricerche concluse non significano venti fiere
+confermate; una sessione senza bollini applicabili è un esito ammissibile.
+Una pagina oggi irraggiungibile non è una nuova verifica: la copia precedente
+va datata e la sua attualità riesaminata, senza nascondere l'accesso fallito.
+
+## Applicazione automatica dei bollini
+
+**Decisione permanente del 20 novembre 2026:** i bollini sono una priorità
+per l'utente. Ogni futura ricerca fiere richiesta include applicazione e
+pubblicazione dei bollini documentati, senza chiedere un'altra conferma.
+L'incarico non termina con la sola consegna dei dossier privati.
+
+1. Per ciascuna fiera verificare spunta, ammissione/esclusione degli hobbisti
+   e, quando documentate, finestre delle domande. Applicare gli stati del
+   [contratto dei bollini](FIERE_BADGES.md): «Spunte ammesse» o stato
+   condizionato corretto, «No spunte», «Hobbisti ammessi», «No hobbisti»,
+   «Iscrizioni aperte» e «In scadenza» secondo le prove e i termini effettivi.
+   Nessun bollino con prove insufficienti, storiche o contraddittorie:
+   l'incertezza resta privata. Anche un singolo dato verificato è utilizzabile:
+   non occorre che tutti e cinque i campi della scheda siano confermati.
+2. Per ogni sì/no conservare fonte esplicita, localizzatore, data di verifica,
+   edizione, sede, area/categoria e condizioni. Controllare rettifiche e termini;
+   non trasferire regole al nuovo anno o ad altre aree. Nessun divieto dedotto
+   da silenzi, concessioni, prenotazioni chiuse o posti esauriti. Una prova
+   parziale sostiene solo l'affermazione delimitata che documenta, dopo i
+   [controlli delle prove](#prove-necessarie-per-un-bollino).
+3. Ogni esecutore legge questa decisione e il contratto prima di iniziare e
+   consegna nella propria cartella `bollini.md`: una riga per ciascuno dei
+   20 ID con stati proposti, prove, ambito, condizioni e motivo dei dati
+   da verificare. Il secondo controllo confronta anche questi stati con
+   le fonti. Non modificare file centrali contemporaneamente da più sessioni.
+4. Il coordinatore ricontrolla le prove e integra le consegne in sequenza su
+   una base aggiornata da `origin/main`, preservando lavoro altrui e conferme
+   esistenti. Aggiorna i record dell'implementazione corrente
+   (`js/fair-participation.js`, `js/fair-badges.js`, `js/fair-spunta.js` secondo
+   necessità) e solo dati di catalogo, note, edizioni o scadenze indispensabili
+   ai bollini. Nessun import indiscriminato dei dossier o altri cambiamenti
+   al sito. Rispettare snapshot e invalidazione delle conferme.
+5. Eseguire backup e controlli previsti da AGENTS; build se necessaria,
+   verifiche pertinenti dei bollini e delle pagine fiera. Controllare stati,
+   limiti e scadenze in lista, mappa e dettaglio, inclusa la pagina senza JS.
+   Commit/push dei soli file dell'intervento e verifica del deploy e dei
+   bollini online prima di dichiarare pubblicata l'applicazione.
+6. Registrare in `bollini.md` e nel rapporto ID, stati aggiunti/corretti,
+   casi rimasti da verificare, commit e verifica online. `stato.json` distingue
+   il completamento della ricerca da `pubblicazioneBollini`, con stato
+   `da_applicare`, `pubblicato`, `nessun_bollino_applicabile` o `bloccato`.
+   Aggiornare registro comune e memoria con l'esito verificato. Se non emerge
+   alcun nuovo stato documentabile, registrarlo senza cambiare dati per forza.
+   Se l'applicazione fallisce, indicare il parziale e il motivo, senza
+   presentare come conclusa l'intera consegna.
+
+L'autorizzazione vale per le ricerche future richieste dall'utente. Non avvia
+nuove ricerche né cicli e non richiede il recupero in blocco di quelle concluse.
+Le altre informazioni raccolte rimangono nei dossier privati salvo incarico
+separato. Riportare questa decisione e il contratto nei mandati delle nuove
+sessioni, sostituendo il vecchio limite di sola ricerca privata.
+
 ## Consegna di ciascuna sessione
 
 - `assegnazione.json`: venti ID e snapshot delle sole schede assegnate, immutabile.
@@ -140,7 +246,9 @@ in uso** e affidarle altre 20 fiere con questo metodo.
   graduatorie da copiare nel rapporto: bastano regole e conteggi pertinenti.
 - Prima della chiusura verificare 20 ID univoci, cinque campi per record,
   riferimenti validi, prova di ogni sì/no e nessun trasferimento di anno/area.
-  Il coordinatore verifica inoltre separazione dei gruppi e integrità del sito.
+  Il coordinatore verifica inoltre separazione dei gruppi, integrità del sito
+  e applicazione online dei bollini secondo la procedura sopra.
 
 Registro e stato effettivo sono privati sotto `.local/ricerche/fiere-20/`;
-non inserire i dossier nel catalogo finché l'utente non lo richiede.
+pubblicare solo i dati e i bollini documentati previsti da questo metodo.
+Le altre informazioni dei dossier restano private salvo richiesta separata.

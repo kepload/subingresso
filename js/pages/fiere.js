@@ -456,9 +456,6 @@
             badge.title = info.title;
             badges.push(badge);
         }
-        for (const notice of global.FairParticipation?.notices(event, { edition }) || []) {
-            badges.push(node('span', 'fiere-participation-condition', notice));
-        }
         container.replaceChildren(...badges);
         container.hidden = badges.length === 0;
     }
@@ -794,6 +791,7 @@
             const foot = node('div', 'fiere-card-foot');
             const tags = node('div', 'fiere-card-tags');
             tags.append(category);
+            tags.append(fairBadges(event));
             foot.append(tags, button);
             const body = node('div', 'fiere-card-body');
             const content = node('div', 'fiere-card-content');
@@ -809,9 +807,6 @@
             const affinity = articleAffinityBadge(event);
             if (affinity) side.append(affinity);
             content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
-            const participation = node('div', 'fiere-card-participation');
-            participation.append(fairBadges(event));
-            content.append(participation);
             const reviews = node('button','fiere-card-reviews','Recensioni'); reviews.type = 'button';
             reviews.dataset.reviewSummary = (event.managedEventId ? 'organizer:' : 'catalog:') + (event.managedEventId || event.id);
             reviews.addEventListener('click', () => {

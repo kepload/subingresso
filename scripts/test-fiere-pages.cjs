@@ -16,6 +16,8 @@ for (const event of events) {
     assert(result.html.includes(isIndexable(event) ? 'content="index,follow"' : 'content="noindex,follow"'));
     assert(!result.html.includes('undefined'));
     assert(!result.html.includes('class="badge '), 'Suspended reputation badge: ' + event.id);
+    assert(!result.html.includes('fiere-detail-participation'), 'No central badges in server HTML: ' + event.id);
+    assert(!/Spunta da verificare|Hobbisti da verificare/.test(result.html), 'No unknown participation badges: ' + event.id);
 }
 assert.equal(render({slug:'inesistente'}).code,404);
 assert.equal(render({slug:'elenco',pagina:'0'}).code,404);

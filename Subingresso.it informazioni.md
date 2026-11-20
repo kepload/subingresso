@@ -21,6 +21,15 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
+**20 novembre 2026 — correzione richiesta sui bollini:** eliminare «Spunta
+da verificare» e «Hobbisti da verificare» e le sezioni centrali aggiunte;
+usare solo gli spazi compatti già esistenti in basso. Nelle ricerche future,
+bollini solo da fonti primarie pertinenti all'edizione/area, passaggio salvato,
+controllo degli atti successivi e secondo riesame. Incertezze private;
+pubblicazione dei bollini documentati inclusa nella ricerca richiesta, senza
+nuove conferme. [Metodo](data/FIERE_RICERCA_20.md#prove-necessarie-per-un-bollino).
+Intervento in verifica nel worktree `.local/worktrees/bollini-puliti-20261120`.
+
 **Dal 15 novembre 2026, nuovo metodo permanente:** ricerche operative per
 **20 fiere a sessione**, solo su richiesta, con prove per categorie ammesse,
 composizione reale, accesso/concessioni, spunta e costi. Nessuna deduzione da

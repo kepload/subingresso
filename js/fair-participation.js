@@ -1214,10 +1214,7 @@
         const snapshot = legacyEditions.get(event.id);
         const legacyMatches = !event.managedEventId && edition && snapshot === JSON.stringify({ editions: event.editions, venue: event.venue || '' })
             && event.editions.some(item => editionKey(item) === editionKey(edition));
-        const rows = [
-            { topic: 'spunta', kind: 'unknown-spunta', status: 'unknown', label: 'Spunta da verificare', title: 'Spunta non verificata per questa edizione. Non significa che sia vietata.' },
-            { topic: 'hobby', kind: 'unknown-hobby', status: 'unknown', label: 'Hobbisti da verificare', title: 'Ammissione degli hobbisti non verificata per questa edizione. Non significa che siano esclusi.' }
-        ];
+        const rows = [{ topic: 'spunta' }, { topic: 'hobby' }];
         const noSpunta = facts.find(item => item.kind === 'no-spunta');
         const hobby = facts.find(item => item.kind === 'hobby');
         const noHobby = facts.find(item => item.kind === 'no-hobby');
@@ -1237,7 +1234,8 @@
                 Object.assign(rows[fact.topic === 'spunta' ? 0 : 1], fact);
             }
         }
-        return rows;
+        // Missing, conflicting or stale evidence never produces a public badge.
+        return rows.filter(item => item.status === 'yes' || item.status === 'no');
     }
     function notices(event, options) {
         return [...new Set(get(event, options).map(item => item.notice).filter(Boolean))];

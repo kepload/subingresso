@@ -20,8 +20,7 @@
         const when = edition ? (!edition.start && edition.label ? edition.label : calendar.editionLabel(edition)) : event.months.map(m => calendar.MONTHS[m - 1]).join(', ');
         const status = edition ? calendar.editionStatus(edition) : 'Periodo abituale. Date da confermare.';
         const participationFacts = participationStatus?.get(event, { edition }) || [];
-        const participationHTML = participationFacts.length ? `<div class="fiere-detail-participation" aria-label="Spunta e hobbisti">${participationFacts.map(item => `<span class="${item.kind === 'spunta' ? 'fiere-spunta' : 'fiere-badge'}" data-badge="${esc(item.kind)}" title="${esc(item.title)}">${esc(item.label)}</span>`).join('')}</div>` : '';
-        const participationNotes = participationFacts.filter(item => item.status !== 'unknown').map(item => `<p class="fiere-detail-meta"><strong>${item.topic === 'spunta' ? 'Spunta' : 'Hobbisti'}:</strong> ${esc(item.title)}</p>`).join('');
+        const participationNotes = participationFacts.map(item => `<p class="fiere-detail-meta"><strong>${item.topic === 'spunta' ? 'Spunta' : 'Hobbisti'}:</strong> ${esc(item.title)}</p>`).join('');
         const deadline = calendar.deadlineStatus(participation);
         const kind = event.managedEventId ? 'organizer' : 'catalog', id = event.managedEventId || event.id;
         const heading = landing ? 'h1' : 'h2';
@@ -67,7 +66,6 @@
         return `<div class="fiere-dialog-top"><span id="detail-category" class="fiere-detail-category">${esc(calendar.CATEGORIES[event.category] || 'Fiera')}</span><button id="close-detail" type="button" aria-label="Chiudi la scheda" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
         <${heading} id="detail-title">${esc(event.name)}</${heading}><p id="detail-location">${esc(event.city)} · ${esc(event.province)}</p>
         <div class="fiere-detail-overview"><div><span>Quando</span><strong>${esc(when)}</strong>${status ? `<p>${esc(status)}</p>` : ''}</div></div>
-        ${participationHTML}
         ${summary || facts || event.frequencyNote ? `<section class="fiere-detail-about" aria-label="Informazioni sulla fiera">${summary ? `<p id="detail-description">${esc(summary)}</p>` : ''}${facts ? `<dl id="detail-facts" class="fiere-detail-facts">${facts}</dl>` : ''}${event.frequencyNote ? `<p id="detail-frequency">${esc(event.frequencyNote)}</p>` : ''}</section>` : ''}
         <a id="detail-explore" class="fiere-primary" href="${esc(calendarPath(event))}">Cerca altre fiere in zona →</a>
         <div class="fiere-detail-tools"><div class="sf-fair-actions"><button id="detail-save-fair" type="button" class="saved-fair-button" aria-label="Salva la fiera" title="Salva" data-save-fair data-fair-kind="${kind}" data-fair-id="${esc(id)}"><i class="far fa-bookmark" aria-hidden="true"></i></button><button type="button" class="saved-fair-button" aria-label="Avvisami" title="Avvisami" data-remind-fair data-fair-kind="${kind}" data-fair-id="${esc(id)}" aria-haspopup="dialog"><i class="far fa-bell" aria-hidden="true"></i></button></div><p class="fiere-access-note fiere-detail-account" data-fiere-guest hidden><a class="fiere-detail-register" href="/fiere?iscrizione=1" data-fiere-register>Registrati gratis</a> per salvare le fiere.</p></div>

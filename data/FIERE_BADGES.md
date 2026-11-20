@@ -1,19 +1,31 @@
 # Bollini iscrizioni e hobbisti nelle anteprime
 
-## Stati sempre visibili — 20 novembre 2026
+## Solo bollini documentati negli spazi esistenti — 20 novembre 2026
 
-Su richiesta dell'utente, lista, mappa e scheda mostrano sempre una risposta
-per **spunta** e **hobbisti**, anche quando manca una conferma. Le risposte
-positive sono verdi, i divieti rossi tenui e i dati da verificare grigi;
-testo di 14 px e parole esplicite. Nelle anteprime precedono le recensioni.
-Nella scheda sono subito dopo la data, anche nell'HTML senza JavaScript.
+La richiesta corrente sostituisce la precedente scelta degli stati sempre
+visibili: **nessun bollino «Spunta da verificare» o «Hobbisti da verificare»**.
+Quando manca una conferma non si mostra un bollino, senza dedurne un divieto.
+I bollini utili stanno nella riga dei tag già presente in basso nelle anteprime,
+con il formato compatto precedente (11 px); la mappa usa lo stesso renderer.
+Rimosse la sezione centrale delle anteprime e quella subito dopo la data nella
+scheda. Condizioni e limiti documentati restano nel testo della partecipazione
+e nelle Fonti, anche senza JavaScript: non dipendono dal passaggio del puntatore.
 
 `js/fair-participation.js` unifica le conferme precedenti e sette riesami
 documentali locali. Una conferma richiede fonte e nota immutate, snapshot
 immutato delle edizioni e corrispondenza dell'intera edizione selezionata.
-Date, aree o condizioni diverse tornano a «da verificare». Gli eventi degli
+Date, aree o condizioni diverse fanno sparire il bollino. Gli eventi degli
 organizzatori non ereditano le prove del catalogo. Una mancata conferma non
 produce mai un divieto. Ammissione, prenotazione e posto libero restano distinti.
+
+Ogni futura ricerca richiesta comprende applicazione e pubblicazione dei
+bollini documentati, senza una seconda conferma. Prima di pubblicare occorrono
+fonte primaria effettivamente letta, passaggio e localizzatore, data, edizione,
+sede, area/categoria e condizioni, controllo di rettifiche e un secondo riesame.
+Una fonte generica, uno snippet, un modulo senza anno o un'altra edizione non
+bastano. Prove parziali consentono soltanto un'affermazione esatta e delimitata;
+incertezze e contrasti restano nei dossier. Procedura permanente in
+[FIERE_RICERCA_20.md](FIERE_RICERCA_20.md#prove-necessarie-per-un-bollino).
 
 | Fiera | Informazione aggiunta | Limite visibile |
 |---|---|---|
@@ -149,7 +161,7 @@ non ereditano le conferme del catalogo editoriale.
 ## Interfaccia e verifica
 
 Lista e riquadri della mappa usano lo stesso renderer: blu tenue per domande
-aperte, ambra tenue per la scadenza, grigio azzurro per gli hobbisti. Le parole
+aperte, ambra tenue per la scadenza, verde tenue per gli hobbisti. Le parole
 rendono lo stato comprensibile senza distinguere i colori; disposizione a capo
 sui telefoni e tema scuro. Nessun nuovo pulsante o passaggio di conferma.
 

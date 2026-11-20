@@ -18,13 +18,33 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   nel Codex attualmente in uso**, mantenendo account e modello correnti,
   per 20 fiere nuove secondo [il metodo](data/FIERE_RICERCA_20.md).
   Escludere gli ID già assegnati nel registro; rispettare la zona richiesta.
-- Per tutte le ricerche fiere e gli aggiornamenti separatamente autorizzati,
-  procedere **dalla più vicina a Brescia alla più lontana**. Prima scegliere
-  gli eventi non ancora assegnati in ordine di distanza; con più sessioni
-  distribuire la lista ordinata fra gruppi disgiunti e mantenere l'ordine
-  crescente in ciascun gruppo. Distanze indicative in linea d'aria, criterio
-  e possibili duplicati esclusi documentati nel registro. Questa preferenza
-  non autorizza da sola aggiornamenti del sito o nuove ricerche automatiche.
+- Per le prossime ricerche fiere, destinate soprattutto all'uso personale
+  dell'utente, **prima il periodo, poi la vicinanza a Brescia** (regola del
+  16 novembre 2026): dare priorità agli eventi da oggi ai prossimi **5 mesi**
+  a Brescia e nelle province vicine, ricalcolando la finestra a ogni ricerca.
+  Una fiera a Trento a breve precede una a Brescia in agosto fuori finestra.
+  All'interno della fascia prioritaria procedere dalla più vicina a Brescia
+  alla più lontana; gli eventi fuori finestra restano secondari. Escludere
+  gli ID già assegnati e i possibili duplicati; con più sessioni distribuire
+  la lista ordinata fra gruppi disgiunti mantenendone la priorità. Distanze
+  indicative in linea d'aria e criteri documentati nel registro. Lo stesso
+  criterio vale per aggiornamenti separatamente autorizzati; non autorizza
+  da solo nuove ricerche, automazioni o modifiche al sito.
+- **Bollini automatici nelle ricerche future (20 novembre 2026):** ogni nuova
+  ricerca fiere richiesta comprende applicazione e pubblicazione dei bollini
+  documentati di spunta, hobbisti e iscrizioni, senza una seconda conferma.
+  Sono una priorità dell'utente. Seguire il
+  [metodo](data/FIERE_RICERCA_20.md#applicazione-automatica-dei-bollini) e il
+  [contratto](data/FIERE_BADGES.md): prove esplicite, edizione, sede, area e
+  condizioni corrette. **Correzione del 20 novembre:** nessun bollino «da
+  verificare» e nessuna sezione centrale dedicata; usare i bollini compatti
+  negli spazi esistenti in basso. Pubblicare solo sì/no o stati condizionati
+  sostenuti da una fonte primaria pertinente e ricontrollata; incertezze,
+  prove storiche e contrasti restano privati, senza bollino. Sono autorizzati gli
+  aggiornamenti strettamente necessari ai bollini, build, controlli, commit/push
+  e verifica online. Il coordinatore integra le consegne in sequenza;
+  non chiudere il lavoro ai soli dossier privati. Nessun nuovo gruppo
+  automatico o recupero implicito delle ricerche passate.
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
   senza richiesta esplicita. Wizard `vendi.html`, trigger annunci e schema
   email/Resend si modificano solo se necessari al lavoro autorizzato.
