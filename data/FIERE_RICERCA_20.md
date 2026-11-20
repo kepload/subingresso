@@ -82,12 +82,14 @@ gia ricercate; restano prioritarie le prossime edizioni vicine a Brescia.
 Mittente, servizio di posta e accesso devono ancora essere configurati:
 questa nota registra il metodo, non un sistema gia attivo.
 
-- **Primo messaggio: massimo due domande**, solo sui fatti mancanti, con
-  priorita a spunta e hobbisti. Scrittura italiana naturale, breve, specifica
-  per fiera/edizione, firmata con un nome reale e Subingresso.it. Rendere
-  possibile rispondere in una riga con due si/no. Non inventare identita,
-  conoscenze personali, precedenti contatti o intenzioni di partecipare.
-- Se uno dei fatti e gia documentato, chiedere soltanto l'altro. Niente
+- **Correzione dell'utente: una sola domanda nel primo messaggio**, su un
+  solo fatto mancante, con priorita a spunta o hobbisti. Italiano naturale,
+  brevissimo, specifico per fiera/edizione, tono semplice di chi chiede come
+  partecipare. **Niente nomi di siti, marchi o link nel testo e nella firma**;
+  firma con il solo nome reale. Rendere possibile rispondere in una riga.
+  Il tono da principiante e una scelta di linguaggio: non inventare identita,
+  esperienze personali, precedenti contatti o intenzioni di partecipare.
+- Se un fatto e gia documentato, chiedere soltanto quello mancante. Niente
   questionario iniziale sui cinque campi, numeri di partecipanti, costi e
   documentazione complessa. Dopo una risposta, approfondire soltanto una
   condizione necessaria o usare l'eventuale regolamento fornito.
@@ -116,9 +118,11 @@ questa nota registra il metodo, non un sistema gia attivo.
 
 Esempio da adattare alle sole informazioni mancanti:
 
-> Buongiorno, sono [Nome] di Subingresso.it. Sto aggiornando le informazioni
-> sulla [Fiera] del [data]. Si puo partecipare alla spunta? Sono ammessi anche
-> gli hobbisti? Mi bastano anche due si/no. Grazie mille, [Nome].
+> Buongiorno, alla [Fiera] del [data] accettate anche spuntisti?
+> Grazie, [Nome].
+
+Se il solo fatto mancante e l'ammissione degli hobbisti, sostituire la domanda
+con «Sono ammessi anche gli hobbisti?», senza aggiungerla a quella sulla spunta.
 
 ## Cinque informazioni da verificare
 

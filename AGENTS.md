@@ -47,11 +47,14 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   automatico o recupero implicito delle ricerche passate.
 - **Raccolta diretta delle informazioni fiere (20 novembre 2026):** l'utente
   vuole contattare i referenti competenti delle fiere con dati mancanti,
-  incluse quelle gia ricercate. Primo messaggio naturale e breve, firma reale,
-  massimo due domande semplici sui soli dati mancanti, risposta possibile
-  anche con due si/no. Priorita a spunta e hobbisti; non chiedere subito tutti
-  i cinque campi. Referenti verificati e registro unico per evitare doppioni
-  fra sessioni e manifestazioni dello stesso ente. Collegare sia invio sia
+  incluse quelle gia ricercate. Correzione dell'utente: primo messaggio
+  naturale e brevissimo, **una sola domanda**, nessun nome di sito, marchio
+  o link nel testo e nella firma; solo il nome reale. Tono semplice di chi
+  chiede come partecipare, senza inventare esperienza o intenzioni personali.
+  Chiedere un solo fatto mancante, con priorita a spunta o hobbisti; non
+  chiedere subito tutti i cinque campi. Referenti verificati e registro unico
+  per evitare doppioni fra sessioni e manifestazioni dello stesso ente.
+  Collegare sia invio sia
   lettura delle risposte; mittente e accesso da configurare, nessun sistema
   di invio/monitoraggio ancora attivato da questa decisione. Dettagli nel
   [metodo](data/FIERE_RICERCA_20.md#raccolta-diretta-per-email).
