@@ -71,7 +71,7 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 
 ## Decisioni da ritrovare senza rileggere lo storico
 
-- Nuove iscrizioni dalle fiere: bollino **Fiera** riservato all?elenco admin, dalla pagina effettiva del signup e dagli articoli specifici. Nessuna attribuzione dalle sole visite, UTM o landing storiche; [criteri e verifica](data/FAIR_SIGNUP_BADGE.md).
+- Nuove iscrizioni dalle fiere: bollino **Fiera** riservato all'elenco admin, dalla pagina effettiva del signup e dagli articoli specifici. Nessuna attribuzione dalle sole visite, UTM o landing storiche; [criteri e verifica](data/FAIR_SIGNUP_BADGE.md).
 - Italiano semplice, comunicazioni e documenti essenziali. Dashboard con pochi
   numeri principali, grafici leggibili e dettagli apribili. Completezza e qualità
   dei dati utili restano prioritarie; evitare spiegazioni ripetute nell'interfaccia.
@@ -257,7 +257,7 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **20 novembre 2026 ? bollino privato Fiera:** pubblicato `42d973f`, Vercel riuscito e tre asset online identici; calendario, schede e 24 articoli specifici, escluse guide miste. SQL privata e `register-bypass` v18 ACTIVE verificati; persistenza, permessi e browser Chromium/WebKit nei due temi passati, provider simulati. Vecchie iscrizioni non dedotte; nessun account o invio reale di prova. [Contratto](data/FAIR_SIGNUP_BADGE.md), ricevute `.local/lavori/iscritti-fiera-20261120/`.
+- **20 novembre 2026 - bollino privato Fiera:** pubblicato `42d973f`, Vercel riuscito e tre asset online identici; calendario, schede e 24 articoli specifici, escluse guide miste. SQL privata e `register-bypass` v18 ACTIVE verificati; persistenza, permessi e browser Chromium/WebKit nei due temi passati, provider simulati. Vecchie iscrizioni non dedotte; nessun account o invio reale di prova. [Contratto](data/FAIR_SIGNUP_BADGE.md), ricevute `.local/lavori/iscritti-fiera-20261120/`.
 
 - **18 novembre 2026 — consolidate 26 fiere dal riepilogo dell’utente:** pubblicato `89776a1`, Vercel `dpl_A9Wd51qSy21vDgtQiBXnH3vJ7eHh` READY; cinque asset e 26 schede SSR conformi. «No hobbisti» a Levico e hobbisti nella sola area separata di Lavis, con prove ufficiali e vincolo all’edizione; spunte già documentate conservate, dubbi e termini scaduti espliciti. Altre 10.417 schede, ID e prezzi invariati. Test bollini locali/online e pagine PASS; vecchio test generale sul mese della Fiera del Crocifisso fallisce anche sulla base iniziale, registrato senza correzioni estranee. [Dossier](data/fiere-dossier/consolidamento-26-fiere-20261118.md). Voti, criteri del banco e CSV privati in `.local/lavori/fiere-26/` del worktree `fiere-26-20261118`; non sono valutazioni pubbliche generali. Nessuna nuova automazione o invio.
 
