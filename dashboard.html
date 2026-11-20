@@ -1265,7 +1265,7 @@
 <script src="js/admin-email-analytics.js?v=2"></script>
 <script src="js/vetrina-account.js?v=5"></script>
 <script src="js/ui-components.js?v=18"></script>
-<script src="js/auth.js?v=30"></script>
+<script src="js/auth.js?v=31"></script>
 <link rel="stylesheet" href="css/listing-outcome.css?v=1">
 <dialog id="listingOutcomeDialog" class="listing-outcome" aria-labelledby="listingOutcomeTitle" aria-describedby="listingOutcomeListing">
     <div class="listing-outcome__top"><h2 id="listingOutcomeTitle">Come è andata?</h2><button type="button" id="listingOutcomeClose" class="listing-outcome__close">Chiudi</button></div>
@@ -2612,6 +2612,7 @@ function _buildUserRow(u) {
                 <p class="text-xs text-slate-500 font-semibold truncate">${name} · <span class="text-slate-400">${created}</span></p>
             </div>
             <div class="flex items-center gap-2 shrink-0 flex-wrap">
+                ${u.registration_badge === 'fiera' ? '<span class="text-xs font-bold px-2 py-1 rounded-lg bg-blue-50 text-blue-700" title="Registrazione dal calendario fiere o da un articolo dedicato alle fiere">Fiera</span>' : ''}
                 <span class="text-[10px] font-black px-2 py-1 rounded-lg bg-blue-50 text-blue-700" title="Annunci totali">
                     <i class="fas fa-list mr-1"></i>${totalAnn}
                 </span>

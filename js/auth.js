@@ -576,6 +576,19 @@ window.handleRegister = async function (e) {
 };
 
 // ── Register helpers ─────────────────────────────────────
+// Pagina effettiva del signup: niente query, UTM o dati personali.
+function _getRegistrationPath() {
+    try {
+        const url = new URL(window.location.href);
+        let path = url.pathname.toLowerCase().replace(/\/+$/, '').replace(/\.html$/, '') || '/';
+        if (path === '/blog' || path === '/blog-template') {
+            const slug = (url.searchParams.get('post') || '').toLowerCase();
+            path = '/blog' + (/^[a-z0-9-]{1,120}$/.test(slug) ? '/' + slug : '');
+        }
+        return /^\/[a-z0-9/_-]{0,199}$/.test(path) ? path : null;
+    } catch (_) { return null; }
+}
+
 async function _linkValutatoreSession() {
     const token = localStorage.getItem('_val_session');
     if (!token) return;
@@ -637,6 +650,7 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
 async function _registerBypass(email, password, nome, cognome, telefono, showWelcome = false, promoOptIn = false) {
     try {
         const cleanEmail = email.trim().toLowerCase();
+        const registrationPath = _getRegistrationPath();
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
             method: 'POST',
             headers: {
@@ -644,7 +658,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, website: '', promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }),
+            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, website: '', registration_path: registrationPath, promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }),
         });
         const result = await res.json().catch(() => ({}));
         if (!res.ok) {
@@ -656,7 +670,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
                     return;
                 }
                 if (res.status >= 500) {
-                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, showWelcome, promoOptIn);
+                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, showWelcome, promoOptIn, registrationPath);
                     if (recovered) return;
                     _showAuthError('Registrazione temporaneamente non disponibile. Riprova tra poco o accedi se hai già creato l\'account.');
                     return;
@@ -679,13 +693,13 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
     }
 }
 
-async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, showWelcome = false, promoOptIn = false) {
+async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, showWelcome = false, promoOptIn = false, registrationPath = _getRegistrationPath()) {
     try {
         const { data, error } = await _supabase.auth.signUp({
             email,
             password,
             options: {
-                data: { nome: nome || '', cognome: cognome || '', telefono: telefono || '', promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }
+                data: { nome: nome || '', cognome: cognome || '', telefono: telefono || '', registration_path: registrationPath, promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }
             }
         });
         if (error) return false;
