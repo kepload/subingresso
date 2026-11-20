@@ -1,5 +1,43 @@
 # Bollini iscrizioni e hobbisti nelle anteprime
 
+## Stati sempre visibili — 20 novembre 2026
+
+Su richiesta dell'utente, lista, mappa e scheda mostrano sempre una risposta
+per **spunta** e **hobbisti**, anche quando manca una conferma. Le risposte
+positive sono verdi, i divieti rossi tenui e i dati da verificare grigi;
+testo di 14 px e parole esplicite. Nelle anteprime precedono le recensioni.
+Nella scheda sono subito dopo la data, anche nell'HTML senza JavaScript.
+
+`js/fair-participation.js` unifica le conferme precedenti e sette riesami
+documentali locali. Una conferma richiede fonte e nota immutate, snapshot
+immutato delle edizioni e corrispondenza dell'intera edizione selezionata.
+Date, aree o condizioni diverse tornano a «da verificare». Gli eventi degli
+organizzatori non ereditano le prove del catalogo. Una mancata conferma non
+produce mai un divieto. Ammissione, prenotazione e posto libero restano distinti.
+
+| Fiera | Informazione aggiunta | Limite visibile |
+|---|---|---|
+| Sant'Andrea, Concesio | Spunta con graduatoria | 30/11/2026; rettifica 821 del 16/11, graduatoria già pubblicata, nuovi accessi da verificare |
+| Fiera dell'Uva, Gussago | No spunte | Solo area mercatale di Piazza Vittorio Veneto, 27/09/2026; punto 8 del bando |
+| Natale, Castegnato | Hobbisti ammessi | Creazioni proprie; termine prorogato al 15/11/2026, trascorso |
+| Natale, Paitone | Hobbisti ammessi | 13/12/2026; termine domanda 15/11/2026 trascorso |
+| Mercatini patronali, Coccaglio | Hobbisti ammessi | 22/11/2026; solo prenotati, iscrizioni chiuse per raggiunto limite |
+| Antiquariato, Desenzano | Spunte ammesse | Edizioni 2026 documentate; entro 8:30 sui soli posti liberi, merce conforme |
+| Vintage, Desenzano | Spunte ammesse | Edizioni 2026 documentate; entro 8:30 sui soli posti liberi, esclusi prodotti nuovi |
+
+Regole e condizioni sono leggibili nella scheda; le prove aggiuntive sono
+nelle Fonti con il consueto accesso. Castegnato: avviso e modulo recuperati
+il 20 novembre; proroga conservata nella pagina acquisita il 15, oggi 404.
+Gussago: pagina comunale attuale e copia del bando del 15 novembre, oggi non
+più recuperabile allo stesso URL temporaneo. Paitone, Coccaglio, Desenzano e
+la rettifica di Concesio riletti online. Prove, limiti e verifiche private in
+`.local/verifiche/stati-fiere-20261120/` nel worktree dei bollini.
+
+Non è un import delle 340 ricerche private né un giudizio sulla redditività.
+Catalogo, ID, prezzi, calendari e dati degli utenti restano quelli esistenti.
+Verifiche: `scripts/test-fair-participation.cjs`, test browser dei bollini e
+test delle pagine fiera, con provider isolati e controlli senza JavaScript.
+
 Decisione del 15 novembre 2026: aggiungere «Iscrizioni aperte», «In scadenza»
 e «Hobbisti ammessi». Escluso il bollino della corrente. Restano i bollini
 «Spunte ammesse» e le informazioni già presenti sulle schede.

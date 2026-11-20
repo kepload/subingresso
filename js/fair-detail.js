@@ -1,5 +1,6 @@
 (function (global) {
     'use strict';
+    const participationStatus = typeof module !== 'undefined' && module.exports ? require('./fair-participation') : global.FairParticipation;
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const safeURL = value => /^https:\/\//i.test(value || '') ? esc(value) : '';
     function calendarPath(event) {
@@ -18,6 +19,9 @@
         const edition = calendar.selectEdition(event, new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()));
         const when = edition ? (!edition.start && edition.label ? edition.label : calendar.editionLabel(edition)) : event.months.map(m => calendar.MONTHS[m - 1]).join(', ');
         const status = edition ? calendar.editionStatus(edition) : 'Periodo abituale. Date da confermare.';
+        const participationFacts = participationStatus?.get(event, { edition }) || [];
+        const participationHTML = participationFacts.length ? `<div class="fiere-detail-participation" aria-label="Spunta e hobbisti">${participationFacts.map(item => `<span class="${item.kind === 'spunta' ? 'fiere-spunta' : 'fiere-badge'}" data-badge="${esc(item.kind)}" title="${esc(item.title)}">${esc(item.label)}</span>`).join('')}</div>` : '';
+        const participationNotes = participationFacts.filter(item => item.status !== 'unknown').map(item => `<p class="fiere-detail-meta"><strong>${item.topic === 'spunta' ? 'Spunta' : 'Hobbisti'}:</strong> ${esc(item.title)}</p>`).join('');
         const deadline = calendar.deadlineStatus(participation);
         const kind = event.managedEventId ? 'organizer' : 'catalog', id = event.managedEventId || event.id;
         const heading = landing ? 'h1' : 'h2';
@@ -53,6 +57,7 @@
             for (const item of attendance.record.additionalSources || []) addDocument(item.url, item.label);
         }
         for (const item of research?.sources || []) addDocument(item.url, item.label);
+        for (const item of participationFacts) addDocument(item.sourceUrl, item.topic === 'spunta' ? 'Regole della spunta' : 'Ammissione hobbisti');
         const documentaryNotes = [
             attendance ? `<p>${esc(attendance.record.note)}</p><p>${esc(attendance.comparison)}</p><p>Periodo: ${esc(attendance.record.start)} – ${esc(attendance.record.end)}. Fonte consultata il ${esc(attendance.record.checkedAt)}.</p><p>${esc(calendar.attendanceCriteria())}</p>` : '',
             research ? `<p>${esc(research.theme)}. Fonti consultate il ${esc(research.checkedAt)}.</p>` : ''
@@ -62,12 +67,13 @@
         return `<div class="fiere-dialog-top"><span id="detail-category" class="fiere-detail-category">${esc(calendar.CATEGORIES[event.category] || 'Fiera')}</span><button id="close-detail" type="button" aria-label="Chiudi la scheda" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
         <${heading} id="detail-title">${esc(event.name)}</${heading}><p id="detail-location">${esc(event.city)} · ${esc(event.province)}</p>
         <div class="fiere-detail-overview"><div><span>Quando</span><strong>${esc(when)}</strong>${status ? `<p>${esc(status)}</p>` : ''}</div></div>
+        ${participationHTML}
         ${summary || facts || event.frequencyNote ? `<section class="fiere-detail-about" aria-label="Informazioni sulla fiera">${summary ? `<p id="detail-description">${esc(summary)}</p>` : ''}${facts ? `<dl id="detail-facts" class="fiere-detail-facts">${facts}</dl>` : ''}${event.frequencyNote ? `<p id="detail-frequency">${esc(event.frequencyNote)}</p>` : ''}</section>` : ''}
         <a id="detail-explore" class="fiere-primary" href="${esc(calendarPath(event))}">Cerca altre fiere in zona →</a>
         <div class="fiere-detail-tools"><div class="sf-fair-actions"><button id="detail-save-fair" type="button" class="saved-fair-button" aria-label="Salva la fiera" title="Salva" data-save-fair data-fair-kind="${kind}" data-fair-id="${esc(id)}"><i class="far fa-bookmark" aria-hidden="true"></i></button><button type="button" class="saved-fair-button" aria-label="Avvisami" title="Avvisami" data-remind-fair data-fair-kind="${kind}" data-fair-id="${esc(id)}" aria-haspopup="dialog"><i class="far fa-bell" aria-hidden="true"></i></button></div><p class="fiere-access-note fiere-detail-account" data-fiere-guest hidden><a class="fiere-detail-register" href="/fiere?iscrizione=1" data-fiere-register>Registrati gratis</a> per salvare le fiere.</p></div>
         ${editionHTML ? `<section class="fiere-detail-info"><h3>Altre edizioni</h3><div id="detail-editions">${editionHTML}</div></section>` : ''}
         ${attendanceHTML}
-        <section class="fiere-detail-info"><h3>${participationHeading}</h3>${count ? `<p id="detail-availability" class="fiere-availability" data-sold-out="${count.available === 0}">${esc(count.available === 0 ? 'Posteggi esauriti per gli espositori' : count.available + (count.available === 1 ? ' posteggio disponibile' : ' posteggi disponibili') + ' su ' + count.capacity)}</p>` : ''}${stalls}${labels[participation.type] ? `<p id="detail-participation-label">${esc(labels[participation.type])}</p>` : ''}<p id="detail-participation-note">${esc(note || (summary ? '' : 'Modalità da verificare con l’organizzatore.'))}</p>${deadline ? `<p id="detail-deadline" class="fiere-detail-deadline">Iscrizioni espositori · ${esc(deadline)}</p>` : ''}${!event.managedEventId ? '<p class="fiere-detail-meta">Il posto è confermato solo dopo l’assegnazione.</p>' : ''}${contacts ? `<div id="detail-contacts" class="fiere-contacts">${contacts}</div>` : ''}</section>
+        <section class="fiere-detail-info"><h3>${participationHeading}</h3>${count ? `<p id="detail-availability" class="fiere-availability" data-sold-out="${count.available === 0}">${esc(count.available === 0 ? 'Posteggi esauriti per gli espositori' : count.available + (count.available === 1 ? ' posteggio disponibile' : ' posteggi disponibili') + ' su ' + count.capacity)}</p>` : ''}${participationNotes}${stalls}${labels[participation.type] ? `<p id="detail-participation-label">${esc(labels[participation.type])}</p>` : ''}<p id="detail-participation-note">${esc(note || (summary ? '' : 'Modalità da verificare con l’organizzatore.'))}</p>${deadline ? `<p id="detail-deadline" class="fiere-detail-deadline">Iscrizioni espositori · ${esc(deadline)}</p>` : ''}${!event.managedEventId ? '<p class="fiere-detail-meta">Il posto è confermato solo dopo l’assegnazione.</p>' : ''}${contacts ? `<div id="detail-contacts" class="fiere-contacts">${contacts}</div>` : ''}</section>
         <section class="fiere-detail-info"><h3>Costi per esporre</h3><p id="detail-costs">${esc(event.pricing?.details || participation.costs || 'Da verificare con l’organizzatore.')}</p>${event.pricing ? `<p id="detail-costs-meta" class="fiere-detail-meta">${esc((event.pricing.period ? 'Tariffe ' + event.pricing.period : 'Anno tariffario da verificare') + (event.pricing.checkedAt ? ' · fonte consultata il ' + event.pricing.checkedAt : ''))}</p>` : ''}</section>
         ${researchHTML}
         ${reviews || '<section id="detail-reviews" class="fr" aria-label="Recensioni degli ambulanti"></section>'}

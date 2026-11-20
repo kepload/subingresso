@@ -191,8 +191,35 @@ function contrast(foreground, background) {
             await page.waitForURL(url => url.searchParams.get('q') === 'Brescia');
             await page.locator('.fiere-marker[data-events*="' + sample.id + '"]').click();
             await page.locator('#map-popup').waitFor({ state: 'visible' });
-            assert.equal(await page.locator('#popup-events .fiere-spunta').count(), 9);
+            for (const event of events.filter(event => event.city === 'Brescia' && spunta.allows(event))) {
+                assert.equal(await page.locator('#popup-events [data-fair-badges="' + event.id + '"] .fiere-spunta').count(), 1);
+            }
             await page.locator('#map-popup').screenshot({ path: path.join(out, engine + '-' + width + '-map.png') });
+            for (const fixture of [
+                { id: 'lombardia-brescia-brescia-mineral-show', query: 'provincia=Brescia&q=Mineral&mesi=9', labels: ['Spunta da verificare', 'Hobbisti da verificare'] },
+                { id: 'lombardia-castegnato-mercatini-di-natale', query: 'provincia=Brescia&q=Castegnato&mesi=12', labels: ['Spunta da verificare', 'Hobbisti ammessi'], note: /creazioni proprie/ },
+                { id: 'lombardia-paitone-mercatini-di-natale', query: 'provincia=Brescia&q=Paitone&mesi=12', labels: ['Spunta da verificare', 'Hobbisti ammessi'], note: /15\/11\/2026/ },
+                { id: 'lombardia-coccaglio-festa-patronale-e-mercatini', query: 'provincia=Brescia&q=Coccaglio&mesi=11', labels: ['Spunta da verificare', 'Hobbisti ammessi'], note: /iscrizioni chiuse/ },
+                { id: 'lombardia-concesio-fiera-di-sant-andrea', query: 'provincia=Brescia&q=Concesio&mesi=11', labels: ['Spunta con graduatoria', 'Hobbisti da verificare'] },
+                { id: 'lombardia-gussago-fiera-dell-uva', query: 'provincia=Brescia&q=Gussago&mesi=9', labels: ['No spunte', 'Hobbisti da verificare'] }
+            ]) {
+                await page.goto(base + '/fiere?' + fixture.query);
+                const target = page.locator('.fiere-card[data-event-id="' + fixture.id + '"]');
+                await target.waitFor();
+                assert.deepEqual(await target.locator('[data-fair-badges] [data-badge]').allTextContents(), fixture.labels);
+                if (fixture.note) assert.match(await target.locator('.fiere-participation-condition').textContent(), fixture.note);
+                for (const dark of [false, true]) {
+                    await page.evaluate(value => document.documentElement.classList.toggle('admin-dark', value), dark);
+                    for (const colors of await target.locator('[data-badge]').evaluateAll(elements => elements.map(element => ({ foreground: getComputedStyle(element).color, background: getComputedStyle(element).backgroundColor })))) {
+                        assert(contrast(colors.foreground, colors.background) >= 4.5);
+                    }
+                    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+                    await target.screenshot({ path: path.join(out, engine + '-' + width + '-' + fixture.id + (dark ? '-dark' : '') + '.png') });
+                }
+                await target.locator('.fiere-card-button').click();
+                assert.deepEqual(await page.locator('.fiere-detail-participation [data-badge]').allTextContents(), fixture.labels);
+                await page.keyboard.press('Escape');
+            }
             await page.goto(base + '/fiere?provincia=Vicenza&q=Sarcedo&mesi=12');
             const application = page.locator('.fiere-card[data-event-id="' + sarcedo.id + '"]');
             await application.waitFor();

@@ -445,23 +445,19 @@
         if (text !== undefined) element.textContent = text;
         return element;
     }
-    function spuntaBadge(event) {
-        if (!global.FairSpunta?.allows(event)) return null;
-        const badge = node('span', 'fiere-spunta', 'Spunte ammesse');
-        badge.title = 'Spunta prevista nelle modalità di partecipazione. Requisiti e termini nella scheda; assegnazione solo sui posti liberi.';
-        return badge;
-    }
     function updateFairBadges(container, event) {
         const badges = [];
         const edition = selectEdition(event, todayInRome(), state.months, state);
         const facts = global.FairBadges?.get(event, { edition }) || [];
-        const spunta = facts.some(info => info.kind === 'no-spunta') ? null : spuntaBadge(event);
-        if (spunta) badges.push(spunta);
-        for (const info of facts) {
-            const badge = node('span', 'fiere-badge', info.label);
+        const participation = global.FairParticipation?.get(event, { edition }) || [];
+        for (const info of [...participation, ...facts.filter(info => ['open', 'closing'].includes(info.kind))]) {
+            const badge = node('span', info.kind === 'spunta' ? 'fiere-spunta' : 'fiere-badge', info.label);
             badge.dataset.badge = info.kind;
             badge.title = info.title;
             badges.push(badge);
+        }
+        for (const notice of global.FairParticipation?.notices(event, { edition }) || []) {
+            badges.push(node('span', 'fiere-participation-condition', notice));
         }
         container.replaceChildren(...badges);
         container.hidden = badges.length === 0;
@@ -798,7 +794,6 @@
             const foot = node('div', 'fiere-card-foot');
             const tags = node('div', 'fiere-card-tags');
             tags.append(category);
-            tags.append(fairBadges(event));
             foot.append(tags, button);
             const body = node('div', 'fiere-card-body');
             const content = node('div', 'fiere-card-content');
@@ -814,6 +809,9 @@
             const affinity = articleAffinityBadge(event);
             if (affinity) side.append(affinity);
             content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
+            const participation = node('div', 'fiere-card-participation');
+            participation.append(fairBadges(event));
+            content.append(participation);
             const reviews = node('button','fiere-card-reviews','Recensioni'); reviews.type = 'button';
             reviews.dataset.reviewSummary = (event.managedEventId ? 'organizer:' : 'catalog:') + (event.managedEventId || event.id);
             reviews.addEventListener('click', () => {
