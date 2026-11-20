@@ -67,9 +67,58 @@ in uso** e affidarle altre 20 fiere con questo metodo.
   dei bollini documentati, inclusi dati strettamente necessari, build, controlli
   e pubblicazione secondo la procedura sotto. Altri aggiornamenti del catalogo,
   importazioni, database o modifiche al sito restano un incarico distinto.
-  Nessun contatto a terzi o invio di domande. Il coordinatore aggiorna la memoria.
+  La sola ricerca web non avvia contatti o invii impliciti; la raccolta diretta
+  richiesta il 20 novembre segue il percorso email sotto. Il coordinatore
+  aggiorna la memoria.
 - Ogni nuovo gruppo richiede una nuova richiesta dell'utente. Niente loop,
   rinnovi automatici, nuove sessioni aggiuntive o riprese dalle vecchie quote.
+
+## Raccolta diretta per email
+
+Decisione dell'utente del **20 novembre 2026**: integrare la ricerca pubblica
+con domande dirette ai referenti competenti. La copertura prevista riguarda
+progressivamente tutte le fiere con informazioni mancanti, incluse quelle
+gia ricercate; restano prioritarie le prossime edizioni vicine a Brescia.
+Mittente, servizio di posta e accesso devono ancora essere configurati:
+questa nota registra il metodo, non un sistema gia attivo.
+
+- **Primo messaggio: massimo due domande**, solo sui fatti mancanti, con
+  priorita a spunta e hobbisti. Scrittura italiana naturale, breve, specifica
+  per fiera/edizione, firmata con un nome reale e Subingresso.it. Rendere
+  possibile rispondere in una riga con due si/no. Non inventare identita,
+  conoscenze personali, precedenti contatti o intenzioni di partecipare.
+- Se uno dei fatti e gia documentato, chiedere soltanto l'altro. Niente
+  questionario iniziale sui cinque campi, numeri di partecipanti, costi e
+  documentazione complessa. Dopo una risposta, approfondire soltanto una
+  condizione necessaria o usare l'eventuale regolamento fornito.
+- Verificare il destinatario nei contatti ufficiali del Comune/SUAP o
+  dell'organizzatore competente. Registro unico per ente, fiera ed edizione,
+  con campi mancanti, contatti precedenti e risposte: deduplicare prima
+  dell'invio anche fra sessioni diverse e fiere dello stesso referente.
+  Trattare esplicitamente indirizzi non validi, rifiuti di ulteriori contatti
+  e risposte automatiche; non considerarli risposte sui fatti richiesti.
+- La soluzione deve gestire **sia invio sia ricezione/lettura**, associazione
+  delle conversazioni alle fiere e conservazione privata delle prove.
+  Una chiave di solo invio non realizza l'intero percorso. Valutazione e
+  pubblicazione dei bollini richiedono ancora il controllo delle condizioni
+  del metodo; non dichiarare attivo un monitoraggio prima di averlo implementato.
+- Una risposta precisa del referente competente e una fonte diretta datata,
+  limitata a edizione, area e categoria indicate. Conservare privatamente
+  messaggio originale, mittente, data e identificativo. Nessuna pubblicazione
+  di recapiti personali o email integrali. Chiarire risposte ambigue o
+  contrasti con gli atti applicabili prima di attribuire un bollino.
+- Il servizio scelto deve consentire questa corrispondenza. Verifica del
+  20 novembre: la [policy Resend](https://resend.com/legal/acceptable-use),
+  sezione Prohibited Sending Purposes e Appropriate Mailing Lists, vieta
+  cold outreach e destinatari senza consenso esplicito. Il precedente esempio
+  tecnico di Resend non e una scelta adatta per questi primi contatti;
+  non riutilizzare automaticamente l'invio transazionale del sito.
+
+Esempio da adattare alle sole informazioni mancanti:
+
+> Buongiorno, sono [Nome] di Subingresso.it. Sto aggiornando le informazioni
+> sulla [Fiera] del [data]. Si puo partecipare alla spunta? Sono ammessi anche
+> gli hobbisti? Mi bastano anche due si/no. Grazie mille, [Nome].
 
 ## Cinque informazioni da verificare
 

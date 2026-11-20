@@ -45,6 +45,16 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   e verifica online. Il coordinatore integra le consegne in sequenza;
   non chiudere il lavoro ai soli dossier privati. Nessun nuovo gruppo
   automatico o recupero implicito delle ricerche passate.
+- **Raccolta diretta delle informazioni fiere (20 novembre 2026):** l'utente
+  vuole contattare i referenti competenti delle fiere con dati mancanti,
+  incluse quelle gia ricercate. Primo messaggio naturale e breve, firma reale,
+  massimo due domande semplici sui soli dati mancanti, risposta possibile
+  anche con due si/no. Priorita a spunta e hobbisti; non chiedere subito tutti
+  i cinque campi. Referenti verificati e registro unico per evitare doppioni
+  fra sessioni e manifestazioni dello stesso ente. Collegare sia invio sia
+  lettura delle risposte; mittente e accesso da configurare, nessun sistema
+  di invio/monitoraggio ancora attivato da questa decisione. Dettagli nel
+  [metodo](data/FIERE_RICERCA_20.md#raccolta-diretta-per-email).
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
   senza richiesta esplicita. Wizard `vendi.html`, trigger annunci e schema
   email/Resend si modificano solo se necessari al lavoro autorizzato.
