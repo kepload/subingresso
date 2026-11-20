@@ -54,8 +54,9 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   Chiedere un solo fatto mancante, con priorita a spunta o hobbisti; non
   chiedere subito tutti i cinque campi. Referenti verificati e registro unico
   per evitare doppioni fra sessioni e manifestazioni dello stesso ente.
-  Collegare sia invio sia
-  lettura delle risposte; mittente e accesso da configurare, nessun sistema
+  Usare una casella personale dedicata, indipendente dal dominio Subingresso.it,
+  come richiesto dall'utente. Collegare sia invio sia lettura delle risposte;
+  nuova casella, mittente e accesso da configurare, nessun sistema
   di invio/monitoraggio ancora attivato da questa decisione. Dettagli nel
   [metodo](data/FIERE_RICERCA_20.md#raccolta-diretta-per-email).
 - Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,

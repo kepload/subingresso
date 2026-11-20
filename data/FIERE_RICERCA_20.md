@@ -79,8 +79,12 @@ Decisione dell'utente del **20 novembre 2026**: integrare la ricerca pubblica
 con domande dirette ai referenti competenti. La copertura prevista riguarda
 progressivamente tutte le fiere con informazioni mancanti, incluse quelle
 gia ricercate; restano prioritarie le prossime edizioni vicine a Brescia.
-Mittente, servizio di posta e accesso devono ancora essere configurati:
-questa nota registra il metodo, non un sistema gia attivo.
+L'utente richiede una **nuova casella personale dedicata e indipendente dal
+dominio Subingresso.it**; non usare gli indirizzi del sito. Nuova casella,
+mittente, servizio di posta e accesso devono ancora essere configurati:
+questa nota registra il metodo, non un sistema gia attivo. La separazione
+della casella non costituisce una garanzia di recapito; verificare il
+funzionamento e i limiti del servizio scelto prima di estendere gli invii.
 
 - **Correzione dell'utente: una sola domanda nel primo messaggio**, su un
   solo fatto mancante, con priorita a spunta o hobbisti. Italiano naturale,
