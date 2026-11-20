@@ -4609,33 +4609,34 @@
         11
       ],
       "source": {
-        "url": "https://tnconfesercenti.it/wp-content/uploads/2026/06/20260368094945_Doppia_PaginaFiere_2026.pdf",
-        "label": "ANVA Confesercenti del Trentino, calendario 2026",
-        "checkedAt": "2026-10-16"
+        "url": "https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina",
+        "label": "Comune di Rovere della Luna · programma 2026",
+        "checkedAt": "2026-11-20"
       },
       "editions": [
         {
           "year": 2026,
           "start": "2026-11-22",
           "end": "2026-11-22",
-          "dateType": "calendar",
-          "sourceUrl": "https://tnconfesercenti.it/wp-content/uploads/2026/06/20260368094945_Doppia_PaginaFiere_2026.pdf"
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina"
         }
       ],
       "participation": {
         "type": "check",
-        "note": "Riepilogo raccolto il 18 novembre 2026: mercato patronale commerciale distinto dall’area hobbisti; distinzione da riconfermare per il 2026. Per la bigiotteria commerciale richiedere un posteggio nell’area commerciale e verificare assortimento ammesso, disponibilità, domanda, eventuale spunta e costi. Il programma comunale reperito è del 2025 e non conferma le ammissioni 2026. Contatto comunale: 0461 658524, interno 5."
+        "note": "Fiera di Santa Caterina, 22 novembre 2026. Il programma comunale prevede il mercato patronale dalle 8 alle 18 nel centro storico e un mercatino hobbisti separato, dalle 9 alle 18, in piazza Unita d’Italia. L’ammissione degli hobbisti riguarda soltanto quest’area. La presenza nel programma non garantisce un posto o un’ammissione individuale.",
+        "url": "https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina"
       },
       "contacts": {
         "phone": "0461 658524"
       },
       "frequencyNote": "Data pubblicata nel calendario provinciale 2026 di ANVA Confesercenti; il calendario avverte che sono possibili variazioni. Non equivale a conferma di posteggi liberi.",
       "operationalUpdate": {
-        "collectedAt": "2026-11-18",
-        "basis": "Riepilogo fornito dall’utente; consolidamento, non nuova verifica completa.",
+        "collectedAt": "2026-11-20",
+        "basis": "Programma comunale 2026, locandina collegata e ordinanza 70/2026 riletti; conferma limitata all’area hobbisti del 22 novembre 2026.",
         "jewelryAdmission": "da-verificare",
         "spunta": "da-verificare",
-        "hobbyists": "area-separata-segnalata-da-riconfermare"
+        "hobbyists": "ammessi-solo-area-separata-2026"
       },
       "additionalSources": [
         {
@@ -4643,7 +4644,8 @@
           "label": "Comune: programma storico 2025 e contatto, non ammissioni 2026",
           "checkedAt": "2026-11-18"
         }
-      ]
+      ],
+      "venue": "Centro storico; area hobbisti in piazza Unita d’Italia"
     },
     {
       "region": "Trentino-Alto Adige",

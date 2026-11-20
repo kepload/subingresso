@@ -3941,9 +3941,9 @@
       ],
       "category": "espositiva",
       "source": {
-        "url": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/",
-        "label": "www.veronafiere.it",
-        "checkedAt": "2026-10-11"
+        "url": "https://tno.camcom.it/fiere/2027/vinitaly-2027",
+        "label": "CCIAA Toscana Nord-Ovest · sola collettiva Vinitaly 2027",
+        "checkedAt": "2026-11-20"
       },
       "editions": [
         {
@@ -3952,12 +3952,22 @@
           "end": "2026-04-15",
           "dateType": "confirmed",
           "sourceUrl": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/"
+        },
+        {
+          "year": 2027,
+          "start": "2027-04-11",
+          "end": "2027-04-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tno.camcom.it/fiere/2027/vinitaly-2027"
         }
       ],
       "participation": {
         "type": "exhibitors",
-        "note": "Salone professionale del vino: partecipazione mediante contratto espositivo e selezione dell’organizzatore; non è un mercato ambulante aperto. Chiedere requisiti e preventivo.",
-        "url": "https://www.vinitaly.com/"
+        "note": "Vinitaly, 11–14 aprile 2027. Domande entro il 27 novembre 2026 alle ore 12:00 esclusivamente per la collettiva della Camera di Commercio Toscana Nord-Ovest, padiglione 9, stand B12 e C13. È riservata alle imprese con sede legale o operativa nelle province di Pisa, Lucca e Massa Carrara e con i requisiti della circolare; commercianti e grossisti soltanto con marchi propri o esclusive dei prodotti esposti. Invio via PEC del modulo firmato, con gli allegati e la ricevuta della cauzione PagoPA di €500, imputata ad anticipo. Domanda e pagamento non garantiscono un posto. Il termine non vale per le altre aree della fiera.",
+        "url": "https://tno.camcom.it/fiere/2027/vinitaly-2027",
+        "deadline": "2026-11-27",
+        "deadlineYear": 2027,
+        "deadlineLabel": "Solo collettiva Toscana Nord-Ovest: 27 novembre 2026 ore 12:00. Riservata a imprese di Pisa, Lucca e Massa Carrara con i requisiti della circolare."
       },
       "sectors": "Vino; bevande",
       "organizer": "Veronafiere",
@@ -6501,9 +6511,9 @@
       "category": "espositiva",
       "sectors": "Modellismo; giocattoli; collezionismo",
       "source": {
-        "url": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/",
-        "label": "www.veronafiere.it",
-        "checkedAt": "2026-10-11"
+        "url": "https://www.modelexpoitaly.it/per-partecipare/",
+        "label": "Model Expo Italy · Veronafiere",
+        "checkedAt": "2026-11-20"
       },
       "editions": [
         {
@@ -6512,12 +6522,22 @@
           "end": "2026-03-08",
           "dateType": "confirmed",
           "sourceUrl": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/"
+        },
+        {
+          "year": 2027,
+          "start": "2027-03-06",
+          "end": "2027-03-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.modelexpoitaly.it/informazioni-generali/"
         }
       ],
       "participation": {
         "type": "exhibitors",
-        "note": "Manifestazione espositiva specializzata: richiedere ammissione, contratto e preventivo all’organizzatore dell’evento. Vendita e categorie dipendono dal regolamento; una licenza ambulante non autorizza da sola uno stand.",
-        "url": "https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/"
+        "note": "Model Expo Italy, 6–7 marzo 2027 a Veronafiere. Iscrizioni online entro il 26 febbraio 2027. I nuovi espositori devono prima superare la prequalifica e la verifica dei prodotti; chi ha gia partecipato accede all’area riservata. La domanda non garantisce l’assegnazione di uno stand. Ora finale non pubblicata.",
+        "url": "https://www.modelexpoitaly.it/per-partecipare/",
+        "deadline": "2027-02-26",
+        "deadlineYear": 2027,
+        "deadlineLabel": "Domande 2027 entro il 26 febbraio; nuovi espositori previa prequalifica. Ora finale non pubblicata."
       },
       "months": [
         3

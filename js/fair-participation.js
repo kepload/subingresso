@@ -1031,6 +1031,56 @@
   ]
 ]);
     const reviewed = new Map([
+[
+  "trentino-alto-adige-rovere-della-luna-fiera-di-santa-caterina",
+  {
+    "sourceUrl": "https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina",
+    "note": "Fiera di Santa Caterina, 22 novembre 2026. Il programma comunale prevede il mercato patronale dalle 8 alle 18 nel centro storico e un mercatino hobbisti separato, dalle 9 alle 18, in piazza Unita d’Italia. L’ammissione degli hobbisti riguarda soltanto quest’area. La presenza nel programma non garantisce un posto o un’ammissione individuale.",
+    "venue": "Centro storico; area hobbisti in piazza Unita d’Italia",
+    "editions": "[{\"year\":2026,\"start\":\"2026-11-22\",\"end\":\"2026-11-22\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina\"}]",
+    "editionKeys": [
+      "{\"year\":2026,\"start\":\"2026-11-22\",\"end\":\"2026-11-22\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina\"}"
+    ],
+    "facts": [
+      {
+        "topic": "hobby",
+        "kind": "hobby",
+        "status": "yes",
+        "label": "Hobbisti ammessi",
+        "title": "Fiera di Santa Caterina, 22 novembre 2026. Il programma comunale prevede il mercato patronale dalle 8 alle 18 nel centro storico e un mercatino hobbisti separato, dalle 9 alle 18, in piazza Unita d’Italia. L’ammissione degli hobbisti riguarda soltanto quest’area. La presenza nel programma non garantisce un posto o un’ammissione individuale.",
+        "sourceUrl": "https://www.comune.roveredellaluna.tn.it/content/download/4171/57095/file/Locandina_Santa_Caterina_2026.pdf",
+        "locator": "Pagina comunale Fiera di Santa Caterina 2026 e locandina collegata p. 1, programma mercatino hobbisti",
+        "checkedAt": "2026-11-20",
+        "notice": "Solo area hobbisti di piazza Unita d’Italia, 22/11/2026 ore 9–18; mercato commerciale distinto."
+      }
+    ]
+  }
+],
+[
+  "lombardia-gonzaga-esotika-pet-show",
+  {
+    "sourceUrl": "https://www.esotikapetshow.it/prenotazione-spazi-2027/",
+    "note": "Esotika Pet Show a Fiera Millenaria di Gonzaga, 13–14 novembre 2027. Ammessi anche privati senza partita IVA, previa accettazione dell’organizzatore, con massimo tre tavoli (6,60 m). Senza regolare posizione commerciale si possono vendere soltanto articoli di seconda mano, pertinenti ai settori della fiera. Per animali e alimenti valgono i requisiti specifici. Nessuna conferma di posti liberi.",
+    "venue": "Quartiere fieristico, via Fiera Millenaria 15",
+    "editions": "[{\"year\":2026,\"start\":\"2026-03-07\",\"end\":\"2026-03-08\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.fieramillenaria.it/manifestazioni/esotika-pet-show\"},{\"year\":2027,\"start\":\"2027-11-13\",\"end\":\"2027-11-14\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.esotikapetshow.it/prenotazione-spazi-2027/\"}]",
+    "editionKeys": [
+      "{\"year\":2027,\"start\":\"2027-11-13\",\"end\":\"2027-11-14\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.esotikapetshow.it/prenotazione-spazi-2027/\"}"
+    ],
+    "facts": [
+      {
+        "topic": "hobby",
+        "kind": "hobby",
+        "status": "yes",
+        "label": "Hobbisti ammessi",
+        "title": "Esotika Pet Show a Fiera Millenaria di Gonzaga, 13–14 novembre 2027. Ammessi anche privati senza partita IVA, previa accettazione dell’organizzatore, con massimo tre tavoli (6,60 m). Senza regolare posizione commerciale si possono vendere soltanto articoli di seconda mano, pertinenti ai settori della fiera. Per animali e alimenti valgono i requisiti specifici. Nessuna conferma di posti liberi.",
+        "sourceUrl": "https://www.esotikapetshow.it/wp-content/uploads/REGOLAMENTO_FIERE_ESOTIKA.pdf",
+        "locator": "Form prenotazioni 2027; regolamento pp. 6 e 9, art. 4.2 e 11.5–6",
+        "checkedAt": "2026-11-20",
+        "notice": "Privati: solo usato, massimo tre tavoli; ammissione dell’organizzatore."
+      }
+    ]
+  }
+],
   [
     "lombardia-concesio-fiera-di-sant-andrea",
     {

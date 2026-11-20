@@ -8245,12 +8245,13 @@
       "name": "Esotika Pet Show",
       "category": "espositiva",
       "months": [
-        3
+        3,
+        11
       ],
       "source": {
-        "url": "https://www.fieramillenaria.it/manifestazioni/esotika-pet-show",
-        "label": "www.fieramillenaria.it",
-        "checkedAt": "2026-10-14"
+        "url": "https://www.esotikapetshow.it/prenotazione-spazi-2027/",
+        "label": "Esotika Pet Show · prenotazioni 2027",
+        "checkedAt": "2026-11-20"
       },
       "editions": [
         {
@@ -8259,12 +8260,19 @@
           "end": "2026-03-08",
           "dateType": "confirmed",
           "sourceUrl": "https://www.fieramillenaria.it/manifestazioni/esotika-pet-show"
+        },
+        {
+          "year": 2027,
+          "start": "2027-11-13",
+          "end": "2027-11-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.esotikapetshow.it/prenotazione-spazi-2027/"
         }
       ],
       "participation": {
         "type": "exhibitors",
-        "url": "https://www.fieramillenaria.it/manifestazioni/esotika-pet-show",
-        "note": "Contatta la segreteria per iscrizione espositori, requisiti di settore, stand, disponibilità e preventivo. I biglietti visitatori non sono quote per gli espositori. Le iscrizioni alle competizioni sono distinte dalle domande commerciali."
+        "url": "https://www.esotikapetshow.it/prenotazione-spazi-2027/",
+        "note": "Esotika Pet Show a Fiera Millenaria di Gonzaga, 13–14 novembre 2027. Ammessi anche privati senza partita IVA, previa accettazione dell’organizzatore, con massimo tre tavoli (6,60 m). Senza regolare posizione commerciale si possono vendere soltanto articoli di seconda mano, pertinenti ai settori della fiera. Per animali e alimenti valgono i requisiti specifici. Nessuna conferma di posti liberi."
       },
       "sectors": "Animali e prodotti per animali; ammissione soggetta a requisiti specifici",
       "venue": "Quartiere fieristico, via Fiera Millenaria 15",

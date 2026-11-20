@@ -1,5 +1,45 @@
 # Bollini iscrizioni e hobbisti nelle anteprime
 
+## Ricerche T/U/V del 20 novembre 2026
+
+Sessanta nuove fiere ricercate, venti per sessione. Quattro fatti circoscritti
+superano il riesame delle prove; per le altre 56 nessun nuovo bollino.
+La ricerca del gruppo V non ha prodotto conferme pubblicabili: la candidata
+Bigolada è stata esclusa per contrasto fra regolamento storico e servizio SUAP.
+
+| Fiera | Bollino | Edizione e limite |
+|---|---|---|
+| Model Expo Italy, Verona | Iscrizioni aperte | 6–7 marzo 2027; termine 26 febbraio 2027 senza ora. Nuovi espositori previa prequalifica e verifica dei prodotti. |
+| Esotika Pet Show, Gonzaga | Hobbisti ammessi | Solo 13–14 novembre 2027, fuori dai cinque mesi prioritari; privati senza partita IVA, massimo tre tavoli e sola merce di seconda mano senza regolare posizione commerciale. |
+| Vinitaly, Verona | In scadenza · collettiva TNO | Solo collettiva CCIAA Toscana Nord-Ovest dell’11–14 aprile 2027: imprese di Pisa, Lucca e Massa Carrara con i requisiti della circolare; termine 27 novembre 2026 ore 12:00. Non riguarda le altre aree della fiera. |
+| Santa Caterina, Roverè della Luna | Hobbisti ammessi | Solo area hobbisti in piazza Unità d’Italia, 22 novembre 2026 ore 9–18; distinta dal mercato commerciale. Il programma non garantisce ammissioni individuali o posti. |
+
+Le date, le fonti e le note indispensabili sono aggiornate nei soli quattro
+record interessati; conservati i 10.443 ID e le altre 10.439 schede.
+`fair-participation.js` lega le due ammissioni a fonte, nota, sede e snapshot
+delle edizioni. Le due nuove finestre in `fair-badges.js` richiedono anche
+snapshot, sede ed esatta data dell’edizione: non basta lo stesso anno.
+Gli altri record mantengono il comportamento precedente.
+
+Senza ora pubblicata Model Expo si spegne all’inizio del 26 febbraio, fuso Roma;
+Vinitaly si spegne alle 12:00 del 27 novembre. La dicitura «collettiva TNO»
+resta nel bollino compatto, con requisiti territoriali nella scheda. Nessun
+nuovo bollino di spunta o di incertezza. Le condizioni sono leggibili anche
+senza JavaScript e non dipendono dal passaggio del puntatore.
+
+Fonti: [Model Expo](https://www.modelexpoitaly.it/per-partecipare/),
+[date Model Expo](https://www.modelexpoitaly.it/informazioni-generali/),
+[form Esotika 2027](https://www.esotikapetshow.it/prenotazione-spazi-2027/)
+e relativo [regolamento](https://www.esotikapetshow.it/wp-content/uploads/REGOLAMENTO_FIERE_ESOTIKA.pdf),
+[collettiva Vinitaly](https://tno.camcom.it/fiere/2027/vinitaly-2027) con circolare e modulo,
+[programma comunale Santa Caterina](https://www.comune.roveredellaluna.tn.it/Vivere-il-Comune/Eventi/Fiera-di-Santa-Caterina)
+e locandina collegata. Atti successivi e secondo riesame nei dossier privati
+`.local/ricerche/fiere-20/20261120-TUV-brescia/`; controllo ulteriore del
+coordinatore in `coordinamento/prove-T/` e `coordinamento/prove-U/`.
+Download diretti Model Expo 403 registrati; pagine primarie rilette con lo
+strumento web e copie della sessione T conservate. PDF Esotika, circolare
+Vinitaly e locandina comunale ricontrollati visivamente.
+
 ## Solo bollini documentati negli spazi esistenti — 20 novembre 2026
 
 La richiesta corrente sostituisce la precedente scelta degli stati sempre

@@ -2,6 +2,52 @@
 (function (global) {
     'use strict';
     const records = [
+[
+    "veneto-verona-vinitaly",
+    "https://tno.camcom.it/fiere/2027/vinitaly-2027",
+    "Vinitaly, 11–14 aprile 2027. Domande entro il 27 novembre 2026 alle ore 12:00 esclusivamente per la collettiva della Camera di Commercio Toscana Nord-Ovest, padiglione 9, stand B12 e C13. È riservata alle imprese con sede legale o operativa nelle province di Pisa, Lucca e Massa Carrara e con i requisiti della circolare; commercianti e grossisti soltanto con marchi propri o esclusive dei prodotti esposti. Invio via PEC del modulo firmato, con gli allegati e la ricevuta della cauzione PagoPA di €500, imputata ad anticipo. Domanda e pagamento non garantiscono un posto. Il termine non vale per le altre aree della fiera.",
+    {
+        "window": {
+            "knownFrom": "2026-11-20",
+            "deadline": "2026-11-27",
+            "closesAt": "12:00",
+            "years": [
+                2027
+            ],
+            "editionKeys": [
+                "2027|2027-04-11|2027-04-14"
+            ],
+            "editions": "[{\"year\":2026,\"start\":\"2026-04-12\",\"end\":\"2026-04-15\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/\"},{\"year\":2027,\"start\":\"2027-04-11\",\"end\":\"2027-04-14\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://tno.camcom.it/fiere/2027/vinitaly-2027\"}]",
+            "venue": "Quartiere fieristico, Viale del Lavoro 8",
+            "labelScope": "collettiva TNO",
+            "scope": "Solo collettiva CCIAA Toscana Nord-Ovest, padiglione 9 stand B12/C13: imprese di Pisa, Lucca e Massa Carrara con i requisiti della circolare. Non riguarda le altre aree di Vinitaly.",
+            "evidenceUrl": "https://tno.camcom.it/sites/default/files/allegati/Uffici%20Promozione/Ufficio%20Internazionalizzazione/Circolare_Vinitaly_2027_CCIAA_TNO.pdf",
+            "checkedAt": "2026-11-20"
+        }
+    }
+],
+[
+    "veneto-verona-model-expo-italy",
+    "https://www.modelexpoitaly.it/per-partecipare/",
+    "Model Expo Italy, 6–7 marzo 2027 a Veronafiere. Iscrizioni online entro il 26 febbraio 2027. I nuovi espositori devono prima superare la prequalifica e la verifica dei prodotti; chi ha gia partecipato accede all’area riservata. La domanda non garantisce l’assegnazione di uno stand. Ora finale non pubblicata.",
+    {
+        "window": {
+            "knownFrom": "2026-11-20",
+            "deadline": "2027-02-26",
+            "years": [
+                2027
+            ],
+            "editionKeys": [
+                "2027|2027-03-06|2027-03-07"
+            ],
+            "editions": "[{\"year\":2026,\"start\":\"2026-03-07\",\"end\":\"2026-03-08\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.veronafiere.it/calendario-fiere/calendario-italia-2026/\"},{\"year\":2027,\"start\":\"2027-03-06\",\"end\":\"2027-03-07\",\"dateType\":\"confirmed\",\"sourceUrl\":\"https://www.modelexpoitaly.it/informazioni-generali/\"}]",
+            "venue": "Quartiere fieristico, Viale del Lavoro 8",
+            "scope": "Nuovi espositori previa prequalifica e verifica dei prodotti; domanda distinta dall’assegnazione dello stand.",
+            "evidenceUrl": "https://www.modelexpoitaly.it/per-partecipare/",
+            "checkedAt": "2026-11-20"
+        }
+    }
+],
     [
         "abruzzo-lanciano-fiera-di-sant-egidio",
         "https://www.comune.lanciano.ch.it/ocmultibinary/download/4796/115640/2/600d46372f46295570b36d19e276f96f.pdf/file/2_AVVISO%2Bfiere%2B2026_signed.pdf",
@@ -1168,6 +1214,8 @@
         if (confirmation.hobby && hobbyEditionMatches && !badges.some(badge => badge.kind === 'no-hobby')) badges.push({ kind: 'hobby', label: 'Hobbisti ammessi', title: confirmation.hobbyScope || 'Hobbisti previsti nelle modalità di partecipazione. Requisiti, tesserino e prodotti ammessi nella scheda.' });
         const window = confirmation.window;
         if (!window || event.participation.deadline !== window.deadline || !edition || !window.years.includes(edition.year)) return badges;
+        if (window.editionKeys && (window.editions !== JSON.stringify(event.editions) || window.venue !== (event.venue || '')
+            || !window.editionKeys.includes([edition.year, edition.start, edition.end].join('|')))) return badges;
         const instant = new Date(now);
         if (!Number.isFinite(instant.getTime())) return badges;
         const parts = Object.fromEntries(formatter.formatToParts(instant).map(part => [part.type, part.value]));
@@ -1178,7 +1226,8 @@
         const days = (Date.parse(window.deadline + 'T00:00:00Z') - Date.parse(today + 'T00:00:00Z')) / 86400000;
         const closing = days <= 7;
         const deadline = window.deadline.split('-').reverse().join('/');
-        badges.unshift({ kind: closing ? 'closing' : 'open', label: closing ? 'In scadenza' : 'Iscrizioni aperte', title: 'Domande ' + window.years.join('–') + ' · termine ' + deadline + (window.closesAt ? ' ore ' + window.closesAt : '') + '. Assegnazione soggetta ai requisiti e alla conferma previsti nella scheda.' });
+        const label = (closing ? 'In scadenza' : 'Iscrizioni aperte') + (window.labelScope ? ' · ' + window.labelScope : '');
+        badges.unshift({ kind: closing ? 'closing' : 'open', label, title: 'Domande ' + window.years.join('–') + ' · termine ' + deadline + (window.closesAt ? ' ore ' + window.closesAt : '') + '. ' + (window.scope || 'Assegnazione soggetta ai requisiti e alla conferma previsti nella scheda.') });
         return badges;
     }
     const api = { get };
