@@ -28,7 +28,11 @@ bollini solo da fonti primarie pertinenti all'edizione/area, passaggio salvato,
 controllo degli atti successivi e secondo riesame. Incertezze private;
 pubblicazione dei bollini documentati inclusa nella ricerca richiesta, senza
 nuove conferme. [Metodo](data/FIERE_RICERCA_20.md#prove-necessarie-per-un-bollino).
-Intervento in verifica nel worktree `.local/worktrees/bollini-puliti-20261120`.
+Pubblicato e verificato: `607d3eb`, Vercel READY, cinque asset conformi;
+lista/mappa/scheda online PASS Chromium 1440/390 e WebKit 390, HTML senza
+bollini incerti o blocco centrale. Localmente PASS 10.443 pagine e bollini
+a 1440/768/390/320 nei due temi. Prove nel worktree
+`.local/worktrees/bollini-puliti-20261120/.local/verifiche/bollini-puliti/`.
 
 **Dal 15 novembre 2026, nuovo metodo permanente:** ricerche operative per
 **20 fiere a sessione**, solo su richiesta, con prove per categorie ammesse,

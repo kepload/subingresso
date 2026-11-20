@@ -27,6 +27,13 @@ bastano. Prove parziali consentono soltanto un'affermazione esatta e delimitata;
 incertezze e contrasti restano nei dossier. Procedura permanente in
 [FIERE_RICERCA_20.md](FIERE_RICERCA_20.md#prove-necessarie-per-un-bollino).
 
+Correzione pubblicata con `607d3eb`, Vercel
+`dpl_Fw2q3RyNvYTQMaScsSm6quvXTEfn` READY sul dominio il 20 novembre 2026.
+Cinque asset conformi; controlli online PASS Chromium 1440/390 e WebKit 390,
+lista/mappa/scheda e HTML server. Localmente PASS 10.443 pagine e bollini a
+1440/768/390/320 nei due temi. Prove private in
+`.local/worktrees/bollini-puliti-20261120/.local/verifiche/bollini-puliti/`.
+
 | Fiera | Informazione aggiunta | Limite visibile |
 |---|---|---|
 | Sant'Andrea, Concesio | Spunta con graduatoria | 30/11/2026; rettifica 821 del 16/11, graduatoria già pubblicata, nuovi accessi da verificare |
