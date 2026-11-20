@@ -21,6 +21,8 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
+**20 novembre 2026 — gruppi T/U/V avviati:** tre nuove sessioni del Codex corrente, tutte verificate attive; 20 fiere ciascuna, 60 ID disgiunti dai 380 gia riservati (incluso S). Priorita 20/11/2026-20/04/2027, poi distanza da Brescia; circa 61,9-159,1 km indicativi, edizioni future da accertare. Mandati, assegnazioni immutabili e coordinamento in `.local/ricerche/fiere-20/20261120-TUV-brescia/`. Ricerca con prove primarie, controllo degli atti successivi e secondo riesame; applicazione e pubblicazione dei soli bollini documentati gia incluse, integrazione sequenziale del coordinatore. Ogni sessione scrive soltanto nella propria cartella e richiama il coordinatore alla consegna. Ricerca e bollini ancora in corso; nessun nuovo gruppo automatico.
+
 **20 novembre 2026 — correzione richiesta sui bollini:** eliminare «Spunta
 da verificare» e «Hobbisti da verificare» e le sezioni centrali aggiunte;
 usare solo gli spazi compatti già esistenti in basso. Nelle ricerche future,
