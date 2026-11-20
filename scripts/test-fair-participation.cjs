@@ -24,6 +24,7 @@ for (const [id, expected] of cases) {
     }
     for (const changed of [
         { ...event, managedEventId: 'organizer' },
+        { ...event, venue: 'Altra area della manifestazione' },
         { ...event, source: { ...event.source, url: 'https://example.com/changed' } },
         { ...event, participation: { ...event.participation, note: 'Changed conditions' } },
         { ...event, editions: [...event.editions, { year: 2030, start: '2030-01-01' }] }
