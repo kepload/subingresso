@@ -40,6 +40,8 @@ Download diretti Model Expo 403 registrati; pagine primarie rilette con lo
 strumento web e copie della sessione T conservate. PDF Esotika, circolare
 Vinitaly e locandina comunale ricontrollati visivamente.
 
+Pubblicazione T/U/V: `09dff1e`, Vercel `dpl_8ZXyeH9vs1bGVqwqvGXCkUWAyZyX` READY, dominio e asset conformi. Build, regressioni, 10.443 pagine e quattro casi online in lista/mappa/scheda, Chromium 1440/320 e WebKit 390, temi chiaro/scuro e HTML senza JS: PASS.
+
 ## Solo bollini documentati negli spazi esistenti — 20 novembre 2026
 
 La richiesta corrente sostituisce la precedente scelta degli stati sempre
