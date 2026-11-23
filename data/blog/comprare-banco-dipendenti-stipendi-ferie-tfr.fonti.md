@@ -1,6 +1,6 @@
 # Fonti e limiti, articolo 24
 
-Lettura: 23 novembre 2026. Preparazione locale, nessuna pubblicazione. Tema: acquisto di un banco tramite trasferimento di azienda o ramo con personale dipendente. Non vendita isolata di attrezzature, lavoro autonomo o collaborazioni.
+Lettura e pubblicazione verificata: 23 novembre 2026. Tema: acquisto di un banco tramite trasferimento di azienda o ramo con personale dipendente. Non vendita isolata di attrezzature, lavoro autonomo o collaborazioni.
 
 ## Norme e fonti primarie
 
@@ -24,3 +24,11 @@ Foglio Esempio con soli dati didattici inventati. Fogli iniziali senza persone o
 ## Dossier privato
 
 `articolo-24` nel percorso di lavoro assegnato conserva mandato/job, checkpoint, titoli live, copie delle fonti e ricevute, originale IA, script di costruzione e verifica, prove SSR/browser e hash dei sei file. `prepared.json` e `prepared.md` sono la consegna della sola preparazione. Gli esiti tecnici effettivi sono nelle ricevute; nessun risultato di prova commerciale o sul campo.
+
+## Pubblicazione verificata il 23 novembre 2026
+
+- [Articolo online](https://subingresso.it/blog?post=comprare-banco-dipendenti-stipendi-ferie-tfr), ID `70dfe828-8276-4e7b-b279-b6a27fd203e5`. Materiali `51bb137f897a61f8c1047408a06ab74c242208ab`; merge conservativo della baseline `72a0f741ae7afc461df960b72799129078f1e2f6` in `5f61b60b7fea20d19f2d662a1bc18169a0508611`. Push fast-forward su main.
+- [Deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DYfo22nokYRJVFFWtJvjehW8Gcov), verificato tramite stato GitHub e asset pubblici prima dell'INSERT. Copertina SHA-256 `31eec92653bdac798f061ccdf2d7f196e3cbbc278091e05f94db8cf5abcef47c`; XLSX `8e0befb90613df62b5c5e1d7a7b7905d73c3ffc095d50c4e20f10da151c2794e`.
+- Schema, vincoli, RLS e trigger letti LIVE: slug univoco, nessun trigger sul blog. Eseguito un solo INSERT, senza UPDATE/DELETE. Baseline acquisita immediatamente prima dell'operazione: tutti i 149 post precedenti confrontati e invariati, 150 totali.
+- SSR pubblico HTTP 200, testo identico al sorgente, titolo, excerpt, canonical, JSON-LD, sei sezioni e due ADS distinti verificati. Articolo presente in indice e sitemap. Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript: cinque percorsi leggibili, senza overflow o errori pagina; cinque download identici al file finale. Scritture analytics e provider intercettate. URL canonico verificato anche senza parametro di controllo.
+- Risorsa: 144 casi delle formule già verificati nella preparazione, hash del file definitivo confermato online. Nessuna nuova ricerca, account, invio o dato reale di prova. Ricevute e screenshot nel dossier privato: `deploy-5f61b60.json`, `insert-ricevuta.json`, `verifica-online.json`, `confronto-post-finale.json`, `result.json` e `result.md`.
