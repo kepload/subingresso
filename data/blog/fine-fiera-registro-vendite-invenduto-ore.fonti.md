@@ -1,6 +1,6 @@
 # Fonti e verifiche: registro di fine fiera
 
-Articolo unico **19**, preparato il **23 novembre 2026** nel branch esclusivo `articolo/codex1-20261123-19`. Questa consegna riguarda solo la preparazione: nessun inserimento nel DB, push su main o modifica a documenti comuni.
+Articolo unico **19**, preparato e **pubblicato il 23 novembre 2026** nel branch esclusivo `articolo/codex1-20261123-19`. Preparazione e pubblicazione eseguite in due turni della stessa sessione; secondo turno autorizzato esplicitamente, con lock globale detenuto dal coordinatore.
 
 ## Duplicati e perimetro
 
@@ -44,6 +44,14 @@ L'anteprima usa una data dimostrativa del 23 novembre, non una prova di pubblica
 
 Backup preventivo verificato su origin: `backup/session-20261123-190040-articolo-19-preparazione`, HEAD iniziale `c0bc8d66a81d5f0be8569ccc895207aed4322e34`.
 
-Dossier: `.local/lavori/articoli/20261123-codex1/articolo-19/`. Contiene job, fonti originali/ricevute, generatore, test, anteprima, screenshot, download di prova e rapporto `prepared.md`/`prepared.json` con hash definitivi dei sei file esclusivi. Gli script di verifica sono adattati dal dossier `netto-vendita-banco-20261113`; l'harness nuovo contiene solo la preparazione, senza modalità di pubblicazione o query mutative. Nessun archivio generale letto, nessun altro articolo sviluppato.
+Dossier: `.local/lavori/articoli/20261123-codex1/articolo-19/`. Contiene job, fonti originali/ricevute, generatore, test, anteprima, screenshot e download di prova. `prepared.md`/`prepared.json` documentano la prima fase; `result.md`/`result.json` riportano l'esito pubblico e gli hash finali, compreso questo documento aggiornato. Script adattati dal dossier `netto-vendita-banco-20261113`; harness di anteprima separato da quello di pubblicazione. Nessun altro articolo sviluppato.
 
-La pubblicazione resta al secondo incarico esplicito del coordinatore, nella stessa sessione e per questo solo articolo. Per ora non esistono verifiche di URL pubblico, deploy, inserimento o immutabilità dei post dopo pubblicazione.
+## Pubblicazione verificata
+
+Backup remoto del secondo turno: `backup/session-20261123-191623-articolo-19-pubblicazione`. Fetch e merge conservativo: `origin/main` coincideva con la baseline autorizzata `c0bc8d66a81d5f0be8569ccc895207aed4322e34`, nessun avanzamento inatteso. Push fast-forward dei soli materiali `816361c5e31f1aa19c3953518d3fd6a70f57bafc`. Vercel riuscito, deployment `9KrQdMYpMLMwRBmgoM2MPYfJyxSo`; copertina e XLSX su dominio pubblico HTTP 200, SHA256 identici ai file preparati **prima** dell'inserimento del post.
+
+Schema, vincoli e trigger riletti immediatamente prima dell'INSERT: nove colonne, slug UNIQUE, data predefinita dal DB e nessun trigger applicativo. Tutti i 147 post precedenti salvati nei nove campi. **Un solo INSERT**, nessun UPDATE/DELETE: [articolo pubblico](https://subingresso.it/blog?post=fine-fiera-registro-vendite-invenduto-ore), ID `5ba81f14-be06-4a97-ab17-1bf7b7e7f308`, pubblicato alle **18:19:53.909469 UTC** del 23 novembre. Confronto successivo: **147 post precedenti invariati in tutti i campi, 148 totali**. Checkpoint JSON/Markdown prima e dopo push e inserimento; nessun esito incerto o tentativo ripetuto.
+
+Pagina HTTP 200 con testo effettivo nel corpo SSR, titolo, descrizione, canonical e NewsArticle coerenti con il record. Presenza nell'indice e nella sitemap verificata. **Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. Cover caricata, due ADS e spazio Vetrine conservati, nessun overflow, errore JS o asset del sito mancante. Screenshot desktop e mobile esaminati visivamente. **Cinque download effettivi online**, tutti identici all'XLSX finale per SHA256, compreso il percorso senza JavaScript. Scritture analytics/provider intercettate; nessun invio, account o dato reale di prova creato.
+
+Prove: `checkpoint.json`/`.md`, `schema-prima-inserimento.json`, `post-prima-inserimento.json`, `insert-ricevuta.json`, `verifica-dati.json`, `deploy-materiali.json`, `verifica-online.json`, screenshot e download `online-*`. Aggiornata esclusivamente la voce 19 dell'elenco e aggiunto il breve esito nella memoria corrente; nessun'altra voce modificata. I soli documenti conclusivi sono esclusi dal deploy secondo le regole esistenti.
