@@ -55,3 +55,8 @@ Schema, vincoli e trigger riletti immediatamente prima dell'INSERT: nove colonne
 Pagina HTTP 200 con testo effettivo nel corpo SSR, titolo, descrizione, canonical e NewsArticle coerenti con il record. Presenza nell'indice e nella sitemap verificata. **Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. Cover caricata, due ADS e spazio Vetrine conservati, nessun overflow, errore JS o asset del sito mancante. Screenshot desktop e mobile esaminati visivamente. **Cinque download effettivi online**, tutti identici all'XLSX finale per SHA256, compreso il percorso senza JavaScript. Scritture analytics/provider intercettate; nessun invio, account o dato reale di prova creato.
 
 Prove: `checkpoint.json`/`.md`, `schema-prima-inserimento.json`, `post-prima-inserimento.json`, `insert-ricevuta.json`, `verifica-dati.json`, `deploy-materiali.json`, `verifica-online.json`, screenshot e download `online-*`. Aggiornata esclusivamente la voce 19 dell'elenco e aggiunto il breve esito nella memoria corrente; nessun'altra voce modificata. I soli documenti conclusivi sono esclusi dal deploy secondo le regole esistenti.
+
+
+## Allineamento categoria, 23 novembre 2026
+
+Categoria `Fiere`, conforme a `data/FAIR_SIGNUP_BADGE.md`. Corretto soltanto il nuovo articolo 19, senza variazioni a testo, data, risorse, servizi o articoli precedenti. Schema e assenza di trigger riletti; percorso canonico riconosciuto dalla funzione privata verificato con SELECT, senza registrazioni di prova. Ricevute `category-correction-before.json` e `category-correction-after.json` nel dossier privato.
