@@ -1,0 +1,7 @@
+# Copertina originale IA
+
+Creata il 23 novembre 2026 con skill imagegen e strumento integrato `image_gen`. Scena inventata, dichiarata nell'articolo. File finale: `images/blog/comprare-banco-dipendenti-stipendi-ferie-tfr.webp`, 1600×900, sfondo opaco. Originale conservato nel dossier privato assegnato. Conversione di formato e ridimensionamento con Sharp; nessun fotomontaggio.
+
+## Prompt integrale
+
+Use case: photorealistic-natural. Asset type: original editorial blog cover, horizontal 16:9, intended final 1600x900. Primary request: a small Italian market business owner and a labour consultant carefully reviewing staff records before a business purchase. Scene: modest practical office beside an outdoor market, a softly blurred fabric stall with folded clothing visible through the window. Subjects: two fictional ordinary adults in casual practical clothing, seen at a natural three-quarter angle, concentrating on a small paper folder and a calculator on the desk. One person points at a simple blank grid on paper; no signatures or handshake. Style: candid editorial photograph, realistic hands and everyday materials, soft late-autumn daylight, restrained colours, no staged luxury. Composition: wide, clear central subject and objects, room for crop, no typography. Constraints: invented illustrative scene, no real identifiable people, no readable personal data, no legible words or numbers, no logos, no watermark, no money, no chart overlays. Generate a single original image with an opaque background.
