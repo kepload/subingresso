@@ -19,3 +19,13 @@ Lettura e controllo: 23 novembre 2026. Articolo 18. Esempi circoscritti alle edi
 - Copertina originale generata con imagegen, scena inventata dichiarata nel testo. Nessuna fotografia di una fiera reale.
 
 Ricevute delle letture, documenti, controlli del file finale e anteprime conservati nel dossier privato dell'articolo 18. Fase svolta: sola preparazione, senza scritture DB.
+
+## Pubblicazione verificata del 23 novembre 2026
+
+- [Articolo online](https://subingresso.it/blog?post=fiere-lombardia-merce-ammessa-esclusa), ID `c5ab811e-2f96-4e01-9c20-0ef770ae23ca`, categoria esatta `Fiere`. Un solo INSERT; nessun UPDATE/DELETE o modifica di schema, servizi e whitelist.
+- Baseline Git `60ad57e18877d49500b1c083038d52b9bd79dd58`; merge conservativo. Materiali `7b49dbeedd46528cfdb6c10c8e0a33483060a498`; [deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DcbwRA6HArR7thG5nt12vfFjfyNj).
+- Copertina e download online con SHA-256 uguale ai file finali. Excel: 647 casi della formula confrontati con riferimento indipendente; nessuna macro o connessione.
+- SSR, titolo, excerpt, canonical, JSON-LD, 6 sezioni, ADS distinte, indice e sitemap verificati. Browser Chromium 1440/768/320, WebKit 390 e lettura senza JS: nessun overflow o errore, cinque download identici. Analytics e provider intercettati.
+- Bollino privato Fiera: SELECT della funzione prevista dal contratto sui percorsi prodotti dal normalizzatore esistente per URL canonico/legacy; entrambi riconosciuti. Nessun account creato.
+- Confronto completo: 148 articoli precedenti invariati, 149 totali. Modificata soltanto la riga 18 dell’elenco e aggiunta una voce al riepilogo, conservando il lavoro altrui.
+- Ricevute e schermate nel dossier privato dell’articolo 18: `inserimento.json`, `verifica-online.json`, `bollino-fiera.json`, `confronto-post.json` e `result.json`.

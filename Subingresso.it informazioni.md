@@ -274,6 +274,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **23 novembre 2026 — articolo 18, merce ammessa alle fiere lombarde:** [pubblicato e verificato](https://subingresso.it/blog?post=fiere-lombardia-merce-ammessa-esclusa), categoria Fiere; materiali `7b49dbe`, Vercel riuscito. Copertina IA e scheda XLSX (647 casi formula); SSR/SEO, indice, sitemap e cinque percorsi browser/download PASS. Bollino Fiera riconosciuto per percorso normalizzato e URL legacy, senza creare utenti. 148 post precedenti invariati, 149 totali. [Fonti e prove](data/blog/fiere-lombardia-merce-ammessa-esclusa.fonti.md).
+
 - **23 novembre 2026 — articolo 19, registro di fine fiera:** [pubblicato e verificato](https://subingresso.it/blog?post=fine-fiera-registro-vendite-invenduto-ore), materiali `816361c`, Vercel riuscito. Registro XLSX: 61 scenari e 9 risultati dell'esempio PASS; cinque percorsi browser e download online identici, anche senza JS, SEO/indice/sitemap verificati. I 147 post precedenti invariati, 148 totali. [Fonti e prove](data/blog/fine-fiera-registro-vendite-invenduto-ore.fonti.md); dossier `.local/lavori/articoli/20261123-codex1/articolo-19/`. Solo punto 19, nessun invio o modifica ai servizi.
 
 - **20 novembre 2026 - bollino privato Fiera:** pubblicato `42d973f`, Vercel riuscito e tre asset online identici; calendario, schede e 24 articoli specifici, escluse guide miste. SQL privata e `register-bypass` v18 ACTIVE verificati; persistenza, permessi e browser Chromium/WebKit nei due temi passati, provider simulati. Vecchie iscrizioni non dedotte; nessun account o invio reale di prova. [Contratto](data/FAIR_SIGNUP_BADGE.md), ricevute `.local/lavori/iscritti-fiera-20261120/`.
