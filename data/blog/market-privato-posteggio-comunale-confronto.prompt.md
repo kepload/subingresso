@@ -1,0 +1,7 @@
+# Copertina originale: market privato e posteggio comunale
+
+Generata il 23 novembre 2026 con skill `imagegen`, strumento integrato `image_gen`. Scena interamente inventata, dichiarata nell'articolo. Nessuna fotografia documentaria di una sede reale. Conversione tecnica in WebP 1600×900, senza aggiunte grafiche.
+
+## Prompt integrale
+
+Use case: photorealistic-natural. Asset type: original editorial blog cover, landscape 16:9, final crop 1600x900. Primary request: a convincing invented Italian small trader setting comparing two ways to sell at a market. One coherent naturally photographed scene inside an anonymous repurposed industrial hall: a modest vintage goods stall in the foreground, sturdy folding table with neatly arranged unbranded second-hand kitchenware and a few folded garments. Through a wide open doorway in the background, clearly visible but less prominent, a traditional street market with practical canopy stalls on an Italian town square. Human scale, quiet early morning, no crowds, no identifiable people. Documentary editorial photography, restrained natural daylight, authentic materials and working environment, medium wide lens at eye level. Both foreground private hall stall and background street market should be legible in a wide crop. Constraints: entirely fictional place and scene; no words, labels, prices, numbers, logos, watermarks, paperwork, readable signs, split-screen borders, illustrations or infographic elements. Do not imply a real existing market. Output a landscape photograph with a 16:9 composition.
