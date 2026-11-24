@@ -1,6 +1,6 @@
 # Fonti e verifiche: market privato e posteggio comunale
 
-Articolo unico **25**, preparato il **23 novembre 2026** nel branch `articolo/codex1-20261123-25`. Questa consegna riguarda soltanto la preparazione: nessuna pubblicazione e nessun accesso diretto al database.
+Articolo unico **25**, preparato il **23 novembre 2026** nel branch `articolo/codex1-20261123-25`. La prima consegna riguardava soltanto la preparazione. Inserimento del 23 novembre e riconciliazione del 24 novembre documentati in fondo.
 
 ## Tema e duplicati
 
@@ -42,4 +42,16 @@ Articolo di **2.778 caratteri** di testo, con sei sezioni, tre risposte iniziali
 
 Anteprima su server privato `127.0.0.1`, chiuso al termine. Scritture browser e chiamate provider intercettate; regole ADS lette dalla sola API pubblica. Il download WebKit è stato verificato dal server locale perché l'intercettazione di una risposta su URL di produzione non garantiva il download locale. La dimensione fisica della copertina è verificata sul file; `naturalWidth` nel browser varia correttamente con il `srcset`.
 
-Backup preventivo remoto verificato: `backup/session-20261123-191616-articolo-25-market-privato`, baseline `c0bc8d66a81d5f0be8569ccc895207aed4322e34`. Solo sei file esclusivi dell'articolo; nessuna modifica a template, codice, main, database o documenti comuni. Preparazione completa e impronte definitive in `prepared.json` e `prepared.md` nel dossier privato.
+Backup preventivo remoto verificato: `backup/session-20261123-191616-articolo-25-market-privato`, baseline `c0bc8d66a81d5f0be8569ccc895207aed4322e34`. Nella preparazione: solo sei file esclusivi dell'articolo; nessuna modifica a template, codice, main, database o documenti comuni. Preparazione completa e impronte definitive in `prepared.json` e `prepared.md` nel dossier privato.
+
+## Pubblicazione del 23 novembre, riconciliata il 24 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=market-privato-posteggio-comunale-confronto), ID `2d3bc737-e20d-4104-9ecc-1a5615215914`, pubblicato il **2026-11-23T18:52:50.66093+00:00**. La ricevuta originale conserva un solo INSERT riuscito il 23 novembre; i 150 post allora precedenti erano stati verificati identici. Materiali già integrati in `a1ddf27044c2dc752183d7e9d944951418bc96d8`.
+
+La ripresa autorizzata del 24 novembre usa la baseline `81971ceae33575e49409c26b05a8a6184a83c51f` e riconcilia per ID tutti i nove campi con le ricevute originali e un nuovo snapshot LIVE: **record e data invariati, 150 post precedenti invariati, 152 totali**. Un post aggiunto successivamente è conservato. **Nessun nuovo INSERT, UPDATE o DELETE; nessuna variazione del contenuto o della data.** Lock globale del coordinatore PID 13416, non riacquisito.
+
+Vercel della baseline riuscito; copertina e XLSX pubblici HTTP 200 e SHA256 identici ai materiali preparati. **Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. SSR, titolo, descrizione, canonical e NewsArticle coerenti, presenza nell'indice e sitemap; due ADS contestuali e spazio Vetrine presenti. Nessun overflow, errore JavaScript o asset del sito mancante. Cinque download effettivi identici all'XLSX locale. Screenshot desktop/mobile esaminati; scritture analytics/provider intercettate. Conservati i 140 casi formula già superati, senza ripetere la preparazione.
+
+Aggiornata soltanto la voce 25 dell'elenco, aggiunto il breve esito nella memoria e completato questo documento. Tutti gli altri testi conservati; nessun intervento su template, CSS, JS, API, schema o servizi. Backup remoto della ripresa: `backup/session-20261124-012122-articolo-25-verifica-finale`.
+
+Ricevute originali nel dossier `20261123-codex1/articolo-25`: `checkpoint.json`, `insert-ricevuta.json`, `post-prima-inserimento.json`, `post-dopo-inserimento.json`. Riconciliazione e consegna nel dossier `20261124-codex1/articolo-25`: snapshot prima/dopo, `verifica-dati.json`, `verifica-online.json`, screenshot e download effettivi, `deploy-materiali.json`, `deploy-documenti.json`, `result.json` e `result.md`. Gli hash definitivi cambiano soltanto per questo documento fonti.

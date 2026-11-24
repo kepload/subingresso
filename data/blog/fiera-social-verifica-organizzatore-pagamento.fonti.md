@@ -1,6 +1,6 @@
 # Articolo 26: fiera trovata sui social
 
-Solo preparazione. Titolo assegnato conservato; categoria `Fiere`, autore Redazione Subingresso. Nessuna pubblicazione o scrittura DB. Dossier privato: `.local/lavori/articoli/20261123-condiviso/codex2/articolo-26/`.
+Preparato il 23 novembre e **pubblicato e verificato il 24 novembre 2026**. Titolo assegnato conservato; categoria `Fiere`, autore Redazione Subingresso. La preparazione non ha eseguito pubblicazioni o scritture DB; la successiva pubblicazione autorizzata è documentata sotto. Dossier privato: `.local/lavori/articoli/20261123-condiviso/codex2/articolo-26/`.
 
 ## Ambito e duplicati
 
@@ -45,4 +45,14 @@ Hash finali degli asset:
 - Copertina: `4e285f61042a1be65d2866c8f6f2551dfc04500f338d3c71e39fc40b14a4f94f`.
 - Checklist XLSX: `8e8044a469d04a1f0b0c6546b5d763fbb52c077bdd67a95291c041b03e90c376`.
 
-Il dossier contiene script esclusivamente di anteprima, fixture del solo post, ricevute delle verifiche e checkpoint. Non contiene modalità di pubblicazione nello script locale. Il backup di sessione e il ramo remoto preventivo del coordinatore sono stati verificati prima delle modifiche. Solo i sei file assegnati sono destinati al commit. Elenco editoriale, registro, main, template, CSS, JS, API e servizi non modificati.
+Alla preparazione il dossier conteneva script di anteprima, fixture del solo post, ricevute e checkpoint, senza modalità di pubblicazione nello script locale. Backup di sessione e ramo remoto preventivo del coordinatore verificati. Committati soltanto i sei file assegnati; elenco editoriale, registro e main non modificati in quella fase. Template, CSS, JS, API e servizi invariati anche nella pubblicazione.
+
+## Pubblicazione verificata del 24 novembre 2026
+
+- [Articolo online](https://subingresso.it/blog?post=fiera-social-verifica-organizzatore-pagamento), ID `157bfc33-4f45-4880-a676-52cccae6117c`. Un solo INSERT, dopo lettura live di schema, vincoli, trigger e post; nessun UPDATE/DELETE o modifica di servizi, schema e whitelist.
+- Materiali preparati `b65f7c9ce72208ce3ac15108ab37e3f419112b46`, merge conservativo e sito `b990b99e7086445f8276c22335823b6cbccdb57b`. Il push era già riuscito il 23 novembre: alla ripresa non è stato ripetuto. [Deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/9MRkMnuntUjpcYWwnh3sk18AfdKs); asset pubblici HTTP 200 con i due hash riportati sopra, verificati prima dell'INSERT.
+- Testo, copertina e XLSX della preparazione riutilizzati senza nuove ricerche o generazioni. Risorsa definitiva: cinque fogli, 28 casi / 392 confronti formula già PASS; nessuna macro o connessione.
+- SSR, titolo, excerpt, canonical, JSON-LD NewsArticle, sei sezioni, ADS distinte, indice e sitemap verificati online. Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JS: cinque percorsi PASS, nessun overflow o errore JS. Download effettivi WebKit e senza JS uguali al file definitivo; HTML e asset pubblici reali, con scritture analytics/provider intercettate. Screenshot desktop e WebKit esaminati.
+- SELECT della funzione privata `account_private.is_fair_registration_path` sui percorsi prodotti dal normalizzatore Auth esistente per URL canonico, legacy `.html?post=` e percorso normalizzato: tutti riconosciuti dal bollino Fiera. Nessun account creato e nessuna modifica ai servizi.
+- Confronto completo dei nove campi letti: **151 articoli precedenti invariati, 152 totali**. Aggiornata soltanto la riga 26 dell'elenco, aggiunta una voce datata al riepilogo e completato questo dossier fonti, conservando tutte le voci altrui.
+- Ricevute private: `schema-pre-insert.json`, `insert-intent.json`, `insert-ricevuta.json`, `deploy-b990b99.json`, `online-verificata.json`, `indice-sitemap-verificati.json`, `bollino-fiera-verificato.json`, `post-preservati-finale.json`, `result.json` e `result.md`.
