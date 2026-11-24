@@ -1,6 +1,6 @@
 # Articolo 29: cerco espositori per un mercatino
 
-Preparazione del 24 novembre 2026. Titolo assegnato conservato, categoria `Fiere`, autore Redazione Subingresso. Dossier privato `.local/lavori/articoli/20261124-codex1/articolo-29/`. Questa consegna prepara soltanto l'articolo: nessun inserimento, campagna, contatto, pagamento o registrazione reali.
+Preparato e **pubblicato e verificato il 24 novembre 2026**. Titolo assegnato conservato, categoria `Fiere`, autore Redazione Subingresso. Dossier privato `.local/lavori/articoli/20261124-codex1/articolo-29/`. La preparazione non ha eseguito inserimenti; la pubblicazione successivamente autorizzata è documentata sotto. Nessuna campagna, contatto, pagamento o registrazione reali.
 
 ## Duplicati live
 
@@ -46,4 +46,16 @@ Anteprima tramite il vero handler `api/blog.js` del worktree, con fixture del so
 
 ## Ambito della consegna
 
-Solo i sei file propri: HTML, JSON con i sei campi consentiti, fonti, prompt, WebP e XLSX. Backup remoto verificato prima della prima modifica. Commit con hook attivi e push esclusivamente del branch assegnato come backup della preparazione; ricevuta Git e hash in `prepared.json`. Nessun merge o push su main, nessuna scrittura DB e nessun documento comune modificato. La pubblicazione resta al turno assegnato dal coordinatore.
+Nella preparazione, solo i sei file propri: HTML, JSON con i sei campi consentiti, fonti, prompt, WebP e XLSX. Backup remoto verificato prima della prima modifica. Commit con hook attivi e push esclusivamente del branch assegnato come backup della preparazione; ricevuta Git e hash in `prepared.json`. Nessun merge o push su main, nessuna scrittura DB e nessun documento comune modificato nel primo turno. La pubblicazione è stata eseguita nel successivo turno assegnato dal coordinatore.
+
+## Pubblicazione verificata del 24 novembre 2026
+
+- [Articolo pubblico](https://subingresso.it/blog?post=cerco-espositori-mercatino-canali-iscrizioni), ID `0ea9fa14-2341-4d60-9e65-2d43375cfbbc`, data effettiva DB `2026-11-24T00:47:07.008649+00:00`. Un solo INSERT, protetto dal controllo di assenza e dal vincolo UNIQUE; nessun UPDATE/DELETE, modifica di schema, trigger o servizi.
+- Preparazione `e2d98d7e36e1d9eef85bb724afae3b4e49c4b51a`; merge conservativo con baseline `3ad4568a4e36d5b4aeb600d68beaca014c6506ba`, materiali su main `02bac8a8c9f9b23b1a4e476c1ffc6f3f233bc6a3`. Vercel materiali **success**; copertina e XLSX pubblici HTTP 200, identici per SHA256 prima dell'inserimento.
+- Schema, vincoli, trigger e stato live riletti prima della scrittura. **154 post precedenti invariati nei nove campi, confrontati per ID; 155 totali.** Ricevute `schema-prima-inserimento.json`, `post-prima-inserimento.json`, `insert-ricevuta.json`, `post-dopo-inserimento.json`, `verifica-dati.json`.
+- **Cinque percorsi online PASS**: Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. URL HTTP 200, SSR conforme al contenuto definitivo, titolo, descrizione, Open Graph, canonical e NewsArticle; presenza nell'indice e nella sitemap. Due ADS distinti e tabella mobile scorrevole fino all'ultima colonna; nessun overflow o errore JavaScript/asset. Tutti i cinque screenshot online esaminati.
+- **Cinque download effettivi online identici**, incluso senza JavaScript: XLSX SHA256 `3f3e35ccd3a6a87a2ad43eb3b4fd25a09197398d8101f55955f2f33cef33ed89`; copertina SHA256 `ddd926d22e7014536ef1b127540dacdd79af84ce470847a0b306710d79cb8f97`. Ricevuta `verifica-online.json`, screenshot e download `online-*`. Richieste di scrittura analytics/provider intercettate.
+- Categoria esatta `Fiere`; funzione live del bollino verificata con sola SELECT, dopo normalizzazione mediante la funzione effettiva di `auth.js` per URL canonico e legacy. Nessun account creato, whitelist o trigger modificati. Ricevuta `verifica-bollino.json`.
+- Materiali riusati con hash identici e **nessuna ripetizione** della preparazione o dei 34 casi Excel già superati. Cambia soltanto questo file fonti per registrare l'esito. Aggiornate solo la voce 29 dell'elenco editoriale e una breve nota nella memoria del worktree; tutto il testo precedente conservato. Lock del coordinatore PID 13416 non riacquisito.
+
+Checkpoint prima e dopo push e inserimento; backup remoto del turno `backup/session-20261124-014317-articolo-29-pubblicazione`. Audit conclusivo, commit finale dei documenti e hash in `result.json` e `verifica-finale.json` nel dossier. Nessun altro tema avviato.
