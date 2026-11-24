@@ -1,6 +1,6 @@
 # Registratore telematico per fiere: fonti e preparazione
 
-Articolo unico **27**, titolo invariato rispetto a `job.json`. Preparato il **23 novembre 2026** nel branch esclusivo `articolo/codex1-20261123-27`. Questa consegna riguarda solo la preparazione: nessuna pubblicazione, modifica a main o scrittura DB.
+Articolo unico **27**, titolo invariato rispetto a `job.json`. Preparato il **23 novembre 2026** nel branch esclusivo `articolo/codex1-20261123-27`; pubblicato e verificato il **24 novembre 2026** nel turno assegnato. Le prove preparatorie seguenti sono state riutilizzate; l'esito pubblico è riportato in fondo.
 
 ## Duplicati
 
@@ -39,4 +39,20 @@ Anteprima con renderer SSR corrente e fixture locale: Chromium **1440/768/320**,
 
 Regole ADS vuote di fixture: nessuna certificazione delle regole live o della pubblicazione. Le date nei metadati della sola anteprima sono fittizie e non costituiscono un inserimento DB. Screenshot e ricevuta browser finali nel dossier privato.
 
-Backup preventivo remoto verificato: `backup/session-20261123-191631-articolo-27-registratore`, target `c0bc8d66a81d5f0be8569ccc895207aed4322e34`. Consegna e hash di tutti i sei file in `prepared.json` e `prepared.md` nel dossier assegnato. La pubblicazione richiede il secondo incarico del coordinatore.
+Backup preventivo remoto della preparazione verificato: `backup/session-20261123-191631-articolo-27-registratore`, target `c0bc8d66a81d5f0be8569ccc895207aed4322e34`. Consegna e hash originali in `prepared.json` e `prepared.md` nel source_dossier. Pubblicazione completata nel secondo incarico del coordinatore.
+
+## Pubblicazione verificata il 24 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=registratore-telematico-fiere-acquisto-noleggio), ID `19137b66-e26a-4cb7-9e39-847a0e95f8ff`, data DB `2026-11-24T00:31:25.490456Z`. Categoria esatta **Fiere** allineata nel commit `f3fbcc4` prima dell'INSERT, secondo `data/FAIR_SIGNUP_BADGE.md`. La funzione live `account_private.is_fair_registration_path` riconosce il percorso dell'articolo; verifica in sola lettura, nessuna registrazione di prova. Nessuna modifica a whitelist, schema o servizi.
+
+Baseline origin/main `1a5180f5295ec5681f1bec6847ad89cc2cad8883`, merge conservativo e push materiali `cbedb77de450b8c51f59345f948605b915980797`. Vercel riuscito e asset pubblici HTTP 200, identici per SHA256, prima dell'inserimento. Lock globale detenuto dal coordinatore PID 13416, non acquisito di nuovo. Checkpoint prima e dopo push e mutazioni; primo push fallito per errore di rete, riferimenti remoti riconciliati prima del tentativo riuscito.
+
+Schema e vincoli live ricontrollati: nove colonne, slug UNIQUE, nessun trigger applicativo. **Un solo INSERT**, nessun UPDATE/DELETE. Snapshot prima e dopo: **152 post precedenti identici in tutti i nove campi**, 153 totali. Copertina, Excel, prompt e testo dell'articolo identici alla preparazione originale; aggiornati soltanto categoria dei metadati e questo esito.
+
+**Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390, Chromium 390 senza JavaScript. HTTP 200, contenuto SSR, titolo/descrizione/canonical/NewsArticle coerenti, presenza nell'indice e sitemap, copertina caricata e due ADS sulle fiere. Nessun overflow, errore JavaScript o asset del sito mancante; screenshot desktop e mobile esaminati. Cinque download effettivi identici all'Excel definitivo, anche WebKit e senza JS. Scritture analytics/provider intercettate.
+
+Riutilizzati i 102 scenari sulle 76 formule già superati, senza rigenerare il simulatore o la copertina. Il controllo degli hash conferma il riuso degli asset e delle prove pertinenti. Nessun nuovo listino, ricerca normativa o test Excel desktop dichiarato.
+
+Ricevute pubblicazione: `.local/lavori/articoli/20261124-codex1/articolo-27/` nella root principale: `checkpoint.json`, `schema-prima-inserimento.json`, snapshot post, `insert-ricevuta.json`, `categoria-fiera-live.json`, `verifica-online.json`, screenshot/download `online-*`, ricevute deploy e `result.json`/`result.md`. Prove preparatorie conservate in `.local/lavori/articoli/20261123-codex1/articolo-27/`. Backup di sessione remoto verificato: `backup/session-20261124-012755-articolo-27-pubblicazione`.
+
+Aggiornata soltanto la voce 27 dell'elenco e un breve esito nella memoria del worktree, senza cambiare le altre voci. Nessun invio, account, annuncio o pagamento reale di prova. Nessun problema aperto.
