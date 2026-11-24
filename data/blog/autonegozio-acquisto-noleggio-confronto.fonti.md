@@ -1,6 +1,6 @@
 # Fonti e verifiche: autonegozio, acquisto o noleggio
 
-Articolo unico **37**, preparato il **24 novembre 2026** sul branch esclusivo `articolo/codex1-20261124-37`. Primo turno: sola preparazione. Pubblicazione e verifiche online restano al turno assegnato dal coordinatore.
+Articolo unico **37**, preparato il **24 novembre 2026** sul branch esclusivo `articolo/codex1-20261124-37`. Preparazione conservata; pubblicazione e verifiche online completate il 24 novembre nel turno autorizzato dal coordinatore.
 
 ## Perimetro e duplicati
 
@@ -49,3 +49,15 @@ Anteprima ottenuta con il renderer SSR corrente e il solo post locale, con data 
 Backup preventivo remoto verificato: `backup/session-20261124-013640-articolo-37-preparazione`, eseguito dalla root principale, HEAD `0378eebc5971145158b405da119f6e92932861f6`. Le modifiche preesistenti della root non sono state toccate. Worktree assegnato pulito all'avvio, baseline `46d055238eeefc6003a96e9bca75afb9ee30a444`.
 
 Dossier privato `.local/lavori/articoli/20261124-codex1/articolo-37/`: job, fonti/ricevute, controllo duplicati, generatori, verifica formule, anteprima, screenshot e ricevute download. `prepared.md` e `prepared.json` riportano commit, verifiche e hash definitivi dei sei file. Stage esplicito e push del solo branch come backup, senza main, inserimenti DB o documenti comuni. Nessun altro tema sviluppato. Per la fase pubblica occorrono assegnazione del coordinatore, ricontrollo LIVE e verifiche online previste dal mandato.
+
+## Pubblicazione conclusiva del 24 novembre 2026
+
+[Articolo pubblico](https://subingresso.it/blog?post=autonegozio-acquisto-noleggio-confronto), categoria **Guide**, ID `5ecdea8b-e21f-4337-9ccf-8adb29ceade0`, data effettiva **2026-11-24T09:15:45.450787+00:00**. Materiali originali `29b5a39ee429410f5a96ca4fa1a0ce5efe827c3b`, integrazione main `28169494d468f8234f83babdb4ae6d8de12d99a2`; deploy Vercel riuscito prima dell'unico INSERT. Copertina e XLSX pubblici HTTP 200 e identici agli hash preparati. Backup remoto di questa sessione: `backup/session-20261124-101239-articolo-37-pubblicazione`.
+
+Preparazione riusata senza rigenerazione: tutti e sei gli hash coincidevano prima della pubblicazione. I **51 casi sulle 32 formule** e i test locali erano già superati e non sono stati ripetuti. Nessuna modifica al testo, ai metadati, alla copertina o al foglio; questo documento viene completato con l'esito pubblico.
+
+Ricontrollati LIVE slug, titoli, schema, vincoli e trigger: nove colonne, slug UNIQUE, nessun trigger applicativo. Rispetto ai 153 titoli della preparazione sono presenti cinque aggiunte altrui, identificate separatamente in `riconciliazione-preparazione.json`: articoli 29, 34, 28, 36 e 35, temi distinti. Nessun doppione. **Tutti i 158 post presenti immediatamente prima dell'INSERT sono invariati nei nove campi; 159 totali.** Un solo INSERT, nessun UPDATE o DELETE di post precedenti. Nessun account, annuncio, email o pagamento di prova.
+
+**Cinque percorsi online PASS:** Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript. Testo SSR corrispondente, titolo/descrizione/canonical/NewsArticle e data reali, indice e sitemap; copertina visibile, due ADS, nessun overflow o errore JS/asset. Cinque screenshot esaminati visivamente e cinque download effettivi identici al file definitivo, incluso WebKit e senza JS. Scritture analytics/provider intercettate.
+
+Lock globale mantenuto dal coordinatore PID **6764**, mai riacquisito. Fetch e merge conservativo della baseline `f377c58a1c08050507cca36a535c3ddca1a4e835`. Checkpoint prima e dopo push e INSERT; backup remoto prima del merge, relativo checkpoint registrato dopo il merge. Dossier conclusivo privato: `.local/lavori/articoli/20261124-finiture-codex1/articolo-37/`, con `result.json`, `result.md`, checkpoint, schema, snapshot prima/dopo, ricevuta INSERT, deploy, controlli browser e manifest finale. Aggiornata solo la voce 37 dell'elenco e un breve esito in memoria; nessun altro articolo avviato.
