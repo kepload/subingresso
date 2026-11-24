@@ -17,3 +17,9 @@ L'esempio 1.000 - 100 - 30 - 500 = 370 euro è interamente inventato. La quota g
 ## Verifica originalità
 
 Indice pubblico LIVE: 152 slug e titoli, controllati il 24 novembre 2026 senza accesso diretto al database. Nessun tema gettoni, braccialetti, cashless o saldo organizzatore presente. Esaminati i soli candidati pertinenti: verifica dell'organizzatore trovato sui social; registro generale di fine fiera; domande sui numeri dei visitatori. Il registro di fine fiera tratta merce, spese e ore; questo articolo tratta la riconciliazione con chi incassa per il banco. Elenco e copie dei candidati conservati nel dossier privato.
+
+## Pubblicazione verificata il 24 novembre 2026
+
+Secondo turno esplicitamente assegnato, stesso articolo: riutilizzati i sei materiali e i 57 casi sulle formule già verificati, senza rigenerare Excel o copertina. Preparazione `25ad940`, integrazione conservativa `38a343c` sulla baseline `c8f1802`; deploy Vercel riuscito e asset identici prima dell'unico INSERT. Categoria Fiere; riconoscimento del percorso normalizzato per il bollino controllato in sola lettura, senza registrazioni di prova. I 156 post precedenti sono identici nei nove campi per ID e contenuto, 157 totali al controllo.
+
+[Articolo pubblico](https://subingresso.it/blog?post=street-food-gettoni-braccialetti-saldo-organizzatore). SSR, titolo, description, canonical, NewsArticle e data verificati; presenza nell'indice e nella sitemap. Cinque percorsi online PASS: Chromium 1440/768/320, WebKit 390 e Chromium 390 senza JavaScript; cinque download reali identici per SHA-256 e screenshot esaminati. Scritture analytics/provider intercettate. Nessun template, CSS, JS, API o servizio modificato. Ricevute nel dossier privato `.local/lavori/articoli/20261124-codex1/articolo-35/`: `checkpoint.json`, snapshot precedenti/successivi, `verifica-dati.json`, `verifica-online.json`, `verifica-bollino-fiera.json`, deploy e `result.json`.
