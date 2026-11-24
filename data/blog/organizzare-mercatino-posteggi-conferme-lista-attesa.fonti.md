@@ -16,3 +16,13 @@ Il riepilogo non espone disponibilità attendibili finché evento e righe non so
 ## Controllo duplicati editoriali
 
 Letti live solo slug e titolo di tutti i post, poi excerpt e contenuto dei due candidati pertinenti. Distinti da questo tema: `organizzare-mercatino-budget-espositori-pareggio` tratta costi e pareggio; `cerco-espositori-mercatino-canali-iscrizioni` tratta acquisizione e confronto dei canali. Nessuno dei due offre il registro delle assegnazioni, conferme e lista d'attesa. Ricevute complete, data e limiti nel dossier articolo-39.
+
+## Pubblicazione verificata — 24 novembre 2026
+
+Articolo 39 pubblicato in categoria **Fiere**: [pagina pubblica](https://subingresso.it/blog?post=organizzare-mercatino-posteggi-conferme-lista-attesa). Secondo turno dello stesso tema, preparazione riutilizzata: tutti i sei file inizialmente identici agli hash di prepared.json; testo, metadata, prompt, copertina e XLSX invariati. Riutilizzati senza ripetizione i 30 casi sulle 148 formule già passati (motore Python formulas, nessuna apertura Excel desktop o LibreOffice). Cambia soltanto questo file fonti, completato con l'esito pubblico.
+
+Deploy materiali riuscito prima dell'INSERT, copertina e registro pubblici HTTP 200 con SHA256 identici. Cinque percorsi online passati: Chromium 1440/768/320, WebKit 390, Chromium 390 senza JavaScript; cinque download effettivi identici all'XLSX. Verificati SSR, metadati, canonical, NewsArticle, indice, sitemap e tutte le cinque schermate; richieste analytics/provider intercettate. Categoria e bollino Fiera verificati in sola lettura, senza registrazioni o invii.
+
+Schema, vincoli e trigger riletti live. Un solo INSERT; tutti i 159 post immediatamente precedenti invariati nei nove campi, 160 totali. Il vecchio snapshot di preparazione contava 155 post: documentati separatamente i quattro articoli aggiunti da altri lavori; la conservazione è confrontata sullo snapshot completo prima dell'inserimento. Nessun UPDATE/DELETE, account, annuncio, invio o pagamento di prova. Aggiornati solo questo file, la voce 39 dell'elenco e una breve nota nella memoria.
+
+Ricevute e checkpoint: `.local/lavori/articoli/20261124-finiture-codex1/articolo-39/` nella root principale; consegna finale `result.md` e `result.json`, manifest dei sei file e SHA256 finali. Limiti del modello invariati e descritti sopra.
