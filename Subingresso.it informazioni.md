@@ -274,6 +274,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **25 novembre 2026 ? avvisi valutatore:** pubblicato `89259b1`, Vercel `dpl_6PuXstBDHCh81bDAsCGmUMxbuzDY` READY e tre asset conformi. Richiami neutri per giorni incoerenti con frequenza/calendario e incassi da 10.000 euro/giorno o 1 milione/anno; 300?350 giorni ammessi per frequenza giornaliera, nessuna deduzione di abuso o frase offensiva. 240 controlli Chromium/WebKit nei due temi, sei online e 41.472 regressioni del modello PASS; nessuna scrittura reale di prova. Contratto: [avvisi](data/VALUTATORE_AVVISI.md).
+
+
 - **24 novembre 2026 — articolo 38, gazebo, acquisto o noleggio:** [pubblicato e verificato](https://subingresso.it/blog?post=gazebo-mercatini-comprare-noleggiare-calcolatore), categoria Guide. Riutilizzati testo, copertina IA e calcolatore XLSX; 53 casi e 106 valutazioni delle formule già verificati. Deploy riuscito, SSR/SEO, indice, sitemap e cinque percorsi browser/download PASS, anche senza JS; asset identici per SHA256. Un solo INSERT, 160 post precedenti invariati, 161 totali. [Fonti e prove](data/blog/gazebo-mercatini-comprare-noleggiare-calcolatore.fonti.md). Solo punto 38.
 
 - **24 novembre 2026 — articolo 39, registro espositori:** [pubblicato e verificato](https://subingresso.it/blog?post=organizzare-mercatino-posteggi-conferme-lista-attesa), categoria Fiere. Testo, copertina IA e registro XLSX riusati con hash identici; 30 casi sulle 148 formule già passati. Deploy, SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS, anche senza JS; bollino Fiera verificato in sola lettura. Un solo INSERT, 159 post precedenti invariati, 160 totali. [Fonti e prove](data/blog/organizzare-mercatino-posteggi-conferme-lista-attesa.fonti.md). Solo punto 39.
