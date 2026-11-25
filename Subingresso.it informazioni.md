@@ -88,6 +88,18 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 
 ## Decisioni da ritrovare senza rileggere lo storico
 
+- **Valutatore, riferimenti del 25 novembre 2026:** l’utente chiede più peso
+  agli incassi. Posteggio debole con persone del posto: 100 euro/giorno
+  circa 3.000 euro, 200 circa 10.000; posteggio forte con clientela mista:
+  100 circa 5.000, 200 circa 15.000. Studio su 50 giornate, non alimentare,
+  concessione stabile e utile ignoto; sono riferimenti commerciali, non
+  vendite verificate. Proposta privata `2.7-studio` sotto la root in
+  `.local/ricerche/valutatore-v27-20261125/`: modello, confronto storico,
+  12 esempi casuali CSV/JSON e 101.147 scenari verificati. **Non applicata
+  al sito o al DB**, ancora 2.6. La vecchia soglia di 1.000 a 100/giorno
+  resta nello storico, ma non nei nuovi riferimenti richiesti. Curve oltre
+  200, tetti e gestione di margine/scadenza sono ipotesi della proposta.
+
 - Nuove iscrizioni dalle fiere: bollino **Fiera** riservato all'elenco admin, dalla pagina effettiva del signup e dagli articoli specifici. Nessuna attribuzione dalle sole visite, UTM o landing storiche; [criteri e verifica](data/FAIR_SIGNUP_BADGE.md).
 - Italiano semplice, comunicazioni e documenti essenziali. Dashboard con pochi
   numeri principali, grafici leggibili e dettagli apribili. Completezza e qualità
