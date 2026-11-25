@@ -274,6 +274,9 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **25 novembre 2026 - criterio avvisi e stima 5.901:** messaggio offensivo solo con certezza al 100% dell'intento richiesta dall'utente; numeri estremi, ripetizioni e incoerenze non la provano, nessun automatismo attivato. Riprodotto il caso 200/giorno per 50 giorni: 10.000 annui sono incassi, utile ignoto; modello 2.6 da base 7.731 a 5.901 per il fattore laterale. Analisi privata `.local/verifiche/ritaratura-valutatore-20261125/analisi-caso-5901.json` nel worktree degli avvisi; nuova taratura non applicata in attesa del significato del riferimento commerciale proposto.
+
+
 - **25 novembre 2026 ? avvisi valutatore:** pubblicato `89259b1`, Vercel `dpl_6PuXstBDHCh81bDAsCGmUMxbuzDY` READY e tre asset conformi. Richiami neutri per giorni incoerenti con frequenza/calendario e incassi da 10.000 euro/giorno o 1 milione/anno; 300?350 giorni ammessi per frequenza giornaliera, nessuna deduzione di abuso o frase offensiva. 240 controlli Chromium/WebKit nei due temi, sei online e 41.472 regressioni del modello PASS; nessuna scrittura reale di prova. Contratto: [avvisi](data/VALUTATORE_AVVISI.md).
 
 

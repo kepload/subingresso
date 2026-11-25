@@ -18,6 +18,11 @@ trattare il numero come prova di abuso. Le valutazioni del 18–19 novembre con
 - Modello 2.6, salvataggi, raccolta eventi e report storici conservati.
   Nessun testo offensivo o attribuzione di intenzioni al visitatore.
 
+Precisazione dell’utente del 25 novembre: l’eventuale messaggio offensivo
+richiederebbe certezza al 100% dell’intento di scherzare. Valori estremi,
+errori, ripetizioni e prove di scenari non la dimostrano: nessun automatismo
+offensivo viene attivato su queste basi. Restano i richiami neutri pubblicati.
+
 Prove e ricevuta di pubblicazione nella cartella privata della sessione:
 `.local/verifiche/avviso-estremi/` nel worktree
 `.local/worktrees/valutatore-avviso-estremi-20261125/`.
