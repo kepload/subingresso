@@ -22,6 +22,31 @@
         const el = document.getElementById('valError');
         el.textContent = message || ''; el.hidden = !message;
     }
+    function setWarning(inputId, warningId, show) {
+        const input = document.getElementById(inputId);
+        document.getElementById(warningId).hidden = !show;
+        const descriptions = (input.getAttribute('aria-describedby') || '').split(/\s+/).filter(id => id && id !== warningId);
+        if (show) descriptions.push(warningId);
+        input.setAttribute('aria-describedby', descriptions.join(' '));
+    }
+    function updateExtremeWarnings() {
+        const income = model.parseMoney(document.getElementById('fatturato').value);
+        const rawDays = document.getElementById('giornate').value;
+        const days = Number(rawDays);
+        setWarning('fatturato', 'incassoWarning', Number.isFinite(income)
+            && income >= (data.baseIncasso === 'giorno' ? 10000 : 1000000));
+        const outsideYear = days < 1 || days > 366;
+        const warning = document.getElementById('giornateWarning');
+        warning.textContent = outsideYear
+            ? 'Un anno ha al massimo 366 giorni. Conta solo quelli in cui lavori davvero in questo posteggio.'
+            : 'Una volta a settimana sono al massimo 53 giornate all’anno. Conta solo questo posteggio, non tutti i tuoi mercati.';
+        setWarning('giornate', 'giornateWarning', rawDays.trim() !== '' && Number.isFinite(days)
+            && (outsideYear || data.frequenza === 'settimanale' && days > 53));
+    }
+    for (const id of ['fatturato', 'giornate']) {
+        document.getElementById(id).addEventListener('input', updateExtremeWarnings);
+        document.getElementById(id).addEventListener('change', updateExtremeWarnings);
+    }
     function showStep() {
         window.SiteAnalytics?.track('valuation_step', {step: step + 1});
         form.querySelectorAll('.step-card').forEach(el => el.classList.toggle('active', el.dataset.step === steps[step]));
@@ -31,6 +56,7 @@
         document.getElementById('progressBar').style.width = ((step + 1) / steps.length * 100) + '%';
         document.getElementById('stepCount').textContent = (step + 1) + ' / ' + steps.length;
         error('');
+        updateExtremeWarnings();
         const heading = form.querySelector('.step-card.active h2');
         if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -77,8 +103,10 @@
             const selected = el === btn; el.classList.toggle('selected', selected); el.setAttribute('aria-pressed', String(selected));
         });
         error('');
+        updateExtremeWarnings();
         if (key === 'baseIncasso') {
             updateIncomeExample();
+            updateExtremeWarnings();
             return;
         }
         if (key === 'concessione') document.getElementById('anniResiduiWrap').hidden = data.concessione !== 'breve';

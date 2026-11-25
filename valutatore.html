@@ -158,6 +158,8 @@
         .val-number { border:2px solid #e2e8f0; border-radius:12px; padding:12px; width:100%; font-size:20px; font-weight:700; }
         .val-next { width:100%; margin-top:20px; padding:16px; border-radius:16px; background:#2563eb; color:white; font-weight:800; }
         .val-error { color:#991b1b; background:#fef2f2; border-radius:12px; padding:12px; margin-bottom:12px; font-size:14px; }
+        .val-warning { color:#85520b; background:#fff1d7; border-radius:12px; padding:12px; margin:8px 0 16px; font-size:14px; line-height:1.6; }
+        html.admin-dark .val-warning { color:var(--ad-warning); background:var(--ad-warning-bg); }
         .profit-details { margin-top:8px; font-size:14px; }
         .profit-details summary { cursor:pointer; color:#2563eb; font-weight:700; padding:12px 0; }
         .val-price,.val-rent { padding:20px; border-radius:18px; margin:12px 0; }
@@ -252,6 +254,7 @@
 <input type="text" inputmode="decimal" id="fatturato" placeholder="Es. 500" maxlength="20" autocomplete="off" aria-describedby="incassoHelp">
 </div>
     <p class="question-help" id="incassoHelp">Conta solo questo banco. Fai la media anche delle giornate deboli, non solo di quelle migliori.</p>
+    <p id="incassoWarning" class="val-warning" role="status" aria-atomic="true" hidden>Questo incasso è molto alto. Controlla che sia riferito solo a questo posteggio.</p>
     <details class="profit-details">
 <summary>Vuoi una stima più precisa? Aggiungi le spese</summary>
     <label for="utileGiorno">Quanto ti resta in una giornata? (facoltativo)</label>
@@ -306,6 +309,7 @@
     <label for="giornate">Giornate effettive in un anno</label>
 <input type="number" inputmode="numeric" id="giornate" min="1" max="366" step="1" placeholder="Es. 50" class="val-number" aria-describedby="giornateHelp">
 <p class="question-help" id="giornateHelp">Tutto l’anno una volta a settimana: circa 50. Solo 5 mesi: circa 22. Una fiera di 3 giorni ogni anno: 3. Escludi ferie e chiusure.</p>
+<p id="giornateWarning" class="val-warning" role="status" aria-atomic="true" hidden></p>
 <p class="val-label">Cosa vendi?</p>
 <button type="button" data-key="settore" data-value="alimentare" aria-pressed="false" class="option-card py-3 px-4 rounded-2xl flex items-center gap-3">
 <span class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -684,7 +688,7 @@
 </script>
 <script src="js/valuation.js?v=8">
 </script>
-<script src="js/pages/valutatore.js?v=10">
+<script src="js/pages/valutatore.js?v=11">
 </script>
 <script src="js/auth.js?v=31">
 </script>
