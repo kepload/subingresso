@@ -99,6 +99,17 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
   al sito o al DB**, ancora 2.6. La vecchia soglia di 1.000 a 100/giorno
   resta nello storico, ma non nei nuovi riferimenti richiesti. Curve oltre
   200, tetti e gestione di margine/scadenza sono ipotesi della proposta.
+  **Secondo riesame dell’utente:** 390 euro ×26 giornate almeno 20.000;
+  alimentare 200 ×26 circa 9.000 e qualcosa; 580 ×52 almeno 40.000.
+  Confermati gli esempi 340 ×52 circa 23.600, 100 ×300 circa 9.800,
+  340 ×300 circa 54.500. Proposta privata `2.7-studio-r2` in
+  `.local/ricerche/valutatore-v27-20261125-r2/`: resa giornaliera più
+  importante, minore riduzione stagionale per incassi alti. Risultati
+  20.084/9.359/23.608/9.755/54.534/40.719; 101.147 combinazioni e 143.854
+  controlli matematici PASS, inclusa efficienza a incasso annuo costante.
+  Raccordo oltre 580 euro provvisorio; oltre 1.000/giorno o 250.000/anno
+  richiede verifica nella proposta. Prima revisione conservata; sito/DB
+  ancora 2.6, nessuna pubblicazione del nuovo algoritmo.
 
 - Nuove iscrizioni dalle fiere: bollino **Fiera** riservato all'elenco admin, dalla pagina effettiva del signup e dagli articoli specifici. Nessuna attribuzione dalle sole visite, UTM o landing storiche; [criteri e verifica](data/FAIR_SIGNUP_BADGE.md).
 - Italiano semplice, comunicazioni e documenti essenziali. Dashboard con pochi
