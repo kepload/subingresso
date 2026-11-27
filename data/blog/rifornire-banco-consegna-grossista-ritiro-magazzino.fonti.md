@@ -1,0 +1,17 @@
+# Fonti e limiti | articolo 55
+Consultate e ricontrollate via HTTP il 27 novembre 2026; ricevute e snapshot HTML nel dossier privato. Nessun contatto a terzi. Nessun tariffario precompilato o risparmio osservato.
+
+- https://www.commercioingrosso.it/it/faqs | Fonte primaria commerciale. Passaggio: «No, non esiste un minimo d'ordine». La sezione ritiro chiede prenotazione il giorno precedente; non consente di fissare una data precisa di consegna. Sostiene la variabilità dei vincoli, non un'offerta applicabile a tutti. Nessuna raccomandazione del fornitore o verifica di un ordine reale.
+- https://www.rfshop87.it/it/faq-e-domande-frequenti | Fonte primaria commerciale. Passaggio: «La modalità applicabile è indicata nella descrizione commerciale del singolo prodotto». Distingue confezioni, assortimenti e clienti; non presenta un minimo universale per ogni grossista. Importi pubblicati non trasferiti nel calcolatore, né usati come tariffe correnti generali. Condizioni da confermare per il proprio acquisto.
+- https://osservaprezzi.mise.gov.it/osservaprezzi-carburanti | Fonte primaria MIMIT. Passaggio: «Le informazioni sui prezzi praticati presso ciascun impianto sono accessibili attraverso la funzione RICERCA». Serve per reperire il prezzo del punto vendita e della modalità di servizio; non prova il consumo del furgone. Nessun prezzo numerico estratto o inventato come attuale.
+- https://www.autostrade.it/it/servizi-al-cliente/pedaggio/come-si-calcola-il-pedaggio | Fonte primaria concessionario. Passaggio: «Tipo di veicolo utilizzato (5 classi)». La tariffa dipende anche dalla tratta e dal gestore. Usare preventivo/calcolo del percorso e classe corretti, andata e ritorno; nessuna tariffa chilometrica generica nel foglio.
+
+## Metodo del foglio
+Confronto di un solo prodotto o lotto omogeneo. Quantità necessarie comuni; prezzo unitario e quantità acquistate distinti per opzione. Minimo solo sulla merce, non soglia gratuita; si confronta con totale merce arrotondato al centesimo. L'ordine sotto minimo è non ammissibile: niente aumento automatico. L'extra è capitale inizialmente nelle scorte, non perdita. Non stima vendite, deterioramento, scorta residua futura, imposte, recupero IVA o usura del mezzo. Altri esborsi di logistica possono essere inseriti manualmente senza duplicazioni. Importi effettivamente pagati, IVA inclusa se addebitata; riportare anche minimo sulla stessa base.
+Esborso iniziale = merce acquistata + logistica + cauzione recuperabile. Cassa dopo restituzione = esborso meno cauzione. Valore del tempo facoltativo e separato; nessuna monetizzazione delle ore quando tariffa vuota. Confronto non utilizzabile se manca una delle opzioni. I risultati non sostituiscono disponibilità, capacità del mezzo, tempi garantiti o condizioni scritte.
+
+## Esempio inventato, non tariffa attuale
+Fabbisogno 100 pezzi; prezzo 5 euro entrambi. Consegna: 120 pezzi, minimo 600 euro, spedizione 30 euro, 0,5 ore. Ritiro: 100 pezzi, minimo zero; 80 km A/R, 8 l/100km, carburante ipotetico 1,80 euro/l, pedaggi 8 euro, parcheggio 2 euro, 3 ore. Altri esborsi e cauzione zero. Valore orario facoltativo 15 euro. Carburante 11,52; logistica 30 / 21,52; extra 100 / 0; esborso iniziale 630 / 521,52; logistica+tempo 37,50 / 66,52. Non è una simulazione di profitto.
+
+## Copertina
+Generazione originale con strumento imagegen incorporato. Scena inventata dichiarata pubblicamente; prompt effettivo nel file .prompt.md. Esportazione finale WebP 1600x900.
