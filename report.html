@@ -217,7 +217,8 @@
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=26"></script>
 <script src="js/auth.js?v=31"></script>
-<script src="js/valuation.js?v=8"></script>
+<script src="js/valuation-legacy.js?v=1"></script>
+<script src="js/valuation.js?v=9"></script>
 
 <script>
 (function() {
@@ -310,18 +311,21 @@
         const roi = Number(log.prezzo_avg) > 0 && Number.isFinite(Number(log.affitto_annuo)) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
         document.getElementById('rRoi').textContent = roi.toFixed(1);
 
-        const isV2 = ['2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6'].includes(log.algoritmo_version);
+        const isV2 = ['2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7'].includes(log.algoritmo_version);
         const isV21 = log.algoritmo_version === '2.1';
         const isV22 = log.algoritmo_version === '2.2';
         const isV23 = log.algoritmo_version === '2.3';
         const isV24 = log.algoritmo_version === '2.4';
         const isV25 = log.algoritmo_version === '2.5';
         const isV26 = log.algoritmo_version === '2.6';
+        const isV27 = log.algoritmo_version === '2.7';
         let calculation = null;
         if (isV2 && log.dettagli_calcolo?.input) {
             try { calculation = PosteggioValuation.estimate(log.dettagli_calcolo.input, log.algoritmo_version); } catch (_) {}
         }
-        document.getElementById('rMethod').textContent = isV26
+        document.getElementById('rMethod').textContent = isV27
+            ? 'L’incasso medio a giornata ha un peso crescente; contano anche le giornate effettive, con incrementi più contenuti oltre 50 giornate. Passaggio, clientela e lati di vendita correggono insieme la base. Alimentare +30%, sole davanti −5%, sole parziale −2%, scadenza ignota −15% sulla parte sopra € 1.000. Il margine dichiarato può aumentare o limitare la stima. Tetti: due volte gli incassi annui e, se noto, cinque volte il margine annuo. Fascia indicativa, non probabilità statistica. Canone con soglia commerciale di € 500/anno. Le ipotesi commerciali richiedono confronto con vendite concluse; oltre € 1.000/giorno, € 250.000/anno, con margine quasi nullo o concessione breve serve una verifica specifica.'
+            : isV26
             ? 'Curva progressiva basata sull’incasso medio e sulle giornate effettive. Sulla parte sopra € 1.000: passaggio principale +22,92%, laterale −28,28%, angolo o testata +11,57%; zona turistica con clientela mista +5%. Merce riparata +1,53%; sole davanti −14,09% per non alimentare e −11,38% per alimentare. Sole parziale: −2% non alimentare, −1% alimentare. Le percentuali si moltiplicano; margine e durata residua possono limitare il risultato. Sotto € 100/giorno cessione fissa € 1.000; affitto minimo € 500/anno. Sono ipotesi commerciali, da verificare su vendite concluse.'
             : isV25
             ? 'Sotto € 100 di incasso medio a giornata: cessione fissa di € 1.000. A 52 giornate e in condizioni ordinarie, non alimentare: curva progressiva da € 1.000 a € 8.000 tra € 100 e € 200/giorno, poi fino a € 27.000 a € 400/giorno. Raccordo crescente alle fasce superiori. Giornate e caratteristiche correggono il valore sopra la soglia commerciale; i premi si applicano alla parte sopra € 1.000. Affitto minimo € 500/anno; sostegno graduale sotto € 3.000/anno. I minimi restano anche con margine nullo o durata breve: sono soglie commerciali, non redditività dimostrata.'

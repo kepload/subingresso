@@ -26,7 +26,7 @@ I percorsi di codice nei riferimenti sono relativi alla root del progetto.
 | 📞 Telefono — Validazione & E.164 · ⚡ Performance | [012-telefono-validazione-e-164.md](docs/manuale/012-telefono-validazione-e-164.md) |
 | 📬 Avvisi Bandi (lead magnet bundle, 6 mag 2026 sera fase 1) · 📈 Growth Chart Admin (`loadAdminGrowthChart`) · altre 1 sezioni | [013-avvisi-bandi-lead-magnet-bundle-6-mag-2026-sera-fase-1.md](docs/manuale/013-avvisi-bandi-lead-magnet-bundle-6-mag-2026-sera-fase-1.md) |
 | 📣 Blog Promo Inline · 🏠 Home Page Sezioni | [014-blog-promo-inline.md](docs/manuale/014-blog-promo-inline.md) |
-| Valutatore v2.6 (22 ottobre 2026) | [015-valutatore-v2-6-22-ottobre-2026.md](docs/manuale/015-valutatore-v2-6-22-ottobre-2026.md) |
+| Valutatore v2.7 (27 novembre 2026), storico 2.0–2.6 | [Modello corrente](data/VALUTATORE_V27.md), [storico](docs/manuale/015-valutatore-v2-6-22-ottobre-2026.md) |
 | 📐 Saved Listings (Preferiti) · 🧭 Header Nav · altre 5 sezioni | [016-saved-listings-preferiti.md](docs/manuale/016-saved-listings-preferiti.md) |
 | 📰 Articoli "Bandi" — Pattern Replica · 🐌 Pubblicazione Annuncio — Lessons Learned | [017-articoli-bandi-pattern-replica.md](docs/manuale/017-articoli-bandi-pattern-replica.md) |
 | ⏳ TODO Aperti · Stato delle verifiche di sicurezza | [018-todo-aperti.md](docs/manuale/018-todo-aperti.md) |

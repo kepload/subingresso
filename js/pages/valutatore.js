@@ -128,7 +128,7 @@
         const ok = result.status === 'ok';
         document.getElementById('priceCards').hidden = !ok;
         document.getElementById('valSaveCard').hidden = !ok;
-        document.getElementById('resultHeading').textContent = ok ? 'La tua stima indicativa' : 'Prima verifica il titolo del posteggio';
+        document.getElementById('resultHeading').textContent = ok ? 'La tua stima indicativa' : result.status === 'non_stimabile' ? 'Prima verifica il titolo del posteggio' : 'Per questo posteggio serve una verifica';
         document.getElementById('resultNotes').replaceChildren();
         result.notes.forEach(note => { const p = document.createElement('p'); p.textContent = note; document.getElementById('resultNotes').appendChild(p); });
         if (!ok) return;
@@ -154,7 +154,7 @@
         let timer;
         try {
             if (typeof _supabase === 'undefined') throw new Error('Servizio non disponibile');
-            const request = _supabase.rpc('save_valutazione_v26', { p_input: result.input, p_session_token: session, p_request_id: requestId, p_context: context() });
+            const request = _supabase.rpc('save_valutazione_v27', { p_input: result.input, p_session_token: session, p_request_id: requestId, p_context: context() });
             const { data: log, error: err } = await Promise.race([request, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Salvataggio non confermato')), 10000); })]);
             if (err || !log) throw new Error('Salvataggio non riuscito');
             // Gli importi salvati vengono ricalcolati sul server.

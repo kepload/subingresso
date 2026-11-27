@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const V = require('../js/valuation.js');
+const V = require('../js/valuation-legacy.js');
 const base = {baseIncasso:'giorno',incasso:500,giornate:52,frequenza:'settimanale',settore:'non_alimentare',zona:'interna',clientela:'residenti',passaggio:'medio',posizione:'linea',sole:'non_so',concessione:'stabile',utileGiorno:null};
 const e = extra => V.estimate({...base,...extra});
 
