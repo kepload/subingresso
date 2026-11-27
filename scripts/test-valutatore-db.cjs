@@ -1,6 +1,6 @@
 const fs=require('node:fs');const path=require('node:path');
 const root=path.resolve(__dirname,'..');
-const V=require(root+'/js/valuation.js');
+const V=require(root+'/js/valuation-legacy.js');
 const crypto=require('node:crypto');
 const base={baseIncasso:'giorno',incasso:500,giornate:52,frequenza:'settimanale',settore:'non_alimentare',zona:'interna',clientela:'residenti',passaggio:'medio',posizione:'linea',sole:'riparato',concessione:'stabile',utileGiorno:null};
 const scenarios=[];
