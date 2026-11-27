@@ -297,6 +297,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **27 novembre 2026 — articolo 54:** [rinuncia a una fiera](https://subingresso.it/blog?post=rinuncia-fiera-prenotata-termini-penali-lombardia), tre regolamenti 2026, copertina IA e XLSX. 34 scenari formule, SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS; bollino Fiera riconosciuto, 161 post precedenti invariati. [Fonti e prove](data/blog/rinuncia-fiera-prenotata-termini-penali-lombardia.fonti.md).
+
 - **25 novembre 2026 - criterio avvisi e stima 5.901:** messaggio offensivo solo con certezza al 100% dell'intento richiesta dall'utente; numeri estremi, ripetizioni e incoerenze non la provano, nessun automatismo attivato. Riprodotto il caso 200/giorno per 50 giorni: 10.000 annui sono incassi, utile ignoto; modello 2.6 da base 7.731 a 5.901 per il fattore laterale. Analisi privata `.local/verifiche/ritaratura-valutatore-20261125/analisi-caso-5901.json` nel worktree degli avvisi; nuova taratura non applicata in attesa del significato del riferimento commerciale proposto.
 
 
