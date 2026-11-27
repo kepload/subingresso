@@ -59,7 +59,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 55. 🟠 Rifornire il banco: consegna del grossista o ritiro in magazzino? Il foglio per confrontare minimi d'ordine, trasporto e ore
 56. 🟠 Assumere un aiuto al banco per le fiere conviene? Calcola le vendite aggiuntive necessarie con il costo verificato dal consulente del lavoro
 57. 🟠 Affittare un deposito vicino ai mercati conviene? Calcola canone, chilometri e ore risparmiate
-58. 🟠 Fiera di più giorni: tornare a casa o dormire fuori? Il calcolatore di viaggio, pernottamento e parcheggio del furgone
+58. 🟠 Fiera di più giorni: tornare a casa o dormire fuori? Il calcolatore di viaggio, pernottamento e parcheggio del furgone — [pubblicato il 27/11/2026](https://subingresso.it/blog?post=fiera-piu-giorni-casa-pernottamento-calcolatore); [calcolatore gratuito](downloads/calcolatore-fiera-casa-pernottamento.xlsx).
 59. 🟠 Organizzo un mercatino: troppi banchi con gli stessi prodotti? La griglia per confrontare le proposte e motivare le selezioni
 60. 🟢 Street food senza allaccio idrico: quanta acqua serve davvero? La scheda per misurare consumi e autonomia durante il servizio
 

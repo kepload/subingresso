@@ -294,6 +294,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **27 novembre 2026 — articolo 58:** [pubblicato e verificato](https://subingresso.it/blog?post=fiera-piu-giorni-casa-pernottamento-calcolatore), fiera: casa o pernottamento, XLSX e copertina IA. 64 scenari, SSR/SEO, cinque browser e download PASS; 163 post precedenti invariati. Dossier: `.local/lavori/articoli/20261127-codex2-cinque/articolo-58/`.
+
 - **27 novembre 2026 — articolo 44, vendita diretta o intermediario:** [pubblicato e verificato](https://subingresso.it/blog?post=vendere-posteggio-soli-intermediario-confronto), Guide; fonti ufficiali, copertina IA e XLSX. 42 scenari/84 valutazioni formule, SSR/SEO, indice/sitemap e cinque browser/download PASS; hash online identici. Un INSERT, 162 post precedenti invariati. [Fonti e prove](data/blog/vendere-posteggio-soli-intermediario-confronto.fonti.md).
 
 - **27 novembre 2026 — articolo 54:** [rinuncia a una fiera](https://subingresso.it/blog?post=rinuncia-fiera-prenotata-termini-penali-lombardia), tre regolamenti 2026, copertina IA e XLSX. 34 scenari formule, SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS; bollino Fiera riconosciuto, 161 post precedenti invariati. [Fonti e prove](data/blog/rinuncia-fiera-prenotata-termini-penali-lombardia.fonti.md).
