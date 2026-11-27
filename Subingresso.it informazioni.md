@@ -88,28 +88,25 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
 
 ## Decisioni da ritrovare senza rileggere lo storico
 
-- **Valutatore, riferimenti del 25 novembre 2026:** l’utente chiede più peso
-  agli incassi. Posteggio debole con persone del posto: 100 euro/giorno
-  circa 3.000 euro, 200 circa 10.000; posteggio forte con clientela mista:
-  100 circa 5.000, 200 circa 15.000. Studio su 50 giornate, non alimentare,
-  concessione stabile e utile ignoto; sono riferimenti commerciali, non
-  vendite verificate. Proposta privata `2.7-studio` sotto la root in
-  `.local/ricerche/valutatore-v27-20261125/`: modello, confronto storico,
-  12 esempi casuali CSV/JSON e 101.147 scenari verificati. **Non applicata
-  al sito o al DB**, ancora 2.6. La vecchia soglia di 1.000 a 100/giorno
-  resta nello storico, ma non nei nuovi riferimenti richiesti. Curve oltre
-  200, tetti e gestione di margine/scadenza sono ipotesi della proposta.
-  **Secondo riesame dell’utente:** 390 euro ×26 giornate almeno 20.000;
-  alimentare 200 ×26 circa 9.000 e qualcosa; 580 ×52 almeno 40.000.
-  Confermati gli esempi 340 ×52 circa 23.600, 100 ×300 circa 9.800,
-  340 ×300 circa 54.500. Proposta privata `2.7-studio-r2` in
-  `.local/ricerche/valutatore-v27-20261125-r2/`: resa giornaliera più
-  importante, minore riduzione stagionale per incassi alti. Risultati
-  20.084/9.359/23.608/9.755/54.534/40.719; 101.147 combinazioni e 143.854
-  controlli matematici PASS, inclusa efficienza a incasso annuo costante.
-  Raccordo oltre 580 euro provvisorio; oltre 1.000/giorno o 250.000/anno
-  richiede verifica nella proposta. Prima revisione conservata; sito/DB
-  ancora 2.6, nessuna pubblicazione del nuovo algoritmo.
+- **Valutatore 2.7 online — 27 novembre 2026:** pubblicata la revisione
+  finale richiesta dall’utente, con più peso alla resa giornaliera e minore
+  riduzione per stagioni brevi con incassi alti. A 50 giornate, non alimentare,
+  titolo stabile e utile ignoto: debole/residenti 100→3.000, 200→10.000;
+  forte/clientela mista 100→5.000, 200→15.000. Riferimenti commerciali,
+  non vendite verificate. Sei casi concordati: 20.084/9.359/23.608/9.755/
+  54.534/40.719. Oltre 1.000/giorno o 250.000/anno, margine annuo dichiarato
+  ≤200 o concessione breve: verifica senza prezzo automatico; temporanea
+  non stimabile. 300–350 giorni ammessi se coerenti con frequenza/calendario;
+  nessuna deduzione automatica di abuso e nessun messaggio offensivo.
+  Commit `65c6b3f`, Vercel `dpl_FyMsMT9yzPJorrDRaXcvmMrXyrbj` READY;
+  browser e server allineati, sei asset conformi online. 101.147 combinazioni,
+  5.598 confronti JS/SQL con ROLLBACK, 268 controlli browser, 240 sugli avvisi
+  e 60 online PASS. Conservati 115 report e tutte le RPC storiche; nessuna
+  scrittura reale di prova. [Modello e controlli](data/VALUTATORE_V27.md). Prove nel
+  worktree `valutatore-v27-20261127/.local/verifiche/valutatore-v27/`;
+  backup DB nella root `.local/backup/valutatore-v27-20261127/`.
+  Studi precedenti conservati in `.local/ricerche/valutatore-v27-20261125/`
+  e `valutatore-v27-20261125-r2/`.
 
 - Nuove iscrizioni dalle fiere: bollino **Fiera** riservato all'elenco admin, dalla pagina effettiva del signup e dagli articoli specifici. Nessuna attribuzione dalle sole visite, UTM o landing storiche; [criteri e verifica](data/FAIR_SIGNUP_BADGE.md).
 - Italiano semplice, comunicazioni e documenti essenziali. Dashboard con pochi
@@ -296,6 +293,8 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **27 novembre 2026 — articolo 54:** [rinuncia a una fiera](https://subingresso.it/blog?post=rinuncia-fiera-prenotata-termini-penali-lombardia), tre regolamenti 2026, copertina IA e XLSX. 34 scenari formule, SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS; bollino Fiera riconosciuto, 161 post precedenti invariati. [Fonti e prove](data/blog/rinuncia-fiera-prenotata-termini-penali-lombardia.fonti.md).
 
 - **25 novembre 2026 - criterio avvisi e stima 5.901:** messaggio offensivo solo con certezza al 100% dell'intento richiesta dall'utente; numeri estremi, ripetizioni e incoerenze non la provano, nessun automatismo attivato. Riprodotto il caso 200/giorno per 50 giorni: 10.000 annui sono incassi, utile ignoto; modello 2.6 da base 7.731 a 5.901 per il fattore laterale. Analisi privata `.local/verifiche/ritaratura-valutatore-20261125/analisi-caso-5901.json` nel worktree degli avvisi; nuova taratura non applicata in attesa del significato del riferimento commerciale proposto.
 
