@@ -86,3 +86,9 @@ RPC storiche, nessun cambiamento a trigger email, utenti o annunci.
 Il test generale `test-data-quality.cjs` incontra un errore preesistente nella
 fixture profilo (`_currentUser` assente), riprodotto sul codice di origin/main.
 Non riguarda il modello o i report, verificati separatamente.
+
+Pubblicato `65c6b3f`, Vercel `dpl_FyMsMT9yzPJorrDRaXcvmMrXyrbj` READY e alias
+`subingresso.it`. Sei asset conformi e 60 controlli online su quattro
+configurazioni browser PASS. Database aggiornato, 115 log storici identici e
+otto funzioni storiche invariate; nessun dato test conservato. Gitleaks sul
+commit passato, eseguito esplicitamente con il binario disponibile nella root.
