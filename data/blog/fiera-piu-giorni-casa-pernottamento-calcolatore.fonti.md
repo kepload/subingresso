@@ -14,3 +14,7 @@ Destinatari: ambulanti ed espositori italiani. Calcolo incrementale: esclusi pri
 
 161 titoli LIVE controllati prima della stesura: nessuno copre il confronto casa/pernottamento. I tre contenuti sul furgone riguardano guasto, ZTL e dimensioni del posteggio. Secondo controllo obbligatorio immediatamente prima dell'INSERT.
 
+## Verifiche della risorsa
+
+64 scenari, 1.518 confronti delle formule con un riferimento indipendente Python Decimal; file definitivo riletto, cache e hash verificati. Dati vuoti, non numerici, negativi, rientri intermedi, tragitti locali, pareggio e tempo facoltativo inclusi. Nessuna macro o connessione. Anteprime da celle e stili con Pillow, senza prova in Excel o LibreOffice. SSR reale con fixture del solo post; cinque formati browser e download verificati, analytics e scritture di prova intercettati. Ricevute nel dossier privato assegnato.
+
