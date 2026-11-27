@@ -294,6 +294,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **28 novembre 2026 — altri tre articoli, round 23:56 concluso:** 59/65/69 sviluppati in tre sessioni pulite parallele e pubblicati. Fonti primarie, copertine IA e XLSX verificati; 15 percorsi browser/download online PASS, indice/sitemap e sei asset conformi. Conservati tutti i 171 post precedenti, 174 totali; nessun nuovo ciclo o dato di prova reale. Ricevute nella root `.local/lavori/articoli/20261127-codex1-tre-2356/CONSEGNA.md`.
+
 - **27 novembre 2026 — altri cinque articoli, round 16:59 concluso:** 45/47/49/55/57 sviluppati in cinque sessioni pulite parallele e pubblicati. Fonti primarie, copertine IA e XLSX verificati; 25 percorsi browser/download online PASS, indice/sitemap e dieci asset conformi. Conservati tutti i 166 post precedenti, 171 totali; nessun nuovo ciclo o dato di prova reale. Ricevute nella root `.local/lavori/articoli/20261127-codex1-cinque-1659/CONSEGNA.md`.
 
 - **27 novembre 2026 — cinque articoli Codex 2 conclusi:** 44/46/54/58/68 tutti pubblicati e verificati. Ripresi 46 e 68 dai materiali pronti dopo il limite d’uso; copertine e XLSX conformi, controlli browser/download PASS, cinque pagine presenti in indice e sitemap. Conservati i 161 post precedenti, 166 totali; nessun nuovo ciclo o dato di prova reale. Ricevute e consegna nella root `.local/lavori/articoli/20261127-codex2-cinque/CONSEGNA.md`.
