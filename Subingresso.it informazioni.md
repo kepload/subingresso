@@ -294,6 +294,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **27 novembre 2026 — cinque articoli Codex 2 conclusi:** 44/46/54/58/68 tutti pubblicati e verificati. Ripresi 46 e 68 dai materiali pronti dopo il limite d’uso; copertine e XLSX conformi, controlli browser/download PASS, cinque pagine presenti in indice e sitemap. Conservati i 161 post precedenti, 166 totali; nessun nuovo ciclo o dato di prova reale. Ricevute e consegna nella root `.local/lavori/articoli/20261127-codex2-cinque/CONSEGNA.md`.
+
 - **27 novembre 2026 — articolo 68, cassa del mercatino:** [pubblicato e verificato](https://subingresso.it/blog?post=organizzare-mercatino-calendario-cassa-fabbisogno), copertina IA e calendario XLSX con 32 casi formule PASS. SSR/SEO, indice/sitemap e cinque browser/download verificati; bollino Fiera riconosciuto. Un solo INSERT, 165 post precedenti invariati. [Fonti](data/blog/organizzare-mercatino-calendario-cassa-fabbisogno.fonti.md); ricevute `.local/lavori/articoli/20261127-codex2-cinque/articolo-68/`. Solo punto 68.
 
 - **27 novembre 2026 — articolo 46:** [scorte e riassortimenti in fiera](https://subingresso.it/blog?post=merce-fiera-scorte-riassortimenti-prodotto-taglia) pubblicato e verificato; copertina IA, XLSX (45 casi/407 formule), SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS. Un solo INSERT, 164 post precedenti invariati; bollino Fiera riconosciuto con sola SELECT. Prove `.local/lavori/articoli/20261127-codex2-cinque/articolo-46/`. Solo punto 46.
