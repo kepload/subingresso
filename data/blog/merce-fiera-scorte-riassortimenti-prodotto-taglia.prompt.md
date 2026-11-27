@@ -4,7 +4,7 @@ Data: 27 novembre 2026. Strumento: image_gen.imagegen, skill imagegen, modalità
 
 ## Prompt effettivo
 
-+Use case: photorealistic-natural
+Use case: photorealistic-natural
 Asset type: copertina editoriale blog italiano, orizzontale 16:9, destinata a WebP 1600x900.
 Primary request: scena inventata di preparazione delle scorte per un banco di abbigliamento in una fiera italiana. Primo piano naturale di mani adulte che sistemano maglie piegate di diverse taglie in cassette robuste aperte, etichette semplici senza scritte leggibili, una lista su un blocco e una matita vicino alle cassette. Sullo sfondo sfocato un banco con telo neutro e struttura della fiera, nessuna folla. Merce ordinata ma quotidiana, colori sobri blu cotone, crema, terracotta. Luce mattutina diffusa. Fotografia documentaria credibile, materiali e mani realistici. Composizione ampia e ariosa, punto di vista a tre quarti, soggetto centrale leggibile anche da mobile. Nessun testo, logo, watermark, volto riconoscibile, marchio, grafico o interfaccia. Non rappresenta un'attività reale.
 
