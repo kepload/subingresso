@@ -81,3 +81,11 @@ Uso e limite: Recesso quando attribuito, con regole ed eventuale corrispettivo. 
 - Formule del file XLSX definitivo: 42 scenari, 84 valutazioni con confronto Python Decimal indipendente; input vuoti, mancanti, testo, booleani, errore Excel, negativi, soglia massima, decimali, anticipo assorbito, uscita separata e prezzi diversi. Rilettura formule/cache PASS, nessuna macro/connessione/link esterno. SHA256 `6750e598aba7a75646dbb00fe169acbb772cb386a3d5b085830648ce02d7f23d`.
 - Vero handler SSR con fixture del solo post: titolo/excerpt/canonical/JSON-LD, ADS, link e metadati PASS. Chromium 1440/768/320, WebKit 390 e Chromium senza JS a 390: cinque percorsi/download PASS con hash finale identico; analytics e scritture provider intercettati. Cinque anteprime e cinque fogli ispezionati; nessun taglio.
 - Controllo segreti del commit completo PASS. Hook del repository e gitleaks attivi per il commit finale della preparazione e per la pubblicazione. Nessuna history riscritta.
+
+## Pubblicazione verificata, 27 novembre 2026
+
+- [Articolo pubblicato](https://subingresso.it/blog?post=vendere-posteggio-soli-intermediario-confronto), categoria Guide, ID `29877113-092c-48ca-ae5b-fdb2aca98c74`. Un solo INSERT; nessun UPDATE/DELETE di altri post.
+- Preparazione `9e22b248f74ebefda07949e7e57da686114250f3`; baseline main `52a4918d67aa2fc23b9cf7f3b1a52c21c86db849`; sito `330cc914647ded69e9d9eede0be2a2988c875057`. [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3sxg2hUhpPpuii4ybHP6gY218JDS).
+- Copertina e XLSX online verificati prima dell’INSERT, hash identici ai file preparati. Titolo, excerpt, canonical, JSON-LD, indice e sitemap PASS. Chromium 1440/768/320, WebKit 390 e Chromium senza JS 390: cinque percorsi/download reali PASS; analytics e scritture intercettati.
+- 162 post della baseline immediatamente prima dell’INSERT preservati in tutti i nove campi letti; 163 post totali al controllo. Aggiornati solo riga 44, questa fonte e una voce nel riepilogo. Nessun altro articolo o invio.
+- Ricevute e consegna nel dossier privato già indicato: `schema-pre-insert.json`, `duplicati-pre-insert.json`, `insert-ricevuta.json`, `online-verificata.json`, `indice-sitemap-verificati.json`, `post-preservati-finale.json`, `result.json`.
