@@ -1,0 +1,9 @@
+# Copertina IA originale
+
+Generata il 28 novembre 2026 con strumento integrato image_gen.imagegen, skill imagegen. Scena interamente inventata, nessuna attività reale rappresentata come osservata. Prompt effettivo:
+
+Use case: photorealistic-natural. Asset type: original editorial cover for an Italian article about selling surplus street food at the end of a market day, direct discount at the stall versus anti-waste app. Invented scene, no real business or observed event. Landscape 16:9 intended for final 1600x900. At an Italian open-air market at blue hour, a small independent mobile street-food stall seen at counter height, a tidy stainless counter with three plain closed kraft takeaway boxes, a small tray of freshly cooked focaccia portions visible through the stall display, a plain smartphone lying face up with an abstract non-readable interface, and a calculator with a small blank notebook. One vendor in simple dark apron behind the counter, natural posture, no recognizable person; softly blurred closing market tents and warm lamps in the background. Quiet realistic atmosphere of end-of-day business decisions, natural textures, understated documentary photography, warm stall light against cool evening. Balanced wide composition, objects clearly visible in central area, not a restaurant or bar. No logos, no brands, no legible text, no price labels, no split screen, no collage, no charts, no overlaid title. Food handling realistic, no exposed food being touched, no claims of a real event.
+
+Originale: C:/Users/utente/.codex/generated_images/01a21f3c-8954-7b30-af0d-329db19bb8d9/exec-2c692e09-03f1-4c90-816d-23bd6e2b1543.png
+
+Esportazione con Pillow: adattamento 16:9, 1600×900, WebP qualità 88. Ispezionata visivamente: banco mobile, confezioni, telefono e calcolatrice, nessun marchio o testo leggibile. Nessuna rigenerazione.
