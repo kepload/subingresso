@@ -294,6 +294,8 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **27 novembre 2026 — articolo 68, cassa del mercatino:** [pubblicato e verificato](https://subingresso.it/blog?post=organizzare-mercatino-calendario-cassa-fabbisogno), copertina IA e calendario XLSX con 32 casi formule PASS. SSR/SEO, indice/sitemap e cinque browser/download verificati; bollino Fiera riconosciuto. Un solo INSERT, 165 post precedenti invariati. [Fonti](data/blog/organizzare-mercatino-calendario-cassa-fabbisogno.fonti.md); ricevute `.local/lavori/articoli/20261127-codex2-cinque/articolo-68/`. Solo punto 68.
+
 - **27 novembre 2026 — articolo 46:** [scorte e riassortimenti in fiera](https://subingresso.it/blog?post=merce-fiera-scorte-riassortimenti-prodotto-taglia) pubblicato e verificato; copertina IA, XLSX (45 casi/407 formule), SSR/SEO, indice/sitemap e cinque percorsi browser/download PASS. Un solo INSERT, 164 post precedenti invariati; bollino Fiera riconosciuto con sola SELECT. Prove `.local/lavori/articoli/20261127-codex2-cinque/articolo-46/`. Solo punto 46.
 
 - **27 novembre 2026 — articolo 58:** [pubblicato e verificato](https://subingresso.it/blog?post=fiera-piu-giorni-casa-pernottamento-calcolatore), fiera: casa o pernottamento, XLSX e copertina IA. 64 scenari, SSR/SEO, cinque browser e download PASS; 163 post precedenti invariati. Dossier: `.local/lavori/articoli/20261127-codex2-cinque/articolo-58/`.

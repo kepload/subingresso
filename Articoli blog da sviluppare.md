@@ -70,6 +70,6 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 65. 🟠 Street food: quanto incidono vaschette, bicchieri e posate su ogni ordine? Il calcolatore con preventivi e quantità minime a confronto
 66. 🟠 Caricare e montare il banco: carrelli, rampe e sistemi estraibili a confronto, con prova cronometrata e calcolo del tempo risparmiato
 67. 🟠 Cartelli prezzo al banco: quale formato aiuta a vendere? La scheda per confrontare due allestimenti in giornate comparabili
-68. 🟠 Organizzo un mercatino: le quote arrivano dopo gli anticipi ai fornitori? Il calendario di cassa per calcolare il fabbisogno massimo
+68. 🟠 Organizzo un mercatino: le quote arrivano dopo gli anticipi ai fornitori? Il calendario di cassa per calcolare il fabbisogno massimo — [pubblicato il 27/11/2026](https://subingresso.it/blog?post=organizzare-mercatino-calendario-cassa-fabbisogno); [fonti](data/blog/organizzare-mercatino-calendario-cassa-fabbisogno.fonti.md) e [calendario gratuito](downloads/calendario-cassa-mercatino.xlsx).
 69. 🟠 Street food a fine giornata: sconto al banco o app antispreco? Confronta ricavo netto, commissioni e tempi di ritiro
 70. 🟢 Compro stock firmato per il banco: la checklist di provenienza, documenti e controlli sul lotto prima di pagare
