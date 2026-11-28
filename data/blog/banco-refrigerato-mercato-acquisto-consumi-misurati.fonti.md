@@ -1,0 +1,20 @@
+# Banco refrigerato: fonti e limiti
+
+Ricerca del 28 novembre 2026. Nessuna misurazione, intervista, vendita o consulenza svolta. Le misure sono un protocollo per il lettore. Dati dell'esempio e tariffa sono inventati, non attribuiti a un prodotto.
+
+- [Enel Energia, kW e kWh](https://www.enel.it/it-it/blog/guide/differenza-kW-kWh). Pagina letta e conservata: distingue potenza istantanea ed energia nel tempo. Passaggio: «Il kilowattora (kWh) è invece l'unità di misura dell'energia elettrica consumata nel tempo». Limite: la relazione potenza × ore presuppone una potenza mantenuta; non autorizza a trattare la targa come assorbimento continuo del banco.
+- [ARERA, lo scontrino dell'energia](https://www.arera.it/bolletta/bolletta-dellelettricita/lo-scontrino-dellenergia). Letta e conservata: quote per consumi e quote indipendenti dai consumi, inclusa la potenza. Passaggio: «È l'importo dovuto anche in assenza di consumi». Limite: nessuna tariffa universale, nessuna tariffa domestica applicata all'ambulante. Il foglio richiede contratto/preventivo datato, costo variabile pertinente e forfait separati, con IVA non recuperabile inclusa; non calcola imposte.
+- [Oscartielle, manuale Pavo](https://www.oscartielle.it/hubfs/FILE%20PRODOTTI/Manuale_Pavo.pdf). PDF originale letto e conservato; sezioni 4, 7 e 8: condizioni ambientali, targa, avviamento e prodotto già raffreddato. Passaggio: «È inoltre uso improprio utilizzare il mobile all'aria aperta o esporlo alla pioggia». Limite: Pavo è solo un esempio documentato del perché verificare l'uso previsto. Non è consigliato per un mercato esterno. Tempi, classi e temperature del Pavo non sono estesi ad altri banchi o alimenti; nessuna soglia alimentare inventata.
+- [Brennenstuhl, caratteristiche PM 231 E](https://service.brennenstuhl.com/hc/en-us/articles/8867312023453-What-are-the-measurement-and-current-consumption-characteristics-of-the-Primera-Line-PM-231-E-energy-meter). Fonte del produttore letta e conservata: range e accuratezza dello strumento, campi distinti W e totale kWh. Passaggio: «Total range energy consumption: 0 - 9999.9 kWh». Limite: non consigliamo questo misuratore per ambienti esterni né per qualsiasi impianto. La pagina commerciale iniziale ha restituito 403 tramite richieste locali ed è stata sostituita con il supporto ufficiale leggibile.
+
+Le copie leggibili, URL, data, HTTP e SHA-256 sono nel dossier privato dell'articolo, `ricerca-fonti.json`. Un HTTP 200 da solo non è stato considerato prova di lettura.
+
+Titoli live verificati prima della scrittura: 174, tramite GET pubblico di sole colonne slug e title; confronto anche col dossier della coordinatrice. Un articolo ATP tratta il furgone refrigerato, non questo confronto; nessun duplicato del tema o slug.
+
+## Scelte del foglio
+
+Input operativi vuoti. Esborso iniziale lordo distinto da investimento dopo recupero IVA verificato col consulente; manutenzione e residuo sono stime esplicite. kWh da differenza tra letture, ore da date effettive; nessun calcolo da W nominali. Il confronto richiede durata e giorni uguali, stesso perimetro di preraffreddamento e conferma manuale delle condizioni. Il costo annuo e quello su più anni sono scenari di giorni equivalenti, non una previsione certa da una giornata. Non include scorte, lavoro, cauzioni o finanziamento, estranei al confronto svolto. Forfait non ripetibili richiedono ripartizione sul periodo pertinente, spiegata nella Guida.
+
+Esempio separato inventato: A 3.200 € di esborso, 4 kWh in 8 ore; B 4.200 €, 3 kWh in 8 ore. Tariffa inventata 0,30 €/kWh e quote fisse 2 € ciascuno; 100 giorni equivalenti e 5 anni ipotizzati. Con manutenzione 120/100 € annui e residui 500/700 €, costi di scenario A 4.900 €, B 5.450 €, differenza −550 €. Nessun risparmio reale dichiarato.
+
+Verifica matematica: motore formulas sul file XLSX e riferimento indipendente Python Decimal, casi pratici, input vuoti, testo, errori, booleani e limiti. Cache delle formule rilette. Verifica visiva tramite anteprime Pillow basate su celle, larghezze, altezze e stili effettivi; non sostituisce una resa Excel/LibreOffice. Ricevute definitive e hash nel dossier.
